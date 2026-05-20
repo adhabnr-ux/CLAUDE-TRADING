@@ -18,4 +18,13 @@ well, fails, or surprises you. Keep the highest-value lessons near the top._
 
 ## Trading lessons
 
-_None yet — the agent appends here over time._
+### 2026-05-20 — Credential env vars present but empty
+
+All five credential env vars (`ALPACA_API_KEY_ID`, `ALPACA_API_SECRET_KEY`,
+`ALPACA_BASE_URL`, `CALLMEBOT_PHONE`, `CALLMEBOT_APIKEY`) were visible in the
+environment but had zero-length values. `env | grep ALPACA` showed them as
+existing keys; `printenv` and `awk length()` confirmed empty values. The
+cloud environment provisioned the variable *names* but not the *secrets*.
+Alpaca and CallMeBot calls both fail. Action taken: stop, no orders placed,
+documented here. The human must populate these secrets in the environment
+configuration before any routine can function.
