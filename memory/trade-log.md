@@ -15,3 +15,8 @@ The weekly new-position count is derived from this log._
 -->
 
 _No trades yet._
+
+## 2026-05-20 12:30 ET — MIDDAY CHECK (no action)
+- **Status:** Credentials missing — `ALPACA_API_KEY_ID` and `ALPACA_API_SECRET_KEY` not set in environment.
+- **Action:** None. Halted per guardrail: never trade without valid credentials.
+- **Note:** Pre-market routine has also not run (strategy.md uninitialized, no positions on record). Both issues need resolution before the agent can operate.

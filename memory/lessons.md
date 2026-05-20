@@ -18,4 +18,4 @@ well, fails, or surprises you. Keep the highest-value lessons near the top._
 
 ## Trading lessons
 
-_None yet — the agent appends here over time._
+- **2026-05-20:** Midday routine aborted — `ALPACA_API_KEY_ID` and `ALPACA_API_SECRET_KEY` were not injected into the cloud environment. Check environment variable configuration before scheduling any routine. The strategy is also uninitialized (pre-market has never run), so the first successful run must be pre-market to set up strategy.md and portfolio.md.
