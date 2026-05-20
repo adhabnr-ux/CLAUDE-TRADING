@@ -18,4 +18,12 @@ well, fails, or surprises you. Keep the highest-value lessons near the top._
 
 ## Trading lessons
 
-_None yet — the agent appends here over time._
+### 2026-05-20 — market-open aborted: missing credentials
+- `ALPACA_API_KEY_ID`, `ALPACA_API_SECRET_KEY`, and `ALPACA_BASE_URL` were all
+  unset in the cloud environment. No clock check, no trades, no notifications.
+- **Action required:** inject the three Alpaca env vars (and optionally
+  `CALLMEBOT_PHONE` / `CALLMEBOT_APIKEY`) into the environment before the next
+  routine runs.
+- Note: strategy.md is still NOT_INITIALIZED and research-log.md has no
+  pre-market research. The pre-market routine must run first with valid
+  credentials before market-open can execute meaningfully.
