@@ -3,16 +3,16 @@
 _Updated by every routine from live Alpaca data. The next agent trusts this as
 the last known state, but always re-fetches live data before trading._
 
-**Last updated:** _never_
-**Inception:** _set on the first run — date + starting equity; the SPY benchmark anchors here_
+**Last updated:** 2026-05-21 09:35 ET (market-open routine)
+**Inception:** 2026-05-21 — starting equity $100,000.00; SPY benchmark anchors here
 
 ## Account
 
 | Metric | Value |
 |--------|-------|
-| Equity | — |
-| Cash | — |
-| Buying power | — |
+| Equity | $100,000.00 |
+| Cash | $100,000.00 |
+| Buying power | $200,000.00 |
 
 ## Open positions
 
@@ -24,4 +24,4 @@ the last known state, but always re-fetches live data before trading._
 
 | Period | Bull | SPY | Difference |
 |--------|------|-----|------------|
-| Since inception | — | — | — |
+| Since inception | 0.00% | — | — |

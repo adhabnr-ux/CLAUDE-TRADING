@@ -18,4 +18,4 @@ well, fails, or surprises you. Keep the highest-value lessons near the top._
 
 ## Trading lessons
 
-_None yet — the agent appends here over time._
+- **2026-05-21:** Market-open ran before pre-market on the very first run. No pre-market plan existed (strategy.md STATUS: NOT_INITIALIZED, research-log.md empty). Correct action: place no trades, update portfolio snapshot, notify, commit. Pre-market must run first to initialize strategy and produce a trade plan.
