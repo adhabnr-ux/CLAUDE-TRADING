@@ -18,4 +18,12 @@ well, fails, or surprises you. Keep the highest-value lessons near the top._
 
 ## Trading lessons
 
-_None yet — the agent appends here over time._
+- **2026-05-21 inception:** 2026 is a sector-rotation year. Energy (+22% YTD),
+  Industrials (+16%), Consumer Staples (+13%) are leading SPY. Start cautiously:
+  3 positions on Day 1, stay well within 25% daily deployment cap, keep ~75%
+  cash to deploy gradually over coming weeks. Build conviction before sizing up.
+- **2026-05-21:** Energy plays (CVX/XOM) carry geopolitical reversal risk —
+  oil premium from Iran conflict could unwind fast. Size accordingly and watch
+  the Middle East tape daily in pre-market.
+- **2026-05-21:** CAT already up 57% YTD — avoid chasing extended names on
+  inception day. Better to wait for a pullback or use future position slots.
