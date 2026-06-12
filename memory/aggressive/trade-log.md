@@ -546,3 +546,66 @@ Afternoon recovery improved every position. META and MSFT both pulled back from 
 | AMZN | `b55bef05` | USD 205.35 | USD 250.43 | ✓ live |
 | VST | `5b347be3` | USD 124.57 | USD 151.91 | ✓ live |
 | GOOGL | `e52a43f1` | USD 304.81 | USD 371.72 | ✓ live |
+
+---
+
+## 2026-06-12 — MARKET OPEN (~9:46 AM ET)
+
+**No trades executed.** Pre-market plan correctly called no-trade.
+
+### Pre-run checks
+| Check | Result |
+|---|---|
+| Live-switch guard | ALPACA_BASE_URL contains "paper" ✓ |
+| Lock | Clear (empty `{}`) ✓ |
+| Control switch | STATUS: ACTIVE ✓ |
+| Plan date | June 12, 2026 — matches today ✓ |
+| Plan trades | [] — empty, no trades planned ✓ |
+| Idempotency | No prior EXECUTED: marker ✓ |
+
+### Market & account status
+| Check | Result |
+|---|---|
+| Market open | true (next close 4:00 PM ET) ✓ |
+| Equity | USD 93,469.93 |
+| Last equity (prev close June 11) | USD 94,130.22 |
+| Intraday change | -0.70% (shock threshold -6% — NOT triggered ✓) |
+| Cash | USD 13,885.38 (14.9%) |
+| Cash floor (2% min) | ✓ |
+| HWM | USD 101,144.73 |
+| Drawdown from HWM | -7.59% (circuit breaker 20% — NOT triggered ✓) |
+
+### Breaking news gate [search: WebSearch fallback — MiniMax M3 not available]
+- **META**: No new equity offering confirmation per June 12 WebSearch. "Pure speculation" status from June 5 unchanged. No banks hired. Invalidation NOT triggered. HOLD.
+- **MSFT**: Xbox CEO memo (immaterial to Azure thesis). Big Tech under pressure intraday. No Azure-specific negative news. HOLD.
+- No planned trades, so breaking news gate is technically informational only.
+
+### Stop audit — 7/7 positions confirmed with live 18% trailing stops ✓
+
+| Symbol | Qty | Current Price | P/L % | Stop Price | Stop Order ID | Buffer to -12% |
+|---|---|---|---|---|---|---|
+| NVDA | 103 | USD 204.09 | -4.45% | USD 181.71 (`54d7d851`) | ✓ live | 7.55pp |
+| META | 23 | USD 563.85 | **-10.52%** | USD 526.75 (`11c3a1bf`) | ✓ live | **🔴 1.48pp** |
+| AVGO | 34 | USD 380.50 | -6.33% | USD 349.71 (`36f5a45f`) | ✓ live | 5.67pp |
+| MSFT | 28 | USD 384.34 | **-9.82%** | USD 350.56 (`ef211767`) | ✓ live | **2.18pp ⚠️** |
+| AMZN | 36 | USD 235.04 | -5.22% | USD 205.35 (`b55bef05`) | ✓ live | 6.76pp |
+| VST | 52 | USD 147.66 | -2.52% | USD 124.57 (`5b347be3`) | ✓ live | 9.49pp |
+| GOOGL | 16 | USD 356.23 | -3.78% | USD 304.81 (`e52a43f1`) | ✓ live | 8.22pp |
+
+**No stops missing. No stops needing recreation. All positions protected.**
+
+### Notable observations
+- META at -10.52% (USD 563.85): CRITICALLY THIN 1.48pp buffer. Down -0.81% today vs yesterday close USD 568.43. No equity offering confirmation in morning search (no banks hired). Thesis intact. Midday MUST check META price FIRST — a 1.7% further decline fires the -12% cut rule.
+- MSFT at -9.82% (USD 384.34): Thin 2.18pp buffer. Down -1.54% today. Xbox restructuring memo is immaterial to Azure AI thesis. A 2.4% further decline fires the cut rule.
+- AMZN down -2.68% today (USD 235.04 vs USD 241.51 yesterday) — more significant intraday weakness than pre-market suggested. Buffer still comfortable at 6.76pp.
+- SpaceX IPO (SPCX) trading today — potential tech sector liquidity absorption confirmed as planned.
+- All theses intact per news check. No new invalidation events.
+
+### Performance vs SPY
+| Metric | Value |
+|---|---|
+| Aggro equity | USD 93,469.93 |
+| SPY intraday (at ~9:48 ET) | USD 735.58 |
+| Aggro since inception | -6.53% |
+| SPY since inception | -2.47% |
+| Alpha since inception | **-4.06pp** |
