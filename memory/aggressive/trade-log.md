@@ -788,3 +788,76 @@ MRVL: approved. [search: WebSearch fallback — MiniMax M3 not available]
 | MRVL | 25 | USD 293.77 | +0.16% | USD 240.31 (`a9097c8c`) | ✓ live — NEW | 11.84pp |
 
 No stops missing. No stops needing recreation. All 8 positions protected.
+
+---
+
+## 2026-06-15 — MIDDAY CHECK (~12:41 PM ET)
+
+**No trades executed.** Risk management only. All positions within guardrails.
+
+### Pre-run checks
+| Check | Result |
+|---|---|
+| Live-switch guard | ALPACA_BASE_URL contains "paper" ✓ |
+| Lock | Written for this run (expires 16:48:59Z) ✓ |
+| Control switch | STATUS: ACTIVE ✓ |
+| Market open | true (next close 4:00 PM ET) ✓ |
+
+### Account status
+| Field | Value |
+|---|---|
+| Equity | USD 97,007.87 |
+| Last equity (prev close June 12) | USD 94,031.31 |
+| Intraday change vs last_equity | **+3.17%** (shock threshold -6% — NOT triggered ✓) |
+| Cash | USD 6,553.25 (6.75%) |
+| Cash floor (2% min) | ✓ |
+| HWM | USD 101,144.73 |
+| Drawdown from HWM | **-4.09%** (circuit breaker 20% — NOT triggered ✓) |
+
+### Position review
+
+| Symbol | Entry | Current | P/L % | -12% Trigger | Buffer | Change vs Open | News | Action |
+|---|---|---|---|---|---|---|---|---|
+| NVDA | USD 213.60 | USD 212.09 | -0.71% | USD 187.97 | 11.29pp | +1.19% from open | Iran risk-on; SharonAI deal; thesis intact | No action |
+| META | USD 630.12 | USD 597.54 | **-5.17%** | USD 554.51 | **6.83pp** ✅ | +1.28% from open (↑ from 5.65pp at open) | +4.54% today; ex-div today USD 0.525/share; no offering confirmed; ad revenue +33% YoY thesis intact | No action — thesis intact |
+| AVGO | USD 406.23 | USD 392.53 | -3.37% | USD 357.48 | 8.63pp | -0.25% from open | Recovering with Iran risk-on; AI XPV Platform; USD 16B Q3 guide intact | No action |
+| MSFT | USD 426.21 | USD 400.56 | **-6.02%** | USD 375.06 | **5.98pp** ✅ | +0.78% from open (↑ from 5.25pp at open) | Wedbush PT USD 575; Citi catalyst watch; Azure +40%; EY USD 1B AI partnership | No action — thesis intact |
+| AMZN | USD 247.99 | USD 246.12 | -0.75% | USD 218.23 | 11.24pp | -0.49% from open | Minor drift; AWS +28%; Prime Day June 23-26 | No action |
+| VST | USD 151.47 | USD 153.62 | **+1.42%** ✅ | USD 133.29 | 13.42pp | +1.84% from open | Oil falling further on ceasefire; PPAs fixed-rate and insulated; Helix consortium | No action |
+| GOOGL | USD 370.22 | USD 370.80 | +0.16% ✅ | USD 325.79 | 12.16pp | +0.65% from open | GCP +63%; PT raised to USD 493.30; dividend paid today | No action |
+| MRVL | USD 293.29 | USD 300.60 | **+2.49%** ✅ | USD 258.09 | 14.49pp | +2.32% from open | Custom ASIC; Q1 FY2027 +28% YoY; Day 1 performing strongly | No action |
+
+**Cut rule check (>-12% from entry): NO positions triggered. MSFT most stressed at -6.02% (5.98pp buffer). All clear.**
+**Tighten-stop rule check (>+25% from entry): NO positions triggered. MRVL leads at +2.49%. All clear.**
+
+### News scan [search: WebSearch fallback — MiniMax M3 not available]
+- **META**: Up +4.54% today. No formal equity offering confirmed per June 15 search — still "pure speculation," no banks appointed. Ex-dividend date is today (USD 0.525/share × 23 = USD 12.08 paid). Buffer improved from 5.65pp (open) to 6.83pp (midday) — now comfortably above 4pp strategic threshold. Ad revenue +33% YoY thesis intact. Decision: HOLD. Invalidation NOT triggered.
+- **MSFT**: Up today (Wedbush PT USD 575; Citi USD 605 catalyst watch on Azure outlook). Azure +40% YoY; AI business >USD 37B annual run rate (+123% YoY); EY USD 1B AI partnership expanding Copilot adoption. Buffer improved from 5.25pp (open) to 5.98pp (midday). Decision: HOLD. Thesis intact.
+
+### Stop audit — 8/8 positions confirmed with live 18% trailing stops ✓
+
+| Symbol | Stop Order ID | Stop Price | HWM | Status |
+|---|---|---|---|---|
+| NVDA | `54d7d851` | USD 181.71 | USD 221.60 | ✓ live |
+| META | `11c3a1bf` | USD 526.75 | USD 642.38 | ✓ live |
+| AVGO | `36f5a45f` | USD 349.71 | USD 426.48 | ✓ live |
+| MSFT | `ef211767` | USD 350.56 | USD 427.51 | ✓ live |
+| AMZN | `b55bef05` | USD 205.35 | USD 250.43 | ✓ live |
+| VST | `5b347be3` | USD 126.89 | USD 154.74 (new HWM updating intraday) | ✓ live |
+| GOOGL | `e52a43f1` | USD 305.85 | USD 372.99 (new HWM updating intraday) | ✓ live |
+| MRVL | `a9097c8c` | USD 247.44 | USD 301.75 (new HWM updating intraday) | ✓ live |
+
+**No stops missing. No stops needing recreation.**
+
+### Performance vs SPY
+| Metric | Value |
+|---|---|
+| Aggro today (midday) | +3.17% (USD 94,031 → USD 97,008) |
+| SPY today (741.67 → 756.15 at midday) | +1.95% |
+| Today vs SPY | **+1.22pp** (OUTPERFORMING) |
+| Aggro since inception | **-2.99%** |
+| SPY since inception (754.18 → 756.15) | **+0.26%** |
+| Alpha since inception | **-3.25pp** (improved from -4.57pp at market-open) |
+
+### Result
+All 8 positions within guardrails. No trades. All 18% trailing stops active and audited. Iran ceasefire rally continuing to lift the book. META buffer expanded to 6.83pp (well above 4pp threshold). MSFT buffer at 5.98pp and improving. Three positions now in profit: MRVL +2.49%, VST +1.42%, GOOGL +0.16%. Aggro outperforming SPY today by 1.22pp — first midday outperformance this week.
