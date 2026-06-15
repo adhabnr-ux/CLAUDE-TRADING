@@ -3,26 +3,26 @@
 _Updated by every routine from live Alpaca data. The next agent trusts this as
 the last known state, but always re-fetches live data before trading._
 
-**Last updated:** 2026-06-15 12:32 ET (midday)
+**Last updated:** 2026-06-15 15:51 ET (EOD close)
 **Inception:** 2026-05-21 — starting equity $100,000.00 | SPY anchor price $739.44
 
-## Account (midday June 15, 2026 — live Alpaca data ~12:32 ET)
+## Account (EOD June 15, 2026 — live Alpaca data ~15:51 ET)
 
 | Metric | Value |
 |--------|-------|
-| Equity | $98,908.11 |
+| Equity | $98,897.57 |
 | Cash | $74,304.63 (75.1%) |
-| Long market value | $24,603.48 |
-| Buying power | ~$366,108 |
+| Long market value | $24,592.94 |
+| Buying power | ~$366,079 |
 | Last equity (June 12 close) | $98,648.01 |
 
-## Open positions (midday June 15, 2026 — live Alpaca data ~12:32 ET)
+## Open positions (EOD June 15, 2026 — live Alpaca data ~15:51 ET)
 
 | Symbol | Qty | Avg entry | Current price | Mkt value | Unrealized P/L | % of portfolio | Trailing Stop |
 |--------|-----|-----------|--------------|-----------|----------------|----------------|---------------|
-| LLY | 10 | $1,093.534 | $1,127.02 | $11,270.20 | +$334.86 (+3.06%) | 11.39% | d4147484 (7sh, HWM **$1,182.73**, stop **$1,064.457**) ✓; 25989fb5 (3sh, same) ✓ — buffer $62.56 (5.55%) ⭐ |
-| V | 22 | $323.57 | $326.04 | $7,172.88 | +$54.34 (+0.76%) | 7.25% | 66033918 (22sh, HWM **$326.29** ⬆️ RATCHETED, stop **$293.661** ⬆️) ✓ — buffer $32.38 (9.93%) |
-| VST | 40 | $148.81 | $154.01 | $6,160.40 | +$208.00 (+3.49%) | 6.23% | c4c200a5 (40sh, HWM **$154.74** ⬆️ RATCHETED, stop **$139.266** ⬆️) ✓ — buffer $14.74 (9.57%) ⭐⭐ HELIX |
+| LLY | 10 | $1,093.534 | $1,126.76 | $11,267.60 | +$332.26 (+3.04%) | 11.39% | d4147484 (7sh, HWM **$1,182.73**, stop **$1,064.457**) ✓; 25989fb5 (3sh, same) ✓ — buffer $62.30 (5.53%) ⭐ |
+| V | 22 | $323.57 | $324.18 | $7,131.96 | +$13.42 (+0.19%) | 7.21% | 66033918 (22sh, HWM **$326.435** ⬆️ RATCHETED, stop **$293.7915** ⬆️) ✓ — buffer $30.39 (9.37%) |
+| VST | 40 | $148.81 | $154.84 | $6,193.60 | +$241.20 (+4.05%) | 6.26% | c4c200a5 (40sh, HWM **$155.43** ⬆️ RATCHETED, stop **$139.887** ⬆️) ✓ — buffer $14.95 (9.66%) ⭐⭐ HELIX |
 | ~~META~~ | ~~15~~ | ~~$620.637~~ | — | — | **CLOSED -$639.56 (-6.87%) via trailing stop** | — | **FILLED** (4ea07e91) at $578.00 ~11:06 AM ET Jun 10 ✓ |
 | ~~NVDA~~ | ~~30~~ | ~~$216.302~~ | — | — | **CLOSED -$217.80 (-3.36%) via trailing stop** | — | **FILLED** (8c6b9680) at $209.042 ~11:20 AM ET Jun 5 ✓ |
 | ~~MSFT~~ | ~~20~~ | ~~$422.31~~ | — | — | **CLOSED -$58.94 (-0.70%) via trailing stop** | — | **FILLED** (a55a3db6) at $419.363 ~12:08 PM ET Jun 5 ✓ |
@@ -34,6 +34,7 @@ the last known state, but always re-fetches live data before trading._
 | Period | Bull | SPY | Difference |
 |--------|------|-----|------------|
 | Inception (2026-05-21) | $100,000.00 | $739.44 | — |
+| **Close (2026-06-15)** | **$98,897.57** | **$754.04 (close, +1.76% from Jun 12 close)** | **Bull TRAILS SPY ~3.07pp** |
 | **Midday (2026-06-15)** | **$98,908.11** | **$756.33 (~12:32 ET, +2.01% from Jun 12 close)** | **Bull TRAILS SPY ~3.37pp** |
 | **Open (2026-06-15)** | **$98,656.79** | **$753.29 (~09:37 ET, +1.57% from Jun 12 close)** | **Bull TRAILS SPY ~3.21pp** |
 | **Pre-mkt (2026-06-15)** | **$98,907.25** | **~$751.37 (pre-mkt, +1.31% from Jun 12)** | **Bull TRAILS SPY ~2.70pp** |
@@ -75,10 +76,57 @@ the last known state, but always re-fetches live data before trading._
 | **Open (2026-06-12)** | **$98,996.63** | **$739.08 (live ~09:36 ET)** | **~-0.95%** |
 | **Midday (2026-06-12)** | **$98,808.86** | **~$740.44 (live ~12:32 ET)** | **~-1.33%** |
 | **Close (2026-06-12)** | **$98,696.00** | **$741.02 (est. close)** | **-1.52%** |
-| **Since inception (2026-05-21)** | **-1.304%** | **+0.312% ($741.75 actual Jun 12 close)** | **Bull trails SPY ~1.62pp** |
+| **Since inception (2026-05-21)** | **-1.10%** | **+1.97% ($754.04 actual Jun 15 close)** | **Bull TRAILS SPY ~3.07pp** |
 | **Week 4 (Jun 8–12)** | **-0.22%** | **+0.58%** | **Bull lagged SPY 0.81pp** |
 
 ## Notes
+
+**Close June 15, 2026 — EOD summary (15:51 ET):**
+- **Market context:** US-Iran interim deal to reopen Strait of Hormuz drove S&P 500 +1.7% (Nasdaq +2.8%, Dow +1.1%). WTI oil fell 5% to ~$80/bbl. SpaceX (SPCX) +5% Day 2. Energy sector tumbled broadly, but VST outperformed +4.61% on Helix/nuclear thesis (non-correlated to oil price). Iran deal constructive for equities; slightly bearish for traditional energy but neutral-to-positive for nuclear. All three Bull positions: LLY −0.55% (sector rotation), V +0.55% (financials recovering), VST +4.61% (Helix thesis confirmed). Context is supportive for all three current theses.
+- **LLY** ⭐ $1,126.76 (+3.04% from entry). Intraday softness (−0.55%) = broad rotation from defensives to cyclicals on Iran deal; no LLY-specific negative catalyst. Medicare GLP-1 Bridge July 1 in 16 days. Stop buffer $62.30 (5.53%) ✓. HOLD.
+- **V** $324.18 (+0.19% from entry). Financials +0.55% intraday. Stop ratcheted to HWM $326.435 — protection improving. OpenAI/stablecoin thesis intact. Stop buffer $30.39 (9.37%) ✓. HOLD.
+- **VST** ⭐⭐ $154.84 (+4.05% from entry). Outstanding +4.61% day despite energy sector selloff — nuclear/Helix thesis is non-correlated to oil. Stop ratcheted: HWM $154.74 → $155.43, stop $139.266 → $139.887 ✓. Dividend ex-date June 22 in 7 days (USD 9.16 credit). Stop buffer $14.95 (9.66%) ✓. HOLD.
+- **FOMC gate:** No new positions before Wednesday June 18, 2 PM ET.
+
+**Since inception performance (EOD June 15):**
+- Bull: $100,000 → $98,897.57 = **−1.10%**
+- SPY: $739.44 → $754.04 = **+1.97%** (price only; ex-div $1.76 on June 18 not yet counted)
+- **Gap EOD June 15: Bull TRAILS SPY by ~3.07pp** (75% cash limits capture during SPY's +1.76% Iran-deal day)
+- Note: After June 18 SPY ex-div, SPY total return anchor adjusts by +0.238pp (SPY = $741.20 effective anchor). This will narrow the reported gap slightly.
+
+**Race scoreboard (EOD June 15):**
+- Bull: **−1.10%** (since May 21, USD 100K start)
+- AGGRO: **~−3.0% est** (midday $97,008 vs $100K inception June 4; last EOD June 12: −5.95%) — AGGRO recovered significantly on Iran deal risk-on
+- SPY vs Bull inception: **+1.97%** (since May 21)
+- Bull leads AGGRO by ~1.9pp (est.).
+
+**Trailing stop status (EOD June 15 — confirmed via Alpaca open orders ~15:51 ET):**
+- LLY (d4147484): 7sh — HWM **$1,182.73**, stop **$1,064.457** ✓ (buffer $62.30 = 5.53%)
+- LLY (25989fb5): 3sh — HWM **$1,182.73**, stop **$1,064.457** ✓
+- V (66033918): 22sh — HWM **$326.435** ⬆️ RATCHETED (from $326.29 midday), stop **$293.7915** ⬆️ ✓ (buffer $30.39 = 9.37%)
+- VST (c4c200a5): 40sh — HWM **$155.43** ⬆️ RATCHETED (from $154.74 midday), stop **$139.887** ⬆️ ✓ (buffer $14.95 = 9.66%)
+
+**Sector exposure (EOD June 15):**
+- Healthcare (LLY): $11,267.60 = 11.39%
+- Financials (V): $7,131.96 = 7.21%
+- Energy/Utilities (VST): $6,193.60 = 6.26%
+- Cash: $74,304.63 = 75.14%
+- No sector above 60% cap ✓
+
+**Week of June 15 — new position slots:**
+- **Slot 1:** OPEN — FOMC gate through Wednesday June 18 2 PM ET → then: LRCX if ATR ≤3%
+- **Slot 2:** OPEN — post-FOMC: NVDA if basing above $205
+- **Slot 3:** OPEN — post-FOMC: PWR (Quanta Services) research
+
+**Upcoming catalysts:**
+- **FOMC June 16–17, announcement June 18 2 PM ET** — hard gate on new positions; dot plot key
+- **SPY dividend ex-date June 18** ($1.76/sh — add to benchmark total-return anchor post-June 18: $739.44 + $1.76 = $741.20 adjusted anchor)
+- **VST dividend ex-date June 22** (USD 9.16 credit for 40sh — 7 days)
+- **LLY Medicare GLP-1 Bridge effective July 1** (16 days — thesis review_by date)
+- **VST thesis review_by July 7** (22 days)
+- **V Q3 FY26 earnings July 28** (43 days — thesis review_by date)
+
+---
 
 **Midday June 15, 2026 (~12:32 ET):**
 - **Market context:** SPY $756.33 mid-session (vs $741.67 Jun 12 close = +1.97% today; +2.28% since inception). Broad risk-on continues ahead of FOMC. FOMC gate remains active: no new positions before Wednesday June 18, 2 PM ET.

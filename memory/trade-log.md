@@ -3,6 +3,97 @@
 _Every order placed, with its reasoning. Append-only — newest entries at the top.
 The weekly new-position count is derived from this log._
 
+## 2026-06-15 15:51 ET — CLOSE — EOD journal
+
+- **Action:** No trades. End-of-day P/L check, stop audit, exit reconciliation, journal.
+- **Market status:** `is_open: true` ✓ (confirmed via clock — next close 16:00 ET June 15; NOT a half-day — normal session ✓)
+- **Account:** Equity $98,897.57 | Cash $74,304.63 (75.1%) | Long market value $24,592.94
+
+### Live-switch guard
+- `ALPACA_BASE_URL` contains "paper" ✓ — paper trading confirmed.
+
+### Half-day check
+- Next close: 16:00 ET (normal session). NOT a half-day. ✓
+
+### Shock check
+- Equity $98,897.57 vs last_equity $98,648.01 = **+$249.56 = +0.253%** — POSITIVE. No shock day. ✓
+
+### Drawdown circuit breaker
+- HWM $101,384.21 (from equity history); current $98,897.57 = **−2.45%** — within −10% limit. ✓ Not triggered. Not within 2% of the −10% trigger. ✓
+
+### Position review (EOD ~15:51 ET — live Alpaca data)
+
+**LLY** ($1,126.76, **+3.04% from avg entry $1,093.534**, **−0.55% intraday** vs $1,133 lastday) ⭐ STRONG
+- Both trailing stops (d4147484 7sh, 25989fb5 3sh): HWM **$1,182.73**, stop **$1,064.457** — status "new" ✓
+- Stop buffer: $1,126.76 − $1,064.457 = **$62.30 (5.53%)** ✓ Adequate.
+- −7% cut threshold: $1,016.99 — CLEAR by $109.77. Medicare GLP-1 Bridge July 1 in 16 days. Thesis STRONGEST. HOLD.
+- Intraday softness (−0.55%) = broad market rotation to cyclicals/energy on Iran deal; no LLY-specific negative catalyst.
+
+**V** ($324.18, **+0.19% from avg entry $323.57**, **+0.55% intraday** vs $322.39 lastday) ✓ INTACT
+- Trailing stop 66033918: HWM **$326.435** ⬆️ (ratcheted further from $326.29 midday), stop **$293.7915** ⬆️ — status "new" ✓
+- Stop buffer: $324.18 − $293.7915 = **$30.39 (9.37%)** ✓ Healthy.
+- −7% cut threshold: $300.92 — CLEAR by $23.26. OpenAI/stablecoin thesis intact. HOLD.
+- Stop ratcheted to new HWM $326.435 intraday — protection continuing to improve. ✓
+
+**VST** ($154.84, **+4.05% from avg entry $148.81**, **+4.61% intraday** vs $148.02 lastday) ⭐⭐ HELIX — STRONG
+- Trailing stop c4c200a5: HWM **$155.43** ⬆️ (ratcheted further from $154.74 midday), stop **$139.887** ⬆️ — status "new" ✓
+- Stop buffer: $154.84 − $139.887 = **$14.95 (9.66%)** ✓ Strong — near-full 10% trailing protection.
+- −7% cut threshold: $138.39 — CLEAR by $16.45. No action.
+- VST +4.61% today despite energy sector tumble (WTI fell 5% to ~$80/bbl on Iran/US deal). Nuclear/Helix thesis proving non-correlated to oil. Exceptional relative performance. HOLD.
+
+### Stop audit (EOD June 15 — confirmed via Alpaca open orders endpoint)
+| Order ID | Symbol | Qty | HWM | Stop | Status |
+|----------|--------|-----|-----|------|--------|
+| d4147484 | LLY | 7sh | $1,182.73 | $1,064.457 | ✓ new |
+| 25989fb5 | LLY | 3sh | $1,182.73 | $1,064.457 | ✓ new |
+| 66033918 | V | 22sh | **$326.435** ⬆️ | **$293.7915** ⬆️ | ✓ new — RATCHETED (from $326.29 midday) |
+| c4c200a5 | VST | 40sh | **$155.43** ⬆️ | **$139.887** ⬆️ | ✓ new — RATCHETED (from $154.74 midday) |
+
+No orphaned stops. No missing stops. Stop audit: **4/4 PASS ✓**
+
+### Exit reconciliation
+No trailing stops filled today. All 3 positions (LLY, V, VST) held through EOD. Last exit: META June 10 via trailing stop at $578.00 — already in closed-trades.md ✓. Ledger current. ✓
+
+### Guardrail checks (EOD June 15)
+
+| Check | Value | Limit | Status |
+|-------|-------|-------|--------|
+| LLY above −7% cut threshold | +3.04% from entry | −7% | ✓ Clear by $109.77 |
+| V above −7% cut threshold | +0.19% from entry | −7% | ✓ Clear by $23.26 |
+| VST above −7% cut threshold | +4.05%, $154.84 > $138.39 | −7% | ✓ Clear by $16.45 |
+| Intraday shock (vs last_equity $98,648.01) | +$249.56 = +0.253% | <−4% | ✓ Positive |
+| Drawdown circuit breaker | $98,897 vs HWM $101,384 = −2.45% | <−10% | ✓ |
+| Cash | $74,304.63 (75.1%) | ≥5% | ✓ Ample |
+| All trailing stops active | 4/4 confirmed | required | ✓ |
+| Sector caps | Healthcare 11.39%, Financials 7.21%, Energy 6.26%, Cash 75.1% | <60% each | ✓ |
+| FOMC gate | No new positions before Jun 18 2 PM ET | — | ⚠️ ACTIVE |
+
+### Market context (June 15, 2026)
+US-Iran interim deal to reopen the Strait of Hormuz drove S&P 500 +1.7% (Nasdaq +2.8%, Dow +1.1%). WTI oil fell 5% to ~$80/bbl on easing geopolitical risk. SpaceX (SPCX) +5% on Day 2 of trading. Energy sector tumbled broadly, but VST outperformed +4.61% — nuclear 24/7 reliability thesis proving non-correlated to oil. Iran deal is net constructive for VST (oil decline reduces alternatives competition narrative but nuclear baseload advantage intact). Supports Bull's current position theses (LLY, V, VST all non-correlated to oil price).
+
+### Performance (EOD June 15)
+- **Equity:** $98,897.57 (vs last_equity $98,648.01 = +$249.56 today = **+0.253%**)
+- **Today P/L breakdown:** LLY −$62.40 (−0.55%), V +$39.38 (+0.55%), VST +$272.80 (+4.61%) = net **+$249.78** (≈ matches Alpaca ✓)
+- **Unrealized P/L:** LLY +$332.26 (+3.04%), V +$13.42 (+0.19%), VST +$241.20 (+4.05%) = net **+$586.88**
+- **Cash:** $74,304.63 (75.1%) | Long market value: $24,592.94
+- **SPY today (June 15 close):** $754.04 (vs $741.02 June 12 close = +1.757% today)
+- **Bull today vs SPY today:** +0.25% vs +1.76% = −1.51pp today (75% cash drag — expected; all gains concentrated in VST +4.61%)
+- **Since inception (2026-05-21):** Bull **−1.10%** ($100,000 → $98,897.57) vs SPY **+1.97%** ($754.04) = **Bull TRAILS SPY by ~3.07pp**
+- Note: Gap widened from −1.52pp (EOD Jun 12) to −3.07pp today as SPY rallied +1.76% intraday on Iran deal. 75% cash limits capture. Gap expected to narrow as FOMC passes and slots are deployed post-Wednesday.
+
+### Race scoreboard (EOD June 15)
+- Bull: **−1.10%** (since May 21, USD 100K start)
+- AGGRO: **~−3.0% est** (midday June 15 equity ~$97,008 vs $100K inception June 4; last known EOD June 12: −5.95%)
+- SPY vs Bull inception: **+1.97%** (since May 21, $739.44 anchor)
+- Bull leads AGGRO by ~1.9pp (est.). AGGRO recovered strongly today on Iran deal + risk-on tech rally.
+
+### Notes
+- Clean EOD. All 3 positions held, all theses intact, stop audit 4/4 perfect. Both V and VST trailing stops ratcheted to new HWMs during session — protection compounding. VST the standout today (+4.61%) defying broader energy sector weakness, confirming the Helix/nuclear story is non-correlated to oil price.
+- FOMC gate remains active: no new positions before Wednesday June 18, 2 PM ET. After FOMC, deploy slots in order: (1) LRCX if ATR ≤3%; (2) NVDA if basing above $205; (3) PWR (Quanta).
+- SPY ex-dividend June 18 ($1.76/sh): after Wednesday, update SPY total-return anchor to $741.20 (= $739.44 + $1.76) for accurate benchmarking.
+
+---
+
 ## 2026-06-15 12:32 ET — MIDDAY CHECK (no action; all positions within range; stop audit 4/4; V and VST stops ratcheted ⬆️)
 
 - **Action:** No trades. All positions within guardrail thresholds. No cuts, no stop tightening (both V and VST trailing stops auto-ratcheted to new HWMs intraday). FOMC gate active.
