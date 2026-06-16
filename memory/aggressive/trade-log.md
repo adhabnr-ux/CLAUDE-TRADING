@@ -981,4 +981,83 @@ No planned trades → formal gate N/A. Quick thesis check on most-stressed posit
 - **AVGO -1.52% intraday** (USD 387.97 vs USD 393.94) — soft session; AI guide USD 16B Q3 intact; buffer 7.50pp comfortable.
 - NVDA -1.23% intraday; GOOGL -0.39% — minor moves, FOMC-related growth multiple compression.
 
+---
+
+## 2026-06-16 — MIDDAY CHECK (~12:41 PM ET)
+
+**No trades executed.** Risk management only. All positions within guardrails.
+
+### Pre-run checks
+| Check | Result |
+|---|---|
+| Live-switch guard | ALPACA_BASE_URL contains "paper" ✓ |
+| Lock | Written for this run ✓ |
+| Control switch | STATUS: ACTIVE ✓ |
+| Market open | true (next close 4:00 PM ET) ✓ |
+
+### Account status
+| Field | Value |
+|---|---|
+| Equity | USD 96,060.12 |
+| Last equity (prev close June 15) | USD 97,144.23 |
+| Intraday change vs last_equity | **-1.115%** (shock threshold -6% — NOT triggered ✓) |
+| Cash | USD 6,553.24 (6.82%) |
+| Cash floor (2% min) | ✓ |
+| HWM | USD 101,144.73 |
+| Drawdown from HWM | **-5.03%** (circuit breaker 20% — NOT triggered ✓) |
+
+### Position review
+
+| Symbol | Entry | Current | P/L % | -12% Trigger | Buffer | Change today | Action |
+|---|---|---|---|---|---|---|---|
+| NVDA | USD 213.60 | USD 208.72 | -2.285% | USD 187.97 | 9.715pp | -1.756% | No action |
+| META | USD 630.12 | USD 596.745 | **-5.297%** | USD 554.51 | **6.703pp** ✅ | +0.550% | No action — thesis intact |
+| AVGO | USD 406.23 | USD 378.40 | **-6.851%** | USD 357.48 | **5.149pp ⚠️** | -3.945% | No action — thesis intact |
+| MSFT | USD 426.21 | USD 392.09 | **-8.005%** | USD 375.06 | **3.995pp ⚠️** | -1.919% | No action — thesis intact |
+| AMZN | USD 247.99 | USD 246.97 | -0.412% | USD 218.23 | 11.588pp | +0.386% | No action |
+| VST | USD 151.47 | USD 159.635 | **+5.391% ✅** | USD 133.29 | 17.391pp | +3.983% | No action |
+| GOOGL | USD 370.22 | USD 371.745 | +0.412% ✅ | USD 325.79 | 12.412pp | +0.648% | No action |
+| MRVL | USD 293.29 | USD 291.69 | -0.544% | USD 258.09 | 11.456pp | -5.565% | No action |
+
+**Cut rule check (>-12% from entry): NO positions triggered. MSFT most stressed at -8.005% (3.995pp buffer). All clear.**
+**Tighten-stop rule check (>+25% from entry): NO positions triggered. VST leads at +5.391%. All clear.**
+
+### Intraday shock check
+- Equity USD 96,060.12 vs last_equity USD 97,144.23
+- Intraday change: -1.115% (threshold -6% — NOT triggered ✓)
+
+### News scan [search: WebSearch fallback — MiniMax M3 not available]
+
+- **AVGO (-6.851% from entry, -3.945% today):** No new thesis-breaking news. FOMC-day growth-multiple compression dragging semis broadly. USD 35B AI XPV Platform and USD 2.5B tender offer (balance sheet management, positive) unchanged. Analyst avg target ~USD 520. Decision: HOLD. Thesis intact.
+- **MSFT (-8.005% from entry, -1.919% today):** Shareholder lawsuit claiming MSFT "hid slowing Azure cloud growth" — NUISANCE LITIGATION. Azure +40% YoY is a confirmed fact (10-K filing). Compulsion Games (Xbox studio) closure is completely immaterial to the Azure/AI enterprise thesis. Analyst avg target USD 561.39 (Strong Buy, 53 analysts). Decision: HOLD. Thesis intact. Invalidation NOT triggered.
+- **META (-5.297% from entry, +0.550% today):** Arete Research upgraded META to Buy (from Neutral), raised PT to USD 735 (from USD 614) — thesis-positive. No equity offering formally confirmed. Ad revenue +33% YoY intact. Buffer 6.703pp — comfortable above 4pp safe zone. Decision: HOLD. Thesis intact.
+- **MRVL (-0.544% from entry, -5.565% today):** Sharp reversal from yesterday's S&P 500 inclusion rally. Still well within range from entry (-0.544%); the -5.565% is purely an intraday reversal, not a thesis break. S&P 500 inclusion June 22 catalyst intact. FY2028 revenue outlook raised to USD 16.5B. Decision: HOLD.
+
+### Stop audit — 8/8 positions confirmed with live 18% trailing stops ✓
+
+| Symbol | Stop Order ID | HWM | Stop Price | Status |
+|---|---|---|---|---|
+| NVDA | `54d7d851` | USD 221.60 | USD 181.712 | ✓ live |
+| META | `11c3a1bf` | USD 642.38 | USD 526.7516 | ✓ live |
+| AVGO | `36f5a45f` | USD 426.48 | USD 349.7136 | ✓ live |
+| MSFT | `ef211767` | USD 427.51 | USD 350.5582 | ✓ live |
+| AMZN | `b55bef05` | USD 250.43 | USD 205.3526 | ✓ live |
+| VST | `5b347be3` | USD 160.2599 (new ATH ✅) | USD 131.4131 | ✓ live — stop ratcheting |
+| GOOGL | `e52a43f1` | USD 375.77 (new ATH ✅) | USD 308.1314 | ✓ live — stop ratcheting |
+| MRVL | `a9097c8c` | USD 316.99 | USD 259.9318 | ✓ live |
+
+**No stops missing. No stops needing recreation.**
+
+### Performance vs SPY
+| Metric | Value |
+|---|---|
+| Aggro midday | USD 96,060.12 |
+| SPY midday (latest trade) | USD 753.07 |
+| Aggro since inception | **-3.940%** |
+| SPY since inception (754.18 → 753.07) | **-0.147%** |
+| Alpha since inception | **-3.793pp** |
+| Today: Aggro -1.115% vs SPY -0.223% | **-0.892pp today** |
+
+### Result
+All 8 positions within guardrails. No trades. All 18% trailing stops active and audited. FOMC-day softness driving broad AI-tech weakness (AVGO -3.945%, MRVL -5.565% intraday). MSFT at 3.995pp from cut threshold (watchpoint; FOMC uncertainty compression, not thesis break). VST and GOOGL new all-time HWMs; VST +5.39% from entry. FOMC hold decision tomorrow June 17 — hold all positions.
 
