@@ -1840,3 +1840,245 @@ Strong post-FOMC recovery day. MRVL +11.79% intraday — S&P 500 mandatory index
 | META review_by (thesis contract renewal) | June 24 | Medium |
 
 **No planned trades for market-open June 22.** (Monday — pre-market will assess AMZN thesis contract, which is the top priority.)
+
+---
+
+## 2026-06-19 — AGGRO PRE-MARKET (JUNETEENTH HOLIDAY — MARKET CLOSED — PLANNING FOR JUNE 22)
+[search: WebSearch fallback — MiniMax M3 not available]
+
+Today is June 19, 2026 — Juneteenth federal holiday. US equity markets CLOSED. No trading possible. This run plans for Monday June 22 open and performs the Week 3 weekly review (deferred from Friday June 19 due to holiday).
+
+---
+
+### Market posture (June 22 outlook)
+[search: WebSearch fallback]
+
+- **Post-FOMC recovery continues.** S&P 500 modestly higher WoW after the FOMC-induced June 17 sell-off. Dip buyers re-entered on June 18. NDX +1.32% and S&P +0.87% on June 18.
+- **FOMC (June 17):** Chair Warsh held rates at 3.50–3.75% as expected. Hawkish surprise in dot plot: 9/18 members project rate hike(s) in 2026. 6 of 9 see two or more 25bp hikes. No cuts this year. Higher-for-longer reinforced.
+- **Market breadth:** SPX breadth ~61% — muted but not deteriorating. Risk-on sentiment intact given AI earnings trajectory.
+- **Sector tone:** Technology semis and hyperscalers leading the dip-buying recovery. AI capex narrative dominant ($190–200B/year from each big-4 hyperscaler).
+- **Monday setup:** Tape constructive heading into June 22. MRVL S&P 500 inclusion effective at open (forced index buying complete by June 19 close; post-inclusion behavior TBD). AVGO and VST ex-div at open (both owned ahead of ex-date, dividends captured). Market reopens Monday with no major macro catalysts until late July earnings.
+
+---
+
+### Week 3 weekly review (deferred from June 19 holiday — performed inline)
+
+**Week 3 dates: June 16–19, 2026 (Juneteenth — market closed June 19)**
+
+| Metric | Week 3 Value |
+|---|---|
+| Equity — start of week (June 16 EOD / last_equity ref) | USD 95,599.15 |
+| Equity — end of week (June 18 EOD) | USD 96,864.56 |
+| Week 3 Aggro return | **+1.323%** |
+| SPY — start of week (June 16 close) | USD 750.33 |
+| SPY — end of week (June 18 close) | USD 746.74 |
+| Week 3 SPY return | **-0.479%** |
+| Week 3 alpha | **+1.802pp — OUTPERFORMED SPY this week** |
+| Aggro since inception | **(97,006.60 − 100,000) / 100,000 = -2.993%** |
+| SPY since inception (754.18 → 746.74) | **-0.987%** |
+| Alpha since inception | **-2.006pp** (improved from -3.601pp at June 17 EOD — single best recovery week) |
+
+**Week 3 self-grade: B**
+- GOOD: Proactive trim heuristic executed cleanly on June 18 (MSFT 28→21sh, META 23→17sh). Both trims were right-sized risk management, not panic exits.
+- GOOD: MRVL S&P 500 inclusion play worked perfectly — entered June 15 at $293.29, +6.18% by EOD June 18.
+- GOOD: AVGO captured ex-div before June 22 (bought well ahead); VST also captures ex-div June 22.
+- GOOD: Alpha recovered 1.595pp WoW (from -3.601pp to -2.006pp) — best weekly alpha performance since inception.
+- CONCERN: MSFT at 1.181pp buffer from -12% midday cut rule. Gap-down risk over 3-day weekend is real. Monday open is binary.
+- CONCERN: META at 3.516pp buffer; equity sale rumors add new risk factor not in original invalidation.
+- NO TRADES LOST THIS WEEK: No positions stopped out or midday-cut.
+
+**Strategy adjustments for Week 4:**
+1. MSFT: Proactive trim 25% at June 22 open. Hard exit all if opens ≤ USD 375.065. C-rating, first Monday with this rating.
+2. AMZN: Mandatory review_by decision June 22 — renewing to July 15 (thesis intact).
+3. Post-trim: Cash rises to ~14.9%. No new buys until MSFT situation resolved; semi group at ~45.7% near 50% cap.
+4. MRVL post-inclusion watch: position enters "normal hold" phase — no longer an event-driven trade. Trailing stop protects. A-rated.
+5. Focus: Let winners run (NVDA, AVGO, VST, MRVL), manage stressed positions (MSFT, META), rebuild alpha.
+
+---
+
+### Position research — what changed since June 18 EOD
+[search: WebSearch fallback — each position scanned]
+
+**NVDA (103 shares, entry USD 213.60, EOD price USD 210.13, -1.625%):**
+- NVDA completed USD 25B multi-tranche debt offering on June 18 — largest in company history. Management confidence signal.
+- Q1 FY27 results (May 20): Revenue USD 81.615B (+85% YoY), Data Center USD 75.246B (+92%), Networking +199%.
+- SK Hynix multiyear memory partnership for AI factories announced.
+- TSMC bringing AI into fabs — NVDA-TSMC collaboration deepening.
+- NVDA Annual Meeting June 24 (informational only, not an earnings event).
+- **What changed:** Debt offering and partnerships reinforce AI GPU moat. No thesis change. Fundamentals dominant.
+- **Thesis check:** INTACT — GPU dominance, $91B Q2 guide, no hyperscaler defections. [search: WebSearch fallback]
+
+**AVGO (34 shares, entry USD 406.23, EOD price USD 410.81, +1.127%):**
+- Broadcom Q2 FY2026: 6th consecutive double beat — 48% YoY total revenue growth, AI semi +143% YoY.
+- JPMorgan: "Investors would be aggressive buyers at current levels" — 54% upside thesis.
+- Ex-dividend June 22 confirmed: USD 0.65/share × 34 shares = USD 22.10. Captured (owned before ex-date).
+- Next earnings: September 3, 2026 — no earnings window issue.
+- **What changed:** Post-earnings rally continuing. JPMorgan high-conviction reaffirmation. Ex-div capture confirmed. [search: WebSearch fallback]
+- **Thesis check:** INTACT — AI semi +143%, USD 16B Q3 guide. A-rated.
+
+**META (17 shares, entry USD 630.12, EOD price USD 576.66, -8.484%, buffer 3.516pp):**
+- Financial Times report: Meta is CONSIDERING equity offering to fund AI build-out. Not confirmed.
+- Context: Llama 4 Behemoth delayed; Scale AI USD 14B acquihire (Wang = Chief AI Officer); large capex USD 145B.
+- Existing META dividend USD 0.525/share, ex-date June 15 — ALREADY CAPTURED.
+- Analyst consensus: strong fundamentals (Q1 revenue USD 56.3B, operating income USD 22.8B); 17x 2026E P/E.
+- Section 230 risk remains watchpoint (June 17 ruling — no enforcement yet).
+- **What changed:** Equity offering RUMOR (not confirmed) is the key new development. This does NOT trigger invalidation (invalidation requires BOTH confirmed offering AND monetization downgrade). Buffer remains tight at 3.516pp. [search: WebSearch fallback]
+- **Thesis check:** INTACT BUT STRESSED. Ad revenue +33% YoY unchanged. No monetization downgrade. Offering rumor = risk factor, not thesis break. B-rated. Review_by June 24.
+
+**MSFT (21 shares, entry USD 426.21, EOD price USD 380.10, -10.819%, buffer 1.181pp):**
+- MSFT traded range USD 373.28–USD 381.37 on June 19 (holiday — data may reflect pre-market or futures indication, not a regular session).
+- Azure +40% YoY confirmed. Q3 FY2026 record: total revenue USD 82.9B (+18% YoY), Cloud USD 54B (+29%). All AI fundamental metrics intact.
+- Analyst consensus (56 analysts): Strong Buy. Average 12-month target USD 561.39 (+49.6% upside).
+- Near-term catalyst expectation: stockinvest.us projecting "modest upward momentum June 23." Unverified, low-weight source.
+- **What changed:** No fundamental change. Gap risk over 3-day Juneteenth weekend is the primary concern. USD 373.28 low indication (if accurate) would represent -12.4% from entry — triggering the midday cut rule. Monday open price is the key data point. [search: WebSearch fallback]
+- **Thesis check:** INTACT — Azure +40%, record revenue. BUT 1.181pp buffer means a USD 4.55 gap-down fires the -12% midday cut rule. Proactive trim heuristic triggered. C-rated. MSFT is C-rated for the FIRST Monday (June 22). If C next Monday (June 29) → auto-trim 50%.
+
+**MRVL (25 shares, entry USD 293.29, EOD price USD 311.40, +6.177%):**
+- S&P 500 inclusion effective June 22 — CONFIRMED. All index-tracking funds must hold MRVL before market open June 22. Forced buying window (June 17–19) complete.
+- B. Riley raised price target to USD 345 (from USD 240). AI momentum + index inclusion.
+- New CFO Dan Durn (former Adobe CFO) started June 15 — executive upgrade signal.
+- "Post-inclusion sell-the-news" risk: possible short-term pullback once forced buying ends. Trailing stop at USD 270.50 protects.
+- Next earnings: August 20, 2026.
+- **What changed:** Inclusion confirmed effective. Custom silicon AI thesis remains strong independently of index mechanics. [search: WebSearch fallback]
+- **Thesis check:** INTACT. Hold. A-rated. Post-inclusion, the name transitions from event-driven to AI-thesis hold.
+
+**AMZN (36 shares, entry USD 247.99, EOD price USD 244.17, -1.541%):**
+- MANDATORY review_by = June 22. THIS IS THE DECISION.
+- AWS demand accelerating (Q1 results: cloud demand strong, capacity constraints easing).
+- Prime Day June 23–26 is a near-term positive retail catalyst.
+- FTC antitrust lawsuit: REPORTS of impending filing. Not filed as of June 19. Not a thesis break until filed and specific AWS remedies are demanded.
+- EU cloud procurement review: background regulatory noise, not imminent.
+- BofA "Buy" rating with USD 310 price target (vs current ~USD 244 = 27% upside).
+- Next earnings: Q2 report likely late July/August 2026.
+- **Decision: HOLD. Renew review_by to 2026-07-15.** AWS growth thesis intact. FTC risk is real but indeterminate; review_by July 15 comes before Q2 earnings, at which point AWS growth rate and regulatory update will guide next decision. [search: WebSearch fallback]
+- **Thesis check:** INTACT. A-rated. Review renewed to July 15.
+
+**GOOGL (16 shares, entry USD 370.22, EOD price USD 367.20, -0.816%):**
+- Alphabet completed USD 84.75B equity offering in June 2026 — signals massive AI investment commitment. This was announced June 1 (before our entry ~June 11); priced in.
+- Q1 2026 EPS USD 5.17 (vs USD 2.84 YoY) — strong profitability.
+- GCP AI growth strong (cloud + TPU demand); cheapest hyperscaler on P/E.
+- Dividend increased (ex-date June 8, payment June 15 — captured pre-entry or not; entry was ~June 11 so dividend not captured).
+- Next earnings: Q2 report likely July 29, 2026.
+- **What changed:** Equity offering clarifies capital allocation — AI infrastructure long-term commitment. GCP AI growth intact. [search: WebSearch fallback]
+- **Thesis check:** INTACT. A-rated. Review_by June 25 → renewing to July 15.
+
+**VST (52 shares, entry USD 151.47, EOD price USD 162.35, +7.183%):**
+- Ex-dividend June 22 confirmed: USD 0.229/share × 52 shares = USD 11.91. Captured (owned before ex-date).
+- Q1 2026 results reported — Vistra declared quarterly dividend. Series B preferred paid June 15. Series C preferred payable July 15.
+- Nuclear PPA thesis: Helix consortium (nuclear power PPAs with hyperscalers) intact. AI power crunch driving demand.
+- HWM: USD 170.33 (trailing stop at USD 139.67 — 19.183pp buffer).
+- Next earnings: August 6, 2026.
+- **What changed:** Ex-div confirmed captured. Position at multi-week high. [search: WebSearch fallback]
+- **Thesis check:** INTACT. A-rated.
+
+---
+
+### Earnings window check (June 22 + 2 trading days = June 22, 23, 24)
+| Symbol | Next Earnings | Days Away | Window OK? |
+|---|---|---|---|
+| NVDA | August 26, 2026 | ~47 trading days | ✓ |
+| AVGO | September 3, 2026 | ~51 trading days | ✓ |
+| META | ~July 29, 2026 | ~27 trading days | ✓ |
+| MSFT | ~July 23, 2026 | ~22 trading days | ✓ |
+| MRVL | August 20, 2026 | ~42 trading days | ✓ |
+| AMZN | ~Late July, 2026 | ~27+ trading days | ✓ |
+| GOOGL | ~July 29, 2026 | ~27 trading days | ✓ |
+| VST | August 6, 2026 | ~33 trading days | ✓ |
+
+**No held position has earnings within 2 trading days of June 22. Earnings window check: ALL CLEAR.**
+
+---
+
+### Thesis contract reviews (2026-06-19)
+| Symbol | Invalidation | Review By | Status | Decision |
+|---|---|---|---|---|
+| NVDA | NVDA loses major hyperscaler OR Q2 FY2027 guide <USD 80B | 2026-06-25 | ✓ INTACT — USD 25B debt offering, Q1 +85% YoY. -1.625%; 10.375pp | HOLD A. Renew to 2026-07-15. |
+| AVGO | AI rev guide <USD 12B OR Q3 total rev miss >10% | 2026-06-25 | ✓ INTACT — AI +143%, Q3 guide USD 16B, JPM 54% upside. +1.127%; 13.127pp | HOLD A. Renew to 2026-07-15. |
+| META | Formal equity offering + monetization downgrade; OR Section 230 restricts ad-targeting | 2026-06-24 | ⚠️ STRESSED — offering RUMORED (not confirmed). Buffer 3.516pp. | HOLD B. Maintain June 24 review_by. |
+| MRVL | Loses hyperscaler chip program OR rev growth <15% | 2026-06-29 | ✓ INTACT — S&P 500 inclusion complete; B. Riley USD 345 PT. +6.177% | HOLD A. Maintain June 29 review_by. |
+| MSFT | Azure <30% YoY OR Copilot explicitly underperforming | 2026-06-25 | 🚨 STRESSED — buffer 1.181pp; Azure intact; gap-down risk | CONDITIONAL TRIM C: sell 5 of 21 if open >USD 375.065; EXIT ALL 21 if opens ≤USD 375.065 |
+| AMZN | AWS <20% YoY OR Trainium fails hyperscaler traction | 2026-06-22 | ✓ INTACT — AWS accelerating; -1.541%; buffer 10.459pp | HOLD A. **RENEW review_by to 2026-07-15.** |
+| GOOGL | GCP <40% YoY OR AI investment plan cut | 2026-06-25 | ✓ INTACT — USD 84.75B equity raise, AI commitment confirmed. -0.816% | HOLD A. **RENEW review_by to 2026-07-15.** |
+| VST | PPAs cancelled/renegotiated OR material regulatory action | 2026-07-15 | ✓ INTACT — nuclear PPA intact; ex-div June 22 captured; +7.183% | HOLD A. Maintain July 15 review_by. |
+
+---
+
+### Monday June 22 conviction re-rating
+| Symbol | Rating | Reasoning |
+|---|---|---|
+| NVDA | **A** | USD 25B debt offering = management confidence; Q1 +85% YoY; AI GPU dominance; thesis unchanged |
+| AVGO | **A** | AI semi +143%; JPMorgan 54% upside; ex-div captured; Q3 guide USD 16B; above entry |
+| MRVL | **A** | S&P 500 inclusion complete; B. Riley USD 345 PT; new CFO; AI custom silicon intact; +6.177% |
+| VST | **A** | Nuclear PPA intact; +7.183%; HWM USD 170.33; ex-div June 22 captured; long runway |
+| AMZN | **A** | AWS accelerating; Prime Day June 23–26 catalyst; FTC indeterminate; thesis renewed July 15 |
+| GOOGL | **A** | USD 84.75B equity raise signals AI commitment; GCP growing; cheapest hyperscaler P/E; thesis renewed |
+| META | **B** | Ad +33% intact; equity sale RUMORED (not confirmed); buffer 3.516pp; review_by June 24 close |
+| MSFT | **C** | Azure +40% intact fundamentally; 1.181pp buffer = binary risk from any gap-down; 2nd C-rating session (1st Monday) |
+
+**C-rating note:** MSFT is C-rated for the first Monday (June 22). Per AGGRO rules: "a C-rated position for 2 consecutive Mondays gets trimmed by half." This is the FIRST Monday with C-rating — no automatic trim yet. However, the independent proactive trim heuristic fires (see decision above). If MSFT remains C-rated on Monday June 29, an ADDITIONAL 50% trim of remaining shares is required.
+
+---
+
+### Deployment check (June 19 / planning for June 22)
+| Metric | Value | Status |
+|---|---|---|
+| Equity (live Alpaca June 19) | USD 97,006.60 | — |
+| Cash | USD 12,573.47 (12.98%) | ✓ Above 2% floor |
+| Long market value | USD 84,433.13 (87.0% invested) | ✓ Within target |
+| Post-MSFT-trim cash estimate | ~USD 14,468 (14.9%) | Still above 2% floor |
+| Semi group (NVDA+AVGO+MRVL) | ~USD 43,396 / ~44.8% | ⚠️ Near 50% cap — no new semi buys |
+| Cash >20%? (deploy threshold) | 12.98% — NO | No forced deployment |
+| Week 4 new positions used | 0/8 | Capacity available |
+
+**Decision: NO NEW BUYS on June 22.** Three reasons: (1) Managing MSFT is top priority — binary open. (2) Semi group at 44.8% is close to 50% cap; adding semis would require another name to fall first. (3) No compelling post-catalyst setup in the watchlist today. Holding 13–15% cash is correct given the MSFT gap risk.
+
+---
+
+### Guardrail check (June 22 plan)
+| Rule | Limit | Status |
+|---|---|---|
+| Single position max | 35% | NVDA ~22.1% largest (post-trim MSFT ~8.2%) ✓ |
+| Cash floor | 2% min | 12.98% (→ ~14.9% post-trim) ✓ |
+| Weekly new positions (Week 4) | 8 max | 0/8 used ✓ |
+| Semi-group (NVDA+AVGO+MRVL) | ≤50% | ~44.8% ✓ (no new semis this session) |
+| Drawdown circuit breaker | >20% below HWM | -4.09% NOT triggered ✓ |
+| Intraday shock | >6% below last_equity (June 18 EOD = USD 96,864.56) | Check at open: if equity <USD 91,052, halt buys |
+| Stop audit | 8/8 live trailing stops | Confirmed EOD June 18 ✓ (market closed June 19 — no changes) |
+| Earnings window | No new buys within 2 days | ALL CLEAR — next earnings Aug 2026+ ✓ |
+| Control switch | ACTIVE | ✓ |
+
+---
+
+### Volatility note (MSFT — for planned sell)
+MSFT 20-day ADR (approximate from recent data): ~2.5% daily range. USD 375.065 cut trigger is 1.181pp below current price. A single bad day (>1.2% gap-down from close) fires the midday cut. The 18% trailing stop (at USD 312.72) does NOT protect against the -12% midday cut rule — these are two independent risk controls. The proactive trim reduces share count by 24% (5 of 21), cutting exposure before a potential forced exit.
+
+---
+
+### Planned trades for June 22 (Monday open)
+
+**AMZN thesis renewal (not a trade, contract action):** HOLD AMZN. Review_by renewed to 2026-07-15. No buy or sell needed.
+
+**GOOGL thesis renewal (not a trade, contract action):** HOLD GOOGL. Review_by renewed to 2026-07-15. No buy or sell needed.
+
+**MSFT conditional trim:**
+- **IF MSFT opens > USD 375.065:** Sell 5 shares (~25% of 21) at market. Remaining: 16 shares. Renew review_by to 2026-06-25.
+- **IF MSFT opens ≤ USD 375.065:** EXIT ALL 21 shares at market open (do not wait for midday rule — gap-down to trigger level means midday rule will fire; proactive exit avoids a worse fill).
+
+No new buys.
+
+```json
+{
+  "plan_date": "2026-06-22",
+  "trades": [
+    {
+      "action": "sell",
+      "symbol": "MSFT",
+      "qty": 5,
+      "thesis": "Proactive trim: 1.181pp buffer from -12% cut trigger USD 375.065; review_by June 25 = 3 trading days away; no catalyst within 2 days; Azure +40% thesis intact but 3-day weekend gap risk is binary. Trim 5 of 21 shares (~25%) to reduce position exposure while preserving 16-share core bet. Hard exit all 21 if open ≤ USD 375.065 instead.",
+      "invalidation": "If MSFT opens at or below USD 375.065, override: exit ALL 21 shares at market open (not just 5).",
+      "review_by": "2026-06-25"
+    }
+  ]
+}
+```
+
