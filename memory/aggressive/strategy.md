@@ -164,6 +164,23 @@ This is NOT a hard rule — it is a discretionary risk management tool. A trim r
 
 ---
 
+## Week 4 priorities (as of 2026-06-19 pre-market — Week 3 weekly review inline)
+
+**Week 3 result:** +1.323% WoW vs SPY -0.479% → **+1.802pp outperformance this week.** Alpha since inception improved to -2.006pp (from -3.601pp at EOD June 17). Grade: B. Recovery week driven by proactive trim execution, MRVL S&P inclusion, AVBO recovery.
+
+- **MSFT (1.181pp buffer — 🚨 CRITICAL for June 22 open):** Azure +40% thesis intact. Stock down 17% YTD despite record cloud growth. Gap risk over 3-day Juneteenth weekend. **Proactive trim heuristic triggered** (buffer 1.181pp < 3pp; review_by June 25 = 3 trading days; no catalyst). **Plan: sell 5 of 21 shares at Monday open (~25% trim). Hard exit ALL 21 shares if MSFT opens at or below USD 375.065.** C-rated. First Monday with C-rating. If C again Monday June 29 → mandatory 50% trim of remaining shares.
+- **META (3.516pp buffer — ⚠️ HIGH ALERT):** Ad revenue +33% thesis intact. New risk: FT reported Meta CONSIDERING equity offering to fund AI build-out (not confirmed). Invalidation: CONFIRMED offering PLUS monetization downgrade. Current rumor alone does NOT invalidate. Review_by June 24. Monitor for confirmation/denial. B-rated.
+- **AMZN (review_by RENEWED to July 15):** AWS accelerating. FTC antitrust concerns (reports of impending lawsuit, not filed). EU cloud review = noise. Prime Day June 23–26 positive catalyst. **Decision: HOLD. Review_by renewed to July 15 (ahead of Q2 earnings).** A-rated.
+- **AVGO ex-dividend June 22 (today):** USD 0.65/share × 34 shares = USD 22.10 incoming payment ~June 30. Captured — owned before ex-date. A-rated.
+- **VST ex-dividend June 22 (today):** USD 0.229/share × 52 shares = USD 11.91 incoming payment ~June 30. Captured. A-rated.
+- **MRVL post-S&P 500 inclusion (June 22 effective):** Transitions from event-driven to thesis-hold. B. Riley USD 345 PT. New CFO Dan Durn. Post-inclusion sell-the-news possible — trailing stop at USD 270.50 protects. Hold. A-rated.
+- **Semi-group concentration:** NVDA + AVGO + MRVL = ~44.7%. Cap = 50%. **No new semi buys** until group drops below 40%.
+- **NVDA/AVGO/GOOGL/VST/MRVL review_by:** All renewed to July 15 to align with Q2 earnings window.
+- **No new positions this week** until MSFT gap risk is resolved at June 22 open. Cash ~13–15% after MSFT trim.
+- **AMD re-entry still blocked** until AMD recovers above entry USD 508.43.
+
+---
+
 ## Benchmark tracking
 
 Every weekly review computes:

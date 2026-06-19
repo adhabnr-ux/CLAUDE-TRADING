@@ -17,6 +17,95 @@ but always re-fetches live data before trading._
 
 ---
 
+## Last snapshot — 2026-06-19 PRE-MARKET (JUNETEENTH HOLIDAY — MARKET CLOSED)
+
+Routine running on holiday. No market session. Prices unchanged from June 18 EOD. Planning for Monday June 22.
+
+| Field | Value |
+|---|---|
+| Equity (live Alpaca June 19) | USD 97,006.60 |
+| Cash | USD 12,573.47 (12.98%) |
+| Long market value | USD 84,433.13 |
+| Open positions | 8 |
+| last_equity (June 18 EOD — Alpaca authoritative) | USD 96,864.56 |
+| Holiday P/L vs last_equity | +USD 142.04 (+0.147%) — minor accrual; market closed |
+| HWM | USD 101,144.73 |
+| Drawdown from HWM | **-4.09%** (circuit breaker: 20% — NOT triggered; 15.91pp headroom) |
+
+**Open positions (2026-06-19 — prices same as June 18 EOD, market closed):**
+
+| Symbol | Qty | Avg Entry | Last Price | Market Value | Unrealized P/L | P/L % | -12% Cut Trigger | Buffer |
+|---|---|---|---|---|---|---|---|---|
+| NVDA | 103 | USD 213.60 | USD 210.13 | USD 21,643.39 | -USD 357.41 | -1.625% | USD 187.97 | 10.375pp |
+| AVGO | 34 | USD 406.23 | USD 410.81 | USD 13,967.54 | +USD 155.72 | **+1.127% ✅** | USD 357.48 | 13.127pp |
+| META | 17 | USD 630.12 | USD 576.66 | USD 9,803.22 | -USD 908.82 | **-8.484%** | USD 554.51 | **3.516pp ⚠️ HIGH ALERT** |
+| MRVL | 25 | USD 293.29 | USD 311.40 | USD 7,785.00 | +USD 452.87 | **+6.177% ✅** | USD 258.09 | 18.177pp |
+| MSFT | 21 | USD 426.21 | USD 380.10 | USD 7,982.10 | -USD 968.31 | **-10.819%** | USD 375.065 | **1.181pp 🚨 CRITICAL** |
+| AMZN | 36 | USD 247.99 | USD 244.17 | USD 8,790.12 | -USD 137.55 | -1.541% | USD 218.23 | 10.459pp |
+| GOOGL | 16 | USD 370.22 | USD 367.20 | USD 5,875.20 | -USD 48.32 | -0.816% | USD 325.79 | 11.184pp |
+| VST | 52 | USD 151.47 | USD 162.35 | USD 8,442.20 | +USD 565.76 | **+7.183% ✅** | USD 133.29 | 19.183pp |
+
+**Stop audit (2026-06-19 holiday): Confirmed from June 18 EOD — ALL 8 live. Market closed, no changes possible.**
+
+| Symbol | Stop Order ID | HWM | Stop Price | Status |
+|---|---|---|---|---|
+| NVDA | `54d7d851` | USD 221.60 | USD 181.712 | ✓ live (confirmed EOD June 18) |
+| AVGO | `36f5a45f` | USD 426.48 | USD 349.7136 | ✓ live (confirmed EOD June 18) |
+| META | `5bc32805` | USD 580.215 | USD 475.7763 | ✓ live (confirmed EOD June 18) |
+| MRVL | `a9097c8c` | USD 329.88 | USD 270.5016 | ✓ live (confirmed EOD June 18) |
+| MSFT | `aefe6616` | USD 381.37 | USD 312.7234 | ✓ live (confirmed EOD June 18) |
+| AMZN | `b55bef05` | USD 250.43 | USD 205.3526 | ✓ live (confirmed EOD June 18) |
+| GOOGL | `e52a43f1` | USD 375.77 | USD 308.1314 | ✓ live (confirmed EOD June 18) |
+| VST | `5b347be3` | USD 170.33 | USD 139.6706 | ✓ live (confirmed EOD June 18) |
+
+**Sector exposure (June 19 — same as June 18 EOD, market closed):**
+| Sector | Market Value | % of Portfolio |
+|---|---|---|
+| Technology — semis (NVDA, AVGO, MRVL) | USD 43,395.93 | 44.7% |
+| Technology — hyperscalers (META, MSFT, AMZN, GOOGL) | USD 32,450.64 | 33.5% |
+| Utilities/Energy (VST) | USD 8,442.20 | 8.7% |
+| Cash | USD 12,573.47 | 13.0% |
+_Juneteenth holiday run. No trades possible. Planning for Monday June 22: (1) MSFT conditional trim/exit (5 shares if open >USD 375.065; exit all 21 if ≤USD 375.065); (2) AMZN + GOOGL + NVDA + AVGO review_by renewed to July 15; (3) AVGO+VST ex-div captures confirmed (owned before June 22 ex-date); (4) MRVL S&P 500 inclusion effective at June 22 open. No new buys (semi group 44.7%, near 50% cap). Week 3 weekly review performed inline — grade B, alpha improved from -3.601pp to -2.006pp WoW._
+
+**Thesis contracts (updated 2026-06-19 holiday pre-market):**
+| Symbol | Invalidation | Review By | Status |
+|---|---|---|---|
+| NVDA | NVDA loses a major hyperscaler customer OR Q2 FY2027 guide drops below USD 80B | **2026-07-15** *(renewed)* | ✓ INTACT — USD 25B debt offering; TSMC/SK Hynix partnerships; -1.625%; 10.375pp |
+| AVGO | AI revenue guide cut below USD 12B for next quarter OR Q3 total revenue miss >10% | **2026-07-15** *(renewed)* | ✓ INTACT — AI +143%; JPMorgan 54% upside; ex-div June 22 USD 22.10 incoming; +1.127%; 13.127pp |
+| META | Meta formally confirms equity offering AND management explicitly downgrades AI monetization; OR Section 230 ruling restricts ad-targeting effectiveness | 2026-06-24 | ⚠️ STRESSED — equity sale RUMORED (not confirmed); ad +33% intact; 3.516pp buffer; monitor June 24 |
+| MRVL | MRVL loses major hyperscaler custom chip program OR revenue growth <15% YoY | 2026-06-29 | ✓ INTACT — S&P 500 inclusion effective June 22; B. Riley PT USD 345; +6.177%; 18.177pp |
+| MSFT | Azure growth decelerates below 30% YoY OR Copilot explicitly called underperforming | 2026-06-25 | 🚨 CRITICAL — Azure +40% intact; 1.181pp buffer; gap-down risk; **proactive trim 5sh at open June 22 (hard exit all 21 if ≤USD 375.065)** |
+| AMZN | AWS growth decelerates to <20% YoY OR Trainium adoption fails hyperscaler traction | **2026-07-15** *(renewed from June 22)* | ✓ INTACT — AWS accelerating; FTC indeterminate; Prime Day June 23–26; -1.541%; 10.459pp |
+| GOOGL | GCP growth decelerates below 40% YoY OR AI investment plan explicitly cut | **2026-07-15** *(renewed)* | ✓ INTACT — USD 84.75B equity raise committed; GCP AI growth; -0.816%; 11.184pp |
+| VST | Nuclear PPAs with Meta/AWS cancelled or renegotiated; OR material regulatory action vs nuclear fleet | 2026-07-15 | ✓ INTACT — nuclear PPA thesis intact; ex-div June 22 USD 11.91 incoming; +7.183%; 19.183pp |
+
+**Conviction ratings (2026-06-19 — Monday June 22 re-rating):**
+| Symbol | Rating | Notes |
+|---|---|---|
+| NVDA | **A** | USD 25B debt offering; AI GPU dominance; 10.375pp buffer; review July 15 |
+| AVGO | **A** | AI semi +143%; ex-div June 22 captured; JPMorgan aggressive buy; above entry |
+| MRVL | **A** | S&P 500 inclusion effective June 22; B. Riley USD 345 PT; +6.177% |
+| VST | **A** | Nuclear PPA intact; +7.183%; ex-div June 22 captured; HWM USD 170.33 |
+| AMZN | **A** | AWS accelerating; Prime Day June 23–26; FTC risk indeterminate; review renewed July 15 |
+| GOOGL | **A** | USD 84.75B AI commitment; GCP growth; cheapest hyperscaler P/E; review renewed July 15 |
+| META | **B** | Ad +33% intact; equity sale RUMORED (not confirmed); 3.516pp buffer; review June 24 |
+| MSFT | **C** | Azure +40% intact; 1.181pp buffer 🚨; 1st Monday C-rating (2nd Monday June 29 → 50% trim); proactive trim 5sh at June 22 open |
+
+**Performance vs SPY (updated 2026-06-19 — Week 3 weekly review):**
+| Metric | Value |
+|---|---|
+| Equity | USD 97,006.60 |
+| Aggro return since inception | **(97,006.60 − 100,000) / 100,000 = -2.993%** |
+| SPY close June 18 | USD 746.74 |
+| SPY return since inception (754.18 → 746.74) | **-0.987%** |
+| Alpha since inception | **-2.006pp** (improved from -3.601pp EOD June 17; best recovery week) |
+| Week 3 Aggro return | **+1.323%** (USD 95,599 → USD 96,865) |
+| Week 3 SPY return | **-0.479%** (USD 750.33 → USD 746.74) |
+| Week 3 alpha | **+1.802pp — OUTPERFORMED SPY this week** |
+| Week 3 grade | **B** (recovery week; proactive trims well executed; MRVL S&P play worked; MSFT gap risk entering week 4) |
+
+---
+
 ## Last snapshot — 2026-06-18 EOD (~3:50 PM ET)
 
 | Field | Value |
