@@ -39,12 +39,15 @@ MODEL_OVERRIDE = os.environ.get("GROQ_MODEL", "").strip()
 MAX_TURNS = 50
 
 # Preference order — best free-tier Groq models for agentic tool use
+# 8b first: free tier gives it 6x the tokens-per-minute of the 70b models
+# (30K vs 12K TPM), which matters more than raw smarts for these playbooks.
+# Set GROQ_MODEL=llama-3.3-70b-versatile in secrets if you want the bigger one.
 MODEL_PREFERENCE = [
+    "llama-3.1-8b-instant",
+    "llama3-8b-8192",
     "llama-3.3-70b-versatile",
     "llama-3.1-70b-versatile",
     "llama3-70b-8192",
-    "llama-3.1-8b-instant",
-    "llama3-8b-8192",
 ]
 
 
@@ -362,6 +365,39 @@ def _recover_calls_from_failed_generation(emsg: str) -> list:
     return calls
 
 
+# Trim conversation history once total payload gets large enough to threaten
+# Groq's per-minute token budget. Keep system + first user (the playbook) and
+# the most recent turns; collapse the middle into a brief stub.
+TRIM_THRESHOLD_CHARS = 80_000   # ~20K tokens; well under the 30K-TPM 8b cap
+KEEP_RECENT_MESSAGES = 12
+
+
+def _maybe_trim_history(messages: list) -> None:
+    total = sum(len(str(m.get("content") or "")) for m in messages)
+    if total < TRIM_THRESHOLD_CHARS or len(messages) <= KEEP_RECENT_MESSAGES + 2:
+        return
+    head = messages[:2]                    # system + first user (playbook)
+    tail_start = max(2, len(messages) - KEEP_RECENT_MESSAGES)
+    # Don't start the tail on an orphaned tool response — walk forward to the
+    # next assistant/user boundary so Groq doesn't reject the pairing.
+    while tail_start < len(messages) and messages[tail_start].get("role") == "tool":
+        tail_start += 1
+    tail = messages[tail_start:]
+    dropped = len(messages) - len(head) - len(tail)
+    # Splice in-place so callers keep the same list reference
+    messages.clear()
+    messages.extend(head)
+    messages.append({
+        "role": "user",
+        "content": (f"[runner: trimmed {dropped} earlier turns to stay inside the "
+                    "per-minute token budget. Re-read any memory files you still "
+                    "need with read_file. Resume the playbook.]"),
+    })
+    messages.extend(tail)
+    print(f"[runner] history trim: dropped {dropped} middle turns "
+          f"(was {total // 1000}K chars)")
+
+
 def _complete(client: Groq, model: str, messages: list, *, attempt: int = 0):
     """Call Groq and return normalized (content, tool_calls).
 
@@ -369,6 +405,7 @@ def _complete(client: Groq, model: str, messages: list, *, attempt: int = 0):
     Handles rate limits (sleep+retry) and malformed tool calls (recover from
     failed_generation) so the agentic loop only ever sees clean structured data.
     """
+    _maybe_trim_history(messages)
     try:
         resp = client.chat.completions.create(
             model=model,
