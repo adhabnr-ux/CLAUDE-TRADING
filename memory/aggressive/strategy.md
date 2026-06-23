@@ -194,6 +194,22 @@ This is NOT a hard rule — it is a discretionary risk management tool. A trim r
 
 ---
 
+## Week 5 priorities (as of 2026-06-23 pre-market — UPDATED)
+
+- **META (0.713pp buffer 🚨 — FULL EXIT at open):** Pre-market USD 559.00, down -2.39% from last close. Buffer compressed to 0.713pp. Nasdaq -1.19% pre-market. Proactive full exit planned (not just 25% trim): 25% trim leaves 13 shares still at forced-cut risk in a volatile tech-selloff day. Section 230 ad-targeting thesis technically intact (no new ruling today) but risk/reward is untenable. Market-open routine must: (1) cancel stop `5bc32805`, (2) market sell all 17 shares, (3) log post-mortem in closed-trades.md.
+- **AVGO (4.753pp buffer — WATCH):** -7.247% from entry. AI revenue +143% YoY; $100B+ FY2027 guidance intact; 26 analysts Buy. Thesis intact. Review_by renewed to July 9. Monitor closely — if buffer drops below 3pp, proactive trim heuristic applies.
+- **GOOGL (4.680pp buffer — WATCH):** -7.320% from entry. AI talent departures (unnamed) caused -7% Monday selloff; volume elevated (52M vs 32M avg). GCP +63% intact, TPU roadmap intact. Review_by renewed to July 2. Buffer is the tightest of the A-rated positions — any further selling brings it to 3pp trigger.
+- **AMZN (5.189pp buffer):** Prime Day June 23-26 starts TODAY. AWS +28% thesis intact. FTC ad antitrust complaint being drafted (not yet filed; doesn't threaten AWS thesis). Buffer 5.189pp. Review_by July 7. A-rated.
+- **MRVL (8.084pp buffer — post-inclusion drift):** -8.465% today from CPO delay report (SemiAnalysis) + S&P inclusion sell-the-news + CFO insider selling. Sector-wide basket sell, NOT MRVL-specific thesis event. Custom silicon (XPU) thesis intact. Buffer 8.084pp. Review_by June 29.
+- **NVDA (7.229pp buffer):** -4.771% from entry. B200 cloud instance pricing declining ($6.11 → $4.22/hour peak to June 21). NOT thesis-breaking — revenue from hardware sales, not cloud pricing. Blackwell at scale, hyperscaler capex $190-200B/yr unchanged. Review_by renewed to July 9.
+- **VST (18.226pp buffer — leading performer):** +6.226% gain. Record Q1 EBITDA $1.5B. Revenue forecast raised $18.8B → $23.3B. Helix consortium confirmed. Ex-div captured June 22. Review_by July 15.
+- **No new positions today.** Cash will rise to ~32% after META exit. Tech selloff (Nasdaq -1.19%) with 4 positions under 7pp buffer = wrong time to deploy. Wait for market stabilization.
+- **Drawdown -8.24% from HWM.** 11.76pp headroom before circuit breaker. Intraday shock -2.39% (well clear of -6% threshold).
+- **Conviction ratings (June 23):** NVDA A, AVGO A, MRVL A, VST A, AMZN A, GOOGL A (4.680pp — tight). META: EXIT.
+- **Alpha since inception: -5.879pp** (Aggro -7.191% vs SPY -1.312%). Drawdown from HWM plus multiple forced exits (AMD, MSFT) weigh on performance.
+
+---
+
 ## Benchmark tracking
 
 Every weekly review computes:

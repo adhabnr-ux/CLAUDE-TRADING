@@ -2091,3 +2091,152 @@ EXECUTED: 2026-06-22T13:46:00Z (no unconditional trades — MSFT opened at USD 3
 | SPY last close (June 18) | USD 746.75 |
 | SPY return since inception (754.18 → 746.75) | **-0.985%** |
 | Alpha since inception | **-2.38pp** |
+
+---
+
+## 2026-06-23 Pre-Market Research — AGGRO Bull [search: WebSearch fallback]
+
+**Routine start:** 2026-06-23 ~08:00 ET | Status: ACTIVE | Lock: held
+
+### Market posture
+- **Nasdaq futures -1.19%** (26,203 pre-market, down 315pts) — tech selloff continues from Monday [TheStreet, June 23]
+- South Korea KOSPI -9.99% overnight — chip stocks basket-sold globally after regulatory signals flagging overheated semis [TheStreet, June 23]
+- SpaceX shed $600B+ in value over 3 sessions; Monday alone -$400B [TheStreet, June 23]
+- Oil -0.1% ($73.79 WTI) on US-Iran peace negotiation developments
+- **Posture: RISK OFF.** Broad AI-tech de-risking, not a macro recession signal. AI fundamentals unchanged but sentiment rotating.
+
+### Position research — "what changed since yesterday"
+
+**META (17 shares | entry USD 630.12 | current USD 559.00 | buffer 🚨 0.713pp)**
+- Section 230 legal landscape: existing verdicts (~$380M, March 2026) ongoing — Meta appealing. NO new ruling today expanding Section 230 to ad-targeting features [Bloomberg Law, Seeking Alpha, Fox Business]
+- Ad revenue +33% YoY intact. Q1 2026 results strong; AI-driven ad targeting and personalization tools growing
+- "What changed": -0.860% today from USD 563.85. Buffer compressed from 1.534pp (June 22 EOD) to 0.713pp today
+- **CRITICAL: buffer 0.713pp in Nasdaq -1.19% pre-market = unacceptably high probability of forced midday cut at USD 554.51 or lower**
+- Proactive trim heuristic ALL THREE conditions met: (1) buffer <3pp ✓ (0.713pp), (2) review_by June 26 = 2 trading days ✓, (3) no near-term catalyst ✓
+- 25% trim (4 shares) insufficient at 0.713pp — remaining 13 shares still at forced-cut risk in any market move today
+- **DECISION: FULL EXIT — sell all 17 META shares at market open.** Proactive exit preserves ~USD 9,503 vs forced midday cut at potentially USD 554 or lower. Section 230 ad-targeting invalidation NOT formally triggered (thesis technically intact) but risk/reward at 0.713pp in a down-tech market is unacceptable. Applying MSFT lesson: proactive exit beats forced cut.
+
+**NVDA (103 shares | entry USD 213.60 | current USD 203.41 | buffer 7.229pp)**
+- B200 cloud instance pricing declining: peaked $6.11/hour late May → $4.22/hour June 21 [GuruFocus, June 23]
+- YTD: NVDA +12% vs SMH (semiconductor ETF) +85% — notable underperformance
+- "What changed": -2.511% today from USD 208.65. Buffer from 9.705pp to 7.229pp
+- B200 cloud pricing is a cloud-provider metric, NOT a direct NVDA revenue indicator. Hyperscaler capex $190-200B/yr unchanged. Blackwell demand intact.
+- Thesis: data-center GPU dominance, Blackwell at scale — INTACT
+- Review_by June 25 (2 trading days): **HOLD. Renew review_by to July 9.**
+
+**AVGO (34 shares | entry USD 406.23 | current USD 376.79 | buffer 4.753pp)**
+- AI revenue +143% YoY; maintained "$100B+ AI revenue FY2027" outlook [Investing.com/Seeking Alpha, June 23]
+- 26 analysts Buy consensus, USD 501.58 target; $2.5B debt tender offer June 18 (financial discipline)
+- Broadcom adding Anthropic, OpenAI as custom ASIC customers beyond Google [Seeking Alpha]
+- "What changed": -3.912% today from USD 392.13 (broad chip selling). Buffer from 8.867pp to 4.753pp
+- Buffer stressed but manageable. Thesis: custom AI accelerators + networking — INTACT
+- Review_by June 25 (2 trading days): **HOLD. Renew review_by to July 9.**
+
+**MRVL (25 shares | entry USD 293.29 | current USD 281.80 | buffer 8.084pp)**
+- SemiAnalysis report: co-packaged optics (CPO) commercialization delayed beyond market expectations [Investing.com, June 23]
+- S&P 500 inclusion "sell-the-news" reversal (June 22 effective, passive buying complete) [Investing.com, June 23]
+- CFO Willem Meintjes planned sale of ~211,329 shares (~USD 65M insider overhang) [Investing.com, June 23]
+- Sector-wide basket sell: MaxLinear, Coherent, Credo Technology all down 8%+; Tower Semi, AXT Inc down 10%+ [Investing.com, June 23]
+- "What changed": -8.465% today — the single largest single-session decline in the position. BUT: sector-wide, not MRVL-specific catalyst
+- CPO delay affects optical communications angle; MRVL's primary AI thesis is custom silicon (XPU) for hyperscalers, which is separate from CPO
+- Buffer 8.084pp is comfortable despite today's big move
+- Review_by June 29: **HOLD. Thesis intact.** CPO delay is a headwind, not a thesis break. Monitor for hyperscaler custom chip news.
+
+**AMZN (36 shares | entry USD 247.99 | current USD 231.10 | buffer 5.189pp)**
+- **Prime Day starts TODAY June 23-26!** GMV expected $21.6B (+5% YoY) [TipRanks, June 23]
+- FTC and state AGs drafting formal antitrust complaint vs Amazon's $70B ad business [TipRanks]
+- EC plans to designate AWS as "gatekeeper" under Digital Markets Act (costly adjustments risk) [TipRanks]
+- BofA Buy, USD 310 target; $200B capex commitment for AI data centers 2026 [TipRanks]
+- "What changed": -0.726% today from USD 232.79. Buffer from 6.040pp to 5.189pp
+- FTC ad complaint would affect advertising revenue, NOT AWS. Thesis invalidation = "AWS <20% YoY" — not threatened. EC DMA risk is a regulatory tail risk.
+- Prime Day is a near-term positive catalyst; AWS +28% thesis INTACT
+- Review_by July 7: **HOLD.** Thesis intact. Prime Day catalyst active today.
+
+**GOOGL (16 shares | entry USD 370.22 | current USD 343.12 | buffer 4.680pp)**
+- AI talent departures caused -7% Monday selloff; elevated volume 52.81M vs avg 32.45M [CNBC/Google Finance, June 23]
+- HSBC multi-year AI partnership confirmed (200+ use cases globally) [Google Finance/Robinhood]
+- $75M investment in A24 for AI-in-Hollywood initiative
+- "What changed": -1.876% today from USD 349.68 (continuation of Monday's selloff). Buffer from 6.518pp to 4.680pp
+- GCP +63% YoY intact. TPU roadmap not cancelled. AI talent departures = operational noise, not a revenue event
+- Thesis: GCP acceleration + TPU advantage — INTACT
+- Review_by June 25 (2 trading days): **HOLD. Renew review_by to July 2.** Buffer 4.680pp — watch closely.
+
+**VST (52 shares | entry USD 151.47 | current USD 160.90 | buffer 18.226pp)**
+- Vistra stock +11% in June on Helix AI power deal ($10B consortium KKR+NVDA+VST+KIA) [Nemo/StockAnalysis, June 23]
+- Record Q1 2026 adjusted EBITDA $1.5B; 2026 revenue forecast raised $18.8B → $23.3B [Simply Wall St, June 23]
+- Ex-dividend June 22 captured (payment June 30) [Confirmed]
+- "What changed": -3.802% today from USD 167.26 (broad market selling, not VST-specific)
+- Buffer 18.226pp is enormous; +6.226% from entry; thesis leads the portfolio
+- Review_by July 15: **HOLD.** Thesis intact. Leading performer.
+
+### Thesis contract review (Step 3b)
+
+| Symbol | Review By | Decision | New Review By |
+|---|---|---|---|
+| NVDA | June 25 | HOLD — B200 cloud pricing decline noted; not thesis-breaking; data-center GPU demand intact | July 9 |
+| AVGO | June 25 | HOLD — AI revenue +143% YoY; $100B+ FY2027 guidance intact; customer expansion (Anthropic, OpenAI) | July 9 |
+| META | **June 26** | **FULL EXIT at market open — 0.713pp buffer + Nasdaq -1.19% pre-market + no near-term catalyst** | N/A (exiting) |
+| MRVL | June 29 | HOLD — sector-wide selloff; CPO delay is headwind not thesis break; 8.084pp buffer | June 29 (unchanged) |
+| AMZN | July 7 | HOLD — Prime Day starts today; AWS +28% intact; FTC ad risk ≠ AWS thesis | July 7 (unchanged) |
+| GOOGL | June 25 | HOLD — talent departures = noise; GCP +63% intact; 4.680pp buffer | July 2 |
+| VST | July 15 | HOLD — leading performer; Helix confirmed; record EBITDA; 18.226pp buffer | July 15 (unchanged) |
+
+### Stop audit (Step 3a)
+- NVDA `54d7d851` ✓ live | AVGO `36f5a45f` ✓ live | META `5bc32805` ✓ live | MRVL `a9097c8c` ✓ live
+- AMZN `b55bef05` ✓ live | GOOGL `e52a43f1` ✓ live | VST `5b347be3` ✓ live
+- **All 7 stops confirmed live. No recreation needed.**
+- (MSFT `aefe6616` shows canceled — correct, position closed June 22)
+
+### Risk checks
+- **Intraday shock:** Equity USD 92,809.21 vs last_equity USD 95,082.61 = -2.39% → NOT triggered (-6% threshold, 3.61pp headroom)
+- **Drawdown circuit breaker:** USD 92,809.21 vs HWM USD 101,144.73 = -8.24% → NOT triggered (-20% threshold, 11.76pp headroom)
+
+### Earnings calendar — all clear
+| Symbol | Next Earnings | Status |
+|---|---|---|
+| NVDA | ~Aug 26 | Clear (>2 trading days) |
+| AVGO | ~Sep 3 | Clear |
+| MRVL | ~Aug 20-27 | Clear |
+| AMZN | ~Jul 31 | Clear |
+| GOOGL | ~Jul 29 | Clear |
+| VST | Aug 6 | Clear |
+
+No position is within 2 trading days of earnings. All clear.
+
+### Cash deployment check
+Cash: USD 20,304.45 (21.88% of equity) — above 20% threshold. However:
+- Multiple positions at stress levels (META exiting, AVGO 4.753pp, GOOGL 4.680pp, AMZN 5.189pp)
+- Meta exit today will release ~USD 9,503 → cash rises to ~USD 29,807 (~32% of equity)
+- Nasdaq -1.19% pre-market — deploying new capital in a tech selloff with 4 stressed positions is not sound
+- **Decision: NO new buy today.** Justify: "Tech selloff day (Nasdaq -1.19%); META exit raises cash to ~32%; multiple positions stressed; AMZN's Prime Day is the one active catalyst but it's already held. No new capital at risk today — protect what's held."
+
+### Planned trades for today
+
+META full exit at market open (proactive, 0.713pp buffer in Nasdaq -1.19% pre-market). All other positions: HOLD. No new buys.
+
+```json
+{
+  "plan_date": "2026-06-23",
+  "trades": [
+    {
+      "action": "sell",
+      "symbol": "META",
+      "qty": 17,
+      "thesis": "Proactive full exit: buffer 0.713pp in Nasdaq -1.19% pre-market — midday forced cut probability unacceptably high; proactive exit preserves ~USD 9,503 vs forced cut at USD 554.51 or lower; Section 230 ad-targeting thesis technically intact but buffer too thin for tech-selloff day; no near-term positive catalyst; applying MSFT lesson",
+      "invalidation": "N/A — exit order",
+      "review_by": "N/A"
+    }
+  ]
+}
+```
+
+### Performance vs SPY (pre-market June 23)
+| Metric | Value |
+|---|---|
+| Equity | USD 92,809.21 |
+| Aggro return since inception | **(92,809.21 − 100,000) / 100,000 = -7.191%** |
+| SPY June 22 close | USD 744.28 |
+| SPY return since inception (754.18 → 744.28) | **-1.312%** |
+| Alpha since inception | **-5.879pp** |
+| vs yesterday (last_equity USD 95,082.61) | -2.39% vs SPY ~-0% pre-market |
+
