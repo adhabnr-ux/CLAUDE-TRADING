@@ -438,17 +438,94 @@ def _handle_api_error(exc: Exception) -> None:
 
 SYSTEM_PROMPT = (
     "You are Bull, an autonomous AI trading agent. "
-    "Follow every step in the playbook exactly. "
-    "Memory files are listed by index — call read_file(path) to load only "
-    "the ones a step actually needs. Do not try to read every file upfront. "
+    "Follow every step in the playbook exactly, in order, and ACTUALLY PERFORM each "
+    "step by calling tools — never just describe what you would do. Words are not actions: "
+    "if a step says to run a script, read a file, or send a message, you MUST emit the "
+    "corresponding tool call. "
+    "Memory files are listed by index — call read_file(path) to load the ones a step needs. "
     "Use bash_execute to run shell scripts (alpaca.sh, notify.sh) and git commands. "
     "Use write_file to update memory files. "
     "Use web_search whenever the playbook says to use WebSearch — treat them identically. "
-    "At the END of every run, after all other steps, commit and push: "
+    "The Notify step is MANDATORY on every run: you MUST call "
+    "bash_execute(\"./scripts/notify.sh '<message>'\") with a real, specific summary in the "
+    "exact prefix/format the playbook's Notify step requires — never skip it, never send a "
+    "generic placeholder. Include the concrete details the playbook asks for (market posture, "
+    "planned trades, positions cut, stops, P/L, etc.). "
+    "At the END of every run, after the notify, commit and push: "
     "bash_execute('git add -A && git commit -m \"<routine>: <summary>\" "
     "&& git push origin HEAD:main'). "
     "If push is rejected, run 'git fetch origin main && git rebase origin/main' then push again."
 )
+
+
+# State observed while executing tool calls, so the runner can backstop steps
+# the (weaker, free-tier) model forgets to actually perform.
+class RunState:
+    def __init__(self):
+        self.notified = False
+        self.committed = False
+
+
+def _execute_tool_calls(tool_calls: list, messages: list, state: "RunState") -> None:
+    """Run each tool call, append its result to the message history, and note
+    whether the model actually sent a Telegram notify / committed this run."""
+    for tc in tool_calls:
+        fn_name = tc["name"]
+        try:
+            args = json.loads(tc["arguments"])
+        except json.JSONDecodeError:
+            args = {}
+
+        if fn_name == "bash_execute":
+            cmd = args.get("command", "")
+            if "notify.sh" in cmd:
+                state.notified = True
+            if "git commit" in cmd or "git push" in cmd:
+                state.committed = True
+
+        print(f"[tool]  {fn_name}({list(args.keys())})")
+        fn = TOOL_FNS.get(fn_name)
+        try:
+            result = fn(**args) if fn else f"(unknown tool: {fn_name})"
+        except Exception as exc:
+            result = f"ERROR: {exc}"
+
+        messages.append({
+            "role": "tool",
+            "tool_call_id": tc["id"],
+            "content": str(result),
+        })
+
+
+def _append_assistant(messages: list, content: str, tool_calls: list) -> None:
+    messages.append({
+        "role": "assistant",
+        "content": content,
+        "tool_calls": [
+            {"id": tc["id"], "type": "function",
+             "function": {"name": tc["name"], "arguments": tc["arguments"]}}
+            for tc in tool_calls
+        ] or None,
+    })
+
+
+def _forced_turn(client, model, messages, state, instruction, *, max_steps=4):
+    """Append an instruction and let the model take a few tool-calling turns to
+    carry it out. Used to backstop the mandatory notify when the model forgot."""
+    messages.append({"role": "user", "content": instruction})
+    for _ in range(max_steps):
+        try:
+            content, tool_calls = _complete(client, model, messages)
+        except Exception as exc:
+            print(f"[runner] forced-turn error: {exc}")
+            return
+        if content:
+            print(f"[model] {content[:200].replace(chr(10), ' ')}")
+        _append_assistant(messages, content, tool_calls)
+        if not tool_calls:
+            return
+        _execute_tool_calls(tool_calls, messages, state)
+        time.sleep(2)
 
 
 def run(routine: str) -> None:
@@ -469,6 +546,7 @@ def run(routine: str) -> None:
         {"role": "system", "content": SYSTEM_PROMPT},
         {"role": "user",   "content": build_prompt(routine)},
     ]
+    state = RunState()
 
     turns = 0
     while turns < MAX_TURNS:
@@ -478,59 +556,51 @@ def run(routine: str) -> None:
             _handle_api_error(exc)
             raise
 
-        # Print any text response
         if content:
             print(f"[model] {content[:200].replace(chr(10), ' ')}")
-
-        # Add assistant message to history
-        messages.append({
-            "role": "assistant",
-            "content": content,
-            "tool_calls": [
-                {
-                    "id": tc["id"],
-                    "type": "function",
-                    "function": {"name": tc["name"], "arguments": tc["arguments"]},
-                }
-                for tc in tool_calls
-            ] or None,
-        })
+        _append_assistant(messages, content, tool_calls)
 
         if not tool_calls:
             print(f"[runner] routine complete ({turns + 1} turns)")
             break
 
-        # Execute each tool call and collect results
-        for tc in tool_calls:
-            fn_name = tc["name"]
-            try:
-                args = json.loads(tc["arguments"])
-            except json.JSONDecodeError:
-                args = {}
-
-            print(f"[tool]  {fn_name}({list(args.keys())})")
-            fn = TOOL_FNS.get(fn_name)
-            try:
-                result = fn(**args) if fn else f"(unknown tool: {fn_name})"
-            except Exception as exc:
-                result = f"ERROR: {exc}"
-
-            messages.append({
-                "role": "tool",
-                "tool_call_id": tc["id"],
-                "content": str(result),
-            })
-
+        _execute_tool_calls(tool_calls, messages, state)
         turns += 1
         # Small pause to stay comfortably under the 30 req/min free-tier limit
         time.sleep(2)
 
     if turns >= MAX_TURNS:
-        print(f"[runner] hit {MAX_TURNS}-turn safety limit — forcing commit")
-        _bash(
-            f'git add -A && git commit -m "{routine}: safety-limit exit" '
-            "&& git push origin HEAD:main 2>&1 || true"
+        print(f"[runner] hit {MAX_TURNS}-turn safety limit")
+
+    # ── Backstops: the free-tier model often ends its turn before performing
+    # the mandatory final steps (it "reports" in text instead of calling tools).
+    # Guarantee a substantive Telegram summary and a committed push every run.
+    if not state.notified:
+        print("[runner] no notify sent during run — forcing the Notify step")
+        _forced_turn(
+            client, chosen_model, messages, state,
+            "You did not send the required Telegram summary. Do it NOW: call "
+            "bash_execute with ./scripts/notify.sh and a real, specific one-message "
+            "summary for THIS routine, in the exact prefix and format the playbook's "
+            "Notify step requires (concrete details — market posture, planned trades, "
+            "positions, P/L, stops — not a placeholder). Single-quote the argument and "
+            "never put a literal dollar sign in it.",
         )
+
+    if not state.notified:
+        # Last resort so the human is never left in the dark about a run.
+        print("[runner] notify still missing — sending fallback message")
+        _bash(f"./scripts/notify.sh 'Bull {routine}: routine ran but could not "
+              "compose a full summary this time — check the logs.' 2>&1 || true")
+
+    # Always persist memory, whether or not the model remembered to commit.
+    print("[runner] final commit/push backstop")
+    _bash(
+        f'git add -A && git commit -m "{routine}: end-of-run" '
+        "&& git push origin HEAD:main 2>&1 "
+        "|| (git fetch origin main && git rebase origin/main && "
+        "git push origin HEAD:main 2>&1) || true"
+    )
 
 
 # ── Entry point ───────────────────────────────────────────────────────────────
