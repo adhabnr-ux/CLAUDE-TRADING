@@ -152,12 +152,23 @@ def _bash(command: str) -> str:
     return out or "(no output)"
 
 
+MAX_READ_CHARS = 60_000  # ~15K tokens — keeps any single read inside the budget
+
+
 def _read(path: str) -> str:
     p = ROOT / path
     if not p.exists():
         return f"(file not found: {path})"
     try:
-        return p.read_text(encoding="utf-8")
+        text = p.read_text(encoding="utf-8")
+        if len(text) > MAX_READ_CHARS:
+            # Keep the start (file headers / templates) and the END (most recent
+            # entries) — the middle of an append-only log is the least useful.
+            half = MAX_READ_CHARS // 2 - 200
+            text = (text[:half]
+                    + f"\n\n… [truncated {len(text) - MAX_READ_CHARS} chars from middle] …\n\n"
+                    + text[-half:])
+        return text
     except Exception as e:
         return f"(read error: {e})"
 
@@ -296,12 +307,36 @@ TOOL_DECLARATIONS = protos.Tool(
 # ── Context builder ──────────────────────────────────────────────────────────
 
 def build_prompt(routine: str) -> str:
+    """Build a compact prompt.
+
+    We do NOT preload all memory files — that blows the free-tier
+    250K-tokens-per-minute input quota in a single send. Instead we send the
+    playbook plus an INDEX of available files; the model uses read_file to
+    pull what each step actually needs.
+    """
     playbook = _read(ROUTINES[routine])
     files = list(BASE_MEMORY)
     if routine.startswith("aggro"):
         files += AGGRO_MEMORY
 
-    mem_sections = [f"### {f}\n{_read(f)}" for f in files]
+    # File index with sizes so the model can budget its reads
+    index_lines = []
+    for f in files:
+        p = ROOT / f
+        if p.exists():
+            kb = p.stat().st_size / 1024
+            index_lines.append(f"  - {f} ({kb:.1f} KB)")
+        else:
+            index_lines.append(f"  - {f} (missing)")
+    index = "\n".join(index_lines)
+
+    # Always inline the small, high-priority files (control + strategy)
+    inline = []
+    for small in ("memory/control.md", "memory/strategy.md"):
+        if small in files:
+            inline.append(f"### {small}\n{_read(small)}")
+    inline_block = "\n\n".join(inline)
+
     now_utc = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
 
     return textwrap.dedent(f"""
@@ -313,10 +348,36 @@ def build_prompt(routine: str) -> str:
 
         ---
 
-        ## MEMORY FILES (your current state — update via write_file):
+        ## MEMORY FILES — read what each step needs via the read_file tool:
 
-        {chr(10).join(mem_sections)}
+        {index}
+
+        ---
+
+        ## ALWAYS-LOADED CONTEXT (control switch + strategy):
+
+        {inline_block}
     """).strip()
+
+
+# ── Quota-aware send wrapper ─────────────────────────────────────────────────
+
+def _send_with_retry(chat, msg, *, attempt: int = 0):
+    """Send a chat message; on 429 quota errors, sleep the retry-delay and try again once."""
+    import time
+    try:
+        return chat.send_message(msg)
+    except Exception as exc:
+        emsg = str(exc)
+        is_quota = ("429" in emsg) or ("RESOURCE_EXHAUSTED" in emsg) or ("quota" in emsg.lower())
+        # Parse retry_delay seconds from the error message if present
+        delay_match = re.search(r"retry_delay\s*\{\s*seconds:\s*(\d+)", emsg)
+        delay = int(delay_match.group(1)) if delay_match else 60
+        if is_quota and attempt < 2:
+            print(f"[runner] quota hit — sleeping {delay}s then retrying (attempt {attempt + 1}/2)")
+            time.sleep(delay + 2)
+            return _send_with_retry(chat, msg, attempt=attempt + 1)
+        raise
 
 # ── Error handling ────────────────────────────────────────────────────────────
 
@@ -366,6 +427,9 @@ def run(routine: str) -> None:
         system_instruction=(
             "You are Bull, an autonomous AI trading agent. "
             "Follow every step in the playbook exactly. "
+            "Memory files are listed by index — call read_file(path) to load only "
+            "the ones a step actually needs. Do not try to read every file upfront; "
+            "the free-tier token budget is tight. "
             "Use bash_execute to run shell scripts (alpaca.sh, notify.sh) and git commands. "
             "Use write_file to update memory files. "
             "Use web_search whenever the playbook says to use WebSearch — treat them identically. "
@@ -379,7 +443,7 @@ def run(routine: str) -> None:
     print(f"[runner] starting {routine} with {chosen_model}")
     chat = model.start_chat()
     try:
-        response = chat.send_message(build_prompt(routine))
+        response = _send_with_retry(chat, build_prompt(routine))
     except Exception as exc:
         _handle_api_error(exc)
         raise
@@ -425,7 +489,7 @@ def run(routine: str) -> None:
             )
 
         try:
-            response = chat.send_message(fn_responses)
+            response = _send_with_retry(chat, fn_responses)
         except Exception as exc:
             _handle_api_error(exc)
             raise
