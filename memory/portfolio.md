@@ -3,9 +3,65 @@
 _Updated by every routine from live Alpaca data. The next agent trusts this as
 the last known state, but always re-fetches live data before trading._
 
-**Last updated:** 2026-06-23 09:37 ET (market-open; RISK-OFF — KOSPI chip selloff contagion; no trades; NVDA ⚠️ $202.05 monitoring $200 invalidation; stop audit 5/5 PASS)
+**Last updated:** 2026-06-23 12:31 ET (midday; no cuts, no tightenings; NVDA ⚠️ $202.23 buffer 1.75pp from -7% rule — session low $200.04; stop audit 5/5 PASS)
 **Inception:** 2026-05-21 — starting equity $100,000.00 | SPY anchor price $739.44
 **SPY total-return anchor (post-June 18 ex-div $1.76):** **$741.20**
+
+## Account (midday June 23, 2026 — live Alpaca data ~12:31 ET)
+
+| Metric | Value |
+|--------|-------|
+| Equity | $98,778.40 |
+| Cash | $67,261.73 (68.12%) |
+| Long market value | $31,516.67 |
+| Buying power | ~$357,294 |
+| Last equity (June 22 close) | $99,043.58 |
+
+## Open positions (midday June 23, 2026 — live Alpaca data ~12:31 ET)
+
+| Symbol | Qty | Avg entry | Current price | Mkt value | Unrealized P/L | % of portfolio | Trailing Stop |
+|--------|-----|-----------|--------------|-----------|----------------|----------------|---------------|
+| LLY | 10 | $1,093.534 | $1,100.23 | $11,002.30 | +$66.96 (+0.612%) | 11.14% | d4147484 (7sh, HWM **$1,182.73**, stop **$1,064.457**) ✓; 25989fb5 (3sh, same) ✓ — buffer $35.77 (3.27%) |
+| NVDA | 33 | $213.421 | $202.23 | $6,673.59 | −$369.30 (−5.244%) | 6.76% | dcba7429 (33sh, HWM **$213.99**, stop **$192.591**) ✓ — buffer $9.64 (4.77%) ⚠️ −7% threshold $198.48 (buffer 1.75pp) |
+| V | 22 | $323.57 | $330.82 | $7,278.04 | +$159.50 (+2.241%) | 7.37% | 66033918 (22sh, HWM **$336.8199**, stop **$303.138**) ✓ — buffer $27.68 (8.56%) |
+| VST | 40 | $148.81 | $164.07 | $6,562.80 | +$610.40 (+10.255%) | 6.65% | c4c200a5 (40sh, HWM **$170.50**, stop **$153.45**) ✓ — buffer $10.62 (6.47%) ⭐⭐ HELIX+COGENTRIX |
+
+**Sector exposure (midday June 23):**
+- Healthcare (LLY): $11,002.30 = 11.14% | Tech/AI Semi (NVDA): $6,673.59 = 6.76% | Financials (V): $7,278.04 = 7.37% | Energy/Utilities (VST): $6,562.80 = 6.65% | Cash: $67,261.73 = 68.12%
+- No sector above 60% cap ✓
+
+**Trailing stop status (midday June 23 — confirmed via Alpaca live orders ~12:31 ET):**
+- LLY (d4147484): 7sh — HWM **$1,182.73**, stop **$1,064.457** ✓ (buffer $35.77 = 3.27%)
+- LLY (25989fb5): 3sh — HWM **$1,182.73**, stop **$1,064.457** ✓
+- NVDA (dcba7429): 33sh — HWM **$213.99**, stop **$192.591** ✓ (buffer $9.64 = 4.77%) ⚠️ −7% midday threshold $198.48 (buffer 1.75pp)
+- V (66033918): 22sh — HWM **$336.8199**, stop **$303.138** ✓ (buffer $27.68 = 8.56%)
+- VST (c4c200a5): 40sh — HWM **$170.50**, stop **$153.45** ✓ (buffer $10.62 = 6.47%)
+**Stop audit: 5/5 PASS ✓**
+
+**Midday June 23 notes:**
+- **RISK-OFF session continuing:** Global AI chip selloff — SPY −0.95% from June 22 close. NVDA intraday range $200.04–$204.15; sector-wide, not thesis-specific.
+- **NVDA** $202.23: −5.244% from entry. Sector selloff (not NVDA-specific — Bernstein maintains Buy; Halos for Robotics announced). Session low $200.04 approached $200 invalidation. −7% midday threshold $198.48 NOT triggered (buffer 1.75pp). Considered 25% proactive trim per lessons.md (buffer <2pp warning) but held — thesis intact, sector noise, $200 invalidation not breached. Close routine MUST monitor.
+- **VST** $164.07: +10.255% from entry. News scan: analysts raised revenue forecast to $23.3B; Wells Fargo/Goldman/Bernstein maintain Buy; AI power demand thesis intact. Today's −1.907% is profit-taking, not thesis break. +15% tighten trigger at $171.13 NOT reached. STRONG HOLD.
+- **LLY** $1,100.23: +0.612% from entry. Defensive healthcare holding. Medicare Bridge July 1 in 8 days.
+- **V** $330.82: +2.241% from entry. Financials outperforming in risk-off. Thesis intact.
+- **Shock check:** −$265.18 (−0.268%) — no shock ✓
+- **Drawdown circuit breaker:** $98,778.40 vs HWM $101,384.21 = **−2.570%** — NOT triggered ✓
+
+**Upcoming catalysts:**
+- **LLY Medicare GLP-1 Bridge effective July 1** (8 days — explicit hold/trim/exit decision REQUIRED at pre-market June 30)
+- **VST thesis review_by July 7** (14 days)
+- **NVDA $200 invalidation monitoring** (active — session low $200.04 today; closes below $200 on volume = thesis break → exit at close/pre-mkt)
+- **NVDA −7% midday threshold $198.48** (close routine / next midday MUST apply rule if triggered)
+- **NVDA review_by July 22** (29 days)
+- **V Q3 FY26 earnings July 28** (35 days — thesis review_by date)
+- **NVDA earnings August 26** (64 days — outside 2-day window ✓)
+
+**Performance vs S&P 500 (midday June 23):**
+| Period | Bull | SPY | Difference |
+|--------|------|-----|------------|
+| Inception (2026-05-21) | $100,000.00 | $739.44 | — |
+| **Midday (2026-06-23)** | **$98,778.40 (−1.222%)** | **$737.21 + $1.76 div = −0.063% TR** | **Bull TRAILS SPY ~1.16pp** (improved from ~1.87pp at EOD June 22 as SPY fell −0.95% today) |
+| **Market-open (2026-06-23)** | **$98,662.85 (−1.337%)** | **$733.04 + $1.76 div = −0.628% TR** | **Bull TRAILS SPY ~0.71pp** |
 
 ## Account (market-open June 23, 2026 — live Alpaca data ~09:37 ET)
 
