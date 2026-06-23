@@ -339,26 +339,80 @@ def build_prompt(routine: str) -> str:
     """).strip()
 
 
-# ── Rate-limit-aware send wrapper ────────────────────────────────────────────
+# ── Send wrapper: normalizes output, retries rate limits, recovers bad calls ──
 
-def _chat_with_retry(client: Groq, model: str, messages: list, *, attempt: int = 0):
+def _recover_calls_from_failed_generation(emsg: str) -> list:
+    """Groq's Llama models sometimes emit tool calls as raw text like
+    `<function=read_file({"path": "x"})>` instead of structured JSON, and the
+    server rejects the turn with a 400 `tool_use_failed`. The intended call is
+    handed back in `failed_generation`, so we parse it and recover.
+
+    Returns a list of normalized calls: {"id", "name", "arguments"} (args = JSON str).
+    """
+    calls = []
+    # <function=NAME(  {json}  )>  — parens optional, tolerant of whitespace
+    for i, m in enumerate(re.finditer(
+            r'<function=([a-zA-Z_]\w*)[^{]*?(\{.*?\})\s*\)?\s*>', emsg, re.DOTALL)):
+        name, raw = m.group(1), m.group(2)
+        try:
+            json.loads(raw)  # validate
+        except json.JSONDecodeError:
+            continue
+        calls.append({"id": f"recovered_{i}", "name": name, "arguments": raw})
+    return calls
+
+
+def _complete(client: Groq, model: str, messages: list, *, attempt: int = 0):
+    """Call Groq and return normalized (content, tool_calls).
+
+    tool_calls is a list of {"id", "name", "arguments"(JSON str)}.
+    Handles rate limits (sleep+retry) and malformed tool calls (recover from
+    failed_generation) so the agentic loop only ever sees clean structured data.
+    """
     try:
-        return client.chat.completions.create(
+        resp = client.chat.completions.create(
             model=model,
             messages=messages,
             tools=TOOLS,
             tool_choice="auto",
+            temperature=0,        # near-deterministic → far better tool-format compliance
             max_tokens=4096,
         )
+        msg = resp.choices[0].message
+        tool_calls = [
+            {"id": tc.id, "name": tc.function.name, "arguments": tc.function.arguments}
+            for tc in (msg.tool_calls or [])
+        ]
+        return (msg.content or ""), tool_calls
     except Exception as exc:
         emsg = str(exc)
+
+        # 1) Malformed tool call — recover the intended call(s) and proceed.
+        if "tool_use_failed" in emsg or "failed_generation" in emsg:
+            recovered = _recover_calls_from_failed_generation(emsg)
+            if recovered:
+                names = ", ".join(c["name"] for c in recovered)
+                print(f"[runner] recovered malformed tool call(s): {names}")
+                return "", recovered
+            # Couldn't parse it — nudge the model to retry in valid format.
+            if attempt < 2:
+                print("[runner] tool_use_failed and unparseable — nudging model to retry")
+                messages.append({
+                    "role": "user",
+                    "content": ("Your last tool call was malformed. Reissue it as a proper "
+                                "structured tool call (valid JSON arguments), not as text."),
+                })
+                return _complete(client, model, messages, attempt=attempt + 1)
+
+        # 2) Rate limit — sleep the suggested delay and retry.
         is_rate = ("429" in emsg) or ("rate_limit" in emsg.lower()) or ("rate limit" in emsg.lower())
         delay_match = re.search(r"Please try again in ([\d.]+)s", emsg)
         delay = float(delay_match.group(1)) if delay_match else 60
         if is_rate and attempt < 3:
             print(f"[runner] rate limit — sleeping {delay:.0f}s then retrying (attempt {attempt + 1}/3)")
             time.sleep(delay + 1)
-            return _chat_with_retry(client, model, messages, attempt=attempt + 1)
+            return _complete(client, model, messages, attempt=attempt + 1)
+
         raise
 
 
@@ -419,40 +473,38 @@ def run(routine: str) -> None:
     turns = 0
     while turns < MAX_TURNS:
         try:
-            response = _chat_with_retry(client, chosen_model, messages)
+            content, tool_calls = _complete(client, chosen_model, messages)
         except Exception as exc:
             _handle_api_error(exc)
             raise
 
-        msg = response.choices[0].message
-
         # Print any text response
-        if msg.content:
-            print(f"[model] {msg.content[:200].replace(chr(10), ' ')}")
+        if content:
+            print(f"[model] {content[:200].replace(chr(10), ' ')}")
 
         # Add assistant message to history
         messages.append({
             "role": "assistant",
-            "content": msg.content or "",
+            "content": content,
             "tool_calls": [
                 {
-                    "id": tc.id,
+                    "id": tc["id"],
                     "type": "function",
-                    "function": {"name": tc.function.name, "arguments": tc.function.arguments},
+                    "function": {"name": tc["name"], "arguments": tc["arguments"]},
                 }
-                for tc in (msg.tool_calls or [])
+                for tc in tool_calls
             ] or None,
         })
 
-        if not msg.tool_calls:
+        if not tool_calls:
             print(f"[runner] routine complete ({turns + 1} turns)")
             break
 
         # Execute each tool call and collect results
-        for tc in msg.tool_calls:
-            fn_name = tc.function.name
+        for tc in tool_calls:
+            fn_name = tc["name"]
             try:
-                args = json.loads(tc.function.arguments)
+                args = json.loads(tc["arguments"])
             except json.JSONDecodeError:
                 args = {}
 
@@ -465,7 +517,7 @@ def run(routine: str) -> None:
 
             messages.append({
                 "role": "tool",
-                "tool_call_id": tc.id,
+                "tool_call_id": tc["id"],
                 "content": str(result),
             })
 
