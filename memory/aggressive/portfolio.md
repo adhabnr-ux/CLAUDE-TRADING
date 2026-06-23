@@ -17,6 +17,75 @@ but always re-fetches live data before trading._
 
 ---
 
+## Last snapshot — 2026-06-23 MIDDAY (~12:41 PM ET)
+
+| Field | Value |
+|---|---|
+| Equity | USD 93,471.69 |
+| Cash | USD 29,962.31 (32.05%) |
+| Long market value | USD 63,509.38 |
+| Open positions | 6 |
+| last_equity (June 22 EOD) | USD 95,082.61 |
+| Intraday P/L vs last_equity | **-USD 1,610.92 (-1.694%)** — broad AI chip sector selloff |
+| HWM | USD 101,144.73 |
+| Drawdown from HWM | **-7.587%** (circuit breaker 20% — NOT triggered; 12.41pp headroom) |
+
+**Shock check:** -1.694% intraday vs threshold -6% → NOT triggered ✓
+
+**Open positions (June 23 midday ~12:41 PM ET):**
+
+| Symbol | Qty | Avg Entry | Current Price | Market Value | Unrealized P/L | P/L % | -12% Cut Trigger | Buffer | Rating |
+|---|---|---|---|---|---|---|---|---|---|
+| NVDA | 103 | USD 213.60 | USD 202.36 | USD 20,843.08 | -USD 1,157.72 | -5.262% | USD 187.97 | 6.738pp | A |
+| AVGO | 34 | USD 406.23 | USD 383.67 | USD 13,044.78 | -USD 767.04 | -5.554% | USD 357.48 | 6.446pp | A |
+| GOOGL | 16 | USD 370.22 | USD 347.76 | USD 5,564.16 | -USD 359.36 | -6.067% | USD 325.79 | 5.933pp | A |
+| MRVL | 25 | USD 293.29 | USD 282.84 | USD 7,071.00 | -USD 261.13 | -3.561% | USD 258.09 | 8.439pp | A |
+| AMZN | 36 | USD 247.99 | USD 234.95 | USD 8,458.20 | -USD 469.48 | -5.260% | USD 218.23 | 6.740pp | A |
+| VST | 52 | USD 151.47 | USD 164.12 | USD 8,534.24 | +USD 657.80 | +8.351% | USD 133.29 | 20.35pp | A |
+
+**No positions triggered -12% cut rule. No position at +25% tighten threshold. No action taken.**
+
+**Stop audit (June 23 midday): ALL 6 CONFIRMED LIVE ✓**
+
+| Symbol | Stop Order ID | HWM | Stop Price | Status |
+|---|---|---|---|---|
+| NVDA | `54d7d851` | USD 221.60 | USD 181.712 | ✓ live |
+| AVGO | `36f5a45f` | USD 426.48 | USD 349.7136 | ✓ live |
+| GOOGL | `e52a43f1` | USD 375.77 | USD 308.1314 | ✓ live |
+| MRVL | `a9097c8c` | USD 329.88 | USD 270.5016 | ✓ live |
+| AMZN | `b55bef05` | USD 250.43 | USD 205.3526 | ✓ live |
+| VST | `5b347be3` | USD 170.50 | USD 139.81 | ✓ live |
+
+**Thesis contracts (June 23 midday):**
+| Symbol | Review By | Invalidation | Status |
+|---|---|---|---|
+| NVDA | July 9 | Hyperscaler GPU share reverses | ✓ Intact — 6.738pp buffer |
+| AVGO | July 9 | AI revenue decelerates | ✓ Intact — 6.446pp buffer |
+| GOOGL | **July 2** | GCP decelerates OR TPU cancelled | ✓ Intact — 5.933pp buffer; AI talent departures = noise |
+| MRVL | June 29 | Hyperscaler silicon lost OR <15% YoY | ✓ Intact — 8.439pp buffer; CPO delay sector noise |
+| AMZN | July 7 | AWS <20% YoY | ✓ Intact — 6.740pp buffer; Prime Day active today |
+| VST | July 15 | Nuclear PPAs cancelled | ✓ Intact — 20.35pp buffer |
+
+**Sector exposure (June 23 midday):**
+| Sector | Market Value | % of Portfolio |
+|---|---|---|
+| Technology — semis (NVDA, AVGO, MRVL) | USD 40,959.86 | 43.8% |
+| Technology — hyperscalers (AMZN, GOOGL) | USD 14,022.36 | 15.0% |
+| Utilities/Energy (VST) | USD 8,534.24 | 9.1% |
+| Cash | USD 29,962.31 | 32.1% |
+
+**Performance vs SPY (June 23 midday — approximate):**
+| Metric | Value |
+|---|---|
+| Equity | USD 93,471.69 |
+| Aggro return since inception | **(93,471.69 − 100,000) / 100,000 = -6.528%** |
+| SPY (approximate — last known market-open USD 736.44) | ~-2.35% since inception |
+| Alpha since inception | **~-4.18pp** |
+
+_Midday June 23: all 6 positions within guardrails. Broad AI chip selloff (basket de-risking) — NVDA -3%, MRVL -8.13% intraday (CPO delay sector noise). No thesis breaks. GOOGL AI talent departure (John Jumper to Anthropic) is a headwind to note for weekly review but does not trigger the stated invalidation condition. AMZN recovering today (+0.93%) with Prime Day live. VST +8.35% still the strongest performer. No cuts, no stops tightened. Stop audit 6/6 ✓._
+
+---
+
 ## Last snapshot — 2026-06-23 MARKET-OPEN (~9:47 AM ET) ✅ META EXITED
 
 | Field | Value |

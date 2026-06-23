@@ -1895,3 +1895,80 @@ VST +10.223% is the leader. No stop tightening warranted.
 | Verified | ✓ META no longer in positions; cash USD 29,962.31 (up from USD 20,304.45) |
 | Stop audit (6 remaining) | NVDA `54d7d851` ✓ | AVGO `36f5a45f` ✓ | MRVL `a9097c8c` ✓ | AMZN `b55bef05` ✓ | GOOGL `e52a43f1` ✓ | VST `5b347be3` ✓ |
 | No new buys | Cash 32.05% — multiple stressed positions; tech selloff day; no plan to deploy |
+
+---
+
+## 2026-06-23 — MIDDAY CHECK (~12:41 PM ET)
+
+**No trades executed.** Risk management only. All positions within guardrails.
+
+### Pre-run checks
+| Check | Result |
+|---|---|
+| Live-switch guard | ALPACA_BASE_URL contains "paper" ✓ |
+| Lock | Written for this run (aggro-midday) ✓ |
+| Control switch | STATUS: ACTIVE ✓ |
+| Market open | true (next close 4:00 PM ET) ✓ |
+
+### Account status
+| Field | Value |
+|---|---|
+| Equity | USD 93,471.69 |
+| last_equity (June 22 EOD) | USD 95,082.61 |
+| Intraday P/L vs last_equity | **-USD 1,610.92 (-1.694%)** — broad AI chip sector selloff continuing |
+| Cash | USD 29,962.31 (32.05%) |
+| Cash floor (2% min) | ✓ |
+| HWM | USD 101,144.73 |
+| Drawdown from HWM | **-7.587%** (circuit breaker 20% — NOT triggered; 12.41pp headroom) |
+
+**Shock check:** -1.694% intraday vs threshold -6% → **NOT triggered** ✓
+
+### Position review
+
+| Symbol | Entry | Current | P/L % | -12% Trigger | Buffer | Today Δ | Action |
+|---|---|---|---|---|---|---|---|
+| NVDA | USD 213.60 | USD 202.36 | -5.262% | USD 187.97 | 6.738pp | -3.015% | No action |
+| AVGO | USD 406.23 | USD 383.67 | -5.554% | USD 357.48 | 6.446pp | -2.157% | No action |
+| GOOGL | USD 370.22 | USD 347.76 | -6.067% | USD 325.79 | 5.933pp | -0.549% | No action |
+| MRVL | USD 293.29 | USD 282.84 | -3.561% | USD 258.09 | 8.439pp | -8.127% | No action |
+| AMZN | USD 247.99 | USD 234.95 | -5.260% | USD 218.23 | 6.740pp | +0.928% | No action |
+| VST | USD 151.47 | USD 164.12 | +8.351% | USD 133.29 | 20.35pp (✓) | -1.877% | No action |
+
+**Cut rule check (>-12% from entry):** NO positions triggered. All clear. GOOGL most stressed at -6.067% (5.933pp buffer).
+**Tighten-stop rule check (>+25% from entry):** NO positions triggered. VST leads at +8.351%, well below +25% threshold (USD 189.34).
+
+### Live news scan [search: WebSearch fallback — MiniMax M3 not available]
+
+Scanned: NVDA, AVGO, GOOGL, AMZN (all >5% from entry). MRVL also scanned due to -8.127% intraday.
+
+- **NVDA** (-5.262%): Broad AI chip sector selloff (NVDA, MU, AMD, INTC all declining together — basket de-risking). Bernstein maintains Buy. NVIDIA Halos for Robotics announcement. No hyperscaler GPU demand news. **Thesis INTACT — hold.**
+- **AVGO** (-5.554%): AI revenue +143% YoY confirmed; AI revenue on pace to triple to USD 16B in a quarter. JPMorgan: "aggressive buyers." USD 2.5B debt tender (positive capital management). No thesis-breaking news. **Thesis INTACT — hold.**
+- **GOOGL** (-6.067%): John Jumper (Nobel Prize winner, DeepMind scientist) departing to Anthropic. Stock down ~5.1% on AI talent departure headlines. This is a sentiment headwind but does NOT trigger the invalidation condition (GCP deceleration or TPU roadmap cancellation). GCP growth (+63% YoY) remains intact; USD 84.75B capital raise + USD 180-190B capex confirms continued AI investment. HSBC and A24 GCP partnerships signed. **Thesis INTACT per stated invalidation conditions — hold. Talent drain is a risk to flag at next weekly review.**
+- **MRVL** (-3.561% from entry; -8.127% today): Sector-wide CPO delay (SemiAnalysis report from June 9 — already known and documented), S&P 500 inclusion sell-the-news reversal (known pattern; mandatory buying complete), outgoing CFO insider selling (~211K shares). All of these are already-priced or sector noise, not company-specific thesis breaks. Hyperscaler custom silicon contracts intact. **Thesis INTACT — hold. Buffer 8.439pp — comfortable.**
+- **AMZN** (-5.260%): Prime Day launched today (June 23-26, 27 countries). AWS +28% YoY; Bank of America reiterated Buy with PT USD 310 and USD 12.4B Prime Day GMV estimate. FTC ad probe and USD 200B AI capex fears cited as headwinds. Neither invalidates the thesis (AWS <20% YoY is the trigger; 28% is well above). **Thesis INTACT — hold.**
+
+### Stop audit — 6/6 confirmed live ✓
+
+| Symbol | Stop Order ID | HWM | Stop Price | Status |
+|---|---|---|---|---|
+| NVDA | `54d7d851` | USD 221.60 | USD 181.712 | ✓ live |
+| AVGO | `36f5a45f` | USD 426.48 | USD 349.7136 | ✓ live |
+| GOOGL | `e52a43f1` | USD 375.77 | USD 308.1314 | ✓ live |
+| MRVL | `a9097c8c` | USD 329.88 | USD 270.5016 | ✓ live |
+| AMZN | `b55bef05` | USD 250.43 | USD 205.3526 | ✓ live |
+| VST | `5b347be3` | USD 170.50 | USD 139.81 | ✓ live |
+
+**No stops missing. No stops recreated. All positions protected.**
+
+### Thesis contract status (June 23 midday)
+| Symbol | Review By | Invalidation | Status |
+|---|---|---|---|
+| NVDA | July 9 | Hyperscaler GPU share reverses | ✓ Intact — 6.738pp buffer |
+| AVGO | July 9 | AI revenue decelerates | ✓ Intact — 6.446pp buffer |
+| GOOGL | **July 2** | GCP decelerates OR TPU cancelled | ✓ Intact — 5.933pp buffer; talent departures = noise |
+| MRVL | June 29 | Hyperscaler silicon lost OR <15% YoY | ✓ Intact — 8.439pp buffer |
+| AMZN | July 7 | AWS <20% YoY OR Trainium fails | ✓ Intact — 6.740pp buffer; Prime Day active |
+| VST | July 15 | Nuclear PPAs cancelled | ✓ Intact — 20.35pp buffer |
+
+### Result
+All 6 positions within guardrails. No trades. All 18% trailing stops active and audited. Broad AI chip selloff driven by macro sentiment (basket de-risking) — no thesis breaks across any position. GOOGL talent departure risk is noted for next weekly review but does not trigger any immediate action. MRVL -8.13% intraday is sector CPO noise (already known), not thesis deterioration.
