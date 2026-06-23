@@ -17,6 +17,77 @@ but always re-fetches live data before trading._
 
 ---
 
+## Last snapshot — 2026-06-23 EOD CLOSE (~3:50 PM ET)
+
+| Field | Value |
+|---|---|
+| Equity | USD 92,876.82 |
+| Cash | USD 29,962.31 (32.26%) |
+| Long market value | USD 62,913.48 |
+| Open positions | 6 |
+| last_equity (June 22 EOD — Alpaca authoritative) | USD 95,082.61 |
+| Today's P/L vs last_equity | **-USD 2,205.79 (-2.320%)** — global semiconductor rout; MRVL -9.52%, NVDA -4.13%; AMZN +0.65% (Prime Day) partially offset; META exit realized at market-open |
+| HWM | USD 101,144.73 |
+| Drawdown from HWM | **-8.174%** (circuit breaker 20% — NOT triggered; 11.826pp headroom) |
+
+**Shock check:** -2.320% intraday vs threshold -6% → NOT triggered ✓
+
+**Open positions (June 23 EOD ~3:50 PM ET):**
+
+| Symbol | Qty | Avg Entry | EOD Price | Market Value | Unrealized P/L | P/L % | -12% Cut Trigger | Buffer | Rating |
+|---|---|---|---|---|---|---|---|---|---|
+| NVDA | 103 | USD 213.60 | USD 200.03 | USD 20,603.09 | -USD 1,397.71 | **-6.353%** | USD 187.97 | 5.647pp | A |
+| AVGO | 34 | USD 406.23 | USD 380.00 | USD 12,920.00 | -USD 891.82 | **-6.457%** | USD 357.48 | 5.543pp | A |
+| GOOGL | 16 | USD 370.22 | USD 346.70 | USD 5,547.20 | -USD 376.32 | **-6.353%** | USD 325.79 | 5.647pp | A |
+| MRVL | 25 | USD 293.29 | USD 278.55 | USD 6,963.75 | -USD 368.50 | -5.024% | USD 258.09 | 6.976pp 🔴 (-9.52% today) | A |
+| AMZN | 36 | USD 247.99 | USD 234.31 | USD 8,435.16 | -USD 492.48 | -5.517% | USD 218.23 | 6.483pp ✅ (+0.65% today) | A |
+| VST | 52 | USD 151.47 | USD 162.39 | USD 8,444.28 | +USD 567.84 | **+7.209% ✅** | USD 133.29 | 19.209pp | A |
+
+**No positions triggered -12% cut rule (nearest: AVGO 5.543pp, GOOGL 5.647pp, NVDA 5.647pp). All within guardrails.**
+
+**Stop audit (June 23 EOD): ALL 6 CONFIRMED LIVE ✓**
+
+| Symbol | Stop Order ID | HWM | Stop Price | Status |
+|---|---|---|---|---|
+| NVDA | `54d7d851` | USD 221.60 | USD 181.712 | ✓ live |
+| AVGO | `36f5a45f` | USD 426.48 | USD 349.7136 | ✓ live |
+| GOOGL | `e52a43f1` | USD 375.77 | USD 308.1314 | ✓ live |
+| MRVL | `a9097c8c` | USD 329.88 | USD 270.5016 | ✓ live |
+| AMZN | `b55bef05` | USD 250.43 | USD 205.3526 | ✓ live |
+| VST | `5b347be3` | USD 170.50 | USD 139.81 | ✓ live |
+
+**Thesis contracts (June 23 EOD):**
+| Symbol | Review By | Invalidation | Status |
+|---|---|---|---|
+| NVDA | July 9 | Hyperscaler GPU share reverses | ✓ Intact — 5.647pp buffer; semi rout = macro/regulatory, not NVDA-specific |
+| AVGO | July 9 | AI revenue decelerates | ✓ Intact — 5.543pp buffer; Asian regulatory pressure = sector, not AVGO-specific |
+| GOOGL | July 2 | GCP decelerates OR TPU cancelled | ✓ Intact — 5.647pp buffer |
+| MRVL | June 29 | Hyperscaler silicon lost OR <15% YoY | ✓ Intact — 6.976pp buffer; CPO delay + semi rout = sector headwinds, watch June 29 |
+| AMZN | July 7 | AWS <20% YoY | ✓ Intact — 6.483pp buffer; Prime Day active; outperformed sector today |
+| VST | July 15 | Nuclear PPAs cancelled | ✓ Intact — 19.209pp buffer; non-correlated with semi rout |
+
+**Sector exposure (June 23 EOD):**
+| Sector | Market Value | % of Portfolio |
+|---|---|---|
+| Technology — semis (NVDA, AVGO, MRVL) | USD 40,486.84 | 43.6% |
+| Technology — hyperscalers (AMZN, GOOGL) | USD 13,982.36 | 15.1% |
+| Utilities/Energy (VST) | USD 8,444.28 | 9.1% |
+| Cash | USD 29,962.31 | 32.3% |
+
+_EOD June 23: Global semiconductor rout driven by KOSPI -9.99%, Asian regulatory "overheated" signals, BofA rate hike note. Semi book hit: MRVL -9.52% today (6.976pp buffer), NVDA -4.13%, AVGO -3.09%. AMZN +0.65% (Prime Day offset). VST non-correlated at +7.21% from entry. No cuts executed. All 6 stops confirmed live. Control: ACTIVE. Watch AVGO, GOOGL, NVDA buffer compression if Asian regulatory pressure persists. MRVL review_by June 29 approaching._
+
+**Performance vs SPY (June 23 EOD):**
+| Metric | Value |
+|---|---|
+| Equity | USD 92,876.82 |
+| Aggro return since inception | **(92,876.82 − 100,000) / 100,000 = -7.123%** |
+| SPY close today (June 23) | USD 733.58 |
+| SPY return since inception (754.18 → 733.58) | **(733.58 − 754.18) / 754.18 = -2.731%** |
+| Alpha since inception | **-4.392pp** |
+| Today's alpha | Aggro -2.320% vs SPY -1.438% → **-0.882pp today** |
+
+---
+
 ## Last snapshot — 2026-06-23 MIDDAY (~12:41 PM ET)
 
 | Field | Value |
@@ -1667,3 +1738,6 @@ _Semi-group (NVDA+AVGO+MRVL) at 43.9% — within 50% cap. Three positions in pro
 | 2026-06-17 (EOD close) | **94,645.89** | **740.96** | **-5.354%** | **-1.753%** | **-3.601pp** |
 | 2026-06-18 (pre-market) | **95,752.52** | ~**744.73** (est; futures +0.87% on June 17 close USD 740.96) | **-4.247%** | ~**-1.254%** | **~-2.993pp** |
 | 2026-06-18 (market-open) | **95,864.24** | ~**744** (est; intraday) | **-4.136%** | ~**-1.253%** (est; 740.96 close) | **~-2.883pp** (est) |
+| 2026-06-18 (EOD close) | **96,864.56** | **746.74** | **-3.135%** | **-0.987%** | **-2.148pp** |
+| 2026-06-22 (EOD close) | **95,130.45** | **744.28** | **-4.870%** | **-1.312%** | **-3.558pp** |
+| 2026-06-23 (EOD close) | **92,876.82** | **733.58** | **-7.123%** | **-2.731%** | **-4.392pp** |
