@@ -2229,6 +2229,7 @@ META full exit at market open (proactive, 0.713pp buffer in Nasdaq -1.19% pre-ma
   ]
 }
 ```
+EXECUTED: 2026-06-23T13:47:49Z (META 17sh sold @ USD 568.109412, realized loss -USD 1,054.18 (-9.841%); trailing stop 5bc32805 canceled first; no new buys; stop audit 6/6 live)
 
 ### Performance vs SPY (pre-market June 23)
 | Metric | Value |

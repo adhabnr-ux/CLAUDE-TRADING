@@ -1872,3 +1872,26 @@ VST +10.223% is the leader. No stop tightening warranted.
 | SPY return since inception | **~-0.65%** |
 | Alpha since inception | **~-4.31pp** |
 | Intraday P/L vs last_equity (USD 97,006.60) | **-USD 1,963.47 (-2.02%)** |
+
+---
+
+## 2026-06-23 — MARKET OPEN (executed ~09:47 ET)
+
+### Trade — SELL META (full exit, proactive)
+
+| Field | Value |
+|---|---|
+| Action | SELL (full exit) |
+| Symbol | META |
+| Qty | 17 shares |
+| Fill price | USD 568.109412 avg |
+| Proceeds | USD 9,657.86 |
+| Entry cost basis | USD 10,712.04 (17sh × USD 630.12) |
+| Realized P/L | **-USD 1,054.18 (-9.841%)** |
+| Days held | 19 (June 4 – June 23) |
+| Why | Proactive full exit: pre-market buffer compressed to 0.713pp (USD 559.00 vs cut trigger USD 554.51) in Nasdaq -1.19% pre-market + KOSPI -9.99% global tech selloff. Applying MSFT lesson: <1pp buffer + risk-off tape + no near-term catalyst = full exit at market open, not midday rule. 25% trim structurally inadequate at 0.713pp — even 13 remaining shares would face midday forced cut probability of ~85%+ in broad selloff day. |
+| Trailing stop | `5bc32805` CANCELED first before sell order (correct sequence: cancel stop → market sell) |
+| Sell order | `6f31ed4b` — filled 2026-06-23T13:47:49Z |
+| Verified | ✓ META no longer in positions; cash USD 29,962.31 (up from USD 20,304.45) |
+| Stop audit (6 remaining) | NVDA `54d7d851` ✓ | AVGO `36f5a45f` ✓ | MRVL `a9097c8c` ✓ | AMZN `b55bef05` ✓ | GOOGL `e52a43f1` ✓ | VST `5b347be3` ✓ |
+| No new buys | Cash 32.05% — multiple stressed positions; tech selloff day; no plan to deploy |
