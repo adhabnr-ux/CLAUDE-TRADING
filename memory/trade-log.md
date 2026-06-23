@@ -3,6 +3,103 @@
 _Every order placed, with its reasoning. Append-only — newest entries at the top.
 The weekly new-position count is derived from this log._
 
+## 2026-06-23 09:37 ET — MARKET-OPEN (no trades; plan empty — risk-off; stop audit 5/5 ✓; NVDA ⚠️ monitoring $200)
+
+- **Action:** Market-open review. No trades executed — today's plan is empty (risk-off: KOSPI −9.99% chip selloff, S&P futures −1.43% pre-market; no qualified candidates). 4 positions held.
+- **Market status:** `is_open: true` ✓ (next_close 16:00 ET June 23)
+- **Account (~09:37 ET — live Alpaca):** Equity $98,662.85 | Cash $67,261.73 (68.17%) | LMV $31,401.12
+
+### Live-switch guard
+- `ALPACA_BASE_URL` contains "paper" ✓
+
+### Shock check
+- Equity $98,662.85 vs last_equity $99,043.58 = **−$380.73 = −0.384%** — well above −4% threshold. PASS ✓
+
+### Drawdown circuit breaker
+- HWM $101,384.21; current $98,662.85 = **−2.682%** — within −10% limit. NOT triggered ✓
+
+### Plan check
+- `plan_date: 2026-06-23` ✓ (today's plan confirmed)
+- `trades: []` — zero trades planned; no EXECUTED line in prior run
+- Reason for empty plan: risk-off session (KOSPI −9.99%, S&P futures −1.43%); LRCX/PWR ATR gates reset by chip selloff; no new high-conviction qualified candidates ✓
+
+### Breaking-news gate
+- No planned trades → gate not applicable. ✓
+
+### Position review (market-open 09:37 ET — live Alpaca data)
+
+**LLY** ($1,103.97, **+0.95% from entry $1,093.534**, +0.17% today) ✓ HOLD
+- Trailing stops (d4147484 7sh, 25989fb5 3sh): HWM **$1,182.73**, stop **$1,064.457** ✓
+- Stop buffer: $1,103.97 − $1,064.457 = **$39.51 (3.58%)** ✓
+- −7% cut threshold: $1,017.00 — CLEAR by $86.97 ✓
+- Defensive healthcare holding up; LLY +0.17% today vs market selling. Medicare Bridge July 1 in 8 days. HOLD. Conviction **A**. review_by 2026-07-01.
+
+**NVDA** ($202.05, **−5.33% from entry $213.421**, −3.16% today) ⚠️ WATCH
+- Trailing stop dcba7429 (33sh): HWM **$213.99**, stop **$192.591** ✓
+- Stop buffer: $202.05 − $192.591 = **$9.46 (4.68%)** ✓
+- −7% cut threshold (midday): $198.48 — CLEAR by $3.57 (1.77%) ⚠️
+- **⚠️ KEY WATCH: $200 invalidation level — current $202.05, only $2.05 above.** KOSPI chip selloff contagion driving NVDA lower. Vera Rubin launched at ISC HPC 2026 (June 17); earnings Aug 26 confirmed; hyperscaler demand intact. Thesis NOT broken — $200 is the technical invalidation floor. Buffer above -7% midday threshold narrowed to 1.77pp.
+- **Midday routine MUST check if NVDA ≤$198.48** and cut per -7% rule if so.
+- **If NVDA closes below $200 on volume today → thesis invalidated → plan exit at close/pre-market June 24.**
+- HOLD for now (market-open; -7% rule applies at midday). Conviction **B** (starter). review_by 2026-07-22.
+
+**V** ($330.22, **+2.06% from entry $323.57**, +1.11% today) ✓ HOLD
+- Trailing stop 66033918 (22sh): HWM **$336.8199**, stop **$303.138** ✓
+- Stop buffer: $330.22 − $303.138 = **$27.08 (8.20%)** ✓
+- −7% cut threshold: $300.92 — CLEAR by $29.30 ✓
+- Defensive financials holding up in risk-off. OpenAI/stablecoin thesis intact. HOLD. Conviction **B** (0/3 C-weeks). review_by 2026-07-28.
+
+**VST** ($160.515, **+7.87% from entry $148.81**, −4.03% today) ✓ STRONG HOLD
+- Trailing stop c4c200a5 (40sh): HWM **$170.50**, stop **$153.45** ✓
+- Stop buffer: $160.515 − $153.45 = **$7.065 (4.40%)** ✓
+- −7% cut threshold: $138.39 — CLEAR by $22.13 ✓
+- Risk-off profit-taking on large KOSPI chip losses; no negative VST-specific catalyst. Helix + Cogentrix thesis intact. Wells Fargo/Goldman/Bernstein all Buy. STRONG HOLD. Conviction **A**. review_by 2026-07-07.
+
+### Stop audit (market-open June 23 — confirmed via Alpaca open orders)
+| Order ID | Symbol | Qty | HWM | Stop | Status |
+|----------|--------|-----|-----|------|--------|
+| d4147484 | LLY | 7sh | $1,182.73 | $1,064.457 | ✓ live — unchanged |
+| 25989fb5 | LLY | 3sh | $1,182.73 | $1,064.457 | ✓ live — unchanged |
+| dcba7429 | NVDA | 33sh | $213.99 | $192.591 | ✓ live — unchanged |
+| 66033918 | V | 22sh | $336.8199 | $303.138 | ✓ live — unchanged |
+| c4c200a5 | VST | 40sh | $170.50 | $153.45 | ✓ live — unchanged |
+
+**Stop audit: 5/5 PASS ✓** No missing stops. No exits to reconcile.
+
+### Exit reconciliation
+No exits since last run. All 4 positions (LLY, NVDA, V, VST) intact. closed-trades.md current ✓.
+
+### Guardrail checks (market-open June 23)
+| Check | Value | Limit | Status |
+|-------|-------|-------|--------|
+| Today shock (vs last_equity $99,043.58) | −$380.73 = −0.384% | <−4% | ✓ |
+| Drawdown circuit breaker | $98,662 vs HWM $101,384 = −2.682% | <−10% | ✓ |
+| Cash | $67,261.73 (68.17%) | ≥5% | ✓ Ample |
+| All trailing stops active | 5/5 confirmed | required | ✓ |
+| Sector caps | HC 11.19%, Tech 6.76%, Fin 7.36%, Enrg 6.51%, Cash 68.17% | <60% each | ✓ |
+| New positions this week | 1/3 (NVDA June 22) | ≤3 | ✓ |
+| Daily deployment | $0 new buys | ≤25% | ✓ |
+| NVDA above −7% midday threshold | $202.05 vs $198.48 | clear | ⚠️ narrow (1.77%) |
+| NVDA above $200 invalidation | $202.05 > $200 | thesis intact | ⚠️ monitoring |
+| LLY earnings window | Aug 2026 (>2 days) | outside window | ✓ |
+| NVDA earnings window | Aug 26 (64 days) | outside window | ✓ |
+| V earnings window | Jul 28 (35 days) | outside window | ✓ |
+| VST earnings window | ~Aug 2026 | outside window | ✓ |
+
+### Performance (market-open June 23, ~09:37 ET)
+- **Equity:** $98,662.85 (vs last_equity $99,043.58 = −$380.73 = **−0.384% today**)
+- **SPY:** $733.035 (vs prev close $744.27 = **−1.51% today**) → Bull outperforming SPY by **+1.13pp** today (cash cushion working ✓)
+- **Since inception (2026-05-21):** Bull **−1.337%** vs SPY TR **−0.628%** (SPY $733.035 + $1.76 div = $734.795 vs anchor $739.44) = **Bull TRAILS SPY ~0.71pp** (significantly improved from −1.87pp at June 22 close as SPY fell −1.51%)
+- **Week of June 23:** 0/3 new position slots used so far this week (NVDA was week of June 22)
+
+### Notes
+- Risk-off session driven by KOSPI −9.99% (chip profit-taking) creating contagion to US semis. Cash cushion (68%) providing strong structural protection — Bull only −0.38% vs SPY −1.51%.
+- **NVDA is the key risk today:** $202.05, narrowing toward $200 invalidation and approaching the −7% midday cut threshold ($198.48). Midday routine has clear mandate: if NVDA ≤$198.48 at 12:30 PM ET, close the position per −7% rule. If NVDA closes today below $200 on volume, thesis is invalidated and pre-market June 24 must plan exit.
+- LLY, V holding well — defensive positioning benefiting from rotation away from semis.
+- VST risk-off selling but no fundamental break; Helix + Cogentrix intact, stop buffer 4.40%.
+
+---
+
 ## 2026-06-22 15:51 ET — CLOSE (no trades; stop audit 5/5 ✓; VST HWM ratcheted $170.50; no exits)
 
 - **Action:** End-of-day close review. No new positions placed (close is observation only). No positions cut, no trailing stops triggered.
