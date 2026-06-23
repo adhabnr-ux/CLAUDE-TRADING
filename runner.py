@@ -31,7 +31,7 @@ except ImportError:
 # ── Constants ────────────────────────────────────────────────────────────────
 
 ROOT = Path(__file__).parent.resolve()
-MODEL = os.environ.get("GEMINI_MODEL", "gemini-2.0-flash")
+MODEL = os.environ.get("GEMINI_MODEL", "gemini-1.5-flash")
 MAX_TURNS = 50  # hard safety limit per run
 
 ROUTINES = {
