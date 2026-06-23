@@ -565,6 +565,24 @@ def _forced_turn(client, model, messages, state, instruction, *, max_steps=4):
         time.sleep(2)
 
 
+def _notify_prefix(routine: str) -> str:
+    """Telegram message prefix the playbooks mandate, per mode."""
+    return "🔥 AGGRO Bull" if routine.startswith("aggro") else "Bull"
+
+
+def _gather_state_snapshot(routine: str) -> str:
+    """Pull live account + position state straight from Alpaca so any
+    runner-composed message carries real numbers, even if the model was lazy
+    or its context got trimmed. Aggro routines use the aggro account env vars,
+    which the workflow already wires into ALPACA_API_KEY_ID/SECRET."""
+    clock = _bash("./scripts/alpaca.sh clock 2>&1 | head -5")
+    account = _bash("./scripts/alpaca.sh account 2>&1 | head -20")
+    positions = _bash("./scripts/alpaca.sh positions 2>&1 | head -60")
+    return (f"MARKET CLOCK:\n{clock}\n\n"
+            f"ACCOUNT:\n{account}\n\n"
+            f"POSITIONS:\n{positions}")
+
+
 def run(routine: str) -> None:
     api_key = os.environ.get("GROQ_API_KEY", "")
     if not api_key:
@@ -614,21 +632,39 @@ def run(routine: str) -> None:
     # Guarantee a substantive Telegram summary and a committed push every run.
     if not state.notified:
         print("[runner] no notify sent during run — forcing the Notify step")
+        prefix = _notify_prefix(routine)
+        snapshot = _gather_state_snapshot(routine)
         _forced_turn(
             client, chosen_model, messages, state,
-            "You did not send the required Telegram summary. Do it NOW: call "
-            "bash_execute with ./scripts/notify.sh and a real, specific one-message "
-            "summary for THIS routine, in the exact prefix and format the playbook's "
-            "Notify step requires (concrete details — market posture, planned trades, "
-            "positions, P/L, stops — not a placeholder). Single-quote the argument and "
-            "never put a literal dollar sign in it.",
+            "You did not send the required Telegram summary. Send it NOW with one "
+            "bash_execute call to ./scripts/notify.sh.\n\n"
+            f"Start the message EXACTLY with: '{prefix} {routine} {datetime.now(timezone.utc):%Y-%m-%d}:'\n\n"
+            "Make it specific and in-depth using the live state below plus what you "
+            "did this run — the concrete items this routine's playbook Notify step "
+            "requires (e.g. market posture & planned trades for pre-market; trades "
+            "executed & stops for market-open; positions cut / stops tightened or "
+            "'all within range' for midday; equity, day P/L and result vs SPY for "
+            "close; week-vs-SPY and grade for reviews). No placeholders. Single-quote "
+            "the argument; never put a literal dollar sign in it (write USD or plain "
+            f"numbers).\n\n=== LIVE STATE ===\n{snapshot}",
         )
 
     if not state.notified:
-        # Last resort so the human is never left in the dark about a run.
-        print("[runner] notify still missing — sending fallback message")
-        _bash(f"./scripts/notify.sh 'Bull {routine}: routine ran but could not "
-              "compose a full summary this time — check the logs.' 2>&1 || true")
+        # Last resort so the human is never left in the dark — send the live
+        # snapshot directly so the message still carries real numbers.
+        print("[runner] notify still missing — sending data-rich fallback")
+        prefix = _notify_prefix(routine)
+        snap = _gather_state_snapshot(routine)
+        equity = ""
+        m = re.search(r'"?equity"?\s*[:=]\s*"?([\d.]+)', snap)
+        if m:
+            equity = f" equity USD {float(m.group(1)):,.0f}."
+        pos_count = len(re.findall(r'"symbol"', snap))
+        msg = (f"{prefix} {routine}: routine ran;{equity} {pos_count} open position(s). "
+               "Full summary could not be composed this run — see Actions logs.")
+        # Escape single quotes for the shell-single-quoted argument.
+        safe = msg.replace("'", "'\\''")
+        _bash(f"./scripts/notify.sh '{safe}' 2>&1 || true")
 
     # Always persist memory, whether or not the model remembered to commit.
     print("[runner] final commit/push backstop")
