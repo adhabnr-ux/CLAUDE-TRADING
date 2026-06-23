@@ -129,7 +129,7 @@ def _bash(command: str) -> str:
     return out or "(no output)"
 
 
-MAX_READ_CHARS = 60_000
+MAX_READ_CHARS = 8_000  # ~2K tokens — Groq free tier is 6K TPM total
 
 
 def _read(path: str) -> str:
@@ -313,11 +313,11 @@ def build_prompt(routine: str) -> str:
             index_lines.append(f"  - {f} (missing)")
     index = "\n".join(index_lines)
 
-    inline = []
-    for small in ("memory/control.md", "memory/strategy.md"):
-        if small in files:
-            inline.append(f"### {small}\n{_read(small)}")
-    inline_block = "\n\n".join(inline)
+    # Inline ONLY the tiny control switch. Strategy / portfolio / etc. are
+    # read on demand so the initial prompt stays inside Groq's 6K-TPM budget.
+    inline_block = ""
+    if "memory/control.md" in files:
+        inline_block = f"### memory/control.md\n{_read('memory/control.md')}"
 
     now_utc = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
 
@@ -336,7 +336,7 @@ def build_prompt(routine: str) -> str:
 
         ---
 
-        ## ALWAYS-LOADED CONTEXT (control switch + strategy):
+        ## ALWAYS-LOADED CONTEXT (control switch only — read others as needed):
 
         {inline_block}
     """).strip()
@@ -368,8 +368,11 @@ def _recover_calls_from_failed_generation(emsg: str) -> list:
 # Trim conversation history once total payload gets large enough to threaten
 # Groq's per-minute token budget. Keep system + first user (the playbook) and
 # the most recent turns; collapse the middle into a brief stub.
-TRIM_THRESHOLD_CHARS = 80_000   # ~20K tokens; well under the 30K-TPM 8b cap
-KEEP_RECENT_MESSAGES = 12
+# Groq free tier on 8b = 6,000 tokens/min. Stay under ~4K tokens per request
+# (~16K chars) so a single send always fits inside the per-minute window.
+TRIM_THRESHOLD_CHARS = 16_000
+KEEP_RECENT_MESSAGES = 6
+MAX_TOOL_RESULT_CHARS = 4_000  # tool outputs are the biggest history bloater
 
 
 def _maybe_trim_history(messages: list) -> None:
@@ -527,10 +530,16 @@ def _execute_tool_calls(tool_calls: list, messages: list, state: "RunState") -> 
         except Exception as exc:
             result = f"ERROR: {exc}"
 
+        result_str = str(result)
+        if len(result_str) > MAX_TOOL_RESULT_CHARS:
+            half = MAX_TOOL_RESULT_CHARS // 2 - 100
+            result_str = (result_str[:half]
+                          + f"\n… [truncated {len(result_str) - MAX_TOOL_RESULT_CHARS} chars] …\n"
+                          + result_str[-half:])
         messages.append({
             "role": "tool",
             "tool_call_id": tc["id"],
-            "content": str(result),
+            "content": result_str,
         })
 
 
@@ -575,9 +584,9 @@ def _gather_state_snapshot(routine: str) -> str:
     runner-composed message carries real numbers, even if the model was lazy
     or its context got trimmed. Aggro routines use the aggro account env vars,
     which the workflow already wires into ALPACA_API_KEY_ID/SECRET."""
-    clock = _bash("./scripts/alpaca.sh clock 2>&1 | head -5")
-    account = _bash("./scripts/alpaca.sh account 2>&1 | head -20")
-    positions = _bash("./scripts/alpaca.sh positions 2>&1 | head -60")
+    clock = _bash("./scripts/alpaca.sh clock 2>&1 | head -3")[:400]
+    account = _bash("./scripts/alpaca.sh account 2>&1 | head -8")[:800]
+    positions = _bash("./scripts/alpaca.sh positions 2>&1 | head -30")[:2000]
     return (f"MARKET CLOCK:\n{clock}\n\n"
             f"ACCOUNT:\n{account}\n\n"
             f"POSITIONS:\n{positions}")
