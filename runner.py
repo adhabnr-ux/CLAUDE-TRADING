@@ -19,20 +19,24 @@ import os
 import sys
 import subprocess
 import textwrap
+import urllib.request
+import urllib.parse
+import json
+import re
 from datetime import datetime, timezone
 from pathlib import Path
 
 try:
-    from google import genai
-    from google.genai import types
+    import google.generativeai as genai
+    from google.generativeai import protos
 except ImportError:
-    sys.exit("Missing dependency — run: pip install google-genai")
+    sys.exit("Missing dependency — run: pip install google-generativeai")
 
 # ── Constants ────────────────────────────────────────────────────────────────
 
 ROOT = Path(__file__).parent.resolve()
-MODEL = os.environ.get("GEMINI_MODEL", "gemini-2.0-flash-lite")
-MAX_TURNS = 50  # hard safety limit per run
+MODEL = os.environ.get("GEMINI_MODEL", "gemini-1.5-flash")
+MAX_TURNS = 50
 
 ROUTINES = {
     "premarket":           ".claude/commands/premarket.md",
@@ -48,7 +52,6 @@ ROUTINES = {
     "aggro-weekly-review": ".claude/commands/aggro-weekly-review.md",
 }
 
-# Files always loaded into context upfront
 BASE_MEMORY = [
     "CLAUDE.md",
     "memory/control.md",
@@ -76,11 +79,9 @@ AGGRO_MEMORY = [
 # ── Tool implementations ─────────────────────────────────────────────────────
 
 def _bash(command: str) -> str:
-    """Run a shell command in the repo root."""
-    env = {**os.environ}
     result = subprocess.run(
         command, shell=True, capture_output=True, text=True,
-        cwd=str(ROOT), timeout=120, env=env,
+        cwd=str(ROOT), timeout=120, env={**os.environ},
     )
     out = result.stdout.strip()
     if result.stderr.strip():
@@ -91,7 +92,6 @@ def _bash(command: str) -> str:
 
 
 def _read(path: str) -> str:
-    """Read a file relative to the repo root."""
     p = ROOT / path
     if not p.exists():
         return f"(file not found: {path})"
@@ -102,7 +102,6 @@ def _read(path: str) -> str:
 
 
 def _write(path: str, content: str) -> str:
-    """Write a file relative to the repo root, creating dirs as needed."""
     p = ROOT / path
     p.parent.mkdir(parents=True, exist_ok=True)
     p.write_text(content, encoding="utf-8")
@@ -110,12 +109,57 @@ def _write(path: str, content: str) -> str:
 
 
 def _ls(path: str = ".") -> str:
-    """List files in a directory relative to the repo root."""
     p = ROOT / path
     if not p.exists():
         return f"(directory not found: {path})"
-    items = sorted(p.iterdir())
-    return "\n".join(str(i.relative_to(ROOT)) for i in items)
+    return "\n".join(str(f.relative_to(ROOT)) for f in sorted(p.iterdir()))
+
+
+def _web_search(query: str) -> str:
+    """Search the web via DuckDuckGo (no API key needed)."""
+    try:
+        url = f"https://api.duckduckgo.com/?q={urllib.parse.quote(query)}&format=json&no_html=1&skip_disambig=1"
+        req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+        with urllib.request.urlopen(req, timeout=10) as resp:
+            data = json.loads(resp.read().decode("utf-8"))
+
+        results = []
+        if data.get("Abstract"):
+            results.append(f"Summary: {data['Abstract']} (Source: {data.get('AbstractSource', '')})")
+        for topic in data.get("RelatedTopics", [])[:6]:
+            if isinstance(topic, dict) and topic.get("Text"):
+                results.append(f"- {topic['Text']}")
+
+        # Also try news via RSS for financial queries
+        if not results or any(w in query.lower() for w in ["stock", "market", "price", "earnings", "sp500", "spy"]):
+            rss_results = _fetch_finance_rss(query)
+            if rss_results:
+                results.append("\nRecent news:")
+                results.extend(rss_results)
+
+        return "\n".join(results) if results else f"No results for: {query}"
+    except Exception as e:
+        return f"Search error: {e}"
+
+
+def _fetch_finance_rss(query: str) -> list:
+    """Fetch recent headlines from Yahoo Finance RSS."""
+    try:
+        # Extract ticker if present (uppercase word 2-5 chars)
+        tickers = re.findall(r'\b([A-Z]{2,5})\b', query)
+        symbol = tickers[0] if tickers else "SPY"
+        url = f"https://feeds.finance.yahoo.com/rss/2.0/headline?s={symbol}&region=US&lang=en-US"
+        req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+        with urllib.request.urlopen(req, timeout=8) as resp:
+            xml = resp.read().decode("utf-8")
+        titles = re.findall(r"<title><!\[CDATA\[(.*?)\]\]></title>", xml)
+        dates = re.findall(r"<pubDate>(.*?)</pubDate>", xml)
+        items = []
+        for title, date in zip(titles[1:6], dates[:5]):  # skip feed title
+            items.append(f"  [{date[:16]}] {title}")
+        return items
+    except Exception:
+        return []
 
 
 TOOL_FNS = {
@@ -123,71 +167,80 @@ TOOL_FNS = {
     "read_file":      _read,
     "write_file":     _write,
     "list_directory": _ls,
+    "web_search":     _web_search,
 }
 
-# ── Gemini tool declarations ─────────────────────────────────────────────────
+# ── Gemini tool declarations (google-generativeai format) ────────────────────
 
-TOOL_DECLS = [
-    types.FunctionDeclaration(
-        name="bash_execute",
-        description=(
-            "Run any shell command in the repo root. Use this for: "
-            "./scripts/alpaca.sh (trading), ./scripts/notify.sh (Telegram), "
-            "git commands (commit, push, pull), and any other CLI operation."
+TOOL_DECLARATIONS = protos.Tool(
+    function_declarations=[
+        protos.FunctionDeclaration(
+            name="bash_execute",
+            description=(
+                "Run any shell command in the repo root. Use for: "
+                "./scripts/alpaca.sh (trading), ./scripts/notify.sh (Telegram), "
+                "git commands (commit, push, pull), and any other CLI operation."
+            ),
+            parameters=protos.Schema(
+                type=protos.Type.OBJECT,
+                properties={"command": protos.Schema(type=protos.Type.STRING, description="Shell command to run")},
+                required=["command"],
+            ),
         ),
-        parameters=types.Schema(
-            type=types.Type.OBJECT,
-            properties={"command": types.Schema(type=types.Type.STRING, description="Shell command to run")},
-            required=["command"],
+        protos.FunctionDeclaration(
+            name="read_file",
+            description="Read a file from the repository (relative path from repo root).",
+            parameters=protos.Schema(
+                type=protos.Type.OBJECT,
+                properties={"path": protos.Schema(type=protos.Type.STRING, description="Relative file path")},
+                required=["path"],
+            ),
         ),
-    ),
-    types.FunctionDeclaration(
-        name="read_file",
-        description="Read a file from the repository (relative path from repo root).",
-        parameters=types.Schema(
-            type=types.Type.OBJECT,
-            properties={"path": types.Schema(type=types.Type.STRING, description="Relative file path")},
-            required=["path"],
+        protos.FunctionDeclaration(
+            name="write_file",
+            description="Write content to a file in the repository. Creates parent directories automatically.",
+            parameters=protos.Schema(
+                type=protos.Type.OBJECT,
+                properties={
+                    "path":    protos.Schema(type=protos.Type.STRING, description="Relative file path"),
+                    "content": protos.Schema(type=protos.Type.STRING, description="Full file content to write"),
+                },
+                required=["path", "content"],
+            ),
         ),
-    ),
-    types.FunctionDeclaration(
-        name="write_file",
-        description="Write content to a file in the repository. Creates parent directories automatically.",
-        parameters=types.Schema(
-            type=types.Type.OBJECT,
-            properties={
-                "path":    types.Schema(type=types.Type.STRING, description="Relative file path"),
-                "content": types.Schema(type=types.Type.STRING, description="Full file content to write"),
-            },
-            required=["path", "content"],
+        protos.FunctionDeclaration(
+            name="list_directory",
+            description="List files in a directory (relative path, defaults to repo root).",
+            parameters=protos.Schema(
+                type=protos.Type.OBJECT,
+                properties={"path": protos.Schema(type=protos.Type.STRING, description="Relative directory path")},
+                required=[],
+            ),
         ),
-    ),
-    types.FunctionDeclaration(
-        name="list_directory",
-        description="List files in a directory (relative path, defaults to repo root).",
-        parameters=types.Schema(
-            type=types.Type.OBJECT,
-            properties={"path": types.Schema(type=types.Type.STRING, description="Relative directory path")},
-            required=[],
+        protos.FunctionDeclaration(
+            name="web_search",
+            description=(
+                "Search the web for current information. Use this whenever the playbook says WebSearch. "
+                "Good for: stock news, earnings, analyst ratings, macro events, market conditions."
+            ),
+            parameters=protos.Schema(
+                type=protos.Type.OBJECT,
+                properties={"query": protos.Schema(type=protos.Type.STRING, description="Search query")},
+                required=["query"],
+            ),
         ),
-    ),
-]
+    ]
+)
 
 # ── Context builder ──────────────────────────────────────────────────────────
 
 def build_prompt(routine: str) -> str:
     playbook = _read(ROUTINES[routine])
-
     files = list(BASE_MEMORY)
     if routine.startswith("aggro"):
         files += AGGRO_MEMORY
 
-    mem_sections = []
-    for f in files:
-        content = _read(f)
-        mem_sections.append(f"### {f}\n{content}")
-    memory_block = "\n\n---\n\n".join(mem_sections)
-
+    mem_sections = [f"### {f}\n{_read(f)}" for f in files]
     now_utc = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
 
     return textwrap.dedent(f"""
@@ -201,9 +254,8 @@ def build_prompt(routine: str) -> str:
 
         ## MEMORY FILES (your current state — update via write_file):
 
-        {memory_block}
+        {chr(10).join(mem_sections)}
     """).strip()
-
 
 # ── Agentic loop ─────────────────────────────────────────────────────────────
 
@@ -214,92 +266,72 @@ def run(routine: str) -> None:
     if routine not in ROUTINES:
         sys.exit(f"Unknown routine: {routine}\nValid: {', '.join(ROUTINES)}")
 
-    # Pull latest memory before starting
     print(f"[runner] syncing with main …")
     _bash("git pull origin main --rebase --autostash 2>&1 || true")
 
-    client = genai.Client(api_key=api_key)
+    genai.configure(api_key=api_key)
 
-    tools = [
-        types.Tool(function_declarations=TOOL_DECLS),
-        types.Tool(google_search=types.GoogleSearch()),
-    ]
-
-    config = types.GenerateContentConfig(
+    model = genai.GenerativeModel(
+        model_name=MODEL,
+        tools=[TOOL_DECLARATIONS],
         system_instruction=(
             "You are Bull, an autonomous AI trading agent. "
-            "Your job is to run the routine described in the playbook below, step by step. "
+            "Follow every step in the playbook exactly. "
             "Use bash_execute to run shell scripts (alpaca.sh, notify.sh) and git commands. "
             "Use write_file to update memory files. "
-            "Use read_file or list_directory if you need to check something not already in context. "
-            "Use google_search (built-in) whenever the playbook says WebSearch — treat it identically. "
-            "At the END of every run, after all other steps are done: "
-            "run 'git add -A && git commit -m \"<routine>: <one-line summary>\" "
-            "&& git push origin HEAD:main' via bash_execute. "
-            "If the push is rejected, run 'git fetch origin main && git rebase origin/main' then push again."
+            "Use web_search whenever the playbook says to use WebSearch — treat them identically. "
+            "At the END of every run, after all other steps, commit and push: "
+            "bash_execute('git add -A && git commit -m \"<routine>: <summary>\" "
+            "&& git push origin HEAD:main'). "
+            "If push is rejected, run 'git fetch origin main && git rebase origin/main' then push again."
         ),
-        tools=tools,
-        temperature=0.1,
-        max_output_tokens=8192,
     )
 
     print(f"[runner] starting {routine} with {MODEL}")
-    prompt = build_prompt(routine)
-    contents: list = [types.Content(role="user", parts=[types.Part(text=prompt)])]
+    chat = model.start_chat()
+    response = chat.send_message(build_prompt(routine))
 
     turns = 0
     while turns < MAX_TURNS:
-        response = client.models.generate_content(
-            model=MODEL, contents=contents, config=config
-        )
-
-        if not response.candidates:
-            print("[runner] empty response — stopping")
-            break
-
-        candidate = response.candidates[0]
-        model_parts = candidate.content.parts if candidate.content else []
-        contents.append(types.Content(role="model", parts=model_parts))
-
-        # Print any text the model produced
-        for part in model_parts:
+        # Print any text
+        for part in response.parts:
             if hasattr(part, "text") and part.text:
-                preview = part.text[:300].replace("\n", " ")
-                print(f"[model] {preview}")
+                print(f"[model] {part.text[:200].replace(chr(10), ' ')}")
 
         # Collect function calls
-        fn_calls = [p for p in model_parts if getattr(p, "function_call", None)]
+        fn_calls = []
+        for part in response.parts:
+            try:
+                if part.function_call and part.function_call.name:
+                    fn_calls.append(part.function_call)
+            except Exception:
+                pass
+
         if not fn_calls:
             print(f"[runner] routine complete ({turns + 1} turns)")
             break
 
-        # Execute each tool call
+        # Execute tools and collect responses
         fn_responses = []
-        for part in fn_calls:
-            fc = part.function_call
+        for fc in fn_calls:
+            args = dict(fc.args)
+            print(f"[tool]  {fc.name}({list(args.keys())})")
             fn = TOOL_FNS.get(fc.name)
-            args = dict(fc.args) if fc.args else {}
-            arg_keys = list(args.keys())
-            print(f"[tool]  {fc.name}({arg_keys})")
-
-            if fn is None:
-                result = f"(unknown tool: {fc.name})"
-            else:
-                try:
-                    result = fn(**args)
-                except Exception as exc:
-                    result = f"ERROR: {exc}"
+            try:
+                result = fn(**args) if fn else f"(unknown tool: {fc.name})"
+            except Exception as exc:
+                result = f"ERROR: {exc}"
 
             fn_responses.append(
-                types.Part(
-                    function_response=types.FunctionResponse(
+                protos.Part(
+                    function_response=protos.FunctionResponse(
                         name=fc.name,
                         response={"result": result},
                     )
                 )
             )
 
-        contents.append(types.Content(role="user", parts=fn_responses))
+        response = chat.send_message(fn_responses)
         turns += 1
 
     if turns >= MAX_TURNS:

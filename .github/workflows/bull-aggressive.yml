@@ -42,7 +42,7 @@ jobs:
           python-version: '3.11'
 
       - name: Install dependencies
-        run: pip install google-genai
+        run: pip install google-generativeai
 
       - name: Make scripts executable
         run: chmod +x scripts/alpaca.sh scripts/notify.sh
