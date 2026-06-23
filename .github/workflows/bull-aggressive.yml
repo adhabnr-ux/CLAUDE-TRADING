@@ -42,7 +42,7 @@ jobs:
           python-version: '3.11'
 
       - name: Install dependencies
-        run: pip install google-generativeai
+        run: pip install groq
 
       - name: Make scripts executable
         run: chmod +x scripts/alpaca.sh scripts/notify.sh
@@ -71,7 +71,7 @@ jobs:
       - name: Run AGGRO Bull routine
         run: python runner.py ${{ steps.routine.outputs.name }}
         env:
-          GEMINI_API_KEY:        ${{ secrets.GEMINI_API_KEY }}
+          GROQ_API_KEY:          ${{ secrets.GROQ_API_KEY }}
           ALPACA_API_KEY_ID:     ${{ secrets.ALPACA_API_KEY_ID_AGGRO }}
           ALPACA_API_SECRET_KEY: ${{ secrets.ALPACA_API_SECRET_KEY_AGGRO }}
           ALPACA_BASE_URL:       ${{ secrets.ALPACA_BASE_URL }}
