@@ -35,8 +35,69 @@ except ImportError:
 # ── Constants ────────────────────────────────────────────────────────────────
 
 ROOT = Path(__file__).parent.resolve()
-MODEL = os.environ.get("GEMINI_MODEL", "gemini-1.5-flash")
+# If GEMINI_MODEL is set, it wins. Otherwise resolve_model() asks the API
+# which models this key can actually use and picks the best free one.
+MODEL_OVERRIDE = os.environ.get("GEMINI_MODEL", "").strip()
 MAX_TURNS = 50
+
+# Preference order — first match (by substring) among the key's available
+# models wins. "flash" tiers are cheapest and have the most generous free
+# quota; "lite" highest of all. Listed newest-stable first.
+MODEL_PREFERENCE = [
+    "gemini-2.5-flash-lite",
+    "gemini-2.0-flash-lite",
+    "gemini-2.5-flash",
+    "gemini-2.0-flash",
+    "gemini-flash-latest",
+    "gemini-1.5-flash-8b",
+    "gemini-1.5-flash",
+]
+
+
+def resolve_model() -> str:
+    """Ask the API which models this key supports, then pick the best free one.
+
+    This is the key robustness fix: Google retires model names for new keys
+    and varies them by region, so we never hardcode. We list what's actually
+    available and choose, preferring cheap high-quota 'flash' tiers.
+    """
+    if MODEL_OVERRIDE:
+        print(f"[runner] GEMINI_MODEL override = {MODEL_OVERRIDE}")
+        return MODEL_OVERRIDE
+
+    available = []
+    for m in genai.list_models():
+        if "generateContent" in getattr(m, "supported_generation_methods", []):
+            # names come back like "models/gemini-2.0-flash" — strip prefix
+            available.append(m.name.split("/", 1)[-1])
+
+    if not available:
+        sys.exit("No models support generateContent for this API key. "
+                 "Check the key at https://aistudio.google.com/apikey")
+
+    # Avoid preview/experimental/vision/thinking variants when a stable one exists
+    def is_stable(name: str) -> bool:
+        return not any(tag in name for tag in ("exp", "preview", "thinking", "vision"))
+
+    stable = [n for n in available if is_stable(n)]
+    pool = stable or available
+
+    for pref in MODEL_PREFERENCE:
+        for name in pool:
+            if name == pref:
+                print(f"[runner] resolved model = {name}")
+                return name
+    # Loose substring match next (e.g. dated variant 'gemini-2.0-flash-001')
+    for pref in MODEL_PREFERENCE:
+        for name in pool:
+            if pref in name:
+                print(f"[runner] resolved model = {name} (matched '{pref}')")
+                return name
+
+    # Last resort: anything that works
+    print(f"[runner] no preferred match; using {pool[0]}")
+    print(f"[runner] available models were: {', '.join(available)}")
+    return pool[0]
 
 ROUTINES = {
     "premarket":           ".claude/commands/premarket.md",
@@ -257,6 +318,32 @@ def build_prompt(routine: str) -> str:
         {chr(10).join(mem_sections)}
     """).strip()
 
+# ── Error handling ────────────────────────────────────────────────────────────
+
+def _handle_api_error(exc: Exception) -> None:
+    """Turn cryptic Gemini API errors into one clear, actionable line."""
+    msg = str(exc)
+    if "429" in msg or "RESOURCE_EXHAUSTED" in msg or "quota" in msg.lower():
+        print("\n[runner] ⚠️  Gemini free-tier quota hit (429). This is NOT a code "
+              "bug — the key ran out of free requests for the day, or the chosen "
+              "model has a 0 free quota in your region.\n"
+              "        Fix options:\n"
+              "        • Wait ~24h for the daily free quota to reset, or\n"
+              "        • Set a GitHub secret GEMINI_MODEL to a lighter model "
+              "(e.g. gemini-2.0-flash-lite), or\n"
+              "        • Enable billing at https://aistudio.google.com/apikey "
+              "(pay-as-you-go has far higher limits and is near-free at this volume).")
+    elif "404" in msg or "not found" in msg.lower():
+        print("\n[runner] ⚠️  Model not found (404). The runner auto-resolves models, "
+              "so this usually means the key has access to no chat models at all.\n"
+              "        Check the key at https://aistudio.google.com/apikey")
+    elif "API_KEY_INVALID" in msg or "API key not valid" in msg:
+        print("\n[runner] ⚠️  Invalid GEMINI_API_KEY. Re-copy it from "
+              "https://aistudio.google.com/apikey into the GitHub secret.")
+    else:
+        print(f"\n[runner] ⚠️  Gemini API error: {msg}")
+
+
 # ── Agentic loop ─────────────────────────────────────────────────────────────
 
 def run(routine: str) -> None:
@@ -271,8 +358,10 @@ def run(routine: str) -> None:
 
     genai.configure(api_key=api_key)
 
+    chosen_model = resolve_model()
+
     model = genai.GenerativeModel(
-        model_name=MODEL,
+        model_name=chosen_model,
         tools=[TOOL_DECLARATIONS],
         system_instruction=(
             "You are Bull, an autonomous AI trading agent. "
@@ -287,9 +376,13 @@ def run(routine: str) -> None:
         ),
     )
 
-    print(f"[runner] starting {routine} with {MODEL}")
+    print(f"[runner] starting {routine} with {chosen_model}")
     chat = model.start_chat()
-    response = chat.send_message(build_prompt(routine))
+    try:
+        response = chat.send_message(build_prompt(routine))
+    except Exception as exc:
+        _handle_api_error(exc)
+        raise
 
     turns = 0
     while turns < MAX_TURNS:
@@ -331,7 +424,11 @@ def run(routine: str) -> None:
                 )
             )
 
-        response = chat.send_message(fn_responses)
+        try:
+            response = chat.send_message(fn_responses)
+        except Exception as exc:
+            _handle_api_error(exc)
+            raise
         turns += 1
 
     if turns >= MAX_TURNS:
