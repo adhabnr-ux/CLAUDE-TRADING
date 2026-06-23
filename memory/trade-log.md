@@ -3,6 +3,78 @@
 _Every order placed, with its reasoning. Append-only — newest entries at the top.
 The weekly new-position count is derived from this log._
 
+## 2026-06-23 12:31 ET — MIDDAY (no cuts, no tightenings; NVDA ⚠️ $202.23 buffer 1.75pp from -7% rule; stop audit 5/5 ✓)
+
+- **Action:** Midday risk review. No forced cuts, no stops tightened. All 4 positions within guardrails.
+- **Market status:** `is_open: true` ✓ (confirmed via Alpaca clock 12:31 ET)
+- **Account (~12:31 ET — live Alpaca):** Equity $98,778.40 | Cash $67,261.73 | LMV $31,516.67
+
+### Shock check
+- Equity $98,778.40 vs last_equity $99,043.58 = **−$265.18 = −0.268%** — well above −4% threshold. PASS ✓
+
+### Drawdown circuit breaker
+- HWM $101,384.21; current $98,778.40 = **−2.570%** — within −10% limit. NOT triggered ✓
+
+### Position review (midday 12:31 ET — live Alpaca data)
+
+**LLY** ($1,100.23, **+0.612% from entry $1,093.534**, −0.168% today) ✓ HOLD
+- Trailing stops (d4147484 7sh, 25989fb5 3sh): HWM **$1,182.73**, stop **$1,064.457** ✓
+- Stop buffer: $1,100.23 − $1,064.457 = **$35.77 (3.27%)** ✓
+- −7% cut threshold: $1,017.00 — CLEAR by $83.23 ✓
+- Defensive healthcare slightly off intraday. Medicare Bridge July 1 in 8 days. HOLD. Conviction **A**. review_by 2026-07-01.
+
+**NVDA** ($202.23, **−5.244% from entry $213.421**, −3.077% today) ⚠️ NARROW BUFFER — HOLD
+- Trailing stop dcba7429 (33sh): HWM **$213.99**, stop **$192.591** ✓
+- Stop buffer from trailing stop: $202.23 − $192.591 = **$9.639 (4.77%)** ✓
+- −7% cut threshold (midday rule): **$198.48** — current $202.23 — buffer **1.75pp** ⚠️
+- Session low today: **$200.04** (approached $200 invalidation intraday)
+- **News scan (required, >3% below entry):** Global AI/chip sector selloff continues from KOSPI contagion. Nvidia-specific news: announced Halos for Robotics (physical AI safety system) — POSITIVE product catalyst. Bernstein maintains Buy. AMD and Micron also lower. Sector-wide, NOT NVDA-specific thesis break. $200 invalidation requires a CLOSE below $200 on volume — not met.
+- Thesis (AI accelerator monopoly, Helix consortium, hyperscaler capex) INTACT. HWM $213.99 ✓.
+- ⚠️ **Decision: HOLD — no forced cut (−5.24% < −7% rule)**. Buffer 1.75pp is below the 2pp lessons.md warning threshold — considered 25% proactive trim but thesis intact (sector noise, not company-specific), stock above $200 invalidation, and structural stop at $192.59 provides protection. Close routine MUST monitor. If NVDA reaches $198.48 or closes below $200, exit.
+- Conviction **B** (starter). review_by 2026-07-22.
+
+**V** ($330.82, **+2.241% from entry $323.57**, +1.292% today) ✓ HOLD
+- Trailing stop 66033918 (22sh): HWM **$336.8199**, stop **$303.138** ✓
+- Stop buffer: $330.82 − $303.138 = **$27.682 (8.56%)** ✓
+- −7% cut threshold: $300.92 — CLEAR by $29.90 ✓
+- Outperforming on risk-off day (financials resilient). OpenAI/stablecoin thesis intact. HOLD. Conviction **B** (0/3 C-weeks). review_by 2026-07-28.
+
+**VST** ($164.07, **+10.255% from entry $148.81**, −1.907% today) ✓ STRONG HOLD
+- Trailing stop c4c200a5 (40sh): HWM **$170.50**, stop **$153.45** ✓
+- Stop buffer: $164.07 − $153.45 = **$10.62 (6.47%)** ✓
+- −7% cut threshold: $138.39 — CLEAR by $25.68 ✓
+- **News scan (required, >10% above entry):** Analysts raised VST revenue forecast to $23.3B (from $18.8B). Wells Fargo, Melius Research, Goldman Sachs all maintain Buy. AI power demand story intact. Helix + Cogentrix thesis unchanged. Today's −1.907% is pure risk-off profit-taking from June run (+11%); no negative catalyst. Stop buffer 6.47% ✓.
+- +15% tighten trigger at **$171.13** — NOT reached (current $164.07, $7.06 away). STRONG HOLD. Conviction **A**. review_by 2026-07-07.
+
+### Stop audit (midday June 23 — confirmed via Alpaca open orders)
+| Order ID | Symbol | Qty | HWM | Stop | Status |
+|----------|--------|-----|-----|------|--------|
+| d4147484 | LLY | 7sh | $1,182.73 | $1,064.457 | ✓ new — confirmed |
+| 25989fb5 | LLY | 3sh | $1,182.73 | $1,064.457 | ✓ new — confirmed |
+| dcba7429 | NVDA | 33sh | $213.99 | $192.591 | ✓ new — confirmed |
+| 66033918 | V | 22sh | $336.8199 | $303.138 | ✓ new — confirmed |
+| c4c200a5 | VST | 40sh | $170.50 | $153.45 | ✓ new — confirmed |
+
+**Stop audit: 5/5 PASS ✓** No ratchets this session (all positions below respective HWMs).
+
+### Sector exposure (midday June 23)
+- Healthcare (LLY): $11,002.30 = 11.14%
+- Tech/AI Semi (NVDA): $6,673.59 = 6.76%
+- Financials (V): $7,278.04 = 7.37%
+- Energy/Utilities (VST): $6,562.80 = 6.65%
+- Cash: $67,261.73 = 68.12%
+- No sector above 60% cap ✓
+
+### Performance vs SPY (midday June 23)
+- Bull: $98,778.40 = **−1.222%** since inception (May 21, $100K start)
+- SPY total return: ($737.21 + $1.76) / $739.44 = **−0.063%** since inception
+- **Bull TRAILS SPY by ~1.16pp** (improved from ~1.87pp at EOD June 22 as SPY fell −0.95% today and Bull's 68% cash cushioned the decline to −0.27%)
+
+### No exits this run. closed-trades.md current ✓
+### No new positions (midday rule — risk management only)
+
+---
+
 ## 2026-06-23 09:37 ET — MARKET-OPEN (no trades; plan empty — risk-off; stop audit 5/5 ✓; NVDA ⚠️ monitoring $200)
 
 - **Action:** Market-open review. No trades executed — today's plan is empty (risk-off: KOSPI −9.99% chip selloff, S&P futures −1.43% pre-market; no qualified candidates). 4 positions held.
