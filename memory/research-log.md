@@ -5,6 +5,144 @@ The market-open routine reads the most recent "Planned trades" section._
 
 ---
 
+## 2026-06-23 — Pre-market research (~08:03 ET)
+
+### Live-switch guard
+- `ALPACA_BASE_URL` contains "paper" ✓ — paper trading confirmed.
+
+### Account snapshot (live Alpaca ~08:03 ET)
+
+| Metric | Value |
+|--------|-------|
+| Equity | $98,743.65 |
+| Cash | $67,261.73 (68.11%) |
+| Long market value | $31,481.92 |
+| Last equity (June 22 close) | $99,043.58 |
+| Shock check | −$299.93 (−0.303%) — no shock ✓ (threshold −4%) |
+| HWM | $101,384.21 |
+| Drawdown | −2.60% — NOT triggered ✓ (circuit breaker at −10%) |
+
+### Macro (pre-market June 23, 2026 ~08:03 ET)
+
+| Indicator | Value | Threshold | Status |
+|-----------|-------|-----------|--------|
+| S&P 500 futures | **−1.43%** | — | ⚠️ RISK-OFF — broad tech/chip selloff |
+| 10yr Treasury yield | **~4.50%** | <4.75% | ✓ GATE PASSES — new buys permitted (if candidates qualify) |
+| KOSPI (South Korea) | **−9.99%** — circuit breakers triggered | — | Samsung −12.31%, SK Hynix −12.47%; AI/chip profit-taking |
+| SK Hynix HBM4 | Slowing expansion; reallocating to conventional DRAM | — | Minor near-term supply signal; not a fundamental AI demand break |
+| PCE report | Expected this week | — | Monitoring for inflation/Fed read |
+| Iran/US peace deal | 60-day agreement intact | Oil <$100 | ✓ WTI ~$80/bbl; geopolitical OK |
+
+**Macro posture: RISK-OFF.** KOSPI −9.99% triggered circuit breakers — largest single-day drop in months. Samsung and SK Hynix each fell >12% on AI-chip profit-taking and SK Hynix re-allocating HBM4 resources to conventional DRAM. Contagion spreading to US tech pre-market with S&P futures −1.43%. This is a crowded-AI-trade unwind event, not a fundamental demand break. 10yr ~4.50% below the 4.75% gate; Iran deal intact. Cash cushion (68.1%) provides structural protection.
+
+### Thesis contract review
+
+**LLY** (10sh @ $1,093.534 — pre-mkt ~$1,109; +1.41% from entry)
+- What changed since yesterday: Nothing material; Eli Lilly declared Q3 2026 dividend $1.73/sh (payable Sept 10); BioHeartland Indiana launch. Stock +0.63% pre-mkt vs $1,102.08 yesterday — defensive healthcare holding up well in risk-off tape.
+- Buffer: $1,109 − $1,064.457 = $44.54 (4.01%) ✓
+- **Medicare Bridge July 1 in 8 days** — explicit hold/trim/exit required at pre-market June 30.
+- invalidation: closes below $1,064.46 (stop fires), or July 1 bridge pricing reveals margin deterioration.
+- review_by: **2026-07-01** (8 days — bridge effective date)
+- **Decision: HOLD. Conviction: A.**
+
+**NVDA** (33sh @ $213.421 — pre-mkt ~$203.90; −4.46% from entry)
+- What changed since yesterday: KOSPI −9.99% chip selloff drove NVDA −2.28% pre-mkt ($208.65 → $203.90). SK Hynix slowing HBM4 expansion — affects future Vera Rubin supply timeline but NOT current Blackwell (HBM3e) demand. NVDA Vera Rubin platform launched at ISC High Performance 2026. Analyst consensus PT $324.95, strongly bullish. August 26 earnings confirmed (64 days — well outside 2-day window ✓). NVDA thesis (AI accelerator monopoly, Helix consortium, hyperscaler demand) INTACT.
+- Buffer: $203.90 − $192.591 = $11.31 (5.55%) ✓
+- **WATCH: $200 invalidation level** (closes below $200 on volume = thesis break). Pre-mkt $203.90 above this.
+- **WATCH: −7% midday rule at $198.48** — if NVDA is at/below $198.48 at midday, close the position.
+- invalidation: closes below $200 on volume, or trailing stop dcba7429 fires.
+- review_by: **2026-07-22** (29 days)
+- **Decision: HOLD. Conviction: B (starter, monitoring $200 level). No proactive trim yet — buffer ($11.31) remains >2pp above the −7% threshold ($198.48).**
+
+**V** (22sh @ $323.57 — pre-mkt ~$328.45; +1.51% from entry)
+- What changed since yesterday: Nothing material. Visa stablecoin/OpenAI integration thesis unchanged. Stock +0.57% pre-mkt vs $326.60 close — defensive financials holding up in risk-off.
+- Buffer: $328.45 − $303.138 = $25.31 (7.72%) ✓
+- invalidation: cross-border growth turns negative, or major regulatory action on payment rails.
+- review_by: **2026-07-28** (35 days — Q3 FY26 earnings)
+- Conviction tracking: B — 0/3 weeks at C. No mandatory trim.
+- **Decision: HOLD. Conviction: B.**
+
+**VST** (40sh @ $148.81 — pre-mkt ~$160.95; +8.16% from entry)
+- What changed since yesterday: No negative catalyst. Pure risk-off profit-taking after 11% June run. Stock −3.77% pre-mkt ($167.26 → $160.95). Wells Fargo Buy (June 18), Goldman Sachs Buy (June 16), Bernstein Outperform — all recent. Helix Digital Infrastructure (KKR+NVIDIA+Kuwait) and Cogentrix (5,500 MW) thesis INTACT. Record Q1 2026 adj. EBITDA $1.5B. Consensus PT ~$230 — 43% upside from $160.
+- Buffer: $160.95 − $153.45 = $7.50 (4.66%) ✓
+- invalidation: nuclear regulatory reversal, Helix consortium dissolved, or stop fires.
+- review_by: **2026-07-07** (14 days)
+- **Decision: STRONG HOLD. Conviction: A. Thesis most compelling — stop at $153.45 is structural protection.** ⭐⭐
+
+### Earnings-window check
+- LLY: Next earnings ~August 2026 — outside 2-day window ✓
+- NVDA: August 26, 2026 (CONFIRMED) — 64 days ✓
+- V: July 28, 2026 — 35 days ✓
+- VST: Next earnings ~July 2026 — outside 2-day window ✓
+
+**No earnings within 2 trading days — no mandatory hold/trim/exit decisions required today.**
+
+### Stop audit (pre-market June 23 — confirmed via live Alpaca orders)
+
+| Order ID | Symbol | Qty | HWM | Stop | Status |
+|----------|--------|-----|-----|------|--------|
+| d4147484 | LLY | 7sh | $1,182.73 | $1,064.457 | ✓ live (status: new) |
+| 25989fb5 | LLY | 3sh | $1,182.73 | $1,064.457 | ✓ live (status: new) |
+| dcba7429 | NVDA | 33sh | $213.99 | $192.591 | ✓ live (status: new) |
+| 66033918 | V | 22sh | $336.82 | $303.138 | ✓ live (status: new) |
+| c4c200a5 | VST | 40sh | $170.50 | $153.45 | ✓ live (status: new) |
+
+**Stop audit: 5/5 PASS ✓** All stops confirmed active.
+
+### Risk posture check
+
+**Drawdown circuit breaker:**
+- HWM $101,384.21 | Current equity $98,743.65 | Drawdown: **−2.60%** — NOT triggered (−10% threshold) ✓
+
+**Sector exposure (pre-market June 23 — live data):**
+- Healthcare (LLY): $11,090.00 = 11.23%
+- Tech/AI Semi (NVDA): $6,728.70 = 6.82%
+- Financials (V): $7,225.89 = 7.32%
+- Energy/Utilities (VST): $6,437.99 = 6.52%
+- Cash: $67,261.73 = 68.11%
+- No sector above 60% cap ✓
+
+### Watchlist / candidates
+
+**LRCX — DEFERRED (ATR gate failing; chip selloff environment)**
+- KOSPI −9.99% chip selloff will almost certainly drive LRCX ATR well above 3% today.
+- Gate requires 3 consecutive sessions ≤3% ATR — reset to 0 sessions by today's action.
+- Citi PT $450 thesis intact. Earliest entry: **week of June 29** (3 clear sessions needed).
+
+**PWR — DEFERRED (ATR elevated + insider selling)**
+- ATR elevated; insider selling $123M in 3 months remains an active flag.
+- Re-evaluate week of June 29+.
+
+**MRVL (Marvell) — WATCHLIST CANDIDATE (from lessons.md)**
+- AGGRO's MRVL position (added June 15) up +5.90% in one week. Custom AI silicon for hyperscalers (ASICs for AWS/Google) — cost-optimization play distinct from GPU sellers.
+- Not yet adding: risk-off session; need confirmed signal for 4th slot. Research when calmer.
+
+### Cash-drag check
+- Cash $67,261.73 = 68.11% — above 25–40% target band for >2 weeks.
+- No qualified candidate meets all entry signals today (risk-off, LRCX/PWR ATR elevated, no new high-conviction entry).
+- **Explicit justification for holding cash:** Broad market risk-off (S&P futures −1.43%, KOSPI chip contagion). Entry in this environment risks deploying into the teeth of a selloff. Waiting for calmer tape is correct. Cash is a position. ✓
+
+### Performance vs SPY (pre-market June 23)
+- Bull: $98,743.65 = **−1.257%** since inception (May 21, $100K start)
+- SPY TR as of June 22 close: ($744.69 + $1.76 div) / $739.44 = **+0.948%** since inception
+- With SPY futures −1.43% today: estimated SPY TR narrows, but Bull's 68% cash provides significant cushion
+- **Bull TRAILS SPY ~2.21pp** (widened from −1.87pp at EOD June 22 due to pre-mkt NVDA/VST weakness)
+
+---
+
+No trades planned today.
+
+Planned trades for today:
+
+```json
+{
+  "plan_date": "2026-06-23",
+  "trades": []
+}
+```
+
+---
+
 ## 2026-06-22 — Pre-market research (~08:02 ET)
 
 ### Live-switch guard

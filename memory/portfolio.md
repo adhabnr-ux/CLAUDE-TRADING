@@ -3,34 +3,69 @@
 _Updated by every routine from live Alpaca data. The next agent trusts this as
 the last known state, but always re-fetches live data before trading._
 
-**Last updated:** 2026-06-22 15:51 ET (close; NVDA 33sh entered today; stop audit 5/5 PASS; VST HWM ratcheted to $170.50)
+**Last updated:** 2026-06-23 08:03 ET (pre-market; RISK-OFF — KOSPI −9.99% chip selloff; NVDA/VST under pre-mkt pressure; no trades planned; stop audit 5/5 PASS)
 **Inception:** 2026-05-21 — starting equity $100,000.00 | SPY anchor price $739.44
 **SPY total-return anchor (post-June 18 ex-div $1.76):** **$741.20**
 
-## Account (close June 22, 2026 — live Alpaca data ~15:51 ET)
+## Account (pre-market June 23, 2026 — live Alpaca data ~08:03 ET)
 
 | Metric | Value |
 |--------|-------|
-| Equity | $99,078.33 |
-| Cash | $67,261.74 (67.89%) |
-| Long market value | $31,816.59 |
-| Buying power | ~$358,133 |
-| Last equity (June 19 close) | $99,039.61 |
+| Equity | $98,743.65 |
+| Cash | $67,261.73 (68.11%) |
+| Long market value | $31,481.92 |
+| Buying power | ~$357,196 |
+| Last equity (June 22 close) | $99,043.58 |
 
-## Open positions (close June 22, 2026 — live Alpaca data ~15:51 ET)
+## Open positions (pre-market June 23, 2026 — live Alpaca data ~08:03 ET)
 
 | Symbol | Qty | Avg entry | Current price | Mkt value | Unrealized P/L | % of portfolio | Trailing Stop |
 |--------|-----|-----------|--------------|-----------|----------------|----------------|---------------|
-| LLY | 10 | $1,093.534 | $1,105.84 | $11,058.40 | +$123.06 (+1.13%) | 11.16% | d4147484 (7sh, HWM **$1,182.73**, stop **$1,064.457**) ✓; 25989fb5 (3sh, same) ✓ — buffer $41.38 (3.74%) |
-| NVDA | 33 | $213.421 | $208.155 | $6,869.12 | −$173.77 (−2.47%) | 6.93% | dcba7429 (33sh, HWM **$213.99**, stop **$192.591**) ✓ — buffer $15.56 (7.48%) |
-| V | 22 | $323.57 | $326.97 | $7,193.34 | +$74.80 (+1.05%) | 7.26% | 66033918 (22sh, HWM **$336.8199**, stop **$303.138**) ✓ — buffer $23.83 (7.29%) |
-| VST | 40 | $148.81 | $167.40 | $6,696.00 | +$743.60 (+12.49%) | 6.76% | c4c200a5 (40sh, HWM **$170.50** ⬆️ AUTO-RATCHETED, stop **$153.45** ⬆️) ✓ — buffer $13.95 (8.34%) ⭐⭐ HELIX+COGENTRIX |
+| LLY | 10 | $1,093.534 | $1,109.00 | $11,090.00 | +$154.66 (+1.41%) | 11.23% | d4147484 (7sh, HWM **$1,182.73**, stop **$1,064.457**) ✓; 25989fb5 (3sh, same) ✓ — buffer $44.54 (4.01%) |
+| NVDA | 33 | $213.421 | $203.90 | $6,728.70 | −$314.19 (−4.46%) | 6.82% | dcba7429 (33sh, HWM **$213.99**, stop **$192.591**) ✓ — buffer $11.31 (5.55%) ⚠️ WATCH USD 200 invalidation |
+| V | 22 | $323.57 | $328.45 | $7,225.89 | +$107.35 (+1.51%) | 7.32% | 66033918 (22sh, HWM **$336.8199**, stop **$303.138**) ✓ — buffer $25.31 (7.72%) |
+| VST | 40 | $148.81 | $160.95 | $6,437.99 | +$485.59 (+8.16%) | 6.52% | c4c200a5 (40sh, HWM **$170.50**, stop **$153.45**) ✓ — buffer $7.50 (4.66%) ⭐⭐ HELIX+COGENTRIX |
+
+**Sector exposure (pre-market June 23):**
+- Healthcare (LLY): $11,090 = 11.23% | Tech/AI Semi (NVDA): $6,728.70 = 6.82% | Financials (V): $7,225.89 = 7.32% | Energy/Utilities (VST): $6,437.99 = 6.52% | Cash: $67,261.73 = 68.11%
+- No sector above 60% cap ✓
+
+**Trailing stop status (pre-market June 23 — confirmed via Alpaca live orders ~08:03 ET):**
+- LLY (d4147484): 7sh — HWM **$1,182.73**, stop **$1,064.457** ✓ (buffer $44.54 = 4.01%)
+- LLY (25989fb5): 3sh — HWM **$1,182.73**, stop **$1,064.457** ✓
+- NVDA (dcba7429): 33sh — HWM **$213.99**, stop **$192.591** ✓ (buffer $11.31 = 5.55%) ⚠️ monitoring
+- V (66033918): 22sh — HWM **$336.8199**, stop **$303.138** ✓ (buffer $25.31 = 7.72%)
+- VST (c4c200a5): 40sh — HWM **$170.50**, stop **$153.45** ✓ (buffer $7.50 = 4.66%)
+**Stop audit: 5/5 PASS ✓**
+
+**Pre-market June 23 notes:**
+- **RISK-OFF session:** KOSPI −9.99% (circuit breakers triggered) — Samsung −12.3%, SK Hynix −12.5% on AI-chip profit-taking. S&P futures −1.43%. Contagion to US semis.
+- **NVDA** $203.90 (pre-mkt): −4.46% from entry. KOSPI chip selloff contagion — NOT a fundamental break in NVDA thesis (Vera Rubin launched at ISC HPC 2026; earnings Aug 26 confirmed). **Watch $200 close invalidation** and **$198.48 midday −7% rule.** Buffer 5.55%. HOLD.
+- **VST** $160.95 (pre-mkt): −3.77% from $167.26 close. Pure risk-off profit-taking. No negative catalyst — Helix + Cogentrix intact; Wells Fargo/Goldman/Bernstein all Buy. Buffer 4.66% to stop $153.45. STRONG HOLD.
+- **LLY** $1,109 (pre-mkt): +0.63% — defensive healthcare holding up well in risk-off. Medicare Bridge July 1 in 8 days — explicit decision required June 30 pre-market.
+- **V** $328.45 (pre-mkt): +0.57% — defensive financials; thesis intact.
+- **Shock check:** −$299.93 (−0.303%) — no shock ✓
+- **Drawdown circuit breaker:** $98,743.65 vs HWM $101,384.21 = **−2.60%** — NOT triggered ✓
+- **No trades planned today:** risk-off, no qualified candidates (LRCX ATR elevated by chip selloff; PWR deferred)
+
+**Upcoming catalysts:**
+- **LLY Medicare GLP-1 Bridge effective July 1** (8 days — explicit hold/trim/exit decision REQUIRED at pre-market June 30)
+- **VST thesis review_by July 7** (14 days)
+- **NVDA review_by July 22** (29 days) — $200 invalidation monitoring ongoing
+- **V Q3 FY26 earnings July 28** (35 days — thesis review_by date)
+- **NVDA earnings August 26** (64 days — outside 2-day window ✓)
+
+**Week of June 22 — new position slots:**
+- **Slot 1:** NVDA — FILLED June 22 ✓
+- **Slot 2:** LRCX — pending ≤3% ATR for 3 consecutive sessions (reset by today's chip selloff; earliest week of June 29)
+- **Slot 3:** PWR — pending ATR normalization + insider selling abates; re-evaluate June 29+
 
 ## Performance vs S&P 500
 
 | Period | Bull | SPY | Difference |
 |--------|------|-----|------------|
 | Inception (2026-05-21) | $100,000.00 | $739.44 | — |
+| **Pre-mkt (2026-06-23)** | **$98,743.65 (−1.257%)** | **$744.69 + $1.76 div; futures −1.43%** | **Bull TRAILS SPY ~2.21pp est** |
 | **Close (2026-06-22)** | **$99,078.33 (−0.922%)** | **$744.69 + $1.76 div = +0.948% TR** | **Bull TRAILS SPY ~1.87pp** |
 | **Midday (2026-06-22)** | **$99,201.16 (−0.799%)** | **$744.42 + $1.76 div = +0.91% TR** | **Bull TRAILS SPY ~1.71pp** |
 | **Market-open (2026-06-22)** | **$99,204.85 (−0.795%)** | **$747.47 + $1.76 div = +1.323% TR** | **Bull TRAILS SPY ~2.12pp** |
