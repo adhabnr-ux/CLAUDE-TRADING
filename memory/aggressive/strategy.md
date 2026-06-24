@@ -210,6 +210,23 @@ This is NOT a hard rule — it is a discretionary risk management tool. A trim r
 
 ---
 
+## Week 5 priorities (as of 2026-06-24 pre-market — UPDATED)
+
+- **META fully exited (June 23 close):** -9.841% closed trade. Sub-1pp buffer + risk-off tape = full exit per protocol. Post-mortem logged in closed-trades.md. No regret — position sizing and stop discipline preserved capital.
+- **MRVL (9.412pp buffer — thesis contract reviewed):** Review_by was June 29 (3 trading days away). Decision: **HOLD, review_by renewed to July 14.** BofA raised PT to USD 365 (from USD 240). Custom silicon (XPU) thesis intact. CPO delay = sector-wide noise, not MRVL-specific thesis break. 8 shares, USD 2,518.24 entry, USD 2,775.00 current.
+- **4 positions within 6-7pp of forced cuts:** AVGO (6.376pp), GOOGL (6.680pp), AMZN (6.811pp), NVDA (7.229pp). These compressed buffers are the primary risk to the portfolio. No new positions until buffers recover or positions exit cleanly.
+- **No new buys today — deliberate, not idle.** Micron Technology (MU) reports earnings tonight after close. Micron is the AI memory bellwether — miss/beat + guidance will move the entire semi sector tomorrow. Deploying into today = taking binary AI-demand event risk without edge. PCE Thursday = additional macro binary risk. Cash 32.1% is the right posture.
+- **Deployment watchlist for June 25 (post-Micron result):**
+  - AMZN pyramid: add to winning position if buffers stabilize post-Micron; Prime Day still running
+  - ETN (Eaton): AI power infrastructure; no binary earnings risk this week
+  - GOOGL add: only if buffer recovers above 8pp (need margin before another add)
+- **Drawdown -7.762% from HWM** (USD 101,144.73). Circuit breaker at -20% = 12.238pp headroom. Shock check: intraday +0.448% vs last_equity. No action required.
+- **Stop audit:** 6/6 live stops confirmed (MRVL, GOOGL, AMZN, AVBO, NVDA, VST).
+- **Conviction ratings (June 24):** NVDA A, AVGO A, AMZN A, GOOGL A, VST A, MRVL A.
+- **Alpha since inception: -3.975pp** (Aggro -6.706% vs SPY -2.731%).
+
+---
+
 ## Benchmark tracking
 
 Every weekly review computes:

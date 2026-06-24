@@ -17,6 +17,87 @@ but always re-fetches live data before trading._
 
 ---
 
+## Last snapshot — 2026-06-24 PRE-MARKET (~8:00 AM ET)
+
+| Field | Value |
+|---|---|
+| Equity | USD 93,293.69 |
+| Cash | USD 29,962.29 (32.1%) |
+| Long market value | USD 63,331.40 |
+| Open positions | 6 |
+| last_equity (June 23 EOD — Alpaca authoritative) | USD 92,877.83 |
+| Pre-market P/L vs last_equity | **+USD 415.86 (+0.448%)** — broad recovery attempt; semi sector bouncing off June 23 lows |
+| HWM | USD 101,144.73 |
+| Drawdown from HWM | **-7.762%** (circuit breaker 20% — NOT triggered; 12.238pp headroom) |
+
+**Shock check:** +0.448% pre-market vs threshold -6% → NOT triggered ✓
+
+**Open positions (June 24 pre-market ~8:00 AM ET):**
+
+| Symbol | Qty | Avg Entry | Pre-Mkt Price | Market Value | Unrealized P/L | P/L % | -12% Cut Trigger | Buffer | Rating |
+|---|---|---|---|---|---|---|---|---|---|
+| NVDA | 103 | USD 213.60 | USD 201.42 | USD 20,746.26 | -USD 1,254.54 | **-5.702%** | USD 187.97 | 6.298pp | A |
+| AVGO | 34 | USD 406.23 | USD 381.95 | USD 12,986.30 | -USD 825.52 | **-5.977%** | USD 357.48 | 6.023pp | A |
+| GOOGL | 16 | USD 370.22 | USD 348.11 | USD 5,569.76 | -USD 353.76 | **-5.972%** | USD 325.79 | 6.028pp | A |
+| MRVL | 25 | USD 293.29 | USD 285.70 | USD 7,142.41 | -USD 189.72 | -2.588% | USD 258.09 | 9.412pp ✅ (recovering) | A |
+| AMZN | 36 | USD 247.99 | USD 233.95 | USD 8,422.23 | -USD 505.45 | **-5.662%** | USD 218.23 | 6.338pp | A |
+| VST | 52 | USD 151.47 | USD 162.80 | USD 8,465.60 | +USD 589.16 | **+7.480% ✅** | USD 133.29 | 19.480pp | A |
+
+**All buffers improved overnight vs June 23 EOD. No positions within 6pp yet. All within guardrails.**
+
+**Stop audit (June 24 pre-market): ALL 6 CONFIRMED LIVE ✓**
+
+| Symbol | Stop Order ID | HWM | Stop Price | Status |
+|---|---|---|---|---|
+| NVDA | `54d7d851` | USD 221.60 | USD 181.712 | ✓ live |
+| AVGO | `36f5a45f` | USD 426.48 | USD 349.7136 | ✓ live |
+| GOOGL | `e52a43f1` | USD 375.77 | USD 308.1314 | ✓ live |
+| MRVL | `a9097c8c` | USD 329.88 | USD 270.5016 | ✓ live |
+| AMZN | `b55bef05` | USD 250.43 | USD 205.3526 | ✓ live |
+| VST | `5b347be3` | USD 170.50 | USD 139.81 | ✓ live |
+
+**Thesis contracts (June 24 pre-market):**
+| Symbol | Review By | Invalidation | Status |
+|---|---|---|---|
+| NVDA | July 9 | Hyperscaler GPU share reverses | ✓ Intact — 6.298pp buffer; annual meeting today Blackwell/Vera focus |
+| AVGO | July 9 | AI revenue decelerates | ✓ Intact — 6.023pp buffer; JPMorgan reiterated bullish |
+| GOOGL | July 2 | GCP decelerates OR TPU cancelled | ✓ Intact — 6.028pp buffer; Dow Jones addition positive catalyst |
+| MRVL | **July 14 (renewed)** | Hyperscaler silicon lost OR <15% YoY | ✓ Intact — 9.412pp buffer; BofA PT raised to USD 365; HOLD decision |
+| AMZN | July 7 | AWS <20% YoY | ✓ Intact — 6.338pp buffer; Prime Day active Day 2 |
+| VST | July 15 | Nuclear PPAs cancelled | ✓ Intact — 19.480pp buffer; Helix consortium; 13/13 analysts Buy |
+
+**Conviction ratings (June 24 pre-market):**
+| Symbol | Rating | Notes |
+|---|---|---|
+| NVDA | A | AI GPU; -5.70%; 6.298pp buffer; Blackwell meeting today |
+| AVGO | A | AI revenue +143% YoY; -5.98%; 6.023pp buffer; JPM bullish |
+| GOOGL | A | GCP +63%; -5.97%; 6.028pp buffer; Dow Jones addition |
+| MRVL | A | -2.59%; 9.412pp buffer; BofA upgrade USD 365; review_by renewed July 14 |
+| AMZN | A | AWS +28%; -5.66%; 6.338pp buffer; Prime Day active |
+| VST | A | +7.48% ✅; 19.480pp buffer; leading performer |
+
+**Sector exposure (June 24 pre-market):**
+| Sector | Market Value | % of Portfolio |
+|---|---|---|
+| Technology — semis (NVDA, AVGO, MRVL) | USD 40,874.97 | 43.8% |
+| Technology — hyperscalers (AMZN, GOOGL) | USD 13,991.99 | 15.0% |
+| Utilities/Energy (VST) | USD 8,465.60 | 9.1% |
+| Cash | USD 29,962.29 | 32.1% |
+
+_Pre-market June 24: All 6 positions in recovery from June 22-23 Asian regulatory basket sell. MRVL +2.39% pre-market on BofA price target upgrade (USD 365 from USD 240). NVDA Annual Shareholder Meeting today (9AM PT) — Blackwell/Vera ramp focus. Micron (MU) earnings tonight after close = KEY AI chip demand signal (consensus USD 34.66B rev / USD 19.95 EPS; HBM sold out through 2026). PCE Thursday = macro risk. No new buys today: 4 positions within 6-7pp of forced cuts heading into binary Micron event. MRVL thesis contract RENEWED: review_by extended to July 14. Stop audit 6/6 ✓. Control: ACTIVE._
+
+**Performance vs SPY (June 24 pre-market):**
+| Metric | Value |
+|---|---|
+| Equity | USD 93,293.69 |
+| Aggro return since inception | **(93,293.69 − 100,000) / 100,000 = -6.706%** |
+| SPY close June 23 | USD 733.58 |
+| SPY return since inception (754.18 → 733.58) | **(733.58 − 754.18) / 754.18 = -2.731%** |
+| Alpha since inception | **-3.975pp** |
+| Pre-market change vs last_equity | +0.448% |
+
+---
+
 ## Last snapshot — 2026-06-23 EOD CLOSE (~3:50 PM ET)
 
 | Field | Value |

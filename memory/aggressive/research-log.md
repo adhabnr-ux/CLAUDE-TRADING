@@ -2241,3 +2241,135 @@ EXECUTED: 2026-06-23T13:47:49Z (META 17sh sold @ USD 568.109412, realized loss -
 | Alpha since inception | **-5.879pp** |
 | vs yesterday (last_equity USD 95,082.61) | -2.39% vs SPY ~-0% pre-market |
 
+
+---
+
+## 2026-06-24 — PRE-MARKET (~8:00 AM ET)
+
+### Market posture [search: WebSearch fallback]
+- **S&P 500 futures: +0.13%** — modest recovery bounce attempt after 2 consecutive down sessions (Asian regulatory "overheated" basket sell + June quarterly index rebalancing)
+- **Micron (MU) earnings tonight after close** — KEY catalyst for AI chip demand. Consensus: revenue $34.66B, EPS $19.95; HBM capacity sold out through 2026 per Micron guidance. A beat confirms AI chip demand supercycle intact; a miss would apply downward pressure to NVDA/AVGO/MRVL
+- **PCE inflation gauge Thursday** — macro risk; will influence Fed rate expectations
+- **Semi sector pre-market recovery:** MU +4.5%, SNDK +3.4% — traders positioning for positive Micron print
+- **Polymarket:** 71% probability of higher open on June 24
+- **Risk-on/off assessment: CAUTIOUSLY POSITIVE** — recovery attempt; not yet a confirmed trend reversal. Hold existing positions, do not add ahead of Micron binary event.
+
+### Position research [search: WebSearch fallback]
+
+**NVDA — held 103sh @ USD 213.60 entry:**
+- Annual Shareholder Meeting today June 24, 9AM PT — Blackwell + Vera production ramp focus; capital return plans. Could surface incremental positive guidance.
+- Pre-market: USD 201.42 (+0.69% vs USD 200.04 EOD yesterday)
+- 38 analysts Strong Buy, avg target USD 298.87 (+48.4% upside)
+- Data center revenue USD 75.2B Q1 FY2027 (+92% YoY, +21% QoQ) — confirmed
+- Buffer: 6.298pp (improved from 5.647pp yesterday EOD)
+- Next earnings: ~August 2026 (Q2 FY2027) ✓ no earnings risk within 2 days
+- **What changed since yesterday: +0.69% overnight; recovery from Asian regulatory basket sell. Annual meeting today may provide incremental Blackwell/Vera update — thesis-positive if so.**
+- Thesis: INTACT ✓
+
+**AVGO — held 34sh @ USD 406.23 entry:**
+- JPMorgan reiterated bullish; price target USD 490.13 (+28.3% upside from USD 381.95)
+- SimplyWallSt: 39.8% below fair value
+- Ex-dividend USD 0.65/share × 34 = USD 22.10 captured June 22 (payment June 30)
+- Pre-market: USD 381.95 (+0.47% vs USD 380.00 EOD yesterday)
+- Buffer: 6.023pp (improved from 5.543pp yesterday EOD)
+- Next earnings: ~September 2026 ✓
+- **What changed since yesterday: minor +0.47% recovery; JPMorgan reiteration adds institutional floor. AI revenue +143% YoY / $100B+ FY2027 guide unchanged.**
+- Thesis: INTACT ✓
+
+**GOOGL — held 16sh @ USD 370.22 entry:**
+- **Alphabet joining Dow Jones Industrial Average** (replacing Verizon) — thesis-positive; passive fund demand, institutional validation
+- Google Cloud backlog: USD 462B record (up from USD 460B prior quarter)
+- USD 84.75B capital raise completed; USD 180–190B capex 2026 planned
+- YouTube legal settlement: minor/contained; does not affect GCP
+- John Jumper departure (DeepMind → Anthropic): already known and priced in
+- Pre-market: USD 348.11 (+0.57% vs USD 346.13 EOD yesterday)
+- Buffer: 6.028pp (improved from 5.647pp yesterday EOD)
+- 63 analysts Strong Buy, avg target USD 432.83 (+24.3% upside)
+- Next earnings: ~late July 2026 ✓
+- review_by July 2 — no decision needed today; all conditions intact
+- **What changed since yesterday: +0.57% recovery; Dow Jones addition is a new thesis-positive catalyst (passive buying in future DJIA rebalances).**
+- Thesis: INTACT ✓
+
+**MRVL — held 25sh @ USD 293.29 entry — THESIS CONTRACT REVIEW (review_by June 29):**
+- **BofA raised price target to USD 365 from USD 240** — major upgrade (+52.5% upside from USD 285.70)
+- 28 analysts Buy consensus
+- Pre-market: USD 285.70 (+2.39% vs USD 279.04 EOD yesterday — significant recovery)
+- Buffer: 9.412pp (improved substantially from 6.976pp yesterday EOD)
+- CPO delay report (SemiAnalysis June 9): sector-wide optical headwind, NOT MRVL custom silicon thesis
+- Outgoing CFO Willem Meintjes share sale (~211K shares at ~$65M): planned, disclosed, not a surprise
+- Next earnings: August 20, 2026 (Q2 FY2027) ✓ no earnings risk within 2 days
+- **THESIS CONTRACT REVIEW — review_by June 29:**
+  - Invalidation condition: hyperscaler custom-silicon not renewed OR revenue growth <15% YoY
+  - Status: NOT triggered. Q1 FY2027 revenue USD 2.418B (+28% YoY). XPU/custom silicon programs with major hyperscalers intact. Q2 FY2027 guide: USD 2.7B (+/-5%) = implied +12% sequential.
+  - Buffer: 9.412pp — meaningfully above 3pp proactive trim threshold
+  - **Decision: HOLD. Renew review_by to July 14** (well before August 20 earnings; gives 3 weeks for thesis assessment pre-earnings)
+  - Reasoning: BofA upgrade to $365 confirms analyst conviction. Buffer recovered from 6.976pp (June 23 EOD) to 9.412pp today. Asian regulatory basket sell was macro noise. Custom silicon pipeline unchanged. No reason to exit or trim.
+- **What changed since yesterday: +2.39% recovery; BofA target upgrade is a material new bullish catalyst.**
+- Thesis: INTACT ✓ — review_by renewed to July 14
+
+**AMZN — held 36sh @ USD 247.99 entry:**
+- Prime Day Day 2 active (June 23-26) — ongoing positive revenue catalyst
+- USD 10B new data center campus announced in Montgomery County, Missouri
+- Pre-market: USD 233.95 (-0.07% vs USD 234.11 EOD yesterday — flat)
+- Buffer: 6.338pp (slightly improved from 6.483pp yesterday EOD)
+- 67 analysts Strong Buy, avg target USD 312.99 (+33.7% upside)
+- Next earnings: ~late July 2026 ✓
+- review_by July 7 — not due
+- **What changed since yesterday: flat; Prime Day active through June 26 continues to provide near-term revenue catalyst. Missouri data center confirms continued AWS capex expansion.**
+- Thesis: INTACT ✓
+
+**VST — held 52sh @ USD 151.47 entry:**
+- Helix consortium (KKR + NVDA + VST + KIA, USD 10B+ AI power venture) highlighted by analysts
+- 13/13 analysts Buy, avg target USD 225.29 (+37.8% upside from USD 162.80)
+- Ex-dividend USD 0.229/sh × 52 = USD 11.91 captured June 22 (payment June 30)
+- Pre-market: USD 162.80 (+0.25% vs USD 162.39 EOD yesterday — steady)
+- Buffer: 19.480pp (strong protection)
+- HWM: USD 170.50; trailing stop: USD 139.81
+- Next earnings: ~early August 2026 ✓
+- review_by July 15 — not due
+- **What changed since yesterday: +0.25%; non-correlated to semi sector noise. AI power demand/nuclear PPA thesis fully intact.**
+- Thesis: INTACT ✓
+
+### Earnings window check [search: WebSearch fallback]
+| Symbol | Next Earnings | 2-Day Window Risk (June 25-26) |
+|---|---|---|
+| NVDA | ~August 2026 | ✓ No |
+| AVGO | ~September 2026 | ✓ No |
+| GOOGL | ~late July 2026 | ✓ No |
+| MRVL | August 20, 2026 | ✓ No |
+| AMZN | ~late July 2026 | ✓ No |
+| VST | ~early August 2026 | ✓ No |
+**No held name reports within next 2 trading days. Earnings window rule: NO violation.**
+
+Note: Micron (MU) reports tonight June 24 — not held, but a KEY sentiment indicator for NVDA/AVGO/MRVL. Watch pre-market June 25 for results.
+
+### Stop audit (June 24 pre-market)
+| Symbol | Stop Order ID | Stop Price | HWM | Status |
+|---|---|---|---|---|
+| NVDA | `54d7d851` | USD 181.712 | USD 221.60 | ✓ live |
+| AVGO | `36f5a45f` | USD 349.7136 | USD 426.48 | ✓ live |
+| GOOGL | `e52a43f1` | USD 308.1314 | USD 375.77 | ✓ live |
+| MRVL | `a9097c8c` | USD 270.5016 | USD 329.88 | ✓ live |
+| AMZN | `b55bef05` | USD 205.3526 | USD 250.43 | ✓ live |
+| VST | `5b347be3` | USD 139.81 | USD 170.50 | ✓ live |
+**ALL 6 CONFIRMED LIVE ✓ — stop audit passed**
+
+### Deployment check
+- Cash: USD 29,962 (32.1%) — above 20% threshold; deployment decision required
+- 4 positions within 6-7pp of -12% cut (NVDA 6.298pp, AVGO 6.023pp, GOOGL 6.028pp, AMZN 6.338pp)
+- Micron earnings tonight: binary AI chip demand signal; miss would compress NVDA/AVGO/MRVL buffers further
+- PCE Thursday: macro risk; elevated CPI environment could renew rate hike expectations
+- **Decision: NO NEW BUYS today. Holding 32.1% cash is a deliberate risk management decision, not indecision. Rationale: 4 positions within 6-7pp of forced cuts heading into a binary Micron earnings event (tonight) and a PCE macro print (Thursday). Adding new exposure increases fragility if either event disappoints. If Micron beats consensus ($34.66B rev / $19.95 EPS), the semi sector should rally June 25 and buffer on existing positions will improve — creating a better entry point with lower risk. Watchlist for potential June 25 deployment: AMZN pyramid (Prime Day Day 3 still active), ETN (AI power infra), GOOGL add (Dow Jones inclusion = passive buying demand, cheapest hyperscaler).**
+
+---
+
+### Planned trades for today
+
+No trades planned — holding cash ahead of Micron earnings and PCE print.
+
+```json
+{
+  "plan_date": "2026-06-24",
+  "trades": []
+}
+```
