@@ -2032,3 +2032,85 @@ All 6 positions within guardrails. No trades. All 18% trailing stops active and 
 
 ### Result
 No planned trades executed (pre-market plan was no-trade, confirmed correct). MRVL trailing stop fired overnight at market open — documented, post-mortemed, lesson filed. 5/5 remaining positions within guardrails. Cash now 39.5% ($36,722.68). Await Micron earnings tonight (consensus USD 34.66B rev / USD 19.95 EPS; HBM sold out through 2026) — a beat strengthens NVDA/AVGO thesis and will create deployment opportunity at June 25 pre-market. PCE Thursday is macro risk event.
+
+---
+
+## 2026-06-24 — MIDDAY CHECK (~12:40 PM ET)
+
+**No trades executed.** Risk management only. All positions within guardrails.
+
+### Pre-run checks
+| Check | Result |
+|---|---|
+| Live-switch guard | ALPACA_BASE_URL contains "paper" ✓ |
+| Lock | Clear (empty `{}`) → written for this run ✓ |
+| Control switch | STATUS: ACTIVE ✓ |
+| Market open | true (next close 4:00 PM ET) ✓ |
+
+### Account status
+| Field | Value |
+|---|---|
+| Equity | USD 93,114.81 |
+| last_equity (June 23 EOD — Alpaca authoritative) | USD 92,877.83 |
+| Intraday P/L vs last_equity | **+USD 236.98 (+0.255%)** — semis stabilizing; broad market flat to slight recovery |
+| Cash | USD 36,722.68 (39.4%) |
+| HWM | USD 101,144.73 |
+| Drawdown from HWM | **-7.940%** (circuit breaker 20% — NOT triggered; 12.060pp headroom) |
+
+**Shock check:** +0.255% vs threshold -6% → NOT triggered ✓
+
+### Position review
+
+| Symbol | Entry | Current | P/L % | -12% Trigger | Buffer | Today's Move | News | Action |
+|---|---|---|---|---|---|---|---|---|
+| NVDA | USD 213.60 | USD 199.84 | **-6.442%** | USD 187.97 | 5.558pp | -0.100% | Shareholder meeting today; Bernstein "Absurdly Cheap"; stability at USD 200 | No action |
+| AVGO | USD 406.23 | USD 383.975 | **-5.478%** | USD 357.48 | 6.522pp | +1.006% | Q3 guide USD 16B AI semi; JPMorgan reiterated bullish; recovering today | No action |
+| GOOGL | USD 370.22 | USD 348.766 | **-5.795%** | USD 325.79 | 6.205pp | +0.762% | Talent departures = noise (no GCP deceleration); Dow Jones addition June 29 on track | No action |
+| AMZN | USD 247.99 | USD 239.79 | -3.307% | USD 218.23 | 8.693pp | +2.426% | Prime Day Day 3 active; AWS +28% YoY thesis intact | No action |
+| VST | USD 151.47 | USD 164.11 | **+8.345% ✅** | USD 133.29 | 20.345pp | +1.059% | Nuclear PPAs intact; Helix consortium confirmed | No action |
+
+**Cut rule check (>-12% from entry):** NO positions triggered. NVDA most stressed at -6.442% (5.558pp buffer). All clear.
+**Tighten-stop rule check (>+25% from entry):** NO positions triggered. VST leads at +8.345%, well below +25% threshold (USD 189.34). All clear.
+
+### Live news scan [search: WebSearch fallback — MiniMax M3 not available]
+
+Scanned: NVDA, AVGO, GOOGL (all >5% from entry).
+
+- **NVDA (-6.44%)**: Stockholder annual meeting today (Blackwell/Vera Rubin roadmap focus). Bernstein analyst called NVDA and AVGO "Absurdly Cheap." BioNeMo/Halos for Robotics announced June 22 (thesis-positive AI product expansion). Stock finding stability at USD 200. No hyperscaler GPU demand reversal. **Thesis INTACT — hold.**
+- **AVGO (-5.48%)**: Q3 AI semi guide USD 16B (+48% QoQ, ~+200% YoY) missed elevated whisper of USD 17-17.2B but is still massive growth. Margin compression (74% gross margin from 77.1%) driven by shift toward custom accelerators — structural, not deterioration. JPMorgan reiterated bullish; stock recovering +1% today. Invalidation condition (AI revenue deceleration) is opposite of what is occurring. **Thesis INTACT — hold.**
+- **GOOGL (-5.80%)**: AI talent departures (John Jumper to Anthropic, Noam Shazeer to OpenAI) drove June 23 selloff but are headline risk, not GCP thesis break. California court addictive-design ruling = consumer product legal risk, not cloud enterprise revenue. Stock recovering +0.76% today. Dow Jones Industrial Average addition effective June 29 remains a positive near-term catalyst. GCP +63% YoY growth rate unaffected. **Thesis INTACT per stated invalidation conditions — hold.**
+
+### Stop audit — 5/5 confirmed live ✓
+
+| Symbol | Stop Order ID | HWM | Stop Price | Status |
+|---|---|---|---|---|
+| NVDA | `54d7d851` | USD 221.60 | USD 181.712 | ✓ live |
+| AVGO | `36f5a45f` | USD 426.48 | USD 349.7136 | ✓ live |
+| GOOGL | `e52a43f1` | USD 375.77 | USD 308.1314 | ✓ live |
+| AMZN | `b55bef05` | USD 250.43 | USD 205.3526 | ✓ live |
+| VST | `5b347be3` | USD 170.50 | USD 139.81 | ✓ live |
+
+**No stops missing. No stops recreated. All positions protected.**
+
+### Thesis contract status (June 24 midday)
+| Symbol | Review By | Invalidation | Status |
+|---|---|---|---|
+| NVDA | July 9 | Hyperscaler GPU share reverses | ✓ Intact — 5.558pp buffer; shareholder meeting today |
+| AVGO | July 9 | AI revenue decelerates | ✓ Intact — 6.522pp buffer; Q3 USD 16B guide |
+| GOOGL | July 2 | GCP decelerates OR TPU cancelled | ✓ Intact — 6.205pp buffer; Dow Jones addition June 29 |
+| AMZN | July 7 | AWS <20% YoY | ✓ Intact — 8.693pp buffer; Prime Day Day 3 |
+| VST | July 15 | Nuclear PPAs cancelled | ✓ Intact — 20.345pp buffer |
+
+### Performance vs SPY (June 24 midday)
+| Metric | Value |
+|---|---|
+| Equity | USD 93,114.81 |
+| Aggro return since inception | **(93,114.81 − 100,000) / 100,000 = -6.885%** |
+| SPY latest trade | USD 736.10 |
+| SPY return since inception (754.18 anchor) | **(736.10 − 754.18) / 754.18 = -2.397%** |
+| Alpha since inception | **-4.488pp** |
+| Intraday vs SPY | Aggro +0.255% vs SPY +0.338% → -0.083pp today |
+
+### Result
+All 5 positions within guardrails. No trades. All 18% trailing stops active and audited. No cuts, no stops tightened. NVDA most stressed at -6.44% (5.558pp from forced cut) but no thesis break. Semis and hyperscalers stabilizing today. AMZN strongest mover (+2.43% today, Prime Day Day 3). Awaiting Micron earnings tonight after close (consensus USD 34.66B rev / USD 19.95 EPS) — beat will strengthen NVDA/AVGO thesis and inform June 25 pre-market deployment decision. PCE Thursday is macro risk.
+
