@@ -5,6 +5,106 @@ The market-open routine reads the most recent "Planned trades" section._
 
 ---
 
+## 2026-06-24 — Pre-market research (~08:02 ET)
+
+### Live-switch guard
+- `ALPACA_BASE_URL` contains "paper" ✓ — paper trading confirmed.
+
+### Account snapshot (live Alpaca ~08:02 ET)
+
+| Metric | Value |
+|--------|-------|
+| Equity | $98,773.54 |
+| Cash | $67,261.73 (68.12%) |
+| Long market value | $31,511.81 |
+| Last equity (June 23 close) | $98,656.01 |
+| Shock check | +$117.53 (+0.119%) — no shock ✓ (threshold −4%) |
+| HWM | $101,384.21 |
+| Drawdown | −2.576% — NOT triggered ✓ (circuit breaker at −10%) |
+
+### Macro (pre-market June 24, 2026 ~08:02 ET)
+
+| Indicator | Value | Threshold | Status |
+|-----------|-------|-----------|--------|
+| S&P 500 futures | **+0.13%** | — | Stabilizing — bargain-hunt after 2-day tech selloff; Micron +4.5% pre-mkt (earnings beat) |
+| 10yr Treasury yield | **~4.49%** | <4.75% | ✓ GATE PASSES — new buys permitted (if candidates qualify) |
+| WTI crude | **~$80/bbl** | <$100 | ✓ — Iran peace deal holding |
+| VIX | **~18** | <35 | ✓ — no cash-raise trigger |
+
+**Narrative:** Futures bounced +0.13% on bargain-hunting after the 2-session KOSPI-driven chip selloff. Micron Technology +4.5% pre-mkt after strong earnings — positive readthrough for semi equipment and AI infrastructure names. 71% probability of higher open per Polymarket. NVDA Annual Meeting today at noon ET (Jensen Huang keynote, Blackwell/Vera production ramp) — intraday event but bullish catalyst. 10yr yield below gate. Risk-on posture resuming.
+
+### Position thesis reviews
+
+**LLY** ($1,111.00 pre-mkt; +1.60% from entry $1,093.534)
+- _What changed since yesterday:_ Berenberg raised PT $1,050 → $1,135 (keeps Hold). Retatrutide Phase 3 obesity data promising — potential regulatory filing catalyst. Centessa acquisition High Court approval June 22 (closed). Centessa adds pipeline assets.
+- Stop: HWM $1,182.73, stop $1,064.457 (buffer $46.54 = 4.19%) ✓
+- Thesis intact. Medicare Bridge July 1 in 7 days — HOLD; explicit decision REQUIRED at pre-market June 30.
+- Invalidation: price breaks below $1,064 (stop triggers) or CMS walks back Bridge coverage.
+- review_by: 2026-07-01 (pre-market June 30)
+
+**NVDA** ($201.50 pre-mkt; −5.563% from entry $213.421)
+- _What changed since yesterday:_ Annual Meeting TODAY at 9AM PT (noon ET). Virtual; focus on Blackwell GPU production ramp, Vera CPU launch, AI ecosystem commercialization. FY2026 revenue $215.9B (+65% YoY) highlighted in proxy. Micron earnings beat adds positive AI semiconductor sector tone. Pre-mkt +0.73% from June 23 close ($200.04 → $201.50).
+- ⚠️ USD 200 invalidation: pre-mkt $201.50 — $1.50 ABOVE gate. Thesis NOT broken (no NVDA-specific fundamental; KOSPI HBM4 contagion only; Annual Meeting is thesis-affirming event).
+- Stop: HWM $213.99, stop $192.591 (buffer $8.91 = 4.42%) ✓
+- HOLD. Midday routine MUST apply −7% rule if NVDA trades below $198.48 (7% below entry $213.421).
+- No scale-up today: Annual Meeting intraday event risk.
+- Invalidation: closes below $200 on volume; −7% midday threshold $198.48.
+- review_by: 2026-07-22
+
+**V** ($329.00 pre-mkt; +1.678% from entry $323.57)
+- _What changed since yesterday:_ EU Parliament backed digital euro — minor long-term risk to EU processing volume; no near-term impact. Visa launched AI cashback program in UAE. Strong Buy consensus (36 analysts), avg PT $398.83.
+- Stop: HWM $336.8199, stop $303.138 (buffer $25.86 = 7.86%) ✓
+- Thesis intact. HOLD. review_by July 28 (Q3 FY26 earnings).
+- Invalidation: stop triggers or revenue guidance cut on cross-border headwinds.
+
+**VST** ($162.80 pre-mkt; +9.401% from entry $148.81)
+- _What changed since yesterday:_ Wells Fargo issued Buy rating June 23. Analyst consensus: Strong Buy, avg PT $225.29 (+37.8% from current). Helix Digital Infrastructure (KKR+NVIDIA+Kuwait) confirmed as preferred data center power partner. VST dividend $0.229 (ex-date June 22, record June 23, payment June 30).
+- Stop: HWM $170.50, stop $153.45 (buffer $9.35 = 5.75%) ✓
+- THESIS MOST COMPELLING. HOLD. review_by July 7.
+- Invalidation: stop triggers or Helix partnership materially changes.
+
+### Stop audit (pre-market June 24)
+
+| Symbol | Order ID | Qty | HWM | Stop | Buffer | Status |
+|--------|----------|-----|-----|------|--------|--------|
+| LLY | d4147484 | 7sh | $1,182.73 | $1,064.457 | $46.54 (4.19%) | ✓ |
+| LLY | 25989fb5 | 3sh | $1,182.73 | $1,064.457 | $46.54 (4.19%) | ✓ |
+| NVDA | dcba7429 | 33sh | $213.99 | $192.591 | $8.91 (4.42%) | ✓ |
+| V | 66033918 | 22sh | $336.8199 | $303.138 | $25.86 (7.86%) | ✓ |
+| VST | c4c200a5 | 40sh | $170.50 | $153.45 | $9.35 (5.75%) | ✓ |
+
+**Stop audit: 5/5 PASS ✓** — No action required.
+
+### Watchlist review (pre-market June 24)
+
+**LRCX** (semi equipment): June 23 ATR = (376.95−365.52)/371.15 = 3.08% — ABOVE 3% gate ❌ (day 1 of 3 needed). June 22 ATR = 4.26%. Wells Fargo raised PT to $450 (Overweight) June 22 — thesis strong. Today (June 24) will be session 1 of the 3-consecutive-≤3% requirement. Track: if June 24 and June 25 also ≤3%, earliest entry is June 29 (Monday open). No LRCX buy today.
+
+**PWR** (industrials): ATR still elevated; insider selling $123M (flagged). Defer; re-evaluate June 29+.
+
+### Earnings window check (2 trading days = June 25–26)
+- LLY next earnings: ~August 2026 ✓ (outside window)
+- NVDA next earnings: August 26, 2026 ✓ (outside window)
+- V next earnings: July 28, 2026 ✓ (outside window)
+- VST next earnings: ~August 2026 ✓ (outside window)
+- No held name reports within 2 trading days ✓
+
+### Cash drag assessment
+Cash 68.12% vs target 25–40% (now 4 positions). Cash drag rule: must either plan a qualifying entry or explicitly justify staying heavy. **Explicit justification:** LRCX ATR gate failing (3.08% June 23); NVDA intraday event risk (Annual Meeting); PWR deferred; no other qualified entry meeting all 5 signals. Holding cash is correct today — not a default.
+
+No trades planned.
+
+### Planned trades for today
+
+```json
+{
+  "plan_date": "2026-06-24",
+  "trades": []
+}
+```
+
+No trades planned. LRCX ATR gate failing (session 1 of 3; check close tonight). NVDA Annual Meeting intraday event — no scale-up. PWR deferred. All 4 positions: HOLD.
+
+---
 ## 2026-06-23 — Pre-market research (~08:03 ET)
 
 ### Live-switch guard

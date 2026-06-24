@@ -3,60 +3,69 @@
 _Updated by every routine from live Alpaca data. The next agent trusts this as
 the last known state, but always re-fetches live data before trading._
 
-**Last updated:** 2026-06-23 15:50 ET (close; KOSPI chip selloff day 2; NVDA ⚠️ USD 201.97 ABOVE USD 200 invalidation (barely); 0 trades today; stop audit 5/5 PASS)
+**Last updated:** 2026-06-24 08:02 ET (pre-market; NVDA USD 201.50 above USD 200 invalidation; LRCX ATR 3.08% gate failing; 0 trades; stop audit 5/5 PASS)
 **Inception:** 2026-05-21 — starting equity $100,000.00 | SPY anchor price $739.44
 **SPY total-return anchor (post-June 18 ex-div $1.76):** **$741.20**
 
-## Account (close June 23, 2026 — live Alpaca data ~15:50 ET)
+## Account (pre-market June 24, 2026 — live Alpaca data ~08:02 ET)
 
 | Metric | Value |
 |--------|-------|
-| Equity | $98,711.58 |
-| Cash | $67,261.73 (68.13%) |
-| Long market value | $31,449.85 |
+| Equity | $98,773.54 |
+| Cash | $67,261.73 (68.12%) |
+| Long market value | $31,511.81 |
 | Buying power | ~$67,261.73 |
-| Last equity (June 22 close) | $99,043.58 |
+| Last equity (June 23 close) | $98,711.58 |
 
-## Open positions (close June 23, 2026 — live Alpaca data ~15:50 ET)
+## Open positions (pre-market June 24, 2026 — live Alpaca data ~08:02 ET)
 
 | Symbol | Qty | Avg entry | Current price | Mkt value | Unrealized P/L | % of portfolio | Trailing Stop |
 |--------|-----|-----------|--------------|-----------|----------------|----------------|---------------|
-| LLY | 10 | $1,093.534 | $1,109.81 | $11,098.10 | +$163.47 (+1.49%) | 11.24% | d4147484 (7sh, HWM **$1,182.73**, stop **$1,064.457**) ✓; 25989fb5 (3sh, same) ✓ — buffer $45.35 (4.09%) |
-| NVDA | 33 | $213.421 | $200.87 | $6,628.71 | −$413.58 (−5.88%) | 6.72% | dcba7429 (33sh, HWM **$213.99**, stop **$192.591**) ✓ — buffer $8.28 (4.12%) ⚠️ USD 200 invalidation WATCH |
-| V | 22 | $323.57 | $328.32 | $7,223.04 | +$105.10 (+1.47%) | 7.32% | 66033918 (22sh, HWM **$336.8199**, stop **$303.138**) ✓ — buffer $25.18 (7.67%) |
-| VST | 40 | $148.81 | $162.52 | $6,500.80 | +$454.44 (+9.21%) | 6.59% | c4c200a5 (40sh, HWM **$170.50**, stop **$153.45**) ✓ — buffer $9.07 (5.58%) ⭐⭐ HELIX+COGENTRIX |
+| LLY | 10 | $1,093.534 | $1,111.00 | $11,110.00 | +$175.47 (+1.60%) | 11.25% | d4147484 (7sh, HWM **$1,182.73**, stop **$1,064.457**) ✓; 25989fb5 (3sh, same) ✓ — buffer $46.54 (4.19%) |
+| NVDA | 33 | $213.421 | $201.50 | $6,649.50 | −$393.40 (−5.59%) | 6.73% | dcba7429 (33sh, HWM **$213.99**, stop **$192.591**) ✓ — buffer $8.91 (4.42%) ⚠️ USD 200 invalidation $1.50 ABOVE GATE |
+| V | 22 | $323.57 | $329.00 | $7,238.00 | +$120.06 (+1.68%) | 7.33% | 66033918 (22sh, HWM **$336.8199**, stop **$303.138**) ✓ — buffer $25.86 (7.86%) |
+| VST | 40 | $148.81 | $162.80 | $6,512.00 | +$559.60 (+9.40%) | 6.59% | c4c200a5 (40sh, HWM **$170.50**, stop **$153.45**) ✓ — buffer $9.35 (5.75%) ⭐⭐ HELIX+COGENTRIX |
 
-**Sector exposure (close June 23):**
-- Healthcare (LLY): $11,098.10 = 11.24% | Tech/AI Semi (NVDA): $6,628.71 = 6.72% | Financials (V): $7,223.04 = 7.32% | Energy/Utilities (VST): $6,500.80 = 6.59% | Cash: $67,261.73 = 68.13%
+**Sector exposure (pre-market June 24):**
+- Healthcare (LLY): $11,110.00 = 11.24% | Tech/AI Semi (NVDA): $6,649.50 = 6.73% | Financials (V): $7,238.00 = 7.33% | Energy/Utilities (VST): $6,512.00 = 6.59% | Cash: $67,261.73 = 68.12%
 - No sector above 60% cap ✓
 
-**Trailing stop status (close June 23 — confirmed via Alpaca live orders ~09:37 ET; no changes intraday):**
-- LLY (d4147484): 7sh — HWM **$1,182.73**, stop **$1,064.457** ✓ (buffer $45.35 = 4.09%)
+**Trailing stop status (pre-market June 24 — confirmed via Alpaca live orders):**
+- LLY (d4147484): 7sh — HWM **$1,182.73**, stop **$1,064.457** ✓ (buffer $46.54 = 4.19%)
 - LLY (25989fb5): 3sh — HWM **$1,182.73**, stop **$1,064.457** ✓
-- NVDA (dcba7429): 33sh — HWM **$213.99**, stop **$192.591** ✓ (buffer $8.28 = 4.12%) ⚠️ monitoring USD 200
+- NVDA (dcba7429): 33sh — HWM **$213.99**, stop **$192.591** ✓ (buffer $8.82 = 4.38%) ⚠️ USD 200 invalidation WATCH
 - V (66033918): 22sh — HWM **$336.8199**, stop **$303.138** ✓ (buffer $25.18 = 7.67%)
-- VST (c4c200a5): 40sh — HWM **$170.50**, stop **$153.45** ✓ (buffer $9.07 = 5.58%)
+- VST (c4c200a5): 40sh — HWM **$170.50**, stop **$153.45** ✓ (buffer $9.35 = 5.75%)
 **Stop audit: 5/5 PASS ✓**
 
-**Close June 23 notes:**
-- **Market context:** KOSPI chip selloff day 2 with contagion into US semis. SPY −1.34% (USD 734.71). NVDA −5.88% from entry — closed ~USD 201.97 (WebSearch), ABOVE USD 200 invalidation threshold (barely; 0.99% buffer). Thesis NOT broken (no NVDA-specific fundamental event; contagion from KOSPI HBM4 news). Pre-market June 24 must re-evaluate USD 200 level.
-- **Portfolio today:** Bull −0.34% vs SPY −1.34% → +1.00pp outperformance. Cash cushion (68%) absorbed chip selloff again (same pattern as June 9 KOSPI day 1).
-- **NVDA** USD 201.97 at EOD: ⚠️ CRITICAL WATCH — USD 200 invalidation is 0.99% below close. Pre-market June 24 MUST assess whether thesis holds (Helix, Vera Rubin, Aug 26 earnings intact).
-- **LLY** USD 1,109.81: +1.49% from entry — defensive healthcare outperformed. Medicare Bridge July 1 in 7 trading days; explicit hold/trim/exit decision required pre-market June 30.
-- **V** USD 328.32: +1.47% from entry — financials defensive. Thesis intact.
-- **VST** USD 162.52: +9.21% from entry ⭐⭐ — strongest position. Helix + Cogentrix. Risk-off saw selling intraday but recovered. Stop buffer comfortable at 5.58%.
-- **Shock check:** −$332 (−0.34%) — below 4% threshold ✓
-- **Drawdown circuit breaker:** $98,711.58 vs HWM $101,384.21 = **−2.637%** — NOT triggered ✓
-- **No trades today:** RISK-OFF day, no qualified candidates (LRCX/PWR ATR elevated; chip selloff reset ATR clock).
+**Pre-market June 24 notes:**
+- **Market context:** S&P 500 futures +0.13% stabilizing after KOSPI 2-day selloff. 10yr Treasury 4.49% — BELOW 4.75% gate ✓. WTI ~$80/bbl ✓. Iran peace deal holding. NVDA Annual Meeting 9AM PT (noon ET) — bullish catalyst; Jensen Huang keynote.
+- **NVDA** USD 201.50 pre-market: +$1.46 (+0.73%) from June 23 close USD 200.04. ⚠️ USD 200 invalidation is $1.50 above gate. Thesis intact (no NVDA-specific fundamental event; KOSPI HBM4 contagion only). Annual Meeting today is bullish catalyst. HOLD; midday -7% threshold = USD 198.48.
+- **LLY** USD 1,111.00: +1.60% from entry. Medicare Bridge July 1 in 7 days; explicit hold/trim/exit decision REQUIRED at pre-market June 30. Cathie Wood/ARK accumulated. HOLD.
+- **V** USD 329.00: +1.68% from entry. Thesis intact; July 28 earnings gate. HOLD.
+- **VST** USD 162.80: +9.40% from entry ⭐⭐. Helix + Cogentrix thesis strongest. HOLD.
+- **Shock check:** +$117.53 (+0.119%) from last_equity — below 4% threshold ✓
+- **Drawdown circuit breaker:** $98,773.54 vs HWM $101,384.21 = **−2.576%** — NOT triggered ✓
+- **No trades planned:** LRCX ATR 3.08% (gate failing; need 3 consecutive ≤3%); NVDA Annual Meeting intraday risk; PWR deferred; cash drag explicitly accepted pending ATR resolution.
+
+## Monday conviction ratings (June 23, 2026)
+
+| Symbol | Rating | 3-consecutive-C trigger | Notes |
+|--------|--------|------------------------|-------|
+| LLY | **A** | N/A | +1.60% from entry; Medicare Bridge July 1 in 7 days; Cathie Wood buying; thesis intact |
+| NVDA | **B** | 0/3 weeks at C | +0.683% pre-mkt recovery; USD 200 invalidation $1.41 above gate; Annual Meeting today; starter position |
+| V | **B** | 0/3 weeks at C | +1.68% from entry; thesis intact; July 28 earnings gate |
+| VST | **A** | N/A | +9.24% from entry; Helix + Cogentrix closed; thesis most compelling |
 
 **Upcoming catalysts:**
-- **LLY Medicare GLP-1 Bridge effective July 1** (8 days — explicit hold/trim/exit decision REQUIRED at pre-market June 30)
-- **VST thesis review_by July 7** (14 days)
+- **LLY Medicare GLP-1 Bridge effective July 1** (7 days — explicit hold/trim/exit decision REQUIRED at pre-market June 30)
+- **NVDA Annual Meeting June 24 9AM PT** (today — Jensen Huang keynote; bullish catalyst)
+- **VST thesis review_by July 7** (13 days)
 - **NVDA $200 invalidation monitoring** (active — closes below $200 on volume = thesis break)
 - **NVDA −7% midday threshold $198.48** (midday routine MUST apply rule if triggered)
-- **NVDA review_by July 22** (29 days)
-- **V Q3 FY26 earnings July 28** (35 days — thesis review_by date)
-- **NVDA earnings August 26** (64 days — outside 2-day window ✓)
+- **NVDA review_by July 22** (28 days)
+- **V Q3 FY26 earnings July 28** (34 days — thesis review_by date)
+- **NVDA earnings August 26** (63 days — outside 2-day window ✓)
 
 **Week of June 23 — new position slots:**
 - **Slot 1:** LRCX — ATR reset by chip selloff; need 3 consecutive ≤3% sessions; earliest June 30+
