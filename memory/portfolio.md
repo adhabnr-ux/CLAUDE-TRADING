@@ -3,9 +3,69 @@
 _Updated by every routine from live Alpaca data. The next agent trusts this as
 the last known state, but always re-fetches live data before trading._
 
-**Last updated:** 2026-06-24 12:32 ET (midday; NVDA ⚠️ USD200.41 −6.10% monitoring USD198.48 forced-cut threshold; no cuts, no tightenings; stop audit 5/5 PASS)
+**Last updated:** 2026-06-24 15:51 ET (close; ⚠️ NVDA USD197.75 −7.34% from entry — BELOW USD200 invalidation AND USD198.48 threshold; pre-mkt June 25 MUST decide hold/exit; stop audit 5/5 PASS; 0 trades today)
 **Inception:** 2026-05-21 — starting equity $100,000.00 | SPY anchor price $739.44
 **SPY total-return anchor (post-June 18 ex-div $1.76):** **$741.20**
+
+## Account (close June 24, 2026 — live Alpaca data ~15:51 ET)
+
+| Metric | Value |
+|--------|-------|
+| Equity | $98,724.14 |
+| Cash | $67,261.73 (68.15%) |
+| Long market value | $31,462.41 |
+| Buying power | ~$67,261.73 |
+| Last equity (June 23 close) | $98,656.01 |
+
+## Open positions (close June 24, 2026 — live Alpaca data ~15:51 ET)
+
+| Symbol | Qty | Avg entry | Current price | Mkt value | Unrealized P/L | % of portfolio | Trailing Stop |
+|--------|-----|-----------|--------------|-----------|----------------|----------------|---------------|
+| LLY | 10 | $1,093.534 | $1,114.33 | $11,143.30 | +$207.96 (+1.90%) | 11.28% | d4147484 (7sh, HWM **$1,182.73**, stop **$1,064.457**) ✓; 25989fb5 (3sh, same) ✓ — buffer $49.87 (4.48%) |
+| NVDA | 33 | $213.421 | $197.75 | $6,525.75 | −$517.14 (**−7.34%**) | 6.61% | dcba7429 (33sh, HWM **$213.99**, stop **$192.591**) ✓ — buffer $5.16 (2.61%) ⚠️ BELOW USD200 INVALIDATION + USD198.48 THRESHOLD |
+| V | 22 | $323.57 | $331.84 | $7,300.48 | +$181.94 (+2.56%) | 7.40% | 66033918 (22sh, HWM **$336.8199**, stop **$303.138**) ✓ — buffer $28.70 (8.65%) |
+| VST | 40 | $148.81 | $162.42 | $6,496.80 | +$544.40 (+9.15%) | 6.58% | c4c200a5 (40sh, HWM **$170.50**, stop **$153.45**) ✓ — buffer $8.97 (5.52%) ⭐⭐ HELIX+COGENTRIX |
+
+**Sector exposure (close June 24):**
+- Healthcare (LLY): $11,143.30 = 11.28% | Tech/AI Semi (NVDA): $6,525.75 = 6.61% | Financials (V): $7,300.48 = 7.40% | Energy/Utilities (VST): $6,496.80 = 6.58% | Cash: $67,261.73 = 68.15%
+- No sector above 60% cap ✓
+
+**Trailing stop status (close June 24 — confirmed via Alpaca live orders ~15:51 ET):**
+- LLY (d4147484): 7sh — HWM **$1,182.73**, stop **$1,064.457** ✓ (buffer $49.87 = 4.48%)
+- LLY (25989fb5): 3sh — HWM **$1,182.73**, stop **$1,064.457** ✓
+- NVDA (dcba7429): 33sh — HWM **$213.99**, stop **$192.591** ✓ (buffer $5.16 = 2.61%) ⚠️ THESIS BREAK — closed below USD200 invalidation
+- V (66033918): 22sh — HWM **$336.8199**, stop **$303.138** ✓ (buffer $28.70 = 8.65%)
+- VST (c4c200a5): 40sh — HWM **$170.50**, stop **$153.45** ✓ (buffer $8.97 = 5.52%)
+**Stop audit: 5/5 PASS ✓**
+
+**Close June 24 notes (~15:51 ET — ⚠️ NVDA thesis break; 0 trades; stop audit 5/5 PASS):**
+- **Today P/L:** +$68.13 (+0.069%) | SPY ~−0.336% (Alpaca) | Bull outperformed by +0.405pp (cash cushion absorbing continued semi weakness)
+- **Shock check:** +$68.13 (+0.069%) vs last_equity $98,656.01 — no shock ✓ (threshold −4%)
+- **Drawdown circuit breaker:** $98,724.14 vs HWM $101,384.21 = **−2.625%** — NOT triggered ✓ (7.375pp headroom)
+- **⚠️ NVDA THESIS BREAK — CRITICAL:** Closed USD 197.75 = **−7.343% from entry** ($213.421). BOTH conditions triggered:
+  1. **USD 200 invalidation** (stated at entry: "closes below $200 on volume") → **TRIGGERED**
+  2. **USD 198.48 forced-cut threshold** (−7% from entry) → was $200.41 at midday (above threshold); fell further after midday to $197.75; close routine cannot trade
+  - Trailing stop $192.591 has NOT fired (buffer $5.16 = 2.61%)
+  - Annual Meeting Jensen Huang keynote did NOT reverse selling; chip sector under 3-day pressure (KOSPI contagion + hyperscaler AI ROI concerns)
+  - **PRE-MARKET JUNE 25 MANDATORY:** explicit hold/exit/trim decision required BEFORE open. If NVDA is below $198.48 at midday June 25, the −7% rule MUST cut the position.
+  - Micron earnings tonight (after bell) — key AI memory read-through for NVDA thesis; could move materially.
+- **LLY** $1,114.33: +1.90% from entry; +0.655% today. Defensive healthcare outperforming. Medicare Bridge July 1 in 5 trading days — HOLD. review_by 2026-07-01.
+- **V** $331.84: +2.56% from entry; +1.023% today. Strong; thesis intact. HOLD. review_by 2026-07-28.
+- **VST** $162.42: +9.15% from entry; +0.018% today. Flat in risk-off; Helix+Cogentrix thesis intact. Buffer 5.52%. HOLD. review_by 2026-07-07.
+- **Market context (June 24):** S&P 500 attempted recovery (+0.35%, Nasdaq +0.62%) after Tuesday's −1.44% selloff. GOOGL +0.5% on Dow Jones index inclusion (effective June 29). AI/chip names stayed under pressure — NVDA −1.14% intraday. Micron earnings after close are a key DRAM/HBM demand read-through for AI semi thesis.
+- **Exit reconciliation:** No exits today. All 4 positions held. closed-trades.md current ✓.
+- **LRCX ATR tracking:** June 24 = potential session 2/3. Pre-mkt June 25 must calculate LRCX ATR to confirm progress toward Monday June 29 entry gate.
+- **Trades today:** 0.
+
+## Performance vs S&P 500
+
+| Period | Bull | SPY | Difference |
+|--------|------|-----|------------|
+| Inception (2026-05-21) | $100,000.00 | $739.44 | — |
+| **Close (2026-06-24)** | **$98,724.14 (−1.276%)** | **$732.24 + $1.76 div = −0.736% TR** | **Bull TRAILS SPY ~0.54pp** (improved from −0.89pp at June 23 close) |
+| **Midday (2026-06-24)** | **$98,841.34 (−1.159%)** | **~−0.401% TR est** | **Bull TRAILS SPY ~0.76pp est** |
+
+---
 
 ## Account (midday June 24, 2026 — live Alpaca data ~12:32 ET)
 
