@@ -3,9 +3,82 @@
 _Updated by every routine from live Alpaca data. The next agent trusts this as
 the last known state, but always re-fetches live data before trading._
 
-**Last updated:** 2026-06-24 08:02 ET (pre-market; NVDA USD 201.50 above USD 200 invalidation; LRCX ATR 3.08% gate failing; 0 trades; stop audit 5/5 PASS)
+**Last updated:** 2026-06-24 09:36 ET (market-open; NVDA ⚠️ USD200.72 monitoring USD200 invalidation; Annual Meeting noon ET; LRCX ATR gate failing session 1/3; 0 trades; stop audit 5/5 PASS)
 **Inception:** 2026-05-21 — starting equity $100,000.00 | SPY anchor price $739.44
 **SPY total-return anchor (post-June 18 ex-div $1.76):** **$741.20**
+
+## Account (market-open June 24, 2026 — live Alpaca data ~09:36 ET)
+
+| Metric | Value |
+|--------|-------|
+| Equity | $98,860.37 |
+| Cash | $67,261.73 (68.04%) |
+| Long market value | $31,611.68 |
+| Buying power | ~$67,261.73 |
+| Last equity (June 23 close) | $98,656.01 |
+
+## Open positions (market-open June 24, 2026 — live Alpaca data ~09:36 ET)
+
+| Symbol | Qty | Avg entry | Current price | Mkt value | Unrealized P/L | % of portfolio | Trailing Stop |
+|--------|-----|-----------|--------------|-----------|----------------|----------------|---------------|
+| LLY | 10 | $1,093.534 | $1,129.27 | $11,292.70 | +$357.36 (+3.27%) | 11.42% | d4147484 (7sh, HWM **$1,182.73**, stop **$1,064.457**) ✓; 25989fb5 (3sh, same) ✓ — buffer $64.81 (5.74%) |
+| NVDA | 33 | $213.421 | $200.72 | $6,623.76 | −$419.13 (−5.95%) | 6.70% | dcba7429 (33sh, HWM **$213.99**, stop **$192.591**) ✓ — buffer $8.13 (4.04%) ⚠️ USD 200 invalidation $0.72 ABOVE GATE |
+| V | 22 | $323.57 | $328.61 | $7,229.42 | +$110.88 (+1.56%) | 7.31% | 66033918 (22sh, HWM **$336.8199**, stop **$303.138**) ✓ — buffer $25.47 (7.75%) |
+| VST | 40 | $148.81 | $161.645 | $6,465.80 | +$513.40 (+8.62%) | 6.54% | c4c200a5 (40sh, HWM **$170.50**, stop **$153.45**) ✓ — buffer $8.20 (5.07%) ⭐⭐ HELIX+COGENTRIX |
+
+**Sector exposure (market-open June 24):**
+- Healthcare (LLY): $11,292.70 = 11.42% | Tech/AI Semi (NVDA): $6,623.76 = 6.70% | Financials (V): $7,229.42 = 7.31% | Energy/Utilities (VST): $6,465.80 = 6.54% | Cash: $67,261.73 = 68.04%
+- No sector above 60% cap ✓
+
+**Trailing stop status (market-open June 24 — confirmed via Alpaca live orders):**
+- LLY (d4147484): 7sh — HWM **$1,182.73**, stop **$1,064.457** ✓ (buffer $64.81 = 5.74%)
+- LLY (25989fb5): 3sh — HWM **$1,182.73**, stop **$1,064.457** ✓
+- NVDA (dcba7429): 33sh — HWM **$213.99**, stop **$192.591** ✓ (buffer $8.13 = 4.04%) ⚠️ monitoring
+- V (66033918): 22sh — HWM **$336.8199**, stop **$303.138** ✓ (buffer $25.47 = 7.75%)
+- VST (c4c200a5): 40sh — HWM **$170.50**, stop **$153.45** ✓ (buffer $8.20 = 5.07%)
+**Stop audit: 5/5 PASS ✓**
+
+**Market-open June 24 notes:**
+- **Market context:** S&P 500 futures +0.13% at open (bargain-hunting after KOSPI 2-day chip selloff). Micron +4.5% pre-mkt (earnings beat) = positive AI semi readthrough. NVDA Annual Meeting 9AM PT (noon ET) — Jensen Huang keynote, Blackwell/Vera production update; bullish catalyst.
+- **LLY** USD1,129.27: +2.00% today, +3.27% from entry. Berenberg raised PT to $1,135; retatrutide Phase 3 data positive. Medicare Bridge July 1 in 7 days — explicit hold/trim/exit decision REQUIRED at pre-market June 30. HOLD.
+- **NVDA** USD200.72: +0.34% today, still −5.95% from entry. ⚠️ USD200 invalidation $0.72 above gate. No fundamental thesis break; KOSPI HBM4 contagion only; Annual Meeting is bullish thesis-affirming event. Midday MUST apply −7% rule if NVDA at/below USD198.48. HOLD.
+- **V** USD328.61: +0.04% today, +1.56% from entry. Thesis intact; July 28 earnings gate. HOLD.
+- **VST** USD161.645: −0.46% today, +8.62% from entry. Pure risk-off residual pullback; Helix + Cogentrix thesis most compelling. HOLD.
+- **Shock check:** +$204.36 (+0.207%) — no shock ✓
+- **Drawdown circuit breaker:** $98,860.37 vs HWM $101,384.21 = **−2.49%** — NOT triggered ✓
+- **No trades:** plan empty (LRCX ATR gate failing session 1/3; NVDA Annual Meeting event risk; PWR deferred; no other qualified candidates)
+
+## Monday conviction ratings (June 24, 2026)
+
+| Symbol | Rating | 3-consecutive-C trigger | Notes |
+|--------|--------|------------------------|-------|
+| LLY | **A** | N/A | +3.27% from entry; Medicare Bridge July 1 in 7 days; Berenberg PT $1,135; thesis intact |
+| NVDA | **B** | 0/3 weeks at C | +0.34% today; USD 200 invalidation $0.72 above gate; Annual Meeting noon ET bullish; starter position |
+| V | **B** | 0/3 weeks at C | +1.56% from entry; thesis intact; July 28 earnings gate |
+| VST | **A** | N/A | +8.62% from entry; Helix + Cogentrix closed; thesis most compelling |
+
+**Upcoming catalysts:**
+- **NVDA Annual Meeting June 24 9AM PT** (today — Jensen Huang keynote; Blackwell/Vera production ramp; bullish catalyst)
+- **LLY Medicare GLP-1 Bridge effective July 1** (7 days — explicit hold/trim/exit decision REQUIRED at pre-market June 30)
+- **NVDA $200 invalidation monitoring** (active — closes below $200 on volume = thesis break; midday −7% threshold $198.48)
+- **VST thesis review_by July 7** (13 days)
+- **NVDA review_by July 22** (28 days)
+- **V Q3 FY26 earnings July 28** (34 days — thesis review_by date)
+- **NVDA earnings August 26** (63 days — outside 2-day window ✓)
+- **LRCX ATR gate tracking:** session 1/3 (June 23 ATR 3.08%); need sessions June 24 + 25 also ≤3% for entry June 29+
+
+**Week of June 23 — new position slots:**
+- **Slot 1:** LRCX — ATR gate tracking (session 1/3); earliest entry June 29 (Monday)
+- **Slot 2:** PWR — ATR elevated + insider selling; re-evaluate June 29+
+- **Slot 3:** MRVL — research candidate from AGGRO lessons; research when calmer
+
+## Performance vs S&P 500
+
+| Period | Bull | SPY | Difference |
+|--------|------|-----|------------|
+| Inception (2026-05-21) | $100,000.00 | $739.44 | — |
+| **Market-open (2026-06-24)** | **$98,860.37 (−1.140%)** | **~$734.71 + $1.76 div = ~−0.401% TR (recovering from June 23 close)** | **Bull TRAILS SPY ~0.74pp est** (recovering as LLY +2.0% and NVDA +0.34% recover from KOSPI selloff) |
+| **Close (2026-06-23)** | **$98,711.58 (−1.289%)** | **$734.71 + $1.76 div = −0.401% TR** | **Bull TRAILS SPY ~0.89pp** |
 
 ## Account (pre-market June 24, 2026 — live Alpaca data ~08:02 ET)
 

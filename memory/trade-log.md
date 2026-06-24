@@ -3444,3 +3444,24 @@ No trades today per pre-market plan. AVGO exited automatically. Slots 2 and 3 re
 - **Why:** AWS is the largest cloud/AI infrastructure platform with $244B committed backlog growing 40% YoY; Q1 2026 AWS revenue $37.6B (+28% YoY, fastest in 15 quarters) confirms acceleration; retail gaining market share from cost-conscious consumers; improving operating margins; Trainium AI chip competitive moat; 57/60 analysts buy. 8.1% starter position.
 - **Stop:** 10% trailing stop placed (order id: bbcd70fa-ed36-4811-b79e-644435f502cd) — initial stop ~$242.24, trailing HWM ~$269.15
 - **Verified:** confirmed via positions re-fetch (30sh @ $269.13 avg, market value ~$8,074) and trailing stop confirmed in open orders
+
+## 2026-06-24 09:36 ET — MARKET-OPEN ROUTINE (no trades)
+- **Action:** None — plan empty (no qualified candidates today)
+- **Live-switch guard:** ALPACA_BASE_URL contains "paper" ✓
+- **Market:** OPEN ✓ (is_open: true, 09:36 ET)
+- **Shock check:** equity USD98,860.37 vs last_equity USD98,656.01 = +USD204.36 (+0.207%) — no shock ✓ (threshold −4%)
+- **Drawdown circuit breaker:** USD98,860.37 vs HWM USD101,384.21 = −2.49% — NOT triggered ✓ (−10% threshold)
+- **Breaking-news gate:** No planned trades — N/A
+- **Position review (live prices ~09:36 ET):**
+  - LLY 10sh @ USD1,129.27 (+2.00% today, +3.27% from entry USD1,093.534). Stop HWM USD1,182.73, stop USD1,064.457, buffer USD64.81 (5.74%) ✓. Medicare Bridge July 1 in 7 days — explicit hold/trim/exit decision REQUIRED at pre-market June 30. HOLD. Conviction A.
+  - NVDA 33sh @ USD200.72 (+0.34% today, −5.95% from entry USD213.421). ⚠️ USD200 invalidation USD0.72 ABOVE gate. No fundamental thesis break; KOSPI contagion only; Annual Meeting noon ET today (bullish Jensen keynote). Stop HWM USD213.99, stop USD192.591, buffer USD8.13 (4.04%) ✓. Midday MUST apply −7% rule if below USD198.48. HOLD. Conviction B.
+  - V 22sh @ USD328.61 (+0.04% today, +1.56% from entry USD323.57). Stop HWM USD336.82, stop USD303.138, buffer USD25.47 (7.75%) ✓. Thesis intact. HOLD. Conviction B.
+  - VST 40sh @ USD161.645 (−0.46% today, +8.62% from entry USD148.81). Stop HWM USD170.50, stop USD153.45, buffer USD8.20 (5.07%) ✓. Helix + Cogentrix thesis most compelling. HOLD. Conviction A.
+- **Stop audit: 5/5 PASS ✓**
+  - LLY (d4147484): 7sh — HWM USD1,182.73, stop USD1,064.457 ✓
+  - LLY (25989fb5): 3sh — HWM USD1,182.73, stop USD1,064.457 ✓
+  - NVDA (dcba7429): 33sh — HWM USD213.99, stop USD192.591 ✓
+  - V (66033918): 22sh — HWM USD336.8199, stop USD303.138 ✓
+  - VST (c4c200a5): 40sh — HWM USD170.50, stop USD153.45 ✓
+- **Exit reconciliation:** No exits since last run. All 4 positions intact. closed-trades.md current ✓.
+- **Week of June 23 — new position slots:** Slot 1 = LRCX (ATR gate: session 1/3; need ≤3% for 3 consecutive sessions); Slot 2 = PWR (deferred); Slot 3 = MRVL (research pending). 0/3 used.
