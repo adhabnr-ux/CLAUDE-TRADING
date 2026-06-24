@@ -17,6 +17,93 @@ but always re-fetches live data before trading._
 
 ---
 
+## Last snapshot — 2026-06-24 EOD CLOSE (~3:50 PM ET)
+
+| Field | Value |
+|---|---|
+| Equity | USD 92,841.47 |
+| Cash | USD 36,722.68 (39.6%) |
+| Long market value | USD 56,118.79 |
+| Open positions | 5 |
+| last_equity (June 23 EOD — Alpaca authoritative) | USD 92,877.83 |
+| Intraday P/L vs last_equity | **-USD 36.36 (-0.039%)** — market drifted slightly lower into close; all 5 positions off midday levels; Micron AH earnings pending |
+| HWM | USD 101,144.73 |
+| Drawdown from HWM | **-8.209%** (circuit breaker -20% — NOT triggered; 11.791pp headroom) |
+
+**Shock check:** -0.039% vs threshold -6% → NOT triggered ✓
+
+**Open positions (June 24 EOD ~3:50 PM ET):**
+
+| Symbol | Qty | Avg Entry | EOD Price | Market Value | Unrealized P/L | P/L % | -12% Cut Trigger | Buffer | Rating |
+|---|---|---|---|---|---|---|---|---|---|
+| NVDA | 103 | USD 213.60 | USD 200.17 | USD 20,617.51 | -USD 1,383.29 | **-6.287%** | USD 187.97 | 5.713pp | A |
+| AVGO | 34 | USD 406.23 | USD 384.79 | USD 13,082.86 | -USD 728.96 | **-5.277%** | USD 357.48 | 6.723pp | A |
+| GOOGL | 16 | USD 370.22 | USD 345.64 | USD 5,530.24 | -USD 393.28 | **-6.639%** | USD 325.79 | 5.361pp | A |
+| AMZN | 36 | USD 247.99 | USD 234.75 | USD 8,451.00 | -USD 476.64 | **-5.339%** | USD 218.23 | 6.661pp | A |
+| VST | 52 | USD 151.47 | USD 163.00 | USD 8,476.00 | +USD 599.56 | **+7.612% ✅** | USD 133.29 | 19.612pp | A |
+
+**No positions triggered -12% cut rule. Nearest: NVDA at 5.713pp. No tighten threshold breached. No action taken.**
+
+**Stop audit (June 24 EOD close): ALL 5 CONFIRMED LIVE ✓**
+
+| Symbol | Stop Order ID | HWM | Stop Price | Status |
+|---|---|---|---|---|
+| NVDA | `54d7d851` | USD 221.60 | USD 181.712 | ✓ live |
+| AVGO | `36f5a45f` | USD 426.48 | USD 349.7136 | ✓ live |
+| GOOGL | `e52a43f1` | USD 375.77 | USD 308.1314 | ✓ live |
+| AMZN | `b55bef05` | USD 250.43 | USD 205.3526 | ✓ live |
+| VST | `5b347be3` | USD 170.50 | USD 139.81 | ✓ live |
+
+**Market close context (June 24) [search: WebSearch fallback — MiniMax M3 not available]:**
+S&P 500 +0.35%, Nasdaq +0.62% into the close. Markets advanced ahead of Micron Q3 FY2026 earnings (results and call expected after 4 PM ET). WTI crude ~USD 70/bbl (stable; Iran ceasefire holding). Broad risk-on tone; semis mixed ahead of the Micron print; AMZN/GOOGL held. Micron AI chip demand data is the key binary signal for NVDA/AVGO thesis and the June 25 pre-market deployment decision.
+
+**Thesis contracts (June 24 EOD):**
+| Symbol | Review By | Invalidation | Status |
+|---|---|---|---|
+| NVDA | July 9 | Hyperscaler GPU share reverses | ✓ Intact — 5.713pp buffer |
+| AVGO | July 9 | AI revenue decelerates | ✓ Intact — 6.723pp buffer; Q3 USD 16B guide; JPM bullish |
+| GOOGL | July 2 ⚠️ | GCP decelerates OR TPU cancelled | ✓ Intact — 5.361pp buffer; Dow Jones addition June 29 |
+| AMZN | July 7 | AWS <20% YoY | ✓ Intact — 6.661pp buffer |
+| VST | July 15 | Nuclear PPAs cancelled | ✓ Intact — 19.612pp buffer; Helix consortium intact |
+
+**⚠️ GOOGL review_by July 2 is 8 days out — explicit hold/trim/exit decision required at pre-market July 2.**
+
+**Performance vs SPY (since inception June 4, 2026):**
+| Metric | Value |
+|---|---|
+| Starting equity | USD 100,000.00 |
+| EOD equity | USD 92,841.47 |
+| Aggro since inception | **-7.159%** |
+| SPY anchor | USD 754.18 (June 3, 2026) |
+| SPY June 24 close | USD 733.30 |
+| SPY since inception | **-2.769%** |
+| Alpha (Aggro vs SPY) | **-4.390pp** |
+| Today P/L | -USD 36.36 (-0.039%) |
+| SPY today | -0.038% |
+| Today alpha | ~0.000pp |
+
+**Sector exposure (June 24 EOD):**
+| Sector | Names | Market Value | % of Equity |
+|---|---|---|---|
+| Technology — semis | NVDA, AVGO | USD 33,700.37 | 36.3% |
+| Technology — hyperscalers | GOOGL, AMZN | USD 13,981.24 | 15.1% |
+| Utilities/Power | VST | USD 8,476.00 | 9.1% |
+| Cash | — | USD 36,722.68 | 39.6% |
+
+**Conviction ratings (June 24 EOD):**
+| Symbol | Rating | Notes |
+|---|---|---|
+| NVDA | A | AI GPU; -6.287%; 5.713pp buffer |
+| AVGO | A | AI revenue Q3 guide USD 16B (+200% YoY); -5.277%; 6.723pp buffer |
+| GOOGL | A | GCP +63%; -6.639%; 5.361pp buffer; Dow Jones June 29; review_by July 2 ⚠️ |
+| AMZN | A | AWS +28%; -5.339%; 6.661pp buffer |
+| VST | A | +7.612% ✅; 19.612pp buffer; leading performer |
+| MRVL | **CLOSED** | -7.80% (trailing stop 9:41 AM ET June 24); HWM was USD 329.88 (+12.48%); June 22-24 semi rout |
+
+_EOD June 24: all 5 positions within guardrails. MRVL stop filed by market-open routine. No new positions today (Micron AH pending). Cash 39.6%. Micron beat/miss is the deployment decision driver for June 25 pre-market. GOOGL review_by July 2 approaching (8 days). PCE Thursday = macro risk. Control: ACTIVE._
+
+---
+
 ## Last snapshot — 2026-06-24 MIDDAY (~12:40 PM ET)
 
 | Field | Value |
