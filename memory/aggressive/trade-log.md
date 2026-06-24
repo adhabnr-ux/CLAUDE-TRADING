@@ -1972,3 +1972,63 @@ Scanned: NVDA, AVGO, GOOGL, AMZN (all >5% from entry). MRVL also scanned due to 
 
 ### Result
 All 6 positions within guardrails. No trades. All 18% trailing stops active and audited. Broad AI chip selloff driven by macro sentiment (basket de-risking) — no thesis breaks across any position. GOOGL talent departure risk is noted for next weekly review but does not trigger any immediate action. MRVL -8.13% intraday is sector CPO noise (already known), not thesis deterioration.
+
+---
+
+## 2026-06-24 — MARKET OPEN (~9:46 AM ET)
+
+### Pre-run checks
+| Check | Result |
+|---|---|
+| Live-switch guard | ALPACA_BASE_URL contains "paper" ✓ |
+| Lock | Clear (empty `{}`) → written for this run ✓ |
+| Control switch | STATUS: ACTIVE ✓ |
+| Plan date | June 24, 2026 — matches today ✓ |
+| Plan trades | [] — empty, no trades planned ✓ |
+| Idempotency | No prior EXECUTED: marker ✓ |
+
+### Market & account status
+| Check | Result |
+|---|---|
+| Market open | true (next close 4:00 PM ET 2026-06-24T16:00:00-04:00) ✓ |
+| Equity | USD 92,880.76 |
+| last_equity (June 23 EOD — Alpaca authoritative) | USD 92,877.83 |
+| Intraday change | **+USD 2.93 (+0.003%)** — essentially flat; MRVL stop fill proceeds exactly offset intraday position moves |
+| Cash (post-MRVL exit) | USD 36,722.68 (39.5%) |
+| Cash floor (2% min) | ✓ |
+| HWM | USD 101,144.73 |
+| Drawdown from HWM | **-8.17%** (92,880.76 / 101,144.73 - 1; circuit breaker 20% — NOT triggered ✓) |
+
+### Stop-fill reconciliation — MRVL trailing stop fired at 9:41 AM ET
+| Field | Value |
+|---|---|
+| Order ID | `a9097c8c` |
+| Symbol | MRVL |
+| Action | SELL (trailing stop triggered) |
+| Qty | 25 shares |
+| Fill price avg | USD 270.415601 |
+| Proceeds | USD 6,760.39 |
+| Entry cost basis | USD 7,332.13 (25sh @ USD 293.2852, June 15) |
+| Realized P/L | **-USD 571.74 (-7.80%)** |
+| HWM at trigger | USD 329.88 (+12.48% from entry — stop locked in the momentum phase) |
+| Stop price triggered | USD 270.5016 (HWM 329.88 × 82%) |
+| Fill at | 2026-06-24T13:41:20Z (9:41 AM ET) |
+| Cause | June 22-24 global semiconductor rout: Asian regulatory "overheated" basket sell, KOSPI -9.99%, BofA rate hike note |
+| Thesis break? | NO — no custom silicon program cancelled or hyperscaler customer lost |
+| Post-mortem filed | ✓ `memory/aggressive/closed-trades.md` |
+| Lesson filed | ✓ `memory/aggressive/lessons.md` (2026-06-24 entry) |
+
+### Stop audit — 5/5 remaining positions confirmed with live 18% trailing stops ✓
+
+| Symbol | Qty | Current Price | P/L % | Stop Price | Stop Order ID | Buffer to -12% |
+|---|---|---|---|---|---|---|
+| NVDA | 103 | USD 200.92 | -5.94% | USD 181.712 (`54d7d851`) | ✓ live | 6.06pp |
+| AVGO | 34 | USD 382.49 | -5.84% | USD 349.7136 (`36f5a45f`) | ✓ live | 6.16pp |
+| GOOGL | 16 | USD 348.59 | -5.84% | USD 308.1314 (`e52a43f1`) | ✓ live | 6.16pp |
+| AMZN | 36 | USD 237.58 | -4.20% | USD 205.3526 (`b55bef05`) | ✓ live | 7.80pp |
+| VST | 52 | USD 161.00 | +6.29% | USD 139.81 (`5b347be3`) | ✓ live | 20.29pp |
+
+**MRVL position GONE (stop triggered). 5 remaining positions all protected. No stops recreated or missing.**
+
+### Result
+No planned trades executed (pre-market plan was no-trade, confirmed correct). MRVL trailing stop fired overnight at market open — documented, post-mortemed, lesson filed. 5/5 remaining positions within guardrails. Cash now 39.5% ($36,722.68). Await Micron earnings tonight (consensus USD 34.66B rev / USD 19.95 EPS; HBM sold out through 2026) — a beat strengthens NVDA/AVGO thesis and will create deployment opportunity at June 25 pre-market. PCE Thursday is macro risk event.
