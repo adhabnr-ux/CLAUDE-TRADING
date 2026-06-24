@@ -3465,3 +3465,31 @@ No trades today per pre-market plan. AVGO exited automatically. Slots 2 and 3 re
   - VST (c4c200a5): 40sh — HWM USD170.50, stop USD153.45 ✓
 - **Exit reconciliation:** No exits since last run. All 4 positions intact. closed-trades.md current ✓.
 - **Week of June 23 — new position slots:** Slot 1 = LRCX (ATR gate: session 1/3; need ≤3% for 3 consecutive sessions); Slot 2 = PWR (deferred); Slot 3 = MRVL (research pending). 0/3 used.
+
+---
+
+**Midday June 24, 2026 (~12:32 ET — no cuts, no tightenings; stop audit 5/5 PASS):**
+- **Shock check:** $98,841.34 vs last_equity $98,656.01 = +$185.33 (+0.188%) — no shock ✓ (threshold −4%)
+- **Drawdown circuit breaker:** $98,841.34 vs HWM $101,384.21 = **−2.50%** — NOT triggered ✓ (circuit breaker at −10%)
+- **LLY** $1,109.12 (+1.43% from entry): +0.18% today. Buffer $44.66 (4.03%) ✓. Medicare Bridge July 1 in 6 days — explicit hold/trim/exit decision REQUIRED at pre-market June 30. HOLD. Conviction **A**. review_by 2026-07-01.
+- **NVDA** $200.41 (−6.10% from entry): ⚠️ approaching −7% forced-cut threshold ($198.48). Annual Meeting Jensen Huang keynote in progress (noon ET). No fundamental thesis break — KOSPI chip selloff contagion only; no NVDA-specific negative development. News scan confirms this is market noise, not thesis break. Stop HWM $213.99, stop $192.591, buffer $7.82 (3.90%) ✓. HOLD — rule NOT triggered today. USD 200 invalidation (close below $200 on volume) remains active monitoring criterion. Conviction **B**. review_by 2026-07-22.
+- **V** $331.59 (+2.48% from entry): +0.95% today. Buffer $28.45 (8.59%) ✓. OpenAI/stablecoin thesis intact. HOLD. Conviction **B** (0/3 C-weeks). review_by 2026-07-28.
+- **VST** ⭐⭐ $164.35 (+10.44% from entry): +1.21% today. News scan triggered (>10% threshold): Wells Fargo Buy (June 22), Seaport PT $230, 18 analysts Strong Buy / 0 Sell. Q1 2026 EPS $2.89 beat estimates $1.94 by +48.97%. Thesis-driven move; HELIX+COGENTRIX intact. +15% tighten trigger at $171.13 NOT yet reached ($6.78 away). STRONG HOLD. Conviction **A**. review_by 2026-07-07.
+- **Stop audit: 5/5 PASS ✓** (d4147484 LLY 7sh, 25989fb5 LLY 3sh, dcba7429 NVDA 33sh, 66033918 V 22sh, c4c200a5 VST 40sh — all confirmed live via Alpaca open orders)
+- **No cuts, no tightenings, no exits, no new positions** — all positions within all guardrails.
+- **Telegram notification sent** ✓
+
+**Sector exposure (midday June 24):**
+- Healthcare (LLY): $11,091.20 = 11.22%
+- Tech/AI Semi (NVDA): $6,613.53 = 6.69%
+- Financials (V): $7,294.98 = 7.38%
+- Energy/Utilities (VST): $6,574.00 = 6.65%
+- Cash: $67,261.73 = 68.05%
+- No sector above 60% cap ✓
+
+**Key watch items for close routine:**
+- **NVDA USD 200 invalidation:** If NVDA closes below $200 on volume today, thesis breaks — close routine must make explicit hold/trim/exit decision.
+- **NVDA −7% intraday:** If NVDA trades at/below $198.48 at any point, close immediately per midday rule. (Did NOT occur this run — $200.41 at 12:32 ET)
+- **VST +15% tighten trigger:** $171.13 — approaching (currently $164.35; $6.78 away). Close routine monitors.
+- **LLY Medicare Bridge:** July 1 in 6 days — pre-market June 30 MUST make explicit hold/trim/exit decision.
+- **LRCX ATR gate:** Track session 2 of 3 today (session 1 = June 23 ATR 3.08%). Need June 24 and June 25 also ≤3% for earliest entry June 29.
