@@ -2374,3 +2374,174 @@ No trades planned — holding cash ahead of Micron earnings and PCE print.
 }
 ```
 EXECUTED: 2026-06-24T13:46:00Z (no trades planned — cash held ahead of Micron earnings tonight and PCE Thursday; MRVL trailing stop a9097c8c fired at 9:41 AM ET at USD 270.42, -7.80% from entry; stop audit 5/5 remaining positions ✓)
+
+---
+
+## 2026-06-25 — PRE-MARKET (~8:15 AM ET) [search: WebSearch fallback — MiniMax M3 not available]
+
+### Market posture
+
+**Overall: STRONG RISK-ON — Micron +18% pre-market; AI supercycle thesis confirmed.**
+
+- **S&P 500 futures**: +0.79% pre-market; Nasdaq futures up over 2%. Polymarket 97% probability of higher open.
+- **Micron Q3 FY2026 (reported after-hours June 24 — MASSIVE BEAT):**
+  - Revenue: USD 41.46B (+15.7% vs USD 35.84B est)
+  - Non-GAAP EPS: USD 25.11 (+21% vs USD 20.78 est)
+  - Gross margin: 84.9% (record)
+  - Data center sales: +7x YoY to USD 11.5B
+  - Cloud memory: +300% to USD 13.77B
+  - Q4 guide: USD 50B (vs USD 43.58B est; +14.7% upside)
+  - MU pre-market: +18% (~USD 1,238)
+  - **Thesis verdict: THESIS-POSITIVE for NVDA and AVGO. Confirms AI GPU memory demand is surging — same demand that drives GPU compute orders. Semi sector broadly rallying.**
+- **PCE (May 2026)**: Scheduled for release today June 25. April PCE was 3.80% YoY, Core 3.30%. Markets watching whether energy price easing offsets sticky services/shelter. Result unknown at time of writing (~8:15 AM ET). This is the key macro risk for the day — a hot print could reverse the risk-on move.
+- **Fed**: Holding at 3.50–3.75% for 4th consecutive meeting. Rate cut expectations remain low for 2026. Markets had priced in no movement.
+- **Broad semis**: Rally expected at open across SOX index following MU beat.
+
+### Position research
+
+**NVDA — held 103sh @ USD 213.60 entry (current USD 200.70, -6.04%, buffer 5.96pp):**
+- Pre-market at USD 200.70, up +0.85% vs yesterday's close USD 199.00.
+- YTD: +7.3% (lagging SOX +90% — compression thesis opportunity if NVDA thesis intact).
+- Analyst consensus: 38 Strong Buy, avg target USD 298.87 (+48.9% upside from USD 200).
+- Vera Rubin next-gen chips later in 2026 = upcoming product catalyst.
+- Micron data center +7x YoY confirms AI GPU demand; HBM demand flows directly to NVDA GPU shipment orders.
+- **What changed since yesterday: Pre-market recovery +0.85%; MU +18% is a major thesis-positive confirmation. Analyst target USD 298.87 implies 49% upside from current price.**
+- Thesis: INTACT ✓ — review_by July 9 unchanged
+
+**AVGO — held 34sh @ USD 406.23 entry (current USD 386.97, -4.74%, buffer 7.26pp):**
+- June 24 close USD 386.97, up +1.28% today. Range June 24: USD 376.96–398.00.
+- OpenAI launched "Jalapeño" custom AI chip — AVGO likely the ASIC design partner (Broadcom is the primary hyperscaler custom silicon vendor). +2% on this news.
+- Q2 AI semiconductor revenue: +143% YoY. FY2027 AI revenue guidance: >USD 100B maintained.
+- Analyst consensus: 48 Strong Buy, avg target USD 523.84 (+35.4% upside).
+- Next earnings: September 3, 2026 — no earnings risk for weeks.
+- **What changed since yesterday: +1.28% recovery; OpenAI Jalapeño chip news is AVGO-positive (AVGO is the likely manufacturing/design partner). AI revenue trajectory confirming.**
+- Thesis: INTACT ✓ — review_by July 9 unchanged
+
+**GOOGL — held 16sh @ USD 370.22 entry (current USD 341.30, -7.81%, buffer 4.19pp ⚠️):**
+- Trading at USD 341.30, down -1.16% today vs USD 345.29 yesterday.
+- **Dow Jones inclusion June 29 (replacing Verizon)**: POSITIVE near-term catalyst — passive fund demand, institutional buying into rebalancing. This is a 4-day catalyst (June 25-29).
+- AI talent: Jonas Adler and Alexander Pritzel leaving for Anthropic — headwind to sentiment, NOT invalidation.
+- Gemini 3.5 Pro delayed to July — mild product delay, does not affect GCP business.
+- Capital raise: USD 84.75B (June 2026), USD 180-190B capex 2026 — confirms massive cloud investment.
+- Alphabet deploying AI invoice-validation agents saving USD 200M/year — early AI monetization proof point.
+- Analyst consensus: 63 Strong Buy, avg target USD 432.83 (+26.9% upside).
+- **THESIS CONTRACT: Buffer 4.19pp (above 3pp proactive trim threshold but watch closely). review_by July 2 (5 trading days away). Invalidation: GCP deceleration OR TPU cancelled — neither triggered. Dow Jones addition June 29 is a NEW thesis-positive catalyst added since contract written. Decision: HOLD through Dow Jones inclusion (June 29). Will review again pre-market July 2 for explicit hold/trim/exit decision.**
+- **What changed since yesterday: -1.16%; buffer compressed from 5.36pp to 4.19pp. AI talent departures are ongoing headwind. Dow Jones catalyst is fresh positive. Buffer is tighter than yesterday — must watch at midday. If GOOGL falls below USD 338 during the session, proactive 25% trim should be considered.**
+- Thesis: INTACT ✓ — review_by July 2 approaching; monitor buffer closely
+
+**AMZN — held 36sh @ USD 247.99 entry (current USD 233.06, -6.02%, buffer 5.98pp):**
+- Trading at USD 233.06, down -0.52% today.
+- Prime Day 2026 running June 23-26; ends TOMORROW (June 26). Near-term revenue catalyst.
+- Motley Fool: "Should You Buy Amazon Stock Before June 26?" — Prime Day driving attention.
+- USD 10B data center campus in Missouri = AWS infrastructure expansion.
+- Stock down ~16% from May peak; concerns about AI spending ROI timeline.
+- Analyst consensus: "Strong Buy", avg target USD 316.04 (+35.6% upside).
+- Next earnings: July 30, 2026 — well clear of earnings window.
+- **What changed since yesterday: -0.52%; Prime Day enters final day (June 26). Risk: sell-the-news after Prime Day ends tomorrow. However, AMZN thesis is AWS-driven (not Prime Day retail), so any post-Prime-Day selloff does not break the thesis. Buffer at 5.98pp is adequate.**
+- Thesis: INTACT ✓ — review_by July 7 unchanged
+
+**VST — held 52sh @ USD 151.47 entry (current USD 164.35, +8.50%, buffer massive):**
+- Trading at USD 164.35, up +0.91% today.
+- Morgan Stanley lowered PT to USD 210 from USD 212 (minor cut, still bullish).
+- Wells Fargo Buy rating (June 18).
+- **Helix Digital Infrastructure (KKR + Nvidia + Kuwait Investment Authority + Vistra): USD 10B AI data center power venture — THESIS CONFIRMATION.** Vistra is the preferred power provider in the most significant AI infrastructure consortium announced.
+- Q1 2026: EPS USD 2.90, revenue USD 5.64B (+43% YoY). Strong execution.
+- Ex-dividend June 22 (payment June 30): USD 11.91 captured.
+- Next earnings: August 6, 2026 — no earnings risk.
+- **What changed since yesterday: +0.91%; Helix consortium highlighted by analysts. The KKR/NVDA/KIA/VST venture is our original thesis playing out exactly. No thesis change.**
+- Thesis: INTACT ✓ — review_by July 15 unchanged; +8.50% winner; trailing stop USD 139.81
+
+### Thesis contract review (June 25)
+| Symbol | Review By | Invalidation | Buffer | Status |
+|---|---|---|---|---|
+| NVDA | July 9 | Hyperscaler GPU share reverses | 5.96pp | ✓ Intact — MU +18% confirms AI GPU demand |
+| AVGO | July 9 | AI revenue decelerates | 7.26pp | ✓ Intact — OpenAI Jalapeño AVGO-positive; +143% YoY |
+| GOOGL | July 2 ⚠️ | GCP decelerates OR TPU cancelled | 4.19pp ⚠️ | ✓ Intact — Dow Jones inclusion June 29; monitor buffer |
+| AMZN | July 7 | AWS <20% YoY | 5.98pp | ✓ Intact — Prime Day ends tomorrow; AWS thesis holds |
+| VST | July 15 | Nuclear PPAs cancelled | 24.4pp+ | ✓ Intact — Helix consortium is the thesis confirmed |
+
+### Earnings window check (June 25)
+| Symbol | Next Earnings | 2-Day Window (June 25-26) |
+|---|---|---|
+| NVDA | August 26, 2026 | ✓ No risk |
+| AVGO | September 3, 2026 | ✓ No risk |
+| GOOGL | July 28, 2026 | ✓ No risk |
+| AMZN | July 30, 2026 | ✓ No risk |
+| VST | August 6, 2026 | ✓ No risk |
+| ETN (candidate) | August 4, 2026 | ✓ No risk |
+| MRVL (conditional candidate) | August 20–27, 2026 | ✓ No risk |
+
+**No earnings risk for any held position or planned buy within next 2 trading days. Earnings window rule: CLEAR ✓**
+
+### Drawdown and deployment check (June 25)
+- **Equity**: USD 92,948.75 | **Cash**: USD 36,722.66 (39.5%)
+- **HWM**: USD 101,144.73 | **Drawdown**: -8.105% (circuit breaker -20% — NOT triggered; 11.895pp headroom)
+- **Intraday shock**: +USD 311.11 (+0.336% vs last_equity USD 92,637.64) — NOT triggered (threshold -6%)
+- **Cash deployment obligation**: 39.5% cash > 20% threshold + 0 new positions this week → MUST deploy or explicitly journal why holding back
+- **Today's deployment**: Risk-on tape (MU +18%, S&P futures +0.79%), all positions intact, PCE data due — decision: deploy into ETN + conditional MRVL. Deployment proceeds if PCE does not print materially hotter than expected.
+
+### Stop audit (June 25 pre-market)
+| Symbol | Stop Order ID | HWM | Stop Price | Status |
+|---|---|---|---|---|
+| NVDA | `54d7d851` | USD 221.60 | USD 181.712 | ✓ live |
+| AVGO | `36f5a45f` | USD 426.48 | USD 349.7136 | ✓ live |
+| GOOGL | `e52a43f1` | USD 375.77 | USD 308.1314 | ✓ live |
+| AMZN | `b55bef05` | USD 250.43 | USD 205.3526 | ✓ live |
+| VST | `5b347be3` | USD 170.50 | USD 139.81 | ✓ live |
+**ALL 5 CONFIRMED LIVE ✓ — stop audit passed**
+
+### Volatility check (candidates)
+- **ETN**: 2-day ADR estimate from snapshot data: June 24 (H USD 412.225 / L USD 400.560 / C USD 404.705) = (412.225-400.560)/404.705 = 2.88%; June 23 (H USD 417.64 / L USD 405.32 / C USD 405.37) = (417.64-405.32)/405.37 = 3.04%. Mean: **~2.96%** — well below 5% threshold. 18% stop gives ample room (~6x typical daily range). [Note: bars API returned null; estimate from snapshot data.]
+- **MRVL**: 2-day ADR estimate: June 24 (H USD 281.435 / L USD 263.690 / C USD 276.695) = (281.435-263.690)/276.695 = 6.41%; June 23 (H USD 290.68 / L USD 276.26 / C USD 279.115) = (290.68-276.26)/279.115 = 5.17%. Mean: **~5.79%** — EXCEEDS 5% threshold.
+  - **18% stop adequacy for MRVL (ADR >5%)**: Entering at/above USD 293.29 (original entry), the 18% trailing stop sets the initial floor at ~USD 240.50. This provides 3.1 average daily swings of cushion. Given the AI custom silicon thesis (Microsoft, Amazon, Google multi-year ASIC programs all intact), and today's MU +18% catalyst confirming broader AI compute demand, a 3+ ADR cushion is appropriate for a 2-week swing thesis. The trailing stop ratchets up automatically as MRVL rallies, so the 18% is measured from the highest close — meaning the floor rises with the position. MRVL's volatility is its opportunity, not just its risk.
+
+### Planned trades for today
+
+**Trade 1 — ETN (Eaton Corporation) NEW POSITION:**
+- Thesis: AI power infrastructure leader; Eaton manufactures electrical equipment and power management systems that are direct critical-path suppliers to hyperscale data centers. As AI GPU/accelerator compute density increases, power delivery and management demand scales proportionately. ETN is a pure-play on the infrastructure build without the binary GPU/memory risk.
+- Catalyst: Helix Digital Infrastructure (NVDA + KKR + KIA + VST) = USD 10B AI data center power venture, validated today's theme. S&P futures +0.79% on MU beat.
+- Sizing: 34 shares × ~USD 405 = ~USD 13,770 (14.8% of USD 92,948.75 equity) — within 12-25% typical range; below 35% cap
+- ADR: ~2.96% → 18% stop gives ~6x typical daily cushion. No special note required.
+- Earnings: August 4, 2026 — 40 days away, well clear of 2-day window.
+
+**Trade 2 — MRVL (Marvell Technology) CONDITIONAL RE-ENTRY (only if open ≥ USD 293.30):**
+- NOT averaging down: MRVL was fully exited at USD 270.42 on June 24 (stop fill). This is a fresh re-entry above original entry USD 293.29.
+- Thesis: AI custom ASIC leader. Microsoft, Amazon, and Google all have multi-year ASIC design programs with Marvell. MU +18% confirms AI silicon demand across the compute stack. MRVL's custom chip business (XPU) is the same thesis as NVDA/AVGO but with a different risk/reward profile.
+- Condition: Only execute if MRVL opens at or above USD 293.30 at market open. If below, do NOT buy (re-entry below original entry violates no-averaging-down discipline even if technically a fresh position).
+- Sizing: 36 shares × ~USD 295 = ~USD 10,620 (11.4% of equity) — within guardrails.
+- ADR: ~5.79% (exceeds 5%); 18% stop provides 3.1 average daily range cushion — adequate for 2-week thesis (see volatility check above).
+- Earnings: August 20–27, 2026 — well clear of 2-day window.
+
+**Combined deployment check:**
+- ETN: USD 13,770 (14.8%)
+- MRVL conditional: USD 10,620 (11.4%)
+- Total potential: USD 24,390 (26.2% of equity) → within 60% daily deployment cap
+- Cash after both: USD 36,722 − USD 24,390 = USD 12,332 (13.3% of equity) → above 2% minimum
+- New positions this week (June 23-25): 0 + 2 = 2 → within 8 per week limit
+
+**Planned trades for today**
+
+```json
+{
+  "plan_date": "2026-06-25",
+  "trades": [
+    {
+      "action": "buy",
+      "symbol": "ETN",
+      "qty": 34,
+      "thesis": "AI power infrastructure leader; Eaton electrical equipment is direct critical-path input to hyperscale data centers scaling with AI GPU density; Helix consortium validates AI power theme",
+      "invalidation": "ETN price below USD 332 (18% from ~USD 405 entry) OR AI data center capex growth narrative materially reverses",
+      "review_by": "2026-07-09"
+    },
+    {
+      "action": "buy",
+      "symbol": "MRVL",
+      "qty": 36,
+      "condition": "ONLY if MRVL opens at or above USD 293.30 — fresh re-entry above original entry, NOT averaging down",
+      "thesis": "AI custom ASIC leader; Microsoft/Amazon/Google multi-year ASIC programs intact; MU +18% confirms AI compute demand across silicon stack",
+      "invalidation": "MRVL closes below USD 270 (prior stop level) OR loses major hyperscaler ASIC design win",
+      "review_by": "2026-07-09"
+    }
+  ]
+}
+```

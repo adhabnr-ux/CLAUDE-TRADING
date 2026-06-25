@@ -6,6 +6,99 @@ but always re-fetches live data before trading._
 
 ---
 
+## Last snapshot — 2026-06-25 PRE-MARKET (~8:15 AM ET)
+
+| Field | Value |
+|---|---|
+| Equity | USD 92,948.75 |
+| Cash | USD 36,722.66 (39.5%) |
+| Long market value | USD 56,226.09 |
+| Open positions | 5 |
+| last_equity (June 24 EOD — Alpaca authoritative) | USD 92,637.64 |
+| Pre-market P/L vs last_equity | **+USD 311.11 (+0.336%)** — MU +18% pre-market lifting semis; S&P futures +0.79% |
+| HWM | USD 101,144.73 |
+| Drawdown from HWM | **-8.105%** (circuit breaker -20% — NOT triggered; 11.895pp headroom) |
+
+**Shock check:** +0.336% vs threshold -6% → NOT triggered ✓
+
+**Open positions (June 25 pre-market ~8:15 AM ET):**
+
+| Symbol | Qty | Avg Entry | Current Price | Market Value | Unrealized P/L | P/L % | -12% Cut Trigger | Buffer | Rating |
+|---|---|---|---|---|---|---|---|---|---|
+| NVDA | 103 | USD 213.60 | USD 200.70 | USD 20,672.10 | -USD 1,327.90 | **-6.04%** | USD 187.97 | 5.96pp | A |
+| AVGO | 34 | USD 406.23 | USD 386.97 | USD 13,156.83 | -USD 655.00 | **-4.74%** | USD 357.48 | 7.26pp | A |
+| GOOGL | 16 | USD 370.22 | USD 341.30 | USD 5,460.80 | -USD 462.72 | **-7.81%** | USD 325.79 | 4.19pp ⚠️ | A |
+| AMZN | 36 | USD 247.99 | USD 233.06 | USD 8,390.16 | -USD 537.52 | **-6.02%** | USD 218.23 | 5.98pp | A |
+| VST | 52 | USD 151.47 | USD 164.35 | USD 8,546.20 | +USD 669.76 | **+8.50% ✅** | USD 133.29 | 24.4pp | A |
+
+**⚠️ GOOGL buffer 4.19pp — above 3pp proactive trim threshold but watch closely. Dow Jones inclusion June 29 is a near-term catalyst. review_by July 2.**
+
+**Stop audit (June 25 pre-market): ALL 5 CONFIRMED LIVE ✓**
+
+| Symbol | Stop Order ID | HWM | Stop Price | Status |
+|---|---|---|---|---|
+| NVDA | `54d7d851` | USD 221.60 | USD 181.712 | ✓ live |
+| AVGO | `36f5a45f` | USD 426.48 | USD 349.7136 | ✓ live |
+| GOOGL | `e52a43f1` | USD 375.77 | USD 308.1314 | ✓ live |
+| AMZN | `b55bef05` | USD 250.43 | USD 205.3526 | ✓ live |
+| VST | `5b347be3` | USD 170.50 | USD 139.81 | ✓ live |
+
+**Thesis contracts (June 25 pre-market):**
+| Symbol | Review By | Invalidation | Status |
+|---|---|---|---|
+| NVDA | July 9 | Hyperscaler GPU share reverses | ✓ Intact — MU +18% confirms AI GPU demand; buffer 5.96pp |
+| AVGO | July 9 | AI revenue decelerates | ✓ Intact — OpenAI Jalapeño AVGO-positive; +143% YoY; buffer 7.26pp |
+| GOOGL | July 2 ⚠️ | GCP decelerates OR TPU cancelled | ✓ Intact — Dow Jones June 29 catalyst; buffer 4.19pp ⚠️ |
+| AMZN | July 7 | AWS <20% YoY | ✓ Intact — Prime Day ends June 26; buffer 5.98pp |
+| VST | July 15 | Nuclear PPAs cancelled | ✓ Intact — Helix KKR/NVDA/KIA/VST confirmed; +8.50% |
+
+**Planned new positions (pending market-open):**
+| Symbol | Qty | Planned Price | Notes |
+|---|---|---|---|
+| ETN | 34 | ~USD 405 | New position; AI power infrastructure; earnings Aug 4 (clear) |
+| MRVL | 36 | ≥USD 293.30 | Conditional re-entry; fresh entry above original; NOT averaging down |
+
+**Conviction ratings (June 25 pre-market):**
+| Symbol | Rating | Notes |
+|---|---|---|
+| NVDA | A | AI GPU; -6.04%; 5.96pp buffer; MU +18% thesis-positive |
+| AVGO | A | AI revenue +143% YoY; -4.74%; 7.26pp buffer; OpenAI Jalapeño |
+| GOOGL | A | GCP; -7.81%; 4.19pp buffer ⚠️; Dow Jones June 29; review_by July 2 |
+| AMZN | A | AWS +28%; -6.02%; 5.98pp buffer; Prime Day ends tomorrow |
+| VST | A | +8.50% ✅; 24.4pp buffer; Helix consortium = thesis playing out |
+
+**Sector exposure (June 25 pre-market):**
+| Sector | Names | Market Value | % of Equity |
+|---|---|---|---|
+| Technology — semis | NVDA, AVGO | USD 33,828.93 | 36.4% |
+| Technology — hyperscalers | GOOGL, AMZN | USD 13,850.96 | 14.9% |
+| Utilities/Power | VST | USD 8,546.20 | 9.2% |
+| Cash | — | USD 36,722.66 | 39.5% |
+
+**After planned buys (if both execute):**
+| Sector | Market Value | % of Equity |
+|---|---|---|
+| Technology — semis | NVDA, AVGO, MRVL | ~USD 44,449 | ~47.8% |
+| Technology — hyperscalers | GOOGL, AMZN | ~USD 13,851 | ~14.9% |
+| Utilities/Power | VST | ~USD 8,546 | ~9.2% |
+| Industrials/Power Infra | ETN | ~USD 13,770 | ~14.8% |
+| Cash | — | ~USD 12,332 | ~13.3% |
+
+**Performance vs SPY (June 25 pre-market):**
+| Metric | Value |
+|---|---|
+| Equity | USD 92,948.75 |
+| Aggro return since inception | **(92,948.75 − 100,000) / 100,000 = -7.051%** |
+| SPY anchor | USD 754.18 (June 3, 2026) |
+| SPY June 24 close | USD 733.30 |
+| SPY since inception | **(733.30 − 754.18) / 754.18 = -2.769%** |
+| Alpha since inception | **-4.282pp** |
+| Pre-market change | +0.336% |
+
+_Pre-market June 25: MU +18% (massive beat) drives strong risk-on. S&P futures +0.79%. All 5 positions intact; 5/5 stops confirmed live. GOOGL buffer compressed to 4.19pp — watch at midday (Dow Jones June 29 is thesis-positive). Circuit breaker -8.105% (11.895pp headroom). Cash 39.5% → deploying into ETN (new, 14.8%) and conditional MRVL re-entry (11.4%, only if ≥ USD 293.30 at open). PCE data releasing today — monitor for hot print risk. Control: ACTIVE._
+
+---
+
 ## Inception baseline
 
 | Field | Value |
