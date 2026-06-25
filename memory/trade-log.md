@@ -3,6 +3,78 @@
 _Every order placed, with its reasoning. Append-only — newest entries at the top.
 The weekly new-position count is derived from this log._
 
+## 2026-06-25 12:31 ET — MIDDAY (🚨 NVDA trailing stop fired $192.546 −9.78%; VST stop tightened 10%→5% c8b43d32; stop audit 4/4 ✓)
+
+- **Action:** 🚨 NVDA trailing stop dcba7429 auto-executed 09:59 AM ET at $192.546 (33sh, −9.78%, P/L −$688.86). Position closed. VST +15% tighten trigger activated (HWM $171.35 > $171.13 threshold); old 10% stop c4c200a5 cancelled, new 5% trailing stop c8b43d32 placed (stop $159.84). No other positions cut. 3 positions remain.
+- **Market status:** `is_open: true` ✓ (12:31 ET, next_close 16:00 ET June 25)
+- **Account (~12:31 ET — live Alpaca):** Equity $99,029.80 | Cash $73,615.76 (74.34%) | LMV $25,414.04
+
+### Live-switch guard
+- `ALPACA_BASE_URL` contains "paper" ✓
+
+### Shock check
+- Equity $99,029.80 vs last_equity $98,825.19 = **+$204.61 = +0.207%** — positive, no shock ✓ (threshold −4%)
+
+### Drawdown circuit breaker
+- HWM $101,384.21; current $99,029.80 = **−2.32%** — within −10% limit. NOT triggered ✓
+
+### Position review (12:31 ET)
+
+**NVDA — CLOSED (trailing stop fired 09:59 AM ET)**
+- Order dcba7429: 33sh sold @ $192.546 | HWM $213.99, stop $192.591 (slippage $0.045)
+- P/L: −$688.86 (−9.78%) | Entry $213.421 (June 22) → Exit $192.546 (June 25) = 3 days
+- Cause: GPU compute lease price collapse ($6.11 → $4.22 B200 spot, −31% in 3 weeks) + $410.6M insider selling + AI trade cooling on strong US jobs data. Thesis invalidation ($200 close) triggered June 24. Stop did its job. Post-mortem in closed-trades.md.
+
+**LLY** ($1,130.82, **+3.41% from entry**, +1.21% today)
+- Stops d4147484 (7sh) + 25989fb5 (3sh): HWM $1,182.73, stop $1,064.457 ✓ | Buffer $66.36 (5.87%)
+- News scan: +3.41% (no scan trigger — need <−3% or >+10%). No action.
+- Medicare Bridge July 1 in 4 trading days — HOLD. Explicit decision REQUIRED at pre-market June 30. Conviction **A**. review_by 2026-07-01.
+
+**V** ($335.90, **+3.81% from entry**, +1.10% today)
+- Stop 66033918 (22sh): HWM $339.94 ⬆️ (ratcheted from $336.82), stop $305.946 ✓ | Buffer $29.95 (8.92%)
+- News scan: +3.81% (no scan trigger). Thesis intact; stablecoin platform news supportive. HOLD. Conviction **B** (0/3 C-weeks). review_by 2026-07-28.
+
+**VST** ($167.915, **+12.84% from entry**, −1.18% today) ⭐⭐
+- Stop c8b43d32 (40sh): HWM $168.25, stop $159.84 ✓ (TIGHTENED 10%→5%) | Buffer $8.08 (4.80%)
+- News scan (>10% from entry — TRIGGERED): Helix Digital Infrastructure thesis intact; Cogentrix closed; Morgan Stanley PT $210 (minor revision from $212); Q1 net income $980M; 2026 outlook reaffirmed. Move is thesis-driven, not noise. STRONG HOLD. Conviction **A**. review_by 2026-07-07.
+- **+15% tighten action taken:** HWM hit $171.35 today (entry $148.81 × 1.15 = $171.13 trigger). Per pre-written plan (portfolio.md market-open note), cancelled 10% stop c4c200a5 ($154.215) and placed new 5% trailing stop c8b43d32. New stop $159.84 improves floor protection by +$5.63/sh.
+
+### Stop audit (12:31 ET — confirmed via Alpaca open orders)
+| Order ID | Symbol | Qty | HWM | Stop | Status |
+|----------|--------|-----|-----|------|--------|
+| d4147484 | LLY | 7sh | $1,182.73 | $1,064.457 | ✓ active |
+| 25989fb5 | LLY | 3sh | $1,182.73 | $1,064.457 | ✓ active |
+| 66033918 | V | 22sh | $339.94 ⬆️ | $305.946 | ✓ active (ratcheted) |
+| c8b43d32 | VST | 40sh | $168.25 | $159.84 | ✓ active (NEW 5% stop) |
+**4/4 PASS ✓** — NVDA closed, no orphan stops remaining.
+
+### Exit reconciliation
+- NVDA trailing stop dcba7429 filled 2026-06-25T13:59:13Z @ $192.546364. Entry was June 22 market-open at $213.421. P/L −$688.86 (−9.78%). Added to closed-trades.md and trades.jsonl. Lesson added to lessons.md (loss).
+- 3 remaining positions (LLY, V, VST) held. No other exits since last run.
+
+### Guardrail checks (midday June 25)
+| Check | Value | Limit | Status |
+|-------|-------|-------|--------|
+| LLY above −7% cut threshold | +3.41% from entry | −7% | ✓ Clear by $113.83 |
+| V above −7% cut threshold | +3.81% from entry | −7% | ✓ Clear by $34.98 |
+| VST above −7% cut threshold | +12.84%, $167.92 > $138.39 | −7% | ✓ Clear by $29.53 |
+| Intraday shock (vs last_equity $98,825.19) | +$204.61 = +0.207% | <−4% | ✓ Positive |
+| Drawdown circuit breaker | $99,030 vs HWM $101,384 = −2.32% | <−10% | ✓ |
+| Cash | $73,615.76 (74.34%) | ≥5% | ✓ Ample |
+| All trailing stops active | 4/4 confirmed | required | ✓ |
+| Sector caps | Healthcare 11.42%, Financials 7.46%, Energy 6.78%, Cash 74.34% | <60% each | ✓ |
+| No new positions | None | required | ✓ |
+
+### Performance (12:31 ET)
+- **Equity:** $99,029.80 (vs last_equity $98,825.19 = +$204.61 today = +0.207%)
+- **Unrealized P/L:** LLY +$372.86 (+3.41%), V +$271.26 (+3.81%), VST +$764.20 (+12.84%) = net **+$1,408.32**
+- **Cash:** $73,615.76 (74.34%) | Long market value: $25,414.04
+- **SPY mid June 25:** ~$733.08 + $1.76 div = **−0.622% TR** since inception
+- **Since inception (2026-05-21):** Bull **−0.970%** vs SPY **−0.622% TR** = **Bull TRAILS SPY ~0.348pp**
+- Note: SPY fell today on tech/AI trade cooling (NVDA −3%+); Bull's LLY/V/VST positions outperformed. Gap narrowed sharply from −0.827pp at market-open.
+
+---
+
 ## 2026-06-25 09:36 ET — MARKET-OPEN (no trades; plan empty — LRCX gate failing, NVDA HOLD post-Micron; stop audit 5/5 ✓; NVDA ⚠️ $198.93 vs $198.48 forced-cut threshold)
 
 - **Action:** Market-open review. No trades executed — today's plan is empty (`trades: []`). LRCX ATR gate failing (4.15% June 24). NVDA HOLD decision made at pre-market (Micron blowout confirms thesis). 4 positions held.

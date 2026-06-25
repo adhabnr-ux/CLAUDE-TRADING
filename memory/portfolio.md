@@ -3,9 +3,58 @@
 _Updated by every routine from live Alpaca data. The next agent trusts this as
 the last known state, but always re-fetches live data before trading._
 
-**Last updated:** 2026-06-25 09:36 ET (market-open; NVDA ⚠️ USD198.93 — only USD0.45 above -7% forced-cut threshold USD198.48; VST ⭐⭐ +14.19%; stop audit 5/5 PASS; 0 trades)
+**Last updated:** 2026-06-25 12:31 ET (midday; 🚨 NVDA trailing stop fired $192.546 −9.78%; VST ⭐⭐ stop tightened 10%→5%; stop audit 4/4 PASS; LLY +3.41% / V +3.81% / VST +12.84%)
 **Inception:** 2026-05-21 — starting equity $100,000.00 | SPY anchor price $739.44
 **SPY total-return anchor (post-June 18 ex-div $1.76):** **$741.20**
+
+## Account (midday June 25, 2026 — live Alpaca data ~12:31 ET)
+
+| Metric | Value |
+|--------|-------|
+| Equity | $99,029.80 |
+| Cash | $73,615.76 (74.34%) |
+| Long market value | $25,414.04 |
+| Buying power | ~$73,615.76 |
+| Last equity (June 24 close) | $98,825.19 |
+
+## Open positions (midday June 25, 2026 — live Alpaca data ~12:31 ET)
+
+| Symbol | Qty | Avg entry | Current price | Mkt value | Unrealized P/L | % of portfolio | Trailing Stop |
+|--------|-----|-----------|--------------|-----------|----------------|----------------|---------------|
+| LLY | 10 | $1,093.534 | $1,130.82 | $11,308.20 | +$372.86 (+3.41%) | 11.42% | d4147484 (7sh) + 25989fb5 (3sh), HWM $1,182.73, stop $1,064.457 ✓ — buffer $66.36 (5.87%) |
+| V | 22 | $323.57 | $335.90 | $7,389.80 | +$271.26 (+3.81%) | 7.46% | 66033918 (22sh, HWM $339.94 ⬆️, stop $305.946) ✓ — buffer $29.95 (8.92%) |
+| VST | 40 | $148.81 | $167.915 | $6,716.60 | +$764.20 (+12.84%) | 6.78% | c8b43d32 (40sh, HWM $168.25, stop $159.84) ✓ — buffer $8.08 (4.80%) ⭐⭐ TIGHTENED to 5% trail |
+
+**NVDA CLOSED:** Trailing stop dcba7429 filled 09:59 AM ET June 25 @ $192.546 — P/L −$688.86 (−9.78%). 3 days. See closed-trades.md.
+
+**Sector exposure (midday June 25):**
+- Healthcare (LLY): $11,308.20 = 11.42% | Financials (V): $7,389.80 = 7.46% | Energy/Utilities (VST): $6,716.60 = 6.78% | Cash: $73,615.76 = 74.34%
+- No sector above 60% cap ✓
+
+**Trailing stop status (midday June 25 — confirmed via Alpaca live orders ~12:31 ET):**
+- LLY (d4147484): 7sh — HWM $1,182.73, stop $1,064.457 ✓ (buffer $66.36 = 5.87%)
+- LLY (25989fb5): 3sh — HWM $1,182.73, stop $1,064.457 ✓
+- V (66033918): 22sh — HWM $339.94 ⬆️, stop $305.946 ✓ (buffer $29.95 = 8.92%) — ratcheted from $336.82
+- VST (c8b43d32): 40sh — HWM $168.25, stop $159.84 ✓ (buffer $8.08 = 4.80%) ⭐⭐ NEW 5% trailing stop
+**Stop audit: 4/4 PASS ✓**
+
+**Midday June 25 notes (~12:31 ET — 🚨 NVDA stop fill; VST tightened; stop audit 4/4 PASS):**
+- **🚨 NVDA TRAILING STOP FIRED:** 09:59 AM ET. Filled 33sh @ $192.546. P/L −$688.86 (−9.78%). Held 3 days. Drivers: GPU B200 spot $6.11→$4.22 (−31%/3wks), $410.6M insider selling, AI trade cooling. Thesis invalidation ($200 close) triggered June 24. Stop executed correctly.
+- **⭐⭐ VST TIGHTENED:** HWM hit $171.35 (+15.12% from entry), crossing trigger $171.13. Cancelled 10% stop c4c200a5 ($154.215), placed 5% trailing stop c8b43d32 (stop $159.84). Floor improved +$5.63/sh.
+- **LLY** $1,130.82: +3.41% from entry. Buffer $66.36 (5.87%). Medicare Bridge July 1 in 4 days — HOLD. Pre-market June 30 decision REQUIRED. review_by 2026-07-01.
+- **V** $335.90: +3.81% from entry. HWM ratcheted to $339.94. Thesis intact. HOLD. review_by 2026-07-28.
+- **Drawdown circuit breaker:** −2.32% vs HWM — NOT triggered ✓
+- **LRCX ATR:** Tracking session 3/3 attempt today (June 25). Pre-market June 26 or Monday June 29 should confirm if gate passes. PWR still deferred.
+
+## Performance vs S&P 500
+
+| Period | Bull | SPY | Difference |
+|--------|------|-----|------------|
+| Inception (2026-05-21) | $100,000.00 | $739.44 | — |
+| **Midday (2026-06-25)** | **$99,029.80 (−0.970%)** | **~$733.08 + $1.76 div = −0.622% TR** | **Bull TRAILS SPY ~0.348pp** |
+| **Market-open (2026-06-25)** | **$99,127.33 (−0.873%)** | **~$737.34 + $1.76 div = −0.046% TR** | **Bull TRAILS SPY ~0.827pp** |
+
+---
 
 ## Account (market-open June 25, 2026 — live Alpaca data ~09:36 ET)
 

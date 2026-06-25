@@ -17,6 +17,17 @@ top. The weekly review computes win rate and average win/loss from this file._
 
 -->
 
+## 2026-06-25 — NVDA — LOSS
+- **Entry:** 33 shares @ USD 213.421 on 2026-06-22
+- **Exit:** USD 192.546 via trailing stop (auto-executed 09:59 AM ET Jun 25, order dcba7429)
+- **P/L:** −USD 688.86 (−9.78%)
+- **Held:** 3 days
+- **Original thesis:** AI accelerator monopoly; Helix consortium (KKR+NVIDIA+Kuwait) GPU-demand platform; FY26 data center revenue +92% YoY; BofA PT USD 350; all 5 entry signals met with price gate and ATR gate cleared.
+- **Why it ended:** Stock breached stated USD 200 invalidation level at June 24 close ($197.75); continued selling June 25 driven by GPU compute lease price collapse (B200 hourly spot $6.11→$4.22 = −31% in 3 weeks) and $410.6M insider selling over 3 months; trailing stop dcba7429 fired at $192.546 at 09:59 AM ET June 25.
+- **Lesson:** GPU compute hourly spot pricing is a real-time leading indicator of AI infrastructure demand health — a 31% spot price compression in 3 weeks signaled fundamental margin pressure before it appears in quarterly financials; monitor GPU spot markets as a secondary thesis health check on any AI infrastructure holding.
+
+---
+
 ## 2026-06-10 — META — LOSS
 - **Entry:** 15 shares @ USD 620.637 on 2026-06-01
 - **Exit:** USD 578.00 via trailing stop (auto-executed 11:06 AM ET Jun 10, order 4ea07e91)
