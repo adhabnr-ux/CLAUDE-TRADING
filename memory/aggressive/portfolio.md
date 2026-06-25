@@ -6,6 +6,96 @@ but always re-fetches live data before trading._
 
 ---
 
+## Last snapshot — 2026-06-25 MIDDAY (~12:41 PM ET)
+
+| Field | Value |
+|---|---|
+| Equity | USD 92,231.62 |
+| Cash | USD 22,458.30 (24.3%) |
+| Long market value | USD 69,773.32 |
+| Open positions | 6 |
+| last_equity (June 24 EOD — Alpaca authoritative) | USD 92,637.64 |
+| Intraday P/L vs last_equity | **-USD 406.02 (-0.44%)** |
+| HWM | USD 101,144.73 |
+| Drawdown from HWM | **-8.81%** (circuit breaker -20% — NOT triggered; 11.19pp headroom) |
+
+**Shock check:** -0.44% vs threshold -6% → NOT triggered ✓
+
+**Open positions (June 25 midday ~12:41 PM ET):**
+
+| Symbol | Qty | Avg Entry | Current Price | Market Value | Unrealized P/L | P/L % | -12% Cut Trigger | Buffer | Rating |
+|---|---|---|---|---|---|---|---|---|---|
+| NVDA | 103 | USD 213.60 | USD 195.32 | USD 20,117.96 | -USD 1,882.84 | **-8.56%** | USD 187.97 | **3.44pp ⚠️** | A |
+| AVGO | 34 | USD 406.23 | USD 380.58 | USD 12,939.72 | -USD 872.10 | **-6.31%** | USD 357.48 | 5.69pp | A |
+| ETN | 34 | USD 419.54 | USD 421.26 | USD 14,322.84 | +USD 58.48 | **+0.41% ✅** | USD 369.20 | 12.41pp | A |
+| GOOGL | 16 | USD 370.22 | USD 341.16 | USD 5,458.56 | -USD 464.96 | **-7.85%** | USD 325.79 | **4.15pp ⚠️** | A |
+| AMZN | 36 | USD 247.99 | USD 227.78 | USD 8,200.08 | -USD 727.60 | **-8.15%** | USD 218.23 | **3.85pp ⚠️** | A |
+| VST | 52 | USD 151.47 | USD 168.22 | USD 8,747.44 | +USD 871.00 | **+11.06% ✅** | USD 133.29 | 23.06pp | A |
+
+**No positions triggered -12% cut rule. Most stressed: NVDA 3.44pp, AMZN 3.85pp, GOOGL 4.15pp. All theses intact.**
+**No positions at +25% tighten threshold (VST +11.06% = 13.94pp below threshold).**
+
+**Stop audit (June 25 midday): ALL 6 CONFIRMED LIVE ✓**
+
+| Symbol | Stop Order ID | HWM | Stop Price | Trail % | Status |
+|---|---|---|---|---|---|
+| NVDA | `54d7d851` | USD 221.60 | USD 181.71 | 18% | ✓ live |
+| AVGO | `36f5a45f` | USD 426.48 | USD 349.71 | 18% | ✓ live |
+| ETN | `abdc232b` | USD 426.00 | USD 349.32 | 18% | ✓ live |
+| GOOGL | `e52a43f1` | USD 375.77 | USD 308.13 | 18% | ✓ live |
+| AMZN | `b55bef05` | USD 250.43 | USD 205.35 | 18% | ✓ live |
+| VST | `5b347be3` | USD 171.35 | USD 140.51 | 18% | ✓ live |
+
+**Thesis contracts (June 25 midday):**
+| Symbol | Review By | Invalidation | Status |
+|---|---|---|---|
+| NVDA | July 9 | Hyperscaler GPU share reverses | ✓ Intact — -8.56%; 3.44pp buffer; AI chip stocks recovering today; Vera Rubin pipeline |
+| AVGO | July 9 | AI revenue decelerates | ✓ Intact — -6.31%; 5.69pp buffer; OpenAI Jalapeño chip partnership (thesis-positive) |
+| ETN | July 9 | ETN below USD 332 OR AI capex reverses | ✓ Intact — +0.41%; 12.41pp buffer; +4.12% today (non-correlated with semi weakness) |
+| GOOGL | July 2 ⚠️ | GCP decelerates OR TPU cancelled | ✓ Intact — -7.85%; 4.15pp buffer; Dow Jones Jun 29 approaching; talent departures = noise |
+| AMZN | July 7 | AWS <20% YoY | ✓ Intact — -8.15%; 3.85pp buffer; AWS thesis intact; earnings Jul 30 |
+| VST | July 15 | Nuclear PPAs cancelled | ✓ Intact — +11.06%; 23.06pp buffer; Helix consortium intact |
+
+**News scan (June 25 midday) [search: WebSearch fallback — MiniMax M3 not available]:**
+- **NVDA (-8.56%)**: AI chip stocks (NVDA, AMD, INTC) rising today after recent selloff. FY2026 revenue USD 215.94B (+65% YoY). Strong Buy consensus, avg target USD 298.93. No hyperscaler GPU share reversal. **Thesis INTACT. HOLD.**
+- **AVGO (-6.31%)**: OpenAI launched Jalapeño chip (first custom AI accelerator) — built by Broadcom. AVGO +2% on Wednesday on this news. Goldman Sachs favors AVGO. AI revenue +143% YoY. **Thesis INTACT. HOLD.**
+- **GOOGL (-7.85%)**: Dow Jones Industrial Average addition June 29 (4 days away). Two more AI researchers departing (noise, same pattern as before). Gemini 3.5 Pro delayed to July (minor). Broader AI spending scrutiny = sector narrative, not GCP-specific. **Thesis INTACT. HOLD. Review_by July 2 approaching.**
+- **AMZN (-8.15%)**: AWS thesis intact; no AWS deceleration news; NLRB labor order (minor headwind); Missouri data center capex thesis-positive long-term; earnings July 30. **Thesis INTACT. HOLD.**
+
+**Conviction ratings (June 25 midday):**
+| Symbol | Rating | Notes |
+|---|---|---|
+| NVDA | A | AI GPU; -8.56%; 3.44pp buffer ⚠️; recovering today; Vera Rubin pipeline |
+| AVGO | A | AI revenue +143% YoY; -6.31%; 5.69pp buffer; OpenAI Jalapeño partnership |
+| ETN | A | AI power infra; +0.41%; 12.41pp buffer; +4.12% today — non-correlated |
+| GOOGL | A | GCP thesis; -7.85%; 4.15pp buffer ⚠️; Dow Jones Jun 29; review_by Jul 2 |
+| AMZN | A | AWS +28%; -8.15%; 3.85pp buffer ⚠️; AWS intact; earnings Jul 30 |
+| VST | A | +11.06% ✅; 23.06pp buffer; leading performer; Helix intact |
+
+**Sector exposure (June 25 midday):**
+| Sector | Names | Market Value | % of Equity |
+|---|---|---|---|
+| Technology — semis | NVDA, AVGO | USD 33,057.68 | 35.8% |
+| Technology — hyperscalers | GOOGL, AMZN | USD 13,658.64 | 14.8% |
+| Industrials/Power Infra | ETN | USD 14,322.84 | 15.5% |
+| Utilities/Power | VST | USD 8,747.44 | 9.5% |
+| Cash | — | USD 22,458.30 | 24.3% |
+
+**Performance vs SPY (June 25 midday):**
+| Metric | Value |
+|---|---|
+| Equity | USD 92,231.62 |
+| Aggro return since inception | **(92,231.62 − 100,000) / 100,000 = -7.768%** |
+| SPY anchor | USD 754.18 (June 3, 2026) |
+| SPY current | USD 732.62 |
+| SPY since inception | **(732.62 − 754.18) / 754.18 = -2.859%** |
+| Alpha since inception | **-4.909pp** |
+| Intraday change | -0.44% vs SPY -0.09% → -0.35pp today |
+
+_Midday June 25: No positions cut. All 6 stops live. Three stressed positions (NVDA 3.44pp, AMZN 3.85pp, GOOGL 4.15pp) — all theses intact. AVGO benefiting from OpenAI Jalapeño chip news (built by Broadcom). ETN +4.12% today (non-correlated with semi weakness — AI power infra holding). VST +3.29% today, +11.06% from entry — leading performer. GOOGL Dow Jones addition June 29 is an approaching catalyst. Review_by July 2 for GOOGL still on horizon. PCE data tomorrow (Jun 26) = macro risk. Control: ACTIVE._
+
+---
+
 ## Last snapshot — 2026-06-25 MARKET-OPEN (~9:52 AM ET)
 
 | Field | Value |

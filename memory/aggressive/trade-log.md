@@ -2184,3 +2184,76 @@ No stops missing. No stops recreated. All positions protected.
 
 ### Result
 ETN bought (34 shares at USD 419.54, 15.5% of portfolio, 18% trailing stop at USD 342.60). MRVL blocked — opened below USD 293.30 condition. All 6 positions now protected with 18% trailing stops; stop audit 6/6 PASSED. Cash 24.5%. PCE data tomorrow June 26 is macro risk. GOOGL review_by July 2 approaching.
+
+---
+
+## 2026-06-25 — MIDDAY CHECK (~12:41 PM ET)
+
+**No trades executed.** Risk management only. All positions within guardrails.
+
+### Pre-run checks
+| Check | Result |
+|---|---|
+| Live-switch guard | ALPACA_BASE_URL contains "paper" ✓ |
+| Lock | Written for this run ✓ |
+| Control switch | STATUS: ACTIVE ✓ |
+| Market open | true (next close 4:00 PM ET) ✓ |
+
+### Account status
+| Field | Value |
+|---|---|
+| Equity | USD 92,231.62 |
+| Last equity (June 24 EOD — Alpaca authoritative) | USD 92,637.64 |
+| Intraday P/L vs last_equity | **-USD 406.02 (-0.44%)** |
+| Cash | USD 22,458.30 (24.3%) |
+| Cash floor (2% min) | ✓ |
+| HWM | USD 101,144.73 |
+| Drawdown from HWM | **-8.81%** (circuit breaker -20% — NOT triggered; 11.19pp headroom) |
+
+**Shock check:** -0.44% vs threshold -6% → NOT triggered ✓
+
+### Position review
+
+| Symbol | Entry | Current | P/L % | -12% Trigger | Buffer | Change today | News | Action |
+|---|---|---|---|---|---|---|---|---|
+| NVDA | USD 213.60 | USD 195.32 | -8.56% | USD 187.97 | **3.44pp ⚠️** | -1.85% | AI chips recovering today; FY2026 rev +65% YoY; Vera Rubin pipeline | No action — thesis intact |
+| AVGO | USD 406.23 | USD 380.58 | -6.31% | USD 357.48 | 5.69pp | -0.39% | OpenAI Jalapeño chip partnership (thesis-positive); Goldman Sachs favors AVGO | No action — thesis intact |
+| ETN | USD 419.54 | USD 421.26 | +0.41% | USD 369.20 | 12.41pp | +4.12% | +4.12% today; non-correlated AI power infra holding while semis weak | No action |
+| GOOGL | USD 370.22 | USD 341.16 | -7.85% | USD 325.79 | **4.15pp ⚠️** | -1.20% | Dow Jones Jun 29 still on track; AI talent departures = noise; review_by Jul 2 | No action — thesis intact |
+| AMZN | USD 247.99 | USD 227.78 | -8.15% | USD 218.23 | **3.85pp ⚠️** | -2.77% | AWS thesis intact; NLRB labor minor; earnings Jul 30; no AWS deceleration | No action — thesis intact |
+| VST | USD 151.47 | USD 168.22 | +11.06% | USD 133.29 | 23.06pp | +3.29% | +3.29% today; Helix intact; leading performer | No action |
+
+**Cut rule check (>-12% from entry): NO positions triggered. Most stressed: NVDA 3.44pp.**
+**Tighten-stop rule check (>+25% from entry): NO positions triggered. VST +11.06% = 13.94pp below threshold.**
+
+### News scan (June 25 midday) [search: WebSearch fallback — MiniMax M3 not available]
+- **NVDA (-8.56%)**: AI chip stocks (NVDA, AMD, INTC) rising today after recent semi sector weakness. FY2026 revenue USD 215.94B (+65% YoY). Analyst avg target USD 298.93 (Strong Buy). Vera Rubin chip launch later this year in pipeline. No hyperscaler GPU share reversal event. **Thesis INTACT. HOLD.**
+- **AVGO (-6.31%)**: OpenAI launched Jalapeño — its first custom AI accelerator, built by Broadcom. AVGO gained ~2% on Wednesday on this news. Goldman Sachs continues to favor AVGO alongside AMD and NVDA. Strong Buy consensus, avg target USD 523.84. **Thesis INTACT. HOLD. OpenAI partnership is thesis-positive.**
+- **GOOGL (-7.85%)**: Dow Jones Industrial Average addition June 29 (4 days) on track. Two more AI researchers (Jonas Adler, Alexander Pritzel) departing for Anthropic — same talent-departure pattern seen before, does NOT trigger invalidation (GCP deceleration or TPU cancellation). Gemini 3.5 Pro delay to July is minor product timing. Broader AI spending scrutiny is sector-level, not GCP-specific. **Thesis INTACT. HOLD. Review_by July 2 is 7 days out.**
+- **AMZN (-8.15%)**: No AWS deceleration news. NLRB ordering Amazon to bargain with Teamsters at one warehouse — minor labor headwind, not thesis-breaking. Missouri AI data center USD 10B investment — capex-heavy but AWS-positive long-term. Earnings July 30. **Thesis INTACT. HOLD.**
+
+### Stop audit — 6/6 positions confirmed with live 18% trailing stops ✓
+
+| Symbol | Stop Order ID | HWM | Stop Price | Trail % | Status |
+|---|---|---|---|---|---|
+| NVDA | `54d7d851` | USD 221.60 | USD 181.71 | 18% | ✓ live |
+| AVGO | `36f5a45f` | USD 426.48 | USD 349.71 | 18% | ✓ live |
+| ETN | `abdc232b` | USD 426.00 | USD 349.32 | 18% | ✓ live |
+| GOOGL | `e52a43f1` | USD 375.77 | USD 308.13 | 18% | ✓ live |
+| AMZN | `b55bef05` | USD 250.43 | USD 205.35 | 18% | ✓ live |
+| VST | `5b347be3` | USD 171.35 | USD 140.51 | 18% | ✓ live |
+
+**No stops missing. No stops recreated.**
+
+### Performance vs SPY (June 25 midday)
+| Metric | Value |
+|---|---|
+| Equity | USD 92,231.62 |
+| Aggro return since inception | **(92,231.62 − 100,000) / 100,000 = -7.768%** |
+| SPY current | USD 732.62 |
+| SPY since inception (754.18 anchor) | **(732.62 − 754.18) / 754.18 = -2.859%** |
+| Alpha since inception | **-4.909pp** |
+| Intraday vs SPY | Aggro -0.44% vs SPY -0.09% → -0.35pp today |
+
+### Result
+All 6 positions within guardrails. No cuts. No stops tightened. Three positions stressed (NVDA 3.44pp, AMZN 3.85pp, GOOGL 4.15pp) — all theses intact per news scan. ETN +4.12% today (non-correlated AI power infra thesis playing out). VST +3.29% continuing to lead. AVGO OpenAI Jalapeño partnership is thesis-positive catalyst. GOOGL Dow Jones addition June 29 approaching. Stop audit 6/6 ✓. PCE tomorrow = macro risk.
