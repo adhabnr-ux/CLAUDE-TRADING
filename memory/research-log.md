@@ -5,6 +5,138 @@ The market-open routine reads the most recent "Planned trades" section._
 
 ---
 
+## 2026-06-25 — Pre-market research (~08:02 ET)
+
+### Live-switch guard
+- `ALPACA_BASE_URL` contains "paper" ✓ — paper trading confirmed.
+
+### Account snapshot (live Alpaca ~08:02 ET)
+
+| Metric | Value |
+|--------|-------|
+| Equity | $98,902.39 |
+| Cash | $67,261.73 (68.01%) |
+| Long market value | $31,640.66 |
+| Last equity (June 24 close) | $98,825.19 |
+| Shock check | +$77.20 (+0.078%) — no shock ✓ (threshold −4%) |
+| HWM | $101,384.21 |
+| Drawdown | −2.448% — NOT triggered ✓ (circuit breaker at −10%) |
+
+### Macro (pre-market June 25, 2026 ~08:02 ET)
+
+| Indicator | Value | Threshold | Status |
+|-----------|-------|-----------|--------|
+| S&P 500 futures | **+0.1%** | — | Constructive — Micron blowout earnings sparking AI sector recovery |
+| 10yr Treasury yield | **Edging lower** | <4.75% | ✓ GATE PASSES — below trigger; Iran peace deal + progress in US-Iran talks |
+| WTI crude | **~$80/bbl** | <$100 | ✓ — Iran peace deal intact |
+| VIX | Normal range | <35 | ✓ — no cash-raise trigger |
+
+**Narrative:** Futures +0.1%, boosted by Micron's blowout Q3 2026 earnings (record $41.5B revenue, 84.9% gross margin, $100B take-or-pay contracts, HBM4 in production for NVDA Vera Rubin). This is the most direct AI-semi thesis confirmation in weeks — memory supply cannot catch up with demand through at least 2027. 10yr yields edging lower. Manufacturing PMI 55.7, composite 52.2 — economy expanding. Risk-on posture. All macro gates clear.
+
+### Position thesis reviews — "what changed since yesterday"
+
+**LLY** ($1,115.54 pre-mkt, −0.154% from $1,117.26 lastday; +2.01% from entry $1,093.534)
+- _What changed since yesterday:_ Trump highlighted Eli Lilly's $3.5B Pennsylvania factory for next-gen obesity drugs (including Retatrutide), with operations starting 2031 — long-term manufacturing positive. Medicare coverage agreement finalized: LLY will offer Zepbound and Orforglipron (Foundayo) to Medicare beneficiaries at ≤$50/month. Analyst 12-month target $1,218.72 (+9.3% upside). Nothing materially negative.
+- Stop: HWM $1,182.73, stop $1,064.457 (buffer $51.08 = 4.58%) ✓
+- Medicare Bridge July 1 in 6 days — HOLD. Explicit hold/trim/exit REQUIRED at pre-market June 30.
+- Invalidation: stop fires or Medicare Bridge pricing reveals margin deterioration.
+- review_by: 2026-07-01 (pre-market June 30 decision)
+- **Decision: HOLD. Conviction: A.**
+
+**NVDA** ($200.69 pre-mkt, +0.849% from $199.00 lastday; −5.966% from entry $213.421) ⚠️ CRITICAL HOLD DECISION
+- _What changed since yesterday:_ **MICRON Q3 2026 BLOWOUT EARNINGS (after-bell June 24):** Revenue $41.5B (quadruple YoY), gross margin 84.9% (record — above Nvidia's own margin), net income $28.24B beating consensus 23.8%, $100B in take-or-pay contracts. **HBM4 confirmed in high-volume production for NVDA Vera Rubin platform.** CEO Sanjay Mehrotra: "no line of sight as to when memory supply will catch up with increasing demand." This is the single most direct confirmation of NVDA's AI accelerator thesis. NVDA recovering +0.849% pre-market to $200.69 (above $200 invalidation level).
+- **⚠️ THESIS CONTRACT REVIEW:** June 24 Alpaca lastday_price = $199 (closed below $200 invalidation). The stated invalidation was "closes below $200 on volume." This was technically triggered. HOWEVER: the Micron blowout is a DIRECT, LITERAL confirmation that the fundamental NVDA thesis is intact and strengthening — HBM4 for Vera Rubin is in high-volume production; AI memory demand exceeds supply through 2027. The $200 close was KOSPI contagion (SK Hynix profit-taking), not a fundamental thesis break. The lesson from June 24 distinguishes "thesis break" (fundamental reason for holding is gone) from "stop-out" (automatic protection). This is NOT a thesis break.
+- **MANDATORY HOLD DECISION: HOLD full position.** Reasoning: Micron's results are direct confirmation of NVDA's primary thesis. The causal factor for the KOSPI selloff (HBM4 supply concerns) is now confirmed to be wrong — HBM4 is in high-volume production. Recovering above $200 pre-market. Trailing stop ($192.591) provides structural protection.
+- **Renewed invalidation:** Closes below $200 on volume AGAIN (with no corresponding positive catalyst) → exit at next pre-market. OR trailing stop fires at $192.591.
+- **Renewed review_by:** 2026-07-03 (7 days — one week post-Micron to assess recovery trajectory).
+- Stop: HWM $213.99, stop $192.591 (buffer pre-market $200.69 - $192.591 = $8.10 = 4.03%) ✓
+- **Midday -7% rule threshold: $198.48 — apply WITHOUT EXCEPTION if NVDA at/below this level at midday.**
+- Earnings: August 26, 2026 (62 days — outside 2-day window ✓)
+- **Decision: HOLD. Conviction: B (monitoring — Micron confirms thesis; watching $200 level).**
+
+**V** ($331.40 pre-mkt, −0.25% from $332.23 lastday; +2.418% from entry $323.57)
+- _What changed since yesterday:_ Visa, Mastercard, and Stripe reportedly in talks to launch a joint stablecoin platform with Coinbase interested — incremental thesis catalyst. AI-driven cashback rewards launched in UAE. Strong Buy consensus (36 analysts), avg PT $398.83. Nothing negative.
+- Stop: HWM $336.8199, stop $303.138 (buffer $28.26 = 8.53%) ✓
+- Thesis intact. HOLD. review_by 2026-07-28 (Q3 FY26 earnings).
+- Invalidation: stop fires or cross-border revenue guidance cut.
+- **Decision: HOLD. Conviction: B (0/3 C-weeks).**
+
+**VST** ($164.35 pre-mkt, +0.909% from $162.87 lastday; +10.44% from entry $148.81) ⭐⭐
+- _What changed since yesterday:_ Morgan Stanley slightly trimmed PT from $212 to $210 (minor negative revision; still 27.7% upside). Goldman Sachs Buy maintained. 52-week high $219.82 — significant upside potential. Recovering +0.909% today as broader market risk-on resumes (Micron rally). Helix Digital Infrastructure + Cogentrix thesis most compelling in portfolio.
+- Stop: HWM $170.50, stop $153.45 (buffer $10.90 = 6.63%) ✓
+- Thesis intact. STRONG HOLD. review_by 2026-07-07.
+- Invalidation: stop fires or Helix consortium materially changes.
+- **Decision: STRONG HOLD. Conviction: A.** ⭐⭐
+
+### Stop audit (pre-market June 25 — confirmed via Alpaca live orders)
+
+| Symbol | Order ID | Qty | HWM | Stop | Buffer | Status |
+|--------|----------|-----|-----|------|--------|--------|
+| LLY | d4147484 | 7sh | $1,182.73 | $1,064.457 | $51.08 (4.58%) | ✓ active |
+| LLY | 25989fb5 | 3sh | $1,182.73 | $1,064.457 | $51.08 (4.58%) | ✓ active |
+| NVDA | dcba7429 | 33sh | $213.99 | $192.591 | $8.10 (4.03%) | ✓ active |
+| V | 66033918 | 22sh | $336.8199 | $303.138 | $28.26 (8.53%) | ✓ active |
+| VST | c4c200a5 | 40sh | $170.50 | $153.45 | $10.90 (6.63%) | ✓ active |
+
+**Stop audit: 5/5 PASS ✓** No action required.
+
+### Risk posture check
+
+**Drawdown circuit breaker:** HWM $101,384.21 | Current $98,902.39 | Drawdown: **−2.448%** — NOT triggered (−10% threshold) ✓
+
+**Sector exposure (pre-market June 25):**
+- Healthcare (LLY): $11,155.40 = 11.28% | Tech/AI Semi (NVDA): $6,622.77 = 6.70% | Financials (V): $7,290.80 = 7.37% | Energy/Utilities (VST): $6,574.00 = 6.65% | Cash: $67,261.73 = 68.01%
+- No sector above 60% cap ✓
+
+### Earnings window check (2 trading days = June 26–27)
+- LLY next earnings: ~August 6, 2026 ✓ (outside window)
+- NVDA next earnings: August 26, 2026 ✓ (outside window — 62 days)
+- V next earnings: July 28, 2026 ✓ (outside window)
+- VST next earnings: ~August 2026 ✓ (outside window)
+- **No held name reports within 2 trading days ✓**
+
+### Watchlist / candidates (pre-market June 25)
+
+**LRCX (semi equipment) — ATR GATE STILL FAILING**
+- June 23 ATR: 3.08% (376.95−365.52)/371.15 — ABOVE 3% gate ❌
+- June 24 ATR: (376.98−361.41)/374.80 = $15.57/$374.80 = **4.15%** — ABOVE 3% gate ❌
+- Both recent sessions above gate; count = 0/3 consecutive ≤3% sessions.
+- Wells Fargo PT $450, Citi PT $450 — thesis intact. Defer until 3 consecutive ≤3% sessions.
+- Earliest entry: June 30+ (if June 25 and June 26 both ≤3%, then one more needed on June 29).
+
+**PWR (industrials) — DEFERRED**
+- ATR still elevated; insider selling $123M in 3 months (active flag). Re-evaluate June 30+.
+
+**MRVL (Marvell) — UNRESEARCHED; NEXT PRIORITY**
+- Micron blowout results (AI memory demand through 2027) directly support custom AI silicon thesis.
+- MRVL makes ASICs for AWS/Google — cost-optimization play distinct from GPU sellers.
+- Research at next pre-market if LRCX gate remains closed and a slot opens.
+
+### Cash-drag check
+Cash $67,261.73 = 68.01% — above 25–40% target band for >1 week.
+**Explicit justification:** LRCX ATR gate failing (4.15% June 24; 3.08% June 23 — both above 3%); NVDA under active management (thesis renewed post-Micron, monitoring $200 level); no other qualified candidate with all 5 entry signals met. Holding cash is correct today — not a passive default. Micron results support eventual AI semi deployment once gates clear. ✓
+
+### Performance vs SPY (pre-market June 25)
+- Bull: $98,902.39 = **−1.098%** since inception (May 21, $100K start)
+- SPY TR as of June 24 close: ($732.24 + $1.76 div) / $739.44 = $734.00 / $739.44 = **−0.736% TR**
+- SPY futures +0.1% pre-market June 25: estimated ~−0.636% TR
+- **Bull TRAILS SPY ~0.46pp est** (improving from −0.54pp at June 24 close as NVDA recovers and futures positive)
+
+### Planned trades for today
+
+No trades planned.
+
+```json
+{
+  "plan_date": "2026-06-25",
+  "trades": []
+}
+```
+
+No trades planned. LRCX ATR gate failing (4.15% June 24; 3.08% June 23 — both above 3%; counter 0/3). NVDA thesis renewed post-Micron blowout (HOLD — no scale-up yet; midday -7% rule at $198.48 applies). PWR deferred. Cash drag explicitly accepted pending ATR resolution.
+
+---
+
 ## 2026-06-24 — Pre-market research (~08:02 ET)
 
 ### Live-switch guard

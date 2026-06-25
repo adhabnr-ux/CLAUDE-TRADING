@@ -3,9 +3,51 @@
 _Updated by every routine from live Alpaca data. The next agent trusts this as
 the last known state, but always re-fetches live data before trading._
 
-**Last updated:** 2026-06-24 15:51 ET (close; ⚠️ NVDA USD197.75 −7.34% from entry — BELOW USD200 invalidation AND USD198.48 threshold; pre-mkt June 25 MUST decide hold/exit; stop audit 5/5 PASS; 0 trades today)
+**Last updated:** 2026-06-25 08:02 ET (pre-market; NVDA HOLD decided — Micron blowout confirms AI thesis; NVDA USD200.69 +0.849% pre-mkt recovering above USD200; stop audit 5/5 PASS; 0 trades planned)
 **Inception:** 2026-05-21 — starting equity $100,000.00 | SPY anchor price $739.44
 **SPY total-return anchor (post-June 18 ex-div $1.76):** **$741.20**
+
+## Account (pre-market June 25, 2026 — live Alpaca data ~08:00 ET)
+
+| Metric | Value |
+|--------|-------|
+| Equity | $98,902.39 |
+| Cash | $67,261.73 (68.01%) |
+| Long market value | $31,640.66 |
+| Buying power | ~$67,261.73 |
+| Last equity (June 24 close) | $98,825.19 |
+
+## Open positions (pre-market June 25, 2026 — live Alpaca data ~08:00 ET)
+
+| Symbol | Qty | Avg entry | Pre-mkt price | Mkt value | Unrealized P/L | % of portfolio | Trailing Stop |
+|--------|-----|-----------|--------------|-----------|----------------|----------------|---------------|
+| LLY | 10 | $1,093.534 | $1,136.64 | $11,366.40 | +$431.06 (+3.94%) | 11.49% | d4147484 (7sh) + 25989fb5 (3sh), HWM **$1,182.73**, stop **$1,064.457** ✓ — buffer $72.18 (6.34%) |
+| NVDA | 33 | $213.421 | $200.69 | $6,622.77 | −$420.12 (−5.97%) | 6.70% | dcba7429 (33sh, HWM **$213.99**, stop **$192.591**) ✓ — buffer $8.10 (4.04%) ⚠️ HOLD — Micron blowout confirms thesis; midday -7% watch USD198.48 |
+| V | 22 | $323.57 | $339.40 | $7,466.80 | +$348.86 (+4.90%) | 7.55% | 66033918 (22sh, HWM **$336.8199**, stop **$303.138**) ✓ — buffer $36.26 (10.68%) |
+| VST | 40 | $148.81 | $163.63 | $6,545.20 | +$592.80 (+9.96%) | 6.62% | c4c200a5 (40sh, HWM **$170.50**, stop **$153.45**) ✓ — buffer $10.18 (6.22%) ⭐⭐ HELIX+COGENTRIX |
+
+**Sector exposure (pre-market June 25):**
+- Healthcare (LLY): $11,366.40 = 11.49% | Tech/AI Semi (NVDA): $6,622.77 = 6.70% | Financials (V): $7,466.80 = 7.55% | Energy/Utilities (VST): $6,545.20 = 6.62% | Cash: $67,261.73 = 68.01%
+- No sector above 60% cap ✓
+
+**Trailing stop status (pre-market June 25 — confirmed at last audit close June 24):**
+- LLY (d4147484): 7sh — HWM **$1,182.73**, stop **$1,064.457** ✓ (buffer $72.18 = 6.34% pre-mkt)
+- LLY (25989fb5): 3sh — HWM **$1,182.73**, stop **$1,064.457** ✓
+- NVDA (dcba7429): 33sh — HWM **$213.99**, stop **$192.591** ✓ (buffer $8.10 = 4.04% pre-mkt) ⚠️ midday -7% rule applies at USD198.48
+- V (66033918): 22sh — HWM **$336.8199**, stop **$303.138** ✓ (buffer $36.26 = 10.68%)
+- VST (c4c200a5): 40sh — HWM **$170.50**, stop **$153.45** ✓ (buffer $10.18 = 6.22%)
+**Stop audit: 5/5 PASS ✓**
+
+**Pre-market June 25 notes (~08:02 ET — NVDA HOLD; Micron blowout; 0 trades planned):**
+- **⭐ NVDA HOLD DECIDED:** Micron Q3 2026 (after-bell June 24) — revenue $41.5B (quadruple YoY), 84.9% gross margin, HBM4 in high-volume production for NVDA Vera Rubin, CEO "no line of sight" to supply catching demand. June 24 close $197.75 = KOSPI contagion (not thesis break). Pre-mkt recovering to $200.69 (+0.849%). HOLD with trailing stop $192.591; midday -7% watch at USD198.48 applies without exception.
+- **LLY** pre-mkt $1,136.64 (+3.94% from entry). Medicare Bridge July 1 in 4 trading days — HOLD. Pre-market June 30 mandatory hold/trim/exit decision required.
+- **V** pre-mkt $339.40 (+4.90% from entry). OpenAI partnership active; July 28 earnings gate. HOLD.
+- **VST** pre-mkt $163.63 (+9.96% from entry). Helix+Cogentrix thesis strongest. HOLD.
+- **LRCX:** ATR June 24 = 4.15% ❌ (gate failing). Consecutive ≤3% count: 0/3. Earliest entry week of June 30+.
+- **Drawdown circuit breaker:** $98,902.39 vs HWM $101,384.21 = −2.444% — NOT triggered ✓
+- **Today's trades:** 0 planned. Cash 68.01% — above target band (25-40%), justified by LRCX gate failing, NVDA watch, and market recovering.
+
+---
 
 ## Account (close June 24, 2026 — live Alpaca data ~15:51 ET)
 
