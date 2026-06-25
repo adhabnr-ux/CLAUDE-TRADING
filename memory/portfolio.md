@@ -3,9 +3,64 @@
 _Updated by every routine from live Alpaca data. The next agent trusts this as
 the last known state, but always re-fetches live data before trading._
 
-**Last updated:** 2026-06-25 12:31 ET (midday; 🚨 NVDA trailing stop fired $192.546 −9.78%; VST ⭐⭐ stop tightened 10%→5%; stop audit 4/4 PASS; LLY +3.41% / V +3.81% / VST +12.84%)
+**Last updated:** 2026-06-25 15:51 ET (close; stop audit 3/4 PASS; LLY +3.36% / V +2.48% / VST +12.78%; Bull −1.074% vs SPY TR −0.826%; gap −0.248pp improved from midday −0.348pp)
 **Inception:** 2026-05-21 — starting equity $100,000.00 | SPY anchor price $739.44
 **SPY total-return anchor (post-June 18 ex-div $1.76):** **$741.20**
+**Cumulative SPY dividends since inception (quarterly tracker):** $1.76/sh (June 18 ex-div); next SPY ex-div est. ~September 2026.
+
+## Account (close June 25, 2026 — live Alpaca data ~15:51 ET)
+
+| Metric | Value |
+|--------|-------|
+| Equity | $98,925.93 |
+| Cash | $73,615.76 (74.42%) |
+| Long market value | $25,310.17 |
+| Buying power | ~$73,615.76 |
+| Last equity (June 24 close) | $98,825.19 |
+
+## Open positions (close June 25, 2026 — live Alpaca data ~15:51 ET)
+
+| Symbol | Qty | Avg entry | Current price | Mkt value | Unrealized P/L | % of portfolio | Trailing Stop |
+|--------|-----|-----------|--------------|-----------|----------------|----------------|---------------|
+| LLY | 10 | $1,093.534 | $1,130.32 | $11,303.20 | +$367.86 (+3.36%) | 11.43% | d4147484 (7sh) + 25989fb5 (3sh), HWM $1,182.73, stop $1,064.457 ✓ — buffer $65.86 (5.83%) |
+| V | 22 | $323.57 | $331.60 | $7,295.20 | +$176.66 (+2.48%) | 7.37% | 66033918 (22sh, HWM $339.94, stop $305.946) ✓ — buffer $25.65 (7.74%) |
+| VST | 40 | $148.81 | $167.825 | $6,713.00 | +$760.60 (+12.78%) | 6.79% | c8b43d32 (40sh, 5% trail, HWM $168.77 ⬆️, stop $160.332) ✓ — buffer $7.49 (4.47%) ⭐⭐ TIGHTENED 5% trail |
+
+**NVDA CLOSED:** Trailing stop dcba7429 filled 09:59 AM ET June 25 @ $192.546 — P/L −$688.86 (−9.78%). 3 days. See closed-trades.md.
+
+**Sector exposure (close June 25):**
+- Healthcare (LLY): $11,303.20 = 11.43% | Financials (V): $7,295.20 = 7.37% | Energy/Utilities (VST): $6,713.00 = 6.79% | Cash: $73,615.76 = 74.42%
+- No sector above 60% cap ✓
+
+**Trailing stop status (close June 25 — confirmed via Alpaca live orders ~15:51 ET):**
+- LLY (d4147484): 7sh — HWM $1,182.73, stop $1,064.457 ✓ (buffer $65.86 = 5.83%)
+- LLY (25989fb5): 3sh — HWM $1,182.73, stop $1,064.457 ✓
+- V (66033918): 22sh — HWM $339.94, stop $305.946 ✓ (buffer $25.65 = 7.74%)
+- VST (c8b43d32): 40sh — 5% trail, HWM $168.77 ⬆️ (new high today), stop $160.332 ✓ (buffer $7.49 = 4.47%)
+**Stop audit: 4/4 PASS ✓**
+
+**Close June 25 notes (~15:51 ET — stop audit 4/4 PASS; 0 trades; 🚨 NVDA stop captured by midday):**
+- **Today P/L:** +$100.74 (+0.102%) | SPY −0.091% (USD 731.57) | Bull outperformed SPY by +0.193pp today
+- **Shock check:** +$100.74 (+0.102%) vs last_equity $98,825.19 — no shock ✓ (threshold −4%)
+- **Drawdown circuit breaker:** $98,925.93 vs HWM $101,384.21 = **−2.425%** — NOT triggered ✓ (7.575pp headroom; CB trigger USD 91,245.79)
+- **🚨 NVDA stop-out (captured midday):** Trailing stop fired 09:59 AM ET. −$688.86 (−9.78%). Post-mortem and lesson in closed-trades.md + lessons.md ✓.
+- **⭐⭐ VST:** +3.04% today, +12.78% from entry. HWM auto-ratcheted to $168.77 (new position high today). 5% trailing stop c8b43d32 stop $160.332. Buffer 4.47%. Thesis intact (Helix Digital Infrastructure + Cogentrix). STRONG HOLD. review_by 2026-07-07.
+- **LLY** $1,130.32: +3.36% from entry, +1.17% today. Medicare Bridge July 1 in **4 trading days** (closes June 26, 29, 30 → July 1). ⚠️ **PRE-MARKET JUNE 30 MANDATORY hold/trim/exit decision.** Buffer 5.83%. HOLD.
+- **V** $331.60: +2.48% from entry, −0.19% today. Thesis intact. HOLD. review_by 2026-07-28.
+- **Market context (June 25):** Micron +17% post-earnings beat (USD 50B Q3 revenue vs USD 43.2B estimate) lifted semi sentiment; Qualcomm +9% on non-handset revenue expansion. But Apple −6.5% (iPhone/Mac price hikes from memory cost pressures) dragged tech. PCE inflation 4.1% YoY (highest since April 2023) was hawkish macro surprise. Net: healthcare (LLY +1.17%) and energy/utilities (VST +3.04%) outperformed, supporting Bull's positions.
+- **LRCX ATR:** Session 3/3 attempt June 25 — pre-market June 26 must confirm if gate passes; if yes, entry eligible as early as Monday June 29.
+- **Exit reconciliation:** NVDA stop-out fully reconciled in closed-trades.md (midday June 25 ✓). No other exits. All 3 remaining positions held.
+- **Trades today:** 0.
+
+## Performance vs S&P 500
+
+| Period | Bull | SPY | Difference |
+|--------|------|-----|------------|
+| Inception (2026-05-21) | $100,000.00 | $739.44 | — |
+| **Close (2026-06-25)** | **$98,925.93 (−1.074%)** | **$731.57 + $1.76 div = −0.826% TR** | **Bull TRAILS SPY ~0.248pp** (improved from −0.348pp at midday; VST +3.04% + LLY +1.17% recovery) |
+| **Midday (2026-06-25)** | **$99,029.80 (−0.970%)** | **~$733.08 + $1.76 div = −0.622% TR** | **Bull TRAILS SPY ~0.348pp** |
+
+---
 
 ## Account (midday June 25, 2026 — live Alpaca data ~12:31 ET)
 
