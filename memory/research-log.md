@@ -135,6 +135,87 @@ No trades planned.
 
 No trades planned. LRCX ATR gate failing (4.15% June 24; 3.08% June 23 — both above 3%; counter 0/3). NVDA thesis renewed post-Micron blowout (HOLD — no scale-up yet; midday -7% rule at $198.48 applies). PWR deferred. Cash drag explicitly accepted pending ATR resolution.
 
+EXECUTED: 2026-06-25T13:38Z (no trades — plan was empty)
+
+---
+
+## 2026-06-25 — Market-open (~09:36 ET)
+
+### Live checks
+- **ALPACA_BASE_URL:** contains "paper" ✓
+- **Market clock:** `is_open: true` ✓ (next close 16:00 ET)
+- **Plan:** `plan_date: 2026-06-25`, `trades: []` — no trades planned. Plan is from today ✓.
+- **Idempotency:** No prior EXECUTED line found → first run today ✓.
+
+### Account (live ~09:36 ET)
+
+| Metric | Value |
+|--------|-------|
+| Equity | $99,127.33 |
+| Cash | $67,261.73 (67.85%) |
+| Long market value | $31,865.60 |
+| Last equity (June 24 close) | $98,825.19 |
+| Shock check | +$302.14 (+0.306%) — NO shock ✓ (threshold −4%) |
+| HWM | $101,384.21 |
+| Drawdown | −2.226% — NOT triggered ✓ (circuit breaker at −10%) |
+
+### Positions (live ~09:36 ET)
+
+| Symbol | Qty | Avg Entry | Current | Mkt Value | Unrealized P/L | % Portfolio |
+|--------|-----|-----------|---------|-----------|----------------|-------------|
+| LLY | 10 | $1,093.534 | $1,117.50 | $11,175.00 | +$239.66 (+2.19%) | 11.27% |
+| NVDA | 33 | $213.421 | $198.93 | $6,564.69 | −$478.16 (−6.79%) | 6.62% ⚠️ |
+| V | 22 | $323.57 | $333.555 | $7,338.21 | +$219.67 (+3.09%) | 7.40% |
+| VST | 40 | $148.81 | $169.92 | $6,796.80 | +$844.40 (+14.19%) | 6.86% ⭐⭐ |
+
+### Breaking-news gate
+No trades planned — gate not applicable. No scan required.
+
+### Step 4: Trade execution
+No trades in today's plan. Skipped.
+
+### Step 5: Stop audit (market-open June 25 — confirmed via Alpaca live orders ~09:36 ET)
+
+| Symbol | Order ID | Qty | HWM | Stop | Buffer | Status |
+|--------|----------|-----|-----|------|--------|--------|
+| LLY | d4147484 | 7sh | $1,182.73 | $1,064.457 | $53.04 (4.75%) | ✓ active |
+| LLY | 25989fb5 | 3sh | $1,182.73 | $1,064.457 | $53.04 (4.75%) | ✓ active |
+| NVDA | dcba7429 | 33sh | $213.99 | $192.591 | $6.34 (3.19%) | ✓ active ⚠️ NARROW |
+| V | 66033918 | 22sh | $336.8199 | $303.138 | $30.42 (9.12%) | ✓ active |
+| VST | c4c200a5 | 40sh | $170.50 | $153.45 | $16.47 (9.69%) | ✓ active |
+
+**Stop audit: 5/5 PASS ✓** No missing stops. No positions to add stops to.
+
+**Exit reconciliation:** All 4 positions present (LLY 10sh, NVDA 33sh, V 22sh, VST 40sh). No stops filled since last run. closed-trades.md current ✓.
+
+### NVDA ⚠️ CRITICAL WATCH
+- Current: $198.93 (latest trade at 09:37 ET)
+- Entry: $213.421; −7% threshold: **$198.48**
+- Spread: $198.93 − $198.48 = **$0.45 above forced-cut threshold**
+- Pre-market renewed HOLD decision (Micron blowout confirms thesis; $200 break was KOSPI contagion)
+- Renewed invalidation: closes below $200 AGAIN without positive catalyst → exit pre-market next day
+- **Midday routine MUST apply −7% rule at 12:30 ET WITHOUT EXCEPTION if NVDA ≤ $198.48**
+
+### VST ⭐⭐ STRONG
+- Current: $169.92 (+14.19% from entry) — strong recovery today +4.33%
+- HWM: $170.50 | +15% tighten trigger: $148.81 × 1.15 = $171.13
+- $169.92 vs $171.13 = $1.21 below tighten trigger — NOT yet triggered ✓
+- Midday routine should tighten stop to 5% if VST hits $171.13+
+
+### Sector exposure (market-open June 25)
+- Healthcare (LLY): $11,175.00 = 11.27% | Tech/AI Semi (NVDA): $6,564.69 = 6.62% | Financials (V): $7,338.21 = 7.40% | Energy/Utilities (VST): $6,796.80 = 6.86% | Cash: $67,261.73 = 67.85%
+- No sector above 60% cap ✓
+
+### Performance vs SPY
+- SPY latest trade ~09:37 ET: $737.34
+- SPY TR since inception: ($737.34 + $1.76) / $739.44 = **−0.046%**
+- Bull: $99,127.33 / $100,000 − 1 = **−0.873%**
+- **Bull TRAILS SPY ~0.827pp** (gap improving from −0.540pp deficit at June 24 close as positions recover this morning)
+- Today: Bull +0.306% vs SPY +0.552% (SPY June 24 close $733.32 → $737.34) — SPY outperforming today on broad recovery; Bull's 68% cash cushion dampening the upside
+
+### Summary
+No trades executed. Stop audit 5/5 PASS ✓. NVDA in critical watch zone ($198.93, only $0.45 above forced-cut $198.48). Midday routine must apply -7% rule at 12:30 ET. VST +14.19% — approaching +15% tighten trigger at $171.13.
+
 ---
 
 ## 2026-06-24 — Pre-market research (~08:02 ET)
