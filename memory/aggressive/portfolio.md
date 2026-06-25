@@ -6,6 +6,95 @@ but always re-fetches live data before trading._
 
 ---
 
+## Last snapshot — 2026-06-25 EOD CLOSE (~3:50 PM ET)
+
+| Field | Value |
+|---|---|
+| Equity | USD 92,268.75 |
+| Cash | USD 22,458.30 (24.3%) |
+| Long market value | USD 69,810.45 |
+| Open positions | 6 |
+| last_equity (June 24 EOD — Alpaca authoritative) | USD 92,637.64 |
+| Today's P/L vs last_equity | **-USD 368.89 (-0.398%)** |
+| HWM | USD 101,144.73 |
+| Drawdown from HWM | **-8.775%** (circuit breaker -20% — NOT triggered; 11.225pp headroom) |
+
+**Shock check:** -0.398% vs threshold -6% → NOT triggered ✓
+
+**Open positions (June 25 EOD ~3:50 PM ET):**
+
+| Symbol | Qty | Avg Entry | EOD Price | Market Value | Unrealized P/L | P/L % | -12% Cut Trigger | Buffer | Rating |
+|---|---|---|---|---|---|---|---|---|---|
+| NVDA | 103 | USD 213.60 | USD 196.10 | USD 20,198.48 | -USD 1,802.32 | **-8.192%** | USD 187.97 | **3.81pp ⚠️** | A |
+| AVGO | 34 | USD 406.23 | USD 381.02 | USD 12,954.84 | -USD 856.98 | **-6.205%** | USD 357.48 | 5.79pp | A |
+| ETN | 34 | USD 419.54 | USD 419.87 | USD 14,275.58 | +USD 11.22 | **+0.079% ✅** | USD 369.20 | 12.08pp | A |
+| GOOGL | 16 | USD 370.22 | USD 342.25 | USD 5,476.00 | -USD 447.52 | **-7.555%** | USD 325.79 | **4.45pp ⚠️** | A |
+| AMZN | 36 | USD 247.99 | USD 227.44 | USD 8,187.84 | -USD 739.84 | **-8.287%** | USD 218.23 | **3.71pp ⚠️** | A |
+| VST | 52 | USD 151.47 | USD 167.77 | USD 8,724.04 | +USD 847.60 | **+10.761% ✅** | USD 133.29 | 22.76pp | A |
+
+**No positions triggered -12% cut rule. Most stressed: AMZN 3.71pp, NVDA 3.81pp, GOOGL 4.45pp. All theses intact.**
+**ETN: +3.78% today (non-correlated with PCE selloff — AI power infra holding). VST: +3.01% today (+10.76% from entry — leading performer).**
+
+**Stop audit (June 25 EOD): ALL 6 CONFIRMED LIVE ✓**
+
+| Symbol | Stop Order ID | Stop Price | Trail % | Status |
+|---|---|---|---|---|
+| NVDA | `54d7d851` | USD 181.71 | 18% | ✓ live |
+| AVGO | `36f5a45f` | USD 349.71 | 18% | ✓ live |
+| ETN | `abdc232b` | USD 349.32 | 18% | ✓ live |
+| GOOGL | `e52a43f1` | USD 308.13 | 18% | ✓ live |
+| AMZN | `b55bef05` | USD 205.35 | 18% | ✓ live |
+| VST | `5b347be3` | USD 140.51 | 18% | ✓ live |
+
+**Thesis contracts (June 25 EOD):**
+| Symbol | Review By | Invalidation | Status |
+|---|---|---|---|
+| NVDA | July 9 | Hyperscaler GPU share reverses | ✓ Intact — -8.192%; 3.81pp buffer ⚠️; Micron +17% on $50B AI demand guide = thesis-CONFIRMED |
+| AVGO | July 9 | AI revenue decelerates | ✓ Intact — -6.205%; 5.79pp buffer; Micron AI demand thesis-positive |
+| ETN | July 9 | ETN below USD 332 OR AI capex reverses | ✓ Intact — +0.079%; 12.08pp buffer; +3.78% today — non-correlated with PCE selloff |
+| GOOGL | July 2 ⚠️ | GCP decelerates OR TPU cancelled | ✓ Intact — -7.555%; 4.45pp buffer; review_by July 2 (7 days away) |
+| AMZN | July 7 | AWS <20% YoY | ✓ Intact — -8.287%; 3.71pp buffer ⚠️; Amazon was top market loser today (-2.81%); PCE 4.1% hot = macro headwind |
+| VST | July 15 | Nuclear PPAs cancelled | ✓ Intact — +10.761%; 22.76pp buffer; +3.01% today; Helix consortium intact |
+
+**Market close context (June 25) [search: WebSearch fallback — MiniMax M3 not available]:**
+Markets opened sharply higher on Micron's blowout print (+17%, $50B revenue guide vs $43.2B expected, 16 long-term contracts) and Qualcomm's non-handset revenue doubling, but reversed by close as PCE came in hot at 4.1% annual rate (highest since April 2023) — SPY opened 738.91, closed 733.50 (essentially flat vs prior close 733.30); Micron's AI demand confirmation is thesis-positive for NVDA/AVGO, but hot PCE threatens multiple compression for high-valuation tech including GOOGL and AMZN.
+
+**Conviction ratings (June 25 EOD):**
+| Symbol | Rating | Notes |
+|---|---|---|
+| NVDA | A | AI GPU; -8.192%; 3.81pp buffer ⚠️; Micron $50B guide = thesis-CONFIRMED; recovering vs midday |
+| AVGO | A | AI revenue +143% YoY; -6.205%; 5.79pp buffer; Micron thesis-positive |
+| ETN | A | AI power infra; +0.079%; 12.08pp buffer; +3.78% today — non-correlated with macro |
+| GOOGL | A | GCP thesis; -7.555%; 4.45pp buffer ⚠️; review_by July 2 approaching |
+| AMZN | A | AWS +28%; -8.287%; 3.71pp buffer ⚠️; top market loser today; PCE headwind |
+| VST | A | +10.761% ✅; 22.76pp buffer; +3.01% today; leading performer; Helix intact |
+
+**Sector exposure (June 25 EOD):**
+| Sector | Names | Market Value | % of Equity |
+|---|---|---|---|
+| Technology — semis | NVDA, AVGO | USD 33,153.32 | 35.9% |
+| Technology — hyperscalers | GOOGL, AMZN | USD 13,663.84 | 14.8% |
+| Industrials/Power Infra | ETN | USD 14,275.58 | 15.5% |
+| Utilities/Power | VST | USD 8,724.04 | 9.5% |
+| Cash | — | USD 22,458.30 | 24.3% |
+
+**Performance vs SPY (June 25 EOD):**
+| Metric | Value |
+|---|---|
+| Equity | USD 92,268.75 |
+| Aggro return since inception | **(92,268.75 − 100,000) / 100,000 = -7.731%** |
+| SPY anchor | USD 754.18 (June 3, 2026) |
+| SPY June 25 close | USD 733.50 |
+| SPY since inception | **(733.50 − 754.18) / 754.18 = -2.742%** |
+| Alpha since inception | **-4.989pp** |
+| Today P/L | -USD 368.89 (-0.398%) |
+| SPY today | +0.027% (733.30 → 733.50) |
+| Today alpha | **-0.425pp** |
+
+_EOD June 25: No trades, no exits. Markets whipsawed — opened up sharply on Micron blowout, reversed on hot PCE (4.1% annual rate, highest since April 2023). SPY ended essentially flat. ETN and VST both +3%+ (non-correlated with macro drag). AMZN was market's third biggest loser today (-2.81%) — PCE hawkish pressure on high-multiple consumer/cloud names. Three stressed positions (AMZN 3.71pp, NVDA 3.81pp, GOOGL 4.45pp). Micron $50B revenue guide is the strongest external validation of AI chip demand thesis in weeks — NVDA and AVGO thesis CONFIRMED. GOOGL review_by July 2 in 7 days. PCE at 4.1% is a genuine macro headwind for multiple expansion names. Control: ACTIVE._
+
+---
+
 ## Last snapshot — 2026-06-25 MIDDAY (~12:41 PM ET)
 
 | Field | Value |
