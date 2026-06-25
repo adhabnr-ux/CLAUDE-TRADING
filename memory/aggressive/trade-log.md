@@ -2114,3 +2114,73 @@ Scanned: NVDA, AVGO, GOOGL (all >5% from entry).
 ### Result
 All 5 positions within guardrails. No trades. All 18% trailing stops active and audited. No cuts, no stops tightened. NVDA most stressed at -6.44% (5.558pp from forced cut) but no thesis break. Semis and hyperscalers stabilizing today. AMZN strongest mover (+2.43% today, Prime Day Day 3). Awaiting Micron earnings tonight after close (consensus USD 34.66B rev / USD 19.95 EPS) — beat will strengthen NVDA/AVGO thesis and inform June 25 pre-market deployment decision. PCE Thursday is macro risk.
 
+
+---
+
+## 2026-06-25 — MARKET OPEN (executed ~09:52 ET)
+
+### Trade 1 — BUY ETN
+| Field | Value |
+|---|---|
+| Action | BUY |
+| Symbol | ETN |
+| Qty | 34 shares |
+| Fill price | USD 419.54 avg |
+| Cost basis | USD 14,264 |
+| Portfolio % | ~15.5% |
+| Thesis | AI power infrastructure leader; Eaton electrical equipment is direct critical-path input to hyperscale data centers scaling with AI GPU density; Helix consortium validates AI power theme. |
+| Invalidation | ETN price below USD 332 (18% from USD 419.54 entry) OR AI data center capex growth narrative materially reverses |
+| Review by | 2026-07-09 |
+| Trailing stop ID | `abdc232b` — 18% trail, stop at USD 342.60 |
+| Verified | ✓ Position confirmed; stop confirmed |
+
+Note: ETN opened at ~USD 418 (gapped up from plan price ~USD 405) — AI/power infra non-correlated with AI semi selloff; strength is thesis-confirming. Used last-trade-based marketable limit (USD 419.92) instead of stale ECN ask (USD 438) on IEX. Filled at USD 419.54.
+
+### MRVL — BLOCKED (condition not met)
+Pre-market condition: ONLY if MRVL opens at or above USD 293.30.
+MRVL open: ~USD 291.07 (below threshold). Current: ~USD 268. Decision: NO TRADE. Conditional entry never triggered — not averaging down, not a thesis break. MRVL remains in extended downtrend post Asian semi rout.
+
+### Stop audit (June 25 market-open): ALL 6 CONFIRMED LIVE ✓
+| Symbol | Stop Order ID | HWM | Stop Price | Trail % | Status |
+|---|---|---|---|---|---|
+| NVDA | `54d7d851` | USD 221.60 | USD 181.71 | 18% | ✓ live |
+| AVGO | `36f5a45f` | USD 426.48 | USD 349.71 | 18% | ✓ live |
+| GOOGL | `e52a43f1` | USD 375.77 | USD 308.13 | 18% | ✓ live |
+| AMZN | `b55bef05` | USD 250.43 | USD 205.35 | 18% | ✓ live |
+| VST | `5b347be3` | USD 170.50 | USD 139.81 | 18% | ✓ live |
+| ETN | `abdc232b` | USD 417.80 | USD 342.60 | 18% | ✓ placed this run |
+
+No stops missing. No stops recreated. All positions protected.
+
+### Thesis contract status (June 25 market-open)
+| Symbol | Review By | Invalidation | Status |
+|---|---|---|---|
+| NVDA | July 9 | Hyperscaler GPU share reverses | ✓ Intact — -9.08%; 8.92pp buffer |
+| AVGO | July 9 | AI revenue decelerates | ✓ Intact — -7.56%; 10.44pp buffer |
+| GOOGL | July 2 ⚠️ | GCP decelerates OR TPU cancelled | ✓ Intact — -8.76%; 9.24pp buffer; Dow Jones June 29 catalyst |
+| AMZN | July 7 | AWS <20% YoY | ✓ Intact — -8.16%; 9.84pp buffer |
+| VST | July 15 | Nuclear PPAs cancelled | ✓ Intact — +10.78%; 24.5pp buffer |
+| ETN | July 9 | ETN below USD 332 OR AI capex reverses | ✓ New entry; -0.32%; 17.68pp buffer |
+
+### Portfolio guardrail check (June 25 market-open)
+| Guardrail | Limit | Actual | Status |
+|---|---|---|---|
+| Largest position | 35% | NVDA 21.8% | ✓ |
+| Min cash | 2% | 24.5% | ✓ |
+| New positions this week (June 23-25) | 8 | 1 (ETN) | ✓ |
+| Daily deployment | 60% | ~15.5% (ETN only; MRVL blocked) | ✓ |
+| Drawdown CB | 20% | -9.30% (10.70pp headroom) | ✓ |
+| Intraday shock | 6% | -0.96% | ✓ |
+
+### Performance vs SPY (June 25 market-open)
+| Metric | Value |
+|---|---|
+| Equity | USD 91,744.49 |
+| Aggro return since inception | **(91,744.49 − 100,000) / 100,000 = -8.256%** |
+| SPY current | USD 730.76 |
+| SPY since inception (754.18 anchor) | **(730.76 − 754.18) / 754.18 = -3.104%** |
+| Alpha since inception | **-5.152pp** |
+| Intraday vs last_equity | -0.96% |
+
+### Result
+ETN bought (34 shares at USD 419.54, 15.5% of portfolio, 18% trailing stop at USD 342.60). MRVL blocked — opened below USD 293.30 condition. All 6 positions now protected with 18% trailing stops; stop audit 6/6 PASSED. Cash 24.5%. PCE data tomorrow June 26 is macro risk. GOOGL review_by July 2 approaching.
