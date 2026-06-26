@@ -3,6 +3,46 @@
 _Every order placed, with its reasoning. Append-only — newest entries at the top.
 The weekly new-position count is derived from this log._
 
+## 2026-06-26 15:51 ET — CLOSE (0 trades; stop audit 4/4 ✓; LLY ⭐ new HWM $1,215.76; VST buf 1.86% ⚠️⚠️; Bull LEADS SPY +0.344pp)
+
+- **Action:** Close routine. 0 trades. Stop audit 4/4 PASS. LLY hit new position HWM $1,215.76 (stop ratcheted to $1,094.184). VST continued afternoon decline; stop buffer now critical 1.86%. Bull outperformed SPY by +0.650pp today.
+- **Market status:** `is_open: true` (close 16:00 ET); next open 2026-06-29 (Monday)
+- **Account (~15:51 ET — live Alpaca):** Equity $99,692.61 | Cash $73,615.74 (73.87%) | LMV $26,076.87
+
+### Live-switch guard
+- `ALPACA_BASE_URL` contains "paper" ✓
+
+### Shock check
+- Equity $99,692.61 vs last_equity $98,874.88 = **+$817.73 = +0.827%** — no shock ✓ (threshold −4%)
+
+### Drawdown circuit breaker
+- HWM $101,384.21; current $99,692.61 = **−1.669%** — NOT triggered ✓ (8.331pp headroom)
+
+### Stop audit (close June 26 — confirmed via Alpaca live orders ~15:51 ET)
+| Order ID | Symbol | Qty | HWM | Stop | Status |
+|----------|--------|-----|-----|------|--------|
+| d4147484 | LLY | 7sh | $1,215.76 ⬆️ | $1,094.184 ⬆️ | ✓ active (HWM ratcheted PM session; buffer $117.39 = 9.69%) |
+| 25989fb5 | LLY | 3sh | $1,215.76 ⬆️ | $1,094.184 ⬆️ | ✓ active |
+| 66033918 | V | 22sh | $339.94 | $305.946 | ✓ active (buffer $31.51 = 9.34%) |
+| c8b43d32 | VST | 40sh | $168.77 | $160.3315 (5% trail) | ✓ active ⚠️⚠️ buffer $3.04 = 1.86% CRITICAL |
+**4/4 PASS ✓**
+
+### Performance vs SPY (close June 26)
+- **Bull:** $99,692.61 = **−0.307%** since inception (May 21)
+- **SPY TR:** $732.865 + $1.76 div = $734.625 / $739.44 = **−0.651%** TR since inception
+- **Bull LEADS SPY by +0.344pp** ✓ (today: Bull +0.827% vs SPY +0.177% = +0.650pp outperformance)
+- **Race (close June 26):** Bull −0.307% | AGGRO −8.77% (midday est, $91,234.94) | SPY TR −0.651%
+
+### Exit reconciliation
+- All 3 positions (LLY, V, VST) confirmed open per Alpaca live data ✓
+- No exits today ✓
+- closed-trades.md current (NVDA June 25 post-mortem ✓) — no new entries required
+
+### Market context (June 26)
+AI valuation concerns + OpenAI IPO delay drove tech sell-off (Nasdaq −4% for the week); chip stocks (LRCX, WD, Sandisk) fell ~10%, resetting LRCX ATR gate — now needs 3 fresh consecutive ≤3% sessions, earliest entry July 7+. Bull's defensive positioning (healthcare, financials) outperformed broad market. VST pressured by risk-off energy selling.
+
+---
+
 ## 2026-06-26 12:34 ET — MIDDAY (0 trades; no cuts; no tightenings; stop audit 4/4 ✓; LLY HWM ratcheted; Bull LEADS SPY +0.138pp)
 
 - **Action:** Midday review. No cuts (all positions positive). No tightenings (none >+15% from entry). Stop audit 4/4 PASS. No new positions (midday does not open positions).
