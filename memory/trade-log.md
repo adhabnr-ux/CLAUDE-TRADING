@@ -3,6 +3,45 @@
 _Every order placed, with its reasoning. Append-only — newest entries at the top.
 The weekly new-position count is derived from this log._
 
+## 2026-06-26 09:37 ET — MARKET-OPEN (0 trades; no plan; stop audit 4/4 ✓; Bull LEADS SPY +0.373pp; VST buffer 3.91%)
+
+- **Action:** Market-open review. No trades planned or executed — plan was empty (risk-off tape, LRCX ATR gate failed). All 3 positions healthy.
+- **Market status:** `is_open: true` — confirmed via Alpaca clock ✓
+- **Account (~09:37 ET — live Alpaca):** Equity $99,155.92 | Cash $73,615.74 (74.24%) | LMV $25,540.18
+
+### Live-switch guard
+- `ALPACA_BASE_URL` contains "paper" ✓
+
+### Shock check
+- Equity $99,155.92 vs last_equity $98,874.88 = **+$281.04 = +0.284%** — no shock ✓ (threshold −4%)
+
+### Drawdown circuit breaker
+- HWM $101,384.21; current $99,155.92 = **−2.198%** — NOT triggered ✓ (7.802pp headroom)
+
+### Stop audit (market-open June 26 — confirmed via Alpaca live orders)
+| Order ID | Symbol | Qty | HWM | Stop | Status |
+|----------|--------|-----|-----|------|--------|
+| d4147484 | LLY | 7sh | $1,182.73 | $1,064.457 | ✓ active (buffer $84.48 = 7.36%) |
+| 25989fb5 | LLY | 3sh | $1,182.73 | $1,064.457 | ✓ active |
+| 66033918 | V | 22sh | $339.94 | $305.946 | ✓ active (buffer $29.76 = 8.86%) |
+| c8b43d32 | VST | 40sh | $168.77 | $160.3315 (5% trail) | ✓ active (buffer $6.53 = 3.91% — improved from pre-mkt 2.90%) |
+**4/4 PASS ✓**
+
+### Position reviews (market-open June 26)
+- **LLY** $1,148.94: +5.07% from entry (+1.88% today). Today's high $1,151.265 below HWM $1,182.73 — no ratchet. Medicare Bridge July 1 = 1 trading day away. ⚠️ **Pre-market June 30 MANDATORY hold/trim/exit decision.** HOLD. Conviction A.
+- **V** $335.71: +3.75% from entry (+1.57% today). Today's high $336.585 below HWM $339.94 — no ratchet. Visa Destinations launch (Santander partnership). HOLD. Conviction B (0/3 C-weeks). review_by 2026-07-28.
+- **VST** $166.8615 ⭐⭐: +12.13% from entry (−0.54% today). Today's high $167.05 below HWM $168.77 — no ratchet. Helix + Cogentrix intact. Stop buffer 3.91% — improved from pre-market 2.90%. STRONG HOLD. Conviction A. review_by 2026-07-07.
+
+### Performance vs SPY
+- **Bull:** $99,155.92 = **−0.844%** since inception (May 21)
+- **SPY TR:** $728.68 + $1.76 div = $730.44 / $739.44 = **−1.217%** TR since inception
+- **Bull LEADS SPY by +0.373pp** ← first time positive vs benchmark since inception
+
+### Idempotency
+- Plan block `plan_date: 2026-06-26` had empty trades and no prior EXECUTED line → EXECUTED marked ✓
+
+---
+
 ## 2026-06-26 08:03 ET — PRE-MARKET (0 trades; risk-off tape KOSPI −8%; LRCX ATR gate reset 8.88%; stop audit 4/4 ✓; VST stop buffer 2.90% ⚠️)
 
 - **Action:** Pre-market review. No trades planned — risk-off macro (KOSPI −8%, Nikkei −5%, S&P futures −0.37%), LRCX ATR gate definitively failed June 25 (8.88%), PWR deferred, no qualified candidates. All 3 positions held: LLY +2.877%, V +1.893%, VST +10.955%.
