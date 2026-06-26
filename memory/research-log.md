@@ -5,6 +5,123 @@ The market-open routine reads the most recent "Planned trades" section._
 
 ---
 
+## 2026-06-26 — Pre-market research (~08:03 ET)
+
+### Live-switch guard
+- `ALPACA_BASE_URL` contains "paper" ✓ — paper trading confirmed.
+
+### Account snapshot (live Alpaca ~08:03 ET)
+
+| Metric | Value |
+|--------|-------|
+| Equity | $98,723.49 |
+| Cash | $73,615.74 (74.58%) |
+| Long market value | $25,107.75 |
+| Last equity (June 25 close, Alpaca API) | $98,874.88 |
+| Shock check | −$151.39 (−0.153%) vs last_equity — no shock ✓ (threshold −4%) |
+| HWM | $101,384.21 |
+| Drawdown | −2.625% — NOT triggered ✓ (circuit breaker at −10%) |
+
+### Macro (pre-market June 26, 2026 ~08:03 ET)
+
+| Indicator | Value | Threshold | Status |
+|-----------|-------|-----------|--------|
+| S&P 500 futures | **−0.37%** | — | Risk-off — tech/semi weakness spreading from Asia |
+| KOSPI | **−~8%** | — | ⚠️ Major Asian selloff — KOSPI chip selloff day 2+ this week |
+| Nikkei | **−~5%** | — | ⚠️ Broad Asian risk-off contagion |
+| 10yr Treasury | Edging lower | <4.75% | ✓ GATE PASSES — PCE in line, yields declining |
+| WTI crude | ~$80/bbl | <$100 | ✓ — Iran peace deal intact |
+| VIX | Elevated | <35 | Monitoring — elevated by Asian shock |
+| PCE (May 2026) | Broadly in-line | — | ✓ — not accelerating; modest macro relief |
+
+**Narrative:** Another major Asian semiconductor selloff — KOSPI fell ~8% on Friday (second large-scale KOSPI drawdown in two weeks, following June 23 −9.99%). Nikkei −5%. The driver is continued concern about AI infrastructure costs and rising competition vs. demand for AI hardware. S&P futures −0.37%. This is a risk-off morning driven entirely by semiconductor/tech sector fear. However, PCE inflation came in broadly in-line with expectations — no Fed hawkishness surprise. Our portfolio (healthcare LLY, financials V, energy/utilities VST) should absorb this better than a tech-heavy portfolio. Risk-off tape warrants caution but no panic.
+
+### Position thesis reviews — "what changed since yesterday"
+
+**LLY** ($1,125 pre-mkt, −0.239% from $1,127.69 lastday; +2.877% from entry $1,093.534)
+- _What changed since yesterday:_ Leerink analyst David Risinger raised firm PT on LLY to $1,232 (from $1,119), keeping Outperform — bullish upgrade. Eli Lilly announced more details of Medicare GLP-1 Bridge program: Zepbound and Orforglipron (Foundayo) offered to Medicare beneficiaries at ≤$50/month. New GLP-1 youth diabetes trial launched (expanding GLP-1 footprint). Nothing materially negative.
+- Stop: HWM $1,182.73, stop $1,064.457 (buffer $60.54 = 5.38%) ✓
+- ⚠️ **Medicare Bridge July 1 in 2 trading days (June 30, July 1).** Pre-market June 30 is MANDATORY hold/trim/exit decision. Today's Leerink upgrade and bridge details lean thesis-positive (broader access = demand expansion). Set decision framework: **lean HOLD unless data shows margin deterioration.** Earnings Aug 5-6 (40 days) — outside 2-day window ✓.
+- Invalidation: stop fires or Medicare Bridge pricing reveals margin deterioration.
+- review_by: 2026-07-01 (pre-market June 30 decision)
+- **Decision: HOLD. Conviction: A.**
+
+**V** ($329.694 pre-mkt, −0.250% from $330.52 lastday; +1.893% from entry $323.57)
+- _What changed since yesterday:_ Visa launched Visa Destinations travel platform across 10 global destinations (Paris, London, Dubai, Milan, Rome, Mexico City, NY, Miami, SF, Thailand) in partnership with Santander Group and Global Blue. Thesis catalyst: Visa expanding beyond payments into curated travel experience — incremental moat deepening. V is GAINING +0.15% to $332.74 despite broad market weakness — showing relative strength in risk-off. Earnings July 28 (32 days) — outside 2-day window ✓.
+- Stop: HWM $339.94, stop $305.946 (buffer $23.75 = 7.21%) ✓
+- Thesis intact. Positive catalyst today. HOLD. review_by 2026-07-28.
+- Invalidation: stop fires or cross-border revenue guidance cut.
+- **Decision: HOLD. Conviction: B (0/3 C-weeks). Strong hold — Visa Destinations launch bullish.**
+
+**VST** ($165.112 pre-mkt, −1.584% from $167.77 lastday; +10.955% from entry $148.81) ⭐⭐
+- _What changed since yesterday:_ Morgan Stanley raised PT on VST to $212 from $208, maintaining Overweight. Seaport raised PT to $230 from $227, maintaining Buy. Helix Digital Infrastructure thesis unchanged — most compelling portfolio position. VST down −1.584% pre-market in sympathy with broad tech/energy profit-taking.
+- ⚠️ **Stop buffer NARROW:** 5% trailing stop (c8b43d32) HWM $168.77, stop $160.3315. Current $165.112. Buffer = $4.78 (2.90%). To trigger stop from current pre-market level: −2.90% more required. To trigger from yesterday close $167.77: −4.43% daily decline. Midday routine must monitor closely in risk-off tape.
+- No negative thesis catalyst — Helix + Cogentrix intact. PT upgrades bullish. VST down is pure broad market contagion from Asian semiconductor selloff. STRONG HOLD unless stop fires.
+- Stop: HWM $168.77, stop $160.3315 (5% trail, c8b43d32) ✓ buffer 2.90% ⚠️ MONITORING
+- Earnings Aug 6 (41 days) — outside 2-day window ✓. Thesis review_by July 7.
+- Invalidation: stop fires or Helix consortium materially changes.
+- **Decision: STRONG HOLD. Conviction: A. Monitor stop buffer at midday.** ⭐⭐
+
+### Stop audit (pre-market June 26 — confirmed via Alpaca live orders ~08:03 ET)
+
+| Symbol | Order ID | Qty | HWM | Stop | Buffer | Status |
+|--------|----------|-----|-----|------|--------|--------|
+| LLY | d4147484 | 7sh | $1,182.73 | $1,064.457 | $60.54 (5.38%) | ✓ active |
+| LLY | 25989fb5 | 3sh | $1,182.73 | $1,064.457 | $60.54 (5.38%) | ✓ active |
+| V | 66033918 | 22sh | $339.94 | $305.946 | $23.75 (7.21%) | ✓ active |
+| VST | c8b43d32 | 40sh | $168.77 | $160.3315 (5% trail) | $4.78 (2.90%) ⚠️ | ✓ active |
+**4/4 PASS ✓**
+
+### Drawdown circuit breaker
+- HWM: $101,384.21 | Current equity: $98,723.49 | Drawdown: **−2.625%** — NOT triggered ✓ (circuit breaker −10%; headroom 7.375pp)
+
+### Earnings window check (2 trading days out: June 27 Saturday, June 30)
+- **LLY**: Next earnings Aug 5-6 (~40 days) ✓ — outside 2-day window
+- **V**: Next earnings July 28 (~32 days) ✓ — outside 2-day window
+- **VST**: Next earnings Aug 6 (~41 days) ✓ — outside 2-day window
+- No earnings windows triggered ✓
+
+### LRCX ATR gate status (pre-market June 26 — DEFINITIVE RESET)
+- June 25 intraday range: $372.30 to $407.99 | Close: ~$401.73
+- **ATR% June 25 = ($407.99 − $372.30) / $401.73 = 8.88% ❌ MASSIVE FAIL**
+- Prior sessions: June 24 ATR 4.15% ❌ | June 23 ATR 3.08% ❌
+- **All 3 sessions FAILED. Gate counter RESET to 0.**
+- Need 3 fresh consecutive ≤3% sessions before entry eligible.
+- With KOSPI −8% and tech pressure today, LRCX likely continues volatile.
+- **Earliest possible entry: week of June 29** (if Mon/Tue/Wed all ≤3%) — but practically week of July 7+ given current volatility.
+- BofA raised PT on LRCX to $480 (from $330) — thesis improving, but must wait for calm tape.
+- **LRCX watchlist: deferred. No entry this week.**
+
+### Cash-drag check
+- Cash 74.58% — far above 25-40% target for 3-position portfolio.
+- **Explicit justification for staying heavy cash:** Risk-off tape today (KOSPI −8%, Nikkei −5%, S&P futures −0.37%). LRCX ATR gate definitively failed June 25 (8.88%). PWR still deferred (ATR elevated + insider selling). No other candidates meeting all 5 entry signals in a risk-off semiconductor-panic day. Last day of trading week; fresh 3/3 weekly slots open Monday June 29. Cash is correct posture today — idle is NOT a default, it is the right decision.
+
+### Weekly slot count (week of June 22-26)
+- Slot 1: NVDA — opened June 22, stopped out June 25 (−9.78%)
+- Slots 2 and 3: Unused — no qualified candidates in risk-off tape this week
+- **New week starts Monday June 29: fresh 3/3 new position slots.**
+
+### Performance vs S&P 500 (pre-market June 26)
+
+| Period | Bull | SPY | Difference |
+|--------|------|-----|------------|
+| Inception (2026-05-21) | $100,000.00 | $739.44 | — |
+| **Pre-mkt (2026-06-26)** | **$98,723.49 (−1.277%)** | **SPY $733.33 close + $1.76 div = −0.588% TR** | **Bull TRAILS SPY ~0.689pp** |
+| **Close (2026-06-25)** | **$98,925.93 (−1.074%)** | **$733.33 + $1.76 = −0.588% TR** | **Bull TRAILS SPY ~0.486pp** |
+
+### Planned trades for today
+
+No trades planned. Risk-off tape (KOSPI −8%, Nikkei −5%, S&P futures −0.37%), LRCX ATR gate failed (8.88%), no other qualified candidates meeting all 5 entry signals. All 3 positions held. Last day of week.
+
+```json
+{
+  "plan_date": "2026-06-26",
+  "trades": []
+}
+```
+
+---
+
 ## 2026-06-25 — Pre-market research (~08:02 ET)
 
 ### Live-switch guard

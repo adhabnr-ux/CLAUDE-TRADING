@@ -3,6 +3,49 @@
 _Every order placed, with its reasoning. Append-only — newest entries at the top.
 The weekly new-position count is derived from this log._
 
+## 2026-06-26 08:03 ET — PRE-MARKET (0 trades; risk-off tape KOSPI −8%; LRCX ATR gate reset 8.88%; stop audit 4/4 ✓; VST stop buffer 2.90% ⚠️)
+
+- **Action:** Pre-market review. No trades planned — risk-off macro (KOSPI −8%, Nikkei −5%, S&P futures −0.37%), LRCX ATR gate definitively failed June 25 (8.88%), PWR deferred, no qualified candidates. All 3 positions held: LLY +2.877%, V +1.893%, VST +10.955%.
+- **Market status:** `is_open: false` — next open 09:30 ET June 26.
+- **Account (~08:03 ET — live Alpaca):** Equity $98,723.49 | Cash $73,615.74 (74.58%) | LMV $25,107.75
+
+### Live-switch guard
+- `ALPACA_BASE_URL` contains "paper" ✓
+
+### Shock check
+- Equity $98,723.49 vs last_equity $98,874.88 = **−$151.39 = −0.153%** — no shock ✓ (threshold −4%)
+
+### Drawdown circuit breaker
+- HWM $101,384.21; current $98,723.49 = **−2.625%** — NOT triggered ✓ (7.375pp headroom)
+
+### Stop audit (pre-market June 26 — confirmed via Alpaca live orders)
+| Order ID | Symbol | Qty | HWM | Stop | Status |
+|----------|--------|-----|-----|------|--------|
+| d4147484 | LLY | 7sh | $1,182.73 | $1,064.457 | ✓ active |
+| 25989fb5 | LLY | 3sh | $1,182.73 | $1,064.457 | ✓ active |
+| 66033918 | V | 22sh | $339.94 | $305.946 | ✓ active |
+| c8b43d32 | VST | 40sh | $168.77 | $160.3315 (5% trail) | ✓ active ⚠️ buffer 2.90% |
+**4/4 PASS ✓**
+
+### Position reviews
+- **LLY** $1,125.00: +2.877% from entry. Leerink PT raised $1,119→$1,232. Medicare Bridge details confirmed (≤$50/month Medicare). HOLD. Conviction A. review_by 2026-07-01 (⚠️ pre-market June 30 MANDATORY decision — 2 trading days).
+- **V** $329.694: +1.893% from entry. Visa Destinations launch (10 global hubs, Santander partnership). V gaining in weak market — relative strength ✓. HOLD. Conviction B (0/3 C-weeks). review_by 2026-07-28.
+- **VST** $165.112 ⭐⭐: +10.955% from entry. MS PT raised $208→$212; Seaport $227→$230. Helix + Cogentrix intact. ⚠️ Stop buffer 2.90% ($4.78 above stop $160.33). STRONG HOLD. Conviction A. review_by 2026-07-07.
+
+### LRCX ATR gate
+- June 25 ATR = 8.88% (range $372.30–$407.99 / $401.73 close) ❌ DEFINITIVE FAIL
+- All 3 session attempts (June 23: 3.08% ❌, June 24: 4.15% ❌, June 25: 8.88% ❌) failed
+- Counter reset to 0. Need fresh 3 consecutive ≤3% sessions starting week of June 29.
+
+### Trade plan
+- 0 trades. `"trades": []` — risk-off tape, no qualified candidates, last day of week.
+
+### Week of June 22-26 new position count
+- 1/3 used (NVDA June 22, stopped out June 25). Week closes today.
+- **New week starts Monday June 29: fresh 3/3 slots.**
+
+---
+
 ## 2026-06-25 12:31 ET — MIDDAY (🚨 NVDA trailing stop fired $192.546 −9.78%; VST stop tightened 10%→5% c8b43d32; stop audit 4/4 ✓)
 
 - **Action:** 🚨 NVDA trailing stop dcba7429 auto-executed 09:59 AM ET at $192.546 (33sh, −9.78%, P/L −$688.86). Position closed. VST +15% tighten trigger activated (HWM $171.35 > $171.13 threshold); old 10% stop c4c200a5 cancelled, new 5% trailing stop c8b43d32 placed (stop $159.84). No other positions cut. 3 positions remain.
