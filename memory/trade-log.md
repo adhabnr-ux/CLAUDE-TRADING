@@ -3,6 +3,54 @@
 _Every order placed, with its reasoning. Append-only — newest entries at the top.
 The weekly new-position count is derived from this log._
 
+## 2026-06-26 12:34 ET — MIDDAY (0 trades; no cuts; no tightenings; stop audit 4/4 ✓; LLY HWM ratcheted; Bull LEADS SPY +0.138pp)
+
+- **Action:** Midday review. No cuts (all positions positive). No tightenings (none >+15% from entry). Stop audit 4/4 PASS. No new positions (midday does not open positions).
+- **Market status:** `is_open: true` — confirmed via Alpaca clock ✓
+- **Account (~12:34 ET — live Alpaca):** Equity $99,680.86 | Cash $73,615.74 (73.87%) | LMV $26,065.12
+
+### Live-switch guard
+- `ALPACA_BASE_URL` contains "paper" ✓
+
+### Shock check
+- Equity $99,680.86 vs last_equity $98,874.88 = **+$805.98 = +0.815%** — no shock ✓ (threshold −4%)
+
+### Drawdown circuit breaker
+- HWM $101,384.21; current $99,680.86 = **−1.681%** — NOT triggered ✓ (8.319pp headroom)
+
+### Position reviews (midday June 26 — 7% rule / 15% tighten check)
+
+| Symbol | Entry | Current | % from entry | −7% threshold | +15% tighten | Action |
+|--------|-------|---------|-------------|--------------|--------------|--------|
+| LLY | $1,093.534 | $1,198.76 | **+9.62%** | $1,016.99 (irrelevant) | $1,257.56 (not reached) | HOLD |
+| V | $323.57 | $338.18 | **+4.52%** | $300.92 (irrelevant) | $372.11 (not reached) | HOLD |
+| VST | $148.81 | $165.91 | **+11.49%** | $138.39 (irrelevant) | $171.13 (not reached) | HOLD |
+
+**No position ≤−7% from entry → no cuts.**
+**No position ≥+15% from entry → no tightenings.**
+
+### News scans
+- **VST** (+11.49% from entry → scan required): Thesis intact. Helix+Cogentrix unchanged. 20 analysts Strong Buy, consensus PT $222.89. MS minor PT trim $212→$210 (still Overweight) — not a concern. VST down −1.11% today is pure risk-off market contagion, not a thesis break. STRONG HOLD.
+- **LLY** (+9.62%, HWM $1,207.589 was >+10% intraday → scan performed): +6.30% today driven by Medicare Bridge July 1 launch confirmation ($50/month Medicare pricing). Leerink PT $1,232 (Outperform). Thesis-confirming rally. HOLD through bridge. ⚠️ **Pre-market June 30 MANDATORY decision — 1 trading day away.**
+
+### Stop audit (midday June 26 — confirmed via Alpaca live orders ~12:34 ET)
+| Order ID | Symbol | Qty | HWM | Stop | Status |
+|----------|--------|-----|-----|------|--------|
+| d4147484 | LLY | 7sh | $1,207.589 ⬆️ | $1,086.8301 ⬆️ | ✓ active (auto-ratcheted; buffer $111.93 = 9.34%) |
+| 25989fb5 | LLY | 3sh | $1,207.589 ⬆️ | $1,086.8301 ⬆️ | ✓ active |
+| 66033918 | V | 22sh | $339.94 | $305.946 | ✓ active (buffer $32.234 = 9.54%) |
+| c8b43d32 | VST | 40sh | $168.77 | $160.3315 (5% trail) | ✓ active ⚠️ buffer $5.5785 = 3.37% |
+**4/4 PASS ✓**
+
+Notable: LLY HWM auto-ratcheted from $1,182.73 → $1,207.589 (new intraday high today). Stop improved from $1,064.457 → $1,086.8301. Excellent protection improvement.
+
+### Performance vs SPY
+- **Bull:** $99,680.86 = **−0.319%** since inception (May 21)
+- **SPY TR:** $734.30 + $1.76 div = $736.06 / $739.44 = **−0.457%** TR since inception
+- **Bull LEADS SPY by +0.138pp** ✓
+
+---
+
 ## 2026-06-26 09:37 ET — MARKET-OPEN (0 trades; no plan; stop audit 4/4 ✓; Bull LEADS SPY +0.373pp; VST buffer 3.91%)
 
 - **Action:** Market-open review. No trades planned or executed — plan was empty (risk-off tape, LRCX ATR gate failed). All 3 positions healthy.
