@@ -5,6 +5,59 @@ The market-open routine reads the most recent "Planned trades" section._
 
 ---
 
+## 2026-06-26 — Weekly Review Research (~20:35 UTC)
+
+### Week of June 23-26, 2026 — Summary findings
+
+**S&P 500 weekly performance:**
+- S&P 500 (SPX): ~−2.4% on the week (7,357.49 close June 26)
+- SPY ETF: $746.75 → $728.99 = −2.379% (no dividend this week)
+- Nasdaq composite: −4%+ on the week; semiconductor names particularly hard hit
+
+**Macro drivers:**
+- **PCE inflation 4.1% YoY (June 25):** Highest since April 2023 — hawkish surprise; reinforces higher-for-longer
+- **Fed Chair Kevin Warsh:** Comments interpreted hawkish; policymakers expect modest tightening by year-end
+- **OpenAI IPO delay:** Reported as AI selloff catalyst; tech/AI valuations under pressure
+- **Sector rotation:** Growth/AI/tech → Healthcare, Industrials, Defensives
+- **GOOGL Dow Jones inclusion:** Effective June 29; positive for passive flows
+
+**LLY (held — 10sh @ $1,093.534):**
+- LLY surged +7.44% on June 26 to close $1,215 (new HWM $1,215.76)
+- **Medicare Bridge confirmed July 1:** ~20M Medicare Part D patients eligible for Zepbound/Foundayo at $50/month
+- Leerink Partners raised PT to $1,232 (Outperform); thesis fully confirmed
+- Stop buffer 9.69% at $1,094.18; pre-market June 30 MANDATORY hold/trim/exit decision
+- Information date: June 26, 2026
+
+**VST (held — 40sh @ $148.81):**
+- VST −2.62% June 26 to $163.37; stop buffer CRITICAL 1.86% ($163.37 vs stop $160.33)
+- Nuclear/AI data-center thesis intact: 20-year PPAs with Meta for 2,600+ MW; Helix (KKR+NVIDIA+Kuwait) preferred power provider
+- Q1 2026 revenue $5.63B, adj. EBITDA +20% YoY; consensus analyst PT ~$230s
+- Cogentrix acquisition (5,500 MW natural gas) provides diversification
+- Information date: June 25-26, 2026
+
+**V (held — 22sh @ $323.57):**
+- V +2.10% June 26 to $337.46; showing defensive strength in broad selloff
+- No major news this week; fundamentals intact
+- 52-week range $293.89–$359.66; analyst PT avg $387.78
+- P/E 29.43; market cap $636.5B; quarterly dividend yield 0.79%
+- Information date: June 26, 2026
+
+**NVDA (stopped out June 25):**
+- AI selloff continued; GPU B200 hourly spot $6.11 (May 30) → $4.22 (June 21) = −31%
+- OpenAI IPO delay reinforced AI infrastructure concerns
+- Stock well below $200 invalidation level; thesis break confirmed
+- LRCX also −10%+ June 26 — ATR gate fully reset; earliest entry July 7+
+- Information date: June 26, 2026
+
+**ETN (Eaton — new watchlist candidate):**
+- Eaton electrical equipment is critical bottleneck for hyperscale data center expansion
+- AGGRO added June 25 at $419.54; down −4% June 26 in risk-off
+- AI capex supercycle thesis; no specific time-bound catalyst
+- Need 3 consecutive ≤3% ATR sessions before entry; earliest week of July 7+
+- Information date: June 25-26, 2026
+
+---
+
 ## 2026-06-26 — Pre-market research (~08:03 ET)
 
 ### Live-switch guard

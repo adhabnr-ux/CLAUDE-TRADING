@@ -2,6 +2,118 @@
 
 _Written every Friday by the weekly-review routine. Newest at the top._
 
+## Week ending 2026-06-26 (Week 6 — 4 active trading days: Mon Jun 23, Tue Jun 24, Wed Jun 25, Thu Jun 26)
+
+- **Bull return (week):** +0.674% ($99,039.61 → $99,707.74)
+- **SPY return (week):** −2.379% ($746.75 → $728.99 — no dividend this week)
+- **Result:** BEAT SPY by **+3.05pp** — strongest relative weekly outperformance since inception ✅
+- **Since inception (2026-05-21):** Bull −0.292% vs SPY TR −1.175% = **Bull LEADS SPY by +0.883pp** (was +0.344pp entering this week; improved +0.539pp)
+- **HWM:** $101,384.21 | current drawdown −1.654% — well within −10% circuit breaker ✓
+- **Grade:** B+
+
+### Trade statistics (week 6 cumulative — closed-trades.md authoritative; trades.jsonl partially synced)
+
+| Metric | Value |
+|--------|-------|
+| New trades this week | 1 exit (NVDA trailing stop June 25), 0 entries |
+| Weekly position slots used | 0/3 (LRCX ATR gate reset by June 26 selloff; PWR deferred; risk-off environment) |
+| Total closed trades to date | **6** (AMZN, AVBO, NVDA×1, MSFT, META, NVDA×2) |
+| Wins | 0 |
+| Losses | 6 |
+| Win rate | **0%** |
+| Average loss % | **5.03%** (NVDA(2) −9.78%, AMZN −7.39%, META −6.87%, NVDA(1) −3.36%, AVGO −2.10%, MSFT −0.70%) |
+| Total realized losses | **−$2,377.88** (prior $1,689.02 + NVDA(2) $688.86) |
+| Profit factor | N/A (no wins yet) |
+| Avg holding days all losses | **10.2 days** (12+13+10+14+9+3 / 6) |
+| Avg holding days: losers vs. winners | N/A yet — no wins. Note: NVDA(2) held 3 days vs AMZN/AVGO/MSFT held 10-14 days. Losers held longest had co-located stops. |
+| Biggest repeated lesson | Entries into macro-inflection environments; GPU spot compression as thesis-health signal; thesis invalidation ≠ stop price |
+
+⚠️ trades.jsonl defect persists: 6 bull-tagged records (4 buys, 2 stop_fills) vs 6 closed trades. Missing: AMZN/AVGO/NVDA(1)/MSFT buys and exits. closed-trades.md remains authoritative until JSONL gap is closed.
+
+Cross-check: closed-trades.md has 6 entries (AMZN, AVGO, NVDA×1, MSFT, META, NVDA×2). trades.jsonl has 2 stop_fill records (META, NVDA×2). **Ledger inconsistency persists** — flagged again.
+
+### Process audit
+
+| Check | Result | Grade |
+|-------|--------|-------|
+| Cash drag (73.87% vs 10–20% target for 3 positions) | Justified: LRCX ATR gate reset June 26 (10%+ move); PWR ATR elevated + insider selling; risk-off AI selloff week made new entries inappropriate | ✓ Justified |
+| Sector caps | Healthcare 12.15%, Financials 7.44%, Energy/Utilities 6.55% — all far below 60% cap | ✓ |
+| Stop discipline | 4/4 confirmed all 4 trading days this week; NVDA stop fired correctly June 25 | ✓ PERFECT |
+| NVDA exit post-mortem | closed-trades.md ✓; lesson in lessons.md ✓; no silent loss | ✓ |
+| Weekly new-position count | 0/3 slots — explicitly justified (ATR gates, risk-off) | ✓ Justified |
+| Thesis contracts | LLY review_by July 1 (Monday pre-market June 30 MANDATORY), V July 28, VST July 7 — all tracked | ✓ |
+| VST buffer | 1.86% at Friday close — CRITICAL ⚠️⚠️ — stop may fire Monday open | ⚠️ Monitor |
+| Drawdown CB | $99,707.74 vs HWM $101,384.21 = −1.654% — NOT triggered (8.346pp headroom) | ✓ |
+
+### What worked
+
+- **Cash shield absorbed the AI/tech selloff brilliantly.** SPY fell −2.379% this week; Bull rose +0.674%. Bull outperformed by +3.05pp — the single largest weekly outperformance since inception. This is the third consecutive demonstration of the cash cushion's protective value in down markets (June 5, June 9, and now June 23-26).
+- **LLY Medicare Bridge catalyst confirmed:** LLY surged +7.44% on June 26 alone (to $1,215 = +11.11% from entry), reaching a new all-time position high at $1,215.76. Leerink PT raised to $1,232. The thesis has triple-confirmed: GLP-1 access expansion at $50/month for ~20M Medicare Part D patients is a durable revenue catalyst. Stop auto-ratcheted to $1,094.18 (9.69% buffer).
+- **VST Helix+Cogentrix thesis intact.** Despite −2.62% on June 26 (risk-off AI selloff), VST is +9.78% from entry and outperforming the broader market YTD. Nuclear PPAs with Meta/AWS are long-duration fixed-rate cash flows — non-correlated to AI semi selling pressure.
+- **V showing defensive strength.** V was up +2.10% on June 26 (defensives outperforming broad market weakness). +4.29% from entry; payments infrastructure thesis intact. The broad tech selloff is actually thesis-confirming for Visa — the company is infrastructure, not momentum.
+- **NVDA exit was clean and rule-based.** The thesis break (close below $200 invalidation on June 24) was identified immediately. Stop fired June 25 at $192.546. Post-mortem and lesson completed. No emotional override or rationalization. System worked as designed.
+- **Sector diversification delivered.** Healthcare + Financials + Energy/Utilities provided positive to neutral performance while AI semis were in freefall. This is the diversification strategy working as designed.
+
+### What didn't work
+
+- **0 new positions for 3rd consecutive week (weeks 4, 5, 6):** Cash at 74% remains the portfolio's largest structural drag. The ATR gates (LRCX) and elevated risk (PWR insider selling) are legitimate barriers, but the pipeline needs refreshing. We need qualifying candidates for the week of June 30.
+- **NVDA (second time) −9.78% in 3 days:** A second failed NVDA position in 5 weeks. The core lesson stands: GPU spot price compression was the leading indicator we didn't adequately monitor in real-time. BofA PT of $350 did not account for the fundamental margin pressure in GPU compute pricing. Two NVDA failures point to an entry discipline issue — we were drawn to the NVDA story twice and both times the macro/technical backdrop was deteriorating.
+- **Win rate 0/6:** Six closed trades, zero wins. While all exits were rule-based and disciplined, the underlying entry quality needs improvement. The losses range from −0.70% to −9.78%. The pattern: strong theses but wrong macro timing. Bull's edge must come from entry timing as well as thesis quality.
+- **VST stop buffer CRITICAL at 1.86%:** The position fell −2.62% on June 26 (Friday close). Stop is at $160.33; VST closed $163.37. A Monday gap-down of just 1.9% fires the stop. If the stop fires, the realized P/L on VST would be +$578.20 (+9.71%) — a win. But the thesis is intact and it would be a forced exit by a very thin margin.
+
+### Macro context (week of June 23-26, 2026)
+
+- **AI/tech selloff (June 23-26):** OpenAI IPO delay + AI valuation concerns drove broad AI-related selling. LRCX −10%+, chip stocks broadly down. Nasdaq composite −4%+ on the week. S&P 500 down ~2.4%.
+- **PCE inflation 4.1% YoY (highest since April 2023):** Released June 25. Hawkish surprise — above expectations. Reinforces higher-for-longer rates. Kevin Warsh comments interpreted hawkish.
+- **10yr yield:** ~4.44-4.49% range this week — below 4.75% gate ✓. Monitoring.
+- **Iran peace deal holding:** Strait of Hormuz open; WTI ~$80/bbl. No energy supply shock.
+- **GOOGL Dow Jones inclusion:** Effective June 29 (Monday). Positive for GOOGL passive flows.
+- **Sector rotation:** Away from growth/tech into healthcare, industrials, and defensives. LLY was a standout performer. This benefits Bull's current portfolio.
+
+### Aggressive Bull lesson (section 7b)
+
+**AGGRO performance week 4 (June 22-26):**
+- AGGRO June 19: $97,006.60 | AGGRO June 26: $90,582.08
+- **AGGRO weekly return: −6.62%** (vs Bull +0.674%)
+- AGGRO since inception (June 4, $100,000): **−9.418%**
+- SPY since June 4 (anchor $754.18 + $1.76 div): ($728.99 + $1.76) / $754.18 − 1 = **−3.107% TR**
+- AGGRO alpha vs SPY since June 4: **−6.311pp**
+- Cautious Bull since June 4 ($99,820.82 → $99,707.74): **−0.113%**
+- **Cautious Bull LEADS AGGRO by +9.305pp since June 4 inception**
+
+**AGGRO Week 4 key events:**
+1. **MSFT −13.62% cut (June 22):** FOMC hawkish dot-plot multiple compression → -12% midday rule triggered. Proactive trim June 18 helped reduce damage. Lesson: thin buffer + tech selloff + FOMC hawkish = exit at market-open, not wait for midday.
+2. **META −9.84% proactive exit (June 23):** AGGRO applied the MSFT lesson the very next day — buffer <1pp + Nasdaq −1.19% pre-market → proactive exit at open. This saved ~$230 vs mechanical midday cut.
+3. **MRVL −7.80% trailing stop (June 24):** 18% stop fired after stock peaked +12.5% then reversed in Asian semi rout. Exit correct — stop design captured the upside phase.
+4. **ETN added June 25 (Eaton, AI power infrastructure):** AGGRO opened new position at $419.54 (34 shares, ~$14,263 = 15.75% portfolio). Thesis: Eaton electrical equipment is critical-path input to hyperscale data centers. Down −4.019% after one day in the risk-off selloff. NVDA, AVGO critically thin at end of week (1.59pp and 2.06pp buffers).
+
+**Lesson for Cautious Bull from AGGRO week 4:**
+The AGGRO week 4 confirmed a pattern across 3 consecutive exits: in a high-inflation (PCE 4.1%), hawkish-Fed, tech-selloff environment, wide 18% stops DO NOT prevent large losses — they just delay the inevitable and produce worse exits (MSFT −13.62%, META −9.84%) compared to the pre-emption rule at <2pp buffer. Cautious Bull's 10% stops with the existing proactive-trim rule (lessons.md June 19) are structurally correct. No rule change needed — but the proactive-trim rule from June 19 should be applied rigorously: if any position's trailing-stop buffer falls to <2pp above the mandatory-cut threshold, execute a 25% proactive trim.
+
+**ETN as new watchlist candidate:** Eaton (ETN) is AGGRO's new position. AI power infrastructure thesis is legitimate — electrical equipment is the critical bottleneck for hyperscale data center expansion as GPU density increases. At $419.54 (AGGRO fill June 25), it's a reasonable entry IF the risk-off environment stabilizes. For Cautious Bull: add to watchlist with ATR gate (down −4%+ today; need calm sessions before entry). Catalyst: AI capex supercycle; no specific expiry.
+
+**Cross-Bull learning counter update:**
+- AGGRO is BEHIND Cautious Bull by **9.305pp** since June 4 inception. AGGRO is NOT beating Cautious.
+- Trigger: AGGRO must LEAD Cautious by >5pp for 2 consecutive weeks — **condition NOT met**.
+- Counter = **0**
+- `CROSS_BULL_LEARNING:` in control.md: **unchanged** (blank = not triggered; human controls this file).
+
+### Strategy adjustments for week of June 30+
+
+1. **LLY Medicare Bridge July 1 — MANDATORY pre-market June 30 decision.** LLY rallied strongly on the bridge launch; thesis is confirming. With stop buffer at 9.69% and LLY +11.11%, the most likely outcome is HOLD with stop ratcheting up naturally. But must make explicit hold/trim/exit decision at pre-market June 30 — not a default.
+
+2. **VST stop CRITICAL at 1.86% buffer going into Monday:** If VST gaps down at open, stop may fire. Thesis is intact (Helix+Cogentrix, nuclear PPAs, analyst PTs $212-$230). If stop fires, the realized P/L would be +$578 (+9.71%) — a WIN on the trade. Accept the outcome; do not override the stop manually unless there is a specific pre-market thesis confirmation that warrants discretionary action.
+
+3. **LRCX ATR gate completely reset by June 26 selloff (−10%+):** Fresh 3 consecutive ≤3% sessions needed from June 29. Earliest entry July 7+. Update watchlist entry.
+
+4. **ETN (Eaton) to watchlist:** AI power infrastructure; down −4% June 26 in risk-off; ATR elevated. Add with catalyst expiry "AI capex supercycle, ongoing; wait for ATR ≤3% for 3 sessions." Earliest entry week of July 7+.
+
+5. **NVDA removal from watchlist:** Second failed trade in 5 weeks. GPU spot price compression (-31% in 3 weeks) is a fundamental thesis concern that is NOT resolved. Remove from watchlist until GPU compute spot prices recover materially (e.g., B200 spot back above $5.50/hr) or a confirmed new demand catalyst emerges (major hyperscaler commitment).
+
+6. **Cash deployment discipline:** At 74% cash with 3 well-performing positions, the week of June 30 should produce at least ONE qualifying entry if market conditions permit (VST may stop out, LRCX gate potentially clearing week of July 7). Target: add 1-2 new positions in weeks 7-8 to reduce cash drag toward the 40-50% range.
+
+---
+
 ## Week ending 2026-06-19 (Week 5 — 3 active trading days: Mon Jun 16, Tue Jun 17, Wed Jun 18; Jun 19 Juneteenth holiday)
 
 - **Bull return (week):** +0.397% ($98,648.01 → $99,039.61)
