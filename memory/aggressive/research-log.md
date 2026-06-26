@@ -2546,3 +2546,188 @@ EXECUTED: 2026-06-24T13:46:00Z (no trades planned — cash held ahead of Micron 
 }
 ```
 EXECUTED: 2026-06-25T13:52:50Z
+
+---
+
+## 2026-06-26 — WEEK 5 PRE-MARKET (Friday — End of Week 5)
+[search: WebSearch fallback — MiniMax M3 not available]
+
+### Portfolio snapshot (live Alpaca data, ~8:00 AM ET)
+
+| Field | Value |
+|---|---|
+| Equity | USD 91,396.91 |
+| Cash | USD 22,458.29 (24.6%) |
+| Long market value | USD 68,938.62 |
+| last_equity (June 25 close — Alpaca authoritative) | USD 92,173.79 |
+| Pre-market P/L vs last_equity | **-USD 776.88 (-0.843%)** |
+| HWM | USD 101,144.73 |
+| Drawdown from HWM | **-9.638%** (circuit breaker -20% — NOT triggered; 10.362pp headroom) |
+
+**Shock check:** -0.843% vs threshold -6% → NOT triggered ✓
+
+**Live positions (June 26 pre-market):**
+
+| Symbol | Qty | Avg Entry | Pre-mkt Price | Market Value | Unrealized P/L | P/L % | -12% Cut Trigger | Buffer | Rating |
+|---|---|---|---|---|---|---|---|---|---|
+| NVDA | 103 | USD 213.60 | USD 193.58 | USD 19,938.74 | -USD 2,062.06 | **-9.373%** | USD 187.97 | **2.627pp ⚠️⚠️** | A |
+| AVGO | 34 | USD 406.23 | USD 372.60 | USD 12,668.40 | -USD 1,143.42 | **-8.279%** | USD 357.48 | **3.721pp ⚠️** | A |
+| ETN | 34 | USD 419.54 | USD 414.19 | USD 14,082.46 | -USD 181.90 | **-1.275%** | USD 369.20 | 10.725pp | A |
+| GOOGL | 16 | USD 370.22 | USD 341.40 | USD 5,462.40 | -USD 461.12 | **-7.785%** | USD 325.79 | **4.215pp ⚠️** | A |
+| AMZN | 36 | USD 247.99 | USD 227.80 | USD 8,200.80 | -USD 726.88 | **-8.142%** | USD 218.23 | **3.858pp ⚠️** | A |
+| VST | 52 | USD 151.47 | USD 165.112 | USD 8,585.82 | +USD 709.38 | **+9.006% ✅** | USD 133.29 | 22.71pp | A |
+
+**Stop audit (June 26 pre-market): ALL 6 CONFIRMED LIVE ✓**
+
+| Symbol | Stop Order ID | HWM | Stop Price | Trail % | Status |
+|---|---|---|---|---|---|
+| NVDA | `54d7d851` | USD 221.60 | USD 181.712 | 18% | ✓ live |
+| AVGO | `36f5a45f` | USD 426.48 | USD 349.7136 | 18% | ✓ live |
+| ETN | `abdc232b` | USD 426.00 | USD 349.32 | 18% | ✓ live |
+| GOOGL | `e52a43f1` | USD 375.77 | USD 308.1314 | 18% | ✓ live |
+| AMZN | `b55bef05` | USD 250.43 | USD 205.3526 | 18% | ✓ live |
+| VST | `5b347be3` | USD 171.35 | USD 140.507 | 18% | ✓ live |
+
+---
+
+### Drawdown circuit breaker check (June 26)
+- Equity history HWM: USD 101,144.73 (set June 4)
+- Current equity: USD 91,396.91
+- Drawdown from HWM: **-9.638%**
+- Circuit breaker threshold: -20%
+- **Status: NOT TRIGGERED. Normal operation continues. 10.362pp headroom.**
+
+---
+
+### Market posture (June 26, 2026)
+**Overall: RISK-OFF. Global semiconductor selloff accelerating. AI cost scrutiny pressure.**
+
+- **Global selloff:** South Korea Kospi -8%, Japan Nikkei -5% Friday. Semiconductor weakness spreading globally. Tech sector under broad pressure.
+- **AI cost narrative shift:** Concern shifting from AI demand to AI infrastructure costs (Apple -6% after MacBook/iPad price hikes; Microsoft -3% after Xbox price hike). Rising semiconductor costs seen potentially squeezing margins for tech sector broadly. This is a narrative/sentiment rotation, not a fundamental earnings reversal.
+- **S&P 500 futures:** -0.37% pre-market. Only 40% probability of positive open (Polymarket). Cautious start to Friday trading.
+- **University of Michigan consumer sentiment:** June final print due today — potential sentiment catalyst.
+- **End of Week 5 (June 22-26):** Q2 ends June 30 (Tuesday) — quarterly index rebalancing pressure next week. GOOGL Dow Jones addition effective June 29 (Monday) — positive catalyst arriving TODAY (last trading day before effective date) and next Monday.
+- **Macro:** PCE 4.1% (reported June 25) already priced in. Oil stable ~USD 70/bbl. Fed on hold at 3.5-3.75%.
+- **Source:** Benzinga June 26, 2026; Investing.com; Yahoo Finance.
+- **Date of facts:** June 26, 2026 pre-market.
+
+---
+
+### Held positions — "what changed since yesterday"
+
+**NVDA — Thesis: INTACT. CRITICAL BUFFER 2.627pp ⚠️⚠️**
+- *What changed:* Pre-market -1.104% (193.58 vs lastday 195.74) in global semi rout. No new negative thesis events. Strong Buy consensus unchanged (59 analysts, avg target USD 298.93). Next earnings August 26, 2026 — that is the natural thesis catalyst, 61 days away. Intraday range today: USD 192.13–200.80 (from search).
+- Buffer: **2.627pp** — the tightest it has been. Proactive trim heuristic check: (1) buffer < 3pp MET, (2) review_by within 5 trading days NOT MET (July 9 is ~9 trading days away), (3) no near-term catalyst within 2 days MET. Heuristic formally requires ALL 3 — condition 2 not met. **Heuristic NOT triggered.** However this buffer is CRITICAL — one 2.6% down open would push NVDA to midday forced-cut territory.
+- Primary thesis invalidation: Hyperscaler GPU share reversal — NOT occurring. No hyperscaler has announced reduction in NVDA spend; all capex guidance intact.
+- Invalidation check: ✓ Not triggered.
+- Review by: July 9. ✓ Not expired.
+- **Action: HOLD. But flag for CLOSE WATCH at midday.**
+- Source: Yahoo Finance, Benzinga, June 26, 2026.
+
+**AVGO — Thesis: INTACT. Buffer 3.721pp ⚠️**
+- *What changed:* Pre-market -1.665% (372.60 vs lastday 378.91). Intraday range today: USD 372.70–389.93 (from search). OpenAI Jalapeño chip news (Broadcom built first OpenAI custom AI inference chip, tape-out to deployment in 9 months with Microsoft) remains a major thesis confirmation — AI customer chip pipeline expanding. 26 analysts Buy consensus. AI revenue Q3 guide USD 16B (+200% YoY) intact.
+- Buffer: 3.721pp — above 3pp, proactive trim heuristic NOT triggered.
+- Invalidation check: AI revenue guide not cut. ✓ Not triggered.
+- Review by: July 9. ✓ Not expired.
+- **Action: HOLD.**
+- Source: Heygotrade.com, public.com, June 25-26, 2026.
+
+**ETN — Thesis: INTACT. Buffer 10.725pp**
+- *What changed:* Pre-market -1.353% (414.19 vs lastday 419.87). Eaton announced merger of mobility business with Dana (USD 5.1B deal) — refocusing ETN on electrical and aerospace = POSITIVE for our AI infrastructure thesis (less exposure to automotive/trucks, more focused on data center power). Record Q1 2026 results: USD 7.5B revenue +17%. Confirmed NVIDIA and Siemens Energy partnerships. Analysts: ETN 6.6% undervalued as data center demand lifts narrative.
+- Buffer: 10.725pp — ample room.
+- Invalidation check: No AI capex reversal, ETN well above USD 332 cut trigger. ✓ Not triggered.
+- Review by: July 9. ✓ Not expired.
+- **Action: HOLD.**
+- Source: Yahoo Finance, Tradingkey.com, June 22-26, 2026.
+
+**GOOGL — Thesis: INTACT. Buffer 4.215pp. DJIA CATALYST TODAY ✅**
+- *What changed:* Pre-market -0.672% (341.40 vs lastday 343.71). Intraday range today: USD 335.84–345.57. **KEY POSITIVE CATALYST: Alphabet joins Dow Jones Industrial Average effective June 29 (Monday). Today (June 26, Friday) is the LAST TRADING DAY before the effective date — DJIA index funds must complete mandatory buying by June 29 open. Passive buying expected to provide intraday support.** Waymo robotaxi Germany expansion = AI/autonomous thesis. Strong Buy consensus: 56 analysts, avg target USD 432.83. GCP +63% YoY thesis intact.
+- Buffer: 4.215pp — above 3pp, proactive trim heuristic NOT triggered.
+- **Review_by July 2 — MANDATORY DECISION at next pre-market (June 30 Monday).** 4 trading days from now. The June 30 routine MUST make an explicit hold/trim/exit decision. The DJIA mandatory buying will have closed by then — assess whether buffer has recovered post-inclusion.
+- Invalidation check: GCP not decelerating, TPU not cancelled. ✓ Not triggered.
+- **Action: HOLD. Flag July 2 review for June 30 pre-market.**
+- Source: Yahoo Finance, CNBC, June 26, 2026.
+
+**AMZN — Thesis: INTACT. Buffer 3.858pp ⚠️. PRIME DAY ENDS TODAY ✅**
+- *What changed:* Pre-market +0.348% (227.80 vs lastday 227.01) — one of only positive movers today! **POSITIVE CATALYST: Prime Day 2026 closes today (June 23-26), with Adobe Analytics projecting record USD 26.3B spending across 4 days, Amazon capturing ~60% (~USD 15.8B).** This is a clean thesis confirmation for ad + retail + AWS co-selling momentum. AWS India: USD 13B additional investment in AI/cloud infrastructure 2026-2030. Stock price range today: USD 225.56–233.65. Strong Buy consensus, avg target USD 316.04 (+39% upside).
+- Buffer: 3.858pp — above 3pp, proactive trim heuristic NOT triggered.
+- Invalidation check: AWS growth not decelerating. ✓ Not triggered.
+- Review by: July 7. ✓ Not expired.
+- **Action: HOLD.**
+- Source: Motley Fool, MarketScreener, June 24-26, 2026.
+
+**VST — Thesis: INTACT. Buffer 22.71pp ✅**
+- *What changed:* Pre-market -1.584% (165.112 vs lastday 167.77). Morgan Stanley lowered PT slightly from USD 212 to USD 210 (minimal; still well above current ~USD 165). +10% past 2 months vs utilities sector flat. Analysts emphasize AI data center electricity demand as structural driver. Earnings August 6, 2026 — no earnings window risk. Helix consortium (KKR + NVDA + KIA + VST) intact.
+- Buffer: 22.71pp — leading portfolio performer, ample cushion.
+- Invalidation check: Nuclear PPAs not cancelled. ✓ Not triggered.
+- Review by: July 15. ✓ Not expired.
+- **Action: HOLD.**
+- Source: Seeking Alpha, Yahoo Finance, June 25-26, 2026.
+
+---
+
+### Thesis contract review (June 26)
+| Symbol | Review By | Invalidation | Buffer | Status |
+|---|---|---|---|---|
+| NVDA | July 9 | Hyperscaler GPU share reverses | **2.627pp ⚠️⚠️** | ✓ Intact — global semi rout is macro, not NVDA-specific |
+| AVGO | July 9 | AI revenue decelerates | **3.721pp ⚠️** | ✓ Intact — OpenAI Jalapeño confirms AI chip pipeline expansion |
+| ETN | July 9 | ETN below USD 332 OR AI capex reverses | 10.725pp | ✓ Intact — Dana mobility merger refocuses ETN on electrical; NVIDIA partnership |
+| GOOGL | **July 2 ⚠️** | GCP decelerates OR TPU cancelled | **4.215pp ⚠️** | ✓ Intact — DJIA addition June 29 catalyst; GCP thesis unchanged |
+| AMZN | July 7 | AWS <20% YoY | **3.858pp ⚠️** | ✓ Intact — Prime Day record USD 26.3B ends today; AWS India USD 13B |
+| VST | July 15 | Nuclear PPAs cancelled | 22.71pp | ✓ Intact — Helix consortium; 89% earnings growth forecast |
+
+**⚠️ CRITICAL: GOOGL review_by July 2 — mandatory hold/trim/exit decision required at June 30 pre-market (4 trading days from now).**
+**⚠️ CRITICAL: NVDA at 2.627pp buffer — midday close risk if down another ~2.6% at entry vs entry from open.**
+
+---
+
+### Earnings window check (June 26)
+| Symbol | Next Earnings | Within 2 Trading Days? |
+|---|---|---|
+| NVDA | August 26, 2026 | ✗ No risk |
+| AVGO | September 3, 2026 | ✗ No risk |
+| ETN | ~August 4, 2026 | ✗ No risk |
+| GOOGL | July 28, 2026 | ✗ No risk |
+| AMZN | July 30, 2026 | ✗ No risk |
+| VST | August 6, 2026 | ✗ No risk |
+
+**No earnings window risk for any position. ✓**
+
+---
+
+### Deployment check (June 26)
+- **Cash:** USD 22,458.29 (24.6% of equity) — above 20% threshold → MUST deploy or explicitly journal why holding back.
+- **Explicit decision: NO NEW BUYS TODAY.**
+  - NVDA at 2.627pp buffer is the most stressed position since MSFT's pre-forced-exit period. Deploying cash into a global semiconductor selloff with NVDA at 2.627pp, AVGO at 3.721pp, AMZN at 3.858pp = three positions within 4pp of forced cuts = wrong risk management.
+  - Global selloff: Kospi -8%, Nikkei -5%, S&P futures -0.37%. This is not a constructive deployment environment.
+  - Today is end of Week 5, end of Q2 approaches (June 30) — quarterly index rebalancing pressure next week.
+  - If NVDA triggers the midday cut today, cash rises to ~35% — correct posture for reassessing at June 30 pre-market with fresh information.
+  - Idle cash 24.6% is a deliberate risk-management buffer, not idle indecision.
+
+---
+
+### Proactive trim heuristic review (June 26)
+| Symbol | Buffer | Condition 1 (<3pp) | Review_by ≤5 trading days | No near-term catalyst | Heuristic |
+|---|---|---|---|---|---|
+| NVDA | 2.627pp | ✓ MET | July 9 = ~9 days → NOT MET | ✓ MET | **NOT TRIGGERED** (condition 2 fails) |
+| AVGO | 3.721pp | ✗ NOT MET | — | — | NOT TRIGGERED |
+| AMZN | 3.858pp | ✗ NOT MET | — | — | NOT TRIGGERED |
+| GOOGL | 4.215pp | ✗ NOT MET | — | — | NOT TRIGGERED |
+
+No formal heuristic trigger today. NVDA is the monitoring priority.
+
+---
+
+### No trades planned.
+
+No new positions today. Global selloff, multiple stressed positions, end of week. Cash held as deliberate buffer.
+
+```json
+{
+  "plan_date": "2026-06-26",
+  "trades": []
+}
+```
+
+No trades planned. HOLD all 6 positions. Monitor NVDA at midday closely (buffer 2.627pp).
+
