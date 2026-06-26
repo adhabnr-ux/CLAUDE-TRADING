@@ -2257,3 +2257,62 @@ ETN bought (34 shares at USD 419.54, 15.5% of portfolio, 18% trailing stop at US
 
 ### Result
 All 6 positions within guardrails. No cuts. No stops tightened. Three positions stressed (NVDA 3.44pp, AMZN 3.85pp, GOOGL 4.15pp) — all theses intact per news scan. ETN +4.12% today (non-correlated AI power infra thesis playing out). VST +3.29% continuing to lead. AVGO OpenAI Jalapeño partnership is thesis-positive catalyst. GOOGL Dow Jones addition June 29 approaching. Stop audit 6/6 ✓. PCE tomorrow = macro risk.
+
+---
+
+## 2026-06-26 — MARKET OPEN (~9:48 AM ET)
+
+**No trades executed.** Plan was empty — no new positions today.
+
+### Pre-run checks
+| Check | Result |
+|---|---|
+| Live-switch guard | ALPACA_BASE_URL contains "paper" ✓ |
+| Lock | Written for this run (expires 13:43Z) ✓ |
+| Control switch | STATUS: ACTIVE ✓ |
+| Plan date | June 26, 2026 — matches today ✓ |
+| Plan trades | [] — empty, no trades planned ✓ |
+| Idempotency | No prior EXECUTED: marker ✓ |
+
+### Market & account status
+| Check | Result |
+|---|---|
+| Market open | true (next close 4:00 PM ET) ✓ |
+| Equity | USD 90,644.66 |
+| Last equity (prev close June 25) | USD 92,173.79 |
+| Intraday change | **-1.66%** (shock threshold -6% — NOT triggered ✓) |
+| Cash | USD 22,458.29 (24.77%) |
+| Cash floor (2% min) | ✓ |
+| HWM | USD 101,144.73 |
+| Drawdown from HWM | **-10.38%** (circuit breaker -20% — NOT triggered ✓; 9.62pp headroom) |
+
+### Breaking news gate [search: WebSearch fallback — MiniMax M3 not available]
+No trades planned — breaking news gate informational only.
+- **NVDA (-9.93%):** Pre-market -1.68% today; analyst target USD 298.93, Strong Buy (59 analysts). No hyperscaler GPU share reversal news. Global semiconductor selloff continuation. **Thesis INTACT. HOLD.**
+- **AVGO (-9.92%):** Down -3.42% today (USD 378.91 → USD 365.945). OpenAI Jalapeño chip (built by Broadcom) confirmed — thesis-positive. Analyst target USD 501.58, Buy consensus. AI revenue guide ~USD 16B Q3 intact. **Thesis INTACT. HOLD.**
+
+### Stop audit — 6/6 positions confirmed with live 18% trailing stops ✓
+
+| Symbol | Qty | Current Price | P/L % | Stop Price | Stop Order ID | Buffer to -12% | HWM |
+|---|---|---|---|---|---|---|---|
+| NVDA | 103 | USD 192.39 | **-9.93%** | USD 181.712 (`54d7d851`) | ✓ live | **2.07pp ⚠️⚠️** | USD 221.60 |
+| AVGO | 34 | USD 365.945 | **-9.92%** | USD 349.7136 (`36f5a45f`) | ✓ live | **2.08pp ⚠️⚠️** | USD 426.48 |
+| ETN | 34 | USD 404.60 | -3.56% | USD 349.32 (`abdc232b`) | ✓ live | 8.44pp ✓ | USD 426.00 |
+| GOOGL | 16 | USD 337.435 | **-8.86%** | USD 308.1314 (`e52a43f1`) | ✓ live | **3.15pp ⚠️** | USD 375.77 |
+| AMZN | 36 | USD 227.56 | **-8.24%** | USD 205.3526 (`b55bef05`) | ✓ live | **3.76pp ⚠️** | USD 250.43 |
+| VST | 52 | USD 165.23 | **+9.08% ✅** | USD 140.507 (`5b347be3`) | ✓ live | 21.08pp ✓ | USD 171.35 |
+
+**No stops missing. No stops needing recreation. All 6 positions fully protected.**
+
+**Critical: NVDA (2.07pp) and AVGO (2.08pp) are the most stressed — midday routine MUST check these first. A 2.1% further decline in either fires the -12% mandatory cut.**
+
+### Performance vs SPY
+| Metric | Value |
+|---|---|
+| Equity | USD 90,644.66 |
+| Aggro return since inception | **(90,644.66 − 100,000) / 100,000 = -9.355%** |
+| SPY anchor | USD 754.18 (June 3, 2026) |
+| SPY current | USD 729.24 (-0.56% today) |
+| SPY since inception | **(729.24 − 754.18) / 754.18 = -3.308%** |
+| Alpha since inception | **-6.047pp** |
+| Today change vs last_equity | -1.66% vs SPY -0.56% → **-1.10pp today** |

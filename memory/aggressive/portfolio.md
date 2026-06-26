@@ -6,6 +6,90 @@ but always re-fetches live data before trading._
 
 ---
 
+## Last snapshot — 2026-06-26 MARKET-OPEN (~9:48 AM ET)
+
+| Field | Value |
+|---|---|
+| Equity | USD 90,644.66 |
+| Cash | USD 22,458.29 (24.77%) |
+| Long market value | USD 68,186.37 |
+| Open positions | 6 |
+| last_equity (June 25 close — Alpaca authoritative) | USD 92,173.79 |
+| Intraday P/L vs last_equity | **-USD 1,529.13 (-1.659%)** |
+| HWM | USD 101,144.73 |
+| Drawdown from HWM | **-10.382%** (circuit breaker -20% — NOT triggered; 9.618pp headroom) |
+
+**Shock check:** -1.659% vs threshold -6% → NOT triggered ✓
+
+**Open positions (June 26 market-open ~9:48 AM ET):**
+
+| Symbol | Qty | Avg Entry | Current Price | Market Value | Unrealized P/L | P/L % | -12% Cut Trigger | Buffer | Rating |
+|---|---|---|---|---|---|---|---|---|---|
+| NVDA | 103 | USD 213.60 | USD 192.39 | USD 19,816.17 | -USD 2,184.63 | **-9.930%** | USD 187.97 | **2.07pp ⚠️⚠️** | A |
+| AVGO | 34 | USD 406.23 | USD 365.945 | USD 12,442.13 | -USD 1,369.69 | **-9.917%** | USD 357.48 | **2.08pp ⚠️⚠️** | A |
+| ETN | 34 | USD 419.54 | USD 404.60 | USD 13,756.40 | -USD 507.96 | **-3.561%** | USD 369.20 | 8.44pp ✓ | A |
+| GOOGL | 16 | USD 370.22 | USD 337.435 | USD 5,398.96 | -USD 524.56 | **-8.856%** | USD 325.79 | **3.15pp ⚠️** | A |
+| AMZN | 36 | USD 247.99 | USD 227.56 | USD 8,192.16 | -USD 735.52 | **-8.239%** | USD 218.23 | **3.76pp ⚠️** | A |
+| VST | 52 | USD 151.47 | USD 165.23 | USD 8,591.95 | +USD 715.51 | **+9.084% ✅** | USD 133.29 | 21.08pp ✓ | A |
+
+**CRITICAL: NVDA (2.07pp) and AVGO (2.08pp) — midday cut fires if either drops ~2.1% more from entry. MOST STRESSED positions since inception.**
+**AVGO down -3.42% today (USD 378.91 → USD 365.945) — accelerating selloff.**
+
+**Stop audit (June 26 market-open): ALL 6 CONFIRMED LIVE ✓**
+
+| Symbol | Stop Order ID | HWM | Stop Price | Trail % | Status |
+|---|---|---|---|---|---|
+| NVDA | `54d7d851` | USD 221.60 | USD 181.712 | 18% | ✓ live |
+| AVGO | `36f5a45f` | USD 426.48 | USD 349.7136 | 18% | ✓ live |
+| ETN | `abdc232b` | USD 426.00 | USD 349.32 | 18% | ✓ live |
+| GOOGL | `e52a43f1` | USD 375.77 | USD 308.1314 | 18% | ✓ live |
+| AMZN | `b55bef05` | USD 250.43 | USD 205.3526 | 18% | ✓ live |
+| VST | `5b347be3` | USD 171.35 | USD 140.507 | 18% | ✓ live |
+
+**Thesis contracts (June 26 market-open):**
+| Symbol | Review By | Invalidation | Status |
+|---|---|---|---|
+| NVDA | July 9 | Hyperscaler GPU share reverses | ✓ Intact — -9.930%; 2.07pp buffer ⚠️⚠️; global semi selloff, no NVDA-specific news; analyst target USD 298.93 |
+| AVGO | July 9 | AI revenue decelerates | ✓ Intact — -9.917%; 2.08pp buffer ⚠️⚠️; OpenAI Jalapeño = thesis-CONFIRMED; down -3.42% today |
+| ETN | July 9 | ETN below USD 332 OR AI capex reverses | ✓ Intact — -3.561%; 8.44pp buffer ✓ |
+| GOOGL | **July 2 ⚠️** | GCP decelerates OR TPU cancelled | ✓ Intact — -8.856%; 3.15pp buffer ⚠️; DJIA addition June 29 catalyst; review_by July 2 = 4 trading days |
+| AMZN | July 7 | AWS <20% YoY | ✓ Intact — -8.239%; 3.76pp buffer ⚠️; Prime Day ended yesterday |
+| VST | July 15 | Nuclear PPAs cancelled | ✓ Intact — +9.084% ✅; 21.08pp buffer; Helix consortium intact |
+
+**Conviction ratings (June 26 market-open):**
+| Symbol | Rating | Notes |
+|---|---|---|
+| NVDA | A | AI GPU thesis intact; -9.930%; 2.07pp buffer ⚠️⚠️; no hyperscaler defection; Aug 26 earnings |
+| AVGO | A | AI revenue +143% YoY; -9.917%; 2.08pp buffer ⚠️⚠️; OpenAI Jalapeño = thesis-CONFIRMED; -3.42% today |
+| ETN | A | AI power infra; -3.561%; 8.44pp buffer ✓ |
+| GOOGL | A | GCP +63%; -8.856%; 3.15pp buffer ⚠️; DJIA inclusion June 29; review_by July 2 (4 days) |
+| AMZN | A | AWS +28%; -8.239%; 3.76pp buffer ⚠️; Prime Day closed yesterday |
+| VST | A | +9.084% ✅; 21.08pp buffer ✓; leading performer; Helix intact |
+
+**Sector exposure (June 26 market-open):**
+| Sector | Names | Market Value | % of Equity |
+|---|---|---|---|
+| Technology — semis | NVDA, AVGO | USD 32,258.30 | 35.6% |
+| Technology — hyperscalers | GOOGL, AMZN | USD 13,591.12 | 15.0% |
+| Industrials/Power Infra | ETN | USD 13,756.40 | 15.2% |
+| Utilities/Power | VST | USD 8,591.95 | 9.5% |
+| Cash | — | USD 22,458.29 | 24.77% |
+
+**Performance vs SPY (June 26 market-open):**
+| Metric | Value |
+|---|---|
+| Equity | USD 90,644.66 |
+| Aggro return since inception | **(90,644.66 − 100,000) / 100,000 = -9.355%** |
+| SPY anchor | USD 754.18 (June 3, 2026) |
+| SPY current | USD 729.24 |
+| SPY since inception | **(729.24 − 754.18) / 754.18 = -3.308%** |
+| Alpha since inception | **-6.047pp** |
+| Intraday change vs last_equity | -1.659% vs SPY -0.559% → -1.10pp today |
+
+_Market-open June 26: Global semiconductor selloff continues — AVGO dropped -3.42% today alone. NVDA and AVGO both at ~2.07-2.08pp buffer from -12% mandatory midday cut. No trades executed (plan was empty). All 6 trailing stops confirmed live 6/6. Cash 24.77%. GOOGL review_by July 2 = 4 trading days. Midday routine MUST check NVDA and AVGO FIRST — a 2.1% further drop in either from entry triggers forced exit. VST +9.08% is the lone outperformer. Drawdown from HWM -10.38% (10pp headroom before circuit breaker). No shock, no circuit breaker triggered. Control: ACTIVE._
+
+---
+
 ## Last snapshot — 2026-06-26 PRE-MARKET (~8:00 AM ET)
 
 | Field | Value |
