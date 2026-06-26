@@ -221,9 +221,26 @@ This is NOT a hard rule — it is a discretionary risk management tool. A trim r
   - ETN (Eaton): AI power infrastructure; no binary earnings risk this week
   - GOOGL add: only if buffer recovers above 8pp (need margin before another add)
 - **Drawdown -7.762% from HWM** (USD 101,144.73). Circuit breaker at -20% = 12.238pp headroom. Shock check: intraday +0.448% vs last_equity. No action required.
-- **Stop audit:** 6/6 live stops confirmed (MRVL, GOOGL, AMZN, AVBO, NVDA, VST).
+- **Stop audit:** 6/6 live stops confirmed (MRVL, GOOGL, AMZN, AVGO, NVDA, VST).
 - **Conviction ratings (June 24):** NVDA A, AVGO A, AMZN A, GOOGL A, VST A, MRVL A.
 - **Alpha since inception: -3.975pp** (Aggro -6.706% vs SPY -2.731%).
+
+---
+
+## Week 5 priorities (as of 2026-06-26 weekly review — FINAL)
+
+- **AVGO (1.593pp buffer — HIGHEST ALERT 🚨):** -10.39% from entry USD 424.01. OpenAI 'Jalapeño' custom chip = thesis-positive; but macro AI cost concerns dominate. Buffer 1.593pp = 1 bad session from forced midday cut at USD 357.48. Pre-market June 29: check AVGO price FIRST. If opens down >1.5% AND no thesis-reversal catalyst → proactive trim at open (per MSFT/META lesson). If buffer falls below 1pp AND tape is risk-off → full exit, not trim.
+- **NVDA (2.061pp buffer — HIGHEST ALERT 🚨):** -10.09% from entry ~USD 213.42. Down -8.31% for the week on AI sector selloff. Buffer 2.061pp = one -2.3% session fires midday cut. Same protocol as AVGO. June 29 pre-market: check NVDA second (after AVGO). AI hyperscaler GPU demand intact; this is multiple compression, not demand destruction.
+- **GOOGL (3.054pp buffer — URGENT DECISION):** -8.84% from entry. DJIA inclusion effective June 29 (positive passive buying catalyst). Review_by July 2 = 3 trading days. Must write explicit hold/trim/exit at June 29 pre-market. If DJIA buying stabilizes price this week → HOLD with review_by extended. If buffer continues compressing below 3pp → proactive trim heuristic applies.
+- **ETN (-3.73% from entry USD 419.54):** AI power infrastructure thesis intact. New position June 25; ATH was June 22 ($435.78) — we entered post-ATH at reasonable pullback. Monitoring required; if AI capex cost concerns continue, ETN could approach -7pp range by midweek.
+- **AMZN (-6.37% from entry, 5.63pp buffer):** Prime Day record $26.3B confirms AWS + AI shopping thesis. $48B India AI/cloud investment. Buffer adequate. Review_by July 7. A-rated.
+- **VST (+7.74% from entry, only winner):** Nuclear PPA thesis outperforming. Bernstein Outperform/$187 PT. Trailing stop ratcheted to lock in gains. Review_by July 15. A-rated. This is the model for Week 5+ watchlist additions.
+- **No new positions until AVGO/NVDA resolve.** Deploying when 2 of 6 positions are within 2.5pp of forced cuts adds correlation risk. Cash 24.78% (USD 22,458) — preserve it.
+- **Drawdown: -10.43% from HWM** (USD 101,144.73). Circuit breaker at -20% = 9.57pp headroom. NOT near CB (5pp threshold not breached). Monitor weekly.
+- **Process lesson hardened:** When buffer was <2pp at prior close AND conditions unchanged → execute exit at pre-market open REGARDLESS of whether pre-market price is marginally above trigger. The MSFT 11-cent miss repeated the Week 3 mistake. This rule is now absolute.
+- **Alpha since inception: -6.07pp** (Aggro -9.41% vs SPY -3.34%). Widened significantly this week.
+- **Conviction ratings (June 26 EOD):** ETN A, VST A, AMZN A, GOOGL B+ (DJIA inclusion buffer), NVDA B (2.061pp buffer ⚠️), AVGO B (1.593pp buffer ⚠️🚨).
+- **Watchlist for new entries (post-AVGO/NVDA resolution):** Healthcare (sector rotation leader this week), utility/power infrastructure (VST-type, non-correlated), industrials with AI infrastructure exposure (ETN model). Prioritize names compatible with hawkish rate regime (real assets, pricing power, lower P/E).
 
 ---
 

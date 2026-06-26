@@ -5,6 +5,91 @@ return, SPY return, result, A–F grade, what worked, what didn't, adjustments._
 
 ---
 
+## Week 4 — 2026-06-22 through 2026-06-26
+
+**Period**: June 22–26, 2026 (5 trading days)
+
+| Metric | Value |
+|---|---|
+| Aggro return this week | **-6.61%** (equity: USD 97,006.60 → USD 90,593.57) |
+| SPY return this week | **-2.38%** (SPY: 746.74 → 728.99) |
+| Week vs SPY | **-4.23pp UNDERPERFORMING** |
+| Aggro return since inception | **-9.41%** |
+| SPY return since inception | **-3.34%** (754.18 → 728.99) |
+| Alpha since inception | **-6.07pp** |
+| Starting equity (this week) | USD 97,006.60 |
+| Ending equity | USD 90,593.57 |
+| HWM | USD 101,144.73 (set June 4) |
+| Drawdown from HWM | **-10.43%** (circuit breaker 20% — NOT triggered; 9.57pp headroom) |
+| Positions open EOW | 6 (NVDA, AVGO, ETN, GOOGL, AMZN, VST) |
+| Positions closed this week | 3 (MSFT -13.62%, META -9.841%, MRVL -7.80%) |
+| Process grade | **B** |
+
+---
+
+### Trade Statistics (since inception — Week 4 update)
+
+**Source**: `memory/aggressive/closed-trades.md` (4 closed trades)
+
+| Metric | Value |
+|---|---|
+| Total closed trades | 4 (AMD, MSFT, META, MRVL) |
+| Win rate | **0%** (0 wins / 4 closed trades) |
+| Average win % | N/A |
+| Average loss % | **-11.14%** (AMD -13.28%, MSFT -13.62%, META -9.841%, MRVL -7.80%) |
+| Profit factor | N/A |
+| Average holding days (losers) | **12.5 days** (5 / 17 / 19 / 9) |
+
+⚠️ **Sample still below 5 closed trades — do not over-read.** The 0% win rate and avg loss -11.14% are notable even at 4 data points. Critically, every exit was mechanically triggered (midday cut, trailing stop, proactive buffer management) — not a single thesis break. The AI infrastructure thesis was intact at exit for all four names. The question entering Week 5 is whether the entry criteria need revision (macro timing, rate regime compatibility) rather than the exit criteria.
+
+**Ledger sync**: closed-trades.md has 4 entries (AMD, MSFT, META, MRVL). trades.jsonl aggro-tagged entries partially cover these: MSFT close ✅, MRVL stop ✅, AMD buy+sell backfilled in this run ✅. META full exit entry present but `pnl_pct` field still missing — deferred, flagged for remediation at next convenient run.
+
+---
+
+### Process Audit
+
+- **Earnings discipline**: No positions opened within 2 trading days of any earnings event this week. NVDA/AVGO/AMZN/GOOGL have Q2 earnings in late July; ETN entry June 25 confirmed no near-term earnings risk. GOOGL joining DJIA June 29 = passive buying catalyst, not earnings risk. ✅
+- **Stop discipline**: MRVL trailing stop `a9097c8c` fired at USD 270.50 (HWM USD 329.88 × 82%), filled USD 270.42 — textbook execution. MSFT stop `aefe6616` canceled before market-close (correct sequence, 2nd application). META stop `5bc32805` canceled before market-sell (correct sequence, 3rd application). All 6 remaining positions confirmed live trailing stops per portfolio.md EOD June 26. ✅
+- **Post-mortem completeness**: All 3 Week 4 closures (MSFT, META, MRVL) have closed-trades.md entries with lessons. AMD trades.jsonl gap remediated in this run. META exit `pnl_pct` still absent from trades.jsonl — minor (narrative ledger complete); flagged. ⚠️ (minor)
+- **Deployment pace**: Cash 24.78% (USD 22,458 / USD 90,594). Only 1 new buy (ETN June 25). High cash is justified: AVGO at 1.593pp and NVDA at 2.061pp from forced cuts entering Monday. Cash is the correct posture when 2 of 6 positions are one bad session from a forced exit. ✅
+- **Concentration**: No single position exceeds 35% cap. AI infrastructure diversified across semis (NVDA, AVGO), AI power (ETN, VST), and cloud (GOOGL, AMZN). Sector exposure journaled. ✅
+- **Thesis contracts**: All 6 open positions have live invalidation conditions and review_by dates. GOOGL review_by July 2 = URGENT (3 trading days); explicit decision required Monday June 29 pre-market. AVGO/NVDA buffer alerts in lessons.md June 26. ✅
+
+**Process grade justification (B):** Stops live and fired correctly. Exit execution (MSFT, META, MRVL) all followed protocol. META proactive exit was textbook application of MSFT lesson. Cash management deliberate and well-justified. Deductions: (1) MSFT exit was late — the Week 3 lesson ("first C-rating + <2pp buffer = exit at next pre-market") was not applied when MSFT opened 11 cents above the trigger June 22 pre-market; (2) AMD trades.jsonl sync gap unresolved for 3 consecutive weeks (remediated in this run but should not have taken 3 weeks); (3) entering Week 5 with AVGO/NVDA at critical levels is a direct consequence of not trimming earlier when compression rate exceeded 1pp/session.
+
+---
+
+### What Worked
+
+1. **META proactive full exit (June 23) — MSFT lesson applied correctly.** Buffer compressed to 0.713pp in a Nasdaq -1.19% pre-market. Full exit at open saved ~USD 230-400 vs waiting for the -12% midday cut at USD 554.51. Direct application of the "sub-1pp buffer + risk-off tape = full exit" rule. ✅
+2. **MRVL trailing stop executed correctly (June 24).** Stop `a9097c8c` fired at HWM × 82%; captured the +12.5% momentum phase and limited entry-based loss to -7.80% through the global semi rout. Trailing stop design worked as intended.
+3. **VST: only portfolio winner this week (+7.74% from entry).** AI power demand + nuclear PPA thesis proved non-correlated to AI chip multiple compression. Bernstein initiated with Outperform/$187 PT. VST is the model for AI-adjacent positioning insulated from AI capex cost concerns.
+4. **ETN entry clean (June 25, USD 419.54).** Immediate trailing stop set; thesis (AI power infrastructure, Eaton electrical equipment as direct critical-path input to hyperscale data centers) intact. Entered the day after ETN ATH — acceptable timing for a new 15.3%-of-portfolio position.
+5. **GOOGL DJIA inclusion June 29 is a passive-buying tailwind.** Thesis: GCP +63% YoY, TPU roadmap, AI monetization pipeline intact. The Dow inclusion confirms the long-term institutional standing of the position.
+
+---
+
+### What Didn't Work
+
+1. **MSFT exit late — same Week 3 lesson repeated.** Week 3 weekly review explicitly stated: "First C-rating + buffer < 2pp = exit at the NEXT pre-market." MSFT was at 1.02pp buffer at Week 3 close. June 22 pre-market opened at USD 375.175 (11 cents above trigger); contingent exit was not executed. MSFT fell to USD 368.14 at midday (-13.63%), a worse price than any pre-market exit. The lesson existed; it was not applied with enough conviction when price was marginally above the trigger.
+2. **Three forced exits in one week (MSFT, META, MRVL).** Combined realized loss ~USD -2,773 (-2.86% of starting equity). Worst week in realized P/L terms since inception.
+3. **AVGO and NVDA entering Week 5 at critical buffer levels.** AVGO 1.593pp, NVDA 2.061pp. Both compressed significantly in the last 2 sessions of Week 4 (AVGO lost 2.1pp in the final afternoon alone per lessons.md June 26). Monday could trigger forced exits in both if the AI selloff continues.
+4. **Alpha gap widened to -6.07pp since inception.** Week 3's +3.46pp outperformance was more than reversed (-4.23pp this week). Concentrated AI/tech positioning in a hawkish Fed regime (9 FOMC officials projecting rate hikes, PCE highest since April 2023) is generating negative alpha.
+5. **Macro headwind: Fed hawkish pivot not fully priced in.** PCE inflation highest since April 2023; 9 of 18 FOMC officials project rate hikes; consumer sentiment near historic lows. High-multiple AI tech names face multiple compression that is structural (regime), not cyclical (noise).
+
+---
+
+### Adjustments for Week 5 (June 29 – July 3)
+
+1. **AVGO/NVDA are HIGHEST ALERT entering Monday.** Check both FIRST at every routine. If either opens down >1.5% AND no thesis-reversal catalyst (GPU demand cut, hyperscaler capex reversal): execute proactive trim at open. If buffer falls below 1pp in risk-off tape: full exit, not trim — per the MSFT/META playbook.
+2. **GOOGL mandatory decision at Monday June 29 pre-market.** review_by July 2 is 3 trading days away. DJIA inclusion provides passive floor, but -8.84% from entry with 3.054pp buffer is fragile. Write explicit hold/trim/exit at Monday pre-market — do not let the contract expire silently.
+3. **No new positions until AVGO/NVDA resolve.** Deploying into new names when 2 of 6 current positions are within 2.5pp of forced cuts adds portfolio risk. Cash at 24.78% is adequate — preserve it.
+4. **ETN: monitor closely.** Entered 1 day after ATH; -3.73% first session. If AI capex cost concerns persist, ETN's own buffer could compress. Daily check required.
+5. **Macro compatibility check for any new entries.** With Fed rate hike fears dominant, prioritize names with pricing power, lower P/E multiples, or real-asset exposure (VST-type) over pure-growth semis. Avoid adding high-multiple tech into hawkish regime.
+6. **Admin deferred**: META trades.jsonl `pnl_pct` backfill — add at next convenient run.
+
+---
+
 ## Week 3 — 2026-06-15 through 2026-06-19
 
 **Period**: June 15–19, 2026 (4 trading days; June 19 Juneteenth — market closed)
