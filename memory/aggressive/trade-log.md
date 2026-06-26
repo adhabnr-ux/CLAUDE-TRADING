@@ -2316,3 +2316,78 @@ No trades planned — breaking news gate informational only.
 | SPY since inception | **(729.24 − 754.18) / 754.18 = -3.308%** |
 | Alpha since inception | **-6.047pp** |
 | Today change vs last_equity | -1.66% vs SPY -0.56% → **-1.10pp today** |
+
+---
+
+## 2026-06-26 — MIDDAY CHECK (~12:41 PM ET)
+
+**No trades executed.** Risk management only. All positions within guardrails.
+
+### Pre-run checks
+| Check | Result |
+|---|---|
+| Live-switch guard | ALPACA_BASE_URL contains "paper" ✓ |
+| Lock | Written for this run (expires 16:48:47Z) ✓ |
+| Control switch | STATUS: ACTIVE ✓ |
+| Market open | true (next close 4:00 PM ET) ✓ |
+
+### Account status
+| Field | Value |
+|---|---|
+| Equity | USD 91,234.94 |
+| Last equity (prev close June 25) | USD 92,173.79 |
+| Intraday P/L vs last_equity | **-USD 938.85 (-1.019%)** |
+| Cash | USD 22,458.29 (24.64%) |
+| HWM | USD 101,144.73 |
+| Drawdown from HWM | **-9.798%** (circuit breaker -20% — NOT triggered ✓; 10.202pp headroom) |
+
+**Shock check:** -1.019% vs threshold -6% → NOT triggered ✓
+
+### Position review
+
+| Symbol | Entry | Current | P/L % | -12% Cut Trigger | Buffer | Change vs Market-Open | Action |
+|---|---|---|---|---|---|---|---|
+| NVDA | USD 213.60 | USD 194.31 | **-9.031%** | USD 187.97 | **2.97pp ⚠️⚠️** | ↑ improved from 2.07pp | No action — thesis intact |
+| AVGO | USD 406.23 | USD 372.50 | **-8.303%** | USD 357.48 | **3.70pp ⚠️** | ↑ improved from 2.08pp | No action — thesis intact |
+| ETN | USD 419.54 | USD 401.05 | **-4.407%** | USD 369.20 | 7.59pp ✓ | ↓ slightly worse (-4.48% today) | No action — thesis intact |
+| GOOGL | USD 370.22 | USD 342.24 | **-7.558%** | USD 325.79 | **4.44pp ⚠️** | ↑ improved from 3.15pp | No action — thesis intact |
+| AMZN | USD 247.99 | USD 231.83 | **-6.517%** | USD 218.23 | 5.48pp ✓ | ↑ improved from 3.76pp (AMZN +2.12% today) | No action — thesis intact |
+| VST | USD 151.47 | USD 166.01 | **+9.599% ✅** | USD 133.29 | 21.60pp ✓ | Stable — leading performer | No action |
+
+**Cut rule check (>-12% from entry): NO positions triggered. NVDA most stressed at -9.031% (2.97pp buffer). All clear.**
+**Tighten-stop rule check (>+25% from entry): NO positions triggered. VST leads at +9.599% (15.40pp below tighten threshold). All clear.**
+
+**KEY DEVELOPMENT:** NVDA and AVGO both IMPROVED significantly from market-open levels (NVDA: 2.07pp → 2.97pp; AVGO: 2.08pp → 3.70pp). The global semiconductor selloff appears to be partially reversing intraday. AMZN up +2.12% today on Prime Day record ($26.3B). ETN down -4.48% today (worst performer today) but buffer remains comfortable at 7.59pp.
+
+### News scan (June 26 midday) [search: WebSearch fallback — MiniMax M3 not available]
+
+- **NVDA (-9.031%):** Market-driven selloff; Morgan Stanley bullish but "hot money fleeing to memory stocks" narrative; market cap -5.55% last week = continued macro-driven semi rotation. NO hyperscaler GPU share reversal. FY2026 revenue $215.94B (+65% YoY). Strong Buy consensus (62 analysts), target $298.93 (+52.72%). **Thesis INTACT. HOLD. Macro-driven not thesis-driven.**
+- **AVGO (-8.303%):** OpenAI Jalapeño chip (built by Broadcom) confirmed — AVGO +2% on Wednesday on that news. AI revenue +143% YoY ($10.8B Q2). 87.93% buy consensus, target $510.43 (+37%). Today's range $372.70-$389.93; currently at low end. **Thesis INTACT. HOLD. OpenAI Jalapeño = thesis-CONFIRMED.**
+- **GOOGL (-7.558%):** Dow Jones Industrial Average addition effective June 29 (Monday) — mandatory institutional buying begins in 3 calendar days. AI talent departures (Jonas Adler + Alexander Pritzel → Anthropic) = same pattern as Jumper/Shazeer, does NOT trigger invalidation (GCP deceleration or TPU cancelled). Q1: +22% total revenue, +63% GCP, $460B backlog. Review_by July 2 = 4 trading days. **Thesis INTACT. HOLD. DJIA addition is an approaching near-term catalyst.**
+- **AMZN (-6.517%):** Prime Day 2026 record $26.3B (ends today — last day of Prime Day); India $13B AI/cloud infrastructure expansion (thesis-positive); Alexa/ThunderSoft automotive AI collaboration. AWS thesis intact. AMZN +2.12% today = best performing held position. **Thesis INTACT. HOLD.**
+
+### Stop audit — 6/6 positions confirmed with live 18% trailing stops ✓
+
+| Symbol | Stop Order ID | Stop Price | HWM | Status |
+|---|---|---|---|---|
+| NVDA | `54d7d851` | USD 181.712 | USD 221.60 | ✓ live |
+| AVGO | `36f5a45f` | USD 349.7136 | USD 426.48 | ✓ live |
+| ETN | `abdc232b` | USD 349.32 | USD 426.00 | ✓ live |
+| GOOGL | `e52a43f1` | USD 308.1314 | USD 375.77 | ✓ live |
+| AMZN | `b55bef05` | USD 205.3526 | USD 250.43 | ✓ live |
+| VST | `5b347be3` | USD 140.507 | USD 171.35 | ✓ live |
+
+**No stops missing. No stops needing recreation. All 6 positions fully protected.**
+
+### Performance vs SPY
+| Metric | Value |
+|---|---|
+| Equity | USD 91,234.94 |
+| Aggro return since inception | **(91,234.94 − 100,000) / 100,000 = -8.765%** |
+| SPY anchor | USD 754.18 (June 3, 2026) |
+| SPY current (midday) | USD 734.38 |
+| SPY since inception | **(734.38 − 754.18) / 754.18 = -2.626%** |
+| Alpha since inception | **-6.139pp** |
+| Intraday change vs last_equity | -1.019% vs SPY +0.120% → **-1.139pp today** |
+
+_Midday June 26: No positions cut. All 6 stops live (6/6 ✓). NVDA and AVGO both IMPROVED from market-open critical levels — NVDA now 2.97pp buffer (was 2.07pp), AVGO 3.70pp (was 2.08pp). ETN down -4.48% today (worst performer today) but still comfortable 7.59pp buffer. AMZN strongest today (+2.12%) on Prime Day record. All 4 news-scanned positions (NVDA, AVGO, GOOGL, AMZN) have intact theses — macro-driven moves, not thesis breaks. GOOGL DJIA addition Monday June 29 = 3 calendar days away. GOOGL review_by July 2 = 4 trading days. Drawdown from HWM -9.798% (10.2pp headroom before circuit breaker). Control: ACTIVE._
