@@ -2747,3 +2747,31 @@ AI data center cost concerns and an OpenAI IPO delay report (reportedly leaning 
 3. GOOGL (3.054pp buffer) — review_by July 2 = ONLY 2 trading days away (June 29, June 30); explicit hold/trim/exit decision required
 4. AMZN +2.16% today despite broad selloff — Prime Day ended; AWS thesis is the dominant driver
 5. VST outperformed defensively despite tech selling — nuclear PPA cash flows unaffected by AI cost concerns
+
+---
+
+## 2026-06-26 — WEEKLY REVIEW RESEARCH
+
+**S&P 500 / Macro: week June 22-26 [search: WebSearch fallback]**
+- SPY: 746.74 → 728.99 = -2.38% for the week; Nasdaq down ~-4% for the week.
+- FOMC held rates at 3.50-3.75% but dot plots showed 9 of 18 officials projecting rate hikes — hawkish surprise.
+- PCE inflation came in at highest level since April 2023 — persistent inflation narrative strengthening.
+- University of Michigan Consumer Sentiment final reading 48.9, near historic lows.
+- AI trade uncertainty: OpenAI reportedly leaning toward delaying IPO to 2027; Apple and Microsoft announced hardware price increases on iPhone/Xbox citing rising memory costs.
+- Friday: S&P -0.5%, Nasdaq -0.7%. Market rotation toward healthcare, traditional industrials, consumer cyclicals — advancing shares outpacing declining. Tech/semi led declines.
+- Source: TheStreet June 25, Schwab market update June 26.
+
+**Position research [search: WebSearch fallback]:**
+- **NVDA** ($193.19 June 26): Down -8.31% for the week. Broad AI sector selloff; AI models forecast $178-$208 near-term range. No fundamental thesis change confirmed; GPU demand from hyperscalers unchanged. 52-week range $151.46-$236.54. Aggro NVDA position at -10.09% from entry, 2.061pp buffer to -12% cut.
+- **AVBO** ($380 range $372.70-$389.93 June 26): OpenAI unveiled first custom AI chip 'Jalapeño' — Broadcom partnership positive, validates custom silicon thesis. 26 analysts Buy consensus, PT $501.58. Stock pressure from macro AI cost narrative despite thesis-positive news. Aggro AVBO at -10.39% from entry, 1.593pp buffer (HIGHEST ALERT entering June 29). Source: CNBC/Robinhood June 26.
+- **ETN** ($408.23 June 26, -2.77% on day): ATH was $435.78 on June 22, 3 days before our entry at $419.54 June 25. Pullback driven by global AI/tech selloff — AI data center power infrastructure thesis intact. Bernstein-adjacent coverage noting ETN as key AI power infra name. 52-week range $311.92-$436.74. First session -3.73% from entry; normal for post-ATH consolidation.
+- **GOOGL** ($336-$343 range June 26): Joining Dow Jones Industrial Average effective June 29 — passive fund buying catalyst. -10.95% past month reflecting quarterly index rebalancing and AI multiple compression. GCP +63% YoY thesis intact. TPU roadmap intact. Review_by July 2 mandatory decision. Source: Marketbeat/Yahoo Finance GOOGL June 26.
+- **AMZN** ($227.51 June 26): Prime Day 2026 ran June 23-26, record $26.3B e-commerce (Adobe Analytics). India AI/cloud investment raised to $48B. Stock -13.70% past month despite strong operating metrics. AWS thesis intact. 52-week range $196-$278.56. Source: Motley Fool/Yahoo Finance AMZN June 26.
+- **VST** ($165.44 June 26): Bernstein initiated coverage June 17 with Outperform/$187 PT. Multiple Buy ratings (13 analysts). AI power demand + nuclear PPA thesis outperforming AI chip names. Market cap $55.78B. Portfolio's only winner this week. Source: Insider Monkey/Robinhood VST June 26.
+
+**Best performing sectors this week [search: WebSearch fallback]:**
+- Week's leaders: Healthcare, basic materials, traditional industrials — all rotating away from mega-cap tech as Fed rate hike concerns return and PCE comes in hot.
+- AI/tech/semi underperformed: NVDA -8.31%, Nasdaq -~4% for week. No AI-adjacent names among weekly leaders.
+- VST was the portfolio's bright spot (+7.74% from entry this week), confirming AI power infrastructure as more insulated from AI capex cost concerns than pure semi names.
+- Potential watchlist additions: healthcare and utility-adjacent power plays as diversifiers if current positions exit. ETN-type industrials with real-asset exposure better positioned than pure semis in hawkish rate regime.
+- Source: IBKR Campus weekly recap week of June 22 2026, StockTitan June 2026 performers.
