@@ -3,12 +3,6 @@ name: Bull — Aggressive 🔥
 # AGGRO runs 10 minutes after Cautious to avoid git push collisions.
 # Schedule uses EDT (UTC-4, summer). In winter (EST, UTC-5) add 1 hour.
 on:
-  schedule:
-    - cron: '10 12 * * 1-5'  # 08:10 ET  aggro pre-market
-    - cron: '45 13 * * 1-5'  # 09:45 ET  aggro market-open
-    - cron: '40 16 * * 1-5'  # 12:40 ET  aggro midday
-    - cron: '0 20 * * 1-5'   # 16:00 ET  aggro close
-    - cron: '40 20 * * 5'    # 16:40 ET  Fri aggro weekly-review
   workflow_dispatch:
     inputs:
       routine:

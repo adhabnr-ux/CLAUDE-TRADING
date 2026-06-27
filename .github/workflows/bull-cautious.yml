@@ -3,13 +3,6 @@ name: Bull — Cautious
 # Schedule uses EDT (UTC-4, summer). In winter (EST, UTC-5) add 1 hour to each cron.
 # GitHub Actions cron may run up to ~15 min late — fine for a swing trading bot.
 on:
-  schedule:
-    - cron: '0 12 * * 1-5'   # 08:00 ET  pre-market
-    - cron: '35 13 * * 1-5'  # 09:35 ET  market-open
-    - cron: '30 16 * * 1-5'  # 12:30 ET  midday
-    - cron: '50 19 * * 1-5'  # 15:50 ET  close
-    - cron: '30 20 * * 5'    # 16:30 ET  Fri weekly-review
-    - cron: '0 21 * * 5'     # 17:00 ET  Fri monthly-review (self-gates if not first Fri)
   workflow_dispatch:
     inputs:
       routine:
