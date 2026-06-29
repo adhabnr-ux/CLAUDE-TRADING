@@ -2478,3 +2478,93 @@ _Midday June 26: No positions cut. All 6 stops live (6/6 ✓). NVDA and AVGO bot
 | Intraday change vs last_equity | +1.336% |
 
 _Market-open June 29: No trades, no exits. Pre-market plan was empty. All 6 stops live (6/6 ✓). Equity +1.336% vs last_equity — Monday recovery continues. GOOGL DJIA inclusion effective today (+2.798% intraday). AVGO buffer recovered to 3.544pp (from 1.593pp Friday — Jalapeno chip win is real support). NVDA buffer 3.419pp (from 2.061pp Friday). Both ⚠️ but significantly less critical. Drawdown -9.161% from HWM (10.839pp headroom). No shock, no circuit breaker. Control: ACTIVE._
+
+---
+
+## 2026-06-29 — MIDDAY CHECK (~12:41 PM ET)
+
+**No trades executed.** Risk management only. All 6 positions within guardrails.
+
+### Pre-run checks
+| Check | Result |
+|---|---|
+| Live-switch guard | ALPACA_BASE_URL contains "paper" ✓ |
+| Lock | Written for this run (expires 16:48:58Z) ✓ |
+| Control switch | STATUS: ACTIVE ✓ |
+| Market open | true (next close 4:00 PM ET) ✓ |
+
+### Account status
+| Field | Value |
+|---|---|
+| Equity | USD 91,692.07 |
+| Last equity (June 26 EOD — Alpaca authoritative) | USD 90,667.24 |
+| Intraday P/L vs last_equity | **+USD 1,024.83 (+1.130%)** (shock threshold -6% — NOT triggered ✓) |
+| Cash | USD 22,458.29 (24.49%) |
+| HWM | USD 101,144.73 |
+| Drawdown from HWM | **-9.346%** (circuit breaker -20% — NOT triggered ✓; 10.654pp headroom) |
+
+**Shock check: +1.130% vs threshold -6% → NOT triggered ✓**
+
+### Position review (midday ~12:41 PM ET)
+
+| Symbol | Entry | Current | P/L % | -12% Cut Trigger | Buffer | vs Market-Open | News | Action |
+|---|---|---|---|---|---|---|---|---|
+| NVDA | USD 213.60 | USD 193.04 | **-9.625%** | USD 187.97 | **2.375pp ⚠️⚠️ HIGHEST ALERT** | -1.044pp ↓ (195.27→193.04) | Bernstein top robotics AI pick; Bit Origin $11M Blackwell B300 demand; Palantir partnership. No hyperscaler defection. | HOLD — thesis intact |
+| AVGO | USD 406.23 | USD 370.58 | **-8.776%** | USD 357.48 | **3.224pp ⚠️** | -0.320pp ↓ (371.88→370.58) | Jalapeno chip (OpenAI custom chip built by Broadcom) publicly confirmed — thesis CONFIRMED. PT USD 501.58. | HOLD — thesis CONFIRMED |
+| ETN | USD 419.54 | USD 409.88 | -2.303% | USD 369.20 | 9.697pp ✓ | +0.626pp ↑ | No scan required (<5% down). AI power infra thesis intact. | HOLD |
+| GOOGL | USD 370.22 | USD 351.08 | **-5.170%** | USD 325.79 | 6.830pp ✓ | +1.148pp ↑ ✅ | DJIA inclusion effective today — FTSE Russell reclassified as 100% pure growth. Jefferies PT USD 445. +4.058% intraday. | HOLD — DJIA catalyst active ✅ |
+| AMZN | USD 247.991 | USD 240.11 | -3.178% | USD 218.23 | 8.822pp ✓ | -0.401pp ↓ | No scan required (<5% down). AWS thesis intact. Prime Day record in recent history. | HOLD |
+| VST | USD 151.47 | USD 164.49 | **+8.596% ✅** | USD 133.29 | 21.596pp ✓ | +0.934pp ↑ | No scan required (<15% up). Nuclear PPA thesis intact. | HOLD |
+
+**Cut rule check (>-12% from entry): NO positions triggered. All clear.**
+**Tighten-stop rule check (>+25% from entry): VST +8.596% — NOT triggered. All clear.**
+
+**KEY ALERT — NVDA HIGHEST ALERT:** Buffer compressed 1.044pp intraday (market-open 3.419pp → midday 2.375pp). This crossed the >1pp/session compression threshold from lessons (June 26). However: news today is THESIS-POSITIVE (Bernstein robotics pick, Blackwell B300 demand, Palantir partnership). No hyperscaler defection. No cut rule triggered (-9.625% vs -12% threshold). **Holding per rules. EOD close routine MUST check NVDA first. Pre-market June 30: explicit NVDA hold/trim/exit decision required if buffer remains below 3pp or approaches 2pp.**
+
+**GOOGL review_by July 2:** 3 trading days away (June 30, July 1, July 2). Pre-market HOLD decision intact (DJIA catalyst active; +4.058% today improving buffer from 5.682pp → 6.830pp). Pre-market July 1 must include explicit GOOGL thesis review for July 2 deadline.
+
+### News scan (step 3 — positions down >5% from entry) [search: WebSearch fallback — MiniMax M3 not available]
+
+**NVDA (-9.625%):** Bernstein chose NVDA as top robotics AI stock (vs Qualcomm). Bit Origin acquired $11M of Blackwell B300 AI infrastructure assets — direct demand confirmation for current-gen chip. Palantir announced strategic initiative with NVDA. NVDA stock declined -1.64% Friday but in 5-day down streak on macro AI cost concerns. No hyperscaler GPU share reversal confirmed. Analyst consensus Strong Buy, target USD 298.93 (+54% upside). **Thesis INTACT. Move is macro-driven. HOLD.**
+
+**AVGO (-8.776%):** OpenAI and Broadcom publicly confirmed the Jalapeno custom AI chip partnership (originally announced fall 2025, now formally confirmed with 10GW AI compute capacity target 2026-2029). Buy consensus PT USD 501.58. Stock up +1.523% today vs Friday close, slightly off from market-open highs. **Thesis CONFIRMED (Jalapeno announcement = literal invalidation-opposite). HOLD.**
+
+**GOOGL (-5.170%):** DJIA inclusion effective today — officially replaced Verizon in the Dow Jones Industrial Average. FTSE Russell reclassified GOOGL as 100% pure growth stock. Stock +4.058% today (from USD 337.39 Friday close to USD 351.08 at midday). Jefferies reaffirmed Buy with PT USD 445 (+32% upside). Stock entered correction last week due to AI researcher departures and massive AI spending concerns — both macro narrative, not GCP deceleration. **Thesis INTACT. DJIA catalyst playing out as expected. HOLD. Review_by July 2.**
+
+### Stop audit — 6/6 confirmed ✓
+
+| Symbol | Stop Order ID | HWM | Stop Price | Trail % | Status | Change vs last |
+|---|---|---|---|---|---|---|
+| NVDA | `54d7d851` | USD 221.60 | USD 181.712 | 18% | ✓ live | Unchanged |
+| AVGO | `36f5a45f` | USD 426.48 | USD 349.7136 | 18% | ✓ live | Unchanged |
+| ETN | `abdc232b` | USD 426.00 | USD 349.32 | 18% | ✓ live | Unchanged |
+| GOOGL | `e52a43f1` | USD 375.77 | USD 308.1314 | 18% | ✓ live | Unchanged |
+| AMZN | `b55bef05` | USD 252.525 | USD 207.0705 | 18% | ✓ live | **HWM updated ↑ (was 250.43); stop ↑ (was 205.3526)** |
+| VST | `5b347be3` | USD 171.35 | USD 140.507 | 18% | ✓ live | Unchanged |
+
+**No stops missing. No stops needing recreation. AMZN stop ratcheting upward as expected on intraday strength (+3.189% today). 6/6 ✓**
+
+### Sector exposure (midday)
+| Sector | Names | Market Value | % of Equity |
+|---|---|---|---|
+| Technology — semis | NVDA, AVGO | USD 32,482.84 | 35.43% |
+| Technology — hyperscalers | GOOGL, AMZN | USD 14,261.24 | 15.55% |
+| Industrials/Power Infra | ETN | USD 13,935.92 | 15.20% |
+| Utilities/Power | VST | USD 8,553.48 | 9.33% |
+| Cash | — | USD 22,458.29 | 24.49% |
+
+No sector at 60%+ threshold. All within guardrails.
+
+### Performance vs SPY (midday)
+| Metric | Value |
+|---|---|
+| Equity (midday) | USD 91,692.07 |
+| Aggro return since inception | **(91,692.07 − 100,000) / 100,000 = -8.308%** |
+| SPY anchor | USD 754.18 (June 3, 2026) |
+| SPY June 26 close | USD 729.35 |
+| SPY since inception (last known) | **(729.35 − 754.18) / 754.18 = -3.292%** |
+| Alpha since inception | **-5.016pp** |
+| Intraday P/L vs last_equity | +1.130% |
+
+### Result
+All 6 positions within guardrails. No trades executed. No positions cut. No stops tightened. All 6 trailing stops live (6/6 ✓). AMZN stop HWM ratcheted up (USD 250.43 → USD 252.525) as AMZN trades +3.189% today. GOOGL +4.058% (DJIA inclusion catalyst delivering). NVDA HIGHEST ALERT: 2.375pp buffer, compressed >1pp this morning session on no thesis-breaking news — EOD close and pre-market June 30 must assess proactive trim decision for NVDA. Drawdown -9.346% (10.654pp headroom before circuit breaker). Control: ACTIVE.

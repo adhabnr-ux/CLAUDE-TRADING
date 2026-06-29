@@ -6,6 +6,102 @@ but always re-fetches live data before trading._
 
 ---
 
+## Last snapshot — 2026-06-29 MIDDAY (~12:41 PM ET)
+
+| Field | Value |
+|---|---|
+| Equity | USD 91,692.07 |
+| Cash | USD 22,458.29 (24.49%) |
+| Long market value | USD 69,233.78 |
+| Open positions | 6 |
+| last_equity (June 26 EOD close — Alpaca authoritative) | USD 90,667.24 |
+| Intraday P/L vs last_equity | **+USD 1,024.83 (+1.130%)** |
+| HWM | USD 101,144.73 |
+| Drawdown from HWM | **-9.346%** (circuit breaker -20% — NOT triggered; 10.654pp headroom) |
+
+**Shock check:** +1.130% vs threshold -6% → NOT triggered ✓
+
+**Open positions (June 29 midday ~12:41 PM ET):**
+
+| Symbol | Qty | Avg Entry | Current Price | Market Value | Unrealized P/L | P/L % | -12% Cut Trigger | Buffer | Rating |
+|---|---|---|---|---|---|---|---|---|---|
+| NVDA | 103 | USD 213.60 | USD 193.04 | USD 19,883.12 | -USD 2,117.68 | **-9.625%** | USD 187.97 | **2.375pp ⚠️⚠️ HIGHEST ALERT** | A |
+| AVGO | 34 | USD 406.23 | USD 370.58 | USD 12,599.72 | -USD 1,212.10 | **-8.776%** | USD 357.48 | **3.224pp ⚠️** | A |
+| ETN | 34 | USD 419.54 | USD 409.88 | USD 13,935.92 | -USD 328.44 | **-2.303%** | USD 369.20 | 9.697pp ✓ | A |
+| GOOGL | 16 | USD 370.22 | USD 351.08 | USD 5,617.28 | -USD 306.24 | **-5.170%** | USD 325.79 | 6.830pp ✓ | A |
+| AMZN | 36 | USD 247.991 | USD 240.11 | USD 8,643.96 | -USD 283.72 | **-3.178%** | USD 218.23 | 8.822pp ✓ | A |
+| VST | 52 | USD 151.47 | USD 164.49 | USD 8,553.48 | +USD 677.04 | **+8.596% ✅** | USD 133.29 | 21.596pp ✓ | A |
+
+**KEY vs market-open: NVDA compressed 1.044pp this session (3.419pp → 2.375pp ⚠️⚠️ HIGHEST ALERT — crossed >1pp compression threshold). GOOGL improved 1.148pp (5.682pp → 6.830pp ✅ DJIA inclusion +4.058% today). AVGO slightly softer (3.544pp → 3.224pp). All positions UP vs Friday close.**
+
+**Stop audit (June 29 midday): ALL 6 CONFIRMED LIVE ✓**
+
+| Symbol | Stop Order ID | HWM | Stop Price | Trail % | Status |
+|---|---|---|---|---|---|
+| NVDA | `54d7d851` | USD 221.60 | USD 181.712 | 18% | ✓ live |
+| AVGO | `36f5a45f` | USD 426.48 | USD 349.7136 | 18% | ✓ live |
+| ETN | `abdc232b` | USD 426.00 | USD 349.32 | 18% | ✓ live |
+| GOOGL | `e52a43f1` | USD 375.77 | USD 308.1314 | 18% | ✓ live |
+| AMZN | `b55bef05` | USD 252.525 (↑ ratcheted from 250.43) | USD 207.0705 (↑) | 18% | ✓ live |
+| VST | `5b347be3` | USD 171.35 | USD 140.507 | 18% | ✓ live |
+
+**No stops missing. No stops needing recreation. AMZN stop HWM updated upward as AMZN trades +3.189% today. 6/6 ✓**
+
+**Thesis contracts (June 29 midday):**
+| Symbol | Review By | Invalidation | Status |
+|---|---|---|---|
+| NVDA | July 9 | Hyperscaler GPU share reverses | ✓ Intact — -9.625%; 2.375pp ⚠️⚠️ HIGHEST ALERT; Bernstein robotics pick; Blackwell B300 demand (Bit Origin $11M); Palantir partnership; Aug 26 earnings |
+| AVGO | July 9 | AI revenue decelerates | ✓ CONFIRMED — -8.776%; 3.224pp ⚠️; Jalapeno chip publicly confirmed; PT USD 501.58; Sep 3 earnings |
+| ETN | July 9 | ETN below USD 332 OR AI capex reverses | ✓ Intact — -2.303%; 9.697pp ✓; AI power infra thesis intact; Aug 4 earnings |
+| GOOGL | **July 2 ⚠️** | GCP decelerates OR TPU cancelled | ✓ Intact — -5.170%; 6.830pp ✓ (improved +1.148pp); DJIA inclusion TODAY +4.058% ✅; FTSE Russell 100% pure growth; earnings Jul 21-24 |
+| AMZN | July 7 | AWS <20% YoY | ✓ Intact — -3.178%; 8.822pp ✓; AWS thesis intact; Prime Day catalyst recent; Jul 30 earnings |
+| VST | July 15 | Nuclear PPAs cancelled | ✓ Intact — +8.596% ✅; 21.596pp ✓; Helix Digital Infra (USD 10B) intact; EBITDA +20%; Aug 6 earnings |
+
+**News scan (positions down >5%) [search: WebSearch fallback — MiniMax M3 not available]:**
+- **NVDA (-9.625%)**: Bernstein chose NVDA top robotics AI stock; Bit Origin $11M Blackwell B300 purchase = demand signal; Palantir strategic initiative. No hyperscaler defection. Thesis intact.
+- **AVGO (-8.776%)**: Jalapeno chip publicly confirmed (10GW compute capacity 2026-2029). Thesis confirmed.
+- **GOOGL (-5.170%)**: DJIA inclusion effective today; FTSE Russell reclassified 100% pure growth; +4.058% intraday. Thesis intact.
+
+**Conviction ratings (June 29 midday):**
+| Symbol | Rating | Notes |
+|---|---|---|
+| NVDA | A | AI GPU thesis intact; -9.625%; 2.375pp ⚠️⚠️ HIGHEST ALERT; buffer compressed >1pp this session; thesis-positive news; Aug 26 earnings |
+| AVGO | A | Jalapeno = thesis CONFIRMED; -8.776%; 3.224pp ⚠️; PT USD 501.58; Sep 3 earnings |
+| ETN | A | AI power infra; -2.303%; 9.697pp ✓; Aug 4 earnings |
+| GOOGL | A | DJIA inclusion TODAY ✅; +4.058%; -5.170%; 6.830pp ✓ (improving); review_by July 2; earnings Jul 21-24 |
+| AMZN | A | AWS +28%; -3.178%; 8.822pp ✓; Jul 30 earnings |
+| VST | A | Best performer +8.596% ✅; 21.596pp ✓; Helix intact; EBITDA +20%; Aug 6 earnings |
+
+**No C-ratings → no forced trims. All 6 positions HOLD at A.**
+
+**NVDA HIGHEST ALERT protocol:** Buffer compressed >1pp this session. Next action: EOD close must check NVDA price FIRST. Pre-market June 30: explicit NVDA hold/trim/exit decision required. Proactive trim heuristic conditions: buffer <3pp ✓, review_by July 9 (8 trading days, >5 days so heuristic not yet triggered), thesis-positive news today ✓. Current decision: HOLD per rules and positive news. But if buffer falls below 2pp at EOD or pre-market June 30, escalate to proactive trim (25%) per META/MSFT lessons.
+
+**Sector exposure (June 29 midday):**
+| Sector | Names | Market Value | % of Equity |
+|---|---|---|---|
+| Technology — semis | NVDA, AVGO | USD 32,482.84 | 35.43% |
+| Technology — hyperscalers | GOOGL, AMZN | USD 14,261.24 | 15.55% |
+| Industrials/Power Infra | ETN | USD 13,935.92 | 15.20% |
+| Utilities/Power | VST | USD 8,553.48 | 9.33% |
+| Cash | — | USD 22,458.29 | 24.49% |
+
+No sector at 60%+ threshold. All within guardrails.
+
+**Performance vs SPY (June 29 midday):**
+| Metric | Value |
+|---|---|
+| Equity | USD 91,692.07 |
+| Aggro return since inception | **(91,692.07 − 100,000) / 100,000 = -8.308%** |
+| SPY anchor | USD 754.18 (June 3, 2026) |
+| SPY June 26 close | USD 729.35 |
+| SPY since inception | **(729.35 − 754.18) / 754.18 = -3.292%** |
+| Alpha since inception | **-5.016pp** |
+| Intraday P/L vs last_equity | +1.130% |
+
+_Midday June 29: No trades, no exits. All 6 positions within guardrails. No -12% cut triggered. No +25% tighten triggered. Stop audit 6/6 ✓. AMZN stop HWM ratcheted up. GOOGL +4.058% on DJIA inclusion — best intraday mover. NVDA HIGHEST ALERT: buffer compressed 1.044pp this morning session (3.419pp → 2.375pp); thesis-positive news (Bernstein, Blackwell B300, Palantir) — holding but EOD/pre-market June 30 must assess proactive trim if buffer approaches 2pp. Drawdown -9.346% (10.654pp headroom). No shock, no circuit breaker. GOOGL review_by July 2 = 3 trading days. Control: ACTIVE. [search: WebSearch fallback — MiniMax M3 not available]_
+
+---
+
 ## Last snapshot — 2026-06-29 MARKET-OPEN (~9:46 AM ET)
 
 | Field | Value |
