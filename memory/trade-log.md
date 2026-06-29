@@ -3,6 +3,65 @@
 _Every order placed, with its reasoning. Append-only — newest entries at the top.
 The weekly new-position count is derived from this log._
 
+## 2026-06-29 12:32 ET — MIDDAY (0 trades; stop audit 4/4 ✓; LLY ATH +11.12% thesis confirmed; V HWM ratcheted $345.81; VST buf 2.40% ⚠️ CRITICAL; no cuts/tightenings)
+
+- **Action:** Midday routine. 0 trades — all positions within guardrails. No cuts, no tightenings triggered.
+- **Market status:** `is_open: true` (12:32 PM ET); close 4:00 PM ET.
+- **Account (~12:32 ET — live Alpaca):** Equity $99,842.69 | Cash $73,615.74 (73.74%) | LMV $26,226.95
+
+### Live-switch guard
+- `ALPACA_BASE_URL` contains "paper" ✓ — paper trading confirmed.
+
+### Control switch
+- STATUS: ACTIVE ✓ — no PAUSED / RISK_OFF flags, no NOTE, no QUERY.
+
+### Shock check
+- Equity $99,842.69 vs last_equity $99,633.60 = **+$209.09 = +0.210%** — no shock ✓ (threshold −4%)
+
+### Drawdown circuit breaker
+- HWM $101,384.21; current $99,842.69 = **−1.52%** — NOT triggered ✓ (8.48pp headroom)
+
+### Position review (midday June 29, ~12:32 ET)
+
+| Symbol | Qty | Avg Entry | Current | % from Entry | Buffer | Action |
+|--------|-----|-----------|---------|--------------|--------|--------|
+| LLY | 10 | $1,093.534 | $1,215.14 | **+11.12%** | 8.31% | HOLD — below +15% tighten ($1,257.56) |
+| V | 22 | $323.57 | $341.125 | **+5.43%** | 8.77% | HOLD — within range |
+| VST | 40 | $148.81 | $164.27 | **+10.39%** | 2.40% ⚠️ | HOLD — stop is correct exit; thesis intact |
+
+- **Cut losers (−7% rule):** No position below -7% from entry ✓
+- **Protect winners (+15% tighten):** No position at or above +15% from entry ✓ (LLY at +11.12%; VST already on 5% trail; V at +5.43%)
+
+### News scan (positions >10% from entry: LLY +11.12%, VST +10.39%)
+
+**LLY** — Thesis CONFIRMED. LLY hit all-time high on June 29, driven by accelerating weight-loss drug sales (Foundayo oral pill selling strongly). Avg analyst PT $1,294.06 (17% upside). Medicare Bridge launching tomorrow July 1 — thesis-affirming. No negative news. Movement is fundamentally driven. HOLD.
+
+**VST** — Thesis INTACT. Helix Digital Infrastructure (KKR+NVDA) still the core catalyst; AI data center power demand commentary ongoing. Morgan Stanley minor PT cut $212→$210 on June 24 (noise, not thesis break). Dividend $0.23/sh payable tomorrow June 30. Q1 revenue $5.63B, adj. EBITDA +20% YoY — fundamentals strong. VST up +0.48% today. Stop buffer 2.40% CRITICAL — do NOT manually override stop. If stop fires at $160.3315, P/L = +10.39% exit — a win. HOLD with stop.
+
+### Stop audit (midday June 29 — confirmed via Alpaca live orders ~12:32 ET)
+
+| Order ID | Symbol | Qty | Type | HWM | Stop | Buffer | Status |
+|----------|--------|-----|------|-----|------|--------|--------|
+| d4147484 | LLY | 7sh | trailing_stop 10% | $1,238.00 | $1,114.20 | $100.94 (8.31%) | ✓ active |
+| 25989fb5 | LLY | 3sh | trailing_stop 10% | $1,238.00 | $1,114.20 | $100.94 (8.31%) | ✓ active |
+| 66033918 | V | 22sh | trailing_stop 10% | **$345.81** ⬆️ NEW HWM | **$311.229** ⬆️ | $29.90 (8.77%) | ✓ active — HWM ratcheted from $340.94→$345.81 today |
+| c8b43d32 | VST | 40sh | trailing_stop 5% | $168.77 | $160.3315 | $3.94 (2.40%) | ✓ active ⚠️⚠️ CRITICAL |
+
+**4/4 PASS ✓** — no stops recreated; no trailing stop fired since last run.
+
+**V note:** V HWM has auto-ratcheted from $340.94 (as of last memory update) to $345.81 intraday, stop improved from $305.946 → $311.229. This is good protection improvement. Memory updated.
+
+### No exits this run
+- No positions closed. No trailing stops fired since market-open run. closed-trades.md unchanged.
+
+### Performance vs SPY (midday June 29, 2026)
+- **Bull equity:** $99,842.69 = **−0.157%** since inception
+- **SPY:** ~$737–738 range midday (GOOGL Dow rally from morning; SPY up ~1.1% today)
+- **SPY TR est.:** (~$737.47 + $1.76) / $739.44 ≈ **−0.028% TR** (using market-open reading; midday likely similar)
+- **Lead estimate:** Bull roughly flat to slightly trailing SPY as SPY up strongly on GOOGL Dow inclusion
+
+---
+
 ## 2026-06-29 09:36 ET — MARKET-OPEN (0 trades; stop audit 4/4 ✓; LLY ⭐ new HWM $1,238 above Leerink PT; VST buf 2.27% ⚠️; Bull LEADS SPY +0.027pp)
 
 - **Action:** Market-open routine. 0 trades — plan was empty per pre-market (VST stop critical, LLY at Leerink PT, no ATR-cleared new candidates).
