@@ -112,7 +112,7 @@ _Watchlist hygiene (updated 2026-06-26 weekly review): entries require date adde
 | V      | Financials | 2026-06-10 | **HELD** 22sh @ $323.57 — payments infrastructure; OpenAI partnership; stablecoin capabilities; showing defensive strength in AI selloff | Review by July 28 (earnings Q3 FY26) |
 | VST    | Energy / Utilities | 2026-06-09 | **HELD** 40sh @ $148.81 — nuclear operator; Helix Digital Infrastructure (KKR+NVDA preferred power partner); +9.78% from entry; 5% trail; stop buffer 1.86% CRITICAL ⚠️⚠️ | Review by July 7 |
 | ETN    | Industrials / AI Power | 2026-06-26 | Eaton electrical equipment — direct critical-path input to hyperscale data centers scaling with AI GPU density; AGGRO added June 25 at $419.54; +42% analyst PT upside | Earliest entry week of July 7+ (need 3 consecutive ≤3% ATR sessions from June 30); catalyst: AI capex supercycle, ongoing |
-| LRCX   | Semi Equipment | 2026-06-08 | AI fab investment wave; Citi PT raised to $450 (from $315); ATR gate **FULLY RESET** by June 26 −10%+ selloff; need fresh 3 consecutive ≤3% sessions | Earliest entry July 7+; catalyst: AI equipment cycle, no hard expiry |
+| LRCX   | Semi Equipment | 2026-06-08 | AI fab investment wave; Citi PT raised to $450 (from $315); ATR gate **FULLY RESET** by June 26 selloff; June 29 ATR 8.76% = session 1/3 FAILS; gate counter 0/3 | Earliest entry July 9+; catalyst: AI equipment cycle, no hard expiry |
 | MSFT   | Tech / Enterprise AI | 2026-05-22 | Azure AI platform compounding; stop-outs June 5; re-evaluate when PCE trend reverses or stock re-bases cleanly; July 23 earnings next catalyst | Re-evaluate July 23+ (earnings); not near-term |
 | COST   | Consumer Defensive | 2026-05-29 | Membership model loyalty; defensive in high-PCE environment; Q4 earnings mid-August | Re-evaluate July+ (pre-earnings) |
 | PWR    | Industrials | 2026-06-12 | Quanta Services; grid/data-center infrastructure buildout; Q1 EPS +31.4% beat; PT upgrades TD Cowen $775 / Citi $837; ATR elevated + insider selling $123M flag; P/E ~95 | Re-evaluate late July; needs ATR normalization + insider selling to abate |
@@ -150,7 +150,7 @@ _Previously purged (still excluded):_
 - **V — position:** June 26 close $336.00 (+3.84% from entry). HWM $339.94 / stop $305.95. Thesis intact; defensive strength in AI selloff. Review_by July 28 (Q3 FY26 earnings).
 - **VST — position:** June 26 close $163.75 (+9.78% from entry). 5% trail HWM $168.77 / stop $160.33. **BUFFER 1.86% CRITICAL ⚠️⚠️** — stop may fire Monday open if VST gaps down. Thesis intact. Review_by July 7.
 - **NVDA — REMOVED FROM WATCHLIST:** Second stop-out June 25 (−9.78%). GPU spot compression not resolved. Minimum 4-week cooling period.
-- **LRCX — ATR GATE FULLY RESET:** −10%+ on June 26. Fresh 3 consecutive ≤3% sessions needed from June 29. **Earliest entry July 7+**.
+- **LRCX — ATR GATE FULLY RESET:** −10%+ on June 26. Fresh 3 consecutive ≤3% sessions needed from June 29. June 29 ATR 8.76% = session 1/3 FAILS; gate counter 0/3. **Earliest entry July 9+**.
 - **ETN — NEW WATCHLIST ADDITION:** AGGRO added June 25 at $419.54. AI power infrastructure. ATR elevated post-selloff. Earliest entry week of July 7+.
 - **GOOGL Dow Jones inclusion — effective June 29 (Monday):** Positive for passive flows; watch for momentum.
 
