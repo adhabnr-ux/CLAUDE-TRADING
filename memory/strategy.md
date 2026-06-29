@@ -154,10 +154,10 @@ _Previously purged (still excluded):_
 - **ETN — NEW WATCHLIST ADDITION:** AGGRO added June 25 at $419.54. AI power infrastructure. ATR elevated post-selloff. Earliest entry week of July 7+.
 - **GOOGL Dow Jones inclusion — effective June 29 (Monday):** Positive for passive flows; watch for momentum.
 
-## Monday Conviction Ratings (updated 2026-06-26 weekly review)
+## Monday Conviction Ratings (updated 2026-06-29 pre-market)
 
 | Symbol | Rating | 3-consecutive-C trigger | Notes |
 |--------|--------|------------------------|-------|
-| LLY | **A** | N/A | +11.11% from entry; Medicare Bridge July 1 tomorrow; Leerink PT $1,232; stop buffer 9.69% healthy; MANDATORY June 30 pre-mkt decision |
-| V | **B** | 0/3 weeks at C | +3.84% from entry; thesis intact; defensive strength in AI selloff; July 28 earnings gate |
-| VST | **A** | N/A | +9.78% from entry; Helix+Cogentrix intact; 5% trail; stop buffer 1.86% CRITICAL ⚠️⚠️ — stop may fire Monday; thesis conviction unchanged |
+| LLY | **A** | N/A | +12.48% from entry; AT Leerink PT $1,232; Medicare Bridge launches July 1 TOMORROW; stop buffer 11.05% healthy; HOLD decision made; review_by 2026-07-07 |
+| V | **B** | 0/3 weeks at C | +4.07% from entry; thesis intact; defensive strength in AI selloff; July 28 earnings gate; review_by 2026-07-28 |
+| VST | **A** | N/A | +10.20% from entry; Helix+Cogentrix intact; 5% trail; stop buffer 2.23% CRITICAL ⚠️⚠️ — improved from 1.86% Friday but still narrow; thesis conviction unchanged; review_by 2026-07-07; earnings Aug 6 |

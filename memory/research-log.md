@@ -5,6 +5,137 @@ The market-open routine reads the most recent "Planned trades" section._
 
 ---
 
+## 2026-06-29 — Pre-market research (~08:04 ET)
+
+### Live-switch guard
+- `ALPACA_BASE_URL` contains "paper" ✓ — paper trading confirmed.
+
+### Account snapshot (live Alpaca ~08:04 ET)
+
+| Metric | Value |
+|--------|-------|
+| Equity | $99,883.94 |
+| Cash | $73,615.74 (73.70%) |
+| Long market value | $26,268.20 |
+| Last equity (June 26 close) | $99,633.60 |
+| Shock check | +$250.34 (+0.251%) vs last_equity — no shock ✓ (threshold −4%) |
+| HWM | $101,384.21 |
+| Drawdown | −1.479% — NOT triggered ✓ (circuit breaker at −10%) |
+
+### Macro (pre-market June 29, 2026 ~08:04 ET)
+
+| Indicator | Value | Threshold | Status |
+|-----------|-------|-----------|--------|
+| S&P 500 futures | ~7,455.25 (range 7,437–7,464) | — | Mildly positive — quiet recovery day |
+| 10yr Treasury | ~4.44–4.49% est. | <4.75% | ✓ GATE PASSES |
+| WTI crude | ~$80/bbl | <$100 | ✓ Iran peace deal intact |
+| GOOGL Dow Jones | Effective today | — | Positive passive flows ✓ |
+| Major earnings/data | None expected today | — | Quiet macro day |
+
+**Narrative:** S&P futures mildly positive — quiet recovery after last week's −2.4% selloff. GOOGL joins the Dow Jones Industrial Average effective today, generating passive index flows. No major macro data expected. Risk appetite stabilizing but elevated inflation (PCE 4.1%) and hawkish Fed backdrop (FOMC June 16–17 hold; dot-plot median 3.8% year-end) remain. Macro is not deteriorating further today; cautious constructive.
+
+### Position thesis reviews — "what changed since yesterday"
+
+**LLY** ($1,230.01 pre-mkt, +1.82% from $1,208.12 lastday; +12.48% from entry $1,093.534)
+- _What changed since June 26:_ LLY rallied further (+1.82% pre-market) as Medicare GLP-1 Bridge launches TOMORROW (July 1). CMS confirmed coverage: Foundayo, Wegovy, and Zepbound KwikPen at $50/month copay for Medicare Part D beneficiaries (July 1, 2026 – Dec 31, 2027). ~20M Medicare patients eligible. Leerink PT $1,232 raised June 25 — stock is AT the PT today. TIKR bull-case analysis citing $2,100 target signals ongoing institutional interest. No negative news.
+- Stop: HWM $1,215.76, stop $1,094.184 (buffer $135.83 = 11.05%) ✓ — HWM will ratchet at market open as LLY opens above previous HWM
+- Earnings: LLY Q2 est. Aug 5-6 — outside 2-day window ✓
+- **MANDATORY HOLD/TRIM/EXIT DECISION (review_by was July 1):**
+  - DECISION: **HOLD**. Medicare Bridge is an 18-month program (not a one-day catalyst) — durable revenue expansion for ~20M patients is the ongoing thesis. Stock at Leerink PT but bull-case PTs significantly higher. Stop at 11% buffer provides strong downside protection and will auto-ratchet higher as stock climbs. "Sell the news" risk is limited because bridge is a program launch, not a point-in-time event. Next catalyst: Q2 earnings Aug 5-6. Renew review_by to July 7 to assess market reaction post-bridge launch.
+- Invalidation: Medicare Bridge pricing reveals margin deterioration; or stock closes below $1,094 (stop).
+- review_by: **2026-07-07** (renewed — assess post-bridge-launch market reaction)
+- **Decision: HOLD. Conviction: A.**
+
+**VST** ($163.99 pre-mkt, +0.31% from $163.49 lastday; +10.20% from entry $148.81)
+- _What changed since June 26:_ VST slightly positive pre-market (+0.31%) — stop buffer improved marginally from 1.86% to 2.23%. Helix+Cogentrix thesis intact. Analyst data unchanged (Morgan Stanley $210, Wells Fargo Buy, Seaport $230). VST dividend payment June 30 (ex-date was June 22; $0.23 × 40sh = $9.20). Q1 2026 revenue $5.63B, adj. EBITDA +20% YoY — fundamentals strong.
+- Stop: HWM $168.77, stop $160.3315 (5% trail, buffer $3.66 = 2.23%) ✓ ⚠️ CRITICAL
+- Earnings: VST Q2 est. August 6 — outside 2-day window ✓
+- review_by: 2026-07-07 (unchanged)
+- **Decision: HOLD with stop in place.** Do NOT override stop manually. If stop fires, P/L = +9.71% — a win. Thesis intact; stop is the correct exit mechanism.
+- Invalidation: Stop at $160.3315 fires; or Helix/Cogentrix contracts cancelled.
+- **Decision: HOLD. Conviction: A.**
+
+**V** ($336.75 pre-mkt, +0.16% from $336.23 lastday; +4.07% from entry $323.57)
+- _What changed since June 26:_ Visa flat pre-market. Visa Destinations now live across 10 locations (launched June 25); EVO multiyear partnership announced June 24; Class B share conversion June 26 (capital structure optimization). No negative catalysts. 36 analysts Buy, avg PT $398.83.
+- Stop: HWM $339.94, stop $305.946 (buffer $30.80 = 9.15%) ✓
+- Earnings: V Q3 FY26 est. July 28 — review_by July 28 (outside 2-day window today ✓)
+- **Decision: HOLD. Conviction: B (0/3 C-weeks).**
+
+### Monday conviction ratings (June 29, 2026)
+
+| Symbol | Rating | 3-consecutive-C trigger | Notes |
+|--------|--------|------------------------|-------|
+| LLY | **A** | N/A | +12.48% from entry; Medicare Bridge TOMORROW; stop buffer 11.05% healthy; at Leerink PT |
+| V | **B** | 0/3 weeks at C | +4.07% from entry; thesis intact; defensive strength; July 28 earnings gate |
+| VST | **A** | N/A | +10.20% from entry; Helix+Cogentrix intact; 5% trail stop buffer 2.23% critical ⚠️ |
+
+### Watchlist / new candidate review
+
+**LRCX (Lam Research) — ATR gate session 1/3 starts today:**
+- Current ~$378 (June 28 quote). ATR gate FULLY RESET by June 26 −4.38% selloff (after prior week's −10%+ move).
+- SK Hynix HBM slowdown (June 23 announcement) is moderate negative read-through for LRCX order outlook
+- BofA PT $480, Citi PT $450, Oppenheimer PT $400 — strong bull case
+- Session 1/3 starting today (June 29). Need June 29, June 30, July 1 all ≤3% ATR to enter July 7
+- Alpaca bars unavailable pre-market; will assess ATR after today's session in close routine
+- **Action: WATCH. No entry today. Earliest July 7+**
+- Information date: June 28-29, 2026
+
+**ETN (Eaton) — ATR elevated:**
+- AGGRO added June 25 at $419.54; ATR elevated post-selloff
+- Need fresh 3 consecutive ≤3% sessions; earliest July 7+
+- **Action: WATCH. No entry today.**
+
+**GOOGL (Dow Jones inclusion effective today):**
+- Positive passive flows from index inclusion — ~$50B+ in tracking assets
+- Not on watchlist; monitoring for potential addition if momentum builds
+- **Action: WATCH only. No immediate entry considered.**
+
+### Risk posture & circuit breaker check
+
+- **Drawdown:** $99,883.94 vs HWM $101,384.21 = **−1.479%** — NOT triggered ✓ (circuit breaker at −10%)
+- **Sector exposure:**
+  - Healthcare (LLY): $12,300.10 = 12.30% — far below 60% cap ✓
+  - Financials (V): $7,408.50 = 7.42%
+  - Energy/Utilities (VST): $6,559.60 = 6.57%
+  - Cash: $73,615.74 = 73.70%
+- **No new buys:** No sector concentration risk
+
+### Earnings window check
+- LLY: Q2 est. Aug 5-6 → >2 trading days away ✓
+- V: Q3 FY26 est. July 28 → >2 trading days away ✓
+- VST: Q2 est. Aug 6 → >2 trading days away ✓
+- LRCX: Earnings ~late July (not entering today regardless)
+
+### Cash-drag check
+- Cash: $73,615.74 (73.70%) vs target 25–40% for 3 positions
+- No new buys explicitly justified: (1) VST stop critical at 2.23% — may fire this week; (2) LLY at Leerink PT with bridge launching tomorrow — assess market reaction July 1-2 before adding risk; (3) LRCX/ETN ATR gates need 3+ sessions (earliest July 7); (4) no other ATR-qualified candidates. Staying in cash today is a deliberate decision, not drift.
+- Plan for weeks 7-8: target 1-2 new entries (July 7+ when ATR gates potentially clear + VST situation resolved).
+
+### Stop audit (pre-market June 29 — confirmed via Alpaca live orders)
+| Order ID | Symbol | Qty | Type | HWM | Stop | Status |
+|----------|--------|-----|------|-----|------|--------|
+| d4147484 | LLY | 7sh | trailing_stop 10% | $1,215.76 | $1,094.184 | ✓ active |
+| 25989fb5 | LLY | 3sh | trailing_stop 10% | $1,215.76 | $1,094.184 | ✓ active |
+| 66033918 | V | 22sh | trailing_stop 10% | $339.94 | $305.946 | ✓ active |
+| c8b43d32 | VST | 40sh | trailing_stop 5% | $168.77 | $160.3315 | ✓ active ⚠️ CRITICAL buffer 2.23% |
+**4/4 PASS ✓**
+
+---
+
+### Planned trades for today
+
+No trades planned. Market is pre-market (8:04 AM ET, next open 9:30 AM). Market open routine will execute from this plan.
+
+```json
+{
+  "plan_date": "2026-06-29",
+  "trades": []
+}
+```
+
+No trades planned. VST stop critical + LLY at Leerink PT + no ATR-cleared candidates. Cash drag explicitly justified.
+
+
 ## 2026-06-26 — Weekly Review Research (~20:35 UTC)
 
 ### Week of June 23-26, 2026 — Summary findings
