@@ -6,6 +6,96 @@ but always re-fetches live data before trading._
 
 ---
 
+## Last snapshot — 2026-06-29 MARKET-OPEN (~9:46 AM ET)
+
+| Field | Value |
+|---|---|
+| Equity | USD 91,878.29 |
+| Cash | USD 22,458.29 (24.44%) |
+| Long market value | USD 69,420.00 |
+| Open positions | 6 |
+| last_equity (June 26 EOD close — Alpaca authoritative) | USD 90,667.24 |
+| Intraday P/L vs last_equity | **+USD 1,211.05 (+1.336%)** |
+| HWM | USD 101,144.73 |
+| Drawdown from HWM | **-9.161%** (circuit breaker -20% — NOT triggered; 10.839pp headroom) |
+
+**Shock check:** +1.336% vs threshold -6% → NOT triggered ✓ (all 6 positions green vs Friday EOD)
+
+**Open positions (June 29 market-open ~9:46 AM ET):**
+
+| Symbol | Qty | Avg Entry | Current Price | Market Value | Unrealized P/L | P/L % | -12% Cut Trigger | Buffer | Rating |
+|---|---|---|---|---|---|---|---|---|---|
+| NVDA | 103 | USD 213.60 | USD 195.27 | USD 20,112.81 | -USD 1,887.99 | **-8.581%** | USD 187.97 | 3.419pp ⚠️ | A |
+| AVGO | 34 | USD 406.23 | USD 371.88 | USD 12,643.92 | -USD 1,167.90 | **-8.456%** | USD 357.48 | 3.544pp ⚠️ | A |
+| ETN | 34 | USD 419.54 | USD 407.25 | USD 13,846.50 | -USD 417.86 | **-2.929%** | USD 369.20 | 9.071pp ✓ | A |
+| GOOGL | 16 | USD 370.22 | USD 346.83 | USD 5,549.28 | -USD 374.24 | **-6.318%** | USD 325.79 | 5.682pp ✓ | A |
+| AMZN | 36 | USD 247.991 | USD 241.105 | USD 8,679.78 | -USD 247.90 | **-2.777%** | USD 218.23 | 9.223pp ✓ | A |
+| VST | 52 | USD 151.47 | USD 164.59 | USD 8,558.68 | +USD 682.24 | **+8.662% ✅** | USD 133.29 | 20.662pp ✓ | A |
+
+**RECOVERY from Friday close buffers: AVGO 1.593pp → 3.544pp (+1.951pp ✅); NVDA 2.061pp → 3.419pp (+1.358pp ✅); GOOGL 3.972pp → 5.682pp (+1.710pp ✅). All 6 green vs Friday EOD. GOOGL DJIA inclusion effective today — +2.798% intraday.**
+**AMZN is today's leader: +3.616% intraday on Prime Day record USD 26.4B momentum.**
+
+**Stop audit (June 29 market-open): ALL 6 CONFIRMED LIVE ✓**
+
+| Symbol | Stop Order ID | HWM | Stop Price | Trail % | Status |
+|---|---|---|---|---|---|
+| NVDA | `54d7d851` | USD 221.60 | USD 181.712 | 18% | ✓ live |
+| AVGO | `36f5a45f` | USD 426.48 | USD 349.7136 | 18% | ✓ live |
+| ETN | `abdc232b` | USD 426.00 | USD 349.32 | 18% | ✓ live |
+| GOOGL | `e52a43f1` | USD 375.77 | USD 308.1314 | 18% | ✓ live |
+| AMZN | `b55bef05` | USD 250.43 | USD 205.3526 | 18% | ✓ live |
+| VST | `5b347be3` | USD 171.35 | USD 140.507 | 18% | ✓ live |
+
+**No stops missing. No stops needing recreation. 6/6 ✓**
+
+**Thesis contracts (June 29 market-open):**
+| Symbol | Review By | Invalidation | Status |
+|---|---|---|---|
+| NVDA | July 9 | Hyperscaler GPU share reverses | ✓ Intact — -8.581%; 3.419pp buffer ⚠️ (improved from 2.061pp); AI GPU supercycle intact; Aug 26 earnings |
+| AVGO | July 9 | AI revenue decelerates | ✓ Intact — -8.456%; 3.544pp buffer ⚠️ (improved from 1.593pp); Jalapeno chip win = thesis CONFIRMED; analyst target USD 501.58; Sep 3 earnings |
+| ETN | July 9 | ETN below USD 332 OR AI capex reverses | ✓ Intact — -2.929%; 9.071pp buffer ✓; Dana merger RMT sharpens AI/electrical focus; Aug 4 earnings |
+| GOOGL | **July 2 ⚠️** | GCP decelerates OR TPU cancelled | ✓ Intact — -6.318%; 5.682pp buffer ✓ (improved significantly); DJIA inclusion TODAY +2.798% ✅; Cloud +63%; earnings Jul 21-24 |
+| AMZN | July 7 | AWS <20% YoY | ✓ Intact — -2.777%; 9.223pp buffer ✓; Prime Day record USD 26.4B; AWS GPU price hikes = demand signal; Jul 30 earnings |
+| VST | July 15 | Nuclear PPAs cancelled | ✓ Intact — +8.662% ✅; 20.662pp buffer ✓; Helix Digital Infra (USD 10B, NVDA/KKR/Kuwait IA); EBITDA +20%; Aug 6 earnings |
+
+**Conviction ratings (June 29 market-open):**
+| Symbol | Rating | Notes |
+|---|---|---|
+| NVDA | A | AI GPU thesis intact; -8.581%; 3.419pp buffer ⚠️ (improved +1.358pp from Friday); Strong Buy target USD 298.93; Aug 26 earnings |
+| AVGO | A | Jalapeno chip = thesis CONFIRMED; -8.456%; 3.544pp buffer ⚠️ (improved +1.951pp from 1.593pp); analyst target USD 501.58; Sep 3 earnings |
+| ETN | A | AI power infra; -2.929%; 9.071pp buffer ✓; Dana merger; data center demand robust; Aug 4 earnings |
+| GOOGL | A | DJIA inclusion TODAY ✅; GCP +63%; -6.318%; 5.682pp buffer ✓ (improved significantly); review_by July 2 in 3 trading days; earnings Jul 21-24 |
+| AMZN | A | AWS +28%; Prime Day record USD 26.4B; -2.777%; 9.223pp buffer ✓; AWS GPU demand; Jul 30 earnings |
+| VST | A | Best performer +8.662% ✅; 20.662pp buffer ✓; Helix USD 10B + NVDA = thesis playing out; EBITDA +20%; Aug 6 earnings |
+
+**No C-ratings → no forced trims. All 6 positions HOLD at A.**
+
+**Sector exposure (June 29 market-open):**
+| Sector | Names | Market Value | % of Equity |
+|---|---|---|---|
+| Technology — semis | NVDA, AVGO | USD 32,756.73 | 35.65% |
+| Technology — hyperscalers | GOOGL, AMZN | USD 14,229.06 | 15.49% |
+| Industrials/Power Infra | ETN | USD 13,846.50 | 15.07% |
+| Utilities/Power | VST | USD 8,558.68 | 9.31% |
+| Cash | — | USD 22,458.29 | 24.44% |
+
+Sector exposure journaled: Semis at 35.65% intentional AGGRO concentration. No sector at 60%+ threshold. All within guardrails.
+
+**Performance vs SPY (June 29 market-open):**
+| Metric | Value |
+|---|---|
+| Equity | USD 91,878.29 |
+| Aggro return since inception | **(91,878.29 − 100,000) / 100,000 = -8.122%** |
+| SPY anchor | USD 754.18 (June 3, 2026) |
+| SPY June 26 close | USD 729.35 |
+| SPY since inception | **(729.35 − 754.18) / 754.18 = -3.292%** |
+| Alpha since inception | **-4.830pp** |
+| Intraday change vs last_equity | +1.336% |
+
+_Market-open June 29: No trades, no exits. All 6 stops live (6/6 ✓). Equity +1.336% vs last_equity — Monday recovery confirmed. GOOGL DJIA inclusion effective today (+2.798% intraday ✅). AVGO critical stress relieved: 1.593pp (Friday) → 3.544pp (now). NVDA: 2.061pp → 3.419pp. AMZN best intraday performer (+3.616%) on Prime Day record. Plan was empty; no trades warranted. Drawdown -9.161% (10.839pp headroom). No shock, no circuit breaker. Control: ACTIVE. [search: WebSearch fallback — MiniMax M3 not available]_
+
+---
+
 ## Last snapshot — 2026-06-29 PRE-MARKET (~8:10 AM ET)
 
 | Field | Value |

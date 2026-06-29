@@ -2391,3 +2391,90 @@ No trades planned — breaking news gate informational only.
 | Intraday change vs last_equity | -1.019% vs SPY +0.120% → **-1.139pp today** |
 
 _Midday June 26: No positions cut. All 6 stops live (6/6 ✓). NVDA and AVGO both IMPROVED from market-open critical levels — NVDA now 2.97pp buffer (was 2.07pp), AVGO 3.70pp (was 2.08pp). ETN down -4.48% today (worst performer today) but still comfortable 7.59pp buffer. AMZN strongest today (+2.12%) on Prime Day record. All 4 news-scanned positions (NVDA, AVGO, GOOGL, AMZN) have intact theses — macro-driven moves, not thesis breaks. GOOGL DJIA addition Monday June 29 = 3 calendar days away. GOOGL review_by July 2 = 4 trading days. Drawdown from HWM -9.798% (10.2pp headroom before circuit breaker). Control: ACTIVE._
+
+---
+
+## 2026-06-29 — MARKET OPEN (~9:46 AM ET)
+
+**No trades executed.** Pre-market plan was empty (no trades planned). Stop audit only.
+
+### Pre-run checks
+| Check | Result |
+|---|---|
+| Live-switch guard | ALPACA_BASE_URL contains "paper" ✓ |
+| Lock | Clear (written for this run, expires 13:43Z) ✓ |
+| Control switch | STATUS: ACTIVE ✓ |
+| Plan date | June 29, 2026 — matches today ✓ |
+| Plan trades | [] — empty, no trades planned ✓ |
+| Idempotency | No prior EXECUTED: marker ✓ |
+
+### Market & account status
+| Check | Result |
+|---|---|
+| Market open | true (next close 4:00 PM ET) ✓ |
+| Equity | USD 91,878.29 |
+| Last equity (June 26 EOD — Alpaca authoritative) | USD 90,667.24 |
+| Intraday change vs last_equity | **+USD 1,211.05 (+1.336%)** (shock threshold -6% — NOT triggered ✓) |
+| Cash | USD 22,458.29 (24.44%) |
+| Cash floor (2% min) | ✓ |
+| HWM | USD 101,144.73 |
+| Drawdown from HWM | **-9.161%** (circuit breaker -20% — NOT triggered ✓; 10.839pp headroom) |
+
+**Shock check: +1.336% → NOT triggered ✓ (all 6 positions green vs Friday EOD)**
+
+### Position review (market-open ~9:46 AM ET)
+
+| Symbol | Qty | Entry | Current | Market Value | Unrealized P/L | P/L % | -12% Cut Trigger | Buffer | Stop |
+|---|---|---|---|---|---|---|---|---|---|
+| AMZN | 36 | USD 247.991 | USD 241.105 | USD 8,679.78 | -USD 247.90 | -2.777% | USD 218.23 | 9.223pp ✓ | `b55bef05` ✓ |
+| AVGO | 34 | USD 406.23 | USD 371.88 | USD 12,643.92 | -USD 1,167.90 | -8.456% | USD 357.48 | 3.544pp ⚠️ | `36f5a45f` ✓ |
+| ETN | 34 | USD 419.54 | USD 407.25 | USD 13,846.50 | -USD 417.86 | -2.929% | USD 369.20 | 9.071pp ✓ | `abdc232b` ✓ |
+| GOOGL | 16 | USD 370.22 | USD 346.83 | USD 5,549.28 | -USD 374.24 | -6.318% | USD 325.79 | 5.682pp ✓ | `e52a43f1` ✓ |
+| NVDA | 103 | USD 213.60 | USD 195.27 | USD 20,112.81 | -USD 1,887.99 | -8.581% | USD 187.97 | 3.419pp ⚠️ | `54d7d851` ✓ |
+| VST | 52 | USD 151.47 | USD 164.59 | USD 8,558.68 | +USD 682.24 | +8.662% | USD 133.29 | 20.662pp ✓ | `5b347be3` ✓ |
+
+**Cut rule check (>-12% from entry): NO positions triggered. All clear.**
+**Most stressed: NVDA 3.419pp ⚠️, AVGO 3.544pp ⚠️ — both significantly improved from Friday close (NVDA 2.061pp, AVGO 1.593pp). Recovery in progress.**
+
+### Stop audit — 6/6 positions confirmed with live 18% trailing stops ✓
+
+| Symbol | Stop Order ID | Stop Price | HWM | Trail % | Status |
+|---|---|---|---|---|---|
+| NVDA | `54d7d851` | USD 181.712 | USD 221.60 | 18% | ✓ live |
+| AVGO | `36f5a45f` | USD 349.7136 | USD 426.48 | 18% | ✓ live |
+| ETN | `abdc232b` | USD 349.32 | USD 426.00 | 18% | ✓ live |
+| GOOGL | `e52a43f1` | USD 308.1314 | USD 375.77 | 18% | ✓ live |
+| AMZN | `b55bef05` | USD 205.3526 | USD 250.43 | 18% | ✓ live |
+| VST | `5b347be3` | USD 140.507 | USD 171.35 | 18% | ✓ live |
+
+**No stops missing. No stops needing recreation. All 6 positions fully protected.**
+
+### Notable observations
+- All 6 positions green vs Friday EOD: NVDA +1.423%, AMZN +3.616%, AVGO +1.879%, ETN +1.135%, GOOGL +2.798%, VST +0.673%.
+- **GOOGL DJIA inclusion effective TODAY** — mandatory index-fund buying providing real support (+2.798% intraday ✓).
+- **AVGO (3.544pp buffer) and NVDA (3.419pp buffer)** — both materially improved from Friday close sub-2pp critical levels (AVGO 1.593pp → 3.544pp; NVDA 2.061pp → 3.419pp). Still ⚠️ but tension significantly relieved.
+- Week 5: 0/8 new positions opened. Pre-market decision: no new buys pending drawdown confirmation.
+- GOOGL review_by July 2: 3 trading days away; DJIA catalyst playing out.
+- Plan was empty; no trades warranted.
+
+### Sector exposure
+| Sector | Names | Market Value | % of Equity |
+|---|---|---|---|
+| Technology — semis | NVDA, AVGO | USD 32,756.73 | 35.65% |
+| Technology — hyperscalers | GOOGL, AMZN | USD 14,229.06 | 15.49% |
+| Industrials/Power Infra | ETN | USD 13,846.50 | 15.07% |
+| Utilities/Power | VST | USD 8,558.68 | 9.31% |
+| Cash | — | USD 22,458.29 | 24.44% |
+
+### Performance vs SPY
+| Metric | Value |
+|---|---|
+| Equity | USD 91,878.29 |
+| Aggro return since inception | **(91,878.29 − 100,000) / 100,000 = -8.122%** |
+| SPY anchor | USD 754.18 (June 3, 2026) |
+| SPY June 26 close | USD 729.35 |
+| SPY since inception | **(729.35 − 754.18) / 754.18 = -3.292%** |
+| Alpha since inception | **-4.830pp** |
+| Intraday change vs last_equity | +1.336% |
+
+_Market-open June 29: No trades, no exits. Pre-market plan was empty. All 6 stops live (6/6 ✓). Equity +1.336% vs last_equity — Monday recovery continues. GOOGL DJIA inclusion effective today (+2.798% intraday). AVGO buffer recovered to 3.544pp (from 1.593pp Friday — Jalapeno chip win is real support). NVDA buffer 3.419pp (from 2.061pp Friday). Both ⚠️ but significantly less critical. Drawdown -9.161% from HWM (10.839pp headroom). No shock, no circuit breaker. Control: ACTIVE._
