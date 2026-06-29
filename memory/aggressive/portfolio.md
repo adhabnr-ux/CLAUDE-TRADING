@@ -6,6 +6,97 @@ but always re-fetches live data before trading._
 
 ---
 
+## Last snapshot — 2026-06-29 EOD CLOSE (~3:50 PM ET)
+
+| Field | Value |
+|---|---|
+| Equity | USD 91,764.13 |
+| Cash | USD 22,458.29 (24.47%) |
+| Long market value | USD 69,305.84 |
+| Open positions | 6 |
+| last_equity (June 26 EOD close — Alpaca authoritative) | USD 90,667.24 |
+| Today's P/L vs last_equity | **+USD 1,096.89 (+1.210%)** |
+| HWM | USD 101,144.73 |
+| Drawdown from HWM | **-9.274%** (circuit breaker -20% — NOT triggered; 10.726pp headroom) |
+
+**Shock check:** +1.210% vs threshold -6% → NOT triggered ✓
+
+**Open positions (June 29 EOD ~3:50 PM ET):**
+
+| Symbol | Qty | Avg Entry | EOD Price | Market Value | Unrealized P/L | P/L % | -12% Cut Trigger | Buffer | Rating |
+|---|---|---|---|---|---|---|---|---|---|
+| NVDA | 103 | USD 213.60 | USD 194.96 | USD 20,080.88 | -USD 1,919.92 | **-8.727%** | USD 187.97 | 3.272pp ⚠️ | A |
+| AVGO | 34 | USD 406.23 | USD 371.61 | USD 12,634.74 | -USD 1,177.08 | **-8.522%** | USD 357.48 | 3.478pp ⚠️ | A |
+| ETN | 34 | USD 419.54 | USD 408.26 | USD 13,880.84 | -USD 383.52 | **-2.689%** | USD 369.20 | 9.310pp ✓ | A |
+| GOOGL | 16 | USD 370.22 | USD 353.42 | USD 5,654.72 | -USD 268.80 | **-4.538%** | USD 325.79 | 7.463pp ✓ | A |
+| AMZN | 36 | USD 247.99 | USD 239.90 | USD 8,636.40 | -USD 291.28 | **-3.263%** | USD 218.23 | 8.740pp ✓ | A |
+| VST | 52 | USD 151.47 | USD 162.00 | USD 8,424.00 | +USD 547.56 | **+6.952% ✅** | USD 133.29 | 18.960pp ✓ | A |
+
+**KEY vs midday:**
+- NVDA: 2.375pp → **3.272pp** (+0.897pp recovery into close ✅ — HIGHEST ALERT condition easing; was below 3pp at midday)
+- AVGO: 3.224pp → **3.478pp** (+0.254pp ✅)
+- GOOGL: 6.830pp → **7.463pp** (+0.633pp ✅ — DJIA inclusion +4.751% from June 26 close fully played out today)
+- AMZN: 8.822pp → **8.740pp** (-0.082pp, minor drift)
+- ETN: 9.697pp → **9.310pp** (-0.387pp, softened into close)
+- VST: 21.596pp → **18.960pp** (-2.636pp — VST gave back gains after midday, -0.911% from June 26 close)
+
+**Stop audit (June 29 EOD): ALL 6 CONFIRMED LIVE ✓ (verified from open orders)**
+
+| Symbol | Stop Order ID | HWM | Stop Price | Trail % | Status |
+|---|---|---|---|---|---|
+| NVDA | `54d7d851` | USD 221.60 | USD 181.712 | 18% | ✓ live |
+| AVGO | `36f5a45f` | USD 426.48 | USD 349.7136 | 18% | ✓ live |
+| ETN | `abdc232b` | USD 426.00 | USD 349.32 | 18% | ✓ live |
+| GOOGL | `e52a43f1` | USD 375.77 | USD 308.1314 | 18% | ✓ live |
+| AMZN | `b55bef05` | USD 252.525 | USD 207.0705 | 18% | ✓ live (HWM ratcheted; last updated 15:34 UTC today) |
+| VST | `5b347be3` | USD 171.35 | USD 140.507 | 18% | ✓ live |
+
+**No stops missing. No stops needing recreation. 6/6 ✓**
+
+**Thesis contracts (June 29 EOD):**
+| Symbol | Review By | Invalidation | Status |
+|---|---|---|---|
+| NVDA | July 9 | Hyperscaler GPU share reverses | ✓ Intact — -8.727%; 3.272pp ⚠️ (recovered from 2.375pp HIGHEST ALERT); DJIA-driven market rally lifted all semis; Aug 26 earnings |
+| AVGO | July 9 | AI revenue decelerates | ✓ Intact — -8.522%; 3.478pp ⚠️; Jalapeno confirmed; PT USD 501.58; Sep 3 earnings |
+| ETN | July 9 | ETN below USD 332 OR AI capex reverses | ✓ Intact — -2.689%; 9.310pp ✓; AI power infra; Aug 4 earnings |
+| GOOGL | **July 2 ⚠️** | GCP decelerates OR TPU cancelled | ✓ Intact — -4.538%; 7.463pp ✓; DJIA inclusion TODAY +4.751% ✅; pre-market July 2 = mandatory hold/trim/exit decision |
+| AMZN | July 7 | AWS <20% YoY | ✓ Intact — -3.263%; 8.740pp ✓; AWS thesis intact; Jul 30 earnings |
+| VST | July 15 | Nuclear PPAs cancelled | ✓ Intact — +6.952% ✅; 18.960pp ✓; Helix Digital Infra intact; Aug 6 earnings |
+
+**NVDA HIGHEST ALERT protocol — EOD update:**
+Buffer recovered from midday 2.375pp to EOD 3.272pp. Proactive trim heuristic re-check: buffer >3pp (currently 3.272pp — heuristic threshold is <3pp, so NOT triggered). review_by July 9 = 8 trading days (>5 days — heuristic not yet triggered). Thesis-positive news (market-wide recovery, no hyperscaler defection). Decision at EOD: HOLD. Pre-market June 30: still required to make an explicit NVDA decision (from midday instruction), but the urgency has decreased as buffer recovered. If NVDA opens below USD 192 on June 30 (which would push buffer below 2pp), escalate to proactive trim discussion.
+
+**Sector exposure (June 29 EOD):**
+| Sector | Names | Market Value | % of Equity |
+|---|---|---|---|
+| Technology — semis | NVDA, AVGO | USD 32,715.62 | 35.65% |
+| Technology — hyperscalers | GOOGL, AMZN | USD 14,291.12 | 15.58% |
+| Industrials/Power Infra | ETN | USD 13,880.84 | 15.12% |
+| Utilities/Power | VST | USD 8,424.00 | 9.18% |
+| Cash | — | USD 22,458.29 | 24.47% |
+
+No sector at 60%+ threshold. All within guardrails.
+
+**Performance vs SPY (June 29 EOD):**
+| Metric | Value |
+|---|---|
+| Equity | USD 91,764.13 |
+| Aggro return since inception | **(91,764.13 − 100,000) / 100,000 = -8.236%** |
+| SPY anchor | USD 754.18 (June 3, 2026) |
+| SPY June 29 close | USD 741.00 |
+| SPY since inception | **(741.00 − 754.18) / 754.18 = -1.748%** |
+| Alpha since inception | **-6.488pp** |
+| Today P/L | +USD 1,096.89 (+1.210%) |
+| SPY today | +1.647% (728.99 → 741.00) |
+| Today alpha | **-0.437pp** (slight underperform — tech concentration benefited less than broad index) |
+
+**Market context (June 29) [search: WebSearch fallback — MiniMax M3 not available]:**
+Broad risk-on rally: S&P 500 +1.2%, Nasdaq +2.0%, Dow above 52,000 for first time. GOOGL DJIA inclusion effective today drove GOOGL +4.75% and lifted Nasdaq broadly. Tesla led Mag7 +8.06%. Jobs report (NFP) due Thursday (not Friday — markets close Friday for July 4th). AI-tech benefited from DJIA inclusion catalyst and macro stability.
+
+_EOD June 29: No trades, no exits. All 6 stops live (6/6 ✓). Today: +1.210% vs SPY +1.647% (today alpha -0.437pp). GOOGL DJIA inclusion played out fully (+4.751% from June 26 close). NVDA HIGHEST ALERT recovered: buffer 2.375pp (midday) → 3.272pp (EOD) — proactive trim heuristic NOT triggered at EOD buffer. VST gave back afternoon gains (-0.911% from June 26 close, -2.636pp buffer from midday). Drawdown -9.274% (10.726pp to circuit breaker). Shock check: NOT triggered. GOOGL review_by July 2 = mandatory decision pre-market Tuesday June 30 (NOT Wednesday — markets close Friday July 4th). Week 4 (June 22-26) weekly review was not filed — noted. Control: ACTIVE. [search: WebSearch fallback — MiniMax M3 not available]_
+
+---
+
 ## Last snapshot — 2026-06-29 MIDDAY (~12:41 PM ET)
 
 | Field | Value |
