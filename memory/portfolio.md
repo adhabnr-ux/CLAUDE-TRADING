@@ -3,63 +3,63 @@
 _Updated by every routine from live Alpaca data. The next agent trusts this as
 the last known state, but always re-fetches live data before trading._
 
-**Last updated:** 2026-06-29 08:04 ET (pre-market; stop audit 4/4 PASS; LLY $1,230.01 +12.48% AT Leerink PT / VST $164 buf 2.23% ⚠️ / V $337 +4.07%; 0 trades; LLY Medicare Bridge launches TOMORROW; LRCX ATR gate session 1/3 today; Bull leads SPY ~+0.56pp est.)
+**Last updated:** 2026-06-29 09:36 ET (market-open; stop audit 4/4 PASS; LLY $1,233.30 +12.78% new HWM $1,238 exceeds Leerink PT / VST $164.06 buf 2.27% ⚠️ / V $340.20 +5.14%; 0 trades; LLY Medicare Bridge launches TOMORROW; LRCX ATR gate session 1/3 in progress; Bull leads SPY +0.027pp)
 **Inception:** 2026-05-21 — starting equity $100,000.00 | SPY anchor price $739.44
 **SPY total-return anchor (post-June 18 ex-div $1.76):** **$741.20**
 **Cumulative SPY dividends since inception (quarterly tracker):** $1.76/sh (June 18 ex-div); next SPY ex-div est. ~September 2026.
 
-## Account (pre-market June 29, 2026 — live Alpaca data ~08:04 ET)
+## Account (market-open June 29, 2026 — live Alpaca data ~09:36 ET)
 
 | Metric | Value |
 |--------|-------|
-| Equity | $99,883.94 |
-| Cash | $73,615.74 (73.70%) |
-| Long market value | $26,268.20 |
+| Equity | $99,998.76 |
+| Cash | $73,615.74 (73.62%) |
+| Long market value | $26,383.02 |
 | Buying power | ~$73,615.74 |
 | Last equity (June 26 Alpaca close) | $99,633.60 |
 
-## Open positions (pre-market June 29, 2026 — live Alpaca data ~08:04 ET)
+## Open positions (market-open June 29, 2026 — live Alpaca data ~09:36 ET)
 
 | Symbol | Qty | Avg entry | Current price | Mkt value | Unrealized P/L | % of portfolio | Trailing Stop |
 |--------|-----|-----------|--------------|-----------|----------------|----------------|---------------|
-| LLY | 10 | $1,093.534 | $1,230.01 | $12,300.10 | +$1,364.76 (+12.48%) | 12.31% | d4147484 (7sh) + 25989fb5 (3sh), HWM $1,215.76 (ratchets at open), stop $1,094.184 — buffer $135.83 (11.05%) ✓ **AT Leerink PT $1,232; Medicare Bridge TOMORROW** |
-| V | 22 | $323.57 | $336.75 | $7,408.50 | +$289.96 (+4.07%) | 7.42% | 66033918 (22sh, HWM $339.94, stop $305.946) ✓ — buffer $30.80 (9.15%) ✓ |
-| VST | 40 | $148.81 | $163.99 | $6,559.60 | +$607.20 (+10.20%) | 6.57% | c8b43d32 (40sh, 5% trail, HWM $168.77, stop $160.3315) ✓ — buffer $3.66 (2.23%) ⚠️⚠️ CRITICAL; stop NOT fired |
+| LLY | 10 | $1,093.534 | $1,233.30 | $12,333.00 | +$1,397.66 (+12.78%) | 12.33% | d4147484 (7sh) + 25989fb5 (3sh), HWM $1,238.00 ⬆️ NEW HWM (ratcheted above $1,215.76 Friday; ABOVE Leerink PT $1,232), stop $1,114.20 — buffer $119.10 (9.66%) ✓ |
+| V | 22 | $323.57 | $340.20 | $7,484.31 | +$365.77 (+5.14%) | 7.48% | 66033918 (22sh, HWM $340.94, stop $306.846) ✓ — buffer $33.35 (9.80%) ✓ |
+| VST | 40 | $148.81 | $164.06 | $6,562.40 | +$610.00 (+10.25%) | 6.56% | c8b43d32 (40sh, 5% trail, HWM $168.77, stop $160.3315) ✓ — buffer $3.73 (2.27%) ⚠️⚠️ CRITICAL — improved from 1.86% Friday, but still narrow |
 
-**Sector exposure (pre-market June 29):**
-- Healthcare (LLY): $12,300.10 = 12.31% | Financials (V): $7,408.50 = 7.42% | Energy/Utilities (VST): $6,559.60 = 6.57% | Cash: $73,615.74 = 73.70%
+**Sector exposure (market-open June 29):**
+- Healthcare (LLY): $12,333.00 = 12.33% | Financials (V): $7,484.31 = 7.48% | Energy/Utilities (VST): $6,562.40 = 6.56% | Cash: $73,615.74 = 73.62%
 - No sector above 60% cap ✓
 
-**Trailing stop status (pre-market June 29 — confirmed via Alpaca live orders ~08:04 ET):**
-- LLY (d4147484): 7sh — HWM $1,215.76, stop $1,094.184 ✓ (buffer $135.83 = 11.05%; will ratchet at open)
-- LLY (25989fb5): 3sh — HWM $1,215.76, stop $1,094.184 ✓
-- V (66033918): 22sh — HWM $339.94, stop $305.946 ✓ (buffer $30.80 = 9.15%)
-- VST (c8b43d32): 40sh — 5% trail, HWM $168.77, stop $160.3315 ✓ (buffer $3.66 = 2.23% ⚠️⚠️ CRITICAL — improved from Friday 1.86%)
+**Trailing stop status (market-open June 29 — confirmed via Alpaca live orders ~09:36 ET):**
+- LLY (d4147484): 7sh — HWM $1,238.00 ⬆️, stop $1,114.20 ✓ (buffer $119.10 = 9.66%; new HWM above Leerink PT $1,232)
+- LLY (25989fb5): 3sh — HWM $1,238.00 ⬆️, stop $1,114.20 ✓
+- V (66033918): 22sh — HWM $340.94, stop $306.846 ✓ (buffer $33.35 = 9.80%)
+- VST (c8b43d32): 40sh — 5% trail, HWM $168.77, stop $160.3315 ✓ (buffer $3.73 = 2.27% ⚠️⚠️ CRITICAL)
 **Stop audit: 4/4 PASS ✓**
 
-**Pre-market June 29 notes (~08:04 ET — stop audit 4/4 PASS; 0 trades; Monday conviction review; LLY Bridge decision HOLD; VST stop not fired):**
-- **Shock check:** $99,883.94 vs last_equity $99,633.60 = **+$250.34 = +0.251%** — no shock ✓ (threshold −4%)
-- **Drawdown circuit breaker:** $99,883.94 vs HWM $101,384.21 = **−1.479%** — NOT triggered ✓ (8.521pp headroom; CB trigger USD 91,245.79)
-- **⭐ LLY** $1,230.01 (+12.48% from entry): Pre-market surge ahead of Medicare Bridge (launches July 1). AT Leerink PT $1,232. **MANDATORY DECISION: HOLD.** Bridge is 18-month program — durable revenue for ~20M Medicare patients. Stop buffer 11.05% excellent; HWM ratchets at open. Conviction A. review_by renewed 2026-07-07.
-- **VST** $163.99 (+10.20% from entry, +0.31% pre-market): Stop buffer improved 1.86%→2.23% — still CRITICAL. Thesis intact (Helix+Cogentrix). Dividend $9.20 June 30. Earnings Aug 6. HOLD with stop. Conviction A. review_by 2026-07-07.
-- **V** $336.75 (+4.07% from entry, +0.16% pre-market): Defensive thesis intact. Visa Destinations live. HOLD. Conviction B (0/3 C-weeks). review_by 2026-07-28.
-- **Market (June 29 pre-market):** S&P futures mildly positive. GOOGL joins Dow today. No major macro data. Quiet recovery from last week's −2.4% SPY selloff. PCE 4.1% (hawkish) remains headwind. LRCX ATR gate session 1/3 starts today.
-- **No new positions:** LRCX/ETN ATR gates not cleared (need 3 sessions from today, earliest July 7). Staying heavy in cash is explicitly justified.
+**Market-open June 29 notes (~09:36 ET — stop audit 4/4 PASS; 0 trades; GOOGL Dow inclusion driving SPY rally):**
+- **Shock check:** $99,998.76 vs last_equity $99,633.60 = **+$365.16 = +0.37%** — no shock ✓ (threshold −4%)
+- **Drawdown circuit breaker:** $99,998.76 vs HWM $101,384.21 = **−1.366%** — NOT triggered ✓ (8.634pp headroom)
+- **⭐ LLY** $1,233.30 (+12.78% from entry): New HWM $1,238.00 — ABOVE Leerink PT $1,232. Medicare Bridge launches TOMORROW (July 1). Stop at $1,114.20 (9.66% buffer) ✓. Conviction A. review_by 2026-07-07.
+- **VST** $164.06 (+10.25% from entry): Stop buffer 2.27% — improved marginally from 2.23% pre-market. Still CRITICAL. VST dividend payment tomorrow ($0.23/sh × 40 = $9.20). Thesis intact. HOLD with stop. Conviction A.
+- **V** $340.20 (+5.14% from entry): Defensive thesis intact; gaining with GOOGL-Dow rally. HWM $340.94 nearly touched. Stop buffer 9.80% healthy ✓. Conviction B.
+- **No new positions:** Plan was empty; all guardrails confirmed. LRCX ATR gate session 1/3 in progress (2.45% ATR early trading ≤3% threshold — confirm at close). Next entry window earliest July 7.
+- **SPY:** $737.47 — rallying +1.12% on GOOGL Dow Jones inclusion. Lead compressed vs Friday.
 
-## Monday conviction ratings (June 29, 2026)
+## Monday conviction ratings (June 29, 2026 — unchanged from pre-market)
 
 | Symbol | Rating | 3-consecutive-C trigger | Notes |
 |--------|--------|------------------------|-------|
-| LLY | **A** | N/A | +12.48% from entry; AT Leerink PT $1,232; Medicare Bridge TOMORROW; stop buffer 11.05% healthy |
-| V | **B** | 0/3 weeks at C | +4.07% from entry; thesis intact; defensive strength; July 28 earnings gate |
-| VST | **A** | N/A | +10.20% from entry; Helix+Cogentrix intact; 5% trail stop buffer 2.23% CRITICAL ⚠️⚠️ |
+| LLY | **A** | N/A | +12.78% from entry; new HWM $1,238 above Leerink PT $1,232; Medicare Bridge launches TOMORROW |
+| V | **B** | 0/3 weeks at C | +5.14% from entry; defensive strength; GOOGL-Dow rally; July 28 earnings gate |
+| VST | **A** | N/A | +10.25% from entry; Helix+Cogentrix intact; 5% trail stop buffer 2.27% CRITICAL ⚠️⚠️ |
 
 ## Performance vs S&P 500
 
 | Period | Bull | SPY | Difference |
 |--------|------|-----|------------|
 | Inception (2026-05-21) | $100,000.00 | $739.44 | — |
-| **Pre-mkt (2026-06-29)** | **$99,883.94 (−0.116%)** | **SPY TR est. ~−0.56% from inception** | **Bull LEADS SPY ~+0.56pp est.** |
+| **Market-open (2026-06-29)** | **$99,998.76 (−0.001%)** | **SPY $737.47 + $1.76 div = −0.028% TR** | **Bull LEADS SPY +0.027pp** |
 | **Close (2026-06-26)** | **$99,692.61 (−0.307%)** | **$732.865 + $1.76 div = −0.651% TR** | **Bull LEADS SPY +0.344pp ✓** |
 
 ---

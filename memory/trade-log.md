@@ -3,6 +3,51 @@
 _Every order placed, with its reasoning. Append-only — newest entries at the top.
 The weekly new-position count is derived from this log._
 
+## 2026-06-29 09:36 ET — MARKET-OPEN (0 trades; stop audit 4/4 ✓; LLY ⭐ new HWM $1,238 above Leerink PT; VST buf 2.27% ⚠️; Bull LEADS SPY +0.027pp)
+
+- **Action:** Market-open routine. 0 trades — plan was empty per pre-market (VST stop critical, LLY at Leerink PT, no ATR-cleared new candidates).
+- **Market status:** `is_open: true` (9:36 AM ET); opened 9:30 AM ET.
+- **Account (~09:36 ET — live Alpaca):** Equity $99,998.76 | Cash $73,615.74 (73.62%) | LMV $26,383.02
+
+### Live-switch guard
+- `ALPACA_BASE_URL` contains "paper" ✓ — paper trading confirmed.
+
+### Control switch
+- STATUS: ACTIVE ✓ — no PAUSED / RISK_OFF flags, no NOTE, no QUERY.
+
+### Shock check
+- Equity $99,998.76 vs last_equity $99,633.60 = **+$365.16 = +0.37%** — no shock ✓ (threshold −4%)
+
+### Drawdown circuit breaker
+- HWM $101,384.21; current $99,998.76 = **−1.366%** — NOT triggered ✓ (8.634pp headroom)
+
+### Breaking-news gate (no new trades planned; checked for thesis-breaking events on held positions)
+- **LLY:** No thesis-breaking events. European drug approval (Jaypirca / CLL) June 26 ✓; Medicare Bridge confirmed July 1. Leerink PT $1,232 — stock now exceeds it (HWM $1,238). HOLD confirmed.
+- **V:** No thesis-breaking events. OpenAI partnership embedded in platform; Visa Destinations live across 10 cities. Defensive strength. HOLD confirmed.
+- **VST:** No thesis-breaking events. Helix Digital Infrastructure + Cogentrix thesis intact. AI data center power demand comments ongoing. VST dividend payment tomorrow (June 30, $0.23/sh). HOLD confirmed.
+
+### Stop audit (market-open June 29 — confirmed via Alpaca live orders ~09:36 ET)
+| Order ID | Symbol | Qty | Type | HWM | Stop | Buffer | Status |
+|----------|--------|-----|------|-----|------|--------|--------|
+| d4147484 | LLY | 7sh | trailing_stop 10% | $1,238.00 ⬆️ | $1,114.20 | $119.10 (9.66%) | ✓ active — new HWM ABOVE Leerink PT $1,232 |
+| 25989fb5 | LLY | 3sh | trailing_stop 10% | $1,238.00 ⬆️ | $1,114.20 | $119.10 (9.66%) | ✓ active |
+| 66033918 | V | 22sh | trailing_stop 10% | $340.94 | $306.846 | $33.35 (9.80%) | ✓ active |
+| c8b43d32 | VST | 40sh | trailing_stop 5% | $168.77 | $160.3315 | $3.73 (2.27%) | ✓ active ⚠️⚠️ CRITICAL |
+**4/4 PASS ✓** — no stops recreated; no trailing stop fired since last run.
+
+### LRCX ATR gate update (session 1/3 — June 29)
+- Intraday bar at 09:36 ET: high $391.56, low $382.01 → ATR so far = ($391.56−$382.01)/$389.95 = **2.45%** ≤3% threshold
+- Status: Session 1/3 monitoring in progress — confirm pass/fail at close routine.
+
+### Performance vs SPY (market-open June 29, 2026)
+| Period | Bull | SPY TR | Difference |
+|--------|------|--------|------------|
+| **Market-open (~09:36 ET)** | **$99,998.76 (−0.001%)** | **($737.47 + $1.76) / $739.44 − 1 = −0.028%** | **Bull LEADS SPY +0.027pp** |
+| Close June 26 | $99,692.61 (−0.307%) | −0.651% TR | +0.344pp |
+Note: Lead compressed from +0.883pp (weekly review) to +0.027pp as SPY rallied +1.12% on GOOGL Dow Jones inclusion today. Bull's held positions (LLY, V, VST) up only +0.37% today.
+
+---
+
 ## 2026-06-26 15:51 ET — CLOSE (0 trades; stop audit 4/4 ✓; LLY ⭐ new HWM $1,215.76; VST buf 1.86% ⚠️⚠️; Bull LEADS SPY +0.344pp)
 
 - **Action:** Close routine. 0 trades. Stop audit 4/4 PASS. LLY hit new position HWM $1,215.76 (stop ratcheted to $1,094.184). VST continued afternoon decline; stop buffer now critical 1.86%. Bull outperformed SPY by +0.650pp today.
