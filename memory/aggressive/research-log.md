@@ -2747,3 +2747,67 @@ AI data center cost concerns and an OpenAI IPO delay report (reportedly leaning 
 3. GOOGL (3.054pp buffer) — review_by July 2 = ONLY 2 trading days away (June 29, June 30); explicit hold/trim/exit decision required
 4. AMZN +2.16% today despite broad selloff — Prime Day ended; AWS thesis is the dominant driver
 5. VST outperformed defensively despite tech selling — nuclear PPA cash flows unaffected by AI cost concerns
+
+---
+
+## 2026-06-29 — PRE-MARKET (~8:10 AM ET)
+
+_Research engine: WebSearch fallback (MiniMax M3 not available)._
+
+### Market posture
+- **S&P 500 futures**: ~7,455 (up vs prior session ~7,444). Monday June 29 is relatively quiet for macro catalysts — no major earnings or data releases. Cautiously risk-on mood after last week's Nasdaq -4% selloff.
+- **Broader tape**: AI infrastructure supercycle narrative intact despite last week's "AI cost concern" sell narrative. Hyperscalers have not cut GPU orders. PCE at 4.1% (June 26) is a multiple-compression headwind but has not reversed AI earnings growth.
+- **Risk sentiment**: Cautiously constructive — AI names recovering after oversold week. GOOGL DJIA inclusion adds index-fund tailwind today.
+
+### Position: NVDA
+- **What changed since yesterday**: NVDA recovering pre-market to USD 194.53 (+1.1% vs Friday close USD 192.37). 5 consecutive down days through Friday but analyst consensus "Strong Buy" unchanged; avg target USD 298.93 (26 analysts per CNBC). No hyperscaler GPU share reversal announced. No company-specific news.
+- **Source**: CNBC/stockanalysis.com (June 29, 2026)
+- **Thesis status**: INTACT. -8.926% from entry; buffer 3.074pp ⚠️ (improved from 2.061pp Friday). AI GPU supercycle intact; Jalapeno chip (built by AVGO for OpenAI) confirms demand pipeline. Next earnings Aug 26. HOLD.
+
+### Position: AVGO
+- **What changed since yesterday**: AVGO recovering pre-market to USD 373.92 (+2.7% vs Friday close USD 363.95). Key catalyst: **OpenAI and Broadcom announced OpenAI's custom AI compute chip "Jalapeno"** — built by Broadcom. This is AVGO's largest custom AI chip win since the XPU thesis was established. "Broadcom's AI Chip Boom: Is the Rally Just Starting?" (June 27). Analyst target USD 501.58 from Buy consensus (26 analysts).
+- **Source**: Yahoo Finance/perplexity.ai AVGO news (June 26-29, 2026)
+- **Thesis status**: THESIS CONFIRMED. -7.954% from entry; buffer 4.046pp ⚠️ (massive recovery from 1.593pp Friday — critical stress relieved). Jalapeno chip is a direct validation of "AVGO wins hyperscaler custom chip mandates." Next earnings Sep 3. HOLD.
+
+### Position: ETN
+- **What changed since yesterday**: Eaton recovering pre-market to USD 406.15 (-3.19% from entry, improved from -4.019% Friday). Strategic development: ETN completing Dana mobility unit merger ($5.1B Reverse Morris Trust) — sharpens focus on electrical and aerospace. Q2 2026 guidance: EPS USD 2.29-2.39. Full-year organic growth guidance raised to 9-11%. Strong data center demand continues.
+- **Source**: Simply Wall St / Yahoo Finance ETN news (June 2026)
+- **Thesis status**: INTACT. -3.192% from entry; buffer 8.808pp ✓. Dana merger strengthens the electrical infrastructure thesis. Q2 earnings expected Aug 4. HOLD.
+
+### Position: GOOGL
+- **What changed since yesterday — MAJOR CATALYST**: **Alphabet's GOOGL replacing Verizon in the Dow Jones Industrial Average, EFFECTIVE TODAY June 29.** Confirmed by 9to5Google, TipRanks ("Why Is Google Stock (GOOGL) Rising in Today's Pre-Market Trading — June 29, 2026?"), Kiplinger, Yahoo Finance, EBC Financial Group. TechTimes: "Alphabet Joins Dow Jones on June 29: Price Weighting Gives Google 7x Verizon Clout." Mandatory index-fund buying happening NOW.
+- **What this means**: GOOGL near USD 340.50 (~7x Verizon's ~$45.68) means GOOGL has far greater DJIA influence and drives much larger index-fund rebalancing. This is a sustained structural tailwind.
+- **Context**: Stock was -11.5% over past month entering today, entering correction. But: Q1 revenue USD 109.9B (+22%), Cloud +63%, Search revenue +19%. Analyst views remain constructive.
+- **Source**: TipRanks June 29 2026; Kiplinger; Yahoo Finance; 9to5Google (confirmed June 23 announcement, June 29 effective)
+- **Thesis contract review (review_by July 2)**: Decision: **HOLD.** DJIA catalyst is playing out now — mandatory index buying is a near-term support. Cloud revenue +63% is the core thesis metric; no deceleration observed. TPU not cancelled. Price weakness is macro/sentiment (AI cost concerns, correction), not thesis-specific. Earnings July 21-24 (not within 2 days). Mandatory review at pre-market July 2 — will assess if stock fails to recover with DJIA catalyst.
+- **Thesis status**: INTACT. -8.028% from entry; buffer 3.972pp ⚠️ (improved 0.92pp). HOLD.
+
+### Position: AMZN
+- **What changed since yesterday**: AMZN recovering pre-market to USD 235.00 (+1.3% vs Friday close USD 231.92). Prime Day 2026 (June 23-26) delivered record USD 26.4B in spending — positive thesis confirmation. AWS raised AI GPU prices → analyst buy ratings (confirms AWS demand). Amazon planning USD 13B India AI/cloud investment. 41 analyst Buy consensus; target USD 305.98.
+- **Source**: Yahoo Finance/Globe and Mail AMZN news (June 2026)
+- **Thesis status**: INTACT. -5.239% from entry; buffer 6.761pp ✓. AWS demand confirmed by GPU pricing power. Prime Day record = consumer resilience. Earnings July 30. HOLD.
+
+### Position: VST
+- **What changed since yesterday**: VST recovering toward USD 164.36 (+0.52% vs Friday close USD 163.605). Key strategic development: **KKR, NVIDIA, Kuwait Investment Authority, and Vistra launched Helix Digital Infrastructure** — a USD 10B venture for AI data center, connectivity, and power solutions; Vistra named preferred power provider. EBITDA +20% YoY in Q1. Analyst median target USD 232 (~42% upside from current ~$163). Dividend payment June 30 (ex-date June 22).
+- **Note on Helix**: This consortium reference has appeared in the thesis since VST entry (June 13) — it may be pre-existing knowledge. However, the NVIDIA association in this context is a strong ongoing thesis validator.
+- **Volatility check**: June 26 ADR = (167.20 - 163.22) / 163.605 = 2.43%; June 25 ADR = (170.52 - 166.22) / 167.675 = 2.56%. Estimated 20-day ADR: ~2.5%. 18% stop = 7x daily range — ample room.
+- **Source**: Quiverquant/Nemo VST news (June 2026)
+- **Thesis status**: INTACT. +8.510% from entry; buffer 20.51pp ✓. Best performer. HOLD.
+
+### Earnings window check
+- NVDA: Aug 26 ✓ | AVGO: Sep 3 ✓ | ETN: Aug 4 ✓ | GOOGL: Jul 21-24 ✓ | AMZN: Jul 30 ✓ | VST: Aug 6 ✓
+- No earnings within 2 trading days. All holds confirmed.
+
+### Deployment check
+Cash USD 22,458.29 = 24.55% (above 20% threshold). Week 5, 0/8 new positions. Tape cautiously constructive. Decision: **No new buys today.** Portfolio in -9.563% drawdown; Nasdaq -4% last week has not confirmed reversal; AVGO and NVDA just recovered from sub-2pp buffers on Friday; confirming sustained recovery first is the right AGGRO call. Idle cash is a deliberate drawdown buffer, not missed deployment.
+
+### Planned trades for today
+
+No trades planned.
+
+```json
+{
+  "plan_date": "2026-06-29",
+  "trades": []
+}
+```

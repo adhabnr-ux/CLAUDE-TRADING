@@ -6,6 +6,110 @@ but always re-fetches live data before trading._
 
 ---
 
+## Last snapshot — 2026-06-29 PRE-MARKET (~8:10 AM ET)
+
+| Field | Value |
+|---|---|
+| Equity | USD 91,472.38 |
+| Cash | USD 22,458.29 (24.55%) |
+| Long market value | USD 69,014.09 |
+| Open positions | 6 |
+| last_equity (June 26 EOD close — Alpaca authoritative) | USD 90,667.24 |
+| Pre-market P/L vs last_equity | **+USD 805.14 (+0.888%)** |
+| HWM | USD 101,144.73 |
+| Drawdown from HWM | **-9.563%** (circuit breaker -20% — NOT triggered; 10.437pp headroom) |
+
+**Shock check:** +0.888% vs threshold -6% → NOT triggered ✓ (all positions green vs Friday close)
+
+**Open positions (June 29 pre-market ~8:10 AM ET):**
+
+| Symbol | Qty | Avg Entry | Pre-mkt Price | Market Value | Unrealized P/L | P/L % | -12% Cut Trigger | Buffer | Rating |
+|---|---|---|---|---|---|---|---|---|---|
+| NVDA | 103 | USD 213.60 | USD 194.53 | USD 20,036.6 | -USD 1,964.2 | **-8.926%** | USD 187.97 | **3.074pp ⚠️** | A |
+| AVGO | 34 | USD 406.23 | USD 373.92 | USD 12,713.3 | -USD 1,101.7 | **-7.954%** | USD 357.48 | **4.046pp ⚠️** | A |
+| ETN | 34 | USD 419.54 | USD 406.15 | USD 13,809.1 | -USD 453.4 | **-3.192%** | USD 369.20 | 8.808pp ✓ | A |
+| GOOGL | 16 | USD 370.22 | USD 340.50 | USD 5,448.0 | -USD 475.5 | **-8.028%** | USD 325.79 | **3.972pp ⚠️** | A |
+| AMZN | 36 | USD 247.99 | USD 235.00 | USD 8,460.0 | -USD 467.6 | **-5.239%** | USD 218.23 | 6.761pp ✓ | A |
+| VST | 52 | USD 151.47 | USD 164.36 | USD 8,546.7 | +USD 672.5 | **+8.510% ✅** | USD 133.29 | 20.51pp ✓ | A |
+
+**RECOVERY vs Friday EOD: AVGO 1.593pp → 4.046pp (+2.45pp); NVDA 2.061pp → 3.074pp (+1.01pp); GOOGL 3.054pp → 3.972pp (+0.92pp). All 6 green vs Friday close. Critical stress relieved.**
+**GOOGL DJIA inclusion effective TODAY (June 29) — replacing Verizon; index-fund buying confirmed.**
+
+**Stop audit (June 29 pre-market): ALL 6 CONFIRMED LIVE ✓**
+
+| Symbol | Stop Order ID | HWM | Stop Price | Trail % | Status |
+|---|---|---|---|---|---|
+| NVDA | `54d7d851` | USD 221.60 | USD 181.712 | 18% | ✓ live |
+| AVGO | `36f5a45f` | USD 426.48 | USD 349.7136 | 18% | ✓ live |
+| ETN | `abdc232b` | USD 426.00 | USD 349.32 | 18% | ✓ live |
+| GOOGL | `e52a43f1` | USD 375.77 | USD 308.1314 | 18% | ✓ live |
+| AMZN | `b55bef05` | USD 250.43 | USD 205.3526 | 18% | ✓ live |
+| VST | `5b347be3` | USD 171.35 | USD 140.507 | 18% | ✓ live |
+
+**Thesis contracts (June 29 pre-market):**
+| Symbol | Review By | Invalidation | Status |
+|---|---|---|---|
+| NVDA | July 9 | Hyperscaler GPU share reverses | ✓ Intact — -8.926%; 3.074pp buffer ⚠️; no hyperscaler defection; AI GPU supercycle intact; Aug 26 earnings |
+| AVGO | July 9 | AI revenue decelerates | ✓ Intact — -7.954%; 4.046pp buffer ⚠️; OpenAI Jalapeno chip built by Broadcom = thesis CONFIRMED; analyst target USD 501.58; Sep 3 earnings |
+| ETN | July 9 | ETN below USD 332 OR AI capex reverses | ✓ Intact — -3.192%; 8.808pp buffer ✓; Dana mobility merger (USD 5.1B RMT) sharpens focus on electrical/AI infra; Aug 4 earnings |
+| GOOGL | **July 2 ⚠️** | GCP decelerates OR TPU cancelled | ✓ Intact — -8.028%; 3.972pp buffer ⚠️; DJIA addition TODAY confirmed; Cloud +63% last quarter; HOLD through July 2; earnings July 21-24 |
+| AMZN | July 7 | AWS <20% YoY | ✓ Intact — -5.239%; 6.761pp buffer ✓; Prime Day 2026 record USD 26.4B; AWS GPU price hikes = demand signal; Jul 30 earnings |
+| VST | July 15 | Nuclear PPAs cancelled | ✓ Intact — +8.510% ✅; 20.51pp buffer ✓; Helix Digital Infra (USD 10B, NVDA/KKR/Kuwait IA) names Vistra preferred power provider; EBITDA +20% YoY; Aug 6 earnings |
+
+**GOOGL July 2 decision (pre-market June 29): HOLD.** DJIA catalyst active today. Cloud revenue +63% most recent quarter. -8.028% loss is macro-driven (AI cost concerns + correction), not GCP deceleration. Earnings not until July 21-24. Mandatory review at pre-market July 2 — decision may change if stock underperforms DJIA catalyst this week.
+
+**Conviction ratings (June 29 pre-market) — MONDAY RE-RATING:**
+| Symbol | Rating | vs Last Monday | Notes |
+|---|---|---|---|
+| NVDA | A | A → A | AI GPU thesis intact; 3.074pp buffer (improved 1.01pp); Strong Buy consensus target USD 298.93; Aug 26 earnings |
+| AVGO | A | A → A | Jalapeno chip = thesis CONFIRMED; 4.046pp buffer (massive recovery from 1.593pp); analyst target USD 501.58; Sep 3 earnings |
+| ETN | A | A → A | AI power infra; 8.808pp buffer ✓; Dana merger sharpens electrical focus; data center demand robust; Aug 4 earnings |
+| GOOGL | A | A → A | DJIA addition TODAY; GCP +63%; 3.972pp buffer (improved); review_by July 2 = 3 trading days; earnings Jul 21-24 |
+| AMZN | A | A → A | AWS +28%; Prime Day record USD 26.4B; 6.761pp buffer ✓; analyst target USD 305.98; Jul 30 earnings |
+| VST | A | A → A | Best performer +8.510%; 20.51pp buffer ✓; Helix USD 10B + NVDA = thesis playing out; EBITDA +20% YoY; Aug 6 earnings |
+
+**No C-ratings → no forced trims. All 6 positions HOLD at A.**
+
+**Sector exposure (June 29 pre-market):**
+| Sector | Names | Market Value | % of Equity |
+|---|---|---|---|
+| Technology — semis | NVDA, AVGO | USD 32,749.9 | 35.8% |
+| Technology — hyperscalers | GOOGL, AMZN | USD 13,908.0 | 15.2% |
+| Industrials/Power Infra | ETN | USD 13,809.1 | 15.1% |
+| Utilities/Power | VST | USD 8,546.7 | 9.3% |
+| Cash | — | USD 22,458.29 | 24.55% |
+
+Sector exposure journaled: Semis at 35.8% is intentional AGGRO concentration backed by AI GPU supercycle thesis and Jalapeno chip confirmation. No sector at 60%+ threshold. Hyperscalers + Power/Infra provide diversification within AI theme. Cash buffer comfortable above 2% minimum.
+
+**Earnings window check (all confirmed safe):**
+| Symbol | Next Earnings | Status |
+|---|---|---|
+| NVDA | August 26, 2026 | ✓ Safe (>2 trading days) |
+| AVGO | September 3, 2026 | ✓ Safe |
+| ETN | August 4, 2026 | ✓ Safe |
+| GOOGL | July 21-24, 2026 | ✓ Safe |
+| AMZN | July 30, 2026 | ✓ Safe |
+| VST | August 6, 2026 | ✓ Safe |
+
+No earnings within 2 trading days. No holds through earnings currently required.
+
+**Deployment check:** Cash at 24.55% (above 20% threshold). Week 5, 0/8 new positions opened. Decision: **No new buys today** — portfolio in -9.563% drawdown from HWM; last week Nasdaq -4% on AI cost concerns + PCE 4.1% hot; 4 of 6 positions within 9pp of -12% forced-exit; confirming Monday recovery is sustained before deploying; cash at 24.55% is not idle excess, it is a drawdown buffer.
+
+**Performance vs SPY (June 29 pre-market):**
+| Metric | Value |
+|---|---|
+| Equity (pre-market) | USD 91,472.38 |
+| Aggro return since inception | **(91,472.38 − 100,000) / 100,000 = -8.528%** |
+| SPY anchor | USD 754.18 (June 3, 2026) |
+| SPY June 26 close (Alpaca) | USD 729.35 |
+| SPY since inception | **(729.35 − 754.18) / 754.18 = -3.292%** |
+| Alpha since inception | **-5.236pp** |
+| Pre-market change vs last_equity | +0.888% |
+
+_Pre-market June 29: All 6 positions recovered vs Friday close — AVGO 1.593pp → 4.046pp (massive relief); NVDA 2.061pp → 3.074pp. GOOGL DJIA addition effective today. Shock check clear (+0.888%). Circuit breaker: -9.563% (10.437pp headroom). All 6 stops live. Monday conviction re-rating: all A, no forced trims. GOOGL review_by July 2 = HOLD (DJIA catalyst + Cloud +63%). No earnings within 2 days. No trades planned today (explicit: drawdown + unconfirmed recovery). Research: WebSearch fallback (MiniMax M3 not available). Control: ACTIVE._
+
+---
+
 ## Last snapshot — 2026-06-26 EOD CLOSE (~3:50 PM ET)
 
 | Field | Value |
