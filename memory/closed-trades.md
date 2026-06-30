@@ -17,6 +17,15 @@ top. The weekly review computes win rate and average win/loss from this file._
 
 -->
 
+## 2026-06-30 — VST — WIN ⭐ (first win)
+- **Entry:** 40 shares @ USD 148.81 on 2026-06-09
+- **Exit:** USD 160.20 via trailing stop (5% trail, auto-executed 13:48 ET Jun 30, order c8b43d32)
+- **P/L:** +USD 455.60 (+7.66%)
+- **Held:** 21 days
+- **Original thesis:** Nuclear power operator with long-term PPAs to Meta/AWS for AI data-center electricity; Helix Digital Infrastructure (KKR+NVIDIA+Kuwait) preferred power partner; Cogentrix acquisition (5,500 MW natural gas) closed June 17; non-correlated to AI semi selloffs.
+- **Why it ended:** Stop ratcheted up with the position (HWM $168.77) through three consecutive sessions of buffer compression (June 26-30, as low as 0.76% at June 30 market-open) during the broader AI/tech selloff; tightened 5% trail (vs. standard 10%) ultimately fired on a pullback even though the thesis never broke.
+- **Lesson:** A tightened trailing stop on a thesis-intact position can produce a win even when it fires earlier than a standard 10% trail would — VST's 5% trail (tightened June 25 after the position cleared +15%) locked in a 7.66% gain instead of riding the position back down through a full AI-selloff round-trip. Validates the existing "tighten to 5% trail after +15% gain" rule; no rule change needed.
+
 ## 2026-06-25 — NVDA — LOSS
 - **Entry:** 33 shares @ USD 213.421 on 2026-06-22
 - **Exit:** USD 192.546 via trailing stop (auto-executed 09:59 AM ET Jun 25, order dcba7429)

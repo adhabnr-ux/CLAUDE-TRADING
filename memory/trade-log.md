@@ -3,6 +3,83 @@
 _Every order placed, with its reasoning. Append-only — newest entries at the top.
 The weekly new-position count is derived from this log._
 
+## 2026-06-30 15:50 ET — CLOSE (VST trailing stop FILLED 13:48 ET @ $160.20 = +7.66% WIN, first win on record; stop audit 3/3 ✓; LLY −1.75% sell-the-news pre-Medicare-Bridge; SPY +0.79% end-of-Q2 rally; Bull −0.345% TRAILS SPY TR +1.223% → −1.568pp)
+
+- **Action:** Close routine. 1 exit observed (VST trailing stop, filled intraday, not placed by this routine) — 0 new trades (close routine does not place orders).
+- **Market status:** `is_open: true` (~15:50 ET); next_close 16:00 ET (full session, not a half-day).
+- **Account (~15:50 ET — live Alpaca):** Equity $99,654.56 | Cash $80,023.74 | LMV $19,630.82
+
+### Live-switch guard
+- `ALPACA_BASE_URL` contains "paper" ✓ — paper trading confirmed.
+
+### Control switch
+- STATUS: ACTIVE ✓ — no PAUSED / RISK_OFF flags, no NOTE, no QUERY.
+
+### Shock check
+- Equity $99,654.56 vs last_equity $99,926.54 = **−$271.98 = −0.272%** — no shock ✓ (threshold −4%)
+
+### Drawdown circuit breaker
+- HWM $101,384.21; current $99,654.56 = **−1.706%** — NOT triggered ✓ (8.294pp headroom)
+
+### Exit reconciliation — VST trailing stop fill
+- Order c8b43d32 (5% trail, HWM $168.77) filled 13:48:44 ET June 30 @ $160.20 for all 40 shares.
+- P/L: +$455.60 (+7.66%) — **WIN**, the portfolio's first since inception (prior record 0-6).
+- Entry: 40sh @ $148.81 on 2026-06-09. Held 21 days.
+- Cash reconciliation: $73,615.74 (June 29 close) + $6,408.00 (40 × $160.20 sale proceeds) = $80,023.74 ✓ matches live cash exactly. **VST's $9.20 dividend (payable today) was NOT credited as of this run** — flag for pre-market July 1 to confirm it lands.
+- closed-trades.md updated with WIN entry ✓. lessons.md updated (process-validation lesson, not a loss-lesson) ✓.
+
+### Position review (close June 30, ~15:50 ET)
+
+| Symbol | Qty | Avg Entry | Current | % from Entry | Intraday | Buffer | Action |
+|--------|-----|-----------|---------|--------------|----------|--------|--------|
+| LLY | 10 | $1,093.534 | $1,208.46 | **+10.51%** | −1.75% | 7.80% | HOLD — sell-the-news pressure into tomorrow's Medicare Bridge launch; thesis intact per midday news scan |
+| V | 22 | $323.57 | $342.99 | **+6.00%** | +0.39% | 9.26% | HOLD — thesis intact |
+
+### Rules applied
+- **−7% cut rule:** LLY +10.51%, V +6.00% — no position below −7% from entry ✓ NO CUTS
+- **+15% tighten trigger:** LLY threshold $1,257.56 — not triggered ✓
+- **No new positions opened** (close routine scope; PAUSED/RISK_OFF not in effect, but close never trades regardless)
+
+### Stop audit (close June 30 — confirmed via Alpaca live orders ~15:50 ET)
+
+| Order ID | Symbol | Qty | Type | HWM | Stop | Buffer | Status |
+|----------|--------|-----|------|-----|------|--------|--------|
+| d4147484 | LLY | 7sh | trailing_stop 10% | $1,238.00 | $1,114.20 | $94.26 (7.80%) | ✓ active |
+| 25989fb5 | LLY | 3sh | trailing_stop 10% | $1,238.00 | $1,114.20 | $94.26 (7.80%) | ✓ active |
+| 66033918 | V | 22sh | trailing_stop 10% | $345.81 | $311.229 | $31.76 (9.26%) | ✓ active |
+
+**3/3 PASS ✓** — VST's stop was consumed by its own fill (correct; not a missing-stop condition). No stops require recreation.
+
+### LRCX ATR gate (session attempt, close calculation)
+- Today's range: H $436.97 / L $414.01 / C $435.50 → ATR = $22.96 / $435.50 = **5.27%** ⚠️ — FAILS (>3% threshold)
+- Gate counter resets to **0/3**. Fresh 3 consecutive ≤3% sessions needed starting July 1. Earliest entry realistically July 9+ at best.
+
+### Market close context (WebSearch, June 30, 2026)
+- SPY closed $746.72 (+0.79%), extending Monday's rally: Dow closed above 52,000 for the first time on a US-Iran ceasefire (Strait of Hormuz reopened) and GOOGL's first week in the Dow drawing passive flows. Today is the final session of the best S&P 500/Nasdaq quarter in six years. Tech and communication services led. Nothing in today's tape threatens LLY or V theses — LLY's weakness is sell-the-news positioning into tomorrow's Medicare Bridge launch, not fundamental deterioration.
+
+### Performance vs SPY (close June 30, 2026)
+- **Bull equity:** $99,654.56 = **−0.345%** since inception
+- **SPY close:** $746.72; SPY TR = ($746.72 + $1.76 − $739.44) / $739.44 = **+1.223%**
+- **Bull vs SPY: −1.568pp** (widened from −1.378pp at midday — SPY's quarter-end strength + VST exit + LLY pre-event softness)
+
+### Race scoreboard (vs Aggressive Bull, read-only from memory/aggressive/portfolio.md)
+- Bull since inception (May 21): −0.345%
+- AGGRO since inception (June 4, midday est. — AGGRO's own close routine has not yet run): −7.213%
+- SPY since Bull inception: +1.223%
+- **Race: Bull −0.345% | AGGRO −7.213% (midday est.) | SPY +1.223% — Bull leads AGGRO by ~6.87pp est.**
+
+### Performance history
+- Appended to performance.csv: 2026-06-30,bull,99654.56,80023.74,746.72
+
+### Key notes for next routine (pre-market July 1)
+- **LLY Medicare Bridge launches TODAY (July 1) per this run's tomorrow.** Pre-market July 1 must assess post-launch market reaction and refresh the review_by decision (currently 2026-07-07).
+- **VST $9.20 dividend:** still not credited as of close June 30 — confirm it lands by pre-market July 1; if not, no action needed (settlement timing), just verify by July 2 at latest.
+- **LRCX ATR gate:** reset to 0/3 again after today's 5.27% range. Fresh count starts July 1.
+- **Cash now 80.30%** — VST exit (a win) returns the portfolio to higher cash. With LLY and V both performing well and LRCX/ETN gates not yet clear, the week of July 7+ is the next realistic window for a third position; until then accept the cash posture as the correct result of disciplined stop management, not idleness.
+- **First trading day of July (July 1):** monthly housekeeping check — archive research-log.md / trade-log.md entries older than 30 days into memory/archive/2026-06.md per playbook step 5e.
+
+---
+
 ## 2026-06-30 12:32 ET — MIDDAY (0 trades; stop audit 4/4 ✓; no cuts; no tightenings; VST buf 1.48% ⚠️ improved from 0.76%; LLY news clean; end-of-quarter SPY +0.718%; Bull TRAILS SPY −1.378pp)
 
 - **Action:** Midday routine. 0 trades — all positions within guardrails, no −7% cuts, no +15% tightenings.

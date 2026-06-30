@@ -5,6 +5,9 @@ well, fails, or surprises you. Keep the highest-value lessons near the top._
 
 ## Trading lessons (recent)
 
+### 2026-06-30 (close) — VST: first win on record, and the tightened-trail rule paid off
+VST's 5% trailing stop fired at $160.20 (+7.66%, +USD 455.60) — the portfolio's first winning closed trade after 6 consecutive losses. The position survived three CRITICAL buffer days (June 26-30) during the AI/tech selloff because the underlying thesis (Helix+Cogentrix nuclear PPAs) never broke; the stop tightening to 5% after the position cleared +15% locked in the gain instead of giving it all back in a deeper pullback. Net effect on the 0% win rate: this is now 1/7. Continue applying the "tighten to 5% trail after +15% unrealized gain" pattern on future winners — it converted a position that could have round-tripped back to breakeven into a real, banked win.
+
 ### 2026-06-26 (weekly review) — From Aggressive Bull: proactive pre-open exit beats mechanical midday cut in high-velocity selloff sessions
 AGGRO applied the "thin buffer + selloff tape = exit" rule twice in week 4: MSFT Jun 22 (−13.62%, hit midday rule) and META Jun 23 (−9.84%, proactive exit). The MSFT case shows the midday rule produces a worse result than a pre-market decision — the stock sold off another ~1pp from pre-market to the midday cut trigger. The META case shows AGGRO learned immediately: with <1pp buffer and Nasdaq −1.19% pre-market, AGGRO exited at open and saved ~$230 vs the mechanical cut. Cautious Bull's June 19 lesson on proactive trimming is now validated with a second data point: when buffer is <2pp AND the broad tape is already selling off AND there is no expected catalyst that day, the pre-market decision is to exit or trim, not to wait for the midday rule. This is not discretionary override — it is applying the intent of the midday cut rule proactively.
 
