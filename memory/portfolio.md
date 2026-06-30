@@ -3,10 +3,64 @@
 _Updated by every routine from live Alpaca data. The next agent trusts this as
 the last known state, but always re-fetches live data before trading._
 
-**Last updated:** 2026-06-30 09:36 ET (market-open; stop audit 4/4 PASS; LLY $1,213.76 +10.99% / V $340.36 +5.19% / VST $161.56 +8.57% buf 0.76% ⚠️⚠️ ULTRA CRITICAL; 0 trades; pre-market did not run today; Bull TRAILS SPY est. −0.732pp since inception; LLY Medicare Bridge launches TOMORROW July 1; VST div $9.20 payable today)
+**Last updated:** 2026-06-30 12:32 ET (midday; stop audit 4/4 PASS; LLY $1,209.49 +10.60% / V $343.32 +6.10% / VST $162.74 +9.36% buf 1.48% ⚠️ CRITICAL improved; 0 trades; no news thesis break; Bull −0.229% TRAILS SPY TR +1.149% → −1.378pp; SPY +0.718% end-of-quarter rally; LLY Medicare Bridge TOMORROW July 1; VST div $9.20 payable today not yet credited)
 **Inception:** 2026-05-21 — starting equity $100,000.00 | SPY anchor price $739.44
 **SPY total-return anchor (post-June 18 ex-div $1.76):** **$741.20**
 **Cumulative SPY dividends since inception (quarterly tracker):** $1.76/sh (June 18 ex-div); next SPY ex-div est. ~September 2026.
+
+## Account (midday June 30, 2026 — live Alpaca data ~12:32 ET)
+
+| Metric | Value |
+|--------|-------|
+| Equity | $99,771.24 |
+| Cash | $73,615.74 (73.80%) — VST div $9.20 payable today, not yet credited |
+| Long market value | $26,155.50 |
+| Buying power | ~$73,615.74 |
+| Last equity (June 29 Alpaca close) | $99,926.54 |
+
+## Open positions (midday June 30, 2026 — live Alpaca data ~12:32 ET)
+
+| Symbol | Qty | Avg entry | Current price | Mkt value | Unrealized P/L | % of portfolio | Trailing Stop |
+|--------|-----|-----------|--------------|-----------|----------------|----------------|---------------|
+| LLY | 10 | $1,093.534 | $1,209.485 | $12,094.85 | +$1,159.51 (+10.60%) | 12.12% | d4147484 (7sh) + 25989fb5 (3sh), HWM $1,238.00, stop $1,114.20 ✓ — buffer $95.285 (7.88%) ✓ |
+| V | 22 | $323.57 | $343.315 | $7,552.93 | +$434.39 (+6.10%) | 7.57% | 66033918 (22sh, HWM $345.81, stop $311.229) ✓ — buffer $32.086 (9.35%) ✓ |
+| VST | 40 | $148.81 | $162.74 | $6,509.60 | +$557.20 (+9.36%) | 6.53% | c8b43d32 (40sh, 5% trail, HWM $168.77, stop $160.3315) ✓ — buffer $2.4085 (1.48%) ⚠️ CRITICAL (improved from 0.76% at open) |
+
+**Sector exposure (midday June 30):**
+- Healthcare (LLY): $12,094.85 = 12.12% | Financials (V): $7,552.93 = 7.57% | Utilities/Energy (VST): $6,509.60 = 6.53% | Cash: $73,615.74 = 73.78%
+- No sector above 60% cap ✓
+
+**Trailing stop status (midday June 30 — confirmed via Alpaca live orders ~12:32 ET):**
+- LLY (d4147484): 7sh — HWM $1,238.00, stop $1,114.20 ✓ (buffer $95.285 = 7.88%; LLY at $1,209.49 < HWM — no ratchet today)
+- LLY (25989fb5): 3sh — HWM $1,238.00, stop $1,114.20 ✓
+- V (66033918): 22sh — HWM $345.81, stop $311.229 ✓ (buffer $32.086 = 9.35%; V at $343.315 < HWM — no ratchet)
+- VST (c8b43d32): 40sh — 5% trail, HWM $168.77, stop $160.3315 ✓ (buffer $2.4085 = 1.48% ⚠️ CRITICAL — improved from 0.76% at market-open; VST recovering +0.22% intraday)
+**Stop audit: 4/4 PASS ✓**
+
+**Midday June 30 notes (~12:32 ET — stop audit 4/4 PASS; 0 trades; no cuts; no tightenings; end-of-quarter SPY rally):**
+- **Shock check:** $99,771.24 vs last_equity $99,926.54 = **−$155.30 = −0.155%** — no shock ✓ (threshold −4%)
+- **Drawdown circuit breaker:** $99,771.24 vs HWM $101,384.21 = **−1.593%** — NOT triggered ✓ (8.407pp headroom; CB trigger USD 91,245.79)
+- **LLY** $1,209.485 (+10.60% from entry, −1.66% today): "Sell the news" pressure ahead of Medicare Bridge launch July 1. News scan confirms THESIS INTACT: Mounjaro $8.7B (+125% YoY), Zepbound $4.1B (+80% YoY), total Q2 revenue $19.8B (+56%), full-year guidance raised $82-85B. Innovent China deal for Verzenios; 4E Therapeutics acquisition (non-opioid pain). No thesis break — today's selling is pre-event caution, not fundamental deterioration. HWM $1,238 not exceeded; no ratchet. Buffer 7.88% comfortable ✓. HOLD. Conviction A. review_by 2026-07-07.
+- **V** $343.315 (+6.10% from entry, +0.49% today): Outperforming today — defensive financials + end-of-quarter flows. HWM $345.81 — V at $343.315 approaching HWM. Buffer 9.35% ✓. Thesis intact. HOLD. Conviction B (0/3 C-weeks). review_by 2026-07-28.
+- **VST** $162.74 (+9.36% from entry, +0.22% today): Stop buffer recovered from ultra-critical 0.76% to 1.48% as VST rebounds intraday. Dividend $9.20 payable today (not yet credited). News scan: Buy consensus, analyst fair value ~$225, Q1 net income $980M reaffirmed, Cogentrix acquisition intact. No negative news. HOLD with 5% trailing stop. Conviction A. review_by 2026-07-07. Earnings Aug 6 (outside 2-day window ✓).
+- **No cuts** (−7% rule): all positions well above threshold ✓
+- **No tightenings** (+15% trigger = LLY $1,257.56 / V N/A / VST $171.13): none triggered ✓
+- **News scan (LLY >10% from entry):** Thesis confirmed; sell-the-news temporary pressure. Medicare Bridge is an 18-month program — fundamental driver intact.
+- **End-of-quarter context:** SPY +0.718% today to $746.18 — last trading day of Q2 window dressing + index rebalancing boosting broad market. Bull's defensive positioning (healthcare pulling back on sell-the-news; utilities/financials steady) underperforming SPY's tech-led quarter-end rally. Expected divergence on Q2 end day.
+- **VST dividend:** $9.20 ($0.23/sh × 40sh) payable today June 30 — not yet reflected in cash. May credit EOD. Close routine should confirm.
+- **LRCX ATR gate:** Session 2/3 attempt today June 30. Need ≤3% ATR range for session to count. Today's range: $746.6 - $740.9 for SPY; LRCX data available at close. Assess at close routine.
+- **Since inception:** Bull −0.229% vs SPY TR +1.149% → **Bull TRAILS SPY −1.378pp** (end-of-quarter SPY rally widens gap; cash drag + LLY sell-the-news)
+
+## Performance vs S&P 500
+
+| Period | Bull | SPY | Difference |
+|--------|------|-----|------------|
+| Inception (2026-05-21) | $100,000.00 | $739.44 | — |
+| **Midday (2026-06-30)** | **$99,771.24 (−0.229%)** | **SPY $746.18 + $1.76 div = +1.149% TR** | **Bull TRAILS SPY −1.378pp** |
+| **Market-open (2026-06-30)** | **$99,699.27 (−0.301%)** | **SPY $740.87 + $1.76 div = +0.431% TR est.** | **Bull TRAILS SPY est. −0.732pp** |
+| **Close (2026-06-29)** | **$99,940.72 (−0.059%)** | **$740.87 + $1.76 div = +0.431% TR** | **Bull TRAILS SPY −0.490pp** |
+
+---
 
 ## Account (market-open June 30, 2026 — live Alpaca data ~09:36 ET)
 

@@ -3,6 +3,78 @@
 _Every order placed, with its reasoning. Append-only — newest entries at the top.
 The weekly new-position count is derived from this log._
 
+## 2026-06-30 12:32 ET — MIDDAY (0 trades; stop audit 4/4 ✓; no cuts; no tightenings; VST buf 1.48% ⚠️ improved from 0.76%; LLY news clean; end-of-quarter SPY +0.718%; Bull TRAILS SPY −1.378pp)
+
+- **Action:** Midday routine. 0 trades — all positions within guardrails, no −7% cuts, no +15% tightenings.
+- **Market status:** `is_open: true` (~12:32 PM ET); close 4:00 PM ET.
+- **Account (~12:32 ET — live Alpaca):** Equity $99,771.24 | Cash $73,615.74 | LMV $26,155.50
+
+### Live-switch guard
+- `ALPACA_BASE_URL` contains "paper" ✓ — paper trading confirmed.
+
+### Control switch
+- STATUS: ACTIVE ✓ — no PAUSED / RISK_OFF flags.
+
+### Shock check
+- Equity $99,771.24 vs last_equity $99,926.54 = **−$155.30 = −0.155%** — no shock ✓ (threshold −4%)
+
+### Drawdown circuit breaker
+- HWM $101,384.21; current $99,771.24 = **−1.593%** — NOT triggered ✓ (8.407pp headroom)
+
+### Position review (midday June 30, ~12:32 ET)
+
+| Symbol | Qty | Avg Entry | Current | % from Entry | Intraday | Buffer | Action |
+|--------|-----|-----------|---------|--------------|----------|--------|--------|
+| LLY | 10 | $1,093.534 | $1,209.485 | **+10.60%** | −1.66% | 7.88% | HOLD — news scan clean; sell-the-news ahead of Medicare Bridge July 1; thesis intact |
+| V | 22 | $323.57 | $343.315 | **+6.10%** | +0.49% | 9.35% | HOLD — outperforming today; thesis intact |
+| VST | 40 | $148.81 | $162.74 | **+9.36%** | +0.22% | **1.48% ⚠️** | HOLD — buffer improved from 0.76% to 1.48%; dividend payable today; thesis intact |
+
+### Rules applied
+- **−7% cut rule:** LLY +10.60%, V +6.10%, VST +9.36% — no position below −7% from entry ✓ NO CUTS
+- **+15% tighten trigger:** LLY threshold $1,257.56 / VST threshold $171.13 — none triggered ✓ NO TIGHTENINGS
+- **No new positions opened** (midday routine scope)
+
+### News scan (LLY — >10% from entry)
+- Source date: June 30, 2026
+- LLY today −1.66% ("sell the news" pre-Medicare Bridge July 1)
+- Q2 earnings: Mounjaro $8.7B (+125% YoY), Zepbound $4.1B (+80% YoY), total $19.8B (+56%)
+- Full-year guidance raised to $82-85B
+- Innovent China deal for Verzenios; 4E Therapeutics acquisition (non-opioid pain pipeline)
+- **Conclusion: THESIS INTACT** — no fundamental deterioration. Temporary caution ahead of bridge launch. HOLD.
+
+### News scan (VST — buffer ultra-critical, additional check)
+- Source date: June 30, 2026
+- VST +0.22% intraday; dividend $9.20 payable today (not yet credited)
+- Analyst consensus Buy, fair value ~$225; Q1 net income $980M, 2026 EBITDA reaffirmed
+- Cogentrix acquisition ($4.7B) intact — thesis unchanged
+- **Conclusion: THESIS INTACT** — no negative news. HOLD with 5% trailing stop.
+
+### Stop audit (midday June 30 — confirmed via Alpaca live orders ~12:32 ET)
+
+| Order ID | Symbol | Qty | Type | HWM | Stop | Buffer | Status |
+|----------|--------|-----|------|-----|------|--------|--------|
+| d4147484 | LLY | 7sh | trailing_stop 10% | $1,238.00 | $1,114.20 | $95.285 (7.88%) | ✓ active |
+| 25989fb5 | LLY | 3sh | trailing_stop 10% | $1,238.00 | $1,114.20 | $95.285 (7.88%) | ✓ active |
+| 66033918 | V | 22sh | trailing_stop 10% | $345.81 | $311.229 | $32.086 (9.35%) | ✓ active |
+| c8b43d32 | VST | 40sh | trailing_stop 5% | $168.77 | $160.3315 | $2.4085 (1.48%) | ✓ active ⚠️ CRITICAL |
+
+**4/4 PASS ✓** — no stops missing; no trailing stop fired since last run.
+
+### No exits this run
+- No positions closed. All 3 positions held. closed-trades.md unchanged.
+
+### Performance vs SPY (midday June 30, 2026)
+- **Bull equity:** $99,771.24 = **−0.229%** since inception
+- **SPY midday:** $746.18; SPY TR = ($746.18 + $1.76 − $739.44) / $739.44 = **+1.149%**
+- **Bull vs SPY: −1.378pp** (end-of-quarter window dressing + rebalancing drives SPY +0.718% today; LLY sell-the-news pulling Bull down)
+
+### Key notes for next routine (close June 30)
+- **VST dividend $9.20:** Should credit to cash before EOD; close routine confirm.
+- **LLY Medicare Bridge TOMORROW July 1:** HOLD decision from pre-market June 29 remains active (review_by 2026-07-07). Pre-market July 1 must assess post-launch market reaction.
+- **LRCX ATR gate:** Session 2/3 attempt today (June 30). Close routine must calculate LRCX daily ATR range to confirm ≤3% or failure. Gate counter currently 0/3.
+- **VST buf 1.48%:** Still critical — any afternoon pullback could trigger stop. Do NOT override. If stop fires, record in closed-trades.md as win (+9.36%).
+- **Earnings gate check:** LLY Q2 est. Aug 5-6 ✓, V Q3 est. July 28 ✓, VST Q2 est. Aug 6 ✓ — all outside 2-day window.
+
 ## 2026-06-30 09:36 ET — MARKET-OPEN (0 trades; stop audit 4/4 ✓; PRE-MARKET DID NOT RUN — plan stale; VST buf 0.76% ⚠️⚠️ ULTRA CRITICAL; LLY Medicare Bridge launches TOMORROW July 1)
 
 - **Action:** Market-open routine. 0 trades — pre-market did not run today; no June 30 plan block found in research-log.md. Most recent plan_date was 2026-06-29 (stale). Skipping new trades per playbook.
