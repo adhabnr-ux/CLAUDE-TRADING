@@ -101,16 +101,11 @@ non-numeric rule here still applies to both modes.)_
 
 - Max **20%** of total portfolio value in any single position.
 - Keep at least **5%** of portfolio value in cash at all times.
-- Open at most **3 new positions per week** (count from `trade-log.md`).
 - Deploy at most **25%** of portfolio value into new buys on any single day.
 - Every new long position gets a **10% trailing-stop** order placed immediately
   after the entry fills.
 - At the midday check, **close any position trading more than 7% below its
   entry price.**
-- **Drawdown circuit breaker:** pull the equity curve
-  (`./scripts/alpaca.sh history 1A 1D`) and find its high-water mark. If
-  current equity is more than **10% below** that mark, open NO new positions —
-  go risk-off until equity recovers. (AGGRESSIVE MODE: 20%, per profile.md.)
 - **Earnings window:** never open a new position within 2 trading days before
   that company's earnings report (confirm the date with `WebSearch`). Before
   holding an existing position through earnings, make an explicit hold/trim
@@ -138,9 +133,6 @@ non-numeric rule here still applies to both modes.)_
   date — in the plan JSON and the trade log. Pre-market must force a
   hold/trim/exit decision whenever a contract triggers or expires. Theses are
   not allowed to rot silently.
-- **Risk-budget sizing (Cautious Bull):** size new positions so a stop-out
-  loses no more than **1.2% of equity** (with a 10% stop that is ≈ a 12%
-  position). The 20% cap still applies on top.
 - Forbidden: options, shorting, margin/leverage, crypto, penny stocks
   (price < $5), and day trading (no buying and selling the same name same day).
 - Never place an order without first confirming the market is open via the
@@ -199,9 +191,8 @@ text. Write dollar amounts as plain numbers or with `USD` (e.g. `100K`,
 `USD 100,000`), and single-quote the argument.
 
 **Urgency prefix:** start the message with 🚨 when any of these happened this
-run: a trailing stop filled, a position was cut by the loss rule, a stop audit
-found an unprotected position, or the drawdown circuit breaker is active.
-Otherwise use the plain routine prefix.
+run: a trailing stop filled, a position was cut by the loss rule, or a stop
+audit found an unprotected position. Otherwise use the plain routine prefix.
 
 ### Research — native web search
 
@@ -251,9 +242,8 @@ Each routine has a detailed playbook in `.claude/commands/`.
 
 ### Starting from all cash
 The paper account begins fully in cash. Build the portfolio gradually within
-the 3-new-positions-per-week and 25%-daily-deployment caps. Holding significant
-cash for the first couple of weeks is expected and correct — do not rush to
-deploy.
+the 25%-daily-deployment cap. Deploy into high-conviction names as they set up —
+do not force trades, but do not sit idle if good setups are there.
 
 ## Style
 

@@ -95,8 +95,7 @@ Do NOT sell on day-to-day noise. Sell on thesis changes.
 
 - **Hard minimum:** 5% cash at all times (CLAUDE.md).
 - **Target:** 25–40% cash until the portfolio has 6–8 positions; then 10–20%.
-- **Build slowly:** max 3 new positions per week, max 25% of portfolio in new
-  buys per day.
+- **Build steadily:** max 25% of portfolio in new buys per day.
 - **Raise cash** if broad market VIX spikes above 35 or if we have > 3
   positions down more than 5% simultaneously.
 
