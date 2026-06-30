@@ -6,6 +6,98 @@ but always re-fetches live data before trading._
 
 ---
 
+## Last snapshot — 2026-06-30 EOD CLOSE (~4:05 PM ET)
+
+| Field | Value |
+|---|---|
+| Equity | USD 92,930.05 |
+| Cash | USD 22,458.29 (24.16%) |
+| Long market value | USD 70,471.76 |
+| Open positions | 6 |
+| last_equity (June 29 EOD close — Alpaca authoritative) | USD 91,831.54 |
+| Today's P/L vs last_equity | **+USD 1,098.51 (+1.196%)** |
+| HWM | USD 101,144.73 |
+| Drawdown from HWM | **-8.123%** (circuit breaker -20% — NOT triggered; 11.877pp headroom) |
+
+**Shock check:** +1.196% vs threshold -6% → NOT triggered ✓
+
+**Open positions (June 30 EOD ~4:05 PM ET):**
+
+| Symbol | Qty | Avg Entry | EOD Price | Market Value | Unrealized P/L | P/L % | -12% Cut Trigger | Buffer | Rating |
+|---|---|---|---|---|---|---|---|---|---|
+| NVDA | 103 | USD 213.60 | USD 200.20 | USD 20,620.60 | -USD 1,380.20 | **-6.273%** | USD 187.97 | 5.727pp ✓ | A |
+| AVGO | 34 | USD 406.23 | USD 377.50 | USD 12,835.00 | -USD 976.82 | **-7.072%** | USD 357.48 | 4.928pp ✓ | A |
+| ETN | 34 | USD 419.54 | USD 426.12 | USD 14,488.08 | +USD 223.72 | **+1.568% ✅** | USD 369.20 | comfortable ✓ | A |
+| GOOGL | 16 | USD 370.22 | USD 356.00 | USD 5,696.00 | -USD 227.52 | **-3.841%** | USD 325.79 | 8.159pp ✓ | A |
+| AMZN | 36 | USD 247.991 | USD 238.00 | USD 8,568.00 | -USD 359.68 | **-4.029%** | USD 218.23 | 7.971pp ✓ | A |
+| VST | 52 | USD 151.47 | USD 158.99 | USD 8,267.48 | +USD 391.04 | **+4.965% ✅** | USD 133.29 | comfortable ✓ | A |
+
+**KEY vs midday:**
+- NVDA: 4.612pp → **5.727pp** (+1.115pp ✅ — strong afternoon recovery, +2.682% today, Q2-end rally)
+- AVGO: 4.289pp → **4.928pp** (+0.639pp ✅ — +1.356% today)
+- ETN: +0.776% → **+1.568%** (✅ — +4.375% today, strongest performer, new HWM, stop ratcheted)
+- GOOGL: 8.774pp → **8.159pp** (-0.615pp; +0.664% today but slightly softer vs midday peak)
+- AMZN: 8.802pp → **7.971pp** (-0.831pp; -0.891% intraday drift into close)
+- VST: 18.736pp → comfortable (-2.088% today; gave back midday gains, consistent with VST's typical afternoon-fade pattern)
+
+**Stop audit (June 30 EOD): ALL 6 CONFIRMED LIVE ✓**
+
+| Symbol | Stop Order ID | HWM | Stop Price | Trail % | Status |
+|---|---|---|---|---|---|
+| NVDA | `54d7d851` | USD 221.60 | USD 181.712 | 18% | ✓ live |
+| AVGO | `36f5a45f` | USD 426.48 | USD 349.7136 | 18% | ✓ live |
+| ETN | `abdc232b` | USD 427.93 (↑ ratcheted from 426.00 — new HWM today) | USD 350.9026 (↑) | 18% | ✓ live |
+| GOOGL | `e52a43f1` | USD 375.77 | USD 308.1314 | 18% | ✓ live |
+| AMZN | `b55bef05` | USD 252.525 | USD 207.0705 | 18% | ✓ live |
+| VST | `5b347be3` | USD 171.35 | USD 140.507 | 18% | ✓ live |
+
+**No stops missing. No stops needing recreation. ETN stop HWM ratcheted upward on new high. 6/6 ✓**
+
+**No trailing-stop fills today. No closed-trade post-mortems needed — all 6 positions from midday remain open and unchanged in quantity.**
+
+**Thesis contracts (June 30 EOD):**
+| Symbol | Review By | Invalidation | Status | Decision |
+|---|---|---|---|---|
+| NVDA | July 9 | Hyperscaler GPU share reverses | ✓ Intact — -6.273%; 5.727pp ✓; +2.682% today on Q2-end tech rally | **HOLD** |
+| AVGO | July 9 | AI revenue decelerates | ✓ Intact — -7.072%; 4.928pp ✓; +1.356% today | **HOLD** |
+| ETN | July 9 | ETN below USD 332 OR AI capex reverses | ✓ Intact — +1.568% ✅; +4.375% today, strongest mover; new HWM | **HOLD** |
+| GOOGL | July 7 | GCP decelerates OR TPU cancelled | ✓ Intact — -3.841%; 8.159pp ✓; +0.664% today | **HOLD** |
+| AMZN | July 7 | AWS <20% YoY | ✓ Intact — -4.029%; 7.971pp ✓; -0.891% minor drift today | **HOLD** |
+| VST | July 15 | Nuclear PPAs cancelled | ✓ Intact — +4.965% ✅; -2.088% today (afternoon fade, typical pattern) | **HOLD** |
+
+No review_by deadlines due today. No contract decisions required.
+
+**Sector exposure (June 30 EOD):**
+| Sector | Names | Market Value | % of Equity |
+|---|---|---|---|
+| Technology — semis | NVDA, AVGO | USD 33,455.60 | 36.00% |
+| Technology — hyperscalers | GOOGL, AMZN | USD 14,264.00 | 15.35% |
+| Industrials/Power Infra | ETN | USD 14,488.08 | 15.59% |
+| Utilities/Power | VST | USD 8,267.48 | 8.90% |
+| Cash | — | USD 22,458.29 | 24.16% |
+
+No sector at 60%+ threshold. Deliberate exposure — journaled.
+
+**Market context (June 30) [search: WebSearch fallback — MiniMax M3 not available]:**
+Final day of Q2 2026 — likely the best quarter for the S&P 500 and Nasdaq in six years. Markets built on Monday's tech-driven rally (Dow closed above 52,000 for the first time, GOOGL's DJIA debut, Tesla +8.5%, Musk back above USD 1T net worth) following the US-Iran ceasefire over the weekend. SPY closed at 746.52 (+0.745% today). Broad risk-on into Q2-end / Q3 rebalancing.
+
+**Performance vs SPY (June 30 EOD):**
+| Metric | Value |
+|---|---|
+| Equity | USD 92,930.05 |
+| Aggro return since inception | **(92,930.05 − 100,000) / 100,000 = -7.070%** |
+| SPY anchor | USD 754.18 (June 3, 2026) |
+| SPY June 30 close | USD 746.52 |
+| SPY since inception | **(746.52 − 754.18) / 754.18 = -1.016%** |
+| Alpha since inception | **-6.054pp** |
+| Today's P/L | +USD 1,098.51 (+1.196%) |
+| SPY today | +0.745% (741.00 → 746.52) |
+| Today alpha | **+0.451pp** (aggro outperformed today) |
+
+_EOD June 30: No trades, no exits, no stops triggered. All 6 positions within guardrails. Stop audit 6/6 ✓ (ETN ratcheted to new HWM). Drawdown -8.123% (11.877pp to circuit breaker). Shock check NOT triggered (+1.196%). Q2-end rally lifted NVDA and AVGO buffers meaningfully (+1.115pp, +0.639pp). VST gave back midday gains into close (typical afternoon-fade pattern, noted in lessons). No thesis contracts due today. Control: ACTIVE. [search: WebSearch fallback — MiniMax M3 not available]_
+
+---
+
 ## Last snapshot — 2026-06-30 MIDDAY (~12:41 PM ET)
 
 | Field | Value |
