@@ -103,20 +103,20 @@ Do NOT sell on day-to-day noise. Sell on thesis changes.
 
 ## Watchlist
 
-_Watchlist hygiene (updated 2026-06-26 weekly review): entries require date added + catalyst with expiry. Stale entries (4+ weeks, catalyst expired) purged. NVDA removed after second stop-out + GPU spot compression. LRCX gate fully reset. ETN added as AI power infrastructure candidate._
+_Watchlist hygiene (updated 2026-06-30 pre-market): WMT entry planned today (87sh). LRCX gate 0/3 after June 29 ATR 8.55% fails; session 1/3 attempt today. LLY HOLD affirmed (Medicare Bridge July 1 tomorrow; review_by July 7 renewed). JNJ excluded (minimal PT upside; earnings July 15)._
 
 | Ticker | Sector | Date Added | One-line reason | Catalyst Expiry |
 |--------|--------|------------|-----------------|-----------------|
-| LLY    | Healthcare | 2026-05-22 | **HELD** 10sh @ $1,093.53 — GLP-1 dominance; Medicare Bridge July 1 confirmed (USD 50/month, ~20M Medicare patients); Leerink PT $1,232; LLY +11.11% from entry | Review by July 1 — MANDATORY pre-mkt June 30 hold/trim/exit decision |
-| V      | Financials | 2026-06-10 | **HELD** 22sh @ $323.57 — payments infrastructure; OpenAI partnership; stablecoin capabilities; showing defensive strength in AI selloff | Review by July 28 (earnings Q3 FY26) |
-| VST    | Energy / Utilities | 2026-06-09 | **HELD** 40sh @ $148.81 — nuclear operator; Helix Digital Infrastructure (KKR+NVDA preferred power partner); +9.78% from entry; 5% trail; stop buffer 1.86% CRITICAL ⚠️⚠️ | Review by July 7 |
-| ETN    | Industrials / AI Power | 2026-06-26 | Eaton electrical equipment — direct critical-path input to hyperscale data centers scaling with AI GPU density; AGGRO added June 25 at $419.54; +42% analyst PT upside | Earliest entry week of July 7+ (need 3 consecutive ≤3% ATR sessions from June 30); catalyst: AI capex supercycle, ongoing |
-| LRCX   | Semi Equipment | 2026-06-08 | AI fab investment wave; Citi PT raised to $450 (from $315); ATR gate **FULLY RESET** by June 26 selloff; June 29 ATR 8.76% = session 1/3 FAILS; gate counter 0/3 | Earliest entry July 9+; catalyst: AI equipment cycle, no hard expiry |
+| LLY    | Healthcare | 2026-05-22 | **HELD** 10sh @ $1,093.53 — GLP-1 dominance; Medicare Bridge July 1 (TOMORROW); Leerink PT $1,232; LLY +12.62% from entry; stop buffer 9.53% ✓ | Review by July 7 (post-bridge launch reaction) |
+| V      | Financials | 2026-06-10 | **HELD** 22sh @ $323.57 — payments infrastructure; OpenAI partnership; stablecoin capabilities; defensive strength; +6.11% from entry | Review by July 28 (earnings Q3 FY26) |
+| VST    | Energy / Utilities | 2026-06-09 | **HELD** 40sh @ $148.81 — nuclear operator; Helix Digital Infrastructure (KKR+NVDA preferred power partner); +9.54% from entry; 5% trail; stop buffer 1.63% CRITICAL ⚠️⚠️; div USD 9.20 paid June 30 | Review by July 7 |
+| WMT    | Consumer Defensive | 2026-05-22 | **PLANNED BUY June 30** 87sh ~USD 9,963 — cost-conscious consumer market share in 4.1% PCE env; Vibe.co ad platform; 24.5% upside to consensus PT USD 142.46; Q2 FY27 earnings Aug 20 | Review by Aug 18 (2 trading days before Q2 FY27 earnings) |
+| ETN    | Industrials / AI Power | 2026-06-26 | Eaton electrical equipment — direct critical-path input to hyperscale data centers scaling with AI GPU density; AGGRO added June 25 at $419.54; +42% analyst PT upside | ATR gate session 1/3 starts today (June 30); earliest entry July 7+ (need 3 consecutive ≤3% ATR sessions); catalyst: AI capex supercycle, ongoing |
+| LRCX   | Semi Equipment | 2026-06-08 | AI fab investment wave; analyst PTs: Cantor $500 / BofA $480 / WF $450 / Citi $450; June 29 ATR 8.55% = session 1/3 FAILS again; gate counter **0/3** | ATR gate session 1/3 attempt TODAY (June 30); earliest entry July 7+ (if June 30/July 1/July 2 all ≤3%); catalyst: AI equipment cycle, no hard expiry |
 | MSFT   | Tech / Enterprise AI | 2026-05-22 | Azure AI platform compounding; stop-outs June 5; re-evaluate when PCE trend reverses or stock re-bases cleanly; July 23 earnings next catalyst | Re-evaluate July 23+ (earnings); not near-term |
 | COST   | Consumer Defensive | 2026-05-29 | Membership model loyalty; defensive in high-PCE environment; Q4 earnings mid-August | Re-evaluate July+ (pre-earnings) |
 | PWR    | Industrials | 2026-06-12 | Quanta Services; grid/data-center infrastructure buildout; Q1 EPS +31.4% beat; PT upgrades TD Cowen $775 / Citi $837; ATR elevated + insider selling $123M flag; P/E ~95 | Re-evaluate late July; needs ATR normalization + insider selling to abate |
-| JNJ    | Healthcare | 2026-05-22 | Defensive quality compounder; resilient earnings; reasonable valuation; inflation-resistant | Ongoing; no hard expiry |
-| WMT    | Consumer Defensive | 2026-05-22 | Market-share gains from cost-conscious consumer; AI supply-chain edge; defensive in inflation environment | Ongoing; no hard expiry |
+| JNJ    | Healthcare | 2026-05-22 | Defensive quality compounder; resilient earnings; reasonable valuation; inflation-resistant | NOT ENTERING: avg PT USD 257.50 = 1% upside vs current; earnings July 15 only 11 days away; net earnings −52.4% Q1. Re-evaluate post-July 15. |
 
 _Purged from watchlist (2026-06-26 weekly review):_
 - **NVDA:** REMOVED — second trailing stop in 5 weeks (June 5: −3.36%; June 25: −9.78%). GPU B200 hourly spot price −31% in 3 weeks ($6.11→$4.22) is a fundamental margin-pressure concern. Re-add only when: (a) GPU spot prices recover above $5.50/hr OR (b) confirmed major new hyperscaler deployment catalyst; minimum 4-week cooling period from June 25.
@@ -138,25 +138,26 @@ _Previously purged (still excluded):_
 - If we lag SPY by > 5% over any rolling 4-week window, review and adjust
   sector weights and position theses before adding new names.
 
-## Active Macro Watches (updated 2026-06-26 weekly review)
+## Active Macro Watches (updated 2026-06-30 pre-market)
 
 - **FOMC June 16–17 2026 — COMPLETED HAWKISH (finalized):** Rate hold (3.50–3.75%); dot plot: median 3.8% year-end, 9/18 members projecting hike. Next FOMC: est. late July 2026.
-- **PCE inflation 4.1% YoY (June 25) — NEW HAWKISH SIGNAL:** Highest since April 2023. Kevin Warsh hawkish comments. Reinforces higher-for-longer rate regime. 10yr yield ~4.44-4.49% range — **BELOW 4.75% trigger ✓**. Monitor; if closes above 4.75%, halt all new buys.
+- **PCE inflation 4.1% YoY (June 25) — HAWKISH SIGNAL PERSISTS:** Highest since April 2023. 10yr yield ~4.44-4.49% — **BELOW 4.75% trigger ✓**. Higher-for-longer regime intact. Consumer defensives (WMT, planned entry today) benefit. Monitor.
 - **Iran/US peace deal — holding (60-day agreement from June 18):** Strait of Hormuz open; WTI ~$80/bbl ✓. Peace deal expiry ~August 17 — monitor.
-- **AI/tech selloff week of June 23-26:** OpenAI IPO delay + valuation concerns drove Nasdaq −4%+. Chip names hardest hit. LRCX ATR gate fully reset. Sector rotation into healthcare, industrials, defensives favors current Bull portfolio.
+- **Market sentiment (June 30):** S&P 500 +1.18% June 29; Dow at ATH 52,182.74. Pre-market futures +0.2%. Holiday-shortened week (July 4 Friday). Cautiously constructive.
 - **SPY ex-dividend June 18 — APPLIED:** $1.76/sh. Total-return benchmark anchor: **$741.20**. Next SPY ex-div est. ~September 2026.
-- **LLY — position:** June 26 close $1,215.00 (+11.11% from entry). HWM $1,215.76 / stop $1,094.18. **Medicare Bridge July 1 TOMORROW** — **MANDATORY HOLD/TRIM/EXIT DECISION AT PRE-MARKET JUNE 30.** Buffer 9.69% excellent. Review_by July 1.
-- **V — position:** June 26 close $336.00 (+3.84% from entry). HWM $339.94 / stop $305.95. Thesis intact; defensive strength in AI selloff. Review_by July 28 (Q3 FY26 earnings).
-- **VST — position:** June 26 close $163.75 (+9.78% from entry). 5% trail HWM $168.77 / stop $160.33. **BUFFER 1.86% CRITICAL ⚠️⚠️** — stop may fire Monday open if VST gaps down. Thesis intact. Review_by July 7.
-- **NVDA — REMOVED FROM WATCHLIST:** Second stop-out June 25 (−9.78%). GPU spot compression not resolved. Minimum 4-week cooling period.
-- **LRCX — ATR GATE FULLY RESET:** −10%+ on June 26. Fresh 3 consecutive ≤3% sessions needed from June 29. June 29 ATR 8.76% = session 1/3 FAILS; gate counter 0/3. **Earliest entry July 9+**.
-- **ETN — NEW WATCHLIST ADDITION:** AGGRO added June 25 at $419.54. AI power infrastructure. ATR elevated post-selloff. Earliest entry week of July 7+.
-- **GOOGL Dow Jones inclusion — effective June 29 (Monday):** Positive for passive flows; watch for momentum.
+- **LLY — position:** Pre-market June 30 $1,231.54 (+12.62% from entry). HWM $1,238 / stop $1,114.20 (buffer 9.53% ✓). **Medicare Bridge launches TOMORROW (July 1, 2026)** — HOLD confirmed; review_by July 7.
+- **V — position:** Pre-market June 30 $343.34 (+6.11% from entry). HWM $345.81 / stop $311.229 (buffer 9.36% ✓). Thesis intact. Review_by July 28 (Q3 FY26 earnings).
+- **VST — position:** Pre-market June 30 $163.00 (+9.54% from entry). 5% trail HWM $168.77 / stop $160.33 (**buffer 1.63% CRITICAL ⚠️⚠️**). Thesis intact. Dividend USD 9.20 paid today. Review_by July 7.
+- **WMT — PLANNED ENTRY:** 87sh at market open June 30. Cost-conscious consumer defensive. 24.5% upside to consensus PT USD 142.46. Q2 FY27 earnings Aug 20. 10% trailing stop post-fill.
+- **NVDA — REMOVED FROM WATCHLIST:** Second stop-out June 25 (−9.78%). GPU spot compression not resolved. Re-add only: GPU spot recovers above USD 5.50/hr OR confirmed new hyperscaler deployment; minimum 4-week cooling period from June 25.
+- **LRCX — ATR GATE:** June 29 ATR confirmed 8.55% (H $414.905 / L $379.78 / C $410.82) → FAILS. Gate counter **0/3**. Session 1/3 attempt TODAY (June 30). **Earliest entry July 7+** (if June 30, July 1, July 2 all ≤3% ATR). Analyst PTs strong: Cantor $500 / BofA $480 / WF $450 / Citi $450.
+- **ETN — watchlist:** ATR gate session 1/3 starts today (June 30). Earliest entry July 7+.
 
-## Monday Conviction Ratings (updated 2026-06-29 pre-market)
+## Monday Conviction Ratings (updated 2026-06-29 pre-market — next update July 6)
 
 | Symbol | Rating | 3-consecutive-C trigger | Notes |
 |--------|--------|------------------------|-------|
-| LLY | **A** | N/A | +12.48% from entry; AT Leerink PT $1,232; Medicare Bridge launches July 1 TOMORROW; stop buffer 11.05% healthy; HOLD decision made; review_by 2026-07-07 |
-| V | **B** | 0/3 weeks at C | +4.07% from entry; thesis intact; defensive strength in AI selloff; July 28 earnings gate; review_by 2026-07-28 |
-| VST | **A** | N/A | +10.20% from entry; Helix+Cogentrix intact; 5% trail; stop buffer 2.23% CRITICAL ⚠️⚠️ — improved from 1.86% Friday but still narrow; thesis conviction unchanged; review_by 2026-07-07; earnings Aug 6 |
+| LLY | **A** | N/A | +12.62% from entry; Medicare Bridge launches July 1; stop buffer 9.53% ✓; review_by 2026-07-07 |
+| V | **B** | 0/3 weeks at C | +6.11% from entry; thesis intact; defensive strength; July 28 earnings gate; review_by 2026-07-28 |
+| VST | **A** | N/A | +9.54% from entry; Helix+Cogentrix intact; 5% trail; stop buffer 1.63% CRITICAL ⚠️⚠️; review_by 2026-07-07 |
+| WMT | — | — | Planned entry today (June 30); conviction rating assigned next Monday review |

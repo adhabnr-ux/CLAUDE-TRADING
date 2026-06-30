@@ -5,6 +5,180 @@ The market-open routine reads the most recent "Planned trades" section._
 
 ---
 
+## 2026-06-30 — Pre-market research (~08:05 ET)
+
+### Live-switch guard
+- `ALPACA_BASE_URL` = "https://paper-api.alpaca.markets" — contains "paper" ✓
+
+### Lock / Control
+- Lock: `{}` (empty — no active routine) → wrote lock, proceeding.
+- STATUS: ACTIVE ✓ — no NOTE, no QUERY, no PAUSED/RISK_OFF.
+
+### Account snapshot (live Alpaca ~08:03 ET)
+
+| Metric | Value |
+|--------|-------|
+| Equity | $100,004.62 |
+| Cash | $73,615.74 (73.61%) |
+| Long market value | $26,388.88 |
+| Last equity (Alpaca BOD June 29) | $99,926.54 |
+| Shock check | +$78.08 (+0.078%) vs last_equity — no shock ✓ (threshold −4%) |
+| HWM | $101,384.21 |
+| Drawdown | −1.36% — NOT triggered ✓ (circuit breaker at −10%) |
+
+_VST dividend $0.229 × 40sh = $9.20 payable today (June 30) — expected cash credit; equity uptick partly reflects this._
+
+### Macro (pre-market June 30, 2026 ~08:05 ET)
+
+| Indicator | Value | Status |
+|-----------|-------|--------|
+| S&P 500 futures | +0.2% (mildly positive) | Cautiously constructive |
+| Dow Jones | Record close 52,182.74 on June 29 | ATH — positive sentiment |
+| S&P 500 June 29 close | 7,440.43 (+1.18% yesterday) | Strong recovery |
+| 10yr Treasury | ~4.44–4.49% est. | Below 4.75% trigger ✓ |
+| WTI crude | ~$80/bbl | Iran peace deal intact ✓ |
+| PCE inflation | 4.1% YoY (June 25) | Hawkish; higher-for-longer |
+| July 4 holiday | Friday July 3 market open (half-day?); bond mkt closed July 4 | Holiday-shortened week |
+
+**Narrative:** Cautiously constructive. SPY rallied +1.18% June 29 (GOOGL Dow inclusion, Iran peace progress) and Dow hit ATH. Pre-market futures +0.2% — continuation but muted. Holiday-shortened week favors defensive setups and lower volatility. PCE 4.1% and hawkish Fed backdrop remain intact (higher-for-longer); 10yr below 4.75% trigger. No major macro data expected today. Risk appetite is constructive but selective.
+
+### Position thesis reviews — "what changed since yesterday"
+
+**LLY** ($1,229.06 close June 29 / ~$1,231.54 positions API; +12.62% from entry $1,093.534)
+- _What changed since June 29:_ Medicare GLP-1 Bridge program launches TOMORROW (July 1, 2026) — CMS coverage confirmed at USD 50/month for ~20M Medicare Part D beneficiaries (Foundayo, Wegovy, Zepbound KwikPen, 18 months through Dec 31, 2027). LLY shares continue to hold near record highs. No negative news. No analyst downgrade. Thesis strongly intact.
+- Stop: HWM $1,238, stop $1,114.20 (10% trail) ✓ — buffer $1,231.54 - $1,114.20 = $117.34 (9.53%) ✓
+- Earnings: August 5, 2026 — outside 2-day window ✓
+- **MANDATORY HOLD/TRIM/EXIT DECISION (review_by was July 1 → renewed July 7 at June 29 pre-mkt):**
+  - Today is June 30 (the day before bridge launch). The June 29 pre-market decision was HOLD. Re-affirm today.
+  - Decision: **HOLD**. Bridge is an 18-month program, not a one-day catalyst. "Sell the news" risk is limited because this is a sustained access expansion, not a point-in-time event. Avg analyst PT $1,232 (~Leerink) is AT current price; bull-case PTs significantly higher (TIKR $2,100 cited). Stop at 9.53% buffer provides strong protection and auto-ratchets higher.
+  - Invalidation: Medicare Bridge pricing reveals margin deterioration or enrollment <5M patients in first 30 days; or stock closes below $1,114.20.
+  - review_by: **2026-07-07** (assess post-bridge-launch market reaction)
+  - **Conviction: A. HOLD.**
+
+**V** ($341.65 close June 29 / ~$343.34 positions API; +6.11% from entry $323.57)
+- _What changed since June 29:_ V closed +1.87% on June 29 (strong on GOOGL Dow rally and broad tech recovery). HWM $345.81 unchanged (price $341.65 < HWM). 36 analysts Buy, avg PT $398.83 (+16.1% upside). Thesis intact. No negative news. Visa Destinations platform live; OpenAI partnership embedded.
+- Stop: HWM $345.81, stop $311.229 ✓ — buffer $343.34 - $311.229 = $32.11 (9.36%) ✓
+- Earnings: V Q3 FY26 est. July 28 — outside 2-day window ✓; review_by July 28
+- **Decision: HOLD. Conviction: B (0/3 C-weeks).**
+
+**VST** ($162.49 close June 29 / ~$163.00 positions API; +9.54% from entry $148.81)
+- _What changed since June 29:_ VST closed down slightly on June 29 (−0.17% from last close). Stop buffer: $163.00 - $160.3315 = $2.67 = 1.63% CRITICAL (vs 1.43% at close June 29 per portfolio.md). Thesis intact — Helix Digital Infrastructure + Cogentrix nuclear PPAs unchanged. Dividend USD 9.20 ($0.229 × 40sh) payable TODAY (June 30). Futures +0.2% = mildly constructive tape, not selling off. Analyst fair value ~$225.
+- Stop: HWM $168.77, stop $160.3315 (5% trail) ✓ ⚠️⚠️ CRITICAL buffer 1.63%
+- Earnings: VST Q2 est. August 6 — outside 2-day window ✓; review_by July 7
+- **Decision: HOLD with stop.** Lesson check: "when buffer <2pp AND tape selling off AND no catalyst" → proactive exit. Tape is NOT selling off (futures +0.2%). Dividend is a modest positive today. Do NOT override stop — if stop fires at $160.3315, exit = +9.71% = a win. **Conviction: A. HOLD with stop.**
+
+### Thesis contract review
+- **LLY** (review_by July 1 → renewed July 7): HOLD, invalidation unchanged. Renewed above.
+- **V** (review_by July 28): HOLD, thesis intact.
+- **VST** (review_by July 7): HOLD, thesis intact; stop is live safety net.
+
+### Stop audit (pre-market June 30 — confirmed via Alpaca orders)
+
+| Order ID | Symbol | Qty | Type | HWM | Stop | Buffer | Status |
+|----------|--------|-----|------|-----|------|--------|--------|
+| d4147484 | LLY | 7sh | trailing_stop 10% | $1,238.00 | $1,114.20 | $117.34 (9.53%) | ✓ active |
+| 25989fb5 | LLY | 3sh | trailing_stop 10% | $1,238.00 | $1,114.20 | $117.34 (9.53%) | ✓ active |
+| 66033918 | V | 22sh | trailing_stop 10% | $345.81 | $311.229 | $32.11 (9.36%) | ✓ active |
+| c8b43d32 | VST | 40sh | trailing_stop 5% | $168.77 | $160.3315 | $2.67 (1.63%) | ✓ active ⚠️⚠️ CRITICAL |
+
+**4/4 PASS ✓** — no stops fired overnight. No stops to recreate.
+
+### Drawdown circuit breaker
+- HWM $101,384.21 | current equity $100,004.62 = **−1.36%** — NOT triggered ✓ (8.64pp headroom; CB trigger USD 91,245.79)
+
+### Cash drag check
+- Cash: $73,615.74 = 73.61% of portfolio
+- Target: 25–40% cash for 3 positions (or 10–20% for 6–8 positions)
+- Cash has been above band for >4 weeks
+- Tape is mildly constructive today (+0.2% futures)
+- Weekly position slots: 0/3 used (week 7 starts today)
+- **Action: Must plan at least 1 qualifying entry OR write explicit cash justification.**
+- **Decision: Plan WMT entry today (see below).**
+
+### Earnings calendar (all held + candidates)
+| Symbol | Next Earnings | Status |
+|--------|--------------|--------|
+| LLY | Aug 5, 2026 | Outside 2-day window ✓ |
+| V | Jul 28, 2026 | Outside 2-day window ✓ |
+| VST | Aug 6, 2026 | Outside 2-day window ✓ |
+| WMT | Aug 20, 2026 | Outside 2-day window ✓ |
+| JNJ | Jul 15, 2026 | Outside 2-day window today, BUT only 11 trading days — decided NOT to enter (minimal upside vs avg PT; net earnings −52.4% Q1) |
+| LRCX | Jul 22, 2026 est. | Gate 0/3 — no entry today regardless |
+
+### Watchlist / new candidate research
+
+**WMT (Walmart) — ENTRY CANDIDATE:**
+- Q1 FY27 earnings May 21, 2026 — solid (strong revenue and earnings growth per consensus)
+- Q2 FY27 earnings: August 20, 2026 — 11.5 weeks runway; review_by Aug 18
+- 29 analysts Buy / 3 Hold / 0 Sell — Strong Buy consensus
+- Avg 12-mo PT: $142.46 (high $155, low $132) — **24.5% upside** from June 29 close $114.52
+- Recent catalysts: acquired Vibe.co ad platform ($1.4B, June 2026) for omnichannel advertising revenue acceleration; 15-year nuclear PPA with Constellation Energy (operational cost reduction); outperforming Amazon on consumer share metrics
+- **PCE 4.1% tailwind:** Cost-conscious consumer environment → WMT market share gains; price-value leadership vs. peers
+- Current price: ~$114.52 (close June 29); pre-market slightly positive with broad tape
+- ATR check (from available data): June 29 daily range $116.73-$114.205 = $2.525 / $114.52 = **2.20%** ≤3% ✓; June 26: $117.86-$115.13 = $2.73 / $115.30 = **2.37%** ≤3% ✓. Low-volatility large-cap staple. No halving required.
+- Note: 21-day bars unavailable (API returned null pre-market); individual sessions both well below 3% ATR threshold.
+- Entry signal score: ✓ Earnings momentum (Q1 beat, Buy consensus) | ✓ Catalyst (Vibe.co ad, Q2 Aug 20) | ✓ Valuation (24.5% upside to PT) | ✓ Macro tailwind (PCE 4.1%) | ? Technical (50-DMA unconfirmed, bars null — minor risk)
+- **3+ of 5 entry signals confirmed ✓ — QUALIFIES for entry**
+
+**LRCX (Lam Research):**
+- June 29 close: $410.82 (up +8.69% from $377.99 on June 26) — massive analyst upgrade day
+- June 29 ATR: H $414.905 / L $379.78 = range $35.125 / $410.82 = **8.55%** ⚠️ → FAILS ≤3% gate
+- Gate counter: **0/3** (full reset confirmed; June 29 = session 1/3 FAILS)
+- Today (June 30) = new session 1/3 attempt — check close ATR tonight
+- Analyst upgrades: Cantor $500 OW, BofA $480 Buy, Wells Fargo $450, Citi $450, Oppenheimer $400 — very strong bull case
+- Thesis intact and strengthening — AI fab investment wave; record WFE outlook raised
+- **Action: WATCH. Earliest entry July 7+ (if June 30, July 1, July 2 all ≤3% ATR) or July 9+ otherwise. Cannot enter today.**
+
+**ETN (Eaton):**
+- ATR gate counter starts today (June 30) per strategy.md — earliest entry week of July 7+
+- Cannot enter today.
+
+**JNJ (Johnson & Johnson):**
+- P/E 29.44, avg PT $257.50 = only 1.1% upside vs $252-258 current price
+- Q1 2026 net earnings DOWN 52.4% YoY (likely litigation/one-time item, but concerning without detailed review)
+- Next earnings July 15, 2026 — only 11 trading days; would need hold/exit decision July 13
+- Minimal alpha vs SPY given near-zero upside to consensus PT
+- **Decision: NOT QUALIFIED for entry today.** Insufficient upside and earnings proximity.
+
+### ATR volatility check — WMT sizing
+- 20-day ATR estimated: ~2.0–2.4% (based on 2 recent sessions; consistent with large-cap staple profile)
+- ATR < 3% → standard sizing applies; no halving
+- Risk budget: stop-out loss ≤ 1.2% of equity = $1,200.06
+- With 10% trailing stop: position ≤ $12,000.55 (12.0% of portfolio)
+- Planned size: 87 shares × ~$114.52 = **$9,963.24 (9.96% of portfolio)** — within starter range (7-9% to 12%) ✓
+
+### Post-WMT-buy portfolio check
+- LLY 10sh: $12,315.40 (12.31%)
+- V 22sh: $7,553.48 (7.55%)
+- VST 40sh: $6,520.00 (6.52%)
+- WMT 87sh (planned): ~$9,963 (9.96%)
+- Cash remaining: $73,615.74 − $9,963 = **$63,652 (63.65%)** — above 5% min ✓
+- Daily deployment: $9,963 / $100,004.62 = **9.96%** < 25% cap ✓
+- Sector: Consumer Defensive (WMT) 9.96% | Healthcare (LLY) 12.31% | Financials (V) 7.55% | Utilities/Energy (VST) 6.52% — all below 60% cap ✓
+- Weekly slot: 1/3 used (first trade week 7)
+
+---
+
+**Planned trades for today**
+
+```json
+{
+  "plan_date": "2026-06-30",
+  "trades": [
+    {
+      "action": "buy",
+      "symbol": "WMT",
+      "qty": 87,
+      "thesis": "Cost-conscious consumer market share gains in 4.1% PCE inflation environment; Vibe.co ad platform accelerating omnichannel advertising revenue; 24.5% upside to USD 142 consensus analyst PT; defensive in higher-for-longer rate regime.",
+      "invalidation": "WMT closes below USD 103 (10% stop trigger from entry) or Q2 FY27 earnings Aug 20 materially miss guidance",
+      "review_by": "2026-08-18"
+    }
+  ]
+}
+```
+
+---
+
 ## 2026-06-29 — Pre-market research (~08:04 ET)
 
 ### Live-switch guard
