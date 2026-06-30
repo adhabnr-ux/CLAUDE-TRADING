@@ -2622,3 +2622,86 @@ All 6 positions within guardrails. No trades executed. No positions cut. No stop
 ### Result
 No trades. No exits. All 6 stops live. Shock check clear. Circuit breaker not triggered. News scan clear. Plan date confirmed. EXECUTED marker added to research-log.md.
 
+
+---
+
+## 2026-06-30 — MIDDAY CHECK (~12:41 PM ET)
+
+**No trades executed.** Risk management only. All positions within guardrails.
+
+### Pre-run checks
+| Check | Result |
+|---|---|
+| Live-switch guard | ALPACA_BASE_URL contains "paper" ✓ |
+| Lock | Written for this run (expires 13:38:00Z) ✓ |
+| Control switch | STATUS: ACTIVE ✓ |
+| Market open | true (next close 4:00 PM ET) ✓ |
+
+### Account status
+| Field | Value |
+|---|---|
+| Equity | USD 92,786.74 |
+| Last equity (prev close June 29) | USD 91,831.54 |
+| Intraday P/L vs last_equity | **+USD 955.20 (+1.040%)** |
+| Cash | USD 22,458.29 (24.20%) |
+| HWM | USD 101,144.73 |
+| Drawdown from HWM | **-8.262%** (circuit breaker -20% — NOT triggered; 11.738pp headroom) |
+
+**Shock check:** +1.040% vs threshold -6% → NOT triggered ✓
+
+### Position review
+
+| Symbol | Entry | Current | P/L % | -12% Trigger | Buffer | Change Today | News | Action |
+|---|---|---|---|---|---|---|---|---|
+| NVDA | USD 213.60 | USD 197.82 | **-7.388%** | USD 187.97 | 4.612pp ✓ | +1.46% intraday | No hyperscaler defection; analyst target USD 301.92; AI GPU demand intact — macro underperformance | HOLD |
+| AVGO | USD 406.23 | USD 374.905 | **-7.711%** | USD 357.48 | 4.289pp ✓ | +0.659% intraday | Jalapeño confirmed; AI XPV Platform USD 35B; record Q2 AI revenue USD 10.8B; analyst target USD 501.58 | HOLD |
+| ETN | USD 419.54 | USD 422.795 | **+0.776%** | USD 369.40 | 11.399pp ✓ | +3.56% intraday | AI power infra thesis intact; strong rally today | HOLD |
+| GOOGL | USD 370.22 | USD 358.275 | **-3.226%** | USD 325.79 | 8.774pp ✓ | +1.31% intraday | DJIA inclusion tailwind ongoing; GCP +63% thesis intact | HOLD |
+| AMZN | USD 247.991 | USD 240.06 | **-3.198%** | USD 218.23 | 8.802pp ✓ | -0.033% intraday | Minor drift; AWS thesis intact; Prime Day record still relevant | HOLD |
+| VST | USD 151.47 | USD 162.43 | **+7.236% ✅** | USD 133.29 | 18.736pp ✓ | +0.031% intraday | Helix Digital Infra intact; nuclear PPAs confirmed | HOLD |
+
+**Cut rule check (>-12% from entry): NO positions triggered. All clear.**
+**Tighten-stop rule check (>+25% from entry): NO positions triggered. All clear.**
+
+### News scan (positions down >5% from entry) [search: WebSearch fallback — MiniMax M3 not available]
+
+- **NVDA (-7.388%):** No hyperscaler GPU defection. NVDA has underperformed peers YTD but AI GPU demand remains intact. Wall Street consensus target USD 301.92 (+54.7% upside). Upcoming hyperscaler earnings may provide recovery catalyst. Macro-driven, not thesis-breaking. Decision: **HOLD — temporary noise, not a permanent thesis break.**
+- **AVGO (-7.711%):** OpenAI Jalapeño custom AI chip partnership publicly confirmed (10GW compute capacity 2026-2029). AI XPV Platform with Apollo/Blackstone (USD 35B). Record Q2 FY2026 AI semiconductor revenue USD 10.8B (+143% YoY). Analyst consensus Buy, target USD 501.58. Trading +0.659% today — recovering. Decision: **HOLD — thesis CONFIRMED, move is macro-driven.**
+
+### Stop audit — 6/6 positions confirmed with live 18% trailing stops ✓
+
+| Symbol | Stop Order ID | Stop Price | HWM | Status |
+|---|---|---|---|---|
+| NVDA | `54d7d851` | USD 181.712 | USD 221.60 | ✓ live |
+| AVGO | `36f5a45f` | USD 349.7136 | USD 426.48 | ✓ live |
+| ETN | `abdc232b` | USD 349.32 | USD 426.00 | ✓ live |
+| GOOGL | `e52a43f1` | USD 308.1314 | USD 375.77 | ✓ live |
+| AMZN | `b55bef05` | USD 207.0705 | USD 252.525 | ✓ live |
+| VST | `5b347be3` | USD 140.507 | USD 171.35 | ✓ live |
+
+**No stops missing. No stops needing recreation. 6/6 ✓**
+
+### Thesis contracts (June 30 midday)
+| Symbol | Review By | Invalidation | Status | Decision |
+|---|---|---|---|---|
+| NVDA | July 9 | Hyperscaler GPU share reverses | ✓ Intact — -7.388%; 4.612pp ✓; no defection; analyst target USD 301.92; Aug 26 earnings | **HOLD** |
+| AVGO | July 9 | AI revenue decelerates | ✓ Intact — -7.711%; 4.289pp ✓; Jalapeño confirmed; AI XPV Platform; analyst target USD 501.58; Sep 3 earnings | **HOLD** |
+| ETN | July 9 | ETN below USD 332 OR AI capex reverses | ✓ Intact — +0.776%; 11.399pp ✓; +3.56% today; AI power infra; Aug 4 earnings | **HOLD** |
+| GOOGL | **July 7** | GCP decelerates OR TPU cancelled | ✓ Intact — -3.226%; 8.774pp ✓; DJIA inclusion tailwind; GCP +63%; Jul 21-24 earnings | **HOLD** |
+| AMZN | July 7 | AWS <20% YoY | ✓ Intact — -3.198%; 8.802pp ✓; AWS GPU pricing power; Jul 30 earnings | **HOLD** |
+| VST | July 15 | Nuclear PPAs cancelled | ✓ Intact — +7.236% ✅; 18.736pp ✓; Helix Digital Infra intact; Aug 6 earnings | **HOLD** |
+
+### Performance vs SPY (midday June 30)
+| Metric | Value |
+|---|---|
+| Equity | USD 92,786.74 |
+| Aggro return since inception | **(92,786.74 − 100,000) / 100,000 = -7.213%** |
+| SPY anchor | USD 754.18 (June 3, 2026) |
+| SPY June 29 close | USD 741.00 |
+| SPY since inception | **(741.00 − 754.18) / 754.18 = -1.748%** |
+| Alpha since inception | **-5.465pp** |
+| Intraday P/L vs last_equity | +1.040% |
+
+### Result
+All 6 positions within guardrails. No cuts, no stop tightenings. All 18% trailing stops active and audited (6/6 ✓). NVDA and AVGO both recovering intraday (+1.46% and +0.659% respectively) with theses intact. ETN strong day +3.56%. GOOGL +1.31% on continued DJIA inclusion tailwind. VST steady. Drawdown -8.262% (11.738pp headroom to circuit breaker). No shock. Control: ACTIVE. [search: WebSearch fallback — MiniMax M3 not available]
+
