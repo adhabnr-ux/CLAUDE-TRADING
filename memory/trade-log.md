@@ -3,6 +3,66 @@
 _Every order placed, with its reasoning. Append-only — newest entries at the top.
 The weekly new-position count is derived from this log._
 
+## 2026-06-30 09:36 ET — MARKET-OPEN (0 trades; stop audit 4/4 ✓; PRE-MARKET DID NOT RUN — plan stale; VST buf 0.76% ⚠️⚠️ ULTRA CRITICAL; LLY Medicare Bridge launches TOMORROW July 1)
+
+- **Action:** Market-open routine. 0 trades — pre-market did not run today; no June 30 plan block found in research-log.md. Most recent plan_date was 2026-06-29 (stale). Skipping new trades per playbook.
+- **Market status:** `is_open: true` (9:36 AM ET); close 4:00 PM ET.
+- **Account (~09:36 ET — live Alpaca):** Equity $99,699.27 | Cash $73,615.74 (73.91%) | LMV $26,083.53
+
+### Live-switch guard
+- `ALPACA_BASE_URL` contains "paper" ✓ — paper trading confirmed.
+
+### Control switch
+- STATUS: ACTIVE ✓ — no PAUSED / RISK_OFF flags, no NOTE, no QUERY.
+
+### Shock check
+- Equity $99,699.27 vs last_equity $99,926.54 = **−$227.27 = −0.227%** — no shock ✓ (threshold −4%)
+- Note: last_equity $99,926.54 reflects Alpaca's June 29 4PM close (vs our journal's ~15:51 snapshot of $99,940.72 — small timing diff; immaterial).
+
+### Drawdown circuit breaker
+- HWM $101,384.21; current $99,699.27 = **−1.664%** — NOT triggered ✓ (8.336pp headroom)
+
+### Stale plan — no trades
+- Most recent research-log.md pre-market entry: **2026-06-29** (plan_date "2026-06-29") — pre-market did NOT run today (June 30). Plan is stale. Per playbook: place no trades, journal, skip to step 6.
+- **0 new trades placed.**
+
+### Position review (market-open June 30, ~09:36 ET)
+
+| Symbol | Qty | Avg Entry | Current | % from Entry | Intraday | Buffer | Action |
+|--------|-----|-----------|---------|--------------|----------|--------|--------|
+| LLY | 10 | $1,093.534 | $1,213.76 | **+10.99%** | −1.31% | 8.20% | HOLD — pre-mkt June 29 HOLD decision ✓; review_by 2026-07-07; Medicare Bridge launches TOMORROW July 1 |
+| V | 22 | $323.57 | $340.36 | **+5.19%** | −0.38% | 8.55% | HOLD — thesis intact |
+| VST | 40 | $148.81 | $161.56 | **+8.57%** | −0.50% | **0.76% ⚠️⚠️** | HOLD with stop — stop at $160.3315 may fire today; thesis intact; do NOT override |
+
+### Stop audit (market-open June 30 — confirmed via Alpaca live orders ~09:36 ET)
+
+| Order ID | Symbol | Qty | Type | HWM | Stop | Buffer | Status |
+|----------|--------|-----|------|-----|------|--------|--------|
+| d4147484 | LLY | 7sh | trailing_stop 10% | $1,238.00 | $1,114.20 | $99.56 (8.20%) | ✓ active |
+| 25989fb5 | LLY | 3sh | trailing_stop 10% | $1,238.00 | $1,114.20 | $99.56 (8.20%) | ✓ active |
+| 66033918 | V | 22sh | trailing_stop 10% | $345.81 | $311.229 | $29.13 (8.55%) | ✓ active |
+| c8b43d32 | VST | 40sh | trailing_stop 5% | $168.77 | $160.3315 | $1.23 (0.76%) | ✓ active ⚠️⚠️ ULTRA CRITICAL |
+
+**4/4 PASS ✓** — no stops recreated; no trailing stop fired since last run.
+
+### No exits this run
+- No positions closed. No trailing stops fired since close June 29. closed-trades.md unchanged.
+- If VST stop fires during today's session, the midday or close routine must record exit in closed-trades.md (+8.57% P/L = win).
+
+### Key notes for next routine
+- **VST dividend $9.20 (payable today June 30):** Cash should credit $73,615.74 + $9.20 = ~$73,624.94. Check at midday if credited.
+- **LLY Medicare Bridge launches TOMORROW July 1** — pre-market June 29 already made HOLD decision (review_by renewed to July 7). No action needed today.
+- **LRCX ATR gate:** Session 2/3 needed today (June 30) — need ≤3% ATR range. Gate counter was 0/3 after June 29 failed (8.76%). If today ≤3%, gate counter 1/3. Assess at close.
+- **VST ⚠️⚠️ ULTRA CRITICAL:** Buffer 0.76% ($1.23). Thesis intact (Helix+Cogentrix). Do NOT manually override stop. If stop fires, record immediately in closed-trades.md as +8.57% gain.
+- **Pre-market did not run today.** Next pre-market (July 1, Wednesday) must: (1) assess LLY post-Medicare Bridge launch; (2) check VST status; (3) update LRCX ATR gate counter; (4) review ETN entry timing.
+
+### Performance vs SPY (market-open June 30, 2026)
+- **Bull equity:** $99,699.27 = **−0.301%** since inception
+- **SPY TR est.:** ($740.87 + $1.76) / $739.44 − 1 = **+0.431% TR** (using June 29 close; today's SPY not yet assessed)
+- **Bull TRAILS SPY est. −0.732pp** (vs −0.490pp at June 29 close; positions all slightly lower at open)
+
+---
+
 ## 2026-06-29 12:32 ET — MIDDAY (0 trades; stop audit 4/4 ✓; LLY ATH +11.12% thesis confirmed; V HWM ratcheted $345.81; VST buf 2.40% ⚠️ CRITICAL; no cuts/tightenings)
 
 - **Action:** Midday routine. 0 trades — all positions within guardrails. No cuts, no tightenings triggered.
