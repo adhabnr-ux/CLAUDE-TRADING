@@ -3,10 +3,61 @@
 _Updated by every routine from live Alpaca data. The next agent trusts this as
 the last known state, but always re-fetches live data before trading._
 
-**Last updated:** 2026-06-29 15:51 ET (close; stop audit 4/4 PASS; LLY $1,228.07 +12.30% / V $342.515 +5.86% HWM $345.81 ✓ / VST $162.66 +9.31% buf 1.43% ⚠️⚠️ CRITICAL; 0 trades; Bull TRAILS SPY −0.490pp since inception; LLY Medicare Bridge July 1 TOMORROW — pre-mkt mandatory; LRCX ATR 8.76% gate reset 0/3; VST div USD 9.20 payable TOMORROW June 30)
+**Last updated:** 2026-06-30 08:05 ET (pre-market; stop audit 4/4 PASS; LLY $1,231.54 +12.62% / V $343.34 +6.11% / VST $163.00 +9.54% buf 1.63% ⚠️⚠️ CRITICAL; WMT 87sh planned; Bull TRAILS SPY ~−0.43pp; VST div USD 9.20 payable today; LRCX ATR gate 0/3 — session 1/3 today; LLY Medicare Bridge TOMORROW July 1 — HOLD confirmed review_by July 7)
 **Inception:** 2026-05-21 — starting equity $100,000.00 | SPY anchor price $739.44
 **SPY total-return anchor (post-June 18 ex-div $1.76):** **$741.20**
 **Cumulative SPY dividends since inception (quarterly tracker):** $1.76/sh (June 18 ex-div); next SPY ex-div est. ~September 2026.
+
+## Account (pre-market June 30, 2026 — live Alpaca data ~08:03 ET)
+
+| Metric | Value |
+|--------|-------|
+| Equity | $100,004.62 |
+| Cash | $73,615.74 (73.61%) |
+| Long market value | $26,388.88 |
+| Buying power | ~$73,615.74 |
+| Last equity (Alpaca BOD June 29) | $99,926.54 |
+
+## Open positions (pre-market June 30, 2026 — live Alpaca data ~08:03 ET)
+
+| Symbol | Qty | Avg entry | Current price | Mkt value | Unrealized P/L | % of portfolio | Trailing Stop |
+|--------|-----|-----------|--------------|-----------|----------------|----------------|---------------|
+| LLY | 10 | $1,093.534 | $1,231.54 | $12,315.40 | +$1,380.06 (+12.62%) | 12.31% | d4147484 (7sh) + 25989fb5 (3sh), HWM $1,238.00, stop $1,114.20 ✓ — buffer $117.34 (9.53%) ✓ |
+| V | 22 | $323.57 | $343.34 | $7,553.48 | +$434.94 (+6.11%) | 7.55% | 66033918 (22sh, HWM $345.81, stop $311.229) ✓ — buffer $32.11 (9.36%) ✓ |
+| VST | 40 | $148.81 | $163.00 | $6,520.00 | +$567.60 (+9.54%) | 6.52% | c8b43d32 (40sh, 5% trail, HWM $168.77, stop $160.3315) ✓ — buffer $2.67 (1.63%) ⚠️⚠️ CRITICAL |
+
+**Sector exposure (pre-market June 30):**
+- Healthcare (LLY): $12,315.40 = 12.31% | Financials (V): $7,553.48 = 7.55% | Utilities/Energy (VST): $6,520.00 = 6.52% | Cash: $73,615.74 = 73.61%
+- No sector above 60% cap ✓
+
+**Trailing stop status (pre-market June 30 — confirmed via Alpaca live orders ~08:03 ET):**
+- LLY (d4147484): 7sh — HWM $1,238.00, stop $1,114.20 ✓ (buffer $117.34 = 9.53%)
+- LLY (25989fb5): 3sh — HWM $1,238.00, stop $1,114.20 ✓
+- V (66033918): 22sh — HWM $345.81, stop $311.229 ✓ (buffer $32.11 = 9.36%)
+- VST (c8b43d32): 40sh — 5% trail, HWM $168.77, stop $160.3315 ✓ (buffer $2.67 = 1.63% ⚠️⚠️ CRITICAL)
+**Stop audit: 4/4 PASS ✓**
+
+**Pre-market June 30 notes (~08:05 ET — 4/4 stops confirmed; WMT 87sh planned at market open; LLY Bridge tomorrow HOLD; VST div credit today):**
+- **Shock check:** $100,004.62 vs last_equity $99,926.54 = **+$78.08 = +0.078%** — no shock ✓ (threshold −4%)
+- **Drawdown circuit breaker:** $100,004.62 vs HWM $101,384.21 = **−1.36%** — NOT triggered ✓ (8.64pp headroom; CB trigger USD 91,245.79)
+- **⭐ LLY** $1,231.54 (+12.62% from entry): HWM $1,238.00; stop $1,114.20; buffer 9.53% ✓. **Medicare Bridge launches TOMORROW (July 1).** HOLD decision affirmed; review_by July 7. Conviction A.
+- **V** $343.34 (+6.11% from entry): HWM $345.81; stop $311.229; buffer 9.36% ✓. Thesis intact. HOLD. Conviction B (0/3 C-weeks). review_by July 28.
+- **VST** $163.00 (+9.54% from entry) ⚠️⚠️: Buffer 1.63% CRITICAL. Thesis intact. Dividend USD 9.20 payable today. Tape +0.2% = not selling off. HOLD with stop. Conviction A. review_by July 7.
+- **WMT planned buy:** 87sh (~USD 9,963) at market open — cost-conscious consumer / Vibe.co ad platform / 24.5% upside to consensus PT. Starter position. Trailing stop (10%) to be placed immediately after fill.
+- **LRCX ATR gate:** June 29 confirmed ATR 8.55% (H $414.905 / L $379.78 / C $410.82) → FAILS. Gate counter **0/3**. Session 1/3 attempt TODAY (June 30). Earliest entry July 7+ if June 30/July 1/July 2 all ≤3%.
+- **VST dividend:** USD 9.20 ($0.229 × 40sh) payable today — expected cash credit.
+- **Since inception (estimated):** Bull $100,004.62 = +0.005% | SPY TR ~+0.43% (using June 29 close $740.87 + $1.76 div) → **Bull TRAILS SPY ~−0.42pp** (improving; equity crossed $100K pre-market)
+
+## Performance vs S&P 500
+
+| Period | Bull | SPY | Difference |
+|--------|------|-----|------------|
+| Inception (2026-05-21) | $100,000.00 | $739.44 | — |
+| **Pre-market (2026-06-30)** | **$100,004.62 (+0.005%)** | **$740.87 + $1.76 div = +0.431% TR (June 29 close est.)** | **Bull TRAILS SPY ~−0.426pp** |
+| **Close (2026-06-29)** | **$99,940.72 (−0.059%)** | **$740.87 + $1.76 div = +0.431% TR** | **Bull TRAILS SPY −0.490pp** |
+| **Close (2026-06-26)** | **$99,692.61 (−0.307%)** | **$732.865 + $1.76 div = −0.651% TR** | **Bull LEADS SPY +0.344pp ✓** |
+
+---
 
 ## Account (close June 29, 2026 — live Alpaca data ~15:51 ET)
 
