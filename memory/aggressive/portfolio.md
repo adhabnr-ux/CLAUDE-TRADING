@@ -6,6 +6,94 @@ but always re-fetches live data before trading._
 
 ---
 
+## Last snapshot — 2026-06-30 PRE-MARKET (~7:30 AM ET)
+
+| Field | Value |
+|---|---|
+| Equity | USD 92,148.56 |
+| Cash | USD 22,458.29 (24.37%) |
+| Long market value | USD 69,690.27 |
+| Open positions | 6 |
+| last_equity (June 29 EOD close — Alpaca authoritative) | USD 91,831.54 |
+| Pre-market P/L vs last_equity | **+USD 317.02 (+0.345%)** |
+| HWM | USD 101,144.73 |
+| Drawdown from HWM | **-8.895%** (circuit breaker -20% — NOT triggered; 11.105pp headroom) |
+
+**Shock check:** +0.345% vs threshold -6% → NOT triggered ✓
+
+**Open positions (June 30 pre-market ~7:30 AM ET):**
+
+| Symbol | Qty | Avg Entry | Current Price | Market Value | Unrealized P/L | P/L % | -12% Cut Trigger | Buffer | Rating |
+|---|---|---|---|---|---|---|---|---|---|
+| NVDA | 103 | USD 213.60 | USD 196.58 | USD 20,247.74 | -USD 1,753.06 | **-7.968%** | USD 187.97 | 4.032pp ✓ | A |
+| AVGO | 34 | USD 406.23 | USD 375.36 | USD 12,762.14 | -USD 1,049.68 | **-7.600%** | USD 357.48 | 4.400pp ✓ | A |
+| ETN | 34 | USD 419.54 | USD 409.68 | USD 13,929.09 | -USD 335.27 | **-2.350%** | USD 369.40 | 9.650pp ✓ | A |
+| GOOGL | 16 | USD 370.22 | USD 354.36 | USD 5,669.76 | -USD 253.76 | **-4.284%** | USD 325.79 | 7.716pp ✓ | A |
+| AMZN | 36 | USD 247.99 | USD 239.27 | USD 8,613.88 | -USD 313.80 | **-3.515%** | USD 218.23 | 8.485pp ✓ | A |
+| VST | 52 | USD 151.47 | USD 162.80 | USD 8,465.60 | +USD 589.16 | **+7.480% ✅** | USD 133.29 | 19.480pp ✓ | A |
+
+**KEY vs EOD June 29:**
+- NVDA: 3.272pp → **4.032pp** (+0.760pp ✅ — HIGHEST ALERT fully resolved; buffer >4pp; $196.58 pre-mkt, above $192 escalation threshold)
+- AVGO: 3.478pp → **4.400pp** (+0.922pp ✅ — DJIA rally + OpenAI "Jalapeño" partnership lifting broad semis)
+- GOOGL: 7.463pp → **7.716pp** (+0.253pp ✅ — DJIA inclusion demand ongoing; **MANDATORY CONTRACT DECISION MADE: HOLD, review_by renewed to July 7**)
+- AMZN: 8.740pp → **8.485pp** (-0.255pp, minor drift — still comfortable)
+- ETN: 9.310pp → **9.650pp** (+0.340pp ✅)
+- VST: 18.960pp → **19.480pp** (+0.520pp ✅)
+
+**Stop audit (June 30 pre-market): ALL 6 CONFIRMED LIVE ✓ (verified from open orders — status: "new")**
+
+| Symbol | Stop Order ID | HWM | Stop Price | Trail % | Status |
+|---|---|---|---|---|---|
+| NVDA | `54d7d851` | USD 221.60 | USD 181.712 | 18% | ✓ live |
+| AVGO | `36f5a45f` | USD 426.48 | USD 349.7136 | 18% | ✓ live |
+| ETN | `abdc232b` | USD 426.00 | USD 349.32 | 18% | ✓ live |
+| GOOGL | `e52a43f1` | USD 375.77 | USD 308.1314 | 18% | ✓ live |
+| AMZN | `b55bef05` | USD 252.525 | USD 207.0705 | 18% | ✓ live |
+| VST | `5b347be3` | USD 171.35 | USD 140.507 | 18% | ✓ live |
+
+**No stops missing. No stops needing recreation. 6/6 ✓**
+
+**Thesis contracts (June 30 pre-market):**
+| Symbol | Review By | Invalidation | Status | Decision |
+|---|---|---|---|---|
+| NVDA | July 9 | Hyperscaler GPU share reverses | ✓ Intact — -7.968%; 4.032pp ✓ (HIGHEST ALERT fully resolved from 2.375pp); new Batam GPU deal + GB300 Blackwell demand; Aug 26 earnings | **HOLD — explicit decision per EOD June 29 protocol; buffer above 3pp, thesis intact** |
+| AVGO | July 9 | AI revenue decelerates | ✓ Intact — -7.600%; 4.400pp ✓; OpenAI Jalapeño partnership; record Q2 AI revenue USD 10.8B; dividend paid today; Sep 3 earnings | **HOLD** |
+| ETN | July 9 | ETN below USD 332 OR AI capex reverses | ✓ Intact — -2.350%; 9.650pp ✓; Mobility/Dana merger focuses ETN on electrical; AI power infra; Aug 4 earnings | **HOLD** |
+| GOOGL | **July 7 ✅ RENEWED** | GCP decelerates OR TPU cancelled | ✓ Intact — -4.284%; 7.716pp ✓; DJIA inclusion complete (ongoing institutional tailwind); GCP +63% YoY momentum; headwind: Jumper+Shazeer AI talent departure (not thesis-breaking); Jul 21-24 earnings | **HOLD — MANDATORY July 2 decision satisfied today; review_by renewed July 7** |
+| AMZN | July 7 | AWS <20% YoY | ✓ Intact — -3.515%; 8.485pp ✓; Prime Day USD 26.4B record; AWS pricing power; FTC settlement manageable; Jul 30 earnings | **HOLD** |
+| VST | July 15 | Nuclear PPAs cancelled | ✓ Intact — +7.480% ✅; 19.480pp ✓; Q1 EPS USD 2.90 (vs -USD 0.93 YoY); revenue +43% YoY; dividend paid today; Aug 6 earnings | **HOLD** |
+
+**Sector exposure (June 30 pre-market):**
+| Sector | Names | Market Value | % of Equity |
+|---|---|---|---|
+| Technology — semis | NVDA, AVGO | USD 33,009.88 | 35.82% |
+| Technology — hyperscalers | GOOGL, AMZN | USD 14,283.64 | 15.50% |
+| Industrials/Power Infra | ETN | USD 13,929.09 | 15.12% |
+| Utilities/Power | VST | USD 8,465.60 | 9.19% |
+| Cash | — | USD 22,458.29 | 24.37% |
+
+No sector at 60%+ threshold. Deliberate exposure — journaled.
+
+**Deployment check:** Cash 24.37% > 20% threshold. Decision: HOLD CASH — Q2-end rebalancing risk (last day of Q2 2026), holiday-shortened week (4 trading days: Tue/Wed/Thu/partial-Fri before July 4 holiday), NVDA/AVGO buffers recently recovered (preserving breathing room), S&P 500 at record highs (chasing highs = poor AGGRO risk/reward), no compelling new setup identified. Idle cash is a deliberate decision, not an accident.
+
+**Performance vs SPY (June 30 pre-market):**
+| Metric | Value |
+|---|---|
+| Equity | USD 92,148.56 |
+| Aggro return since inception | **(92,148.56 − 100,000) / 100,000 = -7.851%** |
+| SPY anchor | USD 754.18 (June 3, 2026) |
+| SPY June 29 close | USD 741.00 |
+| SPY since inception | **(741.00 − 754.18) / 754.18 = -1.748%** |
+| Alpha since inception | **-6.103pp** |
+| Today pre-mkt P/L | +USD 317.02 (+0.345%) |
+| Market posture | S&P 500 futures +0.2% (record close 7,440.43 on June 29; DJIA 52,182.74 all-time high) |
+
+_NOTE: Week 4 (June 22-26) weekly review was never filed. Weekly review routine must file it._
+
+_Pre-market June 30: Circuit breaker NOT triggered (-8.895%, 11.105pp headroom). No trades planned. GOOGL mandatory contract decision satisfied (HOLD, review_by July 7). NVDA explicit decision satisfied (HOLD, buffer 4.032pp — HIGHEST ALERT resolved). Deployment check: explicit hold-cash decision journaled. 6/6 stops live. [search: WebSearch fallback — MiniMax M3 not available]_
+
+---
+
 ## Last snapshot — 2026-06-29 EOD CLOSE (~3:50 PM ET)
 
 | Field | Value |
