@@ -2568,3 +2568,57 @@ No sector at 60%+ threshold. All within guardrails.
 
 ### Result
 All 6 positions within guardrails. No trades executed. No positions cut. No stops tightened. All 6 trailing stops live (6/6 ✓). AMZN stop HWM ratcheted up (USD 250.43 → USD 252.525) as AMZN trades +3.189% today. GOOGL +4.058% (DJIA inclusion catalyst delivering). NVDA HIGHEST ALERT: 2.375pp buffer, compressed >1pp this morning session on no thesis-breaking news — EOD close and pre-market June 30 must assess proactive trim decision for NVDA. Drawdown -9.346% (10.654pp headroom before circuit breaker). Control: ACTIVE.
+
+---
+
+## 2026-06-30 — MARKET OPEN (~9:46 AM ET)
+
+**No trades executed.** Pre-market plan correctly called no-trade.
+
+### Pre-run checks
+| Check | Result |
+|---|---|
+| Live-switch guard | ALPACA_BASE_URL contains "paper" ✓ |
+| Lock | Written for this run (expires 13:53:50Z) ✓ |
+| Control switch | STATUS: ACTIVE ✓ |
+| Plan date | June 30, 2026 — matches today ✓ |
+| Plan trades | [] — empty, no trades planned ✓ |
+| Idempotency | No prior EXECUTED: marker ✓ |
+
+### Market & account status
+| Check | Result |
+|---|---|
+| Market open | true (next close 4:00 PM ET) ✓ |
+| Equity | USD 92,343.34 |
+| Last equity (prev close June 29) | USD 91,831.54 |
+| Intraday change | +0.557% (shock threshold -6% — NOT triggered ✓) |
+| Cash | USD 22,458.29 (24.32%) |
+| Cash floor (2% min) | ✓ |
+| HWM | USD 101,144.73 |
+| Drawdown from HWM | -8.702% (circuit breaker -20% NOT triggered ✓) |
+
+### Breaking news gate [search: WebSearch fallback — MiniMax M3 not available]
+- **NVDA**: Blackwell architecture scaling on track; Batam 360MW GPU deal active. No halt, downgrade, or earnings miss. HOLD.
+- **AVGO**: OpenAI Jalapeño thesis CONFIRMED. No negative news. HOLD.
+- **ETN**: Strong +2.15% open. AI power infra thesis intact. HOLD.
+- **GOOGL**: DJIA inclusion tailwind ongoing. AI researcher departures (Jumper/Shazeer) monitored — not thesis-breaking. HOLD.
+- **AMZN**: AWS GPU pricing power confirmed; Prime Day record. HOLD.
+- **VST**: Helix Digital Infra intact; Q1 EPS exceptional. HOLD.
+- No thesis-breaking events on any held name. No trades blocked by news gate.
+
+### Stop audit — 6/6 positions confirmed with live 18% trailing stops ✓
+
+| Symbol | Qty | Current Price | P/L % | Stop Price | Stop Order ID | Buffer to -12% |
+|---|---|---|---|---|---|---|
+| NVDA | 103 | USD 196.65 | -7.935% | USD 181.712 (`54d7d851`) | ✓ live | 4.065pp |
+| AVGO | 34 | USD 376.66 | -7.279% | USD 349.7136 (`36f5a45f`) | ✓ live | 4.720pp |
+| ETN | 34 | USD 417.04 | -0.596% | USD 349.32 (`abdc232b`) | ✓ live | 11.360pp |
+| GOOGL | 16 | USD 351.99 | -4.924% | USD 308.1314 (`e52a43f1`) | ✓ live | 7.080pp |
+| AMZN | 36 | USD 239.02 | -3.617% | USD 207.0705 (`b55bef05`) | ✓ live | 8.383pp |
+| VST | 52 | USD 161.62 | +6.701% | USD 140.507 (`5b347be3`) | ✓ live | 18.700pp |
+
+**No stops missing. No stops needing recreation. No trailing-stop fills since pre-market.**
+
+### Result
+No trades. No exits. All 6 stops live. Shock check clear. Circuit breaker not triggered. News scan clear. Plan date confirmed. EXECUTED marker added to research-log.md.
+
