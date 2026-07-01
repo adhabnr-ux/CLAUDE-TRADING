@@ -41,7 +41,7 @@ conviction positions—not volume of trades.
 
 ## Entry Signals
 
-Open a new position only when **at least three** of these apply:
+Open a new position only when **at least two** of these apply:
 1. Strong recent earnings momentum: beat + raise or analyst upgrades.
 2. Clear catalyst in the next 1–6 months (product launch, new contract, sector
    re-rating, earnings).
@@ -52,6 +52,14 @@ Open a new position only when **at least three** of these apply:
 5. Macro tailwind: sector trend is intact and no major contrary catalyst looms.
 
 Write a thesis sentence before every buy. If you can't write one, don't trade.
+
+**Technical-gate discipline:** Do not invent volatility/ATR "gates" or cooldown
+periods beyond what's written here. If a name needs to cool off after a
+stop-out, cap it at **2 weeks**, not 4+. If waiting for lower volatility before
+entry, cap it at **2 consecutive sessions** of a reasonable ATR (≤5% of price),
+not 3+ sessions at a stricter threshold. A day with no trades is fine; a name
+sitting in self-imposed purgatory for weeks on end is not the intent of this
+strategy — this is a swing strategy, not a wait-for-perfection strategy.
 
 ---
 
@@ -110,8 +118,8 @@ _Watchlist hygiene (updated 2026-06-26 weekly review): entries require date adde
 | LLY    | Healthcare | 2026-05-22 | **HELD** 10sh @ $1,093.53 — GLP-1 dominance; Medicare Bridge July 1 confirmed (USD 50/month, ~20M Medicare patients); Leerink PT $1,232; LLY +11.11% from entry | Review by July 1 — MANDATORY pre-mkt June 30 hold/trim/exit decision |
 | V      | Financials | 2026-06-10 | **HELD** 22sh @ $323.57 — payments infrastructure; OpenAI partnership; stablecoin capabilities; showing defensive strength in AI selloff | Review by July 28 (earnings Q3 FY26) |
 | VST    | Energy / Utilities | 2026-06-09 | **HELD** 40sh @ $148.81 — nuclear operator; Helix Digital Infrastructure (KKR+NVDA preferred power partner); +9.78% from entry; 5% trail; stop buffer 1.86% CRITICAL ⚠️⚠️ | Review by July 7 |
-| ETN    | Industrials / AI Power | 2026-06-26 | Eaton electrical equipment — direct critical-path input to hyperscale data centers scaling with AI GPU density; AGGRO added June 25 at $419.54; +42% analyst PT upside | Earliest entry week of July 7+ (need 3 consecutive ≤3% ATR sessions from June 30); catalyst: AI capex supercycle, ongoing |
-| LRCX   | Semi Equipment | 2026-06-08 | AI fab investment wave; Citi PT raised to $450 (from $315); ATR gate **FULLY RESET** by June 26 selloff; June 29 ATR 8.76% = session 1/3 FAILS; gate counter 0/3 | Earliest entry July 9+; catalyst: AI equipment cycle, no hard expiry |
+| ETN    | Industrials / AI Power | 2026-06-26 | Eaton electrical equipment — direct critical-path input to hyperscale data centers scaling with AI GPU density; AGGRO added June 25 at $419.54; +42% analyst PT upside | Gate loosened per 2026-07-01 strategy update: need 2 consecutive ≤5% ATR sessions, re-check from July 1; catalyst: AI capex supercycle, ongoing |
+| LRCX   | Semi Equipment | 2026-06-08 | AI fab investment wave; Citi PT raised to $450 (from $315); ATR gate reset by June 26 selloff | Gate loosened per 2026-07-01 strategy update: need 2 consecutive ≤5% ATR sessions (was 3×≤3%), re-check from July 1; catalyst: AI equipment cycle, no hard expiry |
 | MSFT   | Tech / Enterprise AI | 2026-05-22 | Azure AI platform compounding; stop-outs June 5; re-evaluate when PCE trend reverses or stock re-bases cleanly; July 23 earnings next catalyst | Re-evaluate July 23+ (earnings); not near-term |
 | COST   | Consumer Defensive | 2026-05-29 | Membership model loyalty; defensive in high-PCE environment; Q4 earnings mid-August | Re-evaluate July+ (pre-earnings) |
 | PWR    | Industrials | 2026-06-12 | Quanta Services; grid/data-center infrastructure buildout; Q1 EPS +31.4% beat; PT upgrades TD Cowen $775 / Citi $837; ATR elevated + insider selling $123M flag; P/E ~95 | Re-evaluate late July; needs ATR normalization + insider selling to abate |
@@ -119,7 +127,7 @@ _Watchlist hygiene (updated 2026-06-26 weekly review): entries require date adde
 | WMT    | Consumer Defensive | 2026-05-22 | Market-share gains from cost-conscious consumer; AI supply-chain edge; defensive in inflation environment | Ongoing; no hard expiry |
 
 _Purged from watchlist (2026-06-26 weekly review):_
-- **NVDA:** REMOVED — second trailing stop in 5 weeks (June 5: −3.36%; June 25: −9.78%). GPU B200 hourly spot price −31% in 3 weeks ($6.11→$4.22) is a fundamental margin-pressure concern. Re-add only when: (a) GPU spot prices recover above $5.50/hr OR (b) confirmed major new hyperscaler deployment catalyst; minimum 4-week cooling period from June 25.
+- **NVDA:** REMOVED — second trailing stop in 5 weeks (June 5: −3.36%; June 25: −9.78%). GPU B200 hourly spot price −31% in 3 weeks ($6.11→$4.22) is a fundamental margin-pressure concern. Re-add only when: (a) GPU spot prices recover above $5.50/hr OR (b) confirmed major new hyperscaler deployment catalyst; cooling period capped at 2 weeks from June 25 per 2026-07-01 strategy update (was 4 weeks) — re-eligible July 9.
 
 _Previously purged (still excluded):_
 - **AVBO:** Trailing stop gap-fill June 4 (−2.10%). Re-evaluate 4+ weeks post-gap digestion (earliest late July).
