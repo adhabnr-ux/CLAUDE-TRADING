@@ -5,6 +5,91 @@ The market-open routine reads the most recent "Planned trades" section._
 
 ---
 
+## 2026-07-01 — Pre-market research (~08:10 ET)
+
+### Live-switch guard
+- `ALPACA_BASE_URL` contains "paper" ✓ — paper trading confirmed.
+
+### Control switch
+- `memory/control.md` STATUS: **ACTIVE**. No `NOTE:` or `QUERY:` line present. Nothing to acknowledge or answer.
+
+### Account snapshot (live Alpaca ~08:10 ET)
+
+| Metric | Value |
+|--------|-------|
+| Equity | $99,596.72 |
+| Cash | $80,023.72 (80.35%) |
+| Long market value | $19,573.00 |
+| Last equity (June 30 close) | $99,566.00 |
+| Shock check | +$30.72 (+0.031%) vs last_equity — no shock ✓ (threshold −4%) |
+| HWM (since inception) | $101,384.21 |
+| Drawdown | −1.763% — NOT triggered ✓ (circuit breaker at −10%) |
+
+### Macro (pre-market July 1, 2026 ~08:10 ET)
+
+| Indicator | Value | Threshold | Status |
+|-----------|-------|-----------|--------|
+| S&P 500 futures | ~−0.38% pre-market | — | Modestly lower after Tuesday's best-first-half close (S&P 500 index 7,499.36, +0.79%) |
+| ADP employment (7:15 AM ET) | fcst 118K vs prior 122K | — | Due this morning |
+| ISM Manufacturing PMI (9:00 AM ET) | fcst 53.8 vs prior 54.0 | — | Due at open |
+| Fed Chair Kevin Warsh | Speaking 8:00 AM ET, ECB Sintra panel w/ Lagarde, Bailey, Macklem | — | Hawkish-surprise risk |
+| 10yr Treasury | 4.47% (steady) | <4.75% | ✓ GATE PASSES |
+
+**Narrative:** SPY just closed out its best first half in years on June 30 (Iran-ceasefire rally + Dow records). Futures are modestly softer this morning ahead of a data- and speech-heavy session: ADP employment, ISM Manufacturing, and Fed Chair Warsh's remarks in Sintra all land before/around the open. A hawkish surprise from Warsh or a hot ADP print could move the 10yr (currently a comfortable 4.47%, well below the 4.75% gate) and compress multiples on richly-valued names. Not a day to add new risk before the data clears.
+
+### Position thesis reviews — "what changed since yesterday"
+
+**LLY** ($1,202.04 lastday close, +9.92% from entry $1,093.534)
+- _What changed since June 30:_ Medicare GLP-1 Bridge program **launches today** (July 1) — $50/month copay for ~20M Medicare Part D beneficiaries across Zepbound, Foundayo, and Wegovy. This is the formal implementation of the catalyst that already drove the +7.13% rally on June 26 (Leerink PT raised to $1,232 that day); no new incremental news since. Stock pulled back modestly June 30 (−1.75% "sell the news" per close routine) ahead of the launch — normal pre-event positioning, not a thesis break.
+- Stop: HWM $1,238.00, stop $1,114.20 (buffer $87.84 = 7.31%) ✓
+- Earnings: Aug 5, 2026 — well outside the 2-day window ✓
+- Invalidation: close below stop $1,114.20; or Medicare Bridge pricing/utilization data reveals margin deterioration.
+- review_by: **2026-07-07** (unchanged, set at 2026-06-29 pre-market) — not due today; no forced decision. Will read actual bridge-launch reaction (utilization commentary, analyst notes) at midday/close.
+- **Decision: HOLD. Conviction: A.**
+
+**V** ($343.30 lastday close, +6.10% from entry $323.57)
+- _What changed since June 30:_ Piper Sandler initiated coverage Overweight (June 29). Visa Destinations live in 10 markets; stablecoin/tokenization initiative continues. No negative news; nothing material — thesis unchanged.
+- Stop: HWM $345.81, stop $311.229 (buffer $32.071 = 9.34%) ✓
+- Earnings: July 28, 2026 — outside the 2-day window ✓
+- Invalidation: close below stop $311.229; or a reversal in payments-volume trends.
+- review_by: 2026-07-28 (unchanged) — not due.
+- **Decision: HOLD. Conviction: B.**
+
+### Earnings calendar confirmation
+- LLY: next earnings Aug 5, 2026 ✓ (outside window)
+- V: next earnings July 28, 2026 ✓ (outside window)
+- LRCX: next earnings July 29, 2026 (not held; informational)
+
+### Watchlist / candidate review
+
+| Ticker | ATR gate status | Notes |
+|--------|-----------------|-------|
+| LRCX | **FAILS** — June 29 8.55%, June 30 5.47% (both >5% loosened threshold) | Cantor PT raised to $500, BofA to $480 on Samsung/SK Hynix $1.3T semicap wave; but stock beta 2.25, trailing P/E >69x, insider selling ($19.1M Form 4 by a director) — still too hot. Gate counter 0/2 fresh sessions per the 2026-07-01 strategy reset. |
+| ETN | **NOT YET ELIGIBLE** — June 29 2.43% ✓ / June 30 4.15% ✓ (both would clear ≤5%) but pre-dates the July 1 gate reset | Record Q1 (rev +17%, EPS $2.81 beat), raised FY26 guidance, AI data-center electrical demand intact. Per strategy.md, gate explicitly "re-checks from July 1" — no credit for pre-reset sessions. Earliest clearance July 2 close if today is also ≤5%. |
+| VST (closed 6/30, WIN +7.66%) | n/a — not currently held | Thesis (Helix/KKR/Nvidia $10B AI power JV, Cogentrix 5,500MW gas deal closing H2 2026, Meta 2.1GW nuclear PPAs, Fitch IG upgrade) remains fully intact and unchanged from the exit. No fresh catalyst or pullback entry point since the June 30 stop-out — re-entering at essentially the same level immediately after taking the win would be chasing, not a new setup. Watching for a pullback or the Cogentrix close as the next entry trigger; no action today. |
+| MSFT / COST / JNJ / WMT / PWR | No change | Pre-earnings gates / ATR elevation / insider-selling flags from prior weeks unchanged; no new signal today. |
+
+### Cash-drag check
+
+Cash is 80.35% — well above the 10–20% target band for a 2-position book, and has been elevated for 3+ consecutive weeks (0/3 new-position slots used weeks 5, 6, and so far week 7). No candidate qualifies today: LRCX and ETN both fail the (freshly reset) ATR gate, no other watchlist name clears its entry signals, and today carries real macro event risk (ADP, ISM, and a Fed Chair speaking on a live central-bank panel) before the open — a bad day to add fresh risk even if a gate had cleared. Staying in cash today is a deliberate, written decision, not a passive default. Will re-check LRCX/ETN gates at every session this week as fresh ≤5% ATR sessions accumulate toward the July 1 reset requirement.
+
+### Market posture
+
+Cautiously neutral heading into a data-heavy session. LLY's Medicare Bridge launch and V's steady analyst support keep both existing positions on HOLD with no changes needed. No held position has a thesis break, an expired review, or a triggered invalidation. No watchlist candidate clears its entry gate. Given elevated macro-event risk (ADP/ISM/Warsh) before the open, doing nothing is the correct, disciplined call today.
+
+### Planned trades for today
+
+No trades planned.
+
+```json
+{
+  "plan_date": "2026-07-01",
+  "trades": []
+}
+```
+
+---
+
 ## 2026-06-29 — Pre-market research (~08:04 ET)
 
 ### Live-switch guard

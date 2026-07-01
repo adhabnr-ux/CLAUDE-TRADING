@@ -3,10 +3,60 @@
 _Updated by every routine from live Alpaca data. The next agent trusts this as
 the last known state, but always re-fetches live data before trading._
 
-**Last updated:** 2026-06-30 15:50 ET (close; stop audit 3/4→3/3 PASS — VST trailing stop FILLED 13:48 ET @ $160.20, +7.66% WIN, first win on record; LLY $1,208.46 +10.51% / V $342.99 +6.00%; 0 new trades; Bull −0.345% TRAILS SPY TR +1.223% → −1.568pp; end-of-Q2 session, SPY +0.79% extending Monday's Iran-ceasefire/Dow-record rally; LLY Medicare Bridge launches tomorrow July 1)
+**Last updated:** 2026-07-01 08:10 ET (pre-market; stop audit 3/3 PASS; LLY $1,202.04 +9.92% / V $343.30 +6.10%; 0 trades — market not yet open; no new positions planned; Bull −0.403% TRAILS SPY TR +1.213% → −1.616pp; LLY Medicare Bridge program launches TODAY; ADP/ISM/Fed Chair Warsh (Sintra panel) macro prints due today)
 **Inception:** 2026-05-21 — starting equity $100,000.00 | SPY anchor price $739.44
 **SPY total-return anchor (post-June 18 ex-div $1.76):** **$741.20**
 **Cumulative SPY dividends since inception (quarterly tracker):** $1.76/sh (June 18 ex-div); next SPY ex-div est. ~September 2026.
+
+---
+
+## Account (pre-market July 1, 2026 — live Alpaca data ~08:10 ET)
+
+| Metric | Value |
+|--------|-------|
+| Equity | $99,596.72 |
+| Cash | $80,023.72 (80.35%) |
+| Long market value | $19,573.00 |
+| Buying power | ~$80,023.72 (cash) / $374,899.28 (margin, unused) |
+| Last equity (June 30 Alpaca close) | $99,566.00 |
+
+## Open positions (pre-market July 1, 2026 — live Alpaca data ~08:10 ET)
+
+| Symbol | Qty | Avg entry | Current price | Mkt value | Unrealized P/L | % of portfolio | Trailing Stop |
+|--------|-----|-----------|--------------|-----------|----------------|----------------|---------------|
+| LLY | 10 | $1,093.534 | $1,202.04 | $12,020.40 | +$1,085.06 (+9.92%) | 12.07% | d4147484 (7sh) + 25989fb5 (3sh), HWM $1,238.00, stop $1,114.20 ✓ — buffer $87.84 (7.31%) ✓ |
+| V | 22 | $323.57 | $343.30 | $7,552.60 | +$434.06 (+6.10%) | 7.58% | 66033918 (22sh, HWM $345.81, stop $311.229) ✓ — buffer $32.071 (9.34%) ✓ |
+
+**Sector exposure (pre-market July 1):**
+- Healthcare (LLY): $12,020.40 = 12.07% | Financials (V): $7,552.60 = 7.58% | Cash: $80,023.72 = 80.35%
+- No sector above 60% cap ✓
+
+**Trailing stop status (pre-market July 1 — confirmed via Alpaca live orders ~08:10 ET):**
+- LLY (d4147484): 7sh — HWM $1,238.00, stop $1,114.20 ✓ (buffer $87.84 = 7.31%)
+- LLY (25989fb5): 3sh — HWM $1,238.00, stop $1,114.20 ✓
+- V (66033918): 22sh — HWM $345.81, stop $311.229 ✓ (buffer $32.071 = 9.34%)
+**Stop audit: 3/3 PASS ✓** (3 live trailing-stop orders across 2 positions)
+
+**Pre-market July 1 notes (~08:10 ET — stop audit 3/3 PASS; no trades, market not yet open; no new positions planned):**
+- **Shock check:** $99,596.72 vs last_equity $99,566.00 = **+$30.72 = +0.031%** — no shock ✓ (threshold −4%)
+- **Drawdown circuit breaker:** $99,596.72 vs HWM $101,384.21 = **−1.763%** — NOT triggered ✓ (8.237pp headroom; CB trigger USD 91,245.79)
+- **Macro (pre-market ~08:10 ET):** S&P 500 futures modestly lower (~−0.38%) after Tuesday's best first-half close in years (S&P 500 index 7,499.36, +0.79%). ADP employment (fcst 118K) at 7:15 AM ET, ISM Manufacturing PMI (fcst 53.8) at 9:00 AM ET, and Fed Chair Kevin Warsh speaking on a central-bank panel (with Lagarde/Bailey/Macklem) at the ECB's Sintra forum at 8:00 AM ET — all three land before/around the open. 10yr yield steady at 4.47% — **BELOW 4.75% gate ✓**. Elevated event-risk day; no new positions until data/speech risk clears.
+- **LLY** $1,202.04 (+9.92% from entry): Medicare GLP-1 Bridge program **launches TODAY** ($50/month copay for ~20M Medicare Part D patients, Zepbound/Foundayo/Wegovy). This is the confirmatory event behind the June 26 +7.13% rally (already priced in ahead of the formal launch); Leerink PT $1,232 (raised June 25). No new negative news. Next earnings Aug 5. Thesis intact, no invalidation triggered, review_by 2026-07-07 not yet due — no action required today; will assess actual post-launch reaction (utilization data, any commentary) at midday/close. HOLD. Conviction A.
+- **V** $343.30 (+6.10% from entry): No negative news. Piper Sandler initiated Overweight (June 29). Visa Destinations (10 markets) and stablecoin initiative continue to build out. Thesis intact. review_by 2026-07-28 not due. HOLD. Conviction B.
+- **LRCX ATR gate:** June 29 8.55% (fail), June 30 5.47% (fail, just above the loosened 5% threshold) — gate counter **0/2** fresh sessions under the 2026-07-01 strategy update. Not eligible today.
+- **ETN ATR gate:** June 29 2.43% ✓, June 30 4.15% ✓ (both would clear the loosened ≤5% threshold), but the 2026-07-01 strategy update explicitly resets the count to start from July 1 sessions only — pre-update sessions don't carry over. Gate counter **0/2** as of today. Earliest clearance July 2 close if today's session is also ≤5%.
+- **Cash-drag check:** Cash at 80.35%, well above the 10–20% target band and above it for multiple weeks. No qualifying entry today: LRCX and ETN both fail the (reset) ATR gate; no other watchlist name (MSFT, COST, JNJ, WMT, PWR) clears its entry gate today; and today carries elevated macro event risk (ADP/ISM/Fed Chair Warsh) before the open. Staying in cash today is the correct, deliberate call, not a default — will re-assess LRCX/ETN gates at every session this week as fresh ≤5% sessions accumulate.
+- **Trades today:** 0 (pre-market only; market not yet open).
+- **Since inception:** Bull −0.403% ($99,596.72) vs SPY TR +1.213% ($746.65 + $1.76 div vs $739.44 anchor) → **Bull TRAILS SPY −1.616pp**
+
+## Performance vs S&P 500
+
+| Period | Bull | SPY | Difference |
+|--------|------|-----|------------|
+| Inception (2026-05-21) | $100,000.00 | $739.44 | — |
+| **Pre-market (2026-07-01)** | **$99,596.72 (−0.403%)** | **SPY $746.65 + $1.76 div = +1.213% TR** | **Bull TRAILS SPY −1.616pp** |
+| **Close (2026-06-30)** | **$99,654.56 (−0.345%)** | **SPY $746.72 + $1.76 div = +1.223% TR** | **Bull TRAILS SPY −1.568pp** |
+
 
 ## Account (close June 30, 2026 — live Alpaca data ~15:50 ET)
 
