@@ -2837,3 +2837,98 @@ No trades — correctly followed the no-trade plan. All 6 positions within guard
 ### Result
 All 6 positions within guardrails. No trades, no cuts, no tightens. AVGO is the most stressed position in the book to date (2.603pp buffer, below the informal 3pp proactive-trim watch line) after softening -0.977% since market-open — thesis intact per news scan, no cut mandated (buffer still 2.6 points clear of -12%). Flagging AVGO explicitly for the July 2 pre-market review given the compressed buffer and the approaching July 3 holiday closure / 3-day weekend. Stop audit 6/6 ✓. Shock check NOT triggered (-1.106%). Circuit breaker NOT triggered (-9.124%). No thesis contracts due today (next: GOOGL/AMZN July 7). Control: ACTIVE.
 
+---
+
+## 2026-07-01 — EOD CLOSE (~4:09 PM ET)
+
+**No trades executed.** No exits today. Market closed at 4:00 PM ET (next open July 2, 9:30 AM ET).
+
+### Pre-run checks
+| Check | Result |
+|---|---|
+| Live-switch guard | ALPACA_BASE_URL contains "paper" ✓ |
+| Lock | Clear (`{}`) → written for this run ✓ |
+| Control switch | STATUS: ACTIVE ✓ |
+| Dedup | No existing `2026-07-01,aggro` row in performance.csv — appending fresh ✓ |
+
+### Account status
+| Field | Value |
+|---|---|
+| Equity | USD 91,756.99 |
+| Cash | USD 22,458.29 (24.47%) |
+| Long market value | USD 69,298.70 |
+| last_equity (June 30 EOD close) | USD 92,946.06 |
+| Today's P/L vs last_equity | **-USD 1,189.07 (-1.279%)** |
+| HWM | USD 101,144.73 |
+| Drawdown from HWM | **-9.283%** (circuit breaker -20% — NOT triggered; 10.717pp headroom) |
+
+**Shock check:** -1.279% vs threshold -6% → NOT triggered ✓
+
+### EOD position review vs midday
+
+| Symbol | Midday Price | EOD Price | Δ | P/L% from Entry | -12% Cut Trigger | Buffer |
+|---|---|---|---|---|---|---|
+| NVDA | USD 197.035 | USD 197.16 | +0.06% | -7.697% | USD 187.968 | 4.303pp ⚠️ |
+| AVGO | USD 368.0552 | USD 368.89 | +0.23% | -9.191% | USD 357.4824 | **2.809pp 🔴** |
+| ETN | USD 420.94 | USD 412.00 | -2.12% | -1.797% | USD 369.1952 | 10.203pp ✓ |
+| GOOGL | USD 358.14 | USD 361.50 | +0.94% | -2.355% | USD 325.7936 | 9.645pp ✓ |
+| AMZN | USD 242.33 | USD 241.26 | -0.44% | -2.714% | USD 218.232 | 9.286pp ✓ |
+| VST | USD 151.7025 | USD 153.30 | +1.05% | +1.208% ✅ | USD 133.29 | comfortable ✓ |
+
+**Cut rule check (>-12% from entry): NO positions triggered.** AVGO remains the most stressed at -9.191% (2.809pp buffer) — essentially unchanged from midday's 2.603pp (slight afternoon improvement of +0.206pp).
+**Tighten-stop rule check (>+25% from entry): NO positions triggered.**
+
+### Stop audit (July 1 EOD): ALL 6 CONFIRMED LIVE ✓ (verified from open orders — status: "new")
+
+| Symbol | Stop Order ID | HWM | Stop Price | Trail % | Status |
+|---|---|---|---|---|---|
+| NVDA | `54d7d851` | USD 221.60 | USD 181.712 | 18% | ✓ live |
+| AVGO | `36f5a45f` | USD 426.48 | USD 349.7136 | 18% | ✓ live |
+| ETN | `abdc232b` | USD 427.93 | USD 350.9026 | 18% | ✓ live |
+| GOOGL | `e52a43f1` | USD 375.77 | USD 308.1314 | 18% | ✓ live |
+| AMZN | `b55bef05` | USD 252.525 | USD 207.0705 | 18% | ✓ live |
+| VST | `5b347be3` | USD 171.35 | USD 140.507 | 18% | ✓ live |
+
+**No stops missing. No stops needing recreation — no new HWMs today (no position closed above its prior peak). No trailing-stop fills. No closed-trade post-mortems needed (last close was MRVL June 24, already logged). 6/6 ✓**
+
+### Market context (July 1) [search: WebSearch fallback — MiniMax M3 MCP not connected this session]
+Rotation day: S&P 500 -0.6%, Nasdaq -1.5%. Semiconductors sold off hard (SOXX -4.7%, Micron -8.2%, NVDA -3%) after leading the Q2 rally, while hyperscalers extended their rebound (MSFT, AMZN, GOOGL higher) — consistent with our book: NVDA/AVGO/ETN softened intraday while AMZN/GOOGL gained. This reads as sector rotation/profile-taking after the best Q2 since 2020, not a thesis break for the semis. [Sources: TheStreet, Motley Fool, July 1 2026]
+
+### Thesis contracts (July 1 EOD)
+No review_by deadlines due today (next: GOOGL/AMZN July 7, NVDA/AVGO/ETN July 9, VST July 15). No mandatory decisions required today.
+
+### Sector exposure (July 1 EOD)
+| Sector | Names | Market Value | % of Equity |
+|---|---|---|---|
+| Technology — semis | NVDA, AVGO | USD 32,849.74 | 35.80% |
+| Technology — hyperscalers | GOOGL, AMZN | USD 14,469.36 | 15.77% |
+| Industrials/Power Infra | ETN | USD 14,008.00 | 15.27% |
+| Utilities/Power | VST | USD 7,971.60 | 8.69% |
+| Cash | — | USD 22,458.29 | 24.47% |
+
+No sector at 60%+ threshold.
+
+### Performance vs SPY (July 1 EOD)
+| Metric | Value |
+|---|---|
+| Equity | USD 91,756.99 |
+| Aggro return since inception | **(91,756.99 − 100,000) / 100,000 = -8.243%** |
+| SPY anchor | USD 754.18 (June 3, 2026) |
+| SPY July 1 close | USD 745.665 (Alpaca IEX; script default feed showed 745.72 — used the snapshot dailyBar as most precise) |
+| SPY since inception | **(745.665 − 754.18) / 754.18 = -1.129%** |
+| Alpha since inception | **-7.114pp** |
+| Today's P/L | -USD 1,189.07 (-1.279%) |
+| SPY today | -0.114% (746.65 → 745.665, Alpaca prevDailyBar/dailyBar) |
+| Today alpha | **-1.164pp** |
+
+_Note: WebSearch reported "S&P 500 -0.6%" today, which does not reconcile with Alpaca's own SPY bar (-0.11%). Used Alpaca's price feed for all calculations (authoritative for our paper-trading P/L); WebSearch used only for qualitative sector-rotation color, which does corroborate direction (semis down, hyperscalers up) even if the index-level magnitude differs across sources._
+
+### Monthly housekeeping check (first trading day of July)
+Checked `research-log.md` and `trade-log.md` for entries older than 30 days (before 2026-06-01). None exist — inception was 2026-06-04, oldest entries are 27 days old. No archiving required this month.
+
+### Friday watchdog
+N/A — today is Wednesday, not Friday.
+
+### Result
+No trades, no exits, no stop tightenings, no thesis contracts due. All 6 positions within guardrails; stop audit 6/6 ✓. **AVGO remains the tightest buffer in the book (2.809pp)** heading into the July 3 holiday closure — Thursday July 2 is the only trading session before a 4-day gap (Thu close → Fri closed → weekend → Mon July 6 reopen). Per the standing lessons on holiday-weekend gap risk for sub-3pp positions, July 2 pre-market must explicitly re-assess AVGO's buffer and consider a proactive trim if it has not widened. Drawdown -9.283% (10.717pp headroom to circuit breaker). Shock check NOT triggered (-1.279%). Control: ACTIVE.
+
