@@ -6,6 +6,85 @@ but always re-fetches live data before trading._
 
 ---
 
+## Last snapshot — 2026-07-01 MARKET-OPEN (~9:46 AM ET)
+
+| Field | Value |
+|---|---|
+| Equity | USD 91,490.25 |
+| Cash | USD 22,458.29 (24.55%) |
+| Long market value | USD 69,031.96 |
+| Open positions | 6 |
+| last_equity (June 30 EOD close — Alpaca authoritative) | USD 92,946.06 |
+| Market-open P/L vs last_equity | **-USD 1,455.81 (-1.566%)** |
+| HWM | USD 101,144.73 |
+| Drawdown from HWM | **-9.548%** (circuit breaker -20% — NOT triggered; 10.452pp headroom) |
+
+**Shock check:** -1.566% vs threshold -6% → NOT triggered ✓
+
+**Open positions (July 1 market-open ~9:46 AM ET):**
+
+| Symbol | Qty | Avg Entry | Current Price | Market Value | Unrealized P/L | P/L % | -12% Cut Trigger | Buffer | Rating |
+|---|---|---|---|---|---|---|---|---|---|
+| NVDA | 103 | USD 213.60 | USD 194.655 | USD 20,049.47 | -USD 1,951.34 | **-8.869%** | USD 187.968 | 3.131pp ⚠️ | A |
+| AVGO | 34 | USD 406.23 | USD 371.705 | USD 12,637.97 | -USD 1,173.85 | **-8.499%** | USD 357.4824 | 3.501pp ⚠️ | A |
+| ETN | 34 | USD 419.54 | USD 412.915 | USD 14,039.11 | -USD 225.25 | **-1.579%** | USD 369.1952 | 10.421pp ✓ | A |
+| GOOGL | 16 | USD 370.22 | USD 359.685 | USD 5,754.96 | -USD 168.56 | **-2.846%** | USD 325.7936 | 9.154pp ✓ | A |
+| AMZN | 36 | USD 247.991 | USD 235.42 | USD 8,475.12 | -USD 452.56 | **-5.069%** | USD 218.232 | 6.931pp ✓ | A |
+| VST | 52 | USD 151.47 | USD 155.27 | USD 8,074.04 | +USD 197.60 | **+2.509% ✅** | USD 133.29 | comfortable ✓ | A |
+
+**KEY vs pre-market:**
+- NVDA: 5.132pp → **3.131pp** (-2.001pp; -2.16% since pre-market, broader market softness ahead of ADP/ISM/Fed Warsh)
+- AVGO: 4.435pp → **3.501pp** (-0.934pp; -0.988% since pre-market)
+- ETN: +1.046% → **-1.579%** (-2.625pp swing; -2.55% since pre-market)
+- GOOGL: 8.602pp → **9.154pp** (+0.552pp ✅; +0.567% since pre-market)
+- AMZN: 8.899pp → **6.931pp** (-1.968pp; -2.033% since pre-market)
+- VST: comfortable → comfortable (-2.146% since pre-market, still positive from entry)
+
+**Stop audit (July 1 market-open): ALL 6 CONFIRMED LIVE ✓ (verified from open orders — status: "new")**
+
+| Symbol | Stop Order ID | HWM | Stop Price | Trail % | Status |
+|---|---|---|---|---|---|
+| NVDA | `54d7d851` | USD 221.60 | USD 181.712 | 18% | ✓ live |
+| AVGO | `36f5a45f` | USD 426.48 | USD 349.7136 | 18% | ✓ live |
+| ETN | `abdc232b` | USD 427.93 | USD 350.9026 | 18% | ✓ live |
+| GOOGL | `e52a43f1` | USD 375.77 | USD 308.1314 | 18% | ✓ live |
+| AMZN | `b55bef05` | USD 252.525 | USD 207.0705 | 18% | ✓ live |
+| VST | `5b347be3` | USD 171.35 | USD 140.507 | 18% | ✓ live |
+
+**No stops missing. No stops needing recreation. No fills since June 30 EOD — quantities unchanged. 6/6 ✓**
+
+**No trailing-stop fills since pre-market. No closed-trade post-mortems needed.**
+
+**Thesis contracts (July 1 market-open):** No review_by deadlines due today (next: GOOGL/AMZN July 7). No contract decisions required.
+
+**Sector exposure (July 1 market-open):**
+| Sector | Names | Market Value | % of Equity |
+|---|---|---|---|
+| Technology — semis | NVDA, AVGO | USD 32,687.44 | 35.73% |
+| Technology — hyperscalers | GOOGL, AMZN | USD 14,230.08 | 15.55% |
+| Industrials/Power Infra | ETN | USD 14,039.11 | 15.34% |
+| Utilities/Power | VST | USD 8,074.04 | 8.83% |
+| Cash | — | USD 22,458.29 | 24.55% |
+
+No sector at 60%+ threshold.
+
+**Performance vs SPY (July 1 market-open):**
+| Metric | Value |
+|---|---|
+| Equity | USD 91,490.25 |
+| Aggro return since inception | **(91,490.25 − 100,000) / 100,000 = -8.510%** |
+| SPY anchor | USD 754.18 (June 3, 2026) |
+| SPY latest (~9:46 AM ET) | USD 743.73 |
+| SPY since inception | **(743.73 − 754.18) / 754.18 = -1.386%** |
+| Alpha since inception | **-7.124pp** |
+| Today P/L | -USD 1,455.81 (-1.566%) |
+| SPY today | -0.391% (746.65 → 743.73) |
+| Today alpha | **-1.175pp** |
+
+_Market-open July 1: No trades (no-trade plan, plan_date 2026-07-01, trades []). Stop audit 6/6 ✓. Shock check NOT triggered (-1.566%). Circuit breaker NOT triggered (-9.548%). NVDA and AVGO both compressed further since pre-market (3.131pp, 3.501pp) — broad softness ahead of ADP/ISM/Fed Warsh — neither below the 3pp proactive-trim threshold yet, but both warrant a midday check given the binary macro-data day and the 3-day July 4 weekend ahead. No thesis contracts due (next: GOOGL/AMZN July 7). Control: ACTIVE._
+
+---
+
 ## Last snapshot — 2026-07-01 PRE-MARKET (~8:11 AM ET)
 
 | Field | Value |

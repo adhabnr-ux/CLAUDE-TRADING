@@ -2705,3 +2705,77 @@ No trades. No exits. All 6 stops live. Shock check clear. Circuit breaker not tr
 ### Result
 All 6 positions within guardrails. No cuts, no stop tightenings. All 18% trailing stops active and audited (6/6 ✓). NVDA and AVGO both recovering intraday (+1.46% and +0.659% respectively) with theses intact. ETN strong day +3.56%. GOOGL +1.31% on continued DJIA inclusion tailwind. VST steady. Drawdown -8.262% (11.738pp headroom to circuit breaker). No shock. Control: ACTIVE. [search: WebSearch fallback — MiniMax M3 not available]
 
+---
+
+## 2026-07-01 — MARKET OPEN (~9:46 AM ET)
+
+**No trades executed.** Pre-market plan was correctly no-trade (binary macro-data day — ADP/ISM/Fed Warsh — plus 3-day July 4 holiday weekend ahead; AVGO/NVDA already the two most buffer-compressed positions).
+
+### Pre-run checks
+| Check | Result |
+|---|---|
+| Live-switch guard | ALPACA_BASE_URL contains "paper" ✓ |
+| Lock | Clear (empty `{}`) ✓ |
+| Control switch | STATUS: ACTIVE ✓ |
+| Plan date | July 1, 2026 — matches today ✓ |
+| Plan trades | [] — empty, no trades planned ✓ |
+| Idempotency | No prior EXECUTED: marker ✓ |
+
+### Market & account status
+| Check | Result |
+|---|---|
+| Market open | true (next close 4:00 PM ET) ✓ |
+| Equity | USD 91,490.25 |
+| Last equity (June 30 EOD close) | USD 92,946.06 |
+| Intraday change | -1.566% (shock threshold -6% — NOT triggered ✓) |
+| Cash | USD 22,458.29 (24.55%) |
+| Cash floor (2% min) | ✓ |
+| HWM | USD 101,144.73 |
+| Drawdown from HWM | -9.548% (circuit breaker -20% — NOT triggered ✓) |
+
+### Stop audit — 6/6 positions confirmed with live 18% trailing stops ✓
+
+| Symbol | Qty | Current Price | P/L % | -12% Cut Trigger | Buffer | Stop Order ID | Status |
+|---|---|---|---|---|---|---|---|
+| NVDA | 103 | USD 194.655 | -8.869% | USD 187.968 | 3.131pp ⚠️ | `54d7d851` | ✓ live |
+| AVGO | 34 | USD 371.705 | -8.499% | USD 357.4824 | 3.501pp ⚠️ | `36f5a45f` | ✓ live |
+| ETN | 34 | USD 412.915 | -1.579% | USD 369.1952 | 10.421pp | `abdc232b` | ✓ live |
+| GOOGL | 16 | USD 359.685 | -2.846% | USD 325.7936 | 9.154pp | `e52a43f1` | ✓ live |
+| AMZN | 36 | USD 235.42 | -5.069% | USD 218.232 | 6.931pp | `b55bef05` | ✓ live |
+| VST | 52 | USD 155.27 | +2.509% ✅ | USD 133.29 | comfortable | `5b347be3` | ✓ live |
+
+**No stops missing. No stops needing recreation. No fills since June 30 EOD — position quantities unchanged. 6/6 ✓**
+
+### Breaking-news gate
+No planned trades today, so no gate to run. No halt, SEC action, or thesis-breaking news observed for any held name during pre-run checks.
+
+### Thesis contracts
+No review_by deadlines due today (next: GOOGL/AMZN July 7, NVDA/AVGO/ETN July 9, VST July 15). No mandatory decisions required.
+
+### Sector exposure
+| Sector | Names | Market Value | % of Equity |
+|---|---|---|---|
+| Technology — semis | NVDA, AVGO | USD 32,687.44 | 35.73% |
+| Technology — hyperscalers | GOOGL, AMZN | USD 14,230.08 | 15.55% |
+| Industrials/Power Infra | ETN | USD 14,039.11 | 15.34% |
+| Utilities/Power | VST | USD 8,074.04 | 8.83% |
+| Cash | — | USD 22,458.29 | 24.55% |
+
+No sector at 60%+ threshold.
+
+### Performance vs SPY (market-open July 1)
+| Metric | Value |
+|---|---|
+| Equity | USD 91,490.25 |
+| Aggro return since inception | **(91,490.25 − 100,000) / 100,000 = -8.510%** |
+| SPY anchor | USD 754.18 (June 3, 2026) |
+| SPY latest (~9:46 AM ET) | USD 743.73 |
+| SPY since inception | **(743.73 − 754.18) / 754.18 = -1.386%** |
+| Alpha since inception | **-7.124pp** |
+| Today P/L vs last_equity | -1.566% |
+| SPY today (746.65 → 743.73) | -0.391% |
+| Today alpha | **-1.175pp** |
+
+### Result
+No trades — correctly followed the no-trade plan. All 6 positions within guardrails, all 18% trailing stops live (6/6 ✓), no fills since last check. NVDA (3.131pp) and AVGO (3.501pp) are the two most compressed positions in the book — both just above the 3pp proactive-trim heuristic threshold, neither triggering it today, but both warrant a close look at midday given the binary macro-data day (ADP/ISM/Fed Warsh) and no offsetting catalyst before the 3-day July 4 weekend. No shock, no circuit breaker, no thesis contracts due. Control: ACTIVE.
+
