@@ -6,6 +6,66 @@ but always re-fetches live data before trading._
 
 ---
 
+## Last snapshot — 2026-07-01 MIDDAY (~12:41 PM ET)
+
+| Field | Value |
+|---|---|
+| Equity | USD 91,917.88 |
+| Cash | USD 22,458.29 (24.43%) |
+| Long market value | USD 69,459.59 |
+| Open positions | 6 |
+| last_equity (June 30 EOD close — Alpaca authoritative) | USD 92,946.06 |
+| Midday P/L vs last_equity | **-USD 1,028.18 (-1.106%)** |
+| HWM | USD 101,144.73 |
+| Drawdown from HWM | **-9.124%** (circuit breaker -20% — NOT triggered; 10.876pp headroom) |
+
+**Shock check:** -1.106% vs threshold -6% → NOT triggered ✓
+
+**Open positions (July 1 midday ~12:41 PM ET):**
+
+| Symbol | Qty | Avg Entry | Current Price | Market Value | Unrealized P/L | P/L % | -12% Cut Trigger | Buffer | Rating |
+|---|---|---|---|---|---|---|---|---|---|
+| NVDA | 103 | USD 213.60 | USD 197.035 | USD 20,294.61 | -USD 1,706.20 | **-7.755%** | USD 187.968 | 4.245pp ⚠️ | A |
+| AVGO | 34 | USD 406.23 | USD 368.0552 | USD 12,513.88 | -USD 1,297.94 | **-9.397%** | USD 357.4824 | 2.603pp 🔴 | A |
+| ETN | 34 | USD 419.54 | USD 420.94 | USD 14,311.96 | +USD 47.60 | **+0.334% ✅** | USD 369.1952 | comfortable ✓ | A |
+| GOOGL | 16 | USD 370.22 | USD 358.14 | USD 5,730.24 | -USD 193.28 | **-3.263%** | USD 325.7936 | 8.737pp ✓ | A |
+| AMZN | 36 | USD 247.991 | USD 242.33 | USD 8,723.88 | -USD 203.80 | **-2.283%** | USD 218.232 | 9.717pp ✓ | A |
+| VST | 52 | USD 151.47 | USD 151.7025 | USD 7,888.53 | +USD 12.09 | **+0.153% ✅** | USD 133.29 | comfortable ✓ | A |
+
+**KEY vs market-open:**
+- NVDA: 3.131pp → **4.245pp** (+1.114pp ✅; +1.23% since market-open — recovering)
+- AVGO: 3.501pp → **2.603pp** (-0.898pp 🔴; -0.977% since market-open — now the most stressed position, below the 3pp proactive-trim watch line)
+- ETN: -1.579% → **+0.334%** (+1.913pp ✅; +1.960% since market-open)
+- GOOGL: 9.154pp → **8.737pp** (-0.417pp; -0.428% since market-open)
+- AMZN: 6.931pp → **9.717pp** (+2.786pp ✅; +2.941% since market-open)
+- VST: comfortable → comfortable (-2.291% since market-open, still net positive from entry)
+
+**Cut rule check (>-12% from entry): NO positions triggered.** AVGO is the most stressed at -9.397% (2.603pp from the -12% cut trigger of USD 357.4824) — closest any position has come to the threshold since inception, but still 2.6 points clear.
+**Tighten-stop rule check (>+25% from entry): NO positions triggered.** Both winners (ETN +0.334%, VST +0.153%) are barely positive — nowhere near the +25% threshold.
+
+**News scan (positions down >5% from entry) [search: WebSearch fallback — MiniMax M3 MCP not connected this session]:**
+- **AVGO (-9.397%):** Stock down >20% from early-June highs on competition concerns and a mixed prior quarter, but 26-analyst consensus remains Buy with avg target USD 501.58. No customer loss, no AI-revenue deceleration confirmed, no program cancellation. This reads as continued macro/multiple-compression pressure (consistent with the past two weeks' pattern), not a thesis break. Decision: **HOLD** — no cut warranted (buffer still 2.603pp), but flag for pre-market proactive-trim review given the compressed buffer.
+- **NVDA (-7.755%):** Trading USD 193–199 range today. Strong Buy consensus (38 analysts, avg target USD 298.93, +49% upside). Michael Burry disclosed a new short position June 30 calling AI/semis overvalued — this is a well-known bear's macro view, not a company-specific or hyperscaler-demand event. Fiscal H2 data-center revenue reportedly tracking ~20% above consensus post HBM4 fixes — thesis-positive. Decision: **HOLD**, thesis intact.
+
+**Stop audit (July 1 midday): ALL 6 CONFIRMED LIVE ✓ (verified from open orders — status: "new")**
+
+| Symbol | Stop Order ID | HWM | Stop Price | Trail % | Status |
+|---|---|---|---|---|---|
+| NVDA | `54d7d851` | USD 221.60 | USD 181.712 | 18% | ✓ live |
+| AVGO | `36f5a45f` | USD 426.48 | USD 349.7136 | 18% | ✓ live |
+| ETN | `abdc232b` | USD 427.93 | USD 350.9026 | 18% | ✓ live |
+| GOOGL | `e52a43f1` | USD 375.77 | USD 308.1314 | 18% | ✓ live |
+| AMZN | `b55bef05` | USD 252.525 | USD 207.0705 | 18% | ✓ live |
+| VST | `5b347be3` | USD 171.35 | USD 140.507 | 18% | ✓ live |
+
+**No stops missing. No stops needing recreation. No trailing-stop fills since market-open. No closed-trade post-mortems needed. 6/6 ✓**
+
+**Thesis contracts (July 1 midday):** No review_by deadlines due today (next: GOOGL/AMZN July 7). No contract decisions required.
+
+**Result:** No trades executed. All 6 positions within guardrails — no -12% cut, no +25% tighten. AVGO is the new most-stressed position (2.603pp buffer, below the informal 3pp proactive-trim watch line) after softening -0.977% since market-open; thesis intact per news scan, no action mandated by the midday playbook (cut/tighten only). Flagging AVGO for explicit pre-market attention given the compressed buffer heading into the July 3 holiday closure and 3-day weekend. Stop audit 6/6 ✓. Shock check NOT triggered (-1.106%). Circuit breaker NOT triggered (-9.124%). Control: ACTIVE. [search: WebSearch fallback — MiniMax M3 MCP not connected this session]
+
+---
+
 ## Last snapshot — 2026-07-01 MARKET-OPEN (~9:46 AM ET)
 
 | Field | Value |

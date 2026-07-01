@@ -2779,3 +2779,61 @@ No sector at 60%+ threshold.
 ### Result
 No trades — correctly followed the no-trade plan. All 6 positions within guardrails, all 18% trailing stops live (6/6 ✓), no fills since last check. NVDA (3.131pp) and AVGO (3.501pp) are the two most compressed positions in the book — both just above the 3pp proactive-trim heuristic threshold, neither triggering it today, but both warrant a close look at midday given the binary macro-data day (ADP/ISM/Fed Warsh) and no offsetting catalyst before the 3-day July 4 weekend. No shock, no circuit breaker, no thesis contracts due. Control: ACTIVE.
 
+---
+
+## 2026-07-01 — MIDDAY CHECK (~12:41 PM ET)
+
+**No trades executed.** Risk management only. All positions within guardrails.
+
+### Pre-run checks
+| Check | Result |
+|---|---|
+| Live-switch guard | ALPACA_BASE_URL contains "paper" ✓ |
+| Lock | Clear ✓ |
+| Control switch | STATUS: ACTIVE ✓ |
+| Market open | true (next close 4:00 PM ET) ✓ |
+
+### Account status
+| Field | Value |
+|---|---|
+| Equity | USD 91,917.88 |
+| Last equity (June 30 EOD close) | USD 92,946.06 |
+| Intraday change vs last_equity | **-1.106%** (shock threshold -6% — NOT triggered ✓) |
+| Cash | USD 22,458.29 (24.43%) |
+| HWM | USD 101,144.73 |
+| Drawdown from HWM | **-9.124%** (circuit breaker -20% — NOT triggered ✓) |
+
+### Position review
+
+| Symbol | Entry | Current | P/L % | -12% Trigger | Buffer | News | Action |
+|---|---|---|---|---|---|---|---|
+| NVDA | USD 213.60 | USD 197.035 | -7.755% | USD 187.968 | 4.245pp | Burry disclosed new short (macro bear view, not company-specific); Strong Buy consensus intact; H2 data-center revenue tracking ~20% above consensus | No action — thesis intact |
+| AVGO | USD 406.23 | USD 368.0552 | **-9.397%** | USD 357.4824 | **2.603pp 🔴** | Down >20% from June highs on competition concerns; Buy consensus (26 analysts, PT USD 501.58); no customer loss or AI-revenue deceleration confirmed | No action — thesis intact, buffer flagged for pre-market watch |
+| ETN | USD 419.54 | USD 420.94 | +0.334% | USD 369.1952 | comfortable | No adverse news | No action |
+| GOOGL | USD 370.22 | USD 358.14 | -3.263% | USD 325.7936 | 8.737pp | No adverse news | No action |
+| AMZN | USD 247.991 | USD 242.33 | -2.283% | USD 218.232 | 9.717pp | No adverse news | No action |
+| VST | USD 151.47 | USD 151.7025 | +0.153% | USD 133.29 | comfortable | No adverse news | No action |
+
+**Cut rule check (>-12% from entry): NO positions triggered.** AVGO closest at -9.397% (2.603pp buffer) — the tightest buffer of the inception-to-date period.
+**Tighten-stop rule check (>+25% from entry): NO positions triggered.** No winners near the threshold.
+
+### Stop audit — 6/6 positions confirmed with live 18% trailing stops ✓
+
+| Symbol | Stop Order ID | Stop Price | HWM | Status |
+|---|---|---|---|---|
+| NVDA | `54d7d851` | USD 181.712 | USD 221.60 | ✓ live |
+| AVGO | `36f5a45f` | USD 349.7136 | USD 426.48 | ✓ live |
+| ETN | `abdc232b` | USD 350.9026 | USD 427.93 | ✓ live |
+| GOOGL | `e52a43f1` | USD 308.1314 | USD 375.77 | ✓ live |
+| AMZN | `b55bef05` | USD 207.0705 | USD 252.525 | ✓ live |
+| VST | `5b347be3` | USD 140.507 | USD 171.35 | ✓ live |
+
+**No stops missing. No stops needing recreation. No trailing-stop fills since market-open. No closed-trade post-mortems needed.**
+
+### News scan [search: WebSearch fallback — MiniMax M3 MCP not connected this session]
+- **AVGO (-9.397%):** Down >20% from early-June highs on competition concerns and a mixed prior quarter, but 26-analyst Buy consensus intact (avg target USD 501.58). No customer loss, no confirmed AI-revenue deceleration. Reads as continued macro/multiple-compression, not a thesis break. Decision: HOLD.
+- **NVDA (-7.755%):** Strong Buy consensus (38 analysts, avg target USD 298.93). Michael Burry disclosed a new short position (June 30) calling AI/semis overvalued — a known bear's macro thesis, not a company-specific or hyperscaler-demand signal. H2 data-center revenue reportedly tracking ~20% above consensus post HBM4 fixes. Decision: HOLD.
+
+### Result
+All 6 positions within guardrails. No trades, no cuts, no tightens. AVGO is the most stressed position in the book to date (2.603pp buffer, below the informal 3pp proactive-trim watch line) after softening -0.977% since market-open — thesis intact per news scan, no cut mandated (buffer still 2.6 points clear of -12%). Flagging AVGO explicitly for the July 2 pre-market review given the compressed buffer and the approaching July 3 holiday closure / 3-day weekend. Stop audit 6/6 ✓. Shock check NOT triggered (-1.106%). Circuit breaker NOT triggered (-9.124%). No thesis contracts due today (next: GOOGL/AMZN July 7). Control: ACTIVE.
+
