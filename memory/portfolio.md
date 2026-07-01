@@ -3,10 +3,56 @@
 _Updated by every routine from live Alpaca data. The next agent trusts this as
 the last known state, but always re-fetches live data before trading._
 
-**Last updated:** 2026-07-01 08:10 ET (pre-market; stop audit 3/3 PASS; LLY $1,202.04 +9.92% / V $343.30 +6.10%; 0 trades — market not yet open; no new positions planned; Bull −0.403% TRAILS SPY TR +1.213% → −1.616pp; LLY Medicare Bridge program launches TODAY; ADP/ISM/Fed Chair Warsh (Sintra panel) macro prints due today)
+**Last updated:** 2026-07-01 09:37 ET (market-open; stop audit 3/3 PASS; LLY $1,188.10 +8.65% / V $341.94 +5.68%; 0 trades — no trades planned for today, market open confirmed; Bull −0.573% TRAILS SPY TR +0.730% → −1.303pp; no breaking news on held names; sector caps and cash minimum all clear)
 **Inception:** 2026-05-21 — starting equity $100,000.00 | SPY anchor price $739.44
 **SPY total-return anchor (post-June 18 ex-div $1.76):** **$741.20**
 **Cumulative SPY dividends since inception (quarterly tracker):** $1.76/sh (June 18 ex-div); next SPY ex-div est. ~September 2026.
+
+---
+
+## Account (market-open July 1, 2026 — live Alpaca data ~09:37 ET)
+
+| Metric | Value |
+|--------|-------|
+| Equity | $99,427.40 |
+| Cash | $80,023.72 (80.48%) |
+| Long market value | $19,403.68 |
+| Buying power | ~$80,023.72 (cash) / $374,425.18 (margin, unused) |
+| Last equity (June 30 Alpaca close) | $99,566.00 |
+
+## Open positions (market-open July 1, 2026 — live Alpaca data ~09:37 ET)
+
+| Symbol | Qty | Avg entry | Current price | Mkt value | Unrealized P/L | % of portfolio | Trailing Stop |
+|--------|-----|-----------|--------------|-----------|----------------|----------------|---------------|
+| LLY | 10 | $1,093.534 | $1,188.10 | $11,881.00 | +$945.66 (+8.65%) | 11.95% | d4147484 (7sh) + 25989fb5 (3sh), HWM $1,238.00, stop $1,114.20 ✓ — buffer $73.90 (6.22%) ✓ |
+| V | 22 | $323.57 | $341.94 | $7,522.68 | +$404.14 (+5.68%) | 7.57% | 66033918 (22sh, HWM $345.81, stop $311.229) ✓ — buffer $30.711 (8.98%) ✓ |
+
+**Sector exposure (market-open July 1):**
+- Healthcare (LLY): $11,881.00 = 11.95% | Financials (V): $7,522.68 = 7.57% | Cash: $80,023.72 = 80.48%
+- No sector above 60% cap ✓
+
+**Trailing stop status (market-open July 1 — confirmed via Alpaca live orders ~09:37 ET):**
+- LLY (d4147484): 7sh — HWM $1,238.00, stop $1,114.20 ✓ (buffer $73.90 = 6.22%)
+- LLY (25989fb5): 3sh — HWM $1,238.00, stop $1,114.20 ✓
+- V (66033918): 22sh — HWM $345.81, stop $311.229 ✓ (buffer $30.711 = 8.98%)
+**Stop audit: 3/3 PASS ✓** (3 live trailing-stop orders across 2 positions; no fills since pre-market, no missing stops)
+
+**Market-open July 1 notes (~09:37 ET — stop audit 3/3 PASS; 0 trades, none planned; market open confirmed via clock endpoint):**
+- **Plan check:** Today's plan block in research-log.md (`plan_date: 2026-07-01`) is empty — pre-market decided to stay in cash given elevated macro-event risk (ADP/ISM/Fed Chair Warsh) and no watchlist name clearing its ATR gate. Nothing to execute; breaking-news gate (step 2) and trade execution (step 4) skipped as not applicable.
+- **Shock check:** $99,427.40 vs last_equity $99,566.00 = **−$138.60 = −0.139%** — no shock ✓ (threshold −4%)
+- **Drawdown circuit breaker:** $99,427.40 vs HWM $101,384.21 = **−1.930%** — NOT triggered ✓ (8.070pp headroom; CB trigger USD 91,245.79)
+- **LLY** $1,188.10 (+8.65% from entry, −0.95% since June 30 close): Pulling back further after Medicare Bridge launch today — consistent with the "sell the news" pattern already flagged pre-market; no negative news found. Stop buffer 6.22% — narrower than pre-market's 7.31% but still clear of the 10% trail. Thesis intact, review_by 2026-07-07 not due. HOLD. Conviction A.
+- **V** $341.94 (+5.68% from entry, −0.34% since June 30 close): Modest pullback, no negative news. Stop buffer 8.98% ✓. Thesis intact. HOLD. Conviction B. review_by 2026-07-28.
+- **No trades today** — plan was empty; no positions to execute.
+- **Since inception:** Bull −0.573% ($99,427.40) vs SPY TR +0.730% ($743.08 + $1.76 div vs $739.44 anchor) → **Bull TRAILS SPY −1.303pp**
+
+## Performance vs S&P 500
+
+| Period | Bull | SPY | Difference |
+|--------|------|-----|------------|
+| Inception (2026-05-21) | $100,000.00 | $739.44 | — |
+| **Market-open (2026-07-01)** | **$99,427.40 (−0.573%)** | **SPY $743.08 + $1.76 div = +0.730% TR** | **Bull TRAILS SPY −1.303pp** |
+| **Pre-market (2026-07-01)** | **$99,596.72 (−0.403%)** | **SPY $746.65 + $1.76 div = +1.213% TR** | **Bull TRAILS SPY −1.616pp** |
 
 ---
 
