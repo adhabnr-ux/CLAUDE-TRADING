@@ -3,6 +3,55 @@
 _Every order placed, with its reasoning. Append-only — newest entries at the top.
 The weekly new-position count is derived from this log._
 
+## 2026-07-01 12:33 ET — MIDDAY (0 cuts, 0 tightenings, 0 new positions; V new HWM $353.36, stop auto-ratcheted to $318.024; stop audit 3/3 ✓; Bull −0.307% TRAILS SPY TR +1.538% → −1.845pp)
+
+- **Action:** Midday routine. Risk management only — no new positions. 0 trades placed.
+- **Market status:** `is_open: true` (~12:33 ET).
+- **Account (~12:33 ET — live Alpaca):** Equity $99,693.47 | Cash $80,023.72 | LMV $19,669.75
+
+### Live-switch guard
+- `ALPACA_BASE_URL` contains "paper" ✓ — paper trading confirmed.
+
+### Lock / control switch
+- `_lock` was `{}` (free) — acquired for this run.
+- `memory/control.md` STATUS: ACTIVE ✓ — no PAUSED / RISK_OFF, no NOTE, no QUERY.
+
+### Shock check
+- Equity $99,693.47 vs last_equity $99,566.00 = **+$127.47 = +0.128%** — no shock ✓ (threshold −4%)
+
+### Drawdown circuit breaker
+- HWM $101,384.21; current $99,693.47 = **−1.668%** — NOT triggered ✓ (8.332pp headroom)
+
+### Position review (midday July 1, ~12:33 ET)
+
+| Symbol | Qty | Avg Entry | Current | % from Entry | Intraday | Buffer | Action |
+|--------|-----|-----------|---------|--------------|----------|--------|--------|
+| LLY | 10 | $1,093.534 | $1,190.375 | +8.86% | −0.755% | 6.40% | HOLD — sell-the-news pullback continues, no news-scan trigger (not <−3% or >+10%), thesis intact |
+| V | 22 | $323.57 | $353.00 | +9.10% | +2.89% | 9.91% (new HWM $353.36) | HOLD — strong rally, precautionary scan found no new catalyst, thesis intact |
+
+### Rules applied
+- **−7% cut rule:** LLY +8.86%, V +9.10% — no position below −7% from entry ✓ NO CUTS
+- **+15% tighten trigger:** LLY threshold $1,257.56, V threshold $372.10 — neither triggered ✓ NO TIGHTENINGS (V's own 10% trail auto-ratcheted its stop naturally to $318.024 on the new HWM; no manual tightening needed)
+- **News scan:** Neither position crossed the >3% down / >10% up threshold. V's outsized +2.89% intraday move prompted a precautionary WebSearch anyway — no new catalyst found (existing stablecoin-initiative / Piper Sandler Overweight drivers only), no thesis break.
+
+### Stop audit (midday July 1, ~12:33 ET)
+
+| Symbol | Order ID | Qty | HWM | Stop | Buffer | Status |
+|--------|----------|-----|-----|------|--------|--------|
+| LLY | d4147484 | 7 | $1,238.00 | $1,114.20 | 6.40% | ✓ live |
+| LLY | 25989fb5 | 3 | $1,238.00 | $1,114.20 | 6.40% | ✓ live |
+| V | 66033918 | 22 | $353.36 ⬆️ | $318.024 ⬆️ | 9.91% | ✓ live |
+
+**3/3 PASS ✓** — no missing stops, nothing to recreate.
+
+### Exits / post-mortems
+- None this run. No positions closed, no stops filled.
+
+### Since inception
+- Bull −0.307% ($99,693.47) vs SPY TR +1.538% ($749.05 + $1.76 div vs $739.44 anchor) → **Bull TRAILS SPY −1.845pp** (was −1.303pp at market-open; SPY's continued intraday strength widened the gap despite Bull's V rally)
+
+---
+
 ## 2026-06-30 15:50 ET — CLOSE (VST trailing stop FILLED 13:48 ET @ $160.20 = +7.66% WIN, first win on record; stop audit 3/3 ✓; LLY −1.75% sell-the-news pre-Medicare-Bridge; SPY +0.79% end-of-Q2 rally; Bull −0.345% TRAILS SPY TR +1.223% → −1.568pp)
 
 - **Action:** Close routine. 1 exit observed (VST trailing stop, filled intraday, not placed by this routine) — 0 new trades (close routine does not place orders).
