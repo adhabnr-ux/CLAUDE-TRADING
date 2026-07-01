@@ -3,10 +3,61 @@
 _Updated by every routine from live Alpaca data. The next agent trusts this as
 the last known state, but always re-fetches live data before trading._
 
-**Last updated:** 2026-07-01 12:33 ET (midday; stop audit 3/3 PASS; LLY $1,190.375 +8.86% / V $353.00 +9.10% (V new HWM $353.36, stop ratcheted to $318.024); 0 trades — no cuts, no tightenings, no new positions; Bull −0.307% TRAILS SPY TR +1.538% → −1.845pp; no thesis breaks; sector caps and cash minimum all clear)
+**Last updated:** 2026-07-01 15:51 ET (close; stop audit 3/3 PASS; LLY $1,189.76 +8.80% / V $350.23 +8.24%; 0 trades — no cuts, no tightenings, no new positions; Bull −0.374% TRAILS SPY TR +1.196% → −1.569pp; no thesis breaks; sector caps and cash minimum all clear; monthly housekeeping: research-log.md and trade-log.md pre-June entries archived to memory/archive/2026-05.md)
 **Inception:** 2026-05-21 — starting equity $100,000.00 | SPY anchor price $739.44
 **SPY total-return anchor (post-June 18 ex-div $1.76):** **$741.20**
 **Cumulative SPY dividends since inception (quarterly tracker):** $1.76/sh (June 18 ex-div); next SPY ex-div est. ~September 2026.
+
+---
+
+## Account (close July 1, 2026 — live Alpaca data ~15:51 ET)
+
+| Metric | Value |
+|--------|-------|
+| Equity | $99,626.38 |
+| Cash | $80,023.72 (80.33%) |
+| Long market value | $19,602.66 |
+| Buying power | ~$80,023.72 (cash) / $374,982.33 (margin, unused) |
+| Last equity (June 30 Alpaca close) | $99,566.00 |
+
+## Open positions (close July 1, 2026 — live Alpaca data ~15:51 ET)
+
+| Symbol | Qty | Avg entry | Current price | Mkt value | Unrealized P/L | % of portfolio | Trailing Stop |
+|--------|-----|-----------|--------------|-----------|----------------|----------------|---------------|
+| LLY | 10 | $1,093.534 | $1,189.76 | $11,897.60 | +$962.26 (+8.80%) | 11.94% | d4147484 (7sh) + 25989fb5 (3sh), HWM $1,238.00, stop $1,114.20 ✓ — buffer $75.56 (6.35%) ✓ |
+| V | 22 | $323.57 | $350.23 | $7,705.06 | +$586.52 (+8.24%) | 7.74% | 66033918 (22sh, HWM $353.36, stop $318.024) ✓ — buffer $32.206 (9.20%) ✓ |
+
+**Sector exposure (close July 1):**
+- Healthcare (LLY): $11,897.60 = 11.94% | Financials (V): $7,705.06 = 7.74% | Cash: $80,023.72 = 80.33%
+- No sector above 60% cap ✓
+
+**Trailing stop status (close July 1 — confirmed via Alpaca live orders ~15:51 ET):**
+- LLY (d4147484): 7sh — HWM $1,238.00, stop $1,114.20 ✓ (buffer $75.56 = 6.35%; LLY at $1,189.76 < HWM — no ratchet today)
+- LLY (25989fb5): 3sh — HWM $1,238.00, stop $1,114.20 ✓
+- V (66033918): 22sh — HWM $353.36, stop $318.024 ✓ (buffer $32.206 = 9.20%; V at $350.23 < HWM $353.36 — no ratchet today; midday's new-HWM ratchet stands)
+**Stop audit: 3/3 PASS ✓** (3 live trailing-stop orders across 2 positions; none missing)
+
+**Close July 1 notes (~15:51 ET — stop audit 3/3 PASS; 0 trades; no cuts; no tightenings; choppy flat session on soft ADP print):**
+- **Today P/L:** +$60.38 (+0.0607%) | SPY −0.0331% ($746.77 → $746.5225) | Bull outperformed SPY by +0.094pp today
+- **Shock check:** $99,626.38 vs last_equity $99,566.00 = **+$60.38 = +0.061%** — no shock ✓ (threshold −4%)
+- **Drawdown circuit breaker:** $99,626.38 vs HWM $101,384.21 = **−1.734%** — NOT triggered ✓ (8.266pp headroom; CB trigger USD 91,245.79)
+- **LLY** $1,189.76 (+8.80% from entry, −0.807% today): Continued mild give-back after yesterday's Medicare Bridge launch — consistent with the "sell the news" pattern flagged since pre-market. HWM $1,238 not touched; no ratchet. Buffer 6.35% ✓. Thesis intact, no new negative news, review_by 2026-07-07 not due. HOLD. Conviction A.
+- **V** $350.23 (+8.24% from entry, +1.907% today): Extended the midday rally into the close; new intraday high but did not clear the midday-set HWM $353.36, so no further ratchet. No new catalyst beyond the already-known stablecoin initiative and June 29 Piper Sandler Overweight. Thesis intact. HOLD. Conviction B. review_by 2026-07-28.
+- **No cuts** (−7% rule): both positions well above threshold ✓
+- **No tightenings** (+15% trigger = LLY $1,257.56 / V $372.10): neither triggered ✓
+- **Market context (July 1):** Choppy, essentially flat session — SPY closed $746.5225 vs June 30's $746.77 (−0.03%). ADP private payrolls came in soft at +98K (vs +110K expected), and ISM Manufacturing PMI plus Fed Chair Warsh's Sintra remarks were the other data points investors weighed; none produced a decisive directional move. Neither LLY's nor V's thesis is affected by today's macro prints.
+- **Monthly housekeeping (first trading day of July):** research-log.md and trade-log.md entries dated before 2026-06-01 (2026-05-21 through 2026-05-29) archived to `memory/archive/2026-05.md`, with a one-line pointer left at the top of each log. Quarterly dividend housekeeping (Jun/Sep/Dec) not due this month.
+- **Exit reconciliation:** No exits today. closed-trades.md remains current (VST June 30 win is the latest entry). No new lessons.md entry required — nothing notable beyond routine housekeeping.
+- **Trades today:** 0.
+- **Since inception:** Bull −0.374% ($99,626.38) vs SPY TR +1.196% ($746.5225 + $1.76 div vs $739.44 anchor) → **Bull TRAILS SPY −1.569pp** (was −1.845pp at midday; V's afternoon strength narrowed the gap)
+
+## Performance vs S&P 500
+
+| Period | Bull | SPY | Difference |
+|--------|------|-----|------------|
+| Inception (2026-05-21) | $100,000.00 | $739.44 | — |
+| **Close (2026-07-01)** | **$99,626.38 (−0.374%)** | **SPY $746.5225 + $1.76 div = +1.196% TR** | **Bull TRAILS SPY −1.569pp** |
+| **Midday (2026-07-01)** | **$99,693.47 (−0.307%)** | **SPY $749.05 + $1.76 div = +1.538% TR** | **Bull TRAILS SPY −1.845pp** |
 
 ---
 
