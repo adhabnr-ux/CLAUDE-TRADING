@@ -2919,3 +2919,139 @@ No trades planned. Q2-end rebalancing risk, holiday-shortened week, NVDA/AVGO bu
 }
 ```
 EXECUTED: 2026-06-30T13:46:16Z (no trades — no-trade plan confirmed; market open, stop audit 6/6 ✓, news scan clear, shock check clear)
+
+---
+
+## 2026-07-01 — WEEK 5 PRE-MARKET (Wednesday)
+[search: WebSearch fallback — MiniMax M3 MCP not connected this session; all searches below used WebSearch]
+
+### Portfolio snapshot (live Alpaca data, ~8:11 AM ET)
+
+| Symbol | Qty | Avg Entry | Current | P/L % | Buffer to -12% |
+|---|---|---|---|---|---|
+| NVDA | 103 | USD 213.60 | USD 198.93 | -6.868% | 5.132pp ✓ |
+| AVGO | 34 | USD 406.23 | USD 375.50 | -7.565% | 4.435pp ✓ |
+| ETN | 34 | USD 419.54 | USD 423.93 | +1.046% | comfortable ✓ |
+| GOOGL | 16 | USD 370.22 | USD 357.64 | -3.398% | 8.602pp ✓ |
+| AMZN | 36 | USD 247.991 | USD 240.30 | -3.101% | 8.899pp ✓ |
+| VST | 52 | USD 151.47 | USD 158.70 | +4.773% | comfortable ✓ |
+
+**Account equity: USD 92,754.14** (vs last_equity USD 92,946.06 = -0.206%, shock threshold -6% NOT triggered)
+**Cash: USD 22,458.29 (24.21%)**
+**HWM: USD 101,144.73 — drawdown -8.295% (circuit breaker -20%, 11.705pp headroom, NOT triggered)**
+**Semi concentration (NVDA+AVGO): USD 33,256.79 / USD 92,754.14 = 35.86%**
+**Weekly new-position count: 0/8 (new week)**
+
+---
+
+### Market posture
+
+**Overall: Cautiously risk-off into a binary macro data day, ahead of a 3-day holiday weekend.**
+
+- S&P 500 futures softer pre-market, down ~0.38%; Polymarket implies only 27% odds of a green open today. [search: WebSearch fallback]
+- ADP employment report and ISM manufacturing survey both due this morning, plus remarks from new Fed Chair Kevin Warsh — all binary-ish inputs to the H2 rate outlook.
+- Context: Fed held at 3.50–3.75% on June 17; 9 of 18 officials project a hike later in 2026 (six expect two 25bp hikes); inflation at a 3-year high. No new Warsh remarks found dated today specifically — most recent commentary is from the June 17 FOMC presser.
+- S&P 500 closed H1 2026 up 9.6%, its best Q2 since 2020 — broad risk-on backdrop even with today's softness.
+- **Calendar note: NYSE/Nasdaq closed Friday July 3** (July 4 falls on a Saturday). Today (Wed) and tomorrow (Thu, early bond-market close 2PM ET) are the only two sessions before a 3-day weekend; markets reopen Monday July 6.
+
+---
+
+### Held positions — "what changed since yesterday" (required for each)
+
+**NVDA — Thesis: INTACT. Nothing new, minor buffer compression.**
+- *What changed:* Palantir/government AI-infrastructure partnership confirmed (thesis-positive, diversifies demand beyond hyperscalers). B200 GPU cloud rental rates continue to soften (~31% decline late-May to late-June) — this is a secondary-market pricing signal, not a hardware-sales or hyperscaler-capex signal; NOT thesis-breaking. Price -0.634% overnight on broad pre-market softness.
+- Buffer 5.132pp (down from 5.727pp EOD June 30). Next earnings Aug 26 — no window risk.
+- Source: Yahoo Finance, Finbold, June 30–July 1 2026.
+
+**AVGO — Thesis: INTACT. Analyst reaffirmation.**
+- *What changed:* Jefferies reiterated Buy, calling the ~20%-from-June-highs pullback a "meaningful opportunity"; average target USD 523.73 (+38.7% upside from current). Jalapeño custom AI chip program with OpenAI remains publicly confirmed (10GW compute capacity 2026-2029). Price -0.530% overnight.
+- Buffer 4.435pp (down from 4.928pp EOD June 30). Next earnings Sep 3 — no window risk.
+- Source: Benzinga/Jefferies note, stockanalysis.com, July 1 2026.
+
+**ETN — Thesis: INTACT. Guidance raised.**
+- *What changed:* Eaton raised 2026 organic growth outlook by 200bps and lifted adjusted EPS midpoint to USD 13.28, absorbing Boyd Thermal dilution while reflecting operational beats. Dana Mobility RMT merger progressing. Price -0.514% overnight, still +1.046% from entry.
+- Buffer comfortable (positive P/L). Next earnings Aug 4 — no window risk.
+- Source: Company guidance update via WebSearch, June–July 2026.
+
+**GOOGL — Thesis: INTACT. Strengthening.**
+- *What changed:* New model releases (Nano Banana 2 Lite, Gemini Omni Flash) continue AI product cadence. Second consecutive day of DJIA inclusion trading, +0.7% Tuesday — institutional tailwind persists. GCP +63% YoY unchanged. Price +0.461% overnight.
+- Buffer 8.602pp (up from 8.159pp EOD June 30). Review_by **July 7** — 4 trading days away (Thu, [holiday], Mon, Tue), not due today. Next earnings ~Jul 21-24.
+- Source: Yahoo Finance, July 1 2026.
+
+**AMZN — Thesis: INTACT.**
+- *What changed:* New AWS "Forward Deployed Engineering" unit — AWS engineers embedded inside customer companies — is a thesis-positive enterprise-AI monetization signal. USD 2.25M FTC settlement and an Australian Prime Video ad-terms complaint are both immaterial to the AWS thesis. Price +0.966% overnight; some bearish technical commentary flagging a possible move below USD 236 support, but this is a technical/momentum note, not a fundamental one.
+- Buffer 8.899pp (up from 7.971pp EOD June 30). Review_by **July 7** — not due today (Prime Day catalyst already captured; earnings Jul 30).
+- Source: Yahoo Finance, Cryptonomist technical note, July 1 2026.
+
+**VST — Thesis: INTACT.**
+- *What changed:* Credit Agreement amended June 24 — revolver increased to USD 5.5B, some covenant/collateral terms loosened, some guarantors released. This is balance-sheet flexibility, thesis-neutral (does not touch the PPA cash-flow thesis). Price -0.182% overnight, essentially flat.
+- Buffer comfortable (+4.773% from entry). Next earnings Aug 6 — no window risk.
+- Source: Yahoo Finance, TradingView, July 1 2026.
+
+---
+
+### Thesis contract review (step 3b)
+
+No review_by dates are due today. GOOGL and AMZN (July 7) are the nearest, 4 trading days out counting the July 3 holiday closure — will be assessed at the next pre-market that falls on/before July 7. All 6 positions: explicit **HOLD**, no invalidation conditions triggered, per the position-by-position review above.
+
+---
+
+### Earnings window check
+
+| Symbol | Next Earnings | Within 2 trading days? | Action |
+|---|---|---|---|
+| NVDA | Aug 26, 2026 | No | None required |
+| AVGO | Sep 3, 2026 | No | None required |
+| ETN | Aug 4, 2026 | No | None required |
+| GOOGL | ~Jul 21-24, 2026 | No | None required |
+| AMZN | Jul 30, 2026 | No | None required |
+| VST | Aug 6, 2026 | No | None required |
+
+**No earnings window risk for any position or candidate. ✓**
+
+---
+
+### New position research / watchlist
+
+**MRVL (re-entry candidate):** Last traded ~USD 296.30, above the original entry price (USD 293.29) and well above the June 24 trailing-stop exit (USD 270.42) — the "no re-entry until above prior entry" test would technically pass. However, no fresh 2+ entry-signal confirmation was found today (no new catalyst beyond general semi-sector chatter), and deploying into a new, unseasoned position on a binary macro-data day heading into a 3-day closure is not the right time. **Deferred to July 6 pre-market for re-evaluation**, not acted on today.
+
+**AMZN pyramid:** Buffer improved to 8.899pp and thesis strengthening (new AWS enterprise unit), but same binary-day / holiday-weekend logic applies — no add today.
+
+No other new candidates surfaced.
+
+---
+
+### Deployment check
+
+- Cash: USD 22,458.29 = 24.21% of equity — **above the 20% threshold**, so an explicit decision is required.
+- **Decision: NO NEW BUYS TODAY.** Three reasons, all explicit: (1) ADP employment report + ISM manufacturing survey + Fed Chair Warsh commentary are due today — a binary macro-data day with S&P futures already softer (-0.38%); (2) NYSE/Nasdaq close Friday July 3 for the holiday — today and tomorrow are the only two sessions before a 3-day weekend, and per the Week 3/4 lessons, adding fresh unseasoned exposure right before an extended closure raises portfolio fragility without a compensating edge; (3) AVGO (4.435pp) and NVDA (5.132pp) are already the two most compressed positions in the book and both are entering the holiday weekend without any further widening — no reason to add correlated semi risk while those buffers are still thin. Cash reserve is deliberate risk management, not indecision. Re-evaluate MRVL/AMZN pyramid at the next pre-market (July 6, post-holiday).
+
+---
+
+### Guardrail check for today
+
+| Rule | Limit | Status |
+|---|---|---|
+| Single position max | 35% | NVDA 22.09% — largest position. ✓ All clear |
+| Cash floor | 2% min | 24.21% — well above minimum ✓ |
+| Weekly new positions | 8 max | 0/8 used (new week) ✓ |
+| Semi-group concentration (NVDA+AVGO) | informal ≤50% watch | 35.86% ✓ |
+| Circuit breaker | >20% below HWM | -8.295% — not triggered ✓ |
+| Intraday/pre-market shock | >6% below last_equity | -0.206% — not triggered ✓ |
+| Stop audit | All positions covered | 6/6 live 18% trailing stops confirmed (status: "new") ✓ |
+| Earnings window | No new buys within 2 days of earnings | Nearest: GOOGL ~Jul 21-24 ✓ |
+
+All guardrails pass. No trades planned.
+
+---
+
+## Planned trades for today (July 1, 2026 — market open)
+
+**No trades warranted.** Binary macro-data day (ADP, ISM, Fed Warsh) plus a 3-day holiday weekend (market closed Fri July 3) ahead, with AVGO and NVDA already the most buffer-compressed positions in the book. Hold all 6 positions; let the 18% trailing stops do their job. MRVL re-entry and AMZN pyramid deferred to July 6 pre-market.
+
+```json
+{
+  "plan_date": "2026-07-01",
+  "trades": []
+}
+```

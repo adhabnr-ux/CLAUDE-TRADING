@@ -6,6 +6,85 @@ but always re-fetches live data before trading._
 
 ---
 
+## Last snapshot — 2026-07-01 PRE-MARKET (~8:11 AM ET)
+
+| Field | Value |
+|---|---|
+| Equity | USD 92,754.14 |
+| Cash | USD 22,458.29 (24.21%) |
+| Long market value | USD 70,295.85 |
+| Open positions | 6 |
+| last_equity (June 30 EOD close — Alpaca authoritative) | USD 92,946.06 |
+| Pre-market P/L vs last_equity | **-USD 191.92 (-0.206%)** |
+| HWM | USD 101,144.73 |
+| Drawdown from HWM | **-8.295%** (circuit breaker -20% — NOT triggered; 11.705pp headroom) |
+
+**Shock check:** -0.206% vs threshold -6% → NOT triggered ✓
+
+**Open positions (July 1 pre-market ~8:11 AM ET):**
+
+| Symbol | Qty | Avg Entry | Current Price | Market Value | Unrealized P/L | P/L % | -12% Cut Trigger | Buffer | Rating |
+|---|---|---|---|---|---|---|---|---|---|
+| NVDA | 103 | USD 213.60 | USD 198.93 | USD 20,489.79 | -USD 1,511.01 | **-6.868%** | USD 187.968 | 5.132pp ✓ | A |
+| AVGO | 34 | USD 406.23 | USD 375.50 | USD 12,767.00 | -USD 1,044.82 | **-7.565%** | USD 357.482 | 4.435pp ✓ | A |
+| ETN | 34 | USD 419.54 | USD 423.93 | USD 14,413.62 | +USD 149.26 | **+1.046% ✅** | USD 369.20 | comfortable ✓ | A |
+| GOOGL | 16 | USD 370.22 | USD 357.64 | USD 5,722.24 | -USD 201.28 | **-3.398%** | USD 325.794 | 8.602pp ✓ | A |
+| AMZN | 36 | USD 247.991 | USD 240.30 | USD 8,650.80 | -USD 276.88 | **-3.101%** | USD 218.232 | 8.899pp ✓ | A |
+| VST | 52 | USD 151.47 | USD 158.70 | USD 8,252.40 | +USD 375.96 | **+4.773% ✅** | USD 133.29 | comfortable ✓ | A |
+
+**KEY vs EOD June 30:**
+- NVDA: 5.727pp → **5.132pp** (-0.595pp; -0.634% overnight, broad pre-market softness ahead of ADP/ISM/Fed data)
+- AVGO: 4.928pp → **4.435pp** (-0.493pp; -0.530% overnight)
+- ETN: +1.568% → **+1.046%** (-0.514% overnight; still comfortable)
+- GOOGL: 8.159pp → **8.602pp** (+0.443pp ✅; +0.461% overnight, DJIA-inclusion tailwind persists)
+- AMZN: 7.971pp → **8.899pp** (+0.928pp ✅; +0.966% overnight)
+- VST: comfortable → comfortable (-0.182% overnight, essentially flat)
+
+**Stop audit (July 1 pre-market): ALL 6 CONFIRMED LIVE ✓ (verified from open orders — status: "new")**
+
+| Symbol | Stop Order ID | HWM | Stop Price | Trail % | Status |
+|---|---|---|---|---|---|
+| NVDA | `54d7d851` | USD 221.60 | USD 181.712 | 18% | ✓ live |
+| AVGO | `36f5a45f` | USD 426.48 | USD 349.7136 | 18% | ✓ live |
+| ETN | `abdc232b` | USD 427.93 | USD 350.9026 | 18% | ✓ live |
+| GOOGL | `e52a43f1` | USD 375.77 | USD 308.1314 | 18% | ✓ live |
+| AMZN | `b55bef05` | USD 252.525 | USD 207.0705 | 18% | ✓ live |
+| VST | `5b347be3` | USD 171.35 | USD 140.507 | 18% | ✓ live |
+
+**No stops missing. No stops needing recreation. 6/6 ✓**
+
+**Thesis contracts (July 1 pre-market):**
+| Symbol | Review By | Invalidation | Status | Decision |
+|---|---|---|---|---|
+| NVDA | July 9 | Hyperscaler GPU share reverses | ✓ Intact — -6.868%; 5.132pp ✓; Palantir/government AI infra partnership; B200 rental rates still soft (demand-side, not thesis-breaking); Aug 26 earnings | **HOLD** |
+| AVGO | July 9 | AI revenue decelerates | ✓ Intact — -7.565%; 4.435pp ✓; Jefferies reiterated Buy calling pullback a "meaningful opportunity"; Jalapeño AI XPV thesis confirmed; Sep 3 earnings | **HOLD** |
+| ETN | July 9 | ETN below USD 332 OR AI capex reverses | ✓ Intact — +1.046% ✅; 2026 organic growth guide raised +200bps, EPS midpoint to USD 13.28; Dana RMT progressing; Aug 4 earnings | **HOLD** |
+| GOOGL | July 7 | GCP decelerates OR TPU cancelled | ✓ Intact — -3.398%; 8.602pp ✓; Nano Banana 2 Lite / Gemini Omni Flash model releases; DJIA inclusion tailwind persists; earnings ~Jul 21-24 | **HOLD** |
+| AMZN | July 7 | AWS <20% YoY | ✓ Intact — -3.101%; 8.899pp ✓; new AWS Forward Deployed Engineering unit (enterprise AI push); minor FTC settlement (USD 2.25M, immaterial); Jul 30 earnings | **HOLD** |
+| VST | July 15 | Nuclear PPAs cancelled | ✓ Intact — +4.773% ✅; credit facility amended (revolver to USD 5.5B — balance-sheet flexibility, thesis-neutral); Aug 6 earnings | **HOLD** |
+
+No review_by deadlines due today (next: GOOGL/AMZN July 7). No contract decisions required.
+
+**Sector exposure (July 1 pre-market):**
+| Sector | Names | Market Value | % of Equity |
+|---|---|---|---|
+| Technology — semis | NVDA, AVGO | USD 33,256.79 | 35.86% |
+| Technology — hyperscalers | GOOGL, AMZN | USD 14,373.04 | 15.50% |
+| Industrials/Power Infra | ETN | USD 14,413.62 | 15.54% |
+| Utilities/Power | VST | USD 8,252.40 | 8.90% |
+| Cash | — | USD 22,458.29 | 24.21% |
+
+No sector at 60%+ threshold. Deliberate exposure — journaled.
+
+**Market posture (July 1) [search: WebSearch fallback — MiniMax M3 MCP not connected this session]:**
+S&P 500 futures softer pre-market (-0.38%), with the July 1 Polymarket contract implying only 27% odds of a higher open. Markets awaiting the ADP employment report and ISM manufacturing survey, plus remarks from Fed Chair Kevin Warsh, ahead of the second half of the year. Context: S&P 500 finished H1 2026 up 9.6%, its best Q2 since 2020. Note: NYSE/Nasdaq are closed Friday July 3 (July 4 falls on a Saturday) — today (Wed) and tomorrow (Thu, early bond-market close) are the only two trading sessions before the 3-day holiday weekend; markets reopen Monday July 6.
+
+**Deployment check:** Cash 24.21% > 20% threshold. Decision: **NO NEW BUYS TODAY** — deliberate hold. Two macro data points (ADP, ISM) plus new Fed Chair Warsh commentary are due today, and AVGO (4.435pp) and NVDA (5.132pp) are already the two most compressed positions in the book heading into a 3-day holiday weekend (market closed Fri July 3). Per the Week 3/4 lessons on holiday-weekend gap risk, adding fresh, unseasoned exposure right before an extended closure — on top of a day with two binary macro releases — increases portfolio fragility without a compensating edge. MRVL (re-entry candidate, USD 296.30, above original entry USD 293.29) and any AMZN pyramid are noted for reassessment after the holiday (July 6) once ADP/ISM/Warsh reaction is known.
+
+_Pre-market July 1: No trades planned. Circuit breaker NOT triggered (-8.295%, 11.705pp headroom). Shock check NOT triggered (-0.206%). Stop audit 6/6 ✓. No thesis contracts due (next: GOOGL/AMZN July 7). Deployment: explicit hold-cash decision journaled (macro binary day + holiday-weekend gap risk on two already-compressed positions). Control: ACTIVE. [search: WebSearch fallback — MiniMax M3 MCP not connected this session]_
+
+---
+
 ## Last snapshot — 2026-06-30 EOD CLOSE (~4:05 PM ET)
 
 | Field | Value |
