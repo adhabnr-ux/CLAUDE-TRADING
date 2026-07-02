@@ -5,6 +5,26 @@ The weekly new-position count is derived from this log._
 
 _Entries before 2026-06-01 archived to `memory/archive/2026-05.md` (2026-07-01 monthly housekeeping)._
 
+## 2026-07-02 09:36 ET — MARKET-OPEN (0 trades; plan was empty; stop audit 3/3 ✓; V HWM/stop auto-ratcheted intraday; Bull −0.220% TRAILS SPY TR +1.519% → −1.739pp)
+
+- **Action:** Market-open routine. Today's plan (research-log.md, `plan_date: 2026-07-02`) had zero planned trades — pre-market stayed in cash (LRCX ATR gate failed again 8.40%, ETN gate 1/2, no other watchlist name qualified, NFP report event risk). Breaking-news gate and trade execution steps not applicable.
+- **Live-switch guard:** `ALPACA_BASE_URL` contains "paper" ✓
+- **Lock:** `_lock` was `{}` (free) — acquired for this run.
+- **Control switch:** `memory/control.md` STATUS: ACTIVE ✓ — no PAUSED/RISK_OFF, no NOTE, no QUERY.
+- **Market status:** `is_open: true` confirmed via clock (~09:36 ET).
+- **Account (~09:36 ET — live Alpaca):** Equity $99,779.89 | Cash $80,023.72 (80.20%) | LMV $19,756.17
+- **Shock check:** $99,779.89 vs last_equity $99,664.88 = +$115.01 (+0.115%) — no shock ✓ (threshold −4%)
+- **Drawdown circuit breaker:** $99,779.89 vs HWM $101,384.21 = −1.583% — NOT triggered ✓ (8.417pp headroom)
+- **LLY:** $1,194.375 vs entry $1,093.534 → **+9.22%** (+0.22% today) ✓ — holding post-launch gains, thesis intact, HOLD
+- **V:** $355.11 vs entry $323.57 → **+9.75%** (+1.15% today) ✓ — strong open, HWM auto-ratcheted $353.36→$356.60, stop $318.024→$320.94, thesis intact, HOLD
+- **Stops verified (3/3 live):**
+  - LLY (d4147484): 7sh — HWM $1,238.00, stop $1,114.20 ✓ (buffer 6.71%)
+  - LLY (25989fb5): 3sh — HWM $1,238.00, stop $1,114.20 ✓
+  - V (66033918): 22sh — HWM $356.60 ⬆️, stop $320.94 ⬆️ ✓ (buffer 9.63%)
+- **No cuts, no tightenings, no new positions, no exits today.**
+- **Since inception:** Bull −0.220% ($99,779.89) vs SPY TR +1.519% ($748.91 + $1.76 div vs $739.44 anchor) → **Bull TRAILS SPY −1.739pp**
+- **Telegram notification sent** ✓
+
 ## 2026-07-01 15:51 ET — CLOSE (0 trades; stop audit 3/3 ✓; Bull −0.374% TRAILS SPY TR +1.196% → −1.569pp; monthly housekeeping: pre-June logs archived)
 
 - **Action:** None — end-of-day P/L check and journal. Close routine does not place orders.
