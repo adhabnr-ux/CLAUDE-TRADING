@@ -2932,3 +2932,76 @@ N/A — today is Wednesday, not Friday.
 ### Result
 No trades, no exits, no stop tightenings, no thesis contracts due. All 6 positions within guardrails; stop audit 6/6 ✓. **AVGO remains the tightest buffer in the book (2.809pp)** heading into the July 3 holiday closure — Thursday July 2 is the only trading session before a 4-day gap (Thu close → Fri closed → weekend → Mon July 6 reopen). Per the standing lessons on holiday-weekend gap risk for sub-3pp positions, July 2 pre-market must explicitly re-assess AVGO's buffer and consider a proactive trim if it has not widened. Drawdown -9.283% (10.717pp headroom to circuit breaker). Shock check NOT triggered (-1.279%). Control: ACTIVE.
 
+---
+
+## 2026-07-02 — MIDDAY CHECK (~12:41 PM ET)
+
+### Pre-run checks
+| Check | Result |
+|---|---|
+| Live-switch guard | ALPACA_BASE_URL contains "paper" ✓ |
+| Lock | Clear (`{}`) at start; written for this run ✓ |
+| Control switch | STATUS: ACTIVE ✓ (no NOTE:, no QUERY:) |
+| Market open | true (next close 4:00 PM ET) ✓ |
+
+### Process gap discovered
+The July 2 pre-market plan called for a 25% proactive trim of AVGO (9 of 34 shares) **at market open** to manage holiday-gap risk. No corresponding trade-log entry, no `EXECUTED:` marker in research-log.md, and no matching order in Alpaca's closed-order history exist for today — **the market-open routine did not run (or did not execute the trim) today.** By midday, AVGO's buffer had compressed further to 0.542pp from the -12% cut trigger (well past the 2.922pp seen at pre-market), heading directly into the July 3 holiday + weekend 4-day closure.
+
+### Account status (pre-trim, ~12:41 PM ET)
+| Field | Value |
+|---|---|
+| Equity | USD 90,375.01 |
+| last_equity (July 1 EOD close) | USD 91,830.01 |
+| Intraday P/L vs last_equity | **-USD 1,455.00 (-1.584%)** — shock threshold -6% NOT triggered ✓ |
+| Cash | USD 22,458.29 (24.85%) |
+
+### Position review (pre-trim)
+| Symbol | Entry | Current | P/L % | -12% Trigger | Buffer | Action |
+|---|---|---|---|---|---|---|
+| NVDA | USD 213.60 | USD 193.70 | -9.316% | USD 187.968 | 2.684pp ⚠️ | Hold (news scan below) |
+| AVGO | USD 406.23 | USD 359.6858 | **-11.458%** | USD 357.4824 | **0.542pp 🔴 CRITICAL** | **Executed pending pre-market trim** |
+| ETN | USD 419.54 | USD 394.92 | -5.868% | USD 369.20 | 6.132pp | Hold (news scan below) |
+| GOOGL | USD 370.22 | USD 355.555 | -3.961% | USD 325.79 | comfortable | No action |
+| AMZN | USD 247.991 | USD 245.51 | -1.001% | USD 218.23 | comfortable | No action |
+| VST | USD 151.47 | USD 149.575 | -1.251% | USD 133.29 | comfortable | No action |
+
+**Cut rule check (>-12% from entry): NO positions mechanically triggered.** AVGO closest at -11.458% (0.542pp from the line) — still short of the mechanical -12% rule.
+**Tighten-stop rule check (>+25% from entry): NO positions triggered.** All in drawdown.
+
+### News scan (positions down >5% from entry) [search: WebSearch fallback — MiniMax M3 MCP not connected this session]
+- **AVGO (-11.458%):** No new company-specific negative catalyst. 48-analyst Strong Buy consensus, PT USD 523.73 (+41.6%). Stock down ~15% over the past month on broad tech/AI-cost sentiment, not a program loss or guidance cut. The MediaTek/TPUv9 item is old news already priced in from prior sessions. **Thesis INTACT.**
+- **NVDA (-9.316%):** No negative catalyst; 62-analyst Strong Buy, PT USD 298.93 (+49.4%). Palantir collaboration and new Microsoft hire (field-ops exec) are thesis-neutral-to-positive. **Thesis INTACT.**
+- **ETN (-5.868%):** No negative catalyst; data-center order growth (+240% YoY), Dana RMT progressing, Russell Growth index inclusions still a tailwind. One analyst DCF flags rich valuation, but that's not a thesis break (invalidation = ETN <USD 332 or AI capex reversal, neither triggered). **Thesis INTACT.**
+
+### Action taken — AVGO risk-management trim
+Given (1) AVGO's buffer had compressed to 0.542pp — the tightest this book has ever been to a mechanical cut — (2) today is the only session before a 4-day closure (July 3 holiday + weekend, reopen July 6), and (3) the pre-market routine had already fully reasoned and guardrail-checked this exact 25% trim but it never executed, this midday routine completed the already-approved trade as risk management on an existing position (not a new position open):
+1. Canceled AVGO trailing stop `36f5a45f` (held the shares).
+2. Sold 9 AVGO shares market order — filled 359.791111 avg. Realized P/L on trimmed shares: **-USD 417.95 (-11.434%)**.
+3. Placed new 18% trailing stop on the remaining 25 shares — order `cf2956dc`, stop price USD 295.159 (HWM USD 359.95).
+4. Verified: AVGO position now 25 shares; new stop confirmed live.
+
+AVGO's percentage buffer to the -12% cut is unchanged by the trim (~0.6pp, since % distance depends on price not share count) — the trim reduces **dollar exposure**, not the buffer itself. AVGO's 25-share core position remains open with thesis fully intact; review_by unchanged at July 9.
+
+### Stop audit (post-trim, ~12:43 PM ET): ALL 6 CONFIRMED LIVE ✓
+
+| Symbol | Stop Order ID | HWM | Stop Price | Trail % | Status |
+|---|---|---|---|---|---|
+| NVDA | `54d7d851` | USD 221.60 | USD 181.712 | 18% | ✓ live |
+| AVGO | `cf2956dc` (recreated) | USD 359.95 | USD 295.159 | 18% | ✓ live |
+| ETN | `abdc232b` | USD 427.93 | USD 350.9026 | 18% | ✓ live |
+| GOOGL | `e52a43f1` | USD 375.77 | USD 308.1314 | 18% | ✓ live |
+| AMZN | `b55bef05` | USD 252.525 | USD 207.0705 | 18% | ✓ live |
+| VST | `5b347be3` | USD 171.35 | USD 140.507 | 18% | ✓ live |
+
+**No stops missing. AVGO stop recreated for the reduced 25-share position. 6/6 ✓**
+
+### Account status (post-trim)
+| Field | Value |
+|---|---|
+| Equity | USD 90,399.99 |
+| Cash | USD 25,696.41 (28.42%) |
+| Semi-group concentration (NVDA+AVGO) | USD 28,972.51 / USD 90,399.99 = 32.05% (improved from ~35.9% pre-trim) |
+
+### Result
+One trade this run: **AVGO proactive risk-reduction trim (9 shares, -USD 417.95 realized on the trimmed portion)** — completing a pre-market-approved trade that the market-open routine failed to execute, ahead of the July 3–6 holiday closure. No mechanical -12% cuts fired (AVGO closest at -11.458%, now on a smaller 25-share base). No winners eligible for stop-tightening. News scan confirmed all three sub-5%-down-or-more positions (NVDA, AVGO, ETN) have intact theses — macro/sector pressure, not company-specific breaks. Stop audit 6/6 ✓. Shock check NOT triggered (-1.584% pre-trim). Cash now 28.42%, a healthier buffer heading into the 4-day closure. Control: ACTIVE. **Flagging the market-open execution gap for the human — the pre-market plan step and the market-open execution step are not staying in sync.** [search: WebSearch fallback — MiniMax M3 MCP not connected this session]
+

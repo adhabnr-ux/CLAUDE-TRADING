@@ -6,6 +6,70 @@ but always re-fetches live data before trading._
 
 ---
 
+## Last snapshot — 2026-07-02 MIDDAY (~12:41 PM ET)
+
+| Field | Value |
+|---|---|
+| Equity | USD 90,399.99 |
+| Cash | USD 25,696.41 (28.42%) |
+| Long market value | USD 64,703.58 |
+| Open positions | 6 |
+| last_equity (July 1 EOD close — Alpaca authoritative) | USD 91,830.01 |
+| Midday P/L vs last_equity (pre-trim) | **-USD 1,455.00 (-1.584%)** |
+| HWM | USD 101,144.73 |
+| Drawdown from HWM | **-10.629%** (circuit breaker -20% — NOT triggered; 9.371pp headroom) |
+
+**Shock check:** -1.584% vs threshold -6% → NOT triggered ✓
+
+**Open positions (July 2 midday ~12:43 PM ET, post-trim):**
+
+| Symbol | Qty | Avg Entry | Current Price | Market Value | Unrealized P/L | P/L % | -12% Cut Trigger | Buffer | Rating |
+|---|---|---|---|---|---|---|---|---|---|
+| NVDA | 103 | USD 213.60 | USD 193.91 | USD 19,972.73 | -USD 2,028.07 | **-9.218%** | USD 187.968 | 2.782pp ⚠️ | A |
+| AVGO | 25 (trimmed from 34) | USD 406.23 | USD 359.97 | USD 8,999.25 | -USD 1,156.50 | **-11.388%** | USD 357.4824 | **0.612pp 🔴 CRITICAL** | A |
+| ETN | 34 | USD 419.54 | USD 395.01 | USD 13,430.34 | -USD 834.02 | **-5.847%** | USD 369.1952 | 6.153pp | A |
+| GOOGL | 16 | USD 370.22 | USD 355.62 | USD 5,689.92 | -USD 233.60 | **-3.944%** | USD 325.7936 | 8.056pp ✓ | A |
+| AMZN | 36 | USD 247.991 | USD 245.385 | USD 8,833.86 | -USD 93.82 | **-1.051%** | USD 218.232 | 10.949pp ✓ | A |
+| VST | 52 | USD 151.47 | USD 149.501 | USD 7,774.05 | -USD 102.39 | **-1.300%** | USD 133.29 | comfortable ✓ | A |
+
+**Cut rule check (>-12% from entry): NO positions triggered.** AVGO most stressed at -11.388% (0.612pp buffer, still short of the mechanical -12% line, now on a reduced 25-share base after this run's proactive trim).
+
+**Stop audit (July 2 midday): ALL 6 CONFIRMED LIVE ✓**
+
+| Symbol | Stop Order ID | HWM | Stop Price | Trail % | Status |
+|---|---|---|---|---|---|
+| NVDA | `54d7d851` | USD 221.60 | USD 181.712 | 18% | ✓ live |
+| AVGO | `cf2956dc` (recreated this run) | USD 359.95 | USD 295.159 | 18% | ✓ live |
+| ETN | `abdc232b` | USD 427.93 | USD 350.9026 | 18% | ✓ live |
+| GOOGL | `e52a43f1` | USD 375.77 | USD 308.1314 | 18% | ✓ live |
+| AMZN | `b55bef05` | USD 252.525 | USD 207.0705 | 18% | ✓ live |
+| VST | `5b347be3` | USD 171.35 | USD 140.507 | 18% | ✓ live |
+
+**No stops missing. AVGO stop recreated after the 9-share trim. 6/6 ✓**
+
+**Trade this run:** Sold 9 AVGO shares at USD 359.791111 avg (realized P/L -USD 417.95, -11.434%) — completed the pre-market-approved 25% proactive trim that the market-open routine failed to execute. See trade-log.md for full reasoning. This was risk-reduction on an existing position, not a new buy.
+
+**Sector exposure (July 2 midday, post-trim):**
+| Sector | Names | Market Value | % of Equity |
+|---|---|---|---|
+| Technology — semis | NVDA, AVGO | USD 28,971.98 | 32.05% |
+| Technology — hyperscalers | GOOGL, AMZN | USD 14,523.78 | 16.07% |
+| Industrials/Power Infra | ETN | USD 13,430.34 | 14.86% |
+| Utilities/Power | VST | USD 7,774.05 | 8.60% |
+| Cash | — | USD 25,696.41 | 28.42% |
+
+No sector at 60%+ threshold.
+
+**Performance vs SPY (July 2 midday):**
+| Metric | Value |
+|---|---|
+| Equity | USD 90,399.99 |
+| Aggro return since inception | **(90,399.99 − 100,000) / 100,000 = -9.600%** |
+
+_Midday July 2: Discovered the pre-market's planned AVGO 25% trim (9 shares) never executed at market open — no trade-log entry, no order history match. By midday, AVGO's buffer had compressed further to 0.542pp (pre-trim) from the -12% cut trigger, heading directly into the July 3 holiday + weekend 4-day closure. Executed the already-approved trim as risk management on an existing position: canceled stop, sold 9 shares (-USD 417.95 realized), replaced the trailing stop on the remaining 25 shares. No mechanical -12% cuts fired. No winners eligible for tightening. News scan confirmed NVDA/AVGO/ETN theses all intact — macro/sector pressure only. Stop audit 6/6 ✓. Shock check NOT triggered. Cash now 28.42%, a healthier buffer into the closure. Flagging the market-open execution gap for the human. Control: ACTIVE. [search: WebSearch fallback — MiniMax M3 MCP not connected this session]_
+
+---
+
 ## Last snapshot — 2026-07-02 PRE-MARKET (~8:12 AM ET)
 
 | Field | Value |
