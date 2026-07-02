@@ -3,10 +3,60 @@
 _Updated by every routine from live Alpaca data. The next agent trusts this as
 the last known state, but always re-fetches live data before trading._
 
-**Last updated:** 2026-07-02 09:36 ET (market-open; stop audit 3/3 PASS; LLY $1,194.375 +9.22% / V $355.11 +9.75%; 0 trades — plan was empty, no candidates qualified; no thesis breaks; sector caps and cash minimum all clear)
+**Last updated:** 2026-07-02 12:34 ET (midday; stop audit 3/3 PASS; LLY $1,207.955 +10.46% / V $359.57 +11.13%; 0 trades — no cuts, no tightenings; NFP-driven SPY dip today, Bull relative outperformance; news scan on both positions (both >10% from entry) found thesis-confirming catalysts, no breaks)
 **Inception:** 2026-05-21 — starting equity $100,000.00 | SPY anchor price $739.44
 **SPY total-return anchor (post-June 18 ex-div $1.76):** **$741.20**
 **Cumulative SPY dividends since inception (quarterly tracker):** $1.76/sh (June 18 ex-div); next SPY ex-div est. ~September 2026.
+
+---
+
+## Account (midday July 2, 2026 — live Alpaca data ~12:34 ET)
+
+| Metric | Value |
+|--------|-------|
+| Equity | $100,014.58 |
+| Cash | $80,023.72 (80.01%) |
+| Long market value | $19,990.09 |
+| Buying power | ~$80,023.72 (cash) / $376,069.29 (margin, unused) |
+| Last equity (July 1 Alpaca close) | $99,664.88 |
+
+## Open positions (midday July 2, 2026 — live Alpaca data ~12:34 ET)
+
+| Symbol | Qty | Avg entry | Current price | Mkt value | Unrealized P/L | % of portfolio | Trailing Stop |
+|--------|-----|-----------|--------------|-----------|----------------|----------------|---------------|
+| LLY | 10 | $1,093.534 | $1,207.955 | $12,079.55 | +$1,144.21 (+10.46%) | 12.08% | d4147484 (7sh) + 25989fb5 (3sh), HWM $1,238.00, stop $1,114.20 ✓ — buffer $93.755 (7.76%) ✓ |
+| V | 22 | $323.57 | $359.57 | $7,910.54 | +$792.00 (+11.13%) | 7.91% | 66033918 (22sh, HWM $359.65 ⬆️ auto-ratcheted intraday, stop $323.685 ⬆️) ✓ — buffer $35.885 (9.98%) ✓ |
+
+**Sector exposure (midday July 2):**
+- Healthcare (LLY): $12,079.55 = 12.08% | Financials (V): $7,910.54 = 7.91% | Cash: $80,023.72 = 80.01%
+- No sector above 60% cap ✓
+
+**Trailing stop status (midday July 2 — confirmed via Alpaca live orders ~12:34 ET):**
+- LLY (d4147484): 7sh — HWM $1,238.00, stop $1,114.20 ✓ (buffer $93.755 = 7.76%)
+- LLY (25989fb5): 3sh — HWM $1,238.00, stop $1,114.20 ✓
+- V (66033918): 22sh — HWM **$359.65** ⬆️ (auto-ratcheted from $356.60), stop **$323.685** ⬆️ (up from $320.94) ✓ (buffer $35.885 = 9.98%)
+**Stop audit: 3/3 PASS ✓** (3 live trailing-stop orders across 2 positions; none missing)
+
+**Midday July 2 notes (~12:34 ET — stop audit 3/3 PASS; 0 trades; no cuts; no tightenings; NFP print drove a broad SPY dip while LLY/V held gains on company-specific catalysts):**
+- **Shock check:** $100,014.58 vs last_equity $99,664.88 = **+$349.70 = +0.351%** — no shock ✓ (threshold −4%)
+- **Drawdown circuit breaker:** $100,014.58 vs HWM $101,384.21 = **−1.351%** — NOT triggered ✓ (8.649pp headroom; CB trigger USD 91,245.79)
+- **Macro:** June nonfarm payrolls (8:30 AM ET) appears to have come in soft/mixed — SPY fell from market-open's $748.91 to $742.85 at midday, a −0.81% intraday move. Broad tape pulled back on the print while Bull's two holdings (company-specific catalysts, not macro-sensitive) continued to rally — a favorable divergence day.
+- **LLY** $1,207.955 (+10.46% from entry, +1.36% today): Crossed the +10%-from-entry news-scan trigger. Scan found: Friday's CHMP (EU) backing of Jaypirca for CLL across all lines, Medicare GLP-1 Bridge program details (up to 20M Medicare Part D patients, $50/month, launched July 1), and Leerink's PT raise to $1,232 (from $1,119) — all confirmatory, not new since pre-market/market-open. No thesis break. HWM $1,238 not yet exceeded (current price still below it) — no ratchet. Buffer 7.76% ✓. review_by 2026-07-07 not due. HOLD. Conviction A.
+- **V** $359.57 (+11.13% from entry, +2.42% today): Crossed the +10%-from-entry news-scan trigger. Scan found: Bernstein initiated/reiterated a Buy rating, and Visa joined 140+ partners to launch "Open USD," a consortium stablecoin positioned against USDC/USDT — a genuine incremental catalyst extending the stablecoin/tokenization thesis already on file. No negative news. HWM auto-ratcheted intraday to $359.65 (from $356.60), stop tightened to $323.685 (from $320.94). Buffer 9.98% ✓. Not yet at the +15% tighten-trail trigger ($372.10). review_by 2026-07-28 not due. HOLD. Conviction B.
+- **No cuts** (−7% rule): both positions far above threshold ✓
+- **No discretionary tightenings** (+15% trigger = LLY $1,257.56 / V $372.10): neither reached ✓ (V closest at +11.13%)
+- **Stop audit:** 3/3 live trailing-stop orders confirmed (LLY 7sh + 3sh, V 22sh) — matches held quantities exactly. No missing stops, nothing to recreate.
+- **No new positions** — midday routine manages existing risk only, per playbook.
+- **Trades today:** 0.
+- **Since inception:** Bull +0.0146% ($100,014.58) vs SPY TR +0.699% ($742.85 + $1.76 div vs $739.44 anchor) → **Bull TRAILS SPY −0.685pp** (narrowed sharply from −1.739pp at market-open as SPY sold off on the NFP print while LLY/V held their gains)
+
+## Performance vs S&P 500
+
+| Period | Bull | SPY | Difference |
+|--------|------|-----|------------|
+| Inception (2026-05-21) | $100,000.00 | $739.44 | — |
+| **Midday (2026-07-02)** | **$100,014.58 (+0.0146%)** | **SPY $742.85 + $1.76 div = +0.699% TR** | **Bull TRAILS SPY −0.685pp** |
+| **Market-open (2026-07-02)** | **$99,779.89 (−0.220%)** | **SPY $748.91 + $1.76 div = +1.519% TR** | **Bull TRAILS SPY −1.739pp** |
 
 ---
 
