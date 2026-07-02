@@ -6,6 +6,79 @@ but always re-fetches live data before trading._
 
 ---
 
+## Last snapshot — 2026-07-02 EOD CLOSE (~4:10 PM ET)
+
+| Field | Value |
+|---|---|
+| Equity | USD 90,628.89 |
+| Cash | USD 25,696.41 (28.36%) |
+| Long market value | USD 64,932.48 |
+| Open positions | 6 |
+| last_equity (July 1 EOD close — Alpaca authoritative) | USD 91,830.01 |
+| Today's P/L vs last_equity | **-USD 1,201.12 (-1.308%)** |
+| HWM | USD 101,144.73 (carried from memory — see data-integrity note below) |
+| Drawdown from HWM | **-10.398%** (circuit breaker -20% — NOT triggered; 9.602pp headroom) |
+
+**Shock check:** -1.308% vs threshold -6% → NOT triggered ✓
+
+**⚠️ Data-integrity note:** `./scripts/alpaca.sh history 1A 1D` (and `1M 1D`) returned an equity trajectory that does NOT match this account — e.g. it showed July 1 equity of USD 101,114.52 and July 2 of USD 98,883.95, both far above and inconsistent with this account's actual known equity (USD 91,756.99 on July 1, per this file). Repeated calls returned the identical wrong series regardless of period argument, while `account` and `positions` calls consistently matched this account's true holdings (confirmed against known position quantities and stop order IDs). This looks like a caching/routing bug (possibly the outbound proxy keying on URL only, ignoring auth) rather than an account mixup on our end — the wrong series' shape resembles Cautious Bull's equity curve. **Used the memory-carried HWM (USD 101,144.73, set June 4/5 inception week and consistent across 20+ prior routine journal entries) instead of the corrupted API response.** Flagging for the human — this could silently corrupt circuit-breaker math in a future routine if the same bug recurs and nobody catches it.
+
+**Open positions (July 2 EOD ~4:10 PM ET):**
+
+| Symbol | Qty | Avg Entry | EOD Price | Market Value | Unrealized P/L | P/L % | -12% Cut Trigger | Buffer | Rating |
+|---|---|---|---|---|---|---|---|---|---|
+| NVDA | 103 | USD 213.60 | USD 194.75 | USD 20,059.25 | -USD 1,941.55 | **-8.825%** | USD 187.968 | 3.176pp ⚠️ | A |
+| AVGO | 25 (trimmed from 34 at midday) | USD 406.23 | USD 360.0611 | USD 9,001.53 | -USD 1,154.22 | **-11.365%** | USD 357.4824 | **0.635pp 🔴 CRITICAL** | A |
+| ETN | 34 | USD 419.54 | USD 398.52 | USD 13,549.68 | -USD 714.68 | **-5.010%** | USD 369.1952 | 6.990pp | A |
+| GOOGL | 16 | USD 370.22 | USD 358.38 | USD 5,734.08 | -USD 189.44 | **-3.198%** | USD 325.7936 | 8.802pp ✓ | A |
+| AMZN | 36 | USD 247.991 | USD 242.54 | USD 8,731.44 | -USD 196.24 | **-2.198%** | USD 218.232 | 9.802pp ✓ | A |
+| VST | 52 | USD 151.47 | USD 151.05 | USD 7,854.60 | -USD 21.84 | **-0.277%** | USD 133.29 | 11.723pp ✓ | A |
+
+**Cut rule check (>-12% from entry): NO positions triggered.** AVGO remains most stressed at -11.365% (0.635pp buffer, essentially unchanged from midday's 0.612pp after a further -2.5% intraday move on the reduced 25-share base). No mechanical cut warranted — the midday proactive trim already addressed the risk this run.
+
+**Stop audit (July 2 EOD): ALL 6 CONFIRMED LIVE ✓ (verified from open orders — status: "new")**
+
+| Symbol | Stop Order ID | HWM | Stop Price | Trail % | Status |
+|---|---|---|---|---|---|
+| NVDA | `54d7d851` | USD 221.60 | USD 181.712 | 18% | ✓ live |
+| AVGO | `cf2956dc` | USD 361.44 | USD 296.3808 | 18% | ✓ live |
+| ETN | `abdc232b` | USD 427.93 | USD 350.9026 | 18% | ✓ live |
+| GOOGL | `e52a43f1` | USD 375.77 | USD 308.1314 | 18% | ✓ live |
+| AMZN | `b55bef05` | USD 252.525 | USD 207.0705 | 18% | ✓ live |
+| VST | `5b347be3` | USD 171.35 | USD 140.507 | 18% | ✓ live |
+
+**No stops missing. No stops needing recreation. No trailing-stop fills today. No new exits today (the AVGO reduction already happened at midday and was logged then) — no new closed-trades.md entry required. 6/6 ✓**
+
+**Sector exposure (July 2 EOD):**
+| Sector | Names | Market Value | % of Equity |
+|---|---|---|---|
+| Technology — semis | NVDA, AVGO | USD 29,060.78 | 32.07% |
+| Technology — hyperscalers | GOOGL, AMZN | USD 14,465.52 | 15.96% |
+| Industrials/Power Infra | ETN | USD 13,549.68 | 14.95% |
+| Utilities/Power | VST | USD 7,854.60 | 8.67% |
+| Cash | — | USD 25,696.41 | 28.36% |
+
+No sector at 60%+ threshold.
+
+**Market close context (July 2) [search: WebSearch fallback — MiniMax M3 MCP not connected this session]:** S&P 500 +0.49%, Dow +0.46%, Nasdaq +0.40% per WebSearch on a headline basis, driven by a soft June jobs report (+57K vs 115K consensus) ahead of the July 4 long weekend — but Alpaca's own SPY bar tells a different story (open 747.40, high 751.31, low 740.03, close 744.80, down from July 1's close of 745.665, i.e. roughly flat-to-down). As in the July 1 lesson, used Alpaca's own price feed for all P/L and alpha math since that's what our equity is actually marked against; the WebSearch headline is color/context only. Our book was broadly weaker across the board today (all 6 positions negative on `change_today`) — consistent with pre-holiday de-risking / thin-liquidity drift rather than any thesis-specific news; no company-specific negative catalysts found for NVDA, AVGO, ETN, GOOGL, AMZN, or VST.
+
+**Performance vs SPY (July 2 EOD):**
+| Metric | Value |
+|---|---|
+| Equity | USD 90,628.89 |
+| Aggro return since inception | **(90,628.89 − 100,000) / 100,000 = -9.371%** |
+| SPY anchor | USD 754.18 (June 3, 2026) |
+| SPY July 2 close | USD 744.80 |
+| SPY since inception | **(744.80 − 754.18) / 754.18 = -1.243%** |
+| Alpha since inception | **-8.128pp** |
+| Today's P/L | -USD 1,201.12 (-1.308%) |
+| SPY today | -0.116% (745.665 → 744.80) |
+| Today alpha | **-1.192pp** |
+
+_EOD July 2: No trades today (the AVGO 9-share risk-reduction trim was executed and logged at midday, completing the pre-market-approved plan the market-open routine had missed). Cut rule check clean — no positions breached -12% (AVGO closest at 0.635pp buffer, essentially flat vs midday). Stop audit 6/6 ✓, all live. Shock check NOT triggered (-1.308%). Drawdown -10.398% from the memory-carried HWM (9.602pp headroom to the -20% circuit breaker — not close to the 3pp-from-trigger flag threshold). Control: ACTIVE, no NOTE/QUERY lines this run. Heading into the July 3 holiday + weekend (4-day closure, market reopens July 6): AVGO (0.635pp) and NVDA (3.176pp) are the two positions to check first at Monday pre-market — AVGO in particular has almost no room left before the mechanical -12% rule would fire, though the position was already reduced 25% today specifically to manage this gap risk. Flagging the `history` endpoint data-integrity issue above for the human's attention — not urgent for today's trading (fallback HWM was correct and cross-checked against 20+ prior entries) but worth a look if it recurs. [search: WebSearch fallback — MiniMax M3 MCP not connected this session]_
+
+---
+
 ## Last snapshot — 2026-07-02 MIDDAY (~12:41 PM ET)
 
 | Field | Value |
