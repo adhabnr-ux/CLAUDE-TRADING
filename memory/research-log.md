@@ -7,6 +7,114 @@ _Entries before 2026-06-01 archived to `memory/archive/2026-05.md` (2026-07-01 m
 
 ---
 
+## 2026-07-02 — Pre-market research (~08:10 ET)
+
+### Live-switch guard
+- `ALPACA_BASE_URL` contains "paper" ✓ — paper trading confirmed.
+
+### Control switch
+- `memory/control.md` STATUS: **ACTIVE**. No `NOTE:` or `QUERY:` line present. Nothing to acknowledge or answer.
+
+### Account snapshot (live Alpaca ~08:06 ET)
+
+| Metric | Value |
+|--------|-------|
+| Equity | $99,717.72 |
+| Cash | $80,023.72 (80.25%) |
+| Long market value | $19,694.00 |
+| Last equity (July 1 close) | $99,664.88 |
+| Shock check | +$52.84 (+0.053%) vs last_equity — no shock ✓ (threshold −4%) |
+| HWM (since inception) | $101,384.21 |
+| Drawdown | −1.644% — NOT triggered ✓ (circuit breaker at −10%; 8.356pp headroom) |
+
+### Macro (pre-market July 2, 2026 ~08:06 ET)
+
+| Indicator | Value | Threshold | Status |
+|-----------|-------|-----------|--------|
+| S&P 500 | ~7,478 (−0.08% prior session context) | — | Choppy — semiconductor/memory-chip selloff dominating the tape |
+| Nasdaq (July 1 close) | −0.66% | — | Micron −8%, SanDisk −10%, Western Digital −7% — DRAM antitrust class-action + Citi demand-softening note driving the memory-chip rout |
+| S&P 500 / Dow (July 1 close) | −0.22% / −0.03% | — | Broad market only mildly negative; selloff is semiconductor-specific, not systemic |
+| **June nonfarm payrolls — TODAY 8:30 AM ET** | fcst +115K (range 87K–118K), unemployment fcst 4.3% | — | Major macro print landing before the open; June ADP (July 1) was soft at +98K vs +110K expected — some downside risk to consensus |
+| 10yr Treasury | ~4.44% (June 30 close) | <4.75% | ✓ GATE PASSES |
+| Fed Chair Kevin Warsh | Reaffirmed price-stability commitment July 1; inflation expectations "eased" per his remarks | — | No new hawkish surprise |
+
+**Narrative:** The tape's stress is concentrated in semiconductors/memory chips (Micron, SanDisk, Western Digital hit hard on a DRAM antitrust class action and a Citi note flagging potential demand softening from high memory prices), not a broad risk-off move — S&P and Dow were only modestly lower July 1. Today's headline event is the June nonfarm payrolls report at 8:30 AM ET, landing right before the open; a soft ADP print yesterday (+98K vs +110K) raises some downside risk to the +115K consensus. A weak print could reinforce rate-cut hopes (equity-supportive) or read as labor deterioration (risk-off) depending on magnitude — genuine two-way risk. Not a day to add new positions ahead of the data.
+
+### Position thesis reviews — "what changed since yesterday"
+
+**LLY** ($1,192.80 pre-mkt, +9.08% from entry $1,093.534)
+- _What changed since July 1:_ No new company-specific news since the Medicare GLP-1 Bridge program launch (July 1). Stock is holding its post-launch gains, modestly positive pre-market. Leerink PT $1,232 (unchanged, set June 25). No negative catalysts found.
+- Stop: HWM $1,238.00, stop $1,114.20 (buffer $78.60 = 6.59%) ✓
+- Earnings: confirmed Aug 5, 2026 — outside the 2-day window ✓
+- Invalidation: close below stop $1,114.20; or Medicare Bridge pricing/utilization data reveals margin deterioration.
+- review_by: **2026-07-07** (unchanged) — not due today; nothing new to force a decision.
+- **Decision: HOLD. Conviction: A.**
+
+**V** ($353.00 pre-mkt, +9.10% from entry $323.57)
+- _What changed since July 1:_ No negative news. Confirmed still Overweight at Piper Sandler (June 29). No new catalysts overnight — thesis unchanged.
+- Stop: HWM $353.36, stop $318.024 (buffer $34.976 = 9.91%) ✓
+- Earnings: confirmed July 28, 2026 — outside the 2-day window ✓
+- Invalidation: close below stop $318.024; or a reversal in payments-volume trends.
+- review_by: 2026-07-28 (unchanged) — not due.
+- **Decision: HOLD. Conviction: B.**
+
+### Stop audit (pre-market July 2 — confirmed via Alpaca live orders ~08:06 ET)
+
+| Order ID | Symbol | Qty | HWM | Stop | Buffer | Status |
+|----------|--------|-----|-----|------|--------|--------|
+| d4147484 | LLY | 7sh | $1,238.00 | $1,114.20 | $78.60 (6.59%) | ✓ active |
+| 25989fb5 | LLY | 3sh | $1,238.00 | $1,114.20 | $78.60 (6.59%) | ✓ active |
+| 66033918 | V | 22sh | $353.36 | $318.024 | $34.976 (9.91%) | ✓ active |
+**Stop audit: 3/3 PASS ✓** No missing stops.
+
+### Earnings calendar confirmation
+- LLY: next earnings Aug 5, 2026 ✓ (outside window)
+- V: next earnings July 28, 2026 ✓ (outside window)
+- LRCX: next earnings ~July 29, 2026 (not held; informational)
+
+### Watchlist / candidate review
+
+| Ticker | ATR gate status | Notes |
+|--------|-----------------|-------|
+| LRCX | **FAILS again** — July 1 session: H $414.33 / L $381.47 / C $391.36 = **8.40% ATR** (memory-chip selloff hit LRCX directly). Gate counter stays **0/2** under the July 1 reset. | Semicap thesis (Samsung/SK Hynix $1.3T capex wave) still intact per prior PT raises, but the DRAM antitrust suit + demand-softening concerns are a fresh overhang worth monitoring. Not eligible today regardless. |
+| ETN | **1/2** — July 1 session: H $423.36 / L $405.215 / C $412.16 = **4.40% ATR** ✓ clears the loosened ≤5% threshold. First qualifying session under the July 1 reset. Needs one more ≤5% session (today, July 2) to clear at 2/2 — not eligible today even if today qualifies, since today's session isn't complete yet. Earliest possible entry: July 3 pre-market (if today's ATR also ≤5%). | New catalyst found: Eaton added to the Russell 1000 Growth / Russell Top 200 Growth / Russell 3000E Growth indices — passive-flow tailwind. FY26 EPS guidance raised to USD 13.00–13.50. AI data-center electrical-demand thesis unchanged. |
+| NVDA | Still excluded (cooling period from June 25 stop-out) | Re-eligible **2026-07-09**. No action today. |
+| MSFT / COST / JNJ / WMT / PWR | No change | No new signal; pre-earnings gates / ATR elevation / insider-selling flags from prior weeks unchanged. |
+
+### Cash-drag check
+
+Cash is 80.25% — far above the 10–20% target band for a 2-position book, elevated for 6+ consecutive weeks. No candidate qualifies today: LRCX failed its ATR gate again July 1 (8.40%, hit directly by the memory-chip selloff); ETN cleared its first qualifying session (1/2) but cannot be bought until its second consecutive ≤5% session completes (earliest July 3); no other watchlist name clears its entry signals. Today additionally carries major macro-event risk — June nonfarm payrolls at 8:30 AM ET, with a soft ADP print yesterday raising two-way surprise risk — an inappropriate day to add fresh risk even if a gate had cleared. Staying in cash today is a deliberate, written decision, not a passive default. Will re-check the ETN gate at every session this week; if today's ATR also clears ≤5%, ETN becomes eligible at Monday July 6 pre-market (Friday July 3 is a half day ahead of the July 4 holiday — market closed July 4, reopens July 6).
+
+### Risk posture check
+
+- **Drawdown circuit breaker:** $99,717.72 vs HWM $101,384.21 = **−1.644%** — NOT triggered ✓ (8.356pp headroom; CB trigger USD 91,245.79)
+- **Sector exposure:** Healthcare (LLY) $11,928.00 = 11.96% | Financials (V) $7,766.00 = 7.79% | Cash $80,023.72 = 80.25% — no sector above 60% cap ✓
+
+### Performance vs S&P 500 (pre-market July 2)
+
+| Period | Bull | SPY | Difference |
+|--------|------|-----|------------|
+| Inception (2026-05-21) | $100,000.00 | $739.44 | — |
+| **Pre-market (2026-07-02)** | **$99,717.72 (−0.282%)** | **SPY ~$746.75 + $1.76 div = +1.227% TR** | **Bull TRAILS SPY ~1.509pp** |
+| Close (2026-07-01) | $99,626.38 (−0.374%) | SPY $746.5225 + $1.76 div = +1.196% TR | Bull TRAILS SPY −1.569pp |
+
+### Market posture
+
+Semiconductor/memory-chip weakness (Micron, SanDisk, Western Digital) is the dominant story, not a broad risk-off tape — S&P and Dow were only modestly lower July 1, and Bull holds no chip exposure. Today's key event is the June jobs report at 8:30 AM ET; a soft ADP print yesterday adds two-way surprise risk. Both held positions (LLY, V) are thesis-intact with healthy stop buffers and no forced decisions due. ETN cleared its first ATR-gate session but isn't eligible until a second clean session completes; LRCX failed again on direct semiconductor-selloff exposure. No watchlist name qualifies for entry today, and the NFP print is reason enough on its own to hold off on new risk. Doing nothing is the correct, disciplined call today.
+
+### Planned trades for today
+
+No trades planned. NFP report at 8:30 AM ET (major macro event); LRCX ATR gate failed again (8.40%); ETN ATR gate 1/2, not yet eligible; no other watchlist name qualifies. Both held positions HOLD, no forced decisions due.
+
+```json
+{
+  "plan_date": "2026-07-02",
+  "trades": []
+}
+```
+
+---
+
 ## 2026-07-01 — Pre-market research (~08:10 ET)
 
 ### Live-switch guard

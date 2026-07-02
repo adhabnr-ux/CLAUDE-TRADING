@@ -3,10 +3,59 @@
 _Updated by every routine from live Alpaca data. The next agent trusts this as
 the last known state, but always re-fetches live data before trading._
 
-**Last updated:** 2026-07-01 15:51 ET (close; stop audit 3/3 PASS; LLY $1,189.76 +8.80% / V $350.23 +8.24%; 0 trades — no cuts, no tightenings, no new positions; Bull −0.374% TRAILS SPY TR +1.196% → −1.569pp; no thesis breaks; sector caps and cash minimum all clear; monthly housekeeping: research-log.md and trade-log.md pre-June entries archived to memory/archive/2026-05.md)
+**Last updated:** 2026-07-02 08:06 ET (pre-market; stop audit 3/3 PASS; LLY $1,192.80 +9.08% / V $353.00 +9.10%; 0 trades — market not yet open, no trades planned today; no thesis breaks; sector caps and cash minimum all clear; NFP report 8:30 AM ET, LRCX ATR gate failed again 8.40%, ETN gate 1/2)
 **Inception:** 2026-05-21 — starting equity $100,000.00 | SPY anchor price $739.44
 **SPY total-return anchor (post-June 18 ex-div $1.76):** **$741.20**
 **Cumulative SPY dividends since inception (quarterly tracker):** $1.76/sh (June 18 ex-div); next SPY ex-div est. ~September 2026.
+
+---
+
+## Account (pre-market July 2, 2026 — live Alpaca data ~08:06 ET)
+
+| Metric | Value |
+|--------|-------|
+| Equity | $99,717.72 |
+| Cash | $80,023.72 (80.25%) |
+| Long market value | $19,694.00 |
+| Buying power | ~$80,023.72 (cash) / $375,238.08 (margin, unused) |
+| Last equity (July 1 Alpaca close) | $99,664.88 |
+
+## Open positions (pre-market July 2, 2026 — live Alpaca data ~08:06 ET)
+
+| Symbol | Qty | Avg entry | Current price | Mkt value | Unrealized P/L | % of portfolio | Trailing Stop |
+|--------|-----|-----------|--------------|-----------|----------------|----------------|---------------|
+| LLY | 10 | $1,093.534 | $1,192.80 | $11,928.00 | +$992.66 (+9.08%) | 11.96% | d4147484 (7sh) + 25989fb5 (3sh), HWM $1,238.00, stop $1,114.20 ✓ — buffer $78.60 (6.59%) ✓ |
+| V | 22 | $323.57 | $353.00 | $7,766.00 | +$647.46 (+9.10%) | 7.79% | 66033918 (22sh, HWM $353.36, stop $318.024) ✓ — buffer $34.976 (9.91%) ✓ |
+
+**Sector exposure (pre-market July 2):**
+- Healthcare (LLY): $11,928.00 = 11.96% | Financials (V): $7,766.00 = 7.79% | Cash: $80,023.72 = 80.25%
+- No sector above 60% cap ✓
+
+**Trailing stop status (pre-market July 2 — confirmed via Alpaca live orders ~08:06 ET):**
+- LLY (d4147484): 7sh — HWM $1,238.00, stop $1,114.20 ✓ (buffer $78.60 = 6.59%)
+- LLY (25989fb5): 3sh — HWM $1,238.00, stop $1,114.20 ✓
+- V (66033918): 22sh — HWM $353.36, stop $318.024 ✓ (buffer $34.976 = 9.91%)
+**Stop audit: 3/3 PASS ✓** (3 live trailing-stop orders across 2 positions)
+
+**Pre-market July 2 notes (~08:06 ET — stop audit 3/3 PASS; no trades, market not yet open; no new positions planned):**
+- **Shock check:** $99,717.72 vs last_equity $99,664.88 = **+$52.84 = +0.053%** — no shock ✓ (threshold −4%)
+- **Drawdown circuit breaker:** $99,717.72 vs HWM $101,384.21 = **−1.644%** — NOT triggered ✓ (8.356pp headroom; CB trigger USD 91,245.79)
+- **Macro (pre-market ~08:06 ET):** Semiconductor/memory-chip selloff (Micron −8%, SanDisk −10%, Western Digital −7% on July 1 — DRAM antitrust class action + Citi demand-softening note) dominated the tape, but the broad market was only mildly lower (S&P −0.22%, Dow −0.03%, Nasdaq −0.66%). Today's key event: June nonfarm payrolls at 8:30 AM ET (fcst +115K, unemployment 4.3%); yesterday's soft ADP (+98K vs +110K) adds two-way surprise risk. 10yr yield 4.44% — **BELOW 4.75% gate ✓**. No new positions ahead of the jobs data.
+- **LLY** $1,192.80 (+9.08% from entry): No new news since the Medicare Bridge launch (July 1); stock holding gains, modestly positive pre-market. Leerink PT $1,232 unchanged. Next earnings Aug 5. Thesis intact, review_by 2026-07-07 not yet due. HOLD. Conviction A.
+- **V** $353.00 (+9.10% from entry): No negative news; Piper Sandler Overweight (June 29) stands. Next earnings July 28. Thesis intact. review_by 2026-07-28 not due. HOLD. Conviction B.
+- **LRCX ATR gate:** July 1 session H $414.33 / L $381.47 / C $391.36 = **8.40% ATR** ⚠️ FAILS again — hit directly by the memory-chip selloff. Gate counter stays **0/2** under the July 1 reset. Not eligible today.
+- **ETN ATR gate:** July 1 session H $423.36 / L $405.215 / C $412.16 = **4.40% ATR** ✓ — first qualifying session under the July 1 reset. Gate counter **1/2**. Needs one more ≤5% session (today) to clear; not eligible for entry today regardless. New catalyst: added to Russell 1000 Growth / Russell Top 200 Growth / Russell 3000E Growth indices; FY26 EPS guidance raised to USD 13.00–13.50.
+- **Cash-drag check:** Cash at 80.25%, well above the 10–20% target band, elevated 6+ weeks. No qualifying entry today: LRCX failed its ATR gate again; ETN is 1/2 through its gate and cannot be bought until a second clean session completes; no other watchlist name clears its entry signals; and today carries major macro-event risk (NFP at 8:30 AM ET). Staying in cash today is the correct, deliberate call, not a default.
+- **Trades today:** 0 (pre-market only; market not yet open).
+- **Since inception:** Bull −0.282% ($99,717.72) vs SPY TR ~+1.227% (~$746.75 + $1.76 div vs $739.44 anchor) → **Bull TRAILS SPY ~−1.509pp**
+
+## Performance vs S&P 500
+
+| Period | Bull | SPY | Difference |
+|--------|------|-----|------------|
+| Inception (2026-05-21) | $100,000.00 | $739.44 | — |
+| **Pre-market (2026-07-02)** | **$99,717.72 (−0.282%)** | **SPY ~$746.75 + $1.76 div = +1.227% TR** | **Bull TRAILS SPY ~−1.509pp** |
+| **Close (2026-07-01)** | **$99,626.38 (−0.374%)** | **SPY $746.5225 + $1.76 div = +1.196% TR** | **Bull TRAILS SPY −1.569pp** |
 
 ---
 
