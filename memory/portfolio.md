@@ -3,10 +3,61 @@
 _Updated by every routine from live Alpaca data. The next agent trusts this as
 the last known state, but always re-fetches live data before trading._
 
-**Last updated:** 2026-07-02 12:34 ET (midday; stop audit 3/3 PASS; LLY $1,207.955 +10.46% / V $359.57 +11.13%; 0 trades — no cuts, no tightenings; NFP-driven SPY dip today, Bull relative outperformance; news scan on both positions (both >10% from entry) found thesis-confirming catalysts, no breaks)
+**Last updated:** 2026-07-02 15:55 ET (close; stop audit 3/3 PASS; LLY $1,205.65 +10.25% / V $360.83 +11.51%; 0 trades — no cuts, no tightenings; soft NFP print (+57K vs +113K est), Fed Chair Warsh constructive on inflation, chip-sector selloff continued, Financials/Comm Services led — Bull outperformed SPY today +0.704pp)
 **Inception:** 2026-05-21 — starting equity $100,000.00 | SPY anchor price $739.44
 **SPY total-return anchor (post-June 18 ex-div $1.76):** **$741.20**
 **Cumulative SPY dividends since inception (quarterly tracker):** $1.76/sh (June 18 ex-div); next SPY ex-div est. ~September 2026.
+
+---
+
+## Account (close July 2, 2026 — live Alpaca data ~15:55 ET)
+
+| Metric | Value |
+|--------|-------|
+| Equity | $100,016.50 |
+| Cash | $80,023.72 (80.01%) |
+| Long market value | $19,992.78 |
+| Buying power | ~$80,023.72 (cash) / $376,074.66 (margin, unused) |
+| Last equity (July 1 Alpaca close) | $99,664.88 |
+
+## Open positions (close July 2, 2026 — live Alpaca data ~15:55 ET)
+
+| Symbol | Qty | Avg entry | Current price | Mkt value | Unrealized P/L | % of portfolio | Trailing Stop |
+|--------|-----|-----------|--------------|-----------|----------------|----------------|---------------|
+| LLY | 10 | $1,093.534 | $1,205.65 | $12,056.50 | +$1,121.16 (+10.25%) | 12.06% | d4147484 (7sh) + 25989fb5 (3sh), HWM $1,238.00, stop $1,114.20 ✓ — buffer $91.45 (7.59%) ✓ |
+| V | 22 | $323.57 | $360.83 | $7,938.26 | +$819.72 (+11.51%) | 7.94% | 66033918 (22sh, HWM $360.84 ⬆️ auto-ratcheted intraday, stop $324.756 ⬆️) ✓ — buffer $36.074 (10.00%) ✓ |
+
+**Sector exposure (close July 2):**
+- Healthcare (LLY): $12,056.50 = 12.06% | Financials (V): $7,938.26 = 7.94% | Cash: $80,023.72 = 80.01%
+- No sector above 60% cap ✓
+
+**Trailing stop status (close July 2 — confirmed via Alpaca live orders ~15:55 ET):**
+- LLY (d4147484): 7sh — HWM $1,238.00, stop $1,114.20 ✓ (buffer $91.45 = 7.59%)
+- LLY (25989fb5): 3sh — HWM $1,238.00, stop $1,114.20 ✓
+- V (66033918): 22sh — HWM **$360.84** ⬆️ (auto-ratcheted from $359.65 at midday), stop **$324.756** ⬆️ (up from $323.685) ✓ (buffer $36.074 = 10.00%)
+**Stop audit: 3/3 PASS ✓** (3 live trailing-stop orders across 2 positions; none missing)
+
+**Close July 2 notes (~15:55 ET — stop audit 3/3 PASS; 0 trades; no cuts; no tightenings; soft NFP print, Fed comments constructive, chip-sector selloff continues, Financials/Comm Services led):**
+- **Today P/L:** +$351.62 (+0.353%) | SPY −0.351% ($746.5225 → $743.90) | Bull outperformed SPY by +0.704pp today
+- **Shock check:** $100,016.50 vs last_equity $99,664.88 = **+$351.62 = +0.353%** — no shock ✓ (threshold −4%)
+- **Drawdown circuit breaker:** $100,016.50 vs HWM $101,384.21 = **−1.349%** — NOT triggered ✓ (8.651pp headroom; CB trigger USD 91,245.79)
+- **LLY** $1,205.65 (+10.25% from entry, +1.17% today): Continued strength post-Medicare-Bridge-launch; no new news since midday's confirmatory scan (CHMP Jaypirca EU backing, Medicare Bridge live, Leerink PT $1,232). HWM $1,238 not yet exceeded — no ratchet. Buffer 7.59% ✓. review_by 2026-07-07 not due. HOLD. Conviction A.
+- **V** $360.83 (+11.51% from entry, +2.78% today): Extended gains into the close as Financials led the tape (sector +2.2%) on the soft-jobs/steady-Fed read. HWM auto-ratcheted to $360.84 (from $359.65), stop tightened to $324.756 (from $323.685). No new negative news; Bernstein Buy initiation + "Open USD" stablecoin consortium catalyst (from midday scan) stands. Not yet at the +15% tighten-trail trigger ($372.10). review_by 2026-07-28 not due. HOLD. Conviction B.
+- **No cuts** (−7% rule): both positions far above threshold ✓
+- **No discretionary tightenings** (+15% trigger = LLY $1,257.56 / V $372.10): neither reached ✓ (V closest at +11.51%)
+- **Stop audit:** 3/3 live trailing-stop orders confirmed (LLY 7sh + 3sh, V 22sh) — matches held quantities exactly. No missing stops, nothing to recreate.
+- **Market context (July 2):** June nonfarm payrolls came in well below consensus (+57K vs +113K expected; unemployment 4.2% vs 4.3% forecast) — a soft print that broke a three-month hot streak and reinforced the case for the Fed to hold rates steady. Fed Chair Warsh reiterated that inflation risks have eased substantially. The Dow rose ~0.8% to a fresh record; the S&P 500 fell −0.3% and the Nasdaq fell −1.2%, dragged by a continuing chip-sector selloff (Info Tech sector −2.6%). Financials (+2.2%) and Communication Services (+2.4%) led. Neither LLY's nor V's thesis is affected by today's chip-specific weakness; V directly benefited from the Financials-sector rotation. Market closed Friday July 3 for Independence Day; reopens Monday July 6.
+- **Exit reconciliation:** No exits today. closed-trades.md remains current (VST June 30 win is the latest entry). No new lessons.md entry required — nothing notable beyond routine housekeeping.
+- **Trades today:** 0.
+- **Since inception:** Bull +0.0165% ($100,016.50) vs SPY TR +0.8417% ($743.90 + $1.76 div vs $739.44 anchor) → **Bull TRAILS SPY −0.825pp** (was −0.685pp at midday; SPY firmed modestly into the close (742.85→743.90) while Bull's own gain, though the day's strongest single-day outperformance driver was V, didn't fully offset — gap widened slightly from midday but remains far narrower than market-open's −1.739pp)
+
+## Performance vs S&P 500
+
+| Period | Bull | SPY | Difference |
+|--------|------|-----|------------|
+| Inception (2026-05-21) | $100,000.00 | $739.44 | — |
+| **Close (2026-07-02)** | **$100,016.50 (+0.0165%)** | **SPY $743.90 + $1.76 div = +0.842% TR** | **Bull TRAILS SPY −0.825pp** |
+| Midday (2026-07-02) | $100,014.58 (+0.0146%) | SPY $742.85 + $1.76 div = +0.699% TR | Bull TRAILS SPY −0.685pp |
 
 ---
 
