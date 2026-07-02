@@ -6,6 +6,90 @@ but always re-fetches live data before trading._
 
 ---
 
+## Last snapshot — 2026-07-02 PRE-MARKET (~8:12 AM ET)
+
+| Field | Value |
+|---|---|
+| Equity | USD 91,813.06 |
+| Cash | USD 22,458.29 (24.46%) |
+| Long market value | USD 69,354.77 |
+| Open positions | 6 |
+| last_equity (July 1 EOD close — Alpaca authoritative) | USD 91,830.01 |
+| Pre-market P/L vs last_equity | **-USD 16.95 (-0.018%)** |
+| HWM | USD 101,144.73 |
+| Drawdown from HWM | **-9.223%** (circuit breaker -20% — NOT triggered; 10.777pp headroom) |
+
+**Shock check:** -0.018% vs threshold -6% → NOT triggered ✓
+
+**Open positions (July 2 pre-market ~8:12 AM ET):**
+
+| Symbol | Qty | Avg Entry | Current Price | Market Value | Unrealized P/L | P/L % | -12% Cut Trigger | Buffer | Rating |
+|---|---|---|---|---|---|---|---|---|---|
+| NVDA | 103 | USD 213.60 | USD 197.60 | USD 20,352.80 | -USD 1,648.00 | **-7.491%** | USD 187.968 | 4.510pp ✓ | A |
+| AVGO | 34 | USD 406.23 | USD 369.35 | USD 12,557.90 | -USD 1,253.92 | **-9.079%** | USD 357.4824 | **2.922pp 🔴 CRITICAL** | A |
+| ETN | 34 | USD 419.54 | USD 412.50 | USD 14,025.00 | -USD 239.36 | **-1.678%** | USD 369.1952 | 10.323pp ✓ | A |
+| GOOGL | 16 | USD 370.22 | USD 357.382 | USD 5,718.11 | -USD 205.41 | **-3.468%** | USD 325.7936 | 8.532pp ✓ | A |
+| AMZN | 36 | USD 247.991 | USD 241.50 | USD 8,694.00 | -USD 233.68 | **-2.617%** | USD 218.232 | 9.383pp ✓ | A |
+| VST | 52 | USD 151.47 | USD 153.98 | USD 8,006.96 | +USD 130.52 | **+1.657% ✅** | USD 133.29 | comfortable ✓ | A |
+
+**Cut rule check (>-12% from entry): NO positions triggered.** AVGO most stressed at -9.079% (2.922pp buffer).
+
+**Stop audit (July 2 pre-market): ALL 6 CONFIRMED LIVE ✓ (verified from open orders — status: "new")**
+
+| Symbol | Stop Order ID | HWM | Stop Price | Trail % | Status |
+|---|---|---|---|---|---|
+| NVDA | `54d7d851` | USD 221.60 | USD 181.712 | 18% | ✓ live |
+| AVGO | `36f5a45f` | USD 426.48 | USD 349.7136 | 18% | ✓ live |
+| ETN | `abdc232b` | USD 427.93 | USD 350.9026 | 18% | ✓ live |
+| GOOGL | `e52a43f1` | USD 375.77 | USD 308.1314 | 18% | ✓ live |
+| AMZN | `b55bef05` | USD 252.525 | USD 207.0705 | 18% | ✓ live |
+| VST | `5b347be3` | USD 171.35 | USD 140.507 | 18% | ✓ live |
+
+**No stops missing. No stops needing recreation. 6/6 ✓**
+
+**Thesis contracts (July 2 pre-market):**
+| Symbol | Review By | Invalidation | Status | Decision |
+|---|---|---|---|---|
+| NVDA | July 9 | Hyperscaler GPU share reverses | ✓ Intact — -7.491%; 4.510pp ✓; Palantir sovereign-AI partnership (thesis-positive); Wayve tender offer minor | **HOLD** |
+| AVGO | July 9 | AI revenue decelerates | ✓ Intact — -9.079%; **2.922pp 🔴 CRITICAL, below 3pp proactive-trim line, heading into July 3 holiday + weekend (4-day gap)**; no company-specific negative news; 26-analyst Buy consensus, PT USD 523.73 | **PROACTIVE 25% TRIM at market open (see plan)** |
+| ETN | July 9 | ETN below USD 332 OR AI capex reverses | ✓ Intact, strengthening — data center orders +240% YoY, backlog +48%, Boyd Thermal acquisition deepens liquid-cooling exposure | **HOLD** |
+| GOOGL | July 7 | GCP decelerates OR TPU cancelled | ✓ Intact — Swedish court ordered USD 1.97B payment to Klarna/PriceRunner (shopping-search antitrust, unrelated to GCP/TPU thesis; Google appealing, multi-year delay); GCP/TPU thesis unaffected | **HOLD** |
+| AMZN | July 7 | AWS <20% YoY | ✓ Intact, strengthened — Prime Day sales +9% to USD 26.4B; new AWS European Sovereign Cloud launch partners | **HOLD** |
+| VST | July 15 | Nuclear PPAs cancelled | ✓ Intact — credit facility flexibility (revolver to USD 5.5B); divesting 3 fossil plants (752MW) to Winslow Power JV, portfolio streamlining toward nuclear/AI-power core | **HOLD** |
+
+No mandatory review_by deadlines today (next: GOOGL/AMZN July 7). AVGO proactive-trim decision is discretionary, applied per the standing heuristic and the July 1 holiday-gap-risk flag.
+
+**Sector exposure (July 2 pre-market):**
+| Sector | Names | Market Value | % of Equity |
+|---|---|---|---|
+| Technology — semis | NVDA, AVGO | USD 32,910.70 | 35.85% |
+| Technology — hyperscalers | GOOGL, AMZN | USD 14,412.11 | 15.70% |
+| Industrials/Power Infra | ETN | USD 14,025.00 | 15.28% |
+| Utilities/Power | VST | USD 8,006.96 | 8.72% |
+| Cash | — | USD 22,458.29 | 24.46% |
+
+No sector at 60%+ threshold.
+
+**Market posture (July 2) [search: WebSearch fallback — MiniMax M3 MCP not connected this session]:** S&P 500 cash index closed June 29 at 7,440.43 (+1.18%), opened Q3 near 7,528; ES futures ~7,555.50, -0.24% overnight — a mild pullback holding a tight range. Markets awaiting labor-market data during this holiday-shortened week (NYSE/Nasdaq closed Friday July 3; markets reopen Monday July 6 after the 4-day weekend). Broadly risk-on tone into Q3 open, tempered by overnight softness.
+
+**Deployment check:** Cash 24.46% > 20% threshold. Decision: **NO NEW BUYS TODAY.** Today is the last session before a 4-day closure (July 3 holiday + weekend); AVGO is executing a proactive trim for gap-risk management, not the moment to add fresh unseasoned exposure. GOOGL carries a new legal overhang (Swedish antitrust ruling) and lingering AI-talent-departure pressure. MRVL (re-entry watchlist) is up against an extreme valuation (91x trailing P/E) following its post-inclusion sell-the-news slide — not a compelling entry. No qualifying setups; holding cash through the holiday gap is deliberate risk management.
+
+**Earnings window check:** NVDA Aug 26, AVGO Sep 3, ETN Aug 4, GOOGL ~Jul 21-24, AMZN Jul 30, VST Aug 6 — no held name within 2 trading days of earnings. No new buys planned, so N/A for candidates.
+
+**Performance vs SPY (July 2 pre-market):**
+| Metric | Value |
+|---|---|
+| Equity | USD 91,813.06 |
+| Aggro return since inception | **(91,813.06 − 100,000) / 100,000 = -8.187%** |
+| SPY anchor | USD 754.18 (June 3, 2026) |
+| SPY latest quote (~8:12 AM ET) | USD 747.03 |
+| SPY since inception | **(747.03 − 754.18) / 754.18 = -0.948%** |
+| Alpha since inception | **-7.239pp** |
+
+_Pre-market July 2: Circuit breaker NOT triggered (-9.223%, 10.777pp headroom). Shock check NOT triggered (-0.018%). Stop audit 6/6 ✓. No mandatory thesis-contract deadlines today. **AVGO buffer compressed to 2.922pp — below the 3pp proactive-trim line — heading into the July 3 holiday + weekend 4-day closure; planning a 25% trim (9 of 34 shares) at market open per the standing heuristic and the explicit holiday-gap-risk flag carried over from July 1 EOD.** No new buys (cash 24.46%, explicit hold decision — holiday gap risk, GOOGL legal overhang, no compelling entries). Control: ACTIVE. [search: WebSearch fallback — MiniMax M3 MCP not connected this session]_
+
+---
+
 ## Last snapshot — 2026-07-01 EOD CLOSE (~4:09 PM ET)
 
 | Field | Value |

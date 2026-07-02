@@ -3056,3 +3056,121 @@ All guardrails pass. No trades planned.
 }
 ```
 EXECUTED: 2026-07-01T13:46:00Z (no trades — no-trade plan confirmed; market open; stop audit 6/6 ALL LIVE; NVDA -8.869%/3.131pp buffer ⚠️; AVGO -8.499%/3.501pp buffer ⚠️; ETN -1.579%/10.421pp; GOOGL -2.846%/9.154pp; AMZN -5.069%/6.931pp; VST +2.509% ✓; equity USD 91,490.25 / -1.566% vs last_equity (NOT shock, threshold -6%); drawdown -9.548% from HWM (NOT circuit breaker, threshold -20%); Control: ACTIVE)
+
+---
+
+## 2026-07-02 — WEEK 5 PRE-MARKET (Thursday, last session before July 3 holiday)
+[search: WebSearch fallback — MiniMax M3 MCP not connected this session; all searches below used WebSearch]
+
+### Pre-run checks
+| Check | Result |
+|---|---|
+| Live-switch guard | ALPACA_BASE_URL contains "paper" ✓ |
+| Lock | Clear (`{}`) at start; written for this run ✓ |
+| Control switch | STATUS: ACTIVE ✓ (no NOTE:, no QUERY:) |
+
+### Portfolio snapshot (live Alpaca data, ~8:12 AM ET)
+
+| Symbol | Qty | Avg Entry | Current | P/L % | Buffer to -12% |
+|---|---|---|---|---|---|
+| NVDA | 103 | USD 213.60 | USD 197.60 | -7.491% | 4.510pp ✓ |
+| AVGO | 34 | USD 406.23 | USD 369.35 | -9.079% | **2.922pp 🔴 CRITICAL** |
+| ETN | 34 | USD 419.54 | USD 412.50 | -1.678% | 10.323pp ✓ |
+| GOOGL | 16 | USD 370.22 | USD 357.382 | -3.468% | 8.532pp ✓ |
+| AMZN | 36 | USD 247.991 | USD 241.50 | -2.617% | 9.383pp ✓ |
+| VST | 52 | USD 151.47 | USD 153.98 | +1.657% | comfortable ✓ |
+
+**Account equity: USD 91,813.06.** Cash USD 22,458.29 (24.46%). last_equity (July 1 close) USD 91,830.01. Pre-market P/L vs last_equity: -USD 16.95 (-0.018%) — shock threshold -6% NOT triggered.
+**HWM USD 101,144.73. Drawdown -9.223% — circuit breaker -20% NOT triggered (10.777pp headroom).**
+
+### Market posture
+S&P 500 cash index closed June 29 at 7,440.43 (+1.18%); Q3 opened near 7,528. ES futures ~7,555.50, -0.24% overnight — a mild pullback holding a tight range. Markets awaiting labor-market data during this holiday-shortened week. NYSE/Nasdaq closed Friday July 3 (July 4 falls on a Saturday); today (Thursday) is the only session before a 4-day gap to Monday July 6. Broadly risk-on into Q3, tempered by overnight softness. Date of facts: July 2, 2026 pre-market.
+
+### Held positions — "what changed since yesterday" (required for each)
+
+**NVDA — Thesis: INTACT. No change.**
+- *What changed:* Essentially flat overnight (USD 197.16 EOD July 1 → USD 197.60 pre-market). NVIDIA-Palantir sovereign-AI collaboration (running NVIDIA AI/Nemotron models in sovereign environments) is a minor thesis-positive expansion of the customer base. Wayve (Nvidia-backed autonomous driving startup) USD 85M tender offer is immaterial to the core GPU thesis.
+- Buffer 4.510pp ✓ — improved fractionally from July 1 EOD's 4.303pp. Next earnings Aug 26 — no window risk.
+- Invalidation check: no hyperscaler GPU share loss. ✓ Not triggered. Review_by July 9 — not due today.
+- Source: CNBC, Yahoo Finance, July 2, 2026.
+
+**AVGO — Thesis: INTACT. Buffer CRITICAL — proactive trim triggered.**
+- *What changed:* No new company-specific news since yesterday; stock still digesting the post-earnings/guidance-miss overhang from June 3 (down ~15% over the past month). 26-analyst consensus remains Buy, 12-month PT USD 523.73 (+41.6% from current). AI semiconductor revenue guide (>USD 100B FY2027) unchanged and unwithdrawn.
+- Buffer 2.922pp — up marginally from July 1 EOD's 2.809pp but still below the 3pp proactive-trim line, and today is the last session before the July 3 holiday + weekend (4-day closure). Per the July 1 EOD flag and the standing "3-day holiday weekends amplify gap risk for stressed positions" lesson (June 19 weekly review): this is exactly the scenario that calls for a proactive trim rather than letting a sub-3pp position ride unexamined into a multi-day gap.
+- Proactive trim heuristic check: (1) within 3pp of -12% cut ✓ 2.922pp; (2) review_by (July 9) within 5 trading days ✓; (3) no near-term catalyst within 2 trading days ✓ (next earnings Sep 3). **All three conditions met.**
+- **Decision: 25% proactive trim (9 of 34 shares) at market open.** This is buffer/gap-risk management, not a thesis call — AVGO's AI revenue story remains fully intact. Review_by renewed to July 9 (unchanged) for the reduced 25-share core position.
+- Source: Yahoo Finance, CNBC, stockanalysis.com, July 1-2, 2026.
+
+**ETN — Thesis: INTACT. Strengthening.**
+- *What changed:* Data center orders within Electrical Americas accelerated +240% YoY; total Electrical backlog +48% YoY. Boyd Thermal acquisition expands liquid-cooling capability for high-density AI data centers. New USD 30M+ Nebraska switchgear facility ties ETN more directly to AI buildout. U.S. data-center capacity under construction now 32GW with 165-228GW planned backlog through 2030.
+- Buffer 10.323pp ✓ — comfortable. Next earnings Aug 4 — no window risk.
+- Invalidation check: ETN well above USD 332 floor; AI capex narrative accelerating, not reversing. ✓ Not triggered. Review_by July 9 — not due today.
+- Source: SimplyWall.st, TIKR.com, Yahoo Finance, July 2026.
+
+**GOOGL — Thesis: INTACT. New legal overhang, not thesis-breaking.**
+- *What changed:* Swedish Patent and Market Court ordered Google to pay ~USD 1.97B to Klarna-owned PriceRunner over a decade-long shopping-search antitrust violation. This is a legal/financial event tied to Google's general-search/shopping-comparison business — entirely unrelated to the GCP/TPU thesis (invalidation = GCP decelerates OR TPU cancelled). Google intends to appeal; payout could be delayed years. South Korea regulator flagged a 2019-2026 Google Play developer-payment program with potential fine exposure (~14.16T won) — also unrelated to cloud/TPU thesis, still speculative on quantum/timing. AI-talent-departure overhang (Jumper, Shazeer) from last week is known and already priced; no new departures today.
+- Buffer 8.532pp ✓ — comfortable, though this stock has the most non-thesis legal/reputational noise in the book right now. Next earnings ~Jul 21-24 — no window risk.
+- Invalidation check: GCP growth not decelerating, TPU roadmap not cancelled. ✓ Not triggered. Review_by July 7 — 3 trading days away, will require mandatory decision then.
+- Source: Grafa, GuruFocus, USNews, AndroidHeadlines, July 1-2, 2026.
+
+**AMZN — Thesis: INTACT. Strengthened.**
+- *What changed:* Prime Day (June 23-26) sales rose +9% YoY to USD 26.4B — direct confirmation of retail/Prime ecosystem strength. New AWS European Sovereign Cloud launch partners announced (Nice among them) — thesis-positive expansion of AWS's sovereign/enterprise cloud footprint. ACCC lawsuit over Prime auto-renewal terms is a consumer-protection matter, immaterial to the AWS AI-revenue thesis.
+- Buffer 9.383pp ✓ — comfortable. Next earnings Jul 30 — no window risk.
+- Invalidation check: AWS growth not decelerating below 20% YoY. ✓ Not triggered. Review_by July 7 — 3 trading days away, will require mandatory decision then.
+- Source: Yahoo Finance, Watcher.Guru, July 1-2, 2026.
+
+**VST — Thesis: INTACT.**
+- *What changed:* Credit Agreement amended June 24 (revolver increased to USD 5.5B, covenant changes, some guarantor releases) — balance-sheet flexibility, thesis-neutral. VST subsidiary agreed to sell three fossil-fuel plants (752MW total) to Winslow Power JV, closing later this year — portfolio streamlining toward the nuclear/AI-power core, mildly thesis-positive (sharper focus on the assets that carry the AI-demand narrative). Morgan Stanley raised PT to USD 212 (Overweight).
+- Comfortably positive (+1.657% from entry). Next earnings Aug 6 — no window risk.
+- Invalidation check: no PPA cancellations, no regulatory action. ✓ Not triggered. Review_by July 15 — not due today.
+- Source: TickerNerd, Robinhood, StockAnalysis.com, July 2026.
+
+### Thesis contract review
+No mandatory review_by deadlines fall today (next: GOOGL/AMZN July 7). AVGO's proactive trim is a discretionary decision under the standing heuristic, not a mandatory contract trigger — review_by for the reduced position is renewed to July 9 unchanged.
+
+### Cut rule check (>-12% from entry)
+NO positions triggered. AVGO most stressed at -9.079% (2.922pp buffer) — addressed via proactive trim, not the mechanical rule (which has not fired).
+
+### New position research
+**MRVL (re-entry candidate):** Down -8.00% on July 1 in a continuing sell-the-news slide after the June 22 S&P 500 inclusion effective date; trailing P/E >91x, forward P/E ~66x after tripling in 2026 — an extreme valuation for a re-entry right now. **No re-entry today.**
+**No other new candidates surfaced.** Given the holiday-gap posture and AVGO trim, this is not a deployment day.
+
+### Deployment check
+- Cash: USD 22,458.29 = 24.46% of equity — above the 20% mandatory-deployment-note threshold.
+- **Explicit decision: NO NEW BUYS TODAY.** Today is the last session before a 4-day closure (July 3 holiday + weekend). AVGO's proactive trim will raise cash further; the correct posture is to bank that flexibility, not redeploy it same-day. GOOGL carries a fresh legal overhang; MRVL is valuation-extended. No qualifying setup exists.
+
+### Guardrail check for today
+
+| Rule | Limit | Status |
+|---|---|---|
+| Single position max | 35% | NVDA 22.17% — largest position. ✓ All clear |
+| Cash floor | 2% min | 24.46% — well above minimum ✓ |
+| Weekly new positions | 8 max | 0/8 used (no new positions this week) ✓ |
+| Semi-group concentration (NVDA+AVGO) | informal ≤50% watch | 35.85% ✓ (falls to ~32.4% post-AVGO-trim) |
+| Circuit breaker | >20% below HWM | -9.223% — not triggered ✓ |
+| Intraday/pre-market shock | >6% below last_equity | -0.018% — not triggered ✓ |
+| Stop audit | All positions covered | 6/6 live 18% trailing stops confirmed (status: "new") ✓ |
+| Earnings window | No new buys within 2 days of earnings | No new buys planned; nearest held-name earnings NVDA Aug 26 |
+| Never average down | — | AVGO trim is a reduction, not an add; no averaging down anywhere ✓ |
+
+All guardrails pass.
+
+## Planned trades for today (July 2, 2026 — market open)
+
+**AVGO proactive 25% trim (9 of 34 shares) at market open** — buffer 2.922pp, below the 3pp proactive-trim line, heading into the July 3 holiday + 3-day weekend (4-day closure). Thesis fully intact; this is gap-risk management per the standing heuristic. All other positions: HOLD. No new buys.
+
+```json
+{
+  "plan_date": "2026-07-02",
+  "trades": [
+    {
+      "action": "sell",
+      "symbol": "AVGO",
+      "qty": 9,
+      "thesis": "25% proactive trim — 2.922pp buffer from -12% cut trigger USD 357.4824; review_by July 9 within 5 trading days; no near-term catalyst (next earnings Sep 3); today is the last session before the July 3 holiday + weekend 4-day closure; AI semiconductor revenue thesis fully intact (26-analyst Buy consensus, PT USD 523.73); reduces binary gap-risk while preserving 25-share core position",
+      "invalidation": "N/A — trim of existing position",
+      "review_by": "2026-07-09"
+    }
+  ]
+}
+```
