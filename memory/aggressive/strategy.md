@@ -227,6 +227,19 @@ This is NOT a hard rule — it is a discretionary risk management tool. A trim r
 
 ---
 
+## Weeks 4+5 catch-up review priorities (as of 2026-07-03 weekly review)
+
+- **Process, not positioning, is this week's priority.** The weekly-review cadence itself broke down for 2.5 weeks (Weeks 4 and 5 never filed until this catch-up entry) and one pre-market-approved trade (AVGO trim, July 2) failed to execute on schedule. Both are now closed out, but every routine through mid-July should explicitly verify: (1) did the prior routine's plan actually execute (check for an `EXECUTED:` marker), and (2) is a weekly review due this Friday.
+- **AVGO (0.731pp buffer — CRITICAL, carried from July 2 midday trim):** July 6 pre-market must check AVGO first. If it opens flat-to-down with no positive catalyst, apply the sub-1pp full-exit escalation protocol (established on the META exit) — full exit, not another partial trim. Thesis (Jalapeño confirmation, USD 100B+ FY2027 AI revenue guide) remains fully intact; this is buffer/gap-risk management only.
+- **GOOGL and AMZN review_by July 7 — due at the very next session.** Mandatory hold/trim/exit decisions.
+- **NVDA/AVGO/ETN review_by July 9; VST review_by July 15.**
+- **Cash at 28.35%, averaged 27.2% over the last 10 sessions.** No new position opened since ETN (June 25). Once the AVGO/GOOGL/AMZN decisions clear, actively evaluate redeployment — MRVL re-entry (still >90x trailing P/E, too rich as of July 1-2) or a fresh Tier 3 name — rather than defaulting to cash.
+- **Trade record is 0-for-4 since inception (AMD, MSFT, META, MRVL all closed at losses)** — all four were macro-driven forced exits (mechanical rule or proactive equivalent), not thesis breaks. No process change indicated beyond continuing to apply the proactive-exit-under-1pp-buffer lesson consistently.
+- **Conviction ratings (July 3):** NVDA A (3.213pp buffer, macro-pressured not thesis-broken), AVGO C (0.731pp — CRITICAL), ETN A (6.99pp), GOOGL A (9.215pp), AMZN A (9.854pp), VST A (11.723pp, best performer).
+- **Alpha since inception: -8.090pp** (Aggro -9.326% vs SPY -1.236%) — widest gap yet; concentrated AI-tech exposure has underperformed through a sustained sector selloff.
+
+---
+
 ## Benchmark tracking
 
 Every weekly review computes:

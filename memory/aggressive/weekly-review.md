@@ -5,6 +5,108 @@ return, SPY return, result, A–F grade, what worked, what didn't, adjustments._
 
 ---
 
+## Weeks 4+5 (catch-up) — 2026-06-22 through 2026-07-03
+
+**Period**: 10 trading days (June 22, 23, 24, 25, 26, 29, 30, July 1, 2; July 3 market closed for the Independence Day holiday). **This review is 14 days late** — see Process Audit. It replaces the two weekly reviews (Week 4: June 22–26, and what would have been Week 5: June 29–July 3) that were never filed.
+
+| Metric | Value |
+|---|---|
+| Aggro return this period | **-6.527%** (equity: USD 97,006.60 → USD 90,674.09) |
+| SPY return this period | **-0.252%** (SPY: 746.74 → 744.86) |
+| Period vs SPY | **-6.275pp UNDERPERFORMING** |
+| Aggro return since inception | **-9.326%** |
+| SPY return since inception | **-1.236%** (754.18 → 744.86) |
+| Alpha since inception | **-8.090pp** |
+| Starting equity (period) | USD 97,006.60 |
+| Ending equity | USD 90,674.09 |
+| HWM | USD 101,144.73 (set June 4–5, cross-verified against Alpaca's own `history` series this run) |
+| Drawdown from HWM | **-10.353%** (circuit breaker -20% — NOT triggered; 9.647pp headroom; not within 5pp of the breaker) |
+| Positions open (end of period) | 6 (NVDA, AVGO, ETN, GOOGL, AMZN, VST) |
+| Positions closed this period | 2 (MSFT forced cut June 22, META proactive exit June 23) — MRVL stop fill (June 24) and ETN entry (June 25) also occurred |
+| Process grade | **C+** |
+
+---
+
+### Trade Statistics (since inception)
+
+**Source**: `memory/closed-trades.md` (narrative ledger, authoritative) cross-checked against `memory/trades.jsonl` aggro rows.
+
+| Metric | Value |
+|---|---|
+| Total closed trades | **4** (AMD, MSFT, META, MRVL) |
+| Win rate | **0%** (0 wins / 4 closed trades) |
+| Average win % | N/A — no winning closed trades yet |
+| Average loss % | **-11.035%** (mean of -13.28%, -13.22%, -9.841%, -7.80%) |
+| Profit factor | **0.00** (no gains to offset USD ~4,400+ in realized losses across the four exits) |
+| Avg holding days — losers | **12.5 days** (5, 17, 19, 9) |
+| Avg holding days — winners | N/A — no winners yet |
+
+⚠️ **Sample still under 5 closed trades — do not over-read these statistics**, but the direction (0-for-4, all mechanically-forced exits) is worth tracking closely.
+
+**Ledger sync**: `closed-trades.md` shows 4 closed positions. `trades.jsonl` previously only tagged 3 of the 4 (MSFT close, META full sell, MRVL stop fill) — the AMD close (2026-06-09) predates when aggro fills started being written to the shared ledger and had been flagged as an unresolved sync gap in three consecutive lessons entries (2026-06-12, 2026-06-19 weekly review, and again implicitly through July). **Backfilled this run**: appended `{"agent":"aggro","action":"close","symbol":"AMD",...,"pnl_pct":-0.1328}` to `memory/trades.jsonl` so the structured ledger and the narrative ledger now agree on all 4 closed trades.
+
+**Biggest lesson repeated across the 4 losers**: every closed trade was a *mechanically forced* exit (midday -12% rule, trailing stop, or a proactive version of the same logic) during a macro-driven, sector-wide selloff (chip-sector selloff for AMD, FOMC hawkish dot-plot for MSFT, Section-230/tape-driven de-risking for META, Asian-regulatory semi rout for MRVL) — in no case did the underlying company-specific thesis actually break. The wide 18% trailing stop and the -12% midday rule are working exactly as designed (truncating drawdowns without punishing volatility), but four consecutive forced exits with zero winners so far means the "let winners run" half of the strategy hasn't had a chance to prove out yet. The one process improvement that measurably worked: applying the MSFT lesson to META (exit at buffer <1pp on a risk-off tape, don't wait for the mechanical rule) saved real money the second time it was tested.
+
+---
+
+### Process Audit
+
+- **Earnings discipline**: No held position reported earnings this period (NVDA Aug 26, AVGO Sep 3, ETN Aug 4, GOOGL ~Jul 21-24, AMZN Jul 30, VST Aug 6) — every pre-market routine confirmed the 2-day earnings window was clear before any planned trade. ✅ Pass.
+- **Stop discipline**: Every routine in the period confirmed 6/6 (or the relevant N/N) live trailing stops. The cancel-stop-then-market-sell sequence was applied correctly for the MSFT and META exits (3rd and 4th times this exact sequence has been executed correctly since inception). AVGO's stop was correctly recreated after both the July 2 partial trim (`cf2956dc`) and the June 22 backdrop. No position was ever found unprotected. ✅ Pass.
+- **Post-mortem completeness**: MSFT and META both received `closed-trades.md` entries with required lessons the same day they closed. ✅ Pass.
+- **Deployment pace**: ⚠️ **Fail-to-marginal.** Average cash across the 10 sessions (from `memory/performance.csv` aggro rows) was **27.2%** of equity (range 21.3%–39.6%) — far above the 2% floor and inconsistent with the profile's "deploy fast, 80%+ invested" posture. Every individual day's no-buy decision was explicitly journaled and defensible in isolation (FOMC, holiday-weekend gap risk, existing positions under stress, one richly-valued re-entry candidate declined on valuation grounds) — this is not silent idleness. But the *cumulative* pattern is 10 straight sessions with only one new position opened (ETN, June 25) while cash climbed from ~13% to ~28%. This is graded down, not failed outright.
+- **Concentration**: No position breached the 35% single-position cap (NVDA largest at 22.1% of equity at period end). Semi-group (NVDA+AVGO) ended at 32.1%, within the informal 50% watch line. No sector exceeded 60%. ✅ Pass.
+- **Thesis contracts**: Every open position carries a current `invalidation` and `review_by`; GOOGL/AMZN (July 7) and NVDA/AVGO/ETN (July 9) are the next deadlines, both correctly flagged in the July 2–3 journal entries for action at the next open session. No contract was allowed to expire unexamined. ✅ Pass.
+- **Weekly review cadence — the headline failure**: The Week 4 (June 22–26) and Week 5 (June 29–July 3) weekly reviews were never filed. `lessons.md` flagged this gap on 2026-06-30, again on 2026-07-03 EOD (14 days stale, escalating language: "if this recurs a third time, escalate directly to the human"), and it is only being closed now, in this catch-up entry. This is the single biggest process failure of the period — the self-assessment/statistics/cross-Bull-comparison mechanism that this very review exists to run was itself dark for two and a half weeks.
+- **Plan-to-execution handoff**: The July 2 pre-market plan called for a 25% AVGO trim at market open; the market-open routine did not execute it (or did not run), and the gap was only discovered and remediated at midday, by which point AVGO's buffer had compressed from 2.922pp to 0.542pp — a materially worse price than if the plan had fired as scheduled. This is a second, more operational process gap layered on top of the weekly-review miss.
+
+**Process grade: C+**. *Justification: intraday risk discipline was genuinely excellent this period — stops always live, correct cancel-then-close sequencing applied flawlessly twice more, thesis contracts tracked and renewed on schedule, every closed loss post-mortemed with a lesson. But the two things this exact review routine is responsible for enforcing — a weekly review actually happening, and a planned trade actually executing when the plan says it will — both broke down. A strategy that executes intraday risk management perfectly while its own governance cadence goes dark for 14+ days does not earn better than a C+, regardless of P/L.*
+
+---
+
+### What Worked
+
+1. **The MSFT lesson generalized correctly to META.** META was proactively exited in full at market-open (not a partial trim) once its buffer compressed below 1pp on a risk-off tape — the exact protocol written after the MSFT forced cut one day earlier. This is the clearest evidence the lessons file is actually changing behavior, not just accumulating text.
+2. **AVGO's OpenAI "Jalapeño" custom-chip confirmation** is a concrete, thesis-strengthening catalyst that arrived in the middle of the period's worst semi-sector selloff — a reminder that a stock can be macro-pressured and fundamentally strengthening at the same time.
+3. **ETN as a genuine diversifier.** The one new position opened this period (June 25) is holding up better than the semi book (-5.01% vs entry, 6.99pp buffer) and is uncorrelated to the AI-chip-valuation selloff hitting NVDA/AVGO.
+4. **VST continues to be the standout.** Essentially flat (-0.277% from entry) through a period where the semi book fell another several points — the clearest evidence yet that the nuclear-power/AI-demand thesis is genuinely non-correlated to AI-chip multiple compression.
+5. **6/6 stop audits passed every single session** with zero missing or stale stops, including through two full position closes and one partial trim requiring stop recreation.
+
+---
+
+### What Didn't Work
+
+1. **Two weekly reviews missed** — the process failure discussed above at length. This is the top item for next week.
+2. **AVGO's July 2 pre-market-approved trim failed to execute at market-open** and was only caught and fixed at midday, at a worse price (buffer had compressed from 2.922pp to 0.542pp in the interim).
+3. **0-for-4 on closed trades since inception.** MSFT (-13.22%) and META (-9.841%) both added to the AMD (-13.28%) and MRVL (-7.80%) losses. No position has yet been closed for a gain.
+4. **Alpha since inception fell to -8.090pp**, the widest gap yet — concentrated AI-tech exposure has now underperformed SPY by a wide and still-widening margin for the full ~5 weeks of operation.
+5. **Cash sat at an average 27.2% of equity** for 10 straight sessions with only one new position opened — defensible day-by-day, but a real drag on the "deploy fast, concentrate in conviction" mandate this account exists to test.
+
+---
+
+### Adjustments for next week (starting 2026-07-06)
+
+1. **File the weekly review every single Friday going forward, no exceptions.** If a Friday is a market holiday, run the review at the next available pre-market/close routine within 1 business day — do not let it drift to a 14-day-stale state again. If it's ever at risk of being missed a third time, escalate directly to the human via `notify.sh`, per the standing 2026-07-03 lesson.
+2. **Every market-open and midday routine must check the prior routine's `Planned trades for today` JSON block for an `EXECUTED:` marker before assuming a plan fired.** This was written as a lesson on 2026-07-02 and needs to actually be applied at the very next opportunity (July 6 pre-market must verify the AVGO contingency plan is picked up correctly).
+3. **AVGO (0.731pp buffer, CRITICAL) — apply the sub-1pp full-exit escalation protocol at July 6 pre-market/open** if it opens flat-to-down with no positive catalyst, per the standing lesson from the META exit.
+4. **GOOGL and AMZN review_by (July 7) are due at the very next session** — mandatory hold/trim/exit decisions, not a formality.
+5. **Cash at 28.35% is high for this mandate.** Once AVGO/GOOGL/AMZN decisions are made July 6–7, actively look for redeployment — a fresh Tier 3 name or a disciplined MRVL re-entry once its valuation (currently >90x trailing P/E) becomes reasonable — rather than letting cash idle by default.
+6. **Watchlist**: no new names surfaced as clear leaders this period beyond the existing MRVL re-entry candidate (still too rich) — re-scan at the next pre-market once the holiday reopens and volume normalizes.
+
+---
+
+### Aggro vs Cautious Bull (Race Scoreboard)
+*(Cautious Bull's `memory/portfolio.md` not read this run — Aggressive Bull only reads it during Cautious Bull's own weekly review per the CLAUDE.md cross-read rule; this section is populated from what's already on file.)*
+
+| Metric | Aggressive Bull | Cautious Bull |
+|---|---|---|
+| Since inception return | **-9.326%** | Not read this run (see CLAUDE.md cross-read scope) |
+| Drawdown from HWM | -10.353% | — |
+| Style | Concentrated AI tech + power infra, 18% stops | Diversified, 10% stops |
+| Lesson for Cautious | 0-for-4 closed trades in a concentrated AI book during a sustained sector selloff shows the cost of concentration in a drawdown regime — even with disciplined stop/rule execution, being wrong-footed on sector timing is expensive. The MSFT→META lesson generalization (proactive full exit under 1pp buffer beats waiting for the mechanical rule) is portable to any stop-loss-driven strategy. | — |
+
+---
+
 ## Week 3 — 2026-06-15 through 2026-06-19
 
 **Period**: June 15–19, 2026 (4 trading days; June 19 Juneteenth — market closed)

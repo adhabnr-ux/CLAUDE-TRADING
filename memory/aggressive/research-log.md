@@ -3286,3 +3286,26 @@ All guardrails pass. No trades possible or planned — market closed.
 }
 ```
 EXECUTED: 2026-07-03T12:08:00Z (no trades — market closed for Independence Day holiday; no-trade plan confirmed; stop audit 6/6 ALL LIVE; AVGO CRITICAL 0.731pp buffer flagged for July 6 contingency; GOOGL/AMZN review_by July 7 flagged for July 6 pre-market; equity USD 90,674.09, unchanged from last_equity — NOT shock, threshold -6%; drawdown -10.352% from HWM — NOT circuit breaker, threshold -20%; Control: ACTIVE)
+
+---
+
+## 2026-07-03 — WEEKLY REVIEW (catch-up for Weeks 4+5, June 22 – July 3)
+[search: WebSearch fallback — MiniMax M3 web_search not connected this session]
+
+**Scope note:** This review covers the full 10-trading-day span since the last filed weekly review (Week 3, dated 2026-06-19) — Weeks 4 and 5 were both missed. See Process Audit below for that gap.
+
+### Macro this period
+- S&P 500 gained ~1.8% and Nasdaq ~2.1% over the trading week ending July 2, with the Dow closing at a record high; June jobs report came in soft (+57,000), pushing back Fed-hike odds. [WebSearch]
+- Chipmakers sold off hard into the holiday — Micron -7%, Applied Materials -7.4%, AMD -4.3% — on renewed AI-valuation/margin-pressure concerns, continuing the theme that first hit the book June 5 and recurred June 22-26 and July 1-2. Winners were non-AI names (Apple, McDonald's, Disney). [WebSearch, sources: TheStreet, Bloomberg, July 2 2026]
+- AVGO: down ~15% over the trailing month on broad tech-sector selling, not a company-specific event; 48-analyst Strong Buy consensus intact, PT USD 523.73 (+45% from July 2 close); OpenAI's "Jalapeño" custom inference chip (Broadcom silicon + Celestica racks) is a fresh, concrete confirmation of the custom-ASIC thesis. [WebSearch, Yahoo Finance/stockanalysis.com]
+- VST: -3.5% July 1 session but analyst outlook remains constructive on acquisitions/PPA strength; next earnings ~Aug 7; USD 0.229/share dividend still in force. No new negative catalyst found. [WebSearch, Yahoo Finance/MarketBeat]
+- Cross-check: WebSearch's "S&P +1.8% this week" reflects the June 26–July 2 trading week specifically; our own period-over-period math below uses Alpaca's own SPY closes (746.74 June 19 → 744.86 July 2), which is a *longer* and slightly *negative* span. Per the standing lesson (2026-07-01), Alpaca's own feed is authoritative for all P/L and alpha math — WebSearch is color only.
+
+### Held positions — no new invalidations found for any of the 6 open names (NVDA, AVGO, ETN, GOOGL, AMZN, VST) beyond what's already logged day-by-day above. AVGO's Jalapeño confirmation and VST's dividend/acquisition news are incrementally thesis-positive; the semiconductor-sector AI-valuation jitters (Micron/AMD/Applied Materials down hard into the holiday) are the dominant macro overhang on NVDA and AVGO specifically and are not thesis-breaking for either.
+
+### Trade statistics computation (source data)
+- `memory/trades.jsonl` aggro rows: 9 total (1 buy MRVL, 2 partial trims MSFT+META, 1 close MSFT, 1 sell META-full, 1 sell/stop MRVL, 1 buy ETN, 1 trim AVGO, plus 1 backfilled AMD close added this run to close the 3x-flagged ledger gap).
+- `closed-trades.md`: 4 full closes — AMD (-13.28%, 5d), MSFT (-13.22% blended / -13.62% final tranche, 17d), META (-9.841% final tranche, 19d), MRVL (-7.80%, 9d). trades.jsonl now reconciles with closed-trades.md on all 4 (AMD backfilled this run).
+- `memory/performance.csv` aggro rows June 22–July 3 (10 sessions): average cash 27.2% of equity (range 21.3%–39.6%), well above the 2% floor and the profile's "deploy fast" posture — see Process Audit.
+
+No trades planned or possible in this routine (weekly review does not trade).
