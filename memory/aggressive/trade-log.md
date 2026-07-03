@@ -3071,3 +3071,66 @@ Research-only run. All 6 positions reviewed for "what changed since yesterday" (
 ### Result
 No trades — no action possible, market closed. AVGO remains the single flagged risk item: CRITICAL 0.731pp buffer post-trim, carrying the sub-1pp escalation contingency (full exit if it opens flat-to-down with no positive catalyst) into the July 6 pre-market/market-open. GOOGL and AMZN review_by (July 7) also carried forward — mandatory decisions due at or before the July 6/7 session. No new stop fills or closed positions since the July 2 midday trim; no post-mortem entries needed this run. Control: ACTIVE. Next actionable routine: July 6 pre-market.
 
+---
+
+## 2026-07-03 — EOD CLOSE (market closed, no action possible)
+
+**No trades executed — market closed for Independence Day (observed Friday July 3; July 4 falls on Saturday).** `clock` confirmed `is_open: false`, `next_open: 2026-07-06T09:30:00-04:00`, `next_close: 2026-07-06T16:00:00-04:00` — no session occurred today at all, so there is no intraday P/L to report.
+
+### Pre-run checks
+| Check | Result |
+|---|---|
+| Live-switch guard | ALPACA_BASE_URL contains "paper" ✓ |
+| Lock | Clear (`{}`) at start; written for this run ✓ |
+| Control switch | STATUS: ACTIVE ✓ (no NOTE:, no QUERY:) |
+| Market open | **false** — holiday closure; no orders possible |
+
+### Account status (unchanged since July 2 close / July 3 pre-market and midday)
+| Field | Value |
+|---|---|
+| Equity | USD 90,674.09 |
+| Cash | USD 25,696.39 (28.35%) |
+| Today's P/L | **0.00%** — no session today |
+| HWM | USD 101,144.73 |
+| Drawdown from HWM | -10.352% (circuit breaker -20% — NOT triggered) |
+| Shock check | 0.000% vs last_equity — NOT triggered |
+
+### Performance vs SPY
+| Metric | Value |
+|---|---|
+| Aggro since inception | -9.326% (USD 90,674.09 vs USD 100,000) |
+| SPY since inception | -1.236% (744.86 vs anchor 754.18; July 2 close, last available — no SPY session today either) |
+| Alpha since inception | **-8.090pp** |
+
+### Positions (unchanged, market closed) — 6 open
+| Symbol | Qty | Entry | Current | P/L % | Buffer to -12% |
+|---|---|---|---|---|---|
+| NVDA | 103 | USD 213.60 | USD 194.83 | -8.787% | 3.213pp |
+| AVGO | 25 (trimmed 7/2) | USD 406.23 | USD 360.45 | **-11.269%** | **0.731pp 🔴 CRITICAL** |
+| ETN | 34 | USD 419.54 | USD 398.52 | -5.010% | 6.990pp |
+| GOOGL | 16 | USD 370.22 | USD 359.91 | -2.785% | 9.215pp |
+| AMZN | 36 | USD 247.991 | USD 242.67 | -2.146% | 9.854pp |
+| VST | 52 | USD 151.47 | USD 151.05 | -0.277% | 11.723pp |
+
+### Stop audit — 6/6 confirmed live ✓ (verified from Alpaca open-orders list, all `status: "new"`, unchanged since pre-market/midday)
+| Symbol | Stop Order ID | Stop Price | HWM |
+|---|---|---|---|
+| NVDA | `54d7d851` | USD 181.712 | USD 221.60 |
+| AVGO | `cf2956dc` | USD 296.3808 | USD 361.44 |
+| ETN | `abdc232b` | USD 350.9026 | USD 427.93 |
+| GOOGL | `e52a43f1` | USD 308.1314 | USD 375.77 |
+| AMZN | `b55bef05` | USD 207.0705 | USD 252.525 |
+| VST | `5b347be3` | USD 140.507 | USD 171.35 |
+
+### Reconciliation vs closed-trades.md
+No exits today (market closed). Position count (6) matches trade-log; the July 2 midday AVGO trim was a partial trim, not a full close, so it correctly has no closed-trades.md entry. Ledger is current — no lag.
+
+### Market close context [search: WebSearch fallback — MiniMax M3 not connected this session]
+Markets are closed today for the Independence Day holiday (observed Friday, since July 4 falls on Saturday); next session is Monday July 6. Going into the closure, the PHLX Semiconductor Index sank 6.3% Wednesday (July 1) and 5.4% Thursday (July 2) on AI-valuation jitters — directly consistent with NVDA (3.213pp buffer) and AVGO (0.731pp buffer, CRITICAL) compressing this week. Reports of OpenAI in talks to sell a 5% stake to the US government and Meta considering monetizing excess compute capacity circulated as context for the AI-capex-sustainability debate. June nonfarm payrolls came in at +57,000, below expectations, keeping Fed-rate-path attention elevated into the long weekend. This is a sector-sentiment/macro headwind, not a company-specific thesis break for any held name — but it threatens AVGO's razor-thin buffer directly. The July 6 pre-market must check AVGO first, per the standing sub-1pp escalation protocol (full exit if it opens flat-to-down with no positive catalyst).
+
+### Friday weekly-review watchdog
+Today is Friday, July 3. The newest entry in `weekly-review.md` is **Week 3 (2026-06-15 through 2026-06-19)**, dated June 19 — **14 days old**, well past the 7-day threshold. Week 4 (June 22–26) and what would be Week 5 (June 29–July 3) reviews were never filed, despite Week 4 containing major events (MSFT forced cut, META proactive exit, MRVL stop fill, ETN entry). This is now a standing, worsening gap — flagged 🚨 in today's notify per playbook step 5c. This EOD close routine does not run the weekly review itself; the gap needs the weekly-review routine to actually fire.
+
+### Result
+No trades, no exits, no stop changes — market closed all session. All 6 positions confirmed with live 18% trailing stops. AVGO remains the single CRITICAL item (0.731pp buffer) carried into the July 6 pre-market with the sub-1pp full-exit escalation contingency. GOOGL and AMZN review_by (July 7) also carried forward. Control: ACTIVE. The overdue weekly review (14 days stale) is the most important open item for the human to check on.
+

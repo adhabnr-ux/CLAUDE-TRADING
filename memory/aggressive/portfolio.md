@@ -3969,10 +3969,35 @@ _Semi-group (NVDA+AVGO+MRVL) at 43.9% — within 50% cap. Three positions in pro
 | 2026-06-18 (EOD close) | **96,864.56** | **746.74** | **-3.135%** | **-0.987%** | **-2.148pp** |
 | 2026-06-22 (EOD close) | **95,130.45** | **744.28** | **-4.870%** | **-1.312%** | **-3.558pp** |
 | 2026-07-03 (midday) | **90,674.09** | — (market closed) | **-9.326%** | — | — |
+| 2026-07-03 (EOD close) | **90,674.09** | **744.86** (July 2 close, no session today) | **-9.326%** | **-1.236%** | **-8.090pp** |
 
 ---
 
 ## 2026-07-03 — MIDDAY snapshot (market closed, unchanged from pre-market)
 
 Equity USD 90,674.09; cash USD 25,696.39 (28.35%); 6 open positions (NVDA, AVGO, ETN, GOOGL, AMZN, VST); 6/6 stops live. AVGO CRITICAL at 0.731pp buffer post the July 2 trim — no action possible today, contingency (full exit if opens flat-to-down) carried to July 6. GOOGL/AMZN review_by July 7 due at next session. No trades this run. Next open: 2026-07-06 09:30 ET.
+
+---
+
+## 2026-07-03 — EOD CLOSE snapshot (market closed all session)
+
+**Account:** Equity USD 90,674.09 (unchanged, no session today); cash USD 25,696.39 (28.35%); drawdown from HWM -10.352% (breaker at -20%, not triggered); alpha since inception -8.090pp.
+
+**Positions (6 open, all unchanged from pre-market/midday):**
+| Symbol | Qty | Sector | P/L% | Buffer to -12% |
+|---|---|---|---|---|
+| NVDA | 103 | Semiconductors | -8.787% | 3.213pp |
+| AVGO | 25 | Semiconductors | -11.269% | **0.731pp 🔴 CRITICAL** |
+| ETN | 34 | Industrials/power infra | -5.010% | 6.990pp |
+| GOOGL | 16 | Communication Services (hyperscaler) | -2.785% | 9.215pp |
+| AMZN | 36 | Consumer Discretionary (hyperscaler) | -2.146% | 9.854pp |
+| VST | 52 | Utilities (nuclear power) | -0.277% | 11.723pp |
+
+**Sector exposure:** Semiconductors (NVDA+AVGO) = USD 29,078.74 / USD 90,674.09 = 32.07%; Industrials (ETN) = 14.94%; Hyperscalers (GOOGL+AMZN) = 15.94%; Utilities (VST) = 8.66%; Cash = 28.35%.
+
+**Stops:** 6/6 live 18% trailing stops confirmed. No changes today (market closed).
+
+**Open risk items:** AVGO CRITICAL at 0.731pp buffer — sub-1pp full-exit escalation contingency carried to July 6 pre-market if it opens flat-to-down. GOOGL and AMZN review_by dates both July 7 — mandatory hold/trim/exit decisions due at or before the July 6/7 session. **Weekly review is 14 days stale (last entry: Week 3, June 19) — flagged for the human.**
+
+Next actionable routine: July 6 pre-market.
 | 2026-06-23 (EOD close) | **92,876.82** | **733.58** | **-7.123%** | **-2.731%** | **-4.392pp** |
