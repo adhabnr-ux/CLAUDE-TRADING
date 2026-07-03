@@ -6,7 +6,48 @@ but always re-fetches live data before trading._
 
 ---
 
-## Last snapshot — 2026-07-02 EOD CLOSE (~4:10 PM ET)
+## Last snapshot — 2026-07-03 PRE-MARKET (~8:12 AM ET — MARKET CLOSED, Independence Day observed)
+
+| Field | Value |
+|---|---|
+| Equity | USD 90,674.09 |
+| Cash | USD 25,696.39 (28.35%) |
+| Long market value | USD 64,977.70 |
+| Open positions | 6 |
+| last_equity | USD 90,674.09 (unchanged — market closed, no trading since July 2 close) |
+| Shock check | 0.000% — NOT triggered |
+| HWM | USD 101,144.73 |
+| Drawdown from HWM | **-10.352%** (circuit breaker -20% — NOT triggered; 9.648pp headroom) |
+
+**Market status:** `clock` confirms `is_open: false`, next open Monday 2026-07-06 09:30 AM ET. No trading possible today. This is a research/admin-only run — no orders placed, no plan executable.
+
+**Open positions (unchanged from July 2 EOD; prices static, market closed):**
+
+| Symbol | Qty | Avg Entry | Price | P/L % | -12% Cut Trigger | Buffer | Rating |
+|---|---|---|---|---|---|---|---|
+| NVDA | 103 | USD 213.60 | USD 194.83 | -8.787% | USD 187.968 | 3.213pp ⚠️ | A |
+| AVGO | 25 | USD 406.23 | USD 360.45 | **-11.269%** | USD 357.4824 | **0.731pp 🔴 CRITICAL** | A |
+| ETN | 34 | USD 419.54 | USD 398.52 | -5.010% | USD 369.1952 | 6.990pp ✓ | A |
+| GOOGL | 16 | USD 370.22 | USD 359.91 | -2.785% | USD 325.7936 | 9.215pp ✓ | A — review_by July 7 |
+| AMZN | 36 | USD 247.991 | USD 242.67 | -2.146% | USD 218.2322 | 9.854pp ✓ | A — review_by July 7 |
+| VST | 52 | USD 151.47 | USD 151.05 | -0.277% | USD 133.2936 | 11.723pp ✓ | A |
+
+**Stop audit: 6/6 confirmed live** (NVDA `54d7d851`, AVGO `cf2956dc`, ETN `abdc232b`, GOOGL `e52a43f1`, AMZN `b55bef05`, VST `5b347be3`).
+
+**Sector exposure:**
+| Sector | Market Value | % of Portfolio |
+|---|---|---|
+| Technology — semis (NVDA, AVGO) | USD 29,078.74 | 32.07% |
+| Industrials/Power Infra (ETN) | USD 13,549.68 | 14.94% |
+| Technology — hyperscalers (GOOGL, AMZN) | USD 14,494.68 | 15.99% |
+| Utilities/Power (VST) | USD 7,854.60 | 8.66% |
+| Cash | USD 25,696.39 | 28.35% |
+
+**Flagged for Monday July 6 pre-market:** (1) AVGO CRITICAL at 0.731pp — apply sub-1pp escalation lesson (full exit, not another trim) if it opens flat-to-down with no positive catalyst; (2) GOOGL and AMZN review_by July 7 — mandatory hold/trim/exit decisions due at or before that session.
+
+---
+
+## Prior snapshot — 2026-07-02 EOD CLOSE (~4:10 PM ET)
 
 | Field | Value |
 |---|---|

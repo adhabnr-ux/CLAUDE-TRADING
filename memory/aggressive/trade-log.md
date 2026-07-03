@@ -3005,3 +3005,31 @@ AVGO's percentage buffer to the -12% cut is unchanged by the trim (~0.6pp, since
 ### Result
 One trade this run: **AVGO proactive risk-reduction trim (9 shares, -USD 417.95 realized on the trimmed portion)** — completing a pre-market-approved trade that the market-open routine failed to execute, ahead of the July 3–6 holiday closure. No mechanical -12% cuts fired (AVGO closest at -11.458%, now on a smaller 25-share base). No winners eligible for stop-tightening. News scan confirmed all three sub-5%-down-or-more positions (NVDA, AVGO, ETN) have intact theses — macro/sector pressure, not company-specific breaks. Stop audit 6/6 ✓. Shock check NOT triggered (-1.584% pre-trim). Cash now 28.42%, a healthier buffer heading into the 4-day closure. Control: ACTIVE. **Flagging the market-open execution gap for the human — the pre-market plan step and the market-open execution step are not staying in sync.** [search: WebSearch fallback — MiniMax M3 MCP not connected this session]
 
+---
+
+## 2026-07-03 — PRE-MARKET (market closed, no trades possible)
+
+**No trades executed — market closed for Independence Day (observed Friday July 3; July 4 falls on Saturday).** `clock` confirmed `is_open: false`, next open Monday July 6, 9:30 AM ET.
+
+### Pre-run checks
+| Check | Result |
+|---|---|
+| Live-switch guard | ALPACA_BASE_URL contains "paper" ✓ |
+| Lock | Clear (`{}`) at start; written for this run ✓ |
+| Control switch | STATUS: ACTIVE ✓ (no NOTE:, no QUERY:) |
+| Market open | **false** — holiday closure; no orders possible |
+
+### Account status (unchanged since July 2 EOD)
+| Field | Value |
+|---|---|
+| Equity | USD 90,674.09 |
+| Cash | USD 25,696.39 (28.35%) |
+| HWM | USD 101,144.73 |
+| Drawdown from HWM | -10.352% (circuit breaker -20% — NOT triggered) |
+| Shock check | 0.000% vs last_equity — NOT triggered |
+
+### Stop audit — 6/6 confirmed live ✓ (NVDA `54d7d851`, AVGO `cf2956dc`, ETN `abdc232b`, GOOGL `e52a43f1`, AMZN `b55bef05`, VST `5b347be3`)
+
+### Result
+Research-only run. All 6 positions reviewed for "what changed since yesterday" (see research-log.md) — all theses intact, no invalidations triggered. AVGO remains CRITICAL at 0.731pp buffer (post the July 2 midday 25% trim) with no action possible today; flagged explicitly for July 6 pre-market to apply the sub-1pp escalation lesson (full exit, not another trim) if it opens flat-to-down. GOOGL and AMZN review_by dates (July 7) are within 2 trading days — mandatory decisions due at or before the July 6/7 session. No new positions researched (no order could execute today). Full 6/6 stop audit passed. Control: ACTIVE.
+

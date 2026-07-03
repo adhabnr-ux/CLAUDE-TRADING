@@ -3174,3 +3174,115 @@ All guardrails pass.
   ]
 }
 ```
+
+---
+
+## 2026-07-03 — PRE-MARKET (Friday — MARKET CLOSED, Independence Day observed)
+[search: WebSearch fallback — MiniMax M3 MCP not connected this session; all searches below used WebSearch]
+
+### Market status
+`./scripts/alpaca.sh clock` confirms `is_open: false`, `next_open: 2026-07-06T09:30:00-04:00`. July 4 falls on a Saturday, so NYSE/Nasdaq observe the holiday on Friday July 3 — today is a full market closure. No trading is possible today regardless of any plan; this run is research/administrative only. Confirmed independently via WebSearch: "the stock market will be closed Friday for the Independence Day holiday."
+
+### Portfolio snapshot (live Alpaca data, ~8:12 AM ET — unchanged since July 2 EOD, market closed)
+
+| Symbol | Qty | Avg Entry | Current | P/L % | Buffer to -12% |
+|---|---|---|---|---|---|
+| NVDA | 103 | USD 213.60 | USD 194.83 | -8.787% | 3.213pp ⚠️ |
+| AVGO | 25 (trimmed from 34 on 7/2) | USD 406.23 | USD 360.45 | **-11.269%** | **0.731pp 🔴 CRITICAL** |
+| ETN | 34 | USD 419.54 | USD 398.52 | -5.010% | 6.990pp ✓ |
+| GOOGL | 16 | USD 370.22 | USD 359.91 | -2.785% | 9.215pp ✓ |
+| AMZN | 36 | USD 247.991 | USD 242.67 | -2.146% | 9.854pp ✓ |
+| VST | 52 | USD 151.47 | USD 151.05 | -0.277% | 11.723pp ✓ |
+
+**Account equity: USD 90,674.09.** Cash USD 25,696.39 (28.35%). last_equity USD 90,674.09 (identical — no trading since July 2 close). Shock check: 0.000% — NOT triggered.
+**HWM USD 101,144.73. Drawdown -10.352% — circuit breaker -20% NOT triggered (9.648pp headroom).**
+**Stop audit: 6/6 confirmed live** (NVDA `54d7d851`, AVGO `cf2956dc`, ETN `abdc232b`, GOOGL `e52a43f1`, AMZN `b55bef05`, VST `5b347be3`) — verified directly from Alpaca's open-orders list, all `status: "new"`.
+
+### Market posture
+S&P 500 futures roughly flat overnight (~-0.01%), ISM Manufacturing PMI 53.3 (still expansionary), 10-year Treasury yield drifting toward 4.5% (raising borrowing-cost concerns). Cautious, low-conviction tape ahead of the long weekend — consistent with typical pre-holiday, thin-volume positioning. Date of facts: July 3, 2026 pre-market (per WebSearch).
+
+### Held positions — "what changed since yesterday" (required for each)
+
+**NVDA — Thesis: INTACT. Nothing material overnight.**
+- *What changed:* No new company-specific news since July 2 EOD. Nvidia's start-up compute-for-equity program and the AI-cloud-provider partnership (both reported this week) remain thesis-positive but already priced in. New Microsoft-hire (Nicholas Parker, field ops) is an operational item, not a demand signal. 58-analyst Strong Buy consensus, avg PT USD 301.62.
+- Buffer 3.213pp ⚠️ — still below the 4pp comfort line but not deteriorating. Review_by July 9 — not due today. Next earnings Aug 26 — no window risk.
+- Source: Yahoo Finance, stockanalysis.com, July 3 2026.
+
+**AVGO — Thesis: INTACT. Buffer remains CRITICAL post-trim; no new action possible (market closed).**
+- *What changed:* No new company-specific catalyst since the July 2 midday trim. Stock still absorbing the broad tech/AI-cost-concern pullback (-15% over the past month). 48-analyst Strong Buy consensus, PT USD 523.73 (+45.3% from current). Jalapeño custom AI chip program with OpenAI (confirmed this week) is thesis-positive and unrelated to the buffer compression.
+- Buffer 0.731pp 🔴 — essentially unchanged from the post-trim EOD reading (0.635pp) since price hasn't moved (market closed). The 25% proactive trim executed at midday July 2 already addressed sizing risk; the position's percentage buffer is a function of price, not share count, so it remains thin. No further action is possible today — market is closed, no order can be placed.
+- **Contingency for Monday July 6 market-open:** if AVGO opens at or below current EOD price (USD 360.45) with no positive company-specific catalyst over the weekend, apply the standing sub-1pp-buffer lesson (MSFT June 22 / META June 23): escalate from trim to full exit rather than waiting for the midday rule, given the position has already been trimmed once and remains critical. If AVGO opens meaningfully higher (buffer recovers above ~2pp), hold and reassess. This is flagged explicitly for the July 6 pre-market routine to action — do not let it ride unexamined into Monday.
+- Review_by July 9 — not due today, but effectively superseded by the Monday contingency above.
+- Source: Yahoo Finance, stockanalysis.com, Benzinga, July 2-3 2026.
+
+**ETN — Thesis: INTACT. Comfortable.**
+- *What changed:* No new company-specific news since July 2. AI data-center demand narrative (backlog +48% YoY, Dana Mobility RMT merger progressing) intact. DCF-overvaluation debate noted by some analysts is a valuation opinion, not a thesis-breaking event (invalidation = price <USD 332 or AI capex reversal, neither triggered).
+- Buffer 6.990pp ✓ — comfortable. Review_by July 9 — not due today. Next earnings Aug 4 — no window risk.
+- Source: Yahoo Finance, MacroTrends, July 2026.
+
+**GOOGL — Thesis: INTACT. Legal/dilution overhangs remain non-thesis.**
+- *What changed:* No new items beyond what was already logged July 2 (Swedish antitrust judgment, South Korea Play-store inquiry) — both unrelated to GCP/TPU. Google Cloud Q1 2026 revenue +63% YoY, backlog ~USD 460B, unchanged. Wells Fargo trimmed PT to USD 416 (from USD 435) but kept Overweight — a valuation trim, not a thesis downgrade.
+- Buffer 9.215pp ✓ — comfortable. Review_by **July 7 — 2 trading days away (next session Monday July 6, then Tuesday July 7)**; mandatory hold/trim/exit decision required at or before that pre-market.
+- Next earnings ~Jul 21-24 — no window risk.
+- Source: Yahoo Finance, Simply Wall St, earezki.com, July 2-3 2026.
+
+**AMZN — Thesis: INTACT. Strengthening.**
+- *What changed:* Prime Day sales confirmed +9% YoY to USD 26.4B (already logged July 2). No new negative items; June's -12% stock decline was driven by the previously-announced USD 200B 2026 capex plan (AI infrastructure spend), which is thesis-positive (AWS AI monetization), not thesis-negative, despite the near-term multiple compression it caused.
+- Buffer 9.854pp ✓ — comfortable. Review_by **July 7 — same mandatory-decision window as GOOGL**, due at or before the July 6/7 pre-market.
+- Next earnings Jul 30 — no window risk.
+- Source: Yahoo Finance, Motley Fool, July 2-3 2026.
+
+**VST — Thesis: INTACT.**
+- *What changed:* No new items since July 2 (credit agreement amendment, fossil-plant divestiture to Winslow Power JV already logged). Stock fell -3.5% July 1 on no company-specific news — reads as broad-market/utilities-sector rotation, not a thesis event.
+- Buffer 11.723pp ✓ — comfortable. Review_by July 15 — not due today. Next earnings Aug 6 — no window risk.
+- Source: Yahoo Finance, GuruFocus, July 2026.
+
+### Thesis contract review (step 3b)
+No review_by deadlines fall today (market closed; nothing to action). GOOGL and AMZN's July 7 deadlines are effectively due at the next pre-market that runs on or before July 7 — flagging for July 6 pre-market explicitly, alongside the AVGO contingency above.
+
+### Conviction-weighted holding review (step 3c)
+Today is Friday, not Monday — skipped per playbook (Monday-only rule).
+
+### Earnings window check
+| Symbol | Next Earnings | Within 2 trading days? | Action |
+|---|---|---|---|
+| NVDA | Aug 26, 2026 | No | None required |
+| AVGO | Sep 3, 2026 | No | None required |
+| ETN | Aug 4, 2026 | No | None required |
+| GOOGL | ~Jul 21-24, 2026 | No | None required |
+| AMZN | Jul 30, 2026 | No | None required |
+| VST | Aug 6, 2026 | No | None required |
+
+**No earnings window risk for any position or candidate. ✓**
+
+### New position research
+No new-position research conducted — market is closed today, no order can be placed, and no candidate research would be actionable before Monday. MRVL re-entry and AMZN pyramid remain deferred to July 6 pre-market per the July 1/2 plans.
+
+### Deployment check
+Cash: USD 25,696.39 = 28.35% of equity — above the 20% mandatory-deployment-note threshold. **Explicit decision: no new buys — market is closed today, so no order could execute regardless of conviction.** Re-evaluate deployment at the July 6 pre-market with fresh data.
+
+### Guardrail check for today
+| Rule | Limit | Status |
+|---|---|---|
+| Single position max | 35% | NVDA 22.13% — largest position. ✓ All clear |
+| Cash floor | 2% min | 28.35% — well above minimum ✓ |
+| Weekly new positions | 8 max | 0/8 used this week ✓ |
+| Semi-group concentration (NVDA+AVGO) | informal ≤50% watch | (20,067+9,011)/90,674 = 32.06% ✓ |
+| Circuit breaker | >20% below HWM | -10.352% — not triggered ✓ |
+| Intraday/pre-market shock | >6% below last_equity | 0.000% — not triggered ✓ (market closed, no movement) |
+| Stop audit | All positions covered | 6/6 live 18% trailing stops confirmed (status: "new") ✓ |
+| Earnings window | No new buys within 2 days of earnings | N/A — no buys planned |
+
+All guardrails pass. No trades possible or planned — market closed.
+
+## Planned trades for today (July 3, 2026 — market closed, no trading session)
+
+**No trades planned.** Market is closed for the Independence Day holiday (observed Friday, July 4 falls on Saturday); next session is Monday, July 6, 9:30 AM ET. No order can be placed today under any circumstance. Two items are explicitly flagged for the July 6 pre-market routine: (1) **AVGO remains CRITICAL at 0.731pp buffer** post-trim — apply the sub-1pp-buffer escalation lesson (full exit, not another partial trim) if it opens flat-to-down with no positive catalyst; (2) **GOOGL and AMZN review_by dates (July 7) are within 2 trading days** — mandatory hold/trim/exit decisions due at or before the July 6/7 pre-market.
+
+```json
+{
+  "plan_date": "2026-07-03",
+  "trades": []
+}
+```
+EXECUTED: 2026-07-03T12:08:00Z (no trades — market closed for Independence Day holiday; no-trade plan confirmed; stop audit 6/6 ALL LIVE; AVGO CRITICAL 0.731pp buffer flagged for July 6 contingency; GOOGL/AMZN review_by July 7 flagged for July 6 pre-market; equity USD 90,674.09, unchanged from last_equity — NOT shock, threshold -6%; drawdown -10.352% from HWM — NOT circuit breaker, threshold -20%; Control: ACTIVE)
