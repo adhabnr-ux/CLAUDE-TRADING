@@ -3968,4 +3968,11 @@ _Semi-group (NVDA+AVGO+MRVL) at 43.9% — within 50% cap. Three positions in pro
 | 2026-06-18 (market-open) | **95,864.24** | ~**744** (est; intraday) | **-4.136%** | ~**-1.253%** (est; 740.96 close) | **~-2.883pp** (est) |
 | 2026-06-18 (EOD close) | **96,864.56** | **746.74** | **-3.135%** | **-0.987%** | **-2.148pp** |
 | 2026-06-22 (EOD close) | **95,130.45** | **744.28** | **-4.870%** | **-1.312%** | **-3.558pp** |
+| 2026-07-03 (midday) | **90,674.09** | — (market closed) | **-9.326%** | — | — |
+
+---
+
+## 2026-07-03 — MIDDAY snapshot (market closed, unchanged from pre-market)
+
+Equity USD 90,674.09; cash USD 25,696.39 (28.35%); 6 open positions (NVDA, AVGO, ETN, GOOGL, AMZN, VST); 6/6 stops live. AVGO CRITICAL at 0.731pp buffer post the July 2 trim — no action possible today, contingency (full exit if opens flat-to-down) carried to July 6. GOOGL/AMZN review_by July 7 due at next session. No trades this run. Next open: 2026-07-06 09:30 ET.
 | 2026-06-23 (EOD close) | **92,876.82** | **733.58** | **-7.123%** | **-2.731%** | **-4.392pp** |

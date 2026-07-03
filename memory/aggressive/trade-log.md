@@ -3033,3 +3033,41 @@ One trade this run: **AVGO proactive risk-reduction trim (9 shares, -USD 417.95 
 ### Result
 Research-only run. All 6 positions reviewed for "what changed since yesterday" (see research-log.md) — all theses intact, no invalidations triggered. AVGO remains CRITICAL at 0.731pp buffer (post the July 2 midday 25% trim) with no action possible today; flagged explicitly for July 6 pre-market to apply the sub-1pp escalation lesson (full exit, not another trim) if it opens flat-to-down. GOOGL and AMZN review_by dates (July 7) are within 2 trading days — mandatory decisions due at or before the July 6/7 session. No new positions researched (no order could execute today). Full 6/6 stop audit passed. Control: ACTIVE.
 
+---
+
+## 2026-07-03 — MIDDAY CHECK (market closed, no action possible)
+
+**No trades executed — market closed for Independence Day (observed Friday July 3).** `clock` confirmed `is_open: false`, `next_open: 2026-07-06T09:30:00-04:00`. Per playbook step 1, skipped directly to journal/notify/commit — no position review, news scan, or stop audit re-run needed since nothing has changed since the July 3 pre-market run (same closed session).
+
+### Pre-run checks
+| Check | Result |
+|---|---|
+| Live-switch guard | ALPACA_BASE_URL contains "paper" ✓ |
+| Lock | Clear (`{}`) at start; written for this run ✓ |
+| Control switch | STATUS: ACTIVE ✓ (no NOTE:, no QUERY:) |
+| Market open | **false** — holiday closure; no orders possible |
+
+### Account status (unchanged since July 2 EOD / July 3 pre-market)
+| Field | Value |
+|---|---|
+| Equity | USD 90,674.09 |
+| Cash | USD 25,696.39 (28.35%) |
+| HWM | USD 101,144.73 |
+| Drawdown from HWM | -10.352% (circuit breaker -20% — NOT triggered) |
+| Shock check | 0.000% vs last_equity — NOT triggered |
+
+### Positions (unchanged, market closed)
+| Symbol | Qty | Entry | Current | P/L % | Buffer to -12% |
+|---|---|---|---|---|---|
+| NVDA | 103 | USD 213.60 | USD 194.83 | -8.787% | 3.213pp |
+| AVGO | 25 (trimmed 7/2) | USD 406.23 | USD 360.45 | **-11.269%** | **0.731pp 🔴 CRITICAL** |
+| ETN | 34 | USD 419.54 | USD 398.52 | -5.010% | 6.990pp |
+| GOOGL | 16 | USD 370.22 | USD 359.91 | -2.785% | 9.215pp |
+| AMZN | 36 | USD 247.991 | USD 242.67 | -2.146% | 9.854pp |
+| VST | 52 | USD 151.47 | USD 151.05 | -0.277% | 11.723pp |
+
+### Stop audit — 6/6 confirmed live ✓ (NVDA `54d7d851`, AVGO `cf2956dc`, ETN `abdc232b`, GOOGL `e52a43f1`, AMZN `b55bef05`, VST `5b347be3`) — verified from Alpaca open-orders list, all `status: "new"`, unchanged from pre-market.
+
+### Result
+No trades — no action possible, market closed. AVGO remains the single flagged risk item: CRITICAL 0.731pp buffer post-trim, carrying the sub-1pp escalation contingency (full exit if it opens flat-to-down with no positive catalyst) into the July 6 pre-market/market-open. GOOGL and AMZN review_by (July 7) also carried forward — mandatory decisions due at or before the July 6/7 session. No new stop fills or closed positions since the July 2 midday trim; no post-mortem entries needed this run. Control: ACTIVE. Next actionable routine: July 6 pre-market.
+
