@@ -3,10 +3,43 @@
 _Updated by every routine from live Alpaca data. The next agent trusts this as
 the last known state, but always re-fetches live data before trading._
 
-**Last updated:** 2026-07-03 08:06 ET (pre-market; MARKET HOLIDAY — closed for July 4 observance, reopens Monday July 6; stop audit 3/3 PASS; LLY $1,213.91 +11.01% / V $362.13 +11.92% [new 52-wk high]; no trades possible, market closed; SOX semiconductor index −12% over 2 days on AI-capex demand-destruction fears [Meta reselling excess AI compute] — no impact on held LLY/V; LRCX and ETN ATR gates both reset to 0/2)
+**Last updated:** 2026-07-03 09:36 ET (market-open routine; MARKET HOLIDAY — closed for July 4 observance, `is_open: false` confirmed via clock, reopens Monday July 6; no trades possible; stop audit 3/3 PASS, unchanged from pre-market; LLY $1,213.91 +11.01% / V $362.13 +11.92%)
 **Inception:** 2026-05-21 — starting equity $100,000.00 | SPY anchor price $739.44
 **SPY total-return anchor (post-June 18 ex-div $1.76):** **$741.20**
 **Cumulative SPY dividends since inception (quarterly tracker):** $1.76/sh (June 18 ex-div); next SPY ex-div est. ~September 2026.
+
+---
+
+## Account (market-open routine, 2026-07-03 ~09:36 ET — MARKET HOLIDAY, no trading day)
+
+| Metric | Value |
+|--------|-------|
+| Equity | $100,129.68 |
+| Cash | $80,023.72 (79.91%) |
+| Long market value | $20,105.96 |
+| Buying power | ~$80,023.72 (cash) / $376,391.57 (margin, unused) |
+| Last equity | $100,129.68 |
+
+## Open positions (market-open routine, 2026-07-03 ~09:36 ET)
+
+| Symbol | Qty | Avg entry | Current price | Mkt value | Unrealized P/L | % of portfolio | Trailing Stop |
+|--------|-----|-----------|--------------|-----------|----------------|----------------|---------------|
+| LLY | 10 | $1,093.534 | $1,213.91 | $12,139.10 | +$1,203.76 (+11.01%) | 12.13% | d4147484 (7sh) + 25989fb5 (3sh), HWM $1,238.00, stop $1,114.20 ✓ |
+| V | 22 | $323.57 | $362.13 | $7,966.86 | +$848.32 (+11.92%) | 7.96% | 66033918 (22sh), HWM $361.86, stop $325.674 ✓ |
+
+**Sector exposure:** Healthcare (LLY) 12.13% | Financials (V) 7.96% | Cash 79.91% — no sector above 60% cap ✓
+
+**Market-open routine notes (2026-07-03 ~09:36 ET):**
+- **Live-switch guard:** `ALPACA_BASE_URL` contains "paper" ✓.
+- **Lock:** no stale lock found; acquired and released cleanly.
+- **Control switch:** `memory/control.md` STATUS: ACTIVE. No `NOTE:`/`QUERY:` line to acknowledge.
+- **Plan check:** today's plan block in research-log.md (`plan_date: 2026-07-03`, `trades: []`) confirmed current — pre-market already decided to stay in cash for the July 4 holiday closure (LRCX/ETN ATR gates both reset to 0/2 after the semi-sector selloff; no other watchlist name qualified). Not a stale/prior-day plan.
+- **Market clock:** `is_open: false` — `next_open: 2026-07-06T09:30:00-04:00`. Per playbook step 1, no trades possible; skipped steps 2–4 (breaking-news gate, shock re-check, trade execution — none applicable with an empty plan and closed market).
+- **Shock check:** equity $100,129.68 vs last_equity $100,129.68 = 0.00% — no shock ✓ (no new session has closed since pre-market).
+- **Stop audit (step 5):** compared live positions vs open orders — 3/3 trailing stops present and correctly sized (LLY 7sh + 3sh = 10sh total; V 22sh), matching held quantities exactly. No missing stops, nothing to recreate. Identical to the pre-market audit — no session has elapsed.
+- **Exit reconciliation:** no fills since pre-market (market closed) — nothing to reconcile against closed-trades.md.
+- **Trades today:** 0 (market closed).
+- **Since inception:** Bull +0.1297% ($100,129.68) vs SPY TR +0.8413% ($743.90 + $1.76 div vs $739.44 anchor, unchanged — market closed) → **Bull TRAILS SPY −0.712pp** (unchanged from pre-market).
 
 ---
 
