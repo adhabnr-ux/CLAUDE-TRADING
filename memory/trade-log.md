@@ -5,6 +5,27 @@ The weekly new-position count is derived from this log._
 
 _Entries before 2026-06-01 archived to `memory/archive/2026-05.md` (2026-07-01 monthly housekeeping)._
 
+## 2026-07-03 12:34 ET — MIDDAY — MARKET HOLIDAY (Independence Day observed; no trades possible)
+
+- **Action:** Midday risk-management routine. Market closed for July 4 observance (falls on Saturday, NYSE observes Friday July 3). No trading possible.
+- **Live-switch guard:** `ALPACA_BASE_URL` contains "paper" ✓
+- **Lock:** `_lock` was `{}` (free) — acquired for this run, released at end.
+- **Control switch:** `memory/control.md` STATUS: ACTIVE ✓ — no PAUSED/RISK_OFF, no NOTE, no QUERY.
+- **Market status:** `is_open: false` confirmed via clock (~12:33 ET) — `next_open: 2026-07-06T09:30:00-04:00`. Per playbook step 1, journaled "market closed, no action" and skipped to step 7.
+- **Account (~12:33 ET — live Alpaca):** Equity $100,129.68 | Cash $80,023.72 (79.91%) | LMV $20,105.96 — unchanged from this morning's market-open snapshot (no new session has closed).
+- **Shock check:** $100,129.68 vs last_equity $100,129.68 = $0.00 (0.00%) — no shock ✓ (threshold −4%).
+- **LLY:** $1,213.91 vs entry $1,093.534 → +11.01% (unchanged from market-open). HOLD, Conviction A.
+- **V:** $362.13 vs entry $323.57 → +11.92% (unchanged from market-open). HOLD, Conviction B.
+- **News scan:** Not run — prices unchanged since market-open (market closed, no new session), so no incremental news-scan trigger to re-check.
+- **−7% cut rule / +15% tighten trigger:** not applicable — market closed, no discretionary action taken.
+- **Stop audit (3/3 PASS, unchanged from market-open):**
+  - LLY (d4147484): 7sh — HWM $1,238.00, stop $1,114.20 ✓
+  - LLY (25989fb5): 3sh — HWM $1,238.00, stop $1,114.20 ✓
+  - V (66033918): 22sh — HWM $361.86, stop $325.674 ✓
+- **No cuts, no tightenings, no new positions, no exits today.**
+- **Since inception:** Bull +0.1297% ($100,129.68) vs SPY TR +0.8413% ($743.90 + $1.76 div vs $739.44 anchor, unchanged — market closed) → **Bull TRAILS SPY −0.712pp** (unchanged from market-open).
+- **Telegram notification sent** ✓
+
 ## 2026-07-02 12:34 ET — MIDDAY (0 trades; no cuts, no tightenings; stop audit 3/3 ✓; news scan on LLY+V (both >10% from entry) found only thesis-confirming catalysts; Bull +0.0146% TRAILS SPY TR +0.699% → −0.685pp, gap narrowed sharply on NFP-driven SPY dip)
 
 - **Action:** Midday risk-management routine. No new positions considered per playbook.
