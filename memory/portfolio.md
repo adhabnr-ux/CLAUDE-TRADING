@@ -3,7 +3,7 @@
 _Updated by every routine from live Alpaca data. The next agent trusts this as
 the last known state, but always re-fetches live data before trading._
 
-**Last updated:** 2026-07-03 12:34 ET (midday routine; MARKET HOLIDAY — closed for July 4 observance, `is_open: false` confirmed via clock, reopens Monday July 6; no trades possible; stop audit 3/3 PASS, unchanged from market-open; LLY $1,213.91 +11.01% / V $362.13 +11.92%)
+**Last updated:** 2026-07-03 15:51 ET (close routine; MARKET HOLIDAY — closed for July 4 observance, `is_open: false` confirmed via clock, reopens Monday July 6; no trades possible all day; stop audit 3/3 PASS, unchanged from midday; LLY $1,213.91 +11.01% / V $362.13 +11.92%; SPY final close $744.86 → Bull TRAILS SPY −0.8414pp since inception)
 **Inception:** 2026-05-21 — starting equity $100,000.00 | SPY anchor price $739.44
 **SPY total-return anchor (post-June 18 ex-div $1.76):** **$741.20**
 **Cumulative SPY dividends since inception (quarterly tracker):** $1.76/sh (June 18 ex-div); next SPY ex-div est. ~September 2026.
@@ -118,8 +118,45 @@ the last known state, but always re-fetches live data before trading._
 | Period | Bull | SPY | Difference |
 |--------|------|-----|------------|
 | Inception (2026-05-21) | $100,000.00 | $739.44 | — |
-| **Pre-market (2026-07-03)** | **$100,129.68 (+0.1297%)** | **SPY $743.90 + $1.76 div = +0.8413% TR** | **Bull TRAILS SPY −0.712pp** |
-| Close (2026-07-02) | $100,016.50 (+0.0165%) | SPY $743.90 + $1.76 div = +0.842% TR | Bull TRAILS SPY −0.825pp |
+| **Close (2026-07-03, MARKET HOLIDAY)** | **$100,129.68 (+0.1297%)** | **SPY $744.86 + $1.76 div = +0.9711% TR** | **Bull TRAILS SPY −0.8414pp** |
+| Pre-market (2026-07-03) | $100,129.68 (+0.1297%) | SPY $743.90 (intraday est.) + $1.76 div = +0.8413% TR | Bull TRAILS SPY −0.712pp |
+| Close (2026-07-02) | $100,016.50 (+0.0165%) | SPY $743.90 (intraday est.) + $1.76 div = +0.842% TR | Bull TRAILS SPY −0.825pp |
+
+---
+
+## Account (close July 3, 2026 — live Alpaca data ~15:51 ET — MARKET HOLIDAY, no trading day)
+
+| Metric | Value |
+|--------|-------|
+| Equity | $100,129.68 |
+| Cash | $80,023.72 (79.91%) |
+| Long market value | $20,105.96 |
+| Buying power | ~$80,023.72 (cash) / $376,391.57 (margin, unused) |
+| Last equity | $100,129.68 |
+
+## Open positions (close July 3, 2026 — live Alpaca data ~15:51 ET)
+
+| Symbol | Qty | Avg entry | Current price | Mkt value | Unrealized P/L | % of portfolio | Trailing Stop |
+|--------|-----|-----------|--------------|-----------|----------------|----------------|---------------|
+| LLY | 10 | $1,093.534 | $1,213.91 | $12,139.10 | +$1,203.76 (+11.01%) | 12.13% | d4147484 (7sh) + 25989fb5 (3sh), HWM $1,238.00, stop $1,114.20 ✓ |
+| V | 22 | $323.57 | $362.13 | $7,966.86 | +$848.32 (+11.92%) | 7.96% | 66033918 (22sh), HWM $361.86, stop $325.674 ✓ |
+
+**Sector exposure:** Healthcare (LLY) 12.13% | Financials (V) 7.96% | Cash 79.91% — no sector above 60% cap ✓
+
+**Close routine notes (2026-07-03 ~15:51 ET):**
+- **Live-switch guard:** `ALPACA_BASE_URL` contains "paper" ✓.
+- **Lock:** no stale lock found; acquired and released cleanly.
+- **Control switch:** `memory/control.md` STATUS: ACTIVE. No `NOTE:`/`QUERY:` line to acknowledge.
+- **Market clock:** `is_open: false` all day — `next_open: 2026-07-06T09:30:00-04:00`. No trades possible.
+- **Today P/L:** $0.00 (0.00%) — market never traded.
+- **Drawdown circuit breaker:** $100,129.68 vs HWM $101,384.21 = −1.237% — NOT triggered ✓ (8.763pp headroom).
+- **Stop audit:** 3/3 PASS, unchanged from midday.
+- **Exit reconciliation:** no fills today — nothing new for closed-trades.md.
+- **Market context (July 2 close, most recent session):** Dow +~1.1% to a fresh record; Nasdaq −0.8% on chip-sector weakness; SPY little changed. June payrolls soft (+57K vs +113K expected). No impact on LLY/V theses.
+- **Since inception:** Bull +0.1297% ($100,129.68) vs SPY TR +0.9711% ($744.86 official close + $1.76 div vs $739.44 anchor) → **Bull TRAILS SPY −0.8414pp**.
+- **Race scoreboard:** Bull +0.13% | AGGRO −9.33% (2026-07-03 midday snapshot, equity $90,674.09, market closed/unchanged) | SPY +0.97% — Bull leads AGGRO by ~9.46pp.
+- **Friday watchdog:** newest weekly-review.md entry (week ending 2026-06-26) is exactly 7 days old — not stale, no flag today (weekly review runs separately at 16:30 ET).
+- **Trades today:** 0 (market closed all day).
 
 ---
 
