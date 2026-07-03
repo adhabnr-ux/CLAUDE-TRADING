@@ -7,6 +7,121 @@ _Entries before 2026-06-01 archived to `memory/archive/2026-05.md` (2026-07-01 m
 
 ---
 
+## 2026-07-03 — Pre-market research (~08:06 ET) — MARKET HOLIDAY (Independence Day observed)
+
+### Live-switch guard
+- `ALPACA_BASE_URL` contains "paper" ✓ — paper trading confirmed.
+
+### Lock / Control switch
+- `memory/_lock` was empty (`{}`) — no other routine active. Lock written for this run.
+- `memory/control.md` STATUS: **ACTIVE**. No `NOTE:` or `QUERY:` line present. Nothing to acknowledge or answer.
+
+### Market clock
+- `./scripts/alpaca.sh clock` → `is_open: false`, next_open **2026-07-06T09:30:00-04:00**, next_close 2026-07-06T16:00:00-04:00. July 4 falls on a Saturday, so NYSE observes the holiday today (July 3) — market fully closed, not a half day. This routine preps the plan for Monday July 6's open (per the 2026-05-25 lesson: holiday pre-market still adds value — do not skip).
+
+### Account snapshot (live Alpaca ~08:06 ET)
+
+| Metric | Value |
+|--------|-------|
+| Equity | $100,129.68 |
+| Cash | $80,023.72 (79.91%) |
+| Long market value | $20,105.96 |
+| Last equity (Alpaca API, carried from last snapshot since market closed) | $100,129.68 |
+| Shock check | $0.00 (0.00%) — no shock ✓ (threshold −4%; last_equity unchanged because no new trading session has closed since Thursday) |
+| HWM (since inception, from 3-month equity history) | $101,384.21 |
+| Drawdown | **−1.237%** — NOT triggered ✓ (circuit breaker at −10%; 8.763pp headroom; CB trigger ≈ USD 91,245.79) |
+
+### Open positions (live ~08:06 ET; prices reflect Thursday July 2 last trade, extended through 20:00 UTC)
+
+| Symbol | Qty | Avg entry | Current price | Mkt value | Unrealized P/L | % of portfolio |
+|--------|-----|-----------|--------------|-----------|----------------|----------------|
+| LLY | 10 | $1,093.534 | $1,213.91 | $12,139.10 | +$1,203.76 (+11.01%) | 12.13% |
+| V | 22 | $323.57 | $362.13 | $7,966.86 | +$848.32 (+11.92%) | 7.96% |
+
+**Sector exposure:** Healthcare (LLY) 12.13% | Financials (V) 7.96% | Cash 79.91% — no sector above 60% cap ✓
+
+### Stop audit (confirmed via Alpaca live orders ~08:06 ET)
+
+| Order ID | Symbol | Qty | HWM | Stop | Buffer | Status |
+|----------|--------|-----|-----|------|--------|--------|
+| d4147484 | LLY | 7sh | $1,238.00 | $1,114.20 | $99.71 (8.21%) | ✓ active |
+| 25989fb5 | LLY | 3sh | $1,238.00 | $1,114.20 | $99.71 (8.21%) | ✓ active |
+| 66033918 | V | 22sh | **$361.86** ⬆️ (ratcheted from $360.84) | **$325.674** ⬆️ (up from $324.756) | $36.456 (10.07%) | ✓ active |
+**Stop audit: 3/3 PASS ✓** No missing stops.
+
+### Macro (as of July 2 close / July 3 pre-market)
+
+| Indicator | Value | Threshold | Status |
+|-----------|-------|-----------|--------|
+| S&P 500 | +0.49% July 2, closed near record highs heading into the holiday | — | Broad tape constructive |
+| **SOX (semiconductor index)** | **−~7% July 3 alone, >12% over 2 days** | — | ⚠️ Sharp AI-capex demand-destruction scare |
+| 10yr Treasury | 4.47–4.49% | <4.75% | ✓ GATE PASSES |
+| Fed Chair Warsh | Reiterated inflation risks softening | — | No hawkish surprise |
+
+**Narrative:** The broad market (SPY, Dow) closed at fresh highs into the holiday, but semiconductors sold off sharply on reports that **Meta is building an internal cloud business to resell excess AI computing power** — read by markets as an early signal of potential AI-capex demand cooling. This drove SK Hynix −14.5% and Samsung −9.1% (Kospi −7.9%) on July 2, and directly hit LRCX (−10.2% same day per Alpaca bars: $391.26→$351.41). Neither LLY (healthcare) nor V (financials) has any semiconductor/AI-infra exposure — this is a sector-specific event for our watchlist (LRCX, ETN), not a portfolio risk. Per knowledge-base.md §3.3 saturation-risk signals ("a major hyperscaler announcing efficiency breakthroughs that reduce GPU intensity... at scale"), this is worth tracking as an early AI-capex-cycle watch-flag, not yet a fundamental verdict.
+
+### Position thesis reviews — "what changed since yesterday"
+
+**LLY** ($1,213.91, +11.01% from entry $1,093.534)
+- _What changed since July 2:_ Nothing new — no fresh company-specific news found since the July 1 Medicare Bridge launch. Stock continues to hold post-launch gains. Leerink PT $1,232 (unchanged, June 25). No negative catalysts.
+- Stop: HWM $1,238.00, stop $1,114.20 (buffer $99.71 = 8.21%) ✓
+- Earnings: confirmed Aug 5, 2026 — outside the 2-day window ✓
+- Invalidation: close below stop $1,114.20; or Medicare Bridge pricing/utilization data reveals margin deterioration.
+- review_by: **2026-07-07** — not due (next trading session is Monday July 6, still 1 day before the deadline; will be assessed at Monday's pre-market or the following session).
+- **Decision: HOLD. Conviction: A.**
+
+**V** ($362.13, +11.92% from entry $323.57)
+- _What changed since July 2:_ V rallied +3.15% July 2 to a fresh 52-week high on strong Q2 growth commentary (value-added services revenue +29% YoY) and Piper Sandler's Overweight/PT initiation standing. Visa Destinations (10 markets) and the stablecoin settlement pilot (~USD 7B annualized run rate) continue to build out. No negative news.
+- Stop: HWM $361.86 (auto-ratcheted from $360.84), stop $325.674 (buffer $36.456 = 10.07%) ✓
+- Earnings: confirmed July 28, 2026 — outside the 2-day window ✓
+- Invalidation: close below stop $325.674; or a reversal in payments-volume trends.
+- review_by: 2026-07-28 (unchanged) — not due.
+- **Decision: HOLD. Conviction: B.**
+
+### Thesis contract review
+Both held positions' invalidation and review_by are current and neither has triggered. No forced hold/trim/exit decision required today. LLY's July 7 review_by will fall due within the next 1-2 trading sessions (Monday July 6 or Tuesday July 7 pre-market) — flagging for the next routine to action explicitly.
+
+### Earnings calendar confirmation
+- LLY: next earnings Aug 5, 2026 ✓ (outside window)
+- V: next earnings July 28, 2026 ✓ (outside window)
+
+### Watchlist / candidate review (ATR gates recomputed from Alpaca daily bars, explicit start/end range)
+
+| Ticker | Session | H / L / C | ATR% | Gate result |
+|--------|---------|-----------|------|-------------|
+| ETN | July 1 | 423.45 / 404.74 / 412.31 | 4.54% | ✓ PASS (session 1/2 under the July 1 reset) |
+| ETN | July 2 | 414.74 / 392.30 / 398.52 | **5.63%** | ❌ FAIL (barely, >5% threshold) — **gate resets to 0/2** |
+| LRCX | July 1 | 415.49 / 381.00 / 391.26 | 8.82% | ❌ FAIL |
+| LRCX | July 2 | 392.50 / 342.475 / 351.41 | **14.24%** | ❌ FAIL badly — stock cratered −10.2% intraday in the Meta-cloud-reselling selloff |
+
+- **ETN:** Gate counter reset to **0/2**. Needs 2 fresh consecutive ≤5% ATR sessions starting Monday July 6. Not eligible Monday even in the best case (only 1 session will have completed). Fundamentals (Russell index inclusion, raised FY26 EPS guidance USD 13.00–13.50) unchanged; today's fail was macro-sympathy from the semi selloff, not company-specific.
+- **LRCX:** Gate counter reset to **0/2** (yet again). The July 2 drop is directly tied to the AI-capex-demand-destruction scare — this is the second time in 3 weeks LRCX has been hit by a semi-sector-wide selloff before completing its ATR gate. Flagging as a repeated pattern: LRCX's beta to AI-capex sentiment shocks may make it a structurally poor fit for this gate mechanism. Not proposing a rule change today, but will revisit at the next weekly review if this repeats a third time.
+- **NVDA:** Still excluded (cooling period from June 25 second stop-out). Re-eligible **2026-07-09** — not yet (3 trading days after Monday's open).
+- **MSFT / COST / JNJ / WMT / PWR:** No new signal; unchanged from prior weeks.
+
+### Cash-drag check
+Cash is 79.91% — far above the 10–20% target band for a 2-position book, elevated for 7+ consecutive weeks. No candidate qualifies for Monday's open: both ATR-gated candidates (LRCX, ETN) reset to 0/2 after Wednesday's semi-sector selloff; no other watchlist name clears its entry signals; and the tape is entering the weekend with a fresh, unresolved AI-capex-demand-destruction scare in semiconductors that argues for patience, not urgency, on any semi-adjacent name. Staying in cash into Monday's open is the correct, deliberate call, not a passive default. Will re-check LRCX/ETN gates at every session next week as fresh ≤5% sessions accumulate.
+
+### Risk posture check
+- **Drawdown circuit breaker:** $100,129.68 vs HWM $101,384.21 = **−1.237%** — NOT triggered ✓ (8.763pp headroom; CB trigger USD 91,245.79)
+- **Sector exposure:** Healthcare (LLY) 12.13% | Financials (V) 7.96% | Cash 79.91% — no sector above 60% cap ✓
+
+### Market posture
+Broad market closed at fresh highs into the long weekend, but a sharp, semiconductor-specific selloff (SOX −12% over 2 days) on AI-capex demand-destruction fears (Meta reportedly reselling excess AI compute) dominates the tape. This has no direct read-through to LLY (healthcare) or V (financials) — both are thesis-intact, at new highs, with healthy stop buffers, and no forced decisions due. It does further delay both semi-adjacent watchlist candidates (LRCX, ETN), which reset their ATR gates to 0/2 on Wednesday's session. With the market closed today and reopening Monday, doing nothing and carrying a clean plan into the weekend is the correct, disciplined call.
+
+### Planned trades for today
+
+No trades planned. Market closed for the July 4 holiday (observed Friday July 3); next open is Monday July 6. LRCX and ETN ATR gates both reset to 0/2 after Wednesday's semiconductor-sector selloff (Meta AI-compute-reselling news); no other watchlist name qualifies. Both held positions (LLY, V) are thesis-intact, at new highs, HOLD.
+
+```json
+{
+  "plan_date": "2026-07-03",
+  "trades": []
+}
+```
+
+---
+
 ## 2026-07-02 — Pre-market research (~08:10 ET)
 
 ### Live-switch guard

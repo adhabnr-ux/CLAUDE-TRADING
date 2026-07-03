@@ -3,10 +3,57 @@
 _Updated by every routine from live Alpaca data. The next agent trusts this as
 the last known state, but always re-fetches live data before trading._
 
-**Last updated:** 2026-07-02 15:55 ET (close; stop audit 3/3 PASS; LLY $1,205.65 +10.25% / V $360.83 +11.51%; 0 trades — no cuts, no tightenings; soft NFP print (+57K vs +113K est), Fed Chair Warsh constructive on inflation, chip-sector selloff continued, Financials/Comm Services led — Bull outperformed SPY today +0.704pp)
+**Last updated:** 2026-07-03 08:06 ET (pre-market; MARKET HOLIDAY — closed for July 4 observance, reopens Monday July 6; stop audit 3/3 PASS; LLY $1,213.91 +11.01% / V $362.13 +11.92% [new 52-wk high]; no trades possible, market closed; SOX semiconductor index −12% over 2 days on AI-capex demand-destruction fears [Meta reselling excess AI compute] — no impact on held LLY/V; LRCX and ETN ATR gates both reset to 0/2)
 **Inception:** 2026-05-21 — starting equity $100,000.00 | SPY anchor price $739.44
 **SPY total-return anchor (post-June 18 ex-div $1.76):** **$741.20**
 **Cumulative SPY dividends since inception (quarterly tracker):** $1.76/sh (June 18 ex-div); next SPY ex-div est. ~September 2026.
+
+---
+
+## Account (pre-market July 3, 2026 — live Alpaca data ~08:06 ET; MARKET HOLIDAY)
+
+| Metric | Value |
+|--------|-------|
+| Equity | $100,129.68 |
+| Cash | $80,023.72 (79.91%) |
+| Long market value | $20,105.96 |
+| Buying power | ~$80,023.72 (cash) / $376,391.57 (margin, unused) |
+| Last equity (carried, market closed) | $100,129.68 |
+
+## Open positions (pre-market July 3, 2026 — live Alpaca data ~08:06 ET)
+
+| Symbol | Qty | Avg entry | Current price | Mkt value | Unrealized P/L | % of portfolio | Trailing Stop |
+|--------|-----|-----------|--------------|-----------|----------------|----------------|---------------|
+| LLY | 10 | $1,093.534 | $1,213.91 | $12,139.10 | +$1,203.76 (+11.01%) | 12.13% | d4147484 (7sh) + 25989fb5 (3sh), HWM $1,238.00, stop $1,114.20 ✓ — buffer $99.71 (8.21%) ✓ |
+| V | 22 | $323.57 | $362.13 | $7,966.86 | +$848.32 (+11.92%) | 7.96% | 66033918 (22sh, HWM $361.86 ⬆️ auto-ratcheted, stop $325.674 ⬆️) ✓ — buffer $36.456 (10.07%) ✓ |
+
+**Sector exposure (pre-market July 3):**
+- Healthcare (LLY): $12,139.10 = 12.13% | Financials (V): $7,966.86 = 7.96% | Cash: $80,023.72 = 79.91%
+- No sector above 60% cap ✓
+
+**Trailing stop status (pre-market July 3 — confirmed via Alpaca live orders ~08:06 ET):**
+- LLY (d4147484): 7sh — HWM $1,238.00, stop $1,114.20 ✓ (buffer $99.71 = 8.21%)
+- LLY (25989fb5): 3sh — HWM $1,238.00, stop $1,114.20 ✓
+- V (66033918): 22sh — HWM **$361.86** ⬆️ (auto-ratcheted from $360.84), stop **$325.674** ⬆️ (up from $324.756) ✓ (buffer $36.456 = 10.07%)
+**Stop audit: 3/3 PASS ✓** (3 live trailing-stop orders across 2 positions; none missing)
+
+**Pre-market July 3 notes (~08:06 ET — MARKET HOLIDAY, no trading; stop audit 3/3 PASS; plan for Monday July 6 is empty):**
+- **Shock check:** $100,129.68 vs last_equity $100,129.68 = **$0.00 (0.00%)** — no shock ✓ (threshold −4%; no new session has closed)
+- **Drawdown circuit breaker:** $100,129.68 vs HWM $101,384.21 = **−1.237%** — NOT triggered ✓ (8.763pp headroom; CB trigger USD 91,245.79)
+- **LLY** $1,213.91 (+11.01% from entry): No new news since the July 1 Medicare Bridge launch; thesis intact, Leerink PT $1,232 stands. review_by 2026-07-07 not yet due. HOLD. Conviction A.
+- **V** $362.13 (+11.92% from entry, new 52-week high): Rallied +3.15% July 2 on strong Q2 growth commentary and Piper Sandler support; Visa Destinations + stablecoin pilot (~USD 7B run rate) build out. Thesis intact. review_by 2026-07-28 not due. HOLD. Conviction B.
+- **Market context:** Broad market (SPY, Dow) closed at fresh highs July 2 heading into the holiday, but the semiconductor sector (SOX) fell ~12% over two days on AI-capex demand-destruction fears after reports Meta is building an internal cloud business to resell excess AI compute. This hit LRCX directly (−10.2% July 2) and reset both LRCX and ETN's ATR gates to 0/2. No impact on held LLY/V (neither is semi-exposed).
+- **Cash-drag check:** Cash 79.91%, well above target for a 2-position book. No qualifying candidate for Monday — LRCX/ETN gates both reset by the semi selloff; no other watchlist name clears entry signals. Staying in cash into the weekend is deliberate, not a default.
+- **Trades today:** 0 (market closed).
+- **Since inception:** Bull +0.1297% ($100,129.68) vs SPY TR +0.8413% ($743.90 + $1.76 div vs $739.44 anchor, unchanged — market closed) → **Bull TRAILS SPY −0.712pp**
+
+## Performance vs S&P 500
+
+| Period | Bull | SPY | Difference |
+|--------|------|-----|------------|
+| Inception (2026-05-21) | $100,000.00 | $739.44 | — |
+| **Pre-market (2026-07-03)** | **$100,129.68 (+0.1297%)** | **SPY $743.90 + $1.76 div = +0.8413% TR** | **Bull TRAILS SPY −0.712pp** |
+| Close (2026-07-02) | $100,016.50 (+0.0165%) | SPY $743.90 + $1.76 div = +0.842% TR | Bull TRAILS SPY −0.825pp |
 
 ---
 
