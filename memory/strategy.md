@@ -111,7 +111,7 @@ Do NOT sell on day-to-day noise. Sell on thesis changes.
 
 ## Watchlist
 
-_Watchlist hygiene (updated 2026-06-26 weekly review): entries require date added + catalyst with expiry. Stale entries (4+ weeks, catalyst expired) purged. NVDA removed after second stop-out + GPU spot compression. LRCX gate fully reset. ETN added as AI power infrastructure candidate._
+_Watchlist hygiene (updated 2026-07-03 weekly review): entries require date added + catalyst with expiry. Stale entries (4+ weeks, catalyst expired) purged. LRCX and ETN have now failed their ATR gates repeatedly across 4+ weeks — both correlated to the same AI-capex/semiconductor sentiment swings (SOX −12% over 2 days, Jul 1-2). Pipeline needs fresh, less-correlated candidates rather than continuing to re-test the same two gated names; next pre-market research should actively source 1-2 new non-semi candidates. LRCX hits the 4-week staleness line ~July 8 — purge next review if it still hasn't cleared its entry gate by then._
 
 | Ticker | Sector | Date Added | One-line reason | Catalyst Expiry |
 |--------|--------|------------|-----------------|-----------------|
@@ -160,6 +160,10 @@ _Previously purged (still excluded):_
 - **LRCX — ATR gate:** June 29 8.55%, June 30 5.47% — both fail the loosened ≤5% threshold. Gate counter 0/2 fresh sessions under the July 1 reset. Not eligible today.
 - **ETN — ATR gate:** June 29 2.43% / June 30 4.15% would clear ≤5%, but the July 1 gate reset only counts sessions from today onward. Gate counter 0/2 as of pre-market. Earliest clearance July 2 close.
 - **GOOGL Dow Jones inclusion — effective June 29:** Positive for passive flows; no incremental signal today.
+
+## Weekly review summary (2026-07-03)
+
+Week 7 (Jun 29–Jul 3): Bull +0.42% vs SPY +2.18% = lagged −1.75pp (pure cash drag on SPY's best week since inception). Since inception: Bull +0.13% vs SPY TR +0.97% = trails −0.84pp (was leading +0.88pp last week). First win banked (VST +7.66%, Jun 30) — win rate now 1/7 (14.3%), profit factor 0.192. Grade: B−. 4th consecutive week of 0 new positions — see Watchlist note above for the pipeline fix. Full detail in `weekly-review.md`.
 
 ## Monday Conviction Ratings (last set 2026-06-29 pre-market; next refresh Monday 2026-07-06)
 

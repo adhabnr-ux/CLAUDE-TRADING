@@ -7,6 +7,18 @@ _Entries before 2026-06-01 archived to `memory/archive/2026-05.md` (2026-07-01 m
 
 ---
 
+## 2026-07-03 — Weekly review research (WebSearch, ~market close)
+
+- **Broad market:** Dow closed at a fresh record high heading into the July 4 holiday; S&P ~7,498 (+0.20% Jul 3 alone, led by AAPL +4.8%/MCD +4.1%/DIS +3.8%). Best week for the broad tape since inception. Soft June jobs report (+57K vs +113K expected) reinforced no-hike expectations. [Sources: tradingeconomics.com, thestreet.com, bloomberg.com]
+- **Semiconductor selloff:** Reports that Meta is building an internal cloud business to resell excess AI compute triggered an AI-capex-demand-destruction scare July 1-2 — Micron −7-8%, Applied Materials −7.4%, AMD −4.3%, SK Hynix −14.5%, Samsung −9.1%. Directly hit LRCX and ETN's ATR entry gates; no read-through to LLY/V.
+- **LLY:** Confirmed +~6.7% over the week per TradingView/Zacks; Medicare GLP-1 Bridge program launched on schedule July 1 (~20M Medicare Part D patients, $50/month). One minor negative (China GLP-1 generic reports, June 30) already logged, thesis intact.
+- **V:** Confirmed new 52-week high July 2 (+3.15% that day) on Q2 value-added-services revenue +29% YoY and continued Street support — mean analyst PT $399, zero sell ratings among 42 analysts (EBC Financial Group / Motley Fool).
+- **Best performers this week (broad market, per stocktitan/nerdwallet):** memory/power/cooling infrastructure names continue to lead 2026 YTD gains (SNDK, MXL) — reinforces AI-infrastructure-bottleneck theme already reflected in the ETN watchlist thesis, though semi-adjacent names are exactly what's failing our ATR gates right now. No new name identified that clears both the theme and the volatility/liquidity bar this week; flagged in weekly-review.md for next week's research to widen beyond semis.
+
+Full weekly assessment, trade statistics, and strategy adjustments: see `memory/weekly-review.md` (week ending 2026-07-03).
+
+---
+
 ## 2026-07-03 — Pre-market research (~08:06 ET) — MARKET HOLIDAY (Independence Day observed)
 
 ### Live-switch guard

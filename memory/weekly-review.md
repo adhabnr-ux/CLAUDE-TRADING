@@ -2,6 +2,104 @@
 
 _Written every Friday by the weekly-review routine. Newest at the top._
 
+## Week ending 2026-07-03 (Week 7 — 4 active trading days: Mon Jun 29, Tue Jun 30, Wed Jul 1, Thu Jul 2; Fri Jul 3 market holiday, Independence Day observed)
+
+- **Control switch:** `memory/control.md` STATUS: ACTIVE all week. No `NOTE:`/`QUERY:` line. `CROSS_BULL_LEARNING:` line blank (not triggered) — see section below.
+- **Bull return (week):** +0.4232% ($99,707.74 → $100,129.68, live Alpaca mark; official last close Jul 2 was $100,016.50/+0.3097%, extended-hours LLY/V prints add the rest)
+- **SPY return (week):** +2.177% ($728.99 → $744.86, no dividend this week)
+- **Result:** LAGGED SPY by **−1.754pp** — pure cash-drag: SPY had its best week since inception (record highs into the holiday) while Bull sat at ~80% cash
+- **Since inception (2026-05-21):** Bull +0.1297% vs SPY TR +0.9711% ($744.86 + $1.76 div vs $739.44 anchor) = **Bull TRAILS SPY by −0.8414pp** (was LEADING by +0.883pp entering this week — a −1.72pp swing, matching the week's lag)
+- **HWM:** $101,384.21 | current drawdown −1.237% — well within −10% circuit breaker ✓
+- **Grade:** B−
+
+### Trade statistics (week 7 cumulative — closed-trades.md authoritative; trades.jsonl gap persists and widened)
+
+| Metric | Value |
+|--------|-------|
+| New trades this week | 1 exit (VST trailing stop, Jun 30 — **first win on record**), 0 entries |
+| Weekly position slots used | 0/3 (LRCX and ETN ATR gates reset by the Jul 2 semiconductor selloff; no other watchlist name qualified) |
+| Total closed trades to date | **7** (AMZN, AVGO, NVDA×1, MSFT, META, NVDA×2, VST) |
+| Wins | **1** (VST, +7.66%) |
+| Losses | 6 |
+| Win rate | **14.3%** (up from 0%) |
+| Average win % | **+7.66%** (single data point — VST) |
+| Average loss % | **5.03%** (NVDA(2) −9.78%, AMZN −7.39%, META −6.87%, NVDA(1) −3.36%, AVGO −2.10%, MSFT −0.70%) |
+| Total realized P/L | **+$455.60 win, −$2,377.88 losses = −$1,922.28 net** |
+| Profit factor | **0.192** (455.60 / 2,377.88) — still well below 1.0, but no longer undefined |
+| Avg holding days: winner | **21 days** (VST) |
+| Avg holding days: losers | **10.2 days** (12+13+10+14+9+3 / 6) |
+| Losers vs. winner holding pattern | Winner held **longer** than every loser — no discipline gap; consistent with "let winners run, cut losers fast" |
+| Biggest repeated lesson | Stop-outs cluster around macro/sector-wide shocks (NFP shock, FOMC, semi-sector routs) more than company-specific thesis breaks; GPU/AI-infra spot pricing as a leading indicator (NVDA) |
+
+⚠️ **trades.jsonl gap persists and widened this week:** VST's entire lifecycle (buy Jun 9, sell Jun 30) is **absent** from `trades.jsonl` — neither the original buy nor the win exit was ever appended. `trades.jsonl` bull-tagged records remain just 4 (V buy, META stop_fill, NVDA buy, NVDA stop_fill) against 7 closed trades and 2 open positions in the narrative ledger. `closed-trades.md` remains the authoritative source. **This has now been flagged in 3 consecutive weekly reviews (Jun 12, Jun 19, Jun 26) without remediation — market-open and midday routines must start appending every fill to `trades.jsonl` at execution time, not just `trade-log.md`.**
+
+### Process audit
+
+| Check | Result | Grade |
+|-------|--------|-------|
+| Cash drag (79.91% vs 10–20% target for a 2-position book) | Justified day-to-day (LRCX/ETN ATR gates failed on real sector volatility — SOX −12% over 2 days Jul 1-2 on AI-capex demand-destruction fears), but this is the **4th consecutive week with 0 new positions** (weeks 4, 5, 6, 7) | ⚠️ Justified daily, but the pipeline itself needs attention — see adjustments below |
+| Sector caps | Healthcare 12.13%, Financials 7.96% — far below 60% cap | ✓ |
+| Stop discipline | 3/3 (then 4/4 pre-VST-exit) confirmed every session this week; VST's 5% trail fired correctly and cleanly Jun 30 | ✓ PERFECT |
+| VST post-mortem | closed-trades.md ✓ (first WIN entry, with lesson on the "tighten to 5% after +15%" rule validating itself) | ✓ |
+| Weekly new-position count | 0/3 slots — explicitly justified each session (ATR gates, sector-wide semi selloff) | ✓ Justified |
+| Thesis contracts | LLY review_by Jul 7 (2 sessions away — flag for Monday/Tuesday pre-market); V review_by Jul 28 — both tracked, no silent rot | ✓ |
+| Drawdown CB | $100,129.68 vs HWM $101,384.21 = −1.237% — NOT triggered (8.763pp headroom) | ✓ |
+
+### What worked
+
+- **First win on record.** VST's 5% trailing stop fired Jun 30 at $160.20 (+7.66%, +$455.60), ending a 0-for-6 start. The tightened 5% trail (applied after the position cleared +15% unrealized) locked in the gain instead of giving it back in the broader AI/tech selloff that followed — the "tighten to 5% after +15%" rule is now validated with a real data point, not just a heuristic.
+- **LLY and V both confirmed and extended their theses with zero forced decisions.** LLY's Medicare GLP-1 Bridge program launched July 1 exactly as planned and the stock held its post-launch gains (+11.01% from entry, new highs); V rallied to a fresh 52-week high (+11.92% from entry) on strong Q2 growth commentary (value-added services revenue +29% YoY per WebSearch) and continued analyst support (Piper Sandler PT $394, zero sell ratings among 42 analysts). Live WebSearch this week found nothing beyond what was already logged — both theses are confirming, not just holding.
+- **Stop discipline remained perfect across every session**, including through the VST exit itself — no manual overrides, no missing stops, clean rules-based execution.
+- **No forced or discretionary trades under sector stress.** The Jul 1-2 semiconductor selloff (SOX −12% over 2 days on Meta-reselling-AI-compute reports) hit LRCX/ETN hard and reset both ATR gates to 0/2, but neither LLY nor V (non-semi) was affected — the sector-diversification thesis held.
+
+### What didn't work
+
+- **Bull swung from leading SPY by +0.88pp to trailing by −0.84pp in one week — a −1.72pp reversal, entirely cash-drag.** SPY had its strongest week since inception (record highs, +2.18%) and an 80%-cash portfolio structurally cannot keep pace with a sharp broad rally. This is the flip side of the cash cushion's well-documented downside protection (June 5, 9, 23-26) — it costs alpha in strong up-weeks just as reliably as it saves alpha in down-weeks.
+- **0 new positions for the 4th consecutive week (weeks 4, 5, 6, 7).** Each individual day's deferral was well-reasoned (LRCX and ETN both kept failing ATR gates on real, repeated sector-wide semiconductor volatility — this is now the pattern's 4th+ occurrence), but in aggregate the entry pipeline has produced zero new positions for a full month. Waiting on the same two gated, semi-adjacent names is not working; the watchlist needs fresh, less-correlated candidates rather than repeatedly re-testing the same gate.
+- **Win rate still only 14.3% (1/7) and profit factor 0.192** — one win does not offset six losses in dollar terms yet. The portfolio remains net-loss on closed trades (−$1,922.28). This needs more data points to judge properly (7 trades is still a small sample), but the trend needs the next few closes to be wins, not just rule-followed losses.
+
+### Macro context (week of June 29 – July 3, 2026)
+
+- **Strong holiday-shortened week for the broad market:** Dow closed at a fresh record high heading into the July 4 break; S&P 500 finished the week little changed to slightly higher (~7,498, +0.20% July 3 alone, led by AAPL +4.8%, MCD +4.1%, DIS +3.8%) after a very strong Jun 29–Jul 1 stretch (Q2's best quarter in years per Aggressive Bull's cross-check).
+- **Semiconductor-specific selloff dominated the back half of the week:** Reports that Meta is building an internal cloud business to resell excess AI compute triggered an AI-capex-demand-destruction scare — Micron −7% to −8%, Applied Materials −7.4%, AMD −4.3%, SK Hynix −14.5%, Samsung −9.1% (Kospi −7.9%) over Jul 1-2. This is sector-specific, not systemic — the S&P and Dow were only modestly affected — but it directly hit both LRCX and ETN's ATR gates.
+- **Soft June jobs report (nonfarm payrolls +57K vs +113K expected)** pushed back Fed hike expectations and supported the broad tape even as chips sold off.
+- **10yr yield ~4.47-4.49%** — below the 4.75% gate all week ✓. No hawkish surprise from Fed Chair Warsh's Sintra remarks.
+- **LLY:** Medicare GLP-1 Bridge program launched on schedule July 1 (~20M Medicare Part D patients, $50/month); stock hit new highs. One minor negative data point (China GLP-1 generic reports, June 30) did not break the thesis.
+- **V:** New 52-week high July 2 on strong Q2 commentary and continued Street support (mean PT $399, zero sells among 42 analysts).
+
+### Aggressive Bull lesson (section 7b)
+
+**Data-quality note first:** Aggressive Bull's own `weekly-review.md` has not been updated since Week 3 (ending June 19) — its Week 4 (June 22-26) and Week 5 (June 29-July 3) self-assessments were never filed. AGGRO's own July 3 lessons.md entry flags this as a known, worsening gap ("14 days stale") in its own routine cadence — this is a scheduling/reliability issue with the Aggressive Bull weekly-review routine, not something Cautious Bull can fix from here, but it is worth the human's attention since AGGRO is losing its own self-assessment and adjustment cycle every week it doesn't run. Comparison below is built directly from AGGRO's `portfolio.md`, `trade-log.md`, and `closed-trades.md` since its own weekly-review.md is stale.
+
+**AGGRO performance (as of July 3 pre-market, market closed — unchanged from July 2 EOD):**
+- AGGRO equity: **$90,674.09** (since its June 4 inception, $100,000 start) = **−9.326%**
+- SPY total return since AGGRO's June 4 inception ($754.18 anchor + $1.76 div): **−1.002%**
+- AGGRO alpha vs SPY since its own inception: **−8.324pp** (badly trailing)
+- Cautious Bull over the same window (June 4 EOD $99,820.82 → now $100,016.50/$100,129.68): **+0.196% to +0.309%**
+- **Cautious Bull LEADS AGGRO by ~9.5pp** since AGGRO's June 4 inception — unchanged from last week's ~9.3pp lead, gap widened slightly
+
+**Key AGGRO events this week (from trade-log.md / closed-trades.md, since its own weekly-review is stale):**
+1. **AVGO proactive 25% trim executed July 2 (9 of 34 shares @ $359.79, −11.43% pnl on the trimmed tranche)** — a pre-market-approved trim that the market-open routine failed to execute on time; AGGRO's own midday routine caught the gap and completed the trim at a worse price (buffer had compressed from 2.92pp to 0.54pp in the interim). Their own lesson: "a fully-approved pre-market trade is not real until a routine actually places it — every downstream routine must verify the prior routine's plan actually fired."
+2. **NVDA and AVGO remain the tightest positions in AGGRO's book** — NVDA −8.79% (3.21pp buffer to forced cut), AVGO −11.27% even after the trim (0.73pp buffer, CRITICAL). AGGRO's wider 18% stops continue to let concentrated AI-semi losers ride closer to the edge than Cautious Bull's 10% stops would tolerate.
+3. **GOOGL was the one clear win of the week** — DJIA inclusion (effective June 29) delivered a predictable, macro-independent +4.75% one-day pop exactly as AGGRO's own research anticipated. Index-inclusion events are a legitimate, low-risk catalyst type worth tracking for any held or watchlist name.
+
+**Lesson for Cautious Bull (dated 2026-07-03):** AGGRO's "plan approved at pre-market ≠ plan executed" failure on the AVGO trim is a real process risk that applies equally to Cautious Bull's own multi-step routines (pre-market plans a trade, market-open is supposed to execute it). **Concrete rule proposal:** add an explicit check to Cautious Bull's market-open and midday playbooks — before journaling "0 trades" or "plan was empty," first confirm whether the *prior* routine's `Planned trades` JSON block was non-empty and, if so, verify a matching fill exists in Alpaca's order history before assuming it already happened or is not needed. This closes the same gap AGGRO fell into, before Cautious Bull ever hits it. (Not adopting AGGRO's concentration or wider-stop approach — Cautious Bull's diversification and 10% stops remain structurally correct per the repeated evidence above; this is a pure process/verification lesson, not a risk-appetite one.)
+
+**Cross-Bull learning counter update:**
+- AGGRO is BEHIND Cautious Bull by ~9.5pp since AGGRO's own June 4 inception. AGGRO is NOT beating Cautious — nowhere close.
+- Trigger condition (AGGRO leads Cautious by >5pp for 2 consecutive weekly reviews): **NOT MET**. Counter = **0** (unchanged; has never been above 0).
+- `CROSS_BULL_LEARNING:` in `memory/control.md`: **unchanged, remains blank** (not triggered; human controls this file). No `TRIGGERED:` line to clear.
+
+### Strategy adjustments for week of July 6+
+
+1. **Watchlist pipeline needs fresh, non-semi candidates.** LRCX and ETN have now failed their ATR gates repeatedly across 4+ weeks, largely because both are correlated to the same AI-capex/semiconductor sentiment swings. Rather than continuing to wait on the same two names, next week's pre-market research should actively source 1-2 new candidates in different sectors (e.g., following this week's WebSearch theme of AI-adjacent power/memory/cooling infrastructure, or a fresh healthcare/consumer-defensive name) so the entry pipeline isn't entirely gated on semiconductor volatility calming down.
+2. **LRCX approaching the 4-week watchlist staleness line.** Added 2026-06-08; by July 8 it will have sat 4+ weeks without clearing its entry gate. Per the watchlist-hygiene rule, if it still hasn't cleared by the next review, purge it (re-add only if the ATR gate clears cleanly and the semicap thesis is still intact).
+3. **LLY review_by 2026-07-07 is due within 1-2 sessions of Monday's open.** Force an explicit hold/trim/exit decision at the Monday July 6 or Tuesday July 7 pre-market — do not let it pass by default given the mandatory-decision rule.
+4. **Process fix (from AGGRO's lesson above):** market-open and midday routines should explicitly check whether the prior routine's plan was executed before assuming "no trades" is correct, to avoid the same gap AGGRO hit on its AVGO trim.
+5. **trades.jsonl remediation is now overdue.** Three consecutive weekly reviews have flagged this gap with no fix. Next market-open/midday routine that executes a fill MUST append it to `trades.jsonl` in the same run, not defer it.
+
+---
+
 ## Week ending 2026-06-26 (Week 6 — 4 active trading days: Mon Jun 23, Tue Jun 24, Wed Jun 25, Thu Jun 26)
 
 - **Bull return (week):** +0.674% ($99,039.61 → $99,707.74)
