@@ -4101,3 +4101,23 @@ No trades today per pre-market plan. AVGO exited automatically. Slots 2 and 3 re
 - Stop audit: 3/3 PASS, unchanged from pre-market (LLY 7sh+3sh, V 22sh — all live and correctly sized).
 - No fills since pre-market — nothing to reconcile.
 - Trades today: 0.
+
+---
+
+## 2026-07-06 09:36 ET — MARKET-OPEN ROUTINE (no trades)
+- **Action:** None — today's plan (`plan_date: 2026-07-06`, `trades: []`) confirmed current; pre-market found zero qualifying setups (LRCX/ETN fail ATR gates, VST fails technical confirmation + FERC overhang, CEG/VRT/NVT/MOD undiligenced).
+- **Live-switch guard:** ALPACA_BASE_URL contains "paper" ✓
+- **Market:** OPEN ✓ (is_open: true, 09:36 ET)
+- **Shock check:** equity USD99,868.79 vs last_equity USD100,129.68 = −USD260.89 (−0.2606%) — no shock ✓ (threshold −4%)
+- **Drawdown circuit breaker:** USD99,868.79 vs HWM USD101,384.21 = −1.4947% — NOT triggered ✓ (−10% threshold)
+- **Breaking-news gate:** No planned trades — N/A
+- **Position review (live prices ~09:36 ET):**
+  - LLY 10sh @ USD1,201.615 (+9.88% from entry USD1,093.534). Stop HWM USD1,238.00, stop USD1,114.20, buffer USD87.415 (7.27%) ✓. review_by **2026-07-07 (tomorrow)** — mandatory hold/trim/exit decision due at next pre-market. HOLD. Conviction A.
+  - V 22sh @ USD355.82 (+9.97% from entry USD323.57). Stop HWM USD364.21, stop USD327.789, buffer USD28.031 (7.88%) ✓. Thesis intact, zero sell ratings among 42 analysts. HOLD. Conviction B. review_by 2026-07-28.
+- **Stop audit: 3/3 PASS ✓**
+  - LLY (d4147484): 7sh — HWM USD1,238.00, stop USD1,114.20 ✓
+  - LLY (25989fb5): 3sh — HWM USD1,238.00, stop USD1,114.20 ✓
+  - V (66033918): 22sh — HWM USD364.21, stop USD327.789 ✓
+- **Exit reconciliation:** No exits since last run. Both positions intact. closed-trades.md current ✓.
+- **Sector exposure:** Healthcare (LLY) 12.03% | Financials (V) 7.84% | Cash 80.13% — no sector above 60% cap ✓.
+- **No new positions today** — cash remains well above the 25–40% target band; deliberate, not a default (see pre-market cash-drag check).
