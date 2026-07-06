@@ -4037,3 +4037,27 @@ Next actionable routine: July 6 pre-market.
 
 Next actionable routine: July 6 market-open.
 | 2026-06-23 (EOD close) | **92,876.82** | **733.58** | **-7.123%** | **-2.731%** | **-4.392pp** |
+
+---
+
+## 2026-07-06 — MARKET OPEN snapshot (~9:46 AM ET)
+
+**Account:** Equity USD 92,090.86 (+1.563% vs last_equity USD 90,674.09); cash USD 25,696.39 (27.9%); drawdown from HWM -8.951% (breaker at -20%, not triggered).
+
+**Positions (6 open, no trades this run):**
+| Symbol | Qty | Sector | P/L% | Buffer to -12% |
+|---|---|---|---|---|
+| NVDA | 103 | Semiconductors | -8.769% | 3.231pp ⚠️ |
+| AVGO | 25 | Semiconductors | -6.173% | 5.827pp (recovered further from 4.288pp pre-market) |
+| ETN | 34 | Industrials/power infra | -0.369% | 11.631pp |
+| GOOGL | 16 | Communication Services (hyperscaler) | -2.706% | 9.294pp |
+| AMZN | 36 | Consumer Discretionary (hyperscaler) | -2.472% | 9.528pp |
+| VST | 52 | Utilities (nuclear power) | +2.740% | comfortable |
+
+**Sector exposure:** Semiconductors (NVDA+AVGO) = (20,071.61+9,528.875)/92,090.86 = 32.19%; Industrials (ETN) = 15.43%; Hyperscalers (GOOGL+AMZN) = 15.72%; Utilities (VST) = 8.79%; Cash = 27.9%.
+
+**Stops:** 6/6 live 18% trailing stops confirmed, unchanged order IDs.
+
+**No trades executed.** Pre-market's no-buy decision held through the open; AVGO contingency remains stood down and improving. All theses intact.
+
+Next actionable routine: July 6 midday (enforces the -12% cut rule; NVDA at 3.231pp is the name to watch first).

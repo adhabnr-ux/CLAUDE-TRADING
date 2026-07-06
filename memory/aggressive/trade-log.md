@@ -3134,3 +3134,56 @@ Today is Friday, July 3. The newest entry in `weekly-review.md` is **Week 3 (202
 ### Result
 No trades, no exits, no stop changes — market closed all session. All 6 positions confirmed with live 18% trailing stops. AVGO remains the single CRITICAL item (0.731pp buffer) carried into the July 6 pre-market with the sub-1pp full-exit escalation contingency. GOOGL and AMZN review_by (July 7) also carried forward. Control: ACTIVE. The overdue weekly review (14 days stale) is the most important open item for the human to check on.
 
+
+---
+
+## 2026-07-06 — MARKET OPEN (~9:46 AM ET)
+
+**No trades executed.** Pre-market plan correctly called no-trade (AVGO contingency stood down on the open-up move; no new buys per explicit deployment-pause reasoning).
+
+### Pre-run checks
+| Check | Result |
+|---|---|
+| Live-switch guard | ALPACA_BASE_URL contains "paper" ✓ |
+| Lock | Clear (`{}`) at start; written for this run ✓ |
+| Control switch | STATUS: ACTIVE ✓ (no NOTE:, no QUERY:) |
+| Plan date | July 6, 2026 — matches today ✓ |
+| Plan trades | [] — empty, no trades planned ✓ |
+| Idempotency | No prior EXECUTED: marker ✓ |
+
+### Market & account status
+| Check | Result |
+|---|---|
+| Market open | true (next close 4:00 PM ET) ✓ |
+| Equity | USD 92,090.86 |
+| Last equity (prev close July 2) | USD 90,674.09 |
+| Intraday change | +1.563% (shock threshold -6% — NOT triggered ✓) |
+| Cash | USD 25,696.39 (27.9%) |
+| Cash floor (2% min) | ✓ |
+| HWM | USD 101,144.73 |
+| Drawdown from HWM | -8.951% (circuit breaker 20% — NOT triggered ✓) |
+
+### Position review (buffers to -12% cut, informational — cut rule enforced at midday)
+| Symbol | Entry | Current | P/L % | Buffer |
+|---|---|---|---|---|
+| NVDA | USD 213.60 | USD 194.87 | -8.769% | 3.231pp ⚠️ |
+| AVGO | USD 406.23 | USD 381.155 | -6.173% | 5.827pp (recovered from 0.731pp Friday) |
+| ETN | USD 419.54 | USD 417.99 | -0.369% | 11.631pp |
+| GOOGL | USD 370.22 | USD 360.20 | -2.706% | 9.294pp |
+| AMZN | USD 247.991 | USD 241.86 | -2.472% | 9.528pp |
+| VST | USD 151.47 | USD 155.62 | +2.740% | comfortable ✓ |
+
+### Stop audit — 6/6 confirmed live ✓ (verified from Alpaca open-orders list, all `status: "new"`)
+| Symbol | Stop Order ID | Stop Price | HWM |
+|---|---|---|---|
+| NVDA | `54d7d851` | USD 181.712 | USD 221.60 |
+| AVGO | `cf2956dc` | USD 314.1912 | USD 383.16 |
+| ETN | `abdc232b` | USD 350.9026 | USD 427.93 |
+| GOOGL | `e52a43f1` | USD 308.1314 | USD 375.77 |
+| AMZN | `b55bef05` | USD 207.0705 | USD 252.525 |
+| VST | `5b347be3` | USD 140.507 | USD 171.35 |
+
+**No stops missing. No stops needing recreation. All 6 positions protected.**
+
+### Result
+No trades executed. AVGO's sub-1pp full-exit contingency stood down at pre-market (opened up sharply on a sector-wide semi bounce) — buffer now 5.827pp at the open, further improved from the 4.288pp read at 8:12 AM pre-market. NVDA remains the thinnest buffer at 3.231pp but is improving, not deteriorating. All 6 trailing stops live and unchanged. No exits to reconcile. Continue to hold all positions; midday routine enforces the -12% cut rule.
