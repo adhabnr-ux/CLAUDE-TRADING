@@ -6,7 +6,46 @@ but always re-fetches live data before trading._
 
 ---
 
-## Last snapshot — 2026-07-06 PRE-MARKET (~8:12 AM ET)
+## Last snapshot — 2026-07-06 MIDDAY (~12:41 PM ET)
+
+| Field | Value |
+|---|---|
+| Equity | USD 92,044.48 |
+| Cash | USD 25,696.39 (27.92%) |
+| Long market value | USD 66,348.09 |
+| Open positions | 6 |
+| last_equity (July 2 EOD close — 4-day weekend, markets closed July 3/4/5) | USD 90,674.09 |
+| Change vs last_equity | **+1.511%** — shock threshold -6% NOT triggered |
+| HWM | USD 101,144.73 |
+| Drawdown from HWM | **-8.986%** (circuit breaker -20% — NOT triggered; 11.014pp headroom) |
+
+**Market status:** open (next close 4:00 PM ET today).
+
+**Open positions:**
+
+| Symbol | Qty | Avg Entry | Price | P/L % | -12% Cut Trigger | Buffer | Action |
+|---|---|---|---|---|---|---|---|
+| NVDA | 103 | USD 213.60 | USD 196.93 | -7.807% | USD 187.968 | 4.193pp | No action — within range |
+| AVGO | 25 | USD 406.23 | USD 374.925 | -7.706% | USD 357.4824 | 4.294pp | No action — within range |
+| ETN | 34 | USD 419.54 | USD 413.535 | -1.431% | USD 369.1952 | 10.569pp | No action — within range |
+| GOOGL | 16 | USD 370.22 | USD 364.04 | -1.669% | USD 325.7936 | 10.331pp | No action — within range |
+| AMZN | 36 | USD 247.991111 | USD 244.9619 | -1.221% | USD 218.2322 | 10.779pp | No action — within range |
+| VST | 52 | USD 151.47 | USD 153.61 | +1.413% | n/a | comfortable | No action — within range |
+
+**Cut rule check (>-12% from entry): NO positions triggered.** NVDA and AVGO most stressed (~7.7-7.8%), both improving intraday (all 6 positions green today on a broad bounce).
+**Tighten-stop rule check (>+25% from entry): NO positions triggered.**
+
+**News scan (positions down >5% from entry: NVDA, AVGO) [search: WebSearch fallback — MiniMax M3 MCP not connected this session]:**
+- **NVDA**: Flat/rangebound today (USD 194.00–197.42); Kyber NVL144 rack-scale system delayed to 2028 (minor negative, next-gen product not core Blackwell revenue); Anna Soellner named head of corporate communications (non-material). No thesis-breaking news. Decision: HOLD.
+- **AVGO**: Up +5.69% today — Broadcom and Apple expanded their custom-silicon/RF/networking partnership through 2031, confirmed via regulatory filing. Thesis-positive (extends AVGO's custom ASIC revenue visibility). Decision: HOLD.
+
+**Stop audit: 6/6 confirmed live** (NVDA `54d7d851`, AVGO `cf2956dc`, ETN `abdc232b`, GOOGL `e52a43f1`, AMZN `b55bef05`, VST `5b347be3`). No stops missing, no stops needing recreation.
+
+**Result:** No trades executed. All 6 positions within guardrails. All 18% trailing stops active and audited.
+
+---
+
+## Prior snapshot — 2026-07-06 PRE-MARKET (~8:12 AM ET)
 
 | Field | Value |
 |---|---|

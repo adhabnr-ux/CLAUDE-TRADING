@@ -3187,3 +3187,59 @@ No trades, no exits, no stop changes — market closed all session. All 6 positi
 
 ### Result
 No trades executed. AVGO's sub-1pp full-exit contingency stood down at pre-market (opened up sharply on a sector-wide semi bounce) — buffer now 5.827pp at the open, further improved from the 4.288pp read at 8:12 AM pre-market. NVDA remains the thinnest buffer at 3.231pp but is improving, not deteriorating. All 6 trailing stops live and unchanged. No exits to reconcile. Continue to hold all positions; midday routine enforces the -12% cut rule.
+
+---
+
+## 2026-07-06 — MIDDAY CHECK (~12:41 PM ET)
+
+**No trades executed.** Risk management only. All positions within guardrails.
+
+### Pre-run checks
+| Check | Result |
+|---|---|
+| Live-switch guard | ALPACA_BASE_URL contains "paper" ✓ |
+| Lock | Clear (empty `{}`) ✓ |
+| Control switch | STATUS: ACTIVE ✓ |
+| Market open | true (next close 4:00 PM ET) ✓ |
+
+### Account status
+| Field | Value |
+|---|---|
+| Equity | USD 92,044.48 |
+| Last equity (prev close July 2 — 4-day weekend) | USD 90,674.09 |
+| Intraday change | **+1.511%** (shock threshold -6% — NOT triggered ✓) |
+| Cash | USD 25,696.39 (27.92%) |
+| HWM | USD 101,144.73 |
+| Drawdown from HWM | **-8.986%** (circuit breaker -20% — NOT triggered ✓) |
+
+### Position review
+| Symbol | Entry | Current | P/L % | -12% Trigger | Buffer | Action |
+|---|---|---|---|---|---|---|
+| NVDA | USD 213.60 | USD 196.93 | -7.807% | USD 187.968 | 4.193pp | No action — within range |
+| AVGO | USD 406.23 | USD 374.925 | -7.706% | USD 357.4824 | 4.294pp | No action — within range |
+| ETN | USD 419.54 | USD 413.535 | -1.431% | USD 369.1952 | 10.569pp | No action — within range |
+| GOOGL | USD 370.22 | USD 364.04 | -1.669% | USD 325.7936 | 10.331pp | No action — within range |
+| AMZN | USD 247.991111 | USD 244.9619 | -1.221% | USD 218.2322 | 10.779pp | No action — within range |
+| VST | USD 151.47 | USD 153.61 | +1.413% | n/a | comfortable | No action — within range |
+
+**Cut rule check (>-12% from entry): NO positions triggered.** NVDA and AVGO most stressed (~7.7-7.8%), both improving intraday — all 6 positions green today on a broad bounce.
+**Tighten-stop rule check (>+25% from entry): NO positions triggered.**
+
+### Stop audit — 6/6 confirmed live ✓ (verified from Alpaca open-orders list, all `status: "new"`)
+| Symbol | Stop Order ID | Stop Price | HWM |
+|---|---|---|---|
+| NVDA | `54d7d851` | USD 181.712 | USD 221.60 |
+| AVGO | `cf2956dc` | USD 314.1912 | USD 383.16 |
+| ETN | `abdc232b` | USD 350.9026 | USD 427.93 |
+| GOOGL | `e52a43f1` | USD 308.1314 | USD 375.77 |
+| AMZN | `b55bef05` | USD 207.0705 | USD 252.525 |
+| VST | `5b347be3` | USD 140.507 | USD 171.35 |
+
+**No stops missing. No stops needing recreation. All 6 positions protected.**
+
+### News scan [search: WebSearch fallback — MiniMax M3 MCP not connected this session]
+- **NVDA** (down >5% from entry, -7.807%): Rangebound USD 194.00–197.42 today. Kyber NVL144 rack-scale system delay to 2028 is a minor negative (next-gen product, not core Blackwell revenue). New head of corporate communications hire — non-material. No thesis-breaking news. Decision: HOLD.
+- **AVGO** (down >5% from entry, -7.706%): Up +5.69% today on confirmed regulatory filing that Broadcom and Apple expanded their custom-silicon/RF/networking partnership through 2031 — thesis-positive, extends AVGO's custom ASIC revenue visibility. Decision: HOLD.
+
+### Result
+All 6 positions within guardrails. No trades. All 18% trailing stops active and audited. No stops recreated. NVDA and AVGO both stressed (~4.2-4.3pp buffer) but improving intraday on a broad market bounce, not deteriorating. No new positions opened (midday never opens new positions).
