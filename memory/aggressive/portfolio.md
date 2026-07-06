@@ -6,34 +6,52 @@ but always re-fetches live data before trading._
 
 ---
 
-## Last snapshot — 2026-07-06 MIDDAY (~12:41 PM ET)
+## Last snapshot — 2026-07-06 EOD CLOSE (~4:09 PM ET, post-close)
 
 | Field | Value |
 |---|---|
-| Equity | USD 92,044.48 |
-| Cash | USD 25,696.39 (27.92%) |
-| Long market value | USD 66,348.09 |
+| Equity | USD 92,067.06 |
+| Cash | USD 25,696.39 (27.91%) |
+| Long market value | USD 66,370.67 |
 | Open positions | 6 |
 | last_equity (July 2 EOD close — 4-day weekend, markets closed July 3/4/5) | USD 90,674.09 |
-| Change vs last_equity | **+1.511%** — shock threshold -6% NOT triggered |
+| Today's P/L | **+USD 1,392.97 (+1.537%)** |
 | HWM | USD 101,144.73 |
-| Drawdown from HWM | **-8.986%** (circuit breaker -20% — NOT triggered; 11.014pp headroom) |
+| Drawdown from HWM | **-8.974%** (circuit breaker -20% — NOT triggered; 11.026pp headroom, not within 3pp of breaker) |
 
-**Market status:** open (next close 4:00 PM ET today).
+**Market status:** closed (next open 2026-07-07 09:30 ET).
 
 **Open positions:**
 
-| Symbol | Qty | Avg Entry | Price | P/L % | -12% Cut Trigger | Buffer | Action |
-|---|---|---|---|---|---|---|---|
-| NVDA | 103 | USD 213.60 | USD 196.93 | -7.807% | USD 187.968 | 4.193pp | No action — within range |
-| AVGO | 25 | USD 406.23 | USD 374.925 | -7.706% | USD 357.4824 | 4.294pp | No action — within range |
-| ETN | 34 | USD 419.54 | USD 413.535 | -1.431% | USD 369.1952 | 10.569pp | No action — within range |
-| GOOGL | 16 | USD 370.22 | USD 364.04 | -1.669% | USD 325.7936 | 10.331pp | No action — within range |
-| AMZN | 36 | USD 247.991111 | USD 244.9619 | -1.221% | USD 218.2322 | 10.779pp | No action — within range |
-| VST | 52 | USD 151.47 | USD 153.61 | +1.413% | n/a | comfortable | No action — within range |
+| Symbol | Qty | Avg Entry | Price | P/L % | -12% Cut Trigger | Buffer | % of Portfolio | Sector |
+|---|---|---|---|---|---|---|---|---|
+| NVDA | 103 | USD 213.60 | USD 195.4399 | -8.502% | USD 187.968 | 3.498pp ⚠️ | 21.87% | Semiconductors |
+| AVGO | 25 | USD 406.23 | USD 373.5377 | -8.048% | USD 357.4824 | 3.952pp ⚠️ | 10.14% | Semiconductors |
+| ETN | 34 | USD 419.54 | USD 415.00 | -1.082% | USD 369.1952 | 10.918pp | 15.33% | Industrials/power infra |
+| GOOGL | 16 | USD 370.22 | USD 366.34 | -1.048% | USD 325.7936 | 10.952pp | 6.37% | Communication Services (hyperscaler) |
+| AMZN | 36 | USD 247.991111 | USD 244.38 | -1.456% | USD 218.2322 | 10.544pp | 9.55% | Consumer Discretionary (hyperscaler) |
+| VST | 52 | USD 151.47 | USD 156.40 | +3.255% | n/a | comfortable | 8.83% | Utilities (nuclear power) |
 
-**Cut rule check (>-12% from entry): NO positions triggered.** NVDA and AVGO most stressed (~7.7-7.8%), both improving intraday (all 6 positions green today on a broad bounce).
+**Sector exposure:** Semiconductors (NVDA+AVGO) = USD 29,468.75 / USD 92,067.06 = **32.01%**; Industrials (ETN) = 15.33%; Hyperscalers (GOOGL+AMZN) = 15.92%; Utilities (VST) = 8.83%; Cash = 27.91%. No sector near the 60% informal cap.
+
+**Cut rule check (>-12% from entry): NO positions triggered.** All 6 positions gave back some of the midday gain into the close but stayed green vs entry-adjusted thresholds; NVDA (3.498pp) and AVGO (3.952pp) remain the most stressed, both still well clear of the -12% trigger.
 **Tighten-stop rule check (>+25% from entry): NO positions triggered.**
+
+**Stops:** 6/6 live 18% trailing stops confirmed unchanged (no trades today) — NVDA `54d7d851`, AVGO `cf2956dc`, ETN `abdc232b`, GOOGL `e52a43f1`, AMZN `b55bef05`, VST `5b347be3`.
+
+### Performance vs SPY
+| Metric | Value |
+|---|---|
+| Aggro today | +1.537% |
+| SPY today (744.86 → 751.96) | +0.953% |
+| Today vs SPY | **+0.584pp OUTPERFORMING** |
+| Aggro since inception | -7.933% |
+| SPY since inception (754.18 → 751.96) | -0.294% |
+| Alpha since inception | **-7.639pp** |
+
+**Market context:** Broad tech/semi rally continued through the full session — Nasdaq +1.1%, S&P +0.7%, Dow above 53,000 for the first time, chip stocks (SMH) up sharply at the open on eased AI-valuation pressure and falling oil post-holiday. AVGO (+5.69% intraday per midday scan on the confirmed Apple custom-silicon partnership extension through 2031) and the broader semi bounce directly narrowed NVDA/AVGO buffers from CRITICAL/WATCH levels earlier in the week. AMD/MU/INTC notably lagged the rally (down 4-5.5%) — a reminder the bounce was AVGO/NVDA-specific strength plus broad index tailwind, not a uniform chip-sector re-rating. No thesis-breaking news for any held position.
+
+**No trades today.** AVGO's sub-1pp full-exit contingency (carried from July 3) stood down at the open and continued to hold up through the full session — the semi bounce held, confirming the pre-market decision to not treat it as flat-to-down. Cash at 27.91% remains an explicit, revisit-dated deployment pause (see lessons.md) rather than open-ended idling; July 7 pre-market is the next scheduled redeployment check.
 
 **News scan (positions down >5% from entry: NVDA, AVGO) [search: WebSearch fallback — MiniMax M3 MCP not connected this session]:**
 - **NVDA**: Flat/rangebound today (USD 194.00–197.42); Kyber NVL144 rack-scale system delayed to 2028 (minor negative, next-gen product not core Blackwell revenue); Anna Soellner named head of corporate communications (non-material). No thesis-breaking news. Decision: HOLD.
@@ -4021,6 +4039,9 @@ _Semi-group (NVDA+AVGO+MRVL) at 43.9% — within 50% cap. Three positions in pro
 | 2026-07-03 (midday) | **90,674.09** | — (market closed) | **-9.326%** | — | — |
 | 2026-07-03 (EOD close) | **90,674.09** | **744.86** (July 2 close, no session today) | **-9.326%** | **-1.236%** | **-8.090pp** |
 | 2026-07-06 (pre-market) | **91,532.43** | ~**744.86** (July 2 close; no fresh SPY print pre-open) | **-8.468%** | ~**-1.236%** | **~-7.232pp** |
+| 2026-07-06 (market-open) | **92,090.86** | ~**744.86** (July 2 close; no fresh print yet) | **-7.909%** | ~**-1.236%** | **~-6.673pp** |
+| 2026-07-06 (midday) | **92,044.48** | — | **-7.956%** | — | — |
+| 2026-07-06 (EOD close) | **92,067.06** | **751.96** | **-7.933%** | **-0.294%** | **-7.639pp** |
 
 ---
 
@@ -4100,3 +4121,31 @@ Next actionable routine: July 6 market-open.
 **No trades executed.** Pre-market's no-buy decision held through the open; AVGO contingency remains stood down and improving. All theses intact.
 
 Next actionable routine: July 6 midday (enforces the -12% cut rule; NVDA at 3.231pp is the name to watch first).
+
+---
+
+## 2026-07-06 — EOD CLOSE snapshot (~4:09 PM ET, post-close)
+
+**Account:** Equity USD 92,067.06 (+1.537% vs last_equity USD 90,674.09 — no shock, threshold -6%); cash USD 25,696.39 (27.91%); drawdown from HWM USD 101,144.73 = **-8.974%** (breaker at -20%, not triggered, 11.026pp headroom — not within 3pp of the breaker).
+
+**Positions (6 open, no trades today):**
+| Symbol | Qty | Sector | P/L% | Buffer to -12% | % of Portfolio |
+|---|---|---|---|---|---|
+| NVDA | 103 | Semiconductors | -8.502% | 3.498pp ⚠️ | 21.87% |
+| AVGO | 25 | Semiconductors | -8.048% | 3.952pp ⚠️ | 10.14% |
+| ETN | 34 | Industrials/power infra | -1.082% | 10.918pp | 15.33% |
+| GOOGL | 16 | Communication Services (hyperscaler) | -1.048% | 10.952pp | 6.37% |
+| AMZN | 36 | Consumer Discretionary (hyperscaler) | -1.456% | 10.544pp | 9.55% |
+| VST | 52 | Utilities (nuclear power) | +3.255% | comfortable | 8.83% |
+
+**Sector exposure:** Semiconductors (NVDA+AVGO) = 32.01%; Industrials (ETN) = 15.33%; Hyperscalers (GOOGL+AMZN) = 15.92%; Utilities (VST) = 8.83%; Cash = 27.91%. No sector near the 60% informal cap.
+
+**Stops:** 6/6 live 18% trailing stops confirmed unchanged — NVDA `54d7d851`, AVGO `cf2956dc`, ETN `abdc232b`, GOOGL `e52a43f1`, AMZN `b55bef05`, VST `5b347be3`.
+
+**Performance vs SPY:** Aggro today +1.537% vs SPY today +0.953% (744.86 → 751.96) = **+0.584pp OUTPERFORMING**. Since inception: Aggro -7.933% vs SPY -0.294% = **alpha -7.639pp**.
+
+**Market context:** Broad tech/semi rally held through the full session (Nasdaq +1.1%, S&P +0.7%, Dow above 53,000 for the first time) as chip stocks bounced and oil fell post-holiday. AVGO's confirmed Apple custom-silicon partnership extension (through 2031) plus the sector-wide bounce pulled both NVDA and AVGO buffers off their CRITICAL/WATCH lows earlier in the week, though both gave back some of the midday gain into the close (NVDA 3.231pp→3.498pp is actually a slight further improvement; AVGO 5.827pp→3.952pp gave back ground). AMD/MU/INTC lagged badly (-4 to -5.5%), confirming this was AVGO/NVDA-specific plus index-level strength, not a uniform semi re-rating.
+
+**No trades today; no exits to reconcile.** AVGO's sub-1pp full-exit contingency (carried from July 3) stood down at the open and the stand-down held for the full session. Cash at 27.91% remains an explicit, dated deployment pause — next redeployment check is July 7 pre-market.
+
+Next actionable routine: July 7 pre-market.
