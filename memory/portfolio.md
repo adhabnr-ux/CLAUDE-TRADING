@@ -3,10 +3,53 @@
 _Updated by every routine from live Alpaca data. The next agent trusts this as
 the last known state, but always re-fetches live data before trading._
 
-**Last updated:** 2026-07-06 12:33 ET (midday routine; `is_open: true`; stop audit 3/3 PASS; LLY $1,201.59 +9.881% / V $355.53 +9.877%; no trades — no cuts, no tightenings; Bull TRAILS SPY since inception)
+**Last updated:** 2026-07-06 15:51 ET (close routine; `is_open: true` at run time, next_close 16:00 ET — full trading day; stop audit 3/3 PASS; LLY $1,204.565 +10.153% / V $357.14 +10.375%; no trades; Bull TRAILS SPY since inception by −2.007pp — gap widened sharply as SPY rallied on a broad tech/semi bounce that LLY/V, non-tech names, did not participate in)
 **Inception:** 2026-05-21 — starting equity $100,000.00 | SPY anchor price $739.44
 **SPY total-return anchor (post-June 18 ex-div $1.76):** **$741.20**
 **Cumulative SPY dividends since inception (quarterly tracker):** $1.76/sh (June 18 ex-div); next SPY ex-div est. ~September 2026.
+
+---
+
+## Account (close routine, 2026-07-06 ~15:51 ET)
+
+| Metric | Value |
+|--------|-------|
+| Equity | $99,924.58 |
+| Cash | $80,023.72 (80.08%) |
+| Long market value | $19,900.86 |
+| Buying power | ~$80,023.72 (cash) / $375,817.29 (margin, unused) |
+| Last equity (July 2 close, carried through July 3 holiday/weekend) | $100,129.68 |
+
+## Open positions (close routine, 2026-07-06 ~15:51 ET)
+
+| Symbol | Qty | Avg entry | Current price | Mkt value | Unrealized P/L | % of portfolio | Trailing Stop |
+|--------|-----|-----------|--------------|-----------|----------------|----------------|---------------|
+| LLY | 10 | $1,093.534 | $1,204.565 | $12,045.65 | +$1,110.31 (+10.153%) | 12.06% | d4147484 (7sh) + 25989fb5 (3sh), HWM $1,238.00, stop $1,114.20 ✓ — buffer $90.365 (7.50%) ✓ |
+| V | 22 | $323.57 | $357.14 | $7,857.08 | +$738.54 (+10.375%) | 7.86% | 66033918 (22sh), HWM $364.21, stop $327.789 ✓ — buffer $29.351 (8.22%) ✓ |
+
+**Sector exposure (close July 6):**
+- Healthcare (LLY): $12,045.65 = 12.06% | Financials (V): $7,857.08 = 7.86% | Cash: $80,023.72 = 80.08%
+- No sector above 60% cap ✓
+
+**Close July 6 notes (~15:51 ET; stop audit 3/3 PASS; 0 trades; no cuts; no tightenings; SPY's strong tech/semi-driven rally left LLY/V behind):**
+- **Live-switch guard:** `ALPACA_BASE_URL` contains "paper" ✓.
+- **Lock:** was `{}` — acquired and will be released cleanly.
+- **Control switch:** STATUS ACTIVE, no `NOTE:`/`QUERY:` to acknowledge.
+- **Market clock:** `is_open: true` at run time (~15:51 ET), `next_close: 16:00 ET` — full trading day, not a half-day.
+- **Today P/L:** $99,924.58 vs last_equity $100,129.68 = **−$205.10 (−0.2049%)** | SPY $751.96 vs $744.86 (July 2 close, carried) = **+0.9531%** | Bull underperformed SPY by **−1.158pp today**.
+- **Shock check:** −0.2049% — no shock ✓ (threshold −4%).
+- **Drawdown circuit breaker:** $99,924.58 vs HWM $101,384.21 = **−1.4396%** — NOT triggered ✓ (8.560pp headroom; not near the −10% level).
+- **LLY** $1,204.565 (+10.153% from entry, −0.775% today): No new news since this morning's Medicare Bridge confirmation; thesis intact. HWM $1,238 not touched today — no ratchet. Buffer 7.50% ✓. **review_by tomorrow (2026-07-07) — mandatory hold/trim/exit decision due at next pre-market.** Conviction A (unchanged).
+- **V** $357.14 (+10.375% from entry, −1.378% today): Modest pullback despite the broad tape's strength — no negative news, thesis (payments infrastructure, Open USD stablecoin consortium) intact. Buffer 8.22% ✓. review_by 2026-07-28 not due. Conviction B (unchanged).
+- **No cuts** (−7% rule): both positions far above threshold (gains) ✓.
+- **No discretionary tightenings** (+15% trigger = LLY $1,257.56 / V $372.10): neither reached ✓.
+- **Stop audit (step 5):** 3/3 trailing stops confirmed live via `orders open` (LLY 7sh `d4147484` + 3sh `25989fb5` = 10sh; V 22sh `66033918`) — matches held quantities exactly. No missing stops, nothing to recreate.
+- **Exit reconciliation:** No fills today (position quantities unchanged from market-open: LLY 10sh, V 22sh) — nothing to reconcile against closed-trades.md; ledger remains current (VST June 30 win is the latest entry).
+- **Market close context (July 6):** US stocks rallied broadly — Nasdaq +1.2%, S&P 500 +0.8%, Dow topped 53,000 for the first time, as tech-sector pressure eased and oil fell post-holiday; a rebound in AI-trade sentiment (despite MU/AMD/INTC still down 4-5.5% intraday before partial recovery) and a Dell +7.7% pop on a White House event drove the tape. This is a tech/semi-led rally that neither LLY (healthcare) nor V (financials) directly participates in — consistent with today's relative underperformance; no thesis-relevant news for either holding.
+- **Trades today:** 0.
+- **Since inception:** Bull −0.0754% ($99,924.58) vs SPY TR **+1.9312%** ($751.96 + $1.76 div vs $739.44 anchor) → **Bull TRAILS SPY by −2.0066pp** (was −0.930pp at pre-market; gap widened −1.077pp today, driven almost entirely by SPY's tech/semi-led +0.95% session vs Bull's diversified, non-tech book slipping −0.20%).
+- **Race scoreboard:** Bull −0.08% | AGGRO −7.96% (2026-07-06 midday snapshot, equity $92,044.48, since its own June 4 inception) | SPY +1.93% (since Bull's May 21 inception, total return) — Bull leads AGGRO by ~7.88pp.
+- **Friday watchdog:** N/A — today is Monday.
 
 ---
 
@@ -125,7 +168,8 @@ the last known state, but always re-fetches live data before trading._
 | Period | Bull | SPY | Difference |
 |--------|------|-----|------------|
 | Inception (2026-05-21) | $100,000.00 | $739.44 | — |
-| **Pre-market (2026-07-06)** | **$100,041.17 (+0.0412%)** | **SPY $744.86 + $1.76 div = +0.9711% TR** | **Bull TRAILS SPY −0.930pp** |
+| **Close (2026-07-06)** | **$99,924.58 (−0.0754%)** | **SPY $751.96 + $1.76 div = +1.9312% TR** | **Bull TRAILS SPY −2.0066pp** |
+| Pre-market (2026-07-06) | $100,041.17 (+0.0412%) | SPY $744.86 + $1.76 div = +0.9711% TR | Bull TRAILS SPY −0.930pp |
 | Close (2026-07-03, MARKET HOLIDAY) | $100,129.68 (+0.1297%) | SPY $744.86 + $1.76 div = +0.9711% TR | Bull TRAILS SPY −0.8414pp |
 
 ---
