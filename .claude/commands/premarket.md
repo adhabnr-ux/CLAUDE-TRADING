@@ -74,6 +74,14 @@ instead of letting them rot toward the −7% rule.
   the next earnings date (search `"<SYMBOL> next earnings date"`).
 - **Watchlist:** check catalysts and valuation for the highest-conviction
   names in `memory/strategy.md`.
+- **Fresh candidate scan (Mondays and Thursdays only):** the watchlist is
+  small and mostly re-checked, not refreshed — on these two days, search for
+  2-3 names NOT already on the watchlist that fit the strategy's three
+  tailwinds (AI infrastructure, real-economy rotation, healthcare secular
+  growth), e.g. `"analyst upgrade <sector> stocks this week"` or
+  `"52-week high breakout <sector> <today's date>"`. Add anything promising
+  to the watchlist as research-only (see step 6b for diligencing it). Skip
+  this on other days to keep the routine focused.
 
 Record findings as dated bullets in `memory/research-log.md` (source,
 headline, relevance, date of the fact).
