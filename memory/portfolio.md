@@ -3,12 +3,48 @@
 _Updated by every routine from live Alpaca data. The next agent trusts this as
 the last known state, but always re-fetches live data before trading._
 
-**Last updated:** 2026-07-06 09:36 ET (market-open routine; `is_open: true`; stop audit 3/3 PASS; LLY $1,201.615 +9.88% / V $355.82 +9.97%; no trades — plan was empty; Bull TRAILS SPY since inception)
+**Last updated:** 2026-07-06 12:33 ET (midday routine; `is_open: true`; stop audit 3/3 PASS; LLY $1,201.59 +9.881% / V $355.53 +9.877%; no trades — no cuts, no tightenings; Bull TRAILS SPY since inception)
 **Inception:** 2026-05-21 — starting equity $100,000.00 | SPY anchor price $739.44
 **SPY total-return anchor (post-June 18 ex-div $1.76):** **$741.20**
 **Cumulative SPY dividends since inception (quarterly tracker):** $1.76/sh (June 18 ex-div); next SPY ex-div est. ~September 2026.
 
 ---
+
+## Account (midday routine, 2026-07-06 ~12:33 ET)
+
+| Metric | Value |
+|--------|-------|
+| Equity | $99,861.28 |
+| Cash | $80,023.72 (80.14%) |
+| Long market value | $19,837.56 |
+| Buying power | ~$80,023.72 (cash) / $375,640.05 (margin, unused) |
+| Last equity (July 3 close, carried over holiday) | $100,129.68 |
+
+## Open positions (midday routine, 2026-07-06 ~12:33 ET)
+
+| Symbol | Qty | Avg entry | Current price | Mkt value | Unrealized P/L | % of portfolio | Trailing Stop |
+|--------|-----|-----------|--------------|-----------|----------------|----------------|---------------|
+| LLY | 10 | $1,093.534 | $1,201.59 | $12,015.90 | +$1,080.56 (+9.881%) | 12.03% | d4147484 (7sh) + 25989fb5 (3sh), HWM $1,238.00, stop $1,114.20 ✓ — buffer $87.39 (7.27%) ✓ |
+| V | 22 | $323.57 | $355.53 | $7,821.66 | +$703.12 (+9.877%) | 7.83% | 66033918 (22sh), HWM $364.21, stop $327.789 ✓ — buffer $27.741 (7.805%) ✓ |
+
+**Sector exposure (midday July 6):**
+- Healthcare (LLY): $12,015.90 = 12.03% | Financials (V): $7,821.66 = 7.83% | Cash: $80,023.72 = 80.14%
+- No sector above 60% cap ✓
+
+**Midday July 6 notes (~12:33 ET; stop audit 3/3 PASS; no trades — no cuts, no tightenings):**
+- **Live-switch guard:** `ALPACA_BASE_URL` contains "paper" ✓.
+- **Lock:** was `{}` — acquired and will be released cleanly.
+- **Control switch:** STATUS ACTIVE, no `NOTE:`/`QUERY:` to acknowledge.
+- **Market clock:** `is_open: true` ✓.
+- **Shock check:** $99,861.28 vs last_equity $100,129.68 = **−$268.40 (−0.268%)** — no shock ✓ (threshold −4%).
+- **Drawdown circuit breaker:** $99,861.28 vs HWM $101,384.21 = **−1.502%** — NOT triggered ✓ (8.498pp headroom).
+- **News-scan gate:** LLY +9.881%, V +9.877% — both just under the +10% trigger; no scan run.
+- **No cuts** (−7% rule): both positions far above threshold (both are gains) ✓.
+- **No discretionary tightenings** (+15% trigger = LLY $1,257.56 / V $372.10): neither reached ✓.
+- **Stop audit (step 5):** 3/3 trailing stops present and correctly sized (LLY 7sh + 3sh = 10sh; V 22sh) — matches held quantities exactly. No missing stops.
+- **Exit reconciliation:** no fills since market-open — nothing to reconcile against closed-trades.md.
+- **Trades today:** 0.
+- **LLY review_by tomorrow (2026-07-07):** mandatory hold/trim/exit decision due at next pre-market.
 
 ## Account (market-open routine, 2026-07-06 ~09:36 ET)
 
