@@ -7,6 +7,84 @@ _Entries before 2026-06-01 archived to `memory/archive/2026-05.md` (2026-07-01 m
 
 ---
 
+## 2026-07-06 — Pre-market research (~08:07 ET, Monday)
+
+### Live-switch guard / Lock / Control switch
+- `ALPACA_BASE_URL` contains "paper" ✓.
+- `memory/_lock` was `{}` (empty) — no other routine active. Lock written for this run, released before commit.
+- `memory/control.md` STATUS: **ACTIVE**. No `NOTE:`/`QUERY:` line to acknowledge.
+
+### Account sync (live Alpaca, ~08:07 ET)
+- Equity **$100,041.17** | Cash **$80,023.72 (80.00%)** | Long market value $20,017.45 | Last equity (July 3 close, carried) $100,129.68.
+- **Shock check:** ($100,041.17 − $100,129.68) / $100,129.68 = **−0.088%** — no shock ✓ (threshold −4%; no new session has closed since Thursday's close).
+- **Drawdown circuit breaker:** $100,041.17 vs HWM $101,384.21 = **−1.325%** — NOT triggered ✓ (8.675pp headroom; CB trigger USD 91,245.79).
+
+### Positions & stop audit
+| Symbol | Qty | Avg entry | Current | Mkt value | Unrealized P/L | % port | Stop |
+|---|---|---|---|---|---|---|---|
+| LLY | 10 | $1,093.534 | $1,207.05 | $12,070.50 | +$1,135.16 (+10.38%) | 12.06% | d4147484 (7sh) + 25989fb5 (3sh), HWM $1,238.00, stop $1,114.20 ✓ buffer 7.69% |
+| V | 22 | $323.57 | $361.225 | $7,946.95 | +$828.41 (+11.64%) | 7.94% | 66033918 (22sh), HWM $361.86, stop $325.674 ✓ buffer 9.84% |
+
+**Stop audit: 3/3 PASS ✓** (matches held quantities exactly; no missing stops).
+**Sector exposure:** Healthcare (LLY) 12.06% | Financials (V) 7.94% | Cash 80.00% — no sector above 60% cap ✓.
+
+### Thesis contract review
+- **LLY** review_by **2026-07-07 (tomorrow)** — not yet due (date hasn't passed, no invalidation trigger hit). Thesis intact: Medicare Bridge live since July 1, Leerink PT $1,232 stands, no negative news since Friday. Mandatory hold/trim/exit decision due at tomorrow's pre-market.
+- **V** review_by 2026-07-28 — not due. Thesis intact (see below).
+
+### Monday conviction ratings (refreshed 2026-07-06; prior set 2026-06-29)
+| Symbol | Rating | 3-consecutive-C trigger | Notes |
+|---|---|---|---|
+| LLY | **A** (unchanged) | N/A | +10.38% from entry; Medicare Bridge confirming; no thesis change |
+| V | **B** (unchanged) | 0/3 weeks at C | +11.64% from entry; zero sell ratings among 42 analysts; Open USD stablecoin build-out continuing |
+
+No C-rated names — no 3-consecutive-C purge trigger applies.
+
+### Market posture (WebSearch)
+- Broad tape: prediction markets lean modestly toward a higher open (~62% implied probability), soft June jobs report (July 3) and a two-cut Fed dot plot are broadly supportive; futures firmed slightly Sunday evening. No major scheduled US data release this morning — main risk is an overnight geopolitical/trade surprise, none reported. [investing.com, lines.com]
+- No incremental macro shock; posture is constructive-but-unconvinced, consistent with last week's close.
+
+### Held-position research — "what changed since Thursday"
+- **LLY** ($1,207.05, essentially flat, −0.57% vs Thursday's extended print): No new news since the July 1 Medicare Bridge launch; stock continuing to digest the post-launch pop. Nothing material — thesis unchanged. Next earnings ~Aug 5, 2026 (confirmed via WebSearch) — well outside the 2-day earnings window. [cnbc.com, investing.com]
+- **V** ($361.225, essentially flat, −0.25%): No new news since Thursday's 52-week-high close; Open USD stablecoin consortium and agentic-commerce tooling (agent scoring, tokenisation, fraud models) continue to build out per July coverage. Next earnings estimated July 28–Aug 4, 2026 (sources split; treating July 28 as the conservative near date) — outside the 2-day window either way. [ebc.com, tipranks.com]
+
+### Earnings-window rule
+- Neither held name reports within the next 2 trading days. No restriction on holding; no new-buy restriction triggered (no earnings-adjacent buy candidates today).
+
+### Watchlist — ATR gates (LRCX / ETN)
+- **LRCX:** July 2 session H $392.50 / L $342.92 / C $351.495 = **14.11% ATR** — catastrophic fail (10.2% single-day decline on AI-capex demand-destruction fears/SK Hynix HBM4 ramp-slowing reports). Gate counter **0/2**, reset again. Added 2026-06-08 — now **4+ weeks stale**; per watchlist hygiene, flag for purge at Friday's weekly review if still ungated. [tikr.com, quiverquant.com]
+- **ETN:** July 2 session H $414.52 / L $392.52 / C $398.67 = **5.52% ATR** — fails the ≤5% threshold narrowly (was 1/2 clear after July 1's 4.40%; today's fail resets the counter). Gate counter **0/2**. BMO Buy rating July 2; FY26 guidance raised (est. EPS $3.07, +4.07% YoY; revenue ~$8B, +13.88% YoY) — thesis intact, just needs two calm sessions. [finance.yahoo.com]
+- Neither name is eligible for entry today.
+
+### Re-entry candidate review — VST
+- VST closed July 2 at **$151.07** (ATR July2 4.97%, July1 3.97% — both clear ≤5%), down further to **~$152.95** as of July 6 pre-market — well below the June 30 exit ($160.20) and the 52-week high ($219.82). Wells Fargo initiated/reiterated Buy July 3; 13-analyst Buy consensus; PT $231.85. Helix/Cogentrix nuclear-power-for-AI thesis unchanged.
+- **New negative signal since the June 30 exit:** FERC scrutiny risk on Vistra's hyperscaler colocation deals (cost-shifting to residential ratepayers) is a fresh regulatory overhang not present at the original entry — a structural headwind to weight explicitly per knowledge-base guidance, not just "a risk to monitor." Additionally a technical sell signal fired June 25 off a pivot top, and insider selling (CAO, a director) in late May/June. [dailypolitical.com, fool.com, simplywall.st]
+- **Verdict: NOT a qualifying re-entry today.** Entry signal #4 (technical confirmation — above rising 50-day, not extended) fails outright: VST is in a confirmed short-term downtrend off its June highs, not pulling back within an uptrend. Buying here risks catching a falling knife per knowledge-base §4.4/§6.1. Continuing to watch for a confirmed bottom (reversal candle + volume dry-up) before treating this as a real setup. FERC risk needs to be resolved or clearly bounded before re-entry, not waved through because the win exit felt clean.
+
+### New candidate sourcing (per 2026-07-03 weekly-review directive: widen beyond semis)
+- Sourced from AI-power/cooling-infrastructure and healthcare/consumer-defensive searches: **CEG** (Constellation Energy — nuclear, Microsoft Three Mile Island PPA, premium-pricing power as AI demand grows; July 2 close $239.20, ATR 3.00% ✓ clears gate), **VRT** (Vertiv — full power+cooling stack, NVIDIA-integrated, +252% order growth), **NVT** (nVent Electric — liquid cooling distribution, +65% organic orders Q3'25), **MOD** (Modine — data-center thermal management, RMT spin-off Q4 2026 pending).
+- None of these have had the full pre-trade diligence pass yet (10-Q/10-K review, balance sheet, valuation vs. peers, earnings-quality check, written one-paragraph thesis) — adding to watchlist as **research candidates only**, not buy candidates, for this week's follow-up. CEG is the most-ready name (clean ATR, clear catalyst) and should be the first full diligence pass this week.
+- **NVDA re-entry cooldown:** still 3 days from the July 9 eligibility date (2-week cooldown from the June 25 stop-out). GPU spot pricing recovery not yet re-checked; do so alongside the July 9 eligibility review.
+
+### Cash-drag check
+- Cash 80.00% vs. the strategy's 25–40% target band for a 2-position book — well above target, and has been for 6+ weeks. No qualifying entry clears today: LRCX and ETN both fail their ATR gates (LRCX badly, ETN narrowly); VST fails the technical-confirmation signal and carries a fresh regulatory overhang; CEG/VRT/NVT/MOD are sourced but undiligenced. Staying in cash today is a deliberate decision, not a default — the correct response to zero qualifying setups is zero new positions, not lowering the bar. CEG diligence is the actionable next step to break the drought, not forcing today's watchlist names.
+
+### Since inception
+- Bull +0.0412% ($100,041.17) vs SPY TR ($744.86 + $1.76 div = $746.62 vs $739.44 anchor) = +0.9711% → **Bull TRAILS SPY by −0.930pp** (essentially unchanged from Thursday's −0.841pp; small pre-market give-back in LLY/V, no new SPY session).
+
+### Planned trades for today
+
+No trades planned. LRCX and ETN both fail their ATR gates; VST fails technical confirmation and carries a new regulatory-risk flag; CEG/VRT/NVT/MOD are sourced but not yet diligenced. LLY's mandatory review_by decision is due tomorrow (2026-07-07), not today.
+
+```json
+{
+  "plan_date": "2026-07-06",
+  "trades": []
+}
+```
+
+---
+
 ## 2026-07-03 — Weekly review research (WebSearch, ~market close)
 
 - **Broad market:** Dow closed at a fresh record high heading into the July 4 holiday; S&P ~7,498 (+0.20% Jul 3 alone, led by AAPL +4.8%/MCD +4.1%/DIS +3.8%). Best week for the broad tape since inception. Soft June jobs report (+57K vs +113K expected) reinforced no-hike expectations. [Sources: tradingeconomics.com, thestreet.com, bloomberg.com]
