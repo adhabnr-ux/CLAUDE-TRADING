@@ -41,9 +41,9 @@ re-research.
   sense and note why.
 
 ## 4. Execute planned trades
-For each approved trade, re-verify the guardrails — write the math in the
-journal: 20% max position, 3 new positions/week, 25% max daily deployment,
-5% min cash, 60% sector cap, earnings window, drawdown circuit breaker. Then:
+For each approved trade, re-verify the guardrails in `CLAUDE.md` — write the
+math in the journal: 20% max position, 25% max daily deployment, 5% min cash,
+60% sector cap, earnings window. Then:
 - Get the current ask: `./scripts/alpaca.sh quote <SYM>`. Compute a
   **marketable limit** = ask × 1.003 (rounded to cents) — pays at most 0.3%
   over the ask instead of whatever the opening auction does.
@@ -85,8 +85,14 @@ Send one Telegram summary via `./scripts/notify.sh` on every run, starting
 with `Bull market-open <date>:` — if trades were placed, list what was
 bought/sold, fill price, and the stop set; if not, "no trades, <one-line
 reason>". Start with 🚨 if a stop filled, a trade was blocked, or the audit
-found an unprotected position. Never put a literal `$` in the message; use
-`USD`/plain numbers and single-quote the argument.
+found an unprotected position. On a plain no-trade day, keep it to one
+sentence. Never put a literal `$` in the message; use `USD`/plain numbers and
+single-quote the argument.
+
+**Journal length on no-trade days:** if the plan was empty and the stop audit
+passed clean, write a short paragraph in `trade-log.md`/`portfolio.md`
+(account snapshot, stop-audit result, one line why no trades) instead of a
+long writeup.
 
 ## 8. Commit
 `git add -A && git commit -m "market-open: <summary>" && git push origin HEAD:main`.

@@ -62,8 +62,13 @@ Append any actions to `memory/trade-log.md` and refresh `memory/portfolio.md`.
 Send a Telegram summary via `./scripts/notify.sh` on every run, starting with
 `Bull midday <date>:` — any positions cut or stops tightened, or "all
 positions within range, no action". Start with 🚨 if a position was cut or the
-audit found an unprotected position. Never put a literal `$` in the message;
-use `USD`/plain numbers and single-quote the argument.
+audit found an unprotected position. On a plain no-action day, keep it to one
+sentence. Never put a literal `$` in the message; use `USD`/plain numbers and
+single-quote the argument.
+
+**Journal length on no-action days:** if nothing was cut, tightened, or
+recreated, write a short paragraph in `trade-log.md` (stop-audit result, one
+line per position) instead of a long writeup.
 
 ## 9. Commit
 `git add -A && git commit -m "midday: <summary>" && git push origin HEAD:main`.

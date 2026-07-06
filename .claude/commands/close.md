@@ -50,6 +50,8 @@ or threatens Bull's current position theses.
   table, sector-exposure line).
 - If anything notable happened today, append a dated lesson to
   `memory/lessons.md`.
+- On a day with zero trades and no exits, keep the `portfolio.md` narrative
+  section to a short paragraph rather than a full multi-bullet writeup.
 
 ## 5b. Race scoreboard
 Read `memory/aggressive/portfolio.md` (read-only) and compute the race:

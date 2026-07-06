@@ -38,10 +38,10 @@ If `memory/strategy.md` still has `STATUS: NOT_INITIALIZED`:
 
 ## 3. Risk posture check
 Before planning any buys:
-- **Drawdown circuit breaker:** `./scripts/alpaca.sh history 1A 1D` — find the
-  equity high-water mark. If current equity is more than **10% below** it,
-  plan NO new buys today. Journal the risk-off stance and focus on protecting
-  what is held.
+- **Drawdown note:** `./scripts/alpaca.sh history 1A 1D` — find the equity
+  high-water mark and journal current equity vs. it as one line. This is
+  informational only — it does not block new buys (removed as a hard
+  guardrail 2026-06-30; use judgment on genuinely bad macro days instead).
 - **Sector cap:** note current sector exposure. No planned buy may push one
   sector above **60%** of portfolio value.
 
@@ -90,19 +90,27 @@ unchanged". Forces engagement with overnight news instead of stale theses.
 
 ## 6. Cash-drag check
 Compare cash % to the target band in `memory/strategy.md`. If cash has been
-above the band for more than a week, weekly position slots remain, and the
-tape is constructive — either plan at least one qualifying entry today or
-write one explicit sentence in the research log explaining why staying heavy
-in cash is right. Idle cash must be a decision, not a default.
+above the band for more than a week and the tape is constructive — either
+plan at least one qualifying entry today or write one explicit sentence in
+the research log explaining why staying heavy in cash is right. Idle cash
+must be a decision, not a default.
+
+## 6b. Daily candidate diligence (breaks the "sourced but never vetted" stall)
+If any watchlist entry is marked research-only / undiligenced, run a full
+pre-trade diligence pass (recent 10-Q/10-K highlights, valuation vs. peers,
+balance sheet sanity check, one-paragraph thesis, ATR check) on **at least
+one** such name every pre-market run — do not wait for the weekly review.
+Pick the most-ready candidate first. Promote it to a real buy candidate today
+if it clears the Entry Signals and ATR gate; otherwise journal specifically
+what's still missing so tomorrow's run knows where to pick up. A candidate
+sitting in "research-only" for more than a week without a diligence attempt
+is a process failure, not a market condition.
 
 ## 7. Draft today's plan
 Decide which trades (if any) to make at the open, strictly within the
-guardrails: 20% max per position, 3 new positions/week max (count this week's
-buys in `trade-log.md`), 25% max daily new-buy deployment, 5% min cash, the
-60% sector cap, the earnings window, and the circuit breaker. Size with the
-risk budget: a stop-out should lose no more than 1.2% of equity (with a 10%
-stop that is ≈ a 12% position). Prefer whole-share quantities so trailing
-stops are possible.
+guardrails in `CLAUDE.md`: 20% max per position, 25% max daily new-buy
+deployment, 5% min cash, the 60% sector cap, and the earnings window. Prefer
+whole-share quantities so trailing stops are possible.
 
 **Volatility check:** for each planned buy, pull
 `./scripts/alpaca.sh bars <SYM> 1Day 21` and estimate the 20-day average
@@ -133,9 +141,17 @@ above the block.
 Do NOT trade now (market is closed). Send a Telegram summary via
 `./scripts/notify.sh` on every run, starting with `Bull pre-market <date>:` —
 market posture in a phrase plus the planned trades (or "no trades planned").
-Put anything urgent first; start with 🚨 if the circuit breaker is active.
-Never put a literal `$` in the message; use `USD`/plain numbers and
-single-quote the argument.
+Put anything urgent first (thesis-contract deadline, unprotected stop, shock
+day). On a routine no-trade day with nothing urgent, keep the whole message
+to 1-2 sentences — do not pad it out. Never put a literal `$` in the message;
+use `USD`/plain numbers and single-quote the argument.
+
+**Journal length on no-trade days:** if there are no trades, no thesis-contract
+triggers, no stop-audit failures, and no shock event, write the
+`research-log.md` entry as a short paragraph (account snapshot line, one line
+per held position, one line on the diligence pass from step 6b, cash-drag
+line) instead of the full multi-section report. Save the long-form writeup
+for days something actually happened.
 
 ## 9. Commit
 `git add -A && git commit -m "premarket: <summary>" && git push origin HEAD:main`.
