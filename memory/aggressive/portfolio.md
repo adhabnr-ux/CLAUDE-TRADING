@@ -6,44 +6,55 @@ but always re-fetches live data before trading._
 
 ---
 
-## Last snapshot — 2026-07-03 PRE-MARKET (~8:12 AM ET — MARKET CLOSED, Independence Day observed)
+## Last snapshot — 2026-07-06 PRE-MARKET (~8:12 AM ET)
 
 | Field | Value |
 |---|---|
-| Equity | USD 90,674.09 |
-| Cash | USD 25,696.39 (28.35%) |
-| Long market value | USD 64,977.70 |
+| Equity | USD 91,532.43 |
+| Cash | USD 25,696.39 (28.07%) |
+| Long market value | USD 65,836.04 |
 | Open positions | 6 |
-| last_equity | USD 90,674.09 (unchanged — market closed, no trading since July 2 close) |
-| Shock check | 0.000% — NOT triggered |
-| HWM | USD 101,144.73 |
-| Drawdown from HWM | **-10.352%** (circuit breaker -20% — NOT triggered; 9.648pp headroom) |
+| last_equity (July 2 EOD close) | USD 90,674.09 |
+| Change vs last_equity | **+0.947%** — shock threshold -6% NOT triggered |
+| HWM | USD 101,144.73 (confirmed via `history 1A 1D`) |
+| Drawdown from HWM | **-9.503%** (circuit breaker -20% — NOT triggered; 10.497pp headroom) |
 
-**Market status:** `clock` confirms `is_open: false`, next open Monday 2026-07-06 09:30 AM ET. No trading possible today. This is a research/admin-only run — no orders placed, no plan executable.
+**Market status:** `clock` confirms `is_open: false` at run time (8:12 AM ET); next open 09:30 AM ET today.
 
-**Open positions (unchanged from July 2 EOD; prices static, market closed):**
+**Open positions:**
 
 | Symbol | Qty | Avg Entry | Price | P/L % | -12% Cut Trigger | Buffer | Rating |
 |---|---|---|---|---|---|---|---|
-| NVDA | 103 | USD 213.60 | USD 194.83 | -8.787% | USD 187.968 | 3.213pp ⚠️ | A |
-| AVGO | 25 | USD 406.23 | USD 360.45 | **-11.269%** | USD 357.4824 | **0.731pp 🔴 CRITICAL** | A |
-| ETN | 34 | USD 419.54 | USD 398.52 | -5.010% | USD 369.1952 | 6.990pp ✓ | A |
-| GOOGL | 16 | USD 370.22 | USD 359.91 | -2.785% | USD 325.7936 | 9.215pp ✓ | A — review_by July 7 |
-| AMZN | 36 | USD 247.991 | USD 242.67 | -2.146% | USD 218.2322 | 9.854pp ✓ | A — review_by July 7 |
-| VST | 52 | USD 151.47 | USD 151.05 | -0.277% | USD 133.2936 | 11.723pp ✓ | A |
+| NVDA | 103 | USD 213.60 | USD 195.4903 | -8.478% | USD 187.968 | 3.522pp ⚠️ | A |
+| AVGO | 25 | USD 406.23 | USD 374.90 | -7.712% | USD 357.4824 | **4.288pp** (WATCH, downgraded from CRITICAL) | A |
+| ETN | 34 | USD 419.54 | USD 405.98 | -3.232% | USD 369.1952 | 8.769pp ✓ | A |
+| GOOGL | 16 | USD 370.22 | USD 361.01 | -2.488% | USD 325.7936 | 9.512pp ✓ | A — review_by 2026-07-21 (renewed) |
+| AMZN | 36 | USD 247.991111 | USD 244.31 | -1.484% | USD 218.2322 | 10.516pp ✓ | A — review_by 2026-07-30 (renewed) |
+| VST | 52 | USD 151.47 | USD 152.95 | +0.977% | n/a | comfortable ✓ | A |
 
 **Stop audit: 6/6 confirmed live** (NVDA `54d7d851`, AVGO `cf2956dc`, ETN `abdc232b`, GOOGL `e52a43f1`, AMZN `b55bef05`, VST `5b347be3`).
 
 **Sector exposure:**
 | Sector | Market Value | % of Portfolio |
 |---|---|---|
-| Technology — semis (NVDA, AVGO) | USD 29,078.74 | 32.07% |
-| Industrials/Power Infra (ETN) | USD 13,549.68 | 14.94% |
-| Technology — hyperscalers (GOOGL, AMZN) | USD 14,494.68 | 15.99% |
-| Utilities/Power (VST) | USD 7,854.60 | 8.66% |
-| Cash | USD 25,696.39 | 28.35% |
+| Technology — semis (NVDA, AVGO) | USD 29,508.00 | 32.24% |
+| Industrials/Power Infra (ETN) | USD 13,803.32 | 15.08% |
+| Technology — hyperscalers (GOOGL, AMZN) | USD 14,571.32 | 15.92% |
+| Utilities/Power (VST) | USD 7,953.40 | 8.69% |
+| Cash | USD 25,696.39 | 28.07% |
 
-**Flagged for Monday July 6 pre-market:** (1) AVGO CRITICAL at 0.731pp — apply sub-1pp escalation lesson (full exit, not another trim) if it opens flat-to-down with no positive catalyst; (2) GOOGL and AMZN review_by July 7 — mandatory hold/trim/exit decisions due at or before that session.
+**Resolved today:** AVGO's sub-1pp full-exit contingency (from July 3) stood down — it opened up +4.0% on a broad semi-sector bounce (not flat-to-down), buffer recovered to 4.288pp. GOOGL and AMZN review_by (July 7) both actioned today: HOLD, both renewed. No new buys today — see research-log.md for reasoning; revisit deployment at midday/EOD if the bounce holds.
+
+---
+
+## Prior snapshot — 2026-07-03 PRE-MARKET (~8:12 AM ET — MARKET CLOSED, Independence Day observed)
+
+| Field | Value |
+|---|---|
+| Equity | USD 90,674.09 |
+| Cash | USD 25,696.39 (28.35%) |
+| HWM | USD 101,144.73 |
+| Drawdown from HWM | -10.352% |
 
 ---
 
@@ -3970,6 +3981,7 @@ _Semi-group (NVDA+AVGO+MRVL) at 43.9% — within 50% cap. Three positions in pro
 | 2026-06-22 (EOD close) | **95,130.45** | **744.28** | **-4.870%** | **-1.312%** | **-3.558pp** |
 | 2026-07-03 (midday) | **90,674.09** | — (market closed) | **-9.326%** | — | — |
 | 2026-07-03 (EOD close) | **90,674.09** | **744.86** (July 2 close, no session today) | **-9.326%** | **-1.236%** | **-8.090pp** |
+| 2026-07-06 (pre-market) | **91,532.43** | ~**744.86** (July 2 close; no fresh SPY print pre-open) | **-8.468%** | ~**-1.236%** | **~-7.232pp** |
 
 ---
 
@@ -4000,4 +4012,28 @@ Equity USD 90,674.09; cash USD 25,696.39 (28.35%); 6 open positions (NVDA, AVGO,
 **Open risk items:** AVGO CRITICAL at 0.731pp buffer — sub-1pp full-exit escalation contingency carried to July 6 pre-market if it opens flat-to-down. GOOGL and AMZN review_by dates both July 7 — mandatory hold/trim/exit decisions due at or before the July 6/7 session. **Weekly review is 14 days stale (last entry: Week 3, June 19) — flagged for the human.**
 
 Next actionable routine: July 6 pre-market.
+
+---
+
+## 2026-07-06 — PRE-MARKET snapshot (~8:12 AM ET)
+
+**Account:** Equity USD 91,532.43 (+0.947% vs last_equity USD 90,674.09); cash USD 25,696.39 (28.07%); drawdown from HWM -9.503% (breaker at -20%, not triggered, 10.497pp headroom).
+
+**Positions (6 open):**
+| Symbol | Qty | Sector | P/L% | Buffer to -12% | Rating |
+|---|---|---|---|---|---|
+| NVDA | 103 | Semiconductors | -8.478% | 3.522pp | A |
+| AVGO | 25 | Semiconductors | -7.712% | 4.288pp (WATCH, down from CRITICAL) | A |
+| ETN | 34 | Industrials/power infra | -3.232% | 8.769pp | A |
+| GOOGL | 16 | Communication Services (hyperscaler) | -2.488% | 9.512pp | A |
+| AMZN | 36 | Consumer Discretionary (hyperscaler) | -1.484% | 10.516pp | A |
+| VST | 52 | Utilities (nuclear power) | +0.977% | comfortable | A |
+
+**Sector exposure:** Semiconductors (NVDA+AVGO) = 32.24%; Industrials (ETN) = 15.08%; Hyperscalers (GOOGL+AMZN) = 15.92%; Utilities (VST) = 8.69%; Cash = 28.07%.
+
+**Stops:** 6/6 live 18% trailing stops confirmed, unchanged order IDs.
+
+**Resolved:** AVGO's sub-1pp full-exit contingency stood down (opened up +4.0% on a broad semi-sector bounce, not flat-to-down). GOOGL/AMZN review_by (July 7) actioned today — both HOLD, renewed to July 21 and July 30 respectively. Monday conviction review: all 6 positions rated A; no 2-consecutive-Monday-C trim triggered. No trades planned today — see research-log.md for the explicit deployment-pause reasoning (28.07% cash, confirming the semi bounce before redeploying).
+
+Next actionable routine: July 6 market-open.
 | 2026-06-23 (EOD close) | **92,876.82** | **733.58** | **-7.123%** | **-2.731%** | **-4.392pp** |

@@ -3309,3 +3309,133 @@ EXECUTED: 2026-07-03T12:08:00Z (no trades — market closed for Independence Day
 - `memory/performance.csv` aggro rows June 22–July 3 (10 sessions): average cash 27.2% of equity (range 21.3%–39.6%), well above the 2% floor and the profile's "deploy fast" posture — see Process Audit.
 
 No trades planned or possible in this routine (weekly review does not trade).
+
+---
+
+## 2026-07-06 — WEEK 6 PRE-MARKET (Monday)
+[search: WebSearch fallback — MiniMax M3 MCP not connected this session; all searches below used WebSearch]
+
+### Pre-run checks
+| Check | Result |
+|---|---|
+| Live-switch guard | ALPACA_BASE_URL contains "paper" ✓ |
+| Lock | Clear (`{}`) at start; written for this run ✓ |
+| Control switch | STATUS: ACTIVE ✓ (no NOTE:, no QUERY:) |
+| Market open | false at run time (8:12 AM ET); next open 09:30 AM ET today |
+
+### Portfolio snapshot (live Alpaca data, ~8:12 AM ET)
+
+| Symbol | Qty | Avg Entry | Current | P/L % | -12% Trigger | Buffer |
+|---|---|---|---|---|---|---|
+| NVDA | 103 | USD 213.60 | USD 195.4903 | -8.478% | USD 187.968 | 3.522pp ⚠️ |
+| AVGO | 25 | USD 406.23 | USD 374.90 | -7.712% | USD 357.4824 | **4.288pp** (up from 0.731pp Friday) |
+| ETN | 34 | USD 419.54 | USD 405.98 | -3.232% | USD 369.1952 | 8.769pp ✓ |
+| GOOGL | 16 | USD 370.22 | USD 361.01 | -2.488% | USD 325.7936 | 9.512pp ✓ |
+| AMZN | 36 | USD 247.991111 | USD 244.31 | -1.484% | USD 218.2322 | 10.516pp ✓ |
+| VST | 52 | USD 151.47 | USD 152.95 | +0.977% | n/a | comfortable ✓ |
+
+**Account equity: USD 91,532.43.** Cash USD 25,696.39 (28.07%). last_equity (July 2 close) USD 90,674.09. Change vs last_equity: **+0.947%** — shock threshold -6% NOT triggered.
+**HWM USD 101,144.73 (confirmed via `history 1A 1D`, max equity point unchanged since June 4-5).** Drawdown: **-9.503%** — circuit breaker -20% NOT triggered (10.497pp headroom).
+
+### AVGO — the critical item, resolved
+
+The July 3 EOD flagged AVGO at 0.731pp buffer with a standing contingency: **full exit at the July 6 open if it opens flat-to-down with no positive catalyst; hold and reassess if it opens meaningfully higher (buffer recovers above ~2pp).** AVGO is up +4.009% from Friday's close (USD 360.45 → USD 374.90), pushing the buffer to 4.288pp — comfortably above the 2pp reassessment bar. This is **not an idiosyncratic AVGO move**: the broader semiconductor sector is staging a sector-wide bounce (PHLX Semi Index +47% YTD; AI chip stocks reported to have added ~USD 2T in combined market value this month) and multiple analysts are on record "buying the dip" on AVGO specifically after its ~26% one-month pullback. Combined with the confirmed OpenAI "Jalapeño" custom-chip win (thesis-strengthening, not a one-day story), this satisfies "opens meaningfully higher" cleanly.
+**Decision: HOLD. Contingency stands down — no exit.** Review_by renewed to 2026-07-13 (1 week). Downgrade AVGO from CRITICAL to WATCH.
+
+### Held positions — "what changed since yesterday" (required for each)
+
+**NVDA — Thesis: INTACT. Strengthening.**
+- *What changed:* Blackwell architecture sold out through mid-2026 (extraordinary demand signal); Rubin architecture now expected nearly two quarters ahead of schedule — a forward roadmap acceleration, not a demand question mark. Stock modestly lower on July 2 (-1.39%) purely on sector profit-taking after a record first half, not company-specific. 61-analyst Strong Buy consensus, avg PT USD 301.62 (+54.4% upside).
+- Buffer 3.522pp ⚠️ — below the 4pp comfort line but improving from Friday's 3.213pp, consistent with the broader semi bounce.
+- Invalidation check: no hyperscaler GPU share loss; Rubin timeline accelerating, not slipping. ✓ Not triggered. Review_by July 9 — 2 trading days away, not due today.
+- Source: Yahoo Finance, stockanalysis.com, intellectia.ai, July 2-6 2026.
+
+**AVGO — see above. Thesis: INTACT, thesis-strengthening (Jalapeño win). Buffer WATCH (4.288pp), downgraded from CRITICAL.**
+
+**ETN — Thesis: INTACT. Strengthening.**
+- *What changed:* BMO Capital issued a fresh Buy rating July 2; Bernstein maintains Buy. Strategic partnership with VoltServer targets next-generation power distribution for AI/electrification data-center demand. 2026 guidance already raised on data-center order growth (+240% YoY per prior research). A DCF-overvaluation flag from one source is a valuation opinion, not a thesis break (invalidation = ETN <USD 332 or AI capex reversal — neither triggered).
+- Buffer 8.769pp ✓ — comfortable. Review_by July 9 — not due today. Next earnings Aug 4 — no window risk.
+- Source: Yahoo Finance, stocktradersdaily.com, July 2 2026.
+
+**GOOGL — Thesis: INTACT. New legal item resolved, not thesis-breaking — review_by decision below.**
+- *What changed:* The European Court of Justice dismissed Alphabet's final appeal (July 2) in the 2018-origin Android antitrust case, making the €4.1B fine permanent and activating follow-on civil-damages exposure across 13 EEA nations. This is the **conclusion of an 8-year-old, already-provisioned legacy case** about Android bundling — it has no bearing on the GCP/TPU cloud thesis (invalidation = GCP deceleration or TPU program cancellation, neither of which this touches). If anything, finality removes a lingering uncertainty rather than adding a new one. Google Cloud fundamentals unchanged: Q1 2026 revenue +63% YoY, backlog ~USD 462B.
+- Buffer 9.512pp ✓ — comfortable. Next earnings ~Jul 21-24 — no window risk.
+- **Review_by contract (due July 7, actioned today as the next available session):** Decision: **HOLD. Review_by renewed to 2026-07-21** (next earnings window). Invalidation condition unchanged (GCP deceleration or TPU cancellation).
+- Source: TechTimes, CNBC, Bloomberg, USNews, July 2-3 2026.
+
+**AMZN — Thesis: INTACT. Strengthening.**
+- *What changed:* No new negative items. Q1 2026 fundamentals (AWS +28% YoY, operating income +$23.9B) remain the active thesis driver; Prime Day record (+9% YoY to USD 26.4B, logged July 2) still the freshest positive catalyst. 41-analyst Buy consensus as of July 5.
+- Buffer 10.516pp ✓ — comfortable. Next earnings Jul 30 — no window risk.
+- **Review_by contract (due July 7, actioned today):** Decision: **HOLD. Review_by renewed to 2026-07-30** (next earnings). Invalidation condition unchanged (AWS growth decelerating below 20% YoY).
+- Source: Yahoo Finance, Motley Fool, July 5-6 2026.
+
+**VST — Thesis: INTACT. Best performer.**
+- *What changed:* No new items since July 2 (credit agreement amendment, fossil-plant divestiture already logged). 13-analyst Buy consensus reaffirmed July 4; AI-data-center power demand in Texas remains the core driver.
+- Comfortably positive (+0.977% from entry). Review_by July 15 — not due today. Next earnings Aug 6 — no window risk.
+- Source: Yahoo Finance, public.com, July 4 2026.
+
+### Thesis contract review (step 3b)
+GOOGL and AMZN review_by (July 7) actioned today at the first available session — both HOLD, both renewed (see above). No contract allowed to expire unexamined. NVDA/AVGO/ETN review_by July 9 — not due today.
+
+### Conviction-weighted holding review (step 3c — Monday only)
+
+| Symbol | Rating | Rationale |
+|---|---|---|
+| NVDA | A | Blackwell sold out through mid-2026; Rubin ahead of schedule. Buffer improving. |
+| AVGO | A | Jalapeño custom-chip win confirmed; sector-wide bounce; buffer recovered to 4.288pp. |
+| ETN | A | Two fresh Buy ratings (BMO, Bernstein); AI data-center order growth accelerating. |
+| GOOGL | A | Cloud +63% YoY, USD 462B backlog; legacy antitrust case now closed, not a new risk. |
+| AMZN | A | AWS +28%, Prime Day record, operating income growing. |
+| VST | A | Best performer; AI power-demand thesis firmly intact. |
+
+No C-ratings this Monday (none last Monday, June 29, either — no position carries a prior C-rating). **The 2-consecutive-Monday-C trim rule does not apply to any position.**
+
+### Earnings window check
+| Symbol | Next Earnings | Within 2 trading days? | Action |
+|---|---|---|---|
+| NVDA | Aug 26, 2026 | No | None required |
+| AVGO | Sep 3, 2026 | No | None required |
+| ETN | Aug 4, 2026 | No | None required |
+| GOOGL | ~Jul 21-24, 2026 | No | None required |
+| AMZN | Jul 30, 2026 | No | None required |
+| VST | Aug 6, 2026 | No | None required |
+
+**No earnings window risk for any position or candidate. ✓**
+
+### New position research
+**MRVL (re-entry candidate, revisited):** Extremely volatile and valuation-divergent — dropped from USD 269.52 to USD 245.46 (-8.9%) in the July 2 session alone (day range USD 237.39-274.90), and bull/bear analyst views diverge sharply (some Buy-rated targets well above current, one Strong-Sell view at USD 165, ~40% below current, disputing the multi-year revenue-compounding assumptions embedded in the bull case). This is not a "thesis intact, price recovered" setup — it's an unresolved valuation fight. **No re-entry today.**
+**No other new candidates surfaced** that clear the earnings-window and volatility bars today.
+
+### Deployment check
+- Cash: USD 25,696.39 = 28.07% of equity — above the 20% mandatory-deployment-note threshold.
+- **Explicit decision: NO NEW BUYS TODAY.** Three reasons, stated explicitly per the "idle cash must be a decision" rule: (1) the semiconductor sector just staged a sharp one-session reversal (AVGO +4.0%) after a multi-week drawdown — adding fresh capital the same morning without confirming the bounce holds through a full session risks buying an air-pocket bounce rather than a real reversal; (2) GOOGL and AMZN review_by decisions needed to be finalized first (done above) before committing any new capacity; (3) MRVL, the one previously-flagged watchlist name, remains an unresolved valuation dispute, not a clean setup. **Revisit deployment at midday/EOD if the sector bounce holds through the session** — this is a one-day pause, not an indefinite one.
+
+### Guardrail check for today
+
+| Rule | Limit | Status |
+|---|---|---|
+| Single position max | 35% | NVDA 22.00% — largest position. ✓ All clear |
+| Cash floor | 2% min | 28.07% — well above minimum ✓ |
+| Weekly new positions | 8 max | 0/8 used (new week) ✓ |
+| Semi-group concentration (NVDA+AVGO) | informal ≤50% watch | (20,135.50+9,372.50)/91,532.43 = 32.24% ✓ |
+| Circuit breaker | >20% below HWM | -9.503% — not triggered ✓ |
+| Intraday/pre-market shock | >6% below last_equity | +0.947% — not triggered (positive) ✓ |
+| Stop audit | All positions covered | 6/6 live 18% trailing stops confirmed (status: "new") — NVDA `54d7d851`, AVGO `cf2956dc`, ETN `abdc232b`, GOOGL `e52a43f1`, AMZN `b55bef05`, VST `5b347be3` ✓ |
+| Earnings window | No new buys within 2 days of earnings | No new buys planned; nearest held-name earnings NVDA Aug 26 |
+| Never average down | — | No adds planned anywhere ✓ |
+
+All guardrails pass.
+
+### Result
+No trades planned. AVGO's sub-1pp full-exit contingency stood down — it opened up sharply on a broad, thesis-consistent semi-sector bounce, not flat-to-down, so the escalation condition was never met; buffer recovered to 4.288pp and the position is downgraded from CRITICAL to WATCH. GOOGL and AMZN review_by contracts (July 7) actioned today: both HOLD, both renewed. Monday conviction review: all 6 positions rated A, no 2-consecutive-Monday-C trim triggered. Stop audit 6/6 live. No shock, no circuit breaker. Cash at 28.07% is an explicit one-day deployment pause pending confirmation the semi bounce holds, not indefinite idling.
+
+## Planned trades for today (July 6, 2026 — market open)
+
+**No trades planned.** AVGO contingency stood down (opened up, not down). No new buys — see Deployment check above for explicit reasoning. All 6 positions HOLD.
+
+```json
+{
+  "plan_date": "2026-07-06",
+  "trades": []
+}
+```
