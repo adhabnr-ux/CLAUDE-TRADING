@@ -5,6 +5,20 @@ The weekly new-position count is derived from this log._
 
 _Entries before 2026-06-01 archived to `memory/archive/2026-05.md` (2026-07-01 monthly housekeeping)._
 
+## 2026-07-07 09:36 ET — MARKET-OPEN — no trades (plan was empty)
+
+- **Action:** None. Pre-market plan (`plan_date: 2026-07-07`) was empty — LLY's review_by contract resolved HOLD/renewed to 2026-07-21, CEG diligence failed its technical-confirmation gate, LRCX/ETN still 1/2 through their ATR gate, VRT/NVT/MOD undiligenced. Market-open confirmed no trades to execute.
+- **Live-switch guard / lock / control:** paper ✓; lock was `{}`, acquired and released cleanly; control STATUS ACTIVE, no NOTE/QUERY.
+- **Market clock:** `is_open: true`, next_close 16:00 ET ✓.
+- **Account (~09:36 ET):** Equity $100,129.84 | Cash $80,023.72 (79.92%) | LMV $20,106.12 | last_equity $100,129.68.
+- **Shock check:** +$0.16 (+0.00016%) — no shock ✓. **Drawdown vs HWM** $101,384.21 = −1.237% — CB not triggered ✓.
+- **LLY** $1,233.88 (+12.834% from entry, +2.818% today) — HOLD, Conviction A, review_by 2026-07-21.
+- **V** $353.115 (+9.131% from entry, −1.157% today) — HOLD, Conviction B, review_by 2026-07-28.
+- **Stop audit 3/3 PASS:** LLY d4147484 (7sh) + 25989fb5 (3sh), HWM $1,239.00, stop $1,115.10, buffer 9.628% ✓; V 66033918 (22sh), HWM $364.21, stop $327.789, buffer 7.174% ✓. All quantities match held positions exactly — nothing missing.
+- **No cuts, no tightenings, no exits.** closed-trades.md unchanged — nothing to reconcile.
+- **Since inception:** Bull +0.1298% ($100,129.84) vs SPY TR +1.6066% ($749.56 + $1.76 div vs $739.44 anchor) → **Bull TRAILS SPY −1.4768pp**.
+- **Telegram notification sent** ✓
+
 ## 2026-07-03 15:51 ET — CLOSE — MARKET HOLIDAY (Independence Day observed; no trades possible)
 
 - **Action:** None — end-of-day P/L check and journal. Market closed all day for July 4 observance (falls on Saturday, NYSE observes Friday July 3); close routine does not place orders regardless.
