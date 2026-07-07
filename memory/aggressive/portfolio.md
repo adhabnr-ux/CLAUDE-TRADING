@@ -4211,3 +4211,29 @@ Next actionable routine: July 7 pre-market.
 **No new buys.** Cash build to 36.03% is deliberate risk reduction on a sector-rotation day, not idleness.
 
 Next actionable routine: July 7 midday (NVDA and AVGO remain the names to check first — both still CRITICAL, though reduced in size).
+
+---
+
+## 2026-07-07 — MIDDAY snapshot (~12:41 PM ET)
+
+**Account:** Equity USD 91,241.99 (+0.626% vs last_equity USD 90,674.09 — no shock, threshold -6%); cash USD 32,894.40 (36.05%); drawdown from HWM USD 101,144.73 = **-9.79%** (breaker at -20%, not triggered).
+
+**Positions (6 open, no trades this run):**
+| Symbol | Qty | Sector | P/L% | Buffer to -12% | % of Portfolio |
+|---|---|---|---|---|---|
+| NVDA | 77 | Semiconductors | -7.828% | 4.172pp ⚠️ | 16.62% |
+| AVGO | 19 | Semiconductors | -8.803% | 3.197pp ⚠️ | 7.71% |
+| ETN | 34 | Industrials/power infra | -6.610% | 5.390pp | 14.60% |
+| GOOGL | 16 | Communication Services (hyperscaler) | -0.189% | 11.811pp | 6.48% |
+| AMZN | 36 | Consumer Discretionary (hyperscaler) | -0.986% | 11.014pp | 9.69% |
+| VST | 52 | Utilities (nuclear power) | +2.532% | comfortable | 8.85% |
+
+**Sector exposure:** Semiconductors (NVDA+AVGO) = 24.33%; Industrials (ETN) = 14.60%; Hyperscalers (GOOGL+AMZN) = 16.17%; Utilities (VST) = 8.85%; Cash = 36.05%. No sector near the 60% informal cap.
+
+**Stops:** 6/6 live 18% trailing stops confirmed unchanged since market open — NVDA `e15e7753`, AVGO `ffba9bd5`, ETN `abdc232b`, GOOGL `e52a43f1`, AMZN `b55bef05`, VST `5b347be3`.
+
+**News scan (NVDA, AVGO, ETN — all >5% below entry):** all three reads as macro/sector-driven noise, not thesis breaks (see research-log.md for detail). AVGO/NVDA are giving back part of recent strength (Apple deal pop, Kyber-denial pop); ETN has two positive catalysts (Russell index inclusion, Dana merger) and no negative news despite today's move.
+
+**No trades this run** — no position past -12%, no position past +25%, no new buys (midday never opens positions).
+
+Next actionable routine: July 7 close.

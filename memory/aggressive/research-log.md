@@ -1,5 +1,17 @@
 # Aggressive Bull — Research Log
 
+## 2026-07-07 — MIDDAY news scan (NVDA, AVGO, ETN — all >5% below entry)
+
+MiniMax M3 (`mcp__minimax__web_search`) was not available in this session (tool not found via search) — used WebSearch fallback for all three queries per the search protocol. [search: WebSearch fallback]
+
+**AVGO** (`AVGO Broadcom stock news today July 7 2026`): Pre-market down ~3% on July 7, giving back part of Monday's +5.3%/+3.73% close driven by the confirmed Apple custom-silicon/RF partnership extension through 2031. 48-analyst consensus Strong Buy, avg 12-month PT USD 523.73 (+40% from current). Read as profit-taking pullback after a strong catalyst day, not a thesis break. [search: WebSearch fallback]
+
+**NVDA** (`NVDA Nvidia stock news today July 7 2026`): Reports that the Kyber NVL144 platform would slip to 2028 were denied by Nvidia (on schedule) — stock got a >1% pop off the denial. Goldman Sachs flagged NVDA's 21.7x forward P/E as "compelling" vs. its 5-year average of 72x, calling it undervalued given the pullback. Some sector-wide pressure from reports of US firms testing cheaper Chinese AI models (affects MSFT/GOOGL/AMZN/META too, not NVDA-specific). No thesis-breaking news. [search: WebSearch fallback]
+
+**ETN** (`ETN Eaton stock news today July 7 2026`): No negative company-specific news found. Two positive catalysts: FTSE Russell index reconstitution added ETN to Russell 1000/Top 200/3000E Growth benchmarks (passive-flow positive), and the Mobility-Dana Reverse Morris Trust merger (USD 5.1B, combined powertrain business >USD 10B) sharpens Eaton's focus on electrical/aerospace. Analyst consensus 22 Buy vs 1 Sell. Today's -5.2% intraday move has no identified company-specific driver — treated as broad-tape/sector noise rather than a thesis event.
+
+**Conclusion:** All three moves are macro/sector-driven consolidation after recent strength (AVGO, NVDA) or unexplained broad-tape noise against a backdrop of positive catalysts (ETN). No faster-sell, no extra stop-tightening. Existing 18% trailing stops stand. Buffers to the -12% cut threshold: NVDA 4.172pp, AVGO 3.197pp, ETN 5.390pp — worth the first check at close/next pre-market but none actionable today.
+
 _Dated research notes, catalysts, and planned trades. Newest at the bottom. Each
 pre-market entry ends with a **"Planned trades for today"** section (or "No trades planned.")._
 

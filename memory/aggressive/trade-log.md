@@ -1,5 +1,29 @@
 # Aggressive Bull — Trade Log
 
+## 2026-07-07 — MIDDAY review (no trades)
+
+**Market open, no shock:** equity USD 91,241.99 vs last_equity USD 90,674.09 = +0.626% (threshold -6%, not triggered).
+
+**Positions reviewed (6, all still 6/6 from post-trim market-open snapshot):**
+| Symbol | Qty | P/L% | Buffer to -12% cut |
+|---|---|---|---|
+| NVDA | 77 | -7.828% | 4.172pp |
+| AVGO | 19 | -8.803% | 3.197pp |
+| ETN | 34 | -6.610% | 5.390pp |
+| GOOGL | 16 | -0.189% | 11.811pp |
+| AMZN | 36 | -0.986% | 11.014pp |
+| VST | 52 | +2.532% | comfortable (only green position) |
+
+No position below the -12% cut threshold; no position above +25% (winner-protection threshold not applicable). No new buys per playbook (midday never opens positions).
+
+**News scan (positions >5% below entry — NVDA, AVGO, ETN)** — see research-log.md for full detail. Summary: all three moves are sector rotation / consolidation, not thesis breaks. AVGO is a pullback after Monday's Apple-partnership-driven +5.3% pop (Strong Buy consensus, USD 523.73 avg PT intact). NVDA's Kyber-delay report was denied by the company (thesis-positive) and Goldman flagged the 21.7x forward P/E as undervalued. ETN has two positive catalysts in play (FTSE Russell index reconstitution inclusion, Dana Reverse Morris Trust merger) with no negative news found — today's -5.2% intraday move reads as broad-market/sector noise, not company-specific. No faster-sell or extra tightening action warranted for any of the three.
+
+**Stop audit:** 6/6 positions have live 18% trailing stops confirmed in open orders (AMZN `b55bef05`, AVGO `ffba9bd5`, ETN `abdc232b`, GOOGL `e52a43f1`, NVDA `e15e7753`, VST `5b347be3`). No gaps, no action needed.
+
+**No exits this run** — nothing to post-mortem, no `trades.jsonl` entries.
+
+**Result:** All positions within range. No trades. NVDA and AVGO remain the tightest buffers (3-4pp) and are the names to check first at close/next pre-market.
+
 _Every trade with its reasoning. Append-only, newest at the bottom. Each entry:
 date, action, symbol, qty, fill price, the one-sentence thesis (why), the stop
 order id, and a "verified" confirmation._
