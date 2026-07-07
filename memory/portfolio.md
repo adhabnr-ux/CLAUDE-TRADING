@@ -3,10 +3,50 @@
 _Updated by every routine from live Alpaca data. The next agent trusts this as
 the last known state, but always re-fetches live data before trading._
 
-**Last updated:** 2026-07-07 09:36 ET (market-open routine; `is_open: true`; stop audit 3/3 PASS; LLY $1,233.88 +12.834% / V $353.115 +9.131%; today's plan was empty — no trades; Bull TRAILS SPY since inception by −1.477pp)
+**Last updated:** 2026-07-07 12:35 ET (midday routine; `is_open: true`; stop audit 3/3 PASS; LLY $1,229.44 +12.428% / V $349.70 +8.076%; no action — no trades; Bull TRAILS SPY since inception by −1.482pp)
 **Inception:** 2026-05-21 — starting equity $100,000.00 | SPY anchor price $739.44
 **SPY total-return anchor (post-June 18 ex-div $1.76):** **$741.20**
 **Cumulative SPY dividends since inception (quarterly tracker):** $1.76/sh (June 18 ex-div); next SPY ex-div est. ~September 2026.
+
+---
+
+## Account (midday routine, 2026-07-07 ~12:35 ET)
+
+| Metric | Value |
+|--------|-------|
+| Equity | $100,011.08 |
+| Cash | $80,023.72 (80.02%) |
+| Long market value | $19,987.36 |
+| Buying power | ~$80,023.72 (cash) / $376,059.49 (margin, unused) |
+| Last equity (July 6 close) | $100,129.68 |
+
+## Open positions (midday routine, 2026-07-07 ~12:35 ET)
+
+| Symbol | Qty | Avg entry | Current price | Mkt value | Unrealized P/L | % of portfolio | Trailing Stop |
+|--------|-----|-----------|--------------|-----------|----------------|----------------|---------------|
+| LLY | 10 | $1,093.534 | $1,229.44 | $12,294.40 | +$1,359.06 (+12.428%) | 12.29% | d4147484 (7sh) + 25989fb5 (3sh), HWM $1,249.45, stop $1,124.505 ✓ — buffer $104.935 (8.535%) ✓ |
+| V | 22 | $323.57 | $349.70 | $7,693.40 | +$574.86 (+8.076%) | 7.69% | 66033918 (22sh), HWM $364.21, stop $327.789 ✓ — buffer $21.911 (6.266%) ✓ |
+
+**Sector exposure (midday July 7):**
+- Healthcare (LLY): $12,294.40 = 12.29% | Financials (V): $7,693.40 = 7.69% | Cash: $80,023.72 = 80.02%
+- No sector above 60% cap ✓
+
+**Midday July 7 notes (~12:35 ET; stop audit 3/3 PASS; no trades):**
+- **Live-switch guard:** `ALPACA_BASE_URL` contains "paper" ✓.
+- **Lock:** was `{}` — acquired cleanly.
+- **Control switch:** STATUS ACTIVE, no `NOTE:`/`QUERY:` to acknowledge.
+- **Market clock:** `is_open: true`, `next_close: 16:00 ET` ✓.
+- **Shock check:** $100,011.08 vs last_equity $100,129.68 = **−$118.60 (−0.1185%)** — no shock ✓ (threshold −4%).
+- **Drawdown circuit breaker:** $100,011.08 vs HWM $101,384.21 = **−1.354%** — NOT triggered ✓.
+- **News scan (step 3):** LLY is up +12.428% from entry (> +10% trigger) — scanned. JPMorgan raised its LLY price target July 7 ahead of August earnings, citing Mounjaro international expansion and US obesity-market growth; stock +3.08% today on the news. Positive, thesis-consistent catalyst — not a thesis break. V is +8.076% from entry (< +10%) and not down >3% — no scan required.
+- **LLY** $1,229.44 (+12.428% from entry, +2.448% today): buffer 8.535% ✓. Below +15% tighten trigger ($1,257.56) — no stop tightening. review_by 2026-07-21 not due. Conviction A (unchanged). HOLD.
+- **V** $349.70 (+8.076% from entry, −2.113% today): mild pullback, no negative news, thesis intact (payments infra, zero sell ratings among 42 analysts). Buffer 6.266% ✓. review_by 2026-07-28 not due. Conviction B (unchanged). HOLD.
+- **No cuts** (−7% rule): both positions are gains, far above threshold ✓.
+- **No discretionary tightenings** (+15% trigger = LLY $1,257.56 / V $372.10): neither reached ✓.
+- **Stop audit (step 5):** 3/3 trailing stops confirmed live via `orders open` (LLY 7sh `d4147484` + 3sh `25989fb5` = 10sh; V 22sh `66033918`) — matches held quantities exactly. Nothing to recreate.
+- **Exit reconciliation:** no exits since market-open — closed-trades.md current, nothing new required.
+- **Trades today:** 0.
+- **Since inception:** Bull +0.01108% ($100,011.08) vs SPY TR **+1.4926%** ($748.715 latest trade + $1.76 div = $750.475 vs $739.44 anchor) → **Bull TRAILS SPY by −1.4815pp** (essentially flat vs market-open's −1.4768pp; both LLY and V gave back some intraday gain as SPY also pulled back slightly from its high).
 
 ---
 
@@ -54,7 +94,8 @@ the last known state, but always re-fetches live data before trading._
 | Period | Bull | SPY | Difference |
 |--------|------|-----|------------|
 | Inception (2026-05-21) | $100,000.00 | $739.44 | — |
-| **Market-open (2026-07-07)** | **$100,129.84 (+0.1298%)** | **SPY $749.56 + $1.76 div = +1.6066% TR** | **Bull TRAILS SPY −1.4768pp** |
+| **Midday (2026-07-07)** | **$100,011.08 (+0.01108%)** | **SPY $748.715 + $1.76 div = +1.4926% TR** | **Bull TRAILS SPY −1.4815pp** |
+| Market-open (2026-07-07) | $100,129.84 (+0.1298%) | SPY $749.56 + $1.76 div = +1.6066% TR | Bull TRAILS SPY −1.4768pp |
 | Pre-market (2026-07-07) | $99,908.65 (−0.0914%) | SPY $751.27 + $1.76 div = +1.8378% TR | Bull TRAILS SPY −1.929pp |
 
 ---
