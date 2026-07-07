@@ -5,6 +5,22 @@ The weekly new-position count is derived from this log._
 
 _Entries before 2026-06-01 archived to `memory/archive/2026-05.md` (2026-07-01 monthly housekeeping)._
 
+## 2026-07-07 15:51 ET — CLOSE — no trades, no exits
+
+- **Action:** None. Both positions (LLY, V) held all session with no cuts, tightenings, or thesis breaks. Trailing stops unchanged from midday.
+- **Live-switch guard / lock / control:** paper ✓; lock was `{}`, acquired and released cleanly; control STATUS ACTIVE, no NOTE/QUERY.
+- **Market clock:** `is_open: true` at run time, `next_close: 16:00 ET` — not a half-day ✓.
+- **Account (~15:51 ET):** Equity $100,123.51 | Cash $80,023.72 (79.93%) | LMV $20,099.79 | last_equity (July 6 close) $99,883.82.
+- **Shock check:** +$239.69 (+0.240%) — no shock ✓. **Drawdown vs HWM** $101,384.21 = −1.244% — CB not triggered ✓.
+- **LLY** $1,234.49 (+12.890% from entry, +2.869% today) — HOLD, Conviction A, review_by 2026-07-21.
+- **V** $352.495 (+8.939% from entry, −1.331% today) — HOLD, Conviction B, review_by 2026-07-28.
+- **Stop audit 3/3 PASS:** LLY d4147484 (7sh) + 25989fb5 (3sh), HWM $1,249.45, stop $1,124.505, buffer 8.909% ✓; V 66033918 (22sh), HWM $364.21, stop $327.789, buffer 7.009% ✓. All quantities match held positions exactly — nothing missing.
+- **No cuts, no tightenings, no exits.** closed-trades.md unchanged — nothing to reconcile.
+- **Market context:** Semiconductor selloff (gauge −5.5%) dragged Nasdaq-100 −1.8% on AI-capex-payoff doubts, while most S&P 500 names rose on rotation into non-tech sectors — benefited Bull's diversified (non-tech) book; AGGRO's NVDA/AVGO stayed CRITICAL all session.
+- **Since inception:** Bull +0.1235% ($100,123.51) vs SPY TR +0.8270% ($747.33 vs $741.20 anchor) → **Bull TRAILS SPY −0.7035pp** (narrowed from −1.482pp at midday).
+- **Race scoreboard:** Bull +0.12% | AGGRO −8.76% (midday snapshot, equity $91,241.99) | SPY TR +0.83% — Bull leads AGGRO by ~8.88pp.
+- **Telegram notification sent** ✓
+
 ## 2026-07-07 09:36 ET — MARKET-OPEN — no trades (plan was empty)
 
 - **Action:** None. Pre-market plan (`plan_date: 2026-07-07`) was empty — LLY's review_by contract resolved HOLD/renewed to 2026-07-21, CEG diligence failed its technical-confirmation gate, LRCX/ETN still 1/2 through their ATR gate, VRT/NVT/MOD undiligenced. Market-open confirmed no trades to execute.
