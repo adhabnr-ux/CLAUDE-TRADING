@@ -4237,3 +4237,35 @@ Next actionable routine: July 7 midday (NVDA and AVGO remain the names to check 
 **No trades this run** — no position past -12%, no position past +25%, no new buys (midday never opens positions).
 
 Next actionable routine: July 7 close.
+
+---
+
+## 2026-07-07 — EOD CLOSE (~4:09 PM ET)
+
+**No trades this run.** Two proactive trims (NVDA, AVGO) already executed at market open — see that entry; nothing further today.
+
+**Account:** Equity USD 91,348.21 | Cash USD 32,894.40 (36.01%) | Last equity (July 6 close) USD 92,070.38 | Today's P/L **-USD 722.17 (-0.7845%)**.
+
+**HWM:** USD 101,144.73 (set June 4-5, unchanged). Drawdown from HWM: **-9.685%** (circuit breaker -20% — NOT triggered; 10.315pp headroom, not within 3pp of the breaker).
+
+**Positions (6 open, all trimmed/held from this morning):**
+| Symbol | Qty | Sector | P/L% | Buffer to -12% | % of Portfolio |
+|---|---|---|---|---|---|
+| NVDA | 77 | Semiconductors | -7.786% | 4.215pp ⚠️ | 16.61% |
+| AVGO | 19 | Semiconductors | -8.623% | 3.377pp ⚠️ | 7.72% |
+| ETN | 34 | Industrials/power infra | -5.687% | 6.312pp | 14.73% |
+| GOOGL | 16 | Communication Services (hyperscaler) | -0.978% | 11.021pp | 6.42% |
+| AMZN | 36 | Consumer Discretionary (hyperscaler) | -0.924% | 11.080pp | 9.69% |
+| VST | 52 | Utilities (nuclear power) | +2.463% | comfortable (only green position) | 8.84% |
+
+**Sector exposure:** Semiconductors (NVDA+AVGO) = 24.33%; Industrials (ETN) = 14.73%; Hyperscalers (GOOGL+AMZN) = 16.11%; Utilities (VST) = 8.84%; Cash = 36.01%. No sector near the 60% informal cap.
+
+**Stops:** 6/6 live 18% trailing stops confirmed unchanged since midday — NVDA `e15e7753`, AVGO `ffba9bd5`, ETN `abdc232b`, GOOGL `e52a43f1`, AMZN `b55bef05`, VST `5b347be3`.
+
+**Performance vs SPY:** Aggro today **-0.7845%** vs SPY today **-0.4658%** (751.27 → 747.77) = **-0.3187pp UNDERPERFORMING** today. Since inception: Aggro **-8.652%** vs SPY **-0.8497%** (754.18 → 747.77) = **alpha -7.802pp**.
+
+**Market context** [search: WebSearch fallback — MiniMax M3 MCP not connected this session]: A broad chipmaker selloff dragged the major indexes lower today (only 41% of U.S. issues advanced) on renewed AI-capex-payoff skepticism, triggered in part by Samsung Electronics' disappointing earnings (VanEck Semiconductor ETF -4.54%). The Nasdaq 100 also fell as SpaceX's fast-track addition pressured index weightings. Most of the broader S&P 500 actually rose, signaling rotation out of AI-chip names into other sectors rather than a market-wide risk-off day. This directly explains NVDA/AVGO's continued CRITICAL-buffer readings even after this morning's proactive trims — both theses (Nvidia's roadmap denial, AVGO's Apple extension) remain thesis-positive and undisputed by today's news; the pressure is sector-valuation rotation, consistent with the pattern flagged repeatedly since June 22.
+
+**No exits to reconcile** — the two NVDA/AVGO trims were partial (already logged at market open, not closed-trades-eligible); no full closes today.
+
+Next actionable routine: July 8 pre-market.
