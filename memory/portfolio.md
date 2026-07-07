@@ -3,10 +3,65 @@
 _Updated by every routine from live Alpaca data. The next agent trusts this as
 the last known state, but always re-fetches live data before trading._
 
-**Last updated:** 2026-07-06 15:51 ET (close routine; `is_open: true` at run time, next_close 16:00 ET — full trading day; stop audit 3/3 PASS; LLY $1,204.565 +10.153% / V $357.14 +10.375%; no trades; Bull TRAILS SPY since inception by −2.007pp — gap widened sharply as SPY rallied on a broad tech/semi bounce that LLY/V, non-tech names, did not participate in)
+**Last updated:** 2026-07-07 08:07 ET (pre-market routine; `is_open: false`, next_open 09:30 ET; stop audit 3/3 PASS; LLY $1,220.99 +11.655% / V $348.8649 +7.817%; no trades, market not yet open; LLY review_by contract (2026-07-07) resolved HOLD, renewed to 2026-07-21; CEG diligence pass completed — fails technical-confirmation gate (11.55% below 50-day MA), not promoted; Bull TRAILS SPY since inception by −1.929pp)
 **Inception:** 2026-05-21 — starting equity $100,000.00 | SPY anchor price $739.44
 **SPY total-return anchor (post-June 18 ex-div $1.76):** **$741.20**
 **Cumulative SPY dividends since inception (quarterly tracker):** $1.76/sh (June 18 ex-div); next SPY ex-div est. ~September 2026.
+
+---
+
+## Account (pre-market routine, 2026-07-07 ~08:07 ET)
+
+| Metric | Value |
+|--------|-------|
+| Equity | $99,908.65 |
+| Cash | $80,023.72 (80.10%) |
+| Long market value | $19,884.93 |
+| Buying power | ~$80,023.72 (cash) / $375,772.68 (margin, unused) |
+| Last equity (July 6 close) | $100,129.68 |
+
+## Open positions (pre-market routine, 2026-07-07 ~08:07 ET)
+
+| Symbol | Qty | Avg entry | Current price | Mkt value | Unrealized P/L | % of portfolio | Trailing Stop |
+|--------|-----|-----------|--------------|-----------|----------------|----------------|---------------|
+| LLY | 10 | $1,093.534 | $1,220.99 | $12,209.90 | +$1,274.56 (+11.655%) | 12.22% | d4147484 (7sh) + 25989fb5 (3sh), HWM $1,238.00, stop $1,114.20 ✓ — buffer $106.79 (9.585%) ✓ |
+| V | 22 | $323.57 | $348.8649 | $7,675.03 | +$556.49 (+7.817%) | 7.68% | 66033918 (22sh), HWM $364.21, stop $327.789 ✓ — buffer $21.076 (6.43%) ✓ |
+
+**Sector exposure (pre-market July 7):**
+- Healthcare (LLY): $12,209.90 = 12.22% | Financials (V): $7,675.03 = 7.68% | Cash: $80,023.72 = 80.10%
+- No sector above 60% cap ✓
+
+**Trailing stop status (pre-market July 7 — confirmed via Alpaca live orders ~08:07 ET):**
+- LLY (d4147484): 7sh — HWM $1,238.00, stop $1,114.20 ✓ (buffer $106.79 = 9.585%)
+- LLY (25989fb5): 3sh — HWM $1,238.00, stop $1,114.20 ✓
+- V (66033918): 22sh — HWM $364.21, stop $327.789 ✓ (buffer $21.076 = 6.43%; narrowed from 8.22% at July 6 close on V's −3.36% pull-back — see notes)
+**Stop audit: 3/3 PASS ✓** (3 live trailing-stop orders across 2 positions; none missing)
+
+**Pre-market July 7 notes (~08:07 ET — Tuesday; stop audit 3/3 PASS; no trades, market not yet open):**
+- **Live-switch guard:** `ALPACA_BASE_URL` contains "paper" ✓.
+- **Lock:** was `{}` — acquired and will be released cleanly.
+- **Control switch:** STATUS ACTIVE, no `NOTE:`/`QUERY:` to acknowledge.
+- **Shock check:** $99,908.65 vs last_equity $100,129.68 = **−$221.03 (−0.2207%)** — no shock ✓ (threshold −4%).
+- **Drawdown circuit breaker:** $99,908.65 vs HWM $101,384.21 = **−1.4553%** — NOT triggered ✓ (8.545pp headroom; CB trigger USD 91,245.79).
+- **LLY** $1,220.99 (+11.655% from entry, ~1% off the $1,238 52-week high): Medicare GLP-1 Bridge program details continue to confirm (up to 20M Medicare Part D patients, USD 50/month); new since Monday — Lilly selected for the FDA's PreCheck pilot program (accelerated manufacturing-facility approval pathway), a modest incremental positive. Leerink PT $1,232 stands. **review_by contract (2026-07-07) triggered today — decision: HOLD, thesis fully intact, no erosion. Renewed review_by to 2026-07-21.** Conviction A (unchanged).
+- **V** $348.8649 (−2.35% pre-market vs Monday's $357.25 last price, −3.36% on the July 6 session itself): Pure profit-taking / sector rotation — soft June jobs report intensified Fed-pause expectations, driving a rotation out of mega-cap growth into cyclical value, not a company-specific negative. CEO Ryan McInerney's July 6 Form 4 sale (10,490 sh at ~$340-344) confirmed as a **Rule 10b5-1 pre-arranged plan** (dated May 15, 2025) — routine, not a discretionary bearish signal, consistent with the 2026-06-10 lesson. Q2 FY26 fundamentals unchanged: net revenue $11.23B (strongest growth pace since 2022), value-added services +27% to $3.3B (30% of net revenue), record USD 7.9B buyback + new USD 20B authorization. Zero sell ratings among 42 analysts, mean PT $399 (~14% upside from current). Buffer narrowed to 6.43% (from 8.22% at July 6 close) but not near a stop-out. Thesis intact. review_by 2026-07-28 (earnings) not due. Conviction B (unchanged).
+- **No cuts** (−7% rule): both positions far above threshold (gains) ✓.
+- **No discretionary tightenings** (+15% trigger = LLY $1,257.56 / V $372.10): neither reached ✓.
+- **Stop audit:** 3/3 live trailing-stop orders confirmed (LLY 7sh + 3sh, V 22sh) — matches held quantities exactly. No missing stops.
+- **Exit reconciliation:** no fills since July 6 close — nothing to reconcile against closed-trades.md.
+- **CEG diligence (step 6b):** full pre-trade pass completed — Q1 2026 GAAP EPS $4.49 / adj. operating EPS $2.74 beat, FY26 guidance affirmed ($11-12 adj. operating EPS), EV/EBITDA improved to 13.24x, PEG 1.19, analyst consensus Buy (17 Buy/3 Hold/1 Sell, PT $303.67-356.78 vs ~$246 current). **Fails entry signal #4 (technical confirmation): CEG closed July 6 at $245.90, 11.55% BELOW its 50-day MA ($278.00)** — a confirmed downtrend from the July 1-2 selloff, not a within-uptrend pullback. Per the VST precedent (2026-07-02/06), do not buy a name in a confirmed downtrend regardless of fundamentals/catalyst strength. **Not promoted — needs to reclaim its 50-day MA (or show a clear basing/reversal) before re-consideration.** Diligence documented so this isn't re-run from scratch; re-check technical posture on next pass.
+- **LRCX/ETN ATR gates:** Both cleared July 6 (LRCX 4.85%, ETN 3.64%) — gate counters now **1/2** each (need one more ≤5% session before eligible). Not eligible today regardless.
+- **Cash-drag check:** Cash 80.10%, well above the 25-40% target band, elevated 6+ weeks. No qualifying entry today: CEG fails its technical gate outright; LRCX/ETN are only 1/2 through their ATR gate; VRT/NVT/MOD remain undiligenced. Staying in cash is a deliberate decision — CEG's technical failure is a genuine disqualifier, not the bar being raised.
+- **Trades today:** 0 planned (market not yet open).
+- **Since inception:** Bull −0.0914% ($99,908.65) vs SPY TR +1.8378% ($751.27 July 6 close + $1.76 div vs $739.44 anchor) → **Bull TRAILS SPY −1.929pp** (essentially unchanged from Monday's close −2.007pp; small pre-market give-back in V offset by LLY's gain — no new SPY session yet).
+
+## Performance vs S&P 500
+
+| Period | Bull | SPY | Difference |
+|--------|------|-----|------------|
+| Inception (2026-05-21) | $100,000.00 | $739.44 | — |
+| **Pre-market (2026-07-07)** | **$99,908.65 (−0.0914%)** | **SPY $751.27 + $1.76 div = +1.8378% TR** | **Bull TRAILS SPY −1.929pp** |
+| Close (2026-07-06) | $99,924.58 (−0.0754%) | SPY $751.96 + $1.76 div = +1.9312% TR | Bull TRAILS SPY −2.0066pp |
 
 ---
 

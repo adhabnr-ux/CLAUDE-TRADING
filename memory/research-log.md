@@ -7,6 +7,77 @@ _Entries before 2026-06-01 archived to `memory/archive/2026-05.md` (2026-07-01 m
 
 ---
 
+## 2026-07-07 — Pre-market research (~08:07 ET, Tuesday)
+
+### Live-switch guard / Lock / Control switch
+- `ALPACA_BASE_URL` contains "paper" ✓.
+- `memory/_lock` was `{}` (empty) — no other routine active. Lock written for this run, released before commit.
+- `memory/control.md` STATUS: **ACTIVE**. No `NOTE:`/`QUERY:` line to acknowledge.
+
+### Account sync (live Alpaca, ~08:07 ET)
+- Equity **$99,908.65** | Cash **$80,023.72 (80.10%)** | Long market value $19,884.93 | Last equity (July 6 close) $100,129.68.
+- **Shock check:** ($99,908.65 − $100,129.68) / $100,129.68 = **−0.2207%** — no shock ✓ (threshold −4%).
+- **Drawdown circuit breaker:** $99,908.65 vs HWM $101,384.21 = **−1.4553%** — NOT triggered ✓ (8.545pp headroom; CB trigger USD 91,245.79).
+
+### Positions & stop audit
+| Symbol | Qty | Avg entry | Current | Mkt value | Unrealized P/L | % port | Stop |
+|---|---|---|---|---|---|---|---|
+| LLY | 10 | $1,093.534 | $1,220.99 | $12,209.90 | +$1,274.56 (+11.655%) | 12.22% | d4147484 (7sh) + 25989fb5 (3sh), HWM $1,238.00, stop $1,114.20 ✓ buffer 9.585% |
+| V | 22 | $323.57 | $348.8649 | $7,675.03 | +$556.49 (+7.817%) | 7.68% | 66033918 (22sh), HWM $364.21, stop $327.789 ✓ buffer 6.43% |
+
+**Stop audit: 3/3 PASS ✓** (matches held quantities exactly; no missing stops).
+**Sector exposure:** Healthcare (LLY) 12.22% | Financials (V) 7.68% | Cash 80.10% — no sector above 60% cap ✓.
+
+### Thesis contract review — LLY review_by TRIGGERED today
+- **LLY review_by 2026-07-07 (today) — mandatory decision.** Thesis check: Medicare GLP-1 Bridge program continues to confirm on schedule (up to 20M Medicare Part D patients, USD 50/month); new since Monday — Lilly selected for the FDA's PreCheck pilot program (accelerated manufacturing-facility approval, early technical guidance), a modest incremental positive, no negative offsetting news. Stock sits ~1% off its 52-week high ($1,238), +11.655% from entry, stop buffer a healthy 9.585%. Leerink PT $1,232 stands. **Decision: HOLD — no erosion of the thesis, invalidation condition (close below entry) nowhere close. Renewed review_by to 2026-07-21** (a ~2-week checkpoint ahead of the Aug 3 earnings-window date; next earnings confirmed Aug 5, 2026 before market open).
+- **V** review_by 2026-07-28 — not due.
+
+### Market posture (WebSearch)
+- S&P 500 futures slipped ~0.25% early Tuesday after Monday's strong +0.72% session (S&P 500 index closed 7,537.43). Broad tape had its best week since inception into last Thursday's holiday, but today's early tone is a mild pullback / rotation day. [benzinga.com, cnbc.com]
+- No major scheduled US macro data release found for today; posture is "digest recent gains," not a new shock.
+
+### Held-position research — "what changed since yesterday"
+- **LLY** ($1,220.99, +11.655% from entry, +1.74% today): FDA PreCheck pilot-program selection (new, minor positive) alongside continuing Medicare Bridge rollout coverage. No negative news. Thesis unchanged. Next earnings confirmed **Aug 5, 2026** (before market open) — well outside the 2-day earnings window. [tipranks.com, marketchameleon.com]
+- **V** ($348.8649, −2.35% pre-market from Monday's last price, following a −3.36% session on July 6): Attributed to broad profit-taking / sector rotation out of mega-cap growth into cyclical value after the soft June jobs report intensified Fed-pause expectations — not company-specific. CEO Ryan McInerney's July 6 Form 4 sale (10,490 sh, ~$340-344) confirmed as a pre-arranged **Rule 10b5-1 plan** (dated May 15, 2025) via stocktitan — routine, not a discretionary bearish signal (per the 2026-06-10 lesson on always checking Form 4 transaction type). Fundamentals unchanged: Q2 FY26 net revenue $11.23B (strongest growth pace since 2022), value-added services +27% YoY to $3.3B (30% of net revenue), record USD 7.9B buyback + new USD 20B authorization; zero sell ratings among 42 analysts, mean PT USD 399. Next earnings confirmed **July 28, 2026** — outside the 2-day window. Thesis intact. [tradingkey.com, ebc.com, stocktitan.net]
+
+### Earnings-window rule
+- Neither held name reports within the next 2 trading days (LLY Aug 5, V July 28). No restriction on holding; no new-buy candidates near earnings today.
+
+### Watchlist — ATR gates (LRCX / ETN)
+- **LRCX:** July 6 session H $365.48 / L $348.53 / C $349.64 = **4.85% ATR** ✓ clears the ≤5% threshold — first clean session since the July 2 catastrophic fail (14.11%). Gate counter **1/2**. Needs one more ≤5% session before eligible.
+- **ETN:** July 6 session H $420.095 / L $405.04 / C $413.46 = **3.64% ATR** ✓ clears — first clean session since the July 2 fail (5.52%). Gate counter **1/2**. FY26 guidance (EPS est. USD 3.07) and BMO Buy rating from July 2 stand; thesis intact.
+- Neither name is eligible for entry today regardless (both mid-gate).
+
+### Daily candidate diligence (step 6b) — CEG full pre-trade pass
+Per the 2026-07-06 note flagging CEG as the most-ready undiligenced name, ran the full diligence checklist today:
+- **Earnings/guidance:** Q1 2026 GAAP EPS $4.49, adjusted operating EPS $2.74 — both beat expectations; FY26 adjusted operating EPS guidance affirmed at $11-12/share. Calpine acquisition drove revenue to $11,122M (from $6,788M YoY) and is projected to add ~$2/share EPS accretion on a full-year basis. [finance.yahoo.com]
+- **Balance sheet:** Long-term debt $16,994M as of March 31, 2026; retained earnings $7.18B (most recent reported quarter) — leveraged but consistent with a capital-intensive nuclear/utility operator carrying a large recent acquisition; nothing disqualifying found.
+- **Valuation:** EV/EBITDA improved from 17.50x (Q4 2025) to 13.24x (Q1 2026); PEG ratio **1.19** (comfortably under the 2.5 gate); trades ~40x trailing earnings (premium, but growth-adjusted metric passes). [stockanalysis.com, nasdaq.com]
+- **Analyst sentiment:** Consensus **Buy** — 17 Buy / 3 Hold / 1 Sell across 23 analysts; consensus PT $356.78 (recent-3-analyst average PT $303.67, ~29% implied upside from current). [benzinga.com, marketscreener.com]
+- **Catalyst:** Long-term PPAs with Microsoft (Three Mile Island nuclear restart) and Walmart; premium pricing power as AI-driven electricity demand grows — durable, multi-year catalyst, not a one-off.
+- **ATR gate:** July 6 session ATR 2.29% ✓ — comfortably clears.
+- **Technical confirmation (entry signal #4) — FAILS:** Computed the 50-day moving average from Alpaca daily bars (Apr 15–Jul 6, IEX feed): 50-day MA = **$278.00**; July 6 close $245.90 is **11.55% BELOW** its 50-day MA. This is a confirmed downtrend stemming from the July 1-2 AI-capex-scare selloff (CEG fell from $247.99 intraday high to a $228.75 low on July 1 alone, an 8.14% ATR day), not a shallow pullback within an uptrend.
+- **Verdict:** 4 of 5 entry signals clear (earnings momentum, catalyst, valuation, macro tailwind) but entry signal #4 fails outright. Per the VST precedent (2026-07-02 through 07-06: a name in a confirmed technical downtrend is not bought regardless of fundamental strength — "risks catching a falling knife"), **CEG is NOT promoted to a buy candidate today.** What's still missing: CEG needs to reclaim its 50-day MA (or show a clear reversal/basing pattern with volume) before re-consideration. This diligence pass is now on file — future re-checks only need to re-verify the technical posture, not redo the fundamental/valuation work.
+
+### Cash-drag check
+- Cash 80.10% vs. the strategy's 25–40% target band for a 2-position book — well above target, elevated 6+ weeks. No qualifying entry clears today: CEG fails its technical-confirmation gate outright (see above); LRCX and ETN are each only 1/2 through their ATR gate (need one more clean session); VRT/NVT/MOD remain undiligenced. Staying in cash today is a deliberate decision, not a default — CEG's technical failure is a genuine disqualifier surfaced by today's diligence pass, not the bar being raised to avoid trading.
+
+### Since inception
+- Bull −0.0914% ($99,908.65) vs SPY TR ($751.27 July 6 close + $1.76 div = $753.03 vs $739.44 anchor) = +1.8378% → **Bull TRAILS SPY by −1.929pp** (essentially unchanged from Monday's close −2.007pp; small pre-market give-back in V offset by LLY's gain, no new SPY session yet).
+
+### Planned trades for today
+
+No trades planned. LLY's review_by contract resolved HOLD (renewed to 2026-07-21). CEG's diligence pass completed but fails the technical-confirmation gate (11.55% below its 50-day MA) — not promoted. LRCX/ETN are 1/2 through their ATR gate. VRT/NVT/MOD remain undiligenced.
+
+```json
+{
+  "plan_date": "2026-07-07",
+  "trades": []
+}
+```
+
+---
+
 ## 2026-07-06 — Pre-market research (~08:07 ET, Monday)
 
 ### Live-switch guard / Lock / Control switch

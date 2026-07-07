@@ -111,16 +111,16 @@ Do NOT sell on day-to-day noise. Sell on thesis changes.
 
 ## Watchlist
 
-_Watchlist hygiene (updated 2026-07-06 pre-market): entries require date added + catalyst with expiry. Stale entries (4+ weeks, catalyst expired) purged. LRCX and ETN failed their ATR gates yet again July 2 (LRCX 14.11%, catastrophic; ETN 5.52%, narrow) — both gate counters reset to 0/2. LRCX hits the 4-week staleness line ~July 8 — purge at Friday's weekly review if still ungated. Per the 2026-07-03 directive to widen beyond semis, four new non-semi research candidates sourced 2026-07-06: CEG, VRT, NVT, MOD (see below) — none yet diligenced, watchlist-only until a full pre-trade checklist pass._
+_Watchlist hygiene (updated 2026-07-07 pre-market): entries require date added + catalyst with expiry. Stale entries (4+ weeks, catalyst expired) purged. LRCX and ETN both cleared their ATR gates July 6 (LRCX 4.85%, ETN 3.64%) — gate counters now 1/2 each, need one more clean session. LRCX hits the 4-week staleness line ~July 8 — purge at Friday's weekly review if still ungated. CEG received its full pre-trade diligence pass 2026-07-07 (see below) — fails the technical-confirmation gate, not promoted. VRT/NVT/MOD remain undiligenced._
 
 | Ticker | Sector | Date Added | One-line reason | Catalyst Expiry |
 |--------|--------|------------|-----------------|-----------------|
-| LLY    | Healthcare | 2026-05-22 | **HELD** 10sh @ $1,093.53 — GLP-1 dominance; Medicare Bridge live since July 1 (USD 50/month, ~20M Medicare patients); Leerink PT $1,232; +10.38% from entry | Review by July 7 (tomorrow) — mandatory decision due; thesis intact as of July 6 pre-market |
-| V      | Financials | 2026-06-10 | **HELD** 22sh @ $323.57 — payments infrastructure; OpenAI partnership; Open USD stablecoin consortium (140+ partners); zero sell ratings among 42 analysts; +11.64% from entry | Review by July 28 (earnings ~July 28–Aug 4) |
+| LLY    | Healthcare | 2026-05-22 | **HELD** 10sh @ $1,093.53 — GLP-1 dominance; Medicare Bridge live since July 1 (USD 50/month, ~20M Medicare patients); FDA PreCheck pilot selection (new July 7); Leerink PT $1,232; +11.66% from entry | Review by 2026-07-21 (renewed 2026-07-07 — HOLD decision, thesis intact) |
+| V      | Financials | 2026-06-10 | **HELD** 22sh @ $323.57 — payments infrastructure; OpenAI partnership; Open USD stablecoin consortium (140+ partners); zero sell ratings among 42 analysts; +7.82% from entry (pulled back from +11.64% on July 6 profit-taking/sector rotation, not thesis-related) | Review by July 28 (earnings) |
 | VST    | Energy / Utilities | 2026-06-09 (closed 2026-06-30, WIN +7.66%) | **NOT HELD** — pulled back to ~$151–153 (below the $160.20 exit); Wells Fargo Buy July 3; but NEW: FERC colocation-deal scrutiny risk + June 25 technical sell signal + insider selling — fails technical-confirmation entry signal, not a falling-knife buy | Not eligible today — needs a confirmed bottom (reversal + volume) and FERC-risk clarity before re-entry; re-check ATR/technicals each pre-market |
-| ETN    | Industrials / AI Power | 2026-06-26 | Eaton electrical equipment — direct critical-path input to hyperscale data centers; BMO Buy July 2; FY26 guidance raised (EPS est. $3.07, +4.07% YoY) | July 2 ATR 5.52% — fails ≤5% gate narrowly again; counter reset to 0/2 as of July 6 pre-market |
-| LRCX   | Semi Equipment | 2026-06-08 | AI fab investment wave; Cantor PT $500, Susquehanna $475 (June 29); but July 2 ATR 14.11% — catastrophic single-day fail (−10.2%) on AI-capex demand-destruction fears | Counter reset to 0/2 as of July 6 pre-market; **hits 4-week staleness line ~July 8 — purge candidate at Friday's weekly review if still ungated** |
-| CEG    | Utilities / Nuclear | 2026-07-06 | NEW — Constellation Energy; nuclear power, Microsoft Three Mile Island restart PPA; premium pricing power as AI demand grows; July 2 ATR 3.00% ✓ clears gate | Research-only — needs full pre-trade diligence pass (10-K, valuation, thesis) before any entry consideration |
+| ETN    | Industrials / AI Power | 2026-06-26 | Eaton electrical equipment — direct critical-path input to hyperscale data centers; BMO Buy July 2; FY26 guidance raised (EPS est. $3.07, +4.07% YoY) | July 6 ATR 3.64% ✓ clears; gate counter 1/2 — needs one more clean session |
+| LRCX   | Semi Equipment | 2026-06-08 | AI fab investment wave; Cantor PT $500, Susquehanna $475 (June 29); July 6 ATR 4.85% ✓ clears (from the catastrophic 14.11% July 2 fail) | Gate counter 1/2 — needs one more clean session; **hits 4-week staleness line ~July 8 — purge candidate at Friday's weekly review if still ungated** |
+| CEG    | Utilities / Nuclear | 2026-07-06 | Constellation Energy; nuclear power, Microsoft Three Mile Island restart PPA; premium pricing power as AI demand grows; **full diligence pass 2026-07-07: Q1 beat (EPS $4.49), FY26 guide affirmed, PEG 1.19, analyst consensus Buy — but FAILS technical confirmation (11.55% below 50-day MA, confirmed downtrend since July 1-2 selloff)** | Not eligible — needs to reclaim 50-day MA or show a clear reversal/basing pattern before re-consideration |
 | VRT    | Industrials / AI Cooling | 2026-07-06 | NEW — Vertiv; full power+cooling stack, deep NVIDIA integration; orders +252%, ~USD 13.5B 2026 revenue guide (+28%) | Research-only — needs full pre-trade diligence pass before any entry consideration |
 | NVT    | Industrials / AI Cooling | 2026-07-06 | NEW — nVent Electric; liquid cooling distribution + high-density power distribution units; organic orders +65% | Research-only — needs full pre-trade diligence pass before any entry consideration |
 | MOD    | Industrials / AI Cooling | 2026-07-06 | NEW — Modine Manufacturing; refocusing around data-center thermal management; Performance Technologies RMT spin-off expected Q4 2026 | Research-only — needs full pre-trade diligence pass before any entry consideration |
@@ -150,20 +150,20 @@ _Previously purged (still excluded):_
 - If we lag SPY by > 5% over any rolling 4-week window, review and adjust
   sector weights and position theses before adding new names.
 
-## Active Macro Watches (updated 2026-07-06 pre-market)
+## Active Macro Watches (updated 2026-07-07 pre-market)
 
 - **FOMC June 16–17 2026 — COMPLETED HAWKISH (finalized):** Rate hold (3.50–3.75%); dot plot: median 3.8% year-end, 9/18 members projecting hike. Next FOMC: est. late July 2026.
 - **PCE inflation 4.1% YoY (June 25):** Highest since April 2023. Reinforces higher-for-longer rate regime. 10yr yield last read 4.47-4.49% — **BELOW 4.75% trigger ✓**. Monitor; if closes above 4.75%, halt all new buys.
-- **Soft June jobs report (July 3):** Nonfarm payrolls +57K vs +113K expected — reinforces no-hike expectations, broadly supportive backdrop into the week.
+- **Soft June jobs report (July 3):** Nonfarm payrolls +57K vs +113K expected — reinforces no-hike expectations; now also driving a rotation out of mega-cap growth/tech into cyclical value (pressured V July 6).
 - **Iran/US peace deal — holding (60-day agreement from June 18):** Strait of Hormuz open; WTI ~$80/bbl ✓. Peace deal expiry ~August 17 — monitor.
 - **SPY ex-dividend June 18 — APPLIED:** $1.76/sh. Total-return benchmark anchor: **$741.20**. Next SPY ex-div est. ~September 2026.
-- **LLY — position:** July 6 pre-market $1,207.05 (+10.38% from entry). HWM $1,238.00 / stop $1,114.20, buffer 7.69%. Review_by **tomorrow, 2026-07-07** — mandatory decision due. Conviction A.
-- **V — position:** July 6 pre-market $361.225 (+11.64% from entry). HWM $361.86 / stop $325.674, buffer 9.84%. Thesis intact; zero sell ratings among 42 analysts. Review_by 2026-07-28. Conviction B.
+- **LLY — position:** July 7 pre-market $1,220.99 (+11.655% from entry). HWM $1,238.00 / stop $1,114.20, buffer 9.585%. Review_by contract triggered today — **HOLD, renewed to 2026-07-21**. Conviction A.
+- **V — position:** July 7 pre-market $348.8649 (+7.817% from entry, pulled back from +11.64% on July 6 profit-taking/sector rotation — not thesis-related; CEO's Form 4 sale confirmed 10b5-1). HWM $364.21 / stop $327.789, buffer 6.43%. Thesis intact; zero sell ratings among 42 analysts. Review_by 2026-07-28. Conviction B.
 - **VST — re-entry review:** Pulled back to ~$151–153 (below the $160.20 exit); NEW FERC colocation-deal regulatory risk + June 25 technical sell signal + insider selling. Fails technical-confirmation entry signal — not eligible today.
-- **NVDA — REMOVED FROM WATCHLIST:** Cooling period from the June 25 stop-out — re-eligible July 9 (3 days away).
-- **LRCX — ATR gate:** July 2 14.11% (catastrophic fail). Gate counter 0/2. Hits 4-week staleness line ~July 8 — purge candidate at Friday's weekly review if still ungated.
-- **ETN — ATR gate:** July 2 5.52% — fails narrowly again. Gate counter reset to 0/2.
-- **New candidates sourced 2026-07-06:** CEG, VRT, NVT, MOD — research-only, no diligence done yet.
+- **NVDA — REMOVED FROM WATCHLIST:** Cooling period from the June 25 stop-out — re-eligible July 9 (2 days away).
+- **LRCX — ATR gate:** July 6 4.85% ✓ clears. Gate counter 1/2. Hits 4-week staleness line ~July 8 — purge candidate at Friday's weekly review if still ungated.
+- **ETN — ATR gate:** July 6 3.64% ✓ clears. Gate counter 1/2.
+- **CEG diligence completed 2026-07-07:** fundamentals/valuation/analyst sentiment all pass, but fails technical confirmation (11.55% below 50-day MA) — not promoted. VRT/NVT/MOD remain undiligenced.
 
 ## Weekly review summary (2026-07-03)
 
