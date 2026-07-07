@@ -4185,3 +4185,29 @@ Next actionable routine: July 6 midday (enforces the -12% cut rule; NVDA at 3.23
 **No trades today; no exits to reconcile.** AVGO's sub-1pp full-exit contingency (carried from July 3) stood down at the open and the stand-down held for the full session. Cash at 27.91% remains an explicit, dated deployment pause — next redeployment check is July 7 pre-market.
 
 Next actionable routine: July 7 pre-market.
+
+---
+
+## 2026-07-07 — MARKET OPEN snapshot (~9:47 AM ET, post-trims)
+
+**Account:** Equity USD 91,302.01 (+0.693% vs last_equity USD 90,674.09 — no shock, threshold -6%); cash USD 32,894.40 (36.03%); drawdown from HWM USD 101,144.73 = **-9.75%** (breaker at -20%, not triggered).
+
+**Positions (6 open, two trimmed):**
+| Symbol | Qty | Sector | P/L% | Buffer to -12% |
+|---|---|---|---|---|
+| NVDA | 77 (trimmed from 103) | Semiconductors | ~-10.1% | ~1.97pp 🔴 CRITICAL |
+| AVGO | 19 (trimmed from 25) | Semiconductors | ~-9.6% | ~2.42pp 🔴 CRITICAL |
+| ETN | 34 | Industrials/power infra | -2.987% | 9.013pp |
+| GOOGL | 16 | Communication Services (hyperscaler) | -0.743% | 11.257pp |
+| AMZN | 36 | Consumer Discretionary (hyperscaler) | -1.025% | 10.975pp |
+| VST | 52 | Utilities (nuclear power) | +3.057% | comfortable (only green position) |
+
+**Trades executed:** Proactive 25% trims on both NVDA (26sh @ USD 192.057308) and AVGO (6sh @ USD 367.42) — gap-risk management on macro/sector-driven buffer compression, both theses intact. Trailing stops replaced: NVDA `e15e7753` (77sh, stop USD 157.7598), AVGO `ffba9bd5` (19sh, stop USD 301.5591).
+
+**Sector exposure (post-trim):** Semiconductors (NVDA+AVGO) ≈ (14,787.85+6,980.41)/91,302.01 = 23.8%; Industrials (ETN) ≈ 14.78%; Hyperscalers (GOOGL+AMZN) ≈ 16.24%; Utilities (VST) ≈ 9.01%; Cash = 36.03%. Semi concentration reduced meaningfully by the trims.
+
+**Stops:** 6/6 live 18% trailing stops confirmed post-trim.
+
+**No new buys.** Cash build to 36.03% is deliberate risk reduction on a sector-rotation day, not idleness.
+
+Next actionable routine: July 7 midday (NVDA and AVGO remain the names to check first — both still CRITICAL, though reduced in size).

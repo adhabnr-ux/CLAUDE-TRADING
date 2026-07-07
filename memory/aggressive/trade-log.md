@@ -3286,3 +3286,73 @@ NVDA `54d7d851`, AVGO `cf2956dc`, ETN `abdc232b`, GOOGL `e52a43f1`, AMZN `b55bef
 
 ### Result
 No trades yet — market not open. Both NVDA and AVGO independently trigger the proactive-trim heuristic (buffer <3pp, review_by within 5 trading days, no near-term catalyst) on a renewed sector-wide AI-valuation rotation; both theses remain intact. Planned: 25% trim on each (NVDA 26 of 103 shares; AVGO 6 of 25 shares) for market-open execution, each with a stand-down contingency (opens up materially → hold) and an escalation contingency (buffer <1pp at execution → full exit instead). No new buys — see research-log.md deployment check. Control: ACTIVE. Full JSON plan in research-log.md.
+
+---
+
+## 2026-07-07 — MARKET OPEN (~9:47 AM ET)
+
+### Pre-run checks
+| Check | Result |
+|---|---|
+| Live-switch guard | ALPACA_BASE_URL contains "paper" ✓ |
+| Lock | Clear at start; written for this run ✓ |
+| Control switch | STATUS: ACTIVE ✓ |
+| Plan date | July 7, 2026 — matches today ✓ |
+| Idempotency | No prior EXECUTED: marker ✓ |
+| Market open | true (next close 4:00 PM ET) ✓ |
+
+### Breaking-news gate
+No thesis-breaking news for either symbol. NVDA: Nvidia denied the Kyber rack-delay report directly to Bloomberg ("roadmap intact") — thesis-positive; pre-market softness is sector-wide (Micron -5%, KLA, AMD lower), not NVDA-specific. AVGO: Apple custom-silicon/RF partnership extension through 2031 stands, thesis-confirming; today's pullback is the same sector rotation. Both cleared to proceed.
+
+### Re-check before executing
+| Field | Value |
+|---|---|
+| Equity | USD 91,203.60 (pre-trim) |
+| Last equity | USD 90,674.09 |
+| Shock check | +0.584% — NOT triggered (threshold -6%) |
+| NVDA buffer at execution | ~1.97pp (current USD 192.175 vs cut trigger USD 187.968) — CRITICAL, not <1pp, not recovered >4pp |
+| AVGO buffer at execution | ~2.42pp (current USD 367.32 vs cut trigger USD 357.4824) — CRITICAL, not <1pp, not recovered >4pp |
+
+Neither stand-down (buffer >4pp) nor escalation (buffer <1pp) condition met for either symbol — both proceed with the planned standard 25% trim.
+
+### Trade — TRIM NVDA
+| Field | Value |
+|---|---|
+| Action | SELL (partial trim) |
+| Symbol | NVDA |
+| Qty | 26 of 103 shares (25%) |
+| Fill price | USD 192.057308 |
+| Proceeds | USD 4,993.49 |
+| Realized P/L on trimmed shares | -USD 559.55 (-10.09%) |
+| Why | Proactive 25% trim — buffer compressed to ~1.97pp from -12% cut trigger on renewed sector-wide AI-valuation rotation; thesis intact (Nvidia denied Kyber delay report) |
+| Sequence | Canceled trailing stop `54d7d851` first, then market sell, then replaced trailing stop |
+| New trailing stop | 18%; order id `e15e7753`; qty 77; stop price USD 157.7598 (HWM USD 192.39) |
+| Verified | ✓ position confirmed at 77 shares; new stop confirmed live in open orders |
+
+### Trade — TRIM AVGO
+| Field | Value |
+|---|---|
+| Action | SELL (partial trim) |
+| Symbol | AVGO |
+| Qty | 6 of 25 shares (24%) |
+| Fill price | USD 367.42 |
+| Proceeds | USD 2,204.52 |
+| Realized P/L on trimmed shares | -USD 233.06 (-9.56%) |
+| Why | Second proactive 25% trim on this position (after July 2) — buffer compressed to ~2.42pp from -12% cut trigger; thesis intact and strengthening (Apple partnership extension) |
+| Sequence | Canceled trailing stop `cf2956dc` first, then market sell, then replaced trailing stop |
+| New trailing stop | 18%; order id `ffba9bd5`; qty 19; stop price USD 301.5591 (HWM USD 367.755) |
+| Verified | ✓ position confirmed at 19 shares; new stop confirmed live in open orders |
+
+### Stop audit — 6/6 confirmed live post-trim ✓
+NVDA `e15e7753` (77sh), AVGO `ffba9bd5` (19sh), ETN `abdc232b` (34sh), GOOGL `e52a43f1` (16sh), AMZN `b55bef05` (36sh), VST `5b347be3` (52sh) — all `status: "new"`.
+
+### Account after trims
+| Field | Value |
+|---|---|
+| Equity | USD 91,302.01 |
+| Cash | USD 32,894.40 (36.03%) |
+| Last equity | USD 90,674.09 |
+| Shock check | +0.693% — NOT triggered |
+
+### Result
+Both planned trims executed exactly as scoped — no stand-down, no escalation. No new buys. `trades.jsonl` updated with both fills (agent: aggro). `EXECUTED:` marker appended to research-log.md.

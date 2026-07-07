@@ -3604,3 +3604,4 @@ No new positions. Both NVDA (1.922pp buffer) and AVGO (2.060pp buffer) independe
   ]
 }
 ```
+EXECUTED: 2026-07-07T13:48:34Z (both proactive trims executed as planned, neither stood-down nor escalated — buffers held in the 1-4pp CRITICAL band at execution, not <1pp and not recovered >4pp; NVDA: canceled stop `54d7d851`, sold 26sh @ USD 192.057308, replaced 18% trailing stop `e15e7753` on remaining 77sh (stop USD 157.7598); AVGO: canceled stop `cf2956dc`, sold 6sh @ USD 367.42, replaced 18% trailing stop `ffba9bd5` on remaining 19sh (stop USD 301.5591); breaking-news gate clear for both (Nvidia denied Kyber delay report, Apple/AVGO partnership intact — no thesis-breaking news); no new buys; stop audit 6/6 live confirmed post-trim; equity USD 91,302.01 vs last_equity USD 90,674.09 = +0.693% (not a shock); cash rose from 28.15% to 36.03%)
