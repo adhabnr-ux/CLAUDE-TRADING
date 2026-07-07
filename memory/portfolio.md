@@ -3,10 +3,51 @@
 _Updated by every routine from live Alpaca data. The next agent trusts this as
 the last known state, but always re-fetches live data before trading._
 
-**Last updated:** 2026-07-07 12:35 ET (midday routine; `is_open: true`; stop audit 3/3 PASS; LLY $1,229.44 +12.428% / V $349.70 +8.076%; no action — no trades; Bull TRAILS SPY since inception by −1.482pp)
+**Last updated:** 2026-07-07 15:51 ET (close routine; `is_open: true`; stop audit 3/3 PASS; LLY $1,234.49 +12.890% / V $352.495 +8.939%; no trades, no exits; Bull TRAILS SPY since inception by −0.704pp)
 **Inception:** 2026-05-21 — starting equity $100,000.00 | SPY anchor price $739.44
 **SPY total-return anchor (post-June 18 ex-div $1.76):** **$741.20**
 **Cumulative SPY dividends since inception (quarterly tracker):** $1.76/sh (June 18 ex-div); next SPY ex-div est. ~September 2026.
+
+---
+
+## Account (close routine, 2026-07-07 ~15:51 ET)
+
+| Metric | Value |
+|--------|-------|
+| Equity | $100,123.51 |
+| Cash | $80,023.72 (79.93%) |
+| Long market value | $20,099.79 |
+| Buying power | ~$80,023.72 (cash) / $376,374.29 (margin, unused) |
+| Last equity (July 6 close) | $99,883.82 |
+
+## Open positions (close routine, 2026-07-07 ~15:51 ET)
+
+| Symbol | Qty | Avg entry | Current price | Mkt value | Unrealized P/L | % of portfolio | Trailing Stop |
+|--------|-----|-----------|--------------|-----------|----------------|----------------|---------------|
+| LLY | 10 | $1,093.534 | $1,234.49 | $12,344.90 | +$1,409.56 (+12.890%) | 12.33% | d4147484 (7sh) + 25989fb5 (3sh), HWM $1,249.45, stop $1,124.505 ✓ — buffer $109.985 (8.909%) ✓ |
+| V | 22 | $323.57 | $352.495 | $7,754.89 | +$636.35 (+8.939%) | 7.75% | 66033918 (22sh), HWM $364.21, stop $327.789 ✓ — buffer $24.706 (7.009%) ✓ |
+
+**Sector exposure (close July 7):**
+- Healthcare (LLY): $12,344.90 = 12.33% | Financials (V): $7,754.89 = 7.75% | Cash: $80,023.72 = 79.93%
+- No sector above 60% cap ✓
+
+**Close July 7 notes (~15:51 ET; stop audit 3/3 PASS; no trades, no exits):**
+- **Live-switch guard:** `ALPACA_BASE_URL` contains "paper" ✓.
+- **Lock:** was `{}` — acquired cleanly.
+- **Control switch:** STATUS ACTIVE, no `NOTE:`/`QUERY:` to acknowledge.
+- **Market clock:** `is_open: true`, `next_close: 16:00 ET` — not a half-day ✓.
+- **Shock check:** $100,123.51 vs last_equity $99,883.82 = **+$239.69 (+0.240%)** — no shock ✓ (threshold −4%).
+- **Drawdown circuit breaker:** $100,123.51 vs HWM $101,384.21 = **−1.244%** — NOT triggered ✓, not within 2pp of the −10% level.
+- **LLY** $1,234.49 (+12.890% from entry, +2.869% today): buffer 8.909% ✓. Below +15% tighten trigger ($1,257.56) — no stop tightening. review_by 2026-07-21 not due (renewed today at pre-market). Conviction A (unchanged). HOLD.
+- **V** $352.495 (+8.939% from entry, −1.331% today): mild pullback continuing from July 6 profit-taking/sector rotation, no negative company news, thesis intact. Buffer 7.009% ✓. review_by 2026-07-28 not due. Conviction B (unchanged). HOLD.
+- **No cuts** (−7% rule): both positions are gains, far above threshold ✓.
+- **No discretionary tightenings** (+15% trigger = LLY $1,257.56 / V $372.10): neither reached ✓.
+- **Stop audit:** 3/3 trailing stops confirmed live via `orders open` (LLY 7sh `d4147484` + 3sh `25989fb5` = 10sh; V 22sh `66033918`) — matches held quantities exactly. Nothing to recreate.
+- **Exit reconciliation:** no exits today — closed-trades.md current, nothing new required.
+- **Trades today:** 0.
+- **Market context (WebSearch, July 7):** Chip-sector selloff (semiconductor gauge −5.5% on AI-capex-payoff doubts) dragged Nasdaq-100 −1.8% (SpaceX's fast-track Nasdaq-100 entry added to the volatility), yet most S&P 500 names rose as money rotated out of megacap tech into other sectors — the mirror image of July 6's tech-led rally that widened Bull's gap. Bull's non-tech book benefited: LLY (healthcare) gained on a JPMorgan PT raise while AGGRO's NVDA/AVGO (semiconductors) stayed under CRITICAL buffer pressure all session.
+- **Since inception:** Bull +0.1235% ($100,123.51) vs SPY TR +0.8270% ($747.33 latest trade vs $741.20 total-return anchor, dividend already folded into the anchor) → **Bull TRAILS SPY by −0.7035pp** (narrowed sharply from −1.482pp at midday — LLY's gain and SPY's own chip-selloff pullback both helped close the gap).
+- **Race scoreboard:** Bull +0.12% | AGGRO −8.76% (2026-07-07 midday snapshot, equity $91,241.99, since its own June 4 inception) | SPY TR +0.83% (since Bull's May 21 inception) — Bull leads AGGRO by ~8.88pp.
 
 ---
 
