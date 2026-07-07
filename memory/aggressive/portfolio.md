@@ -6,7 +6,43 @@ but always re-fetches live data before trading._
 
 ---
 
-## Last snapshot — 2026-07-06 EOD CLOSE (~4:09 PM ET, post-close)
+## Last snapshot — 2026-07-07 PRE-MARKET (~8:15 AM ET)
+
+| Field | Value |
+|---|---|
+| Equity | USD 91,297.47 |
+| Cash | USD 25,696.39 (28.15%) |
+| Long market value | USD 65,601.08 |
+| Open positions | 6 |
+| last_equity (data-lag flag: reads July 2 close, not July 6's USD 92,067.06) | USD 90,674.09 |
+| Change vs last_equity | **+0.687%** — shock threshold -6% NOT triggered |
+| HWM | USD 101,144.73 (confirmed via `history 1A 1D`) |
+| Drawdown from HWM | **-9.736%** (circuit breaker -20% — NOT triggered; 10.264pp headroom) |
+
+**Market status:** `clock` confirms `is_open: false` at run time (8:12 AM ET); next open 09:30 AM ET today.
+
+**Open positions:**
+
+| Symbol | Qty | Avg Entry | Price | P/L % | -12% Cut Trigger | Buffer | % of Portfolio | Sector |
+|---|---|---|---|---|---|---|---|---|
+| NVDA | 103 | USD 213.60 | USD 192.0735 | **-10.078%** | USD 187.968 | **1.922pp 🔴 CRITICAL** | 21.67% | Semiconductors |
+| AVGO | 25 | USD 406.23 | USD 365.85 | **-9.940%** | USD 357.4824 | **2.060pp 🔴 CRITICAL** | 10.02% | Semiconductors |
+| ETN | 34 | USD 419.54 | USD 407.01 | -2.987% | USD 369.1952 | 9.013pp | 15.16% | Industrials/power infra |
+| GOOGL | 16 | USD 370.22 | USD 367.47 | -0.743% | USD 325.7936 | 11.257pp | 6.44% | Communication Services (hyperscaler) |
+| AMZN | 36 | USD 247.991111 | USD 245.45 | -1.025% | USD 218.2322 | 10.975pp | 9.68% | Consumer Discretionary (hyperscaler) |
+| VST | 52 | USD 151.47 | USD 156.10 | +3.057% | n/a | comfortable | 8.89% | Utilities (nuclear power) |
+
+**Sector exposure:** Semiconductors (NVDA+AVGO) = USD 28,929.82 / USD 91,297.47 = **31.69%**; Industrials (ETN) = 15.16%; Hyperscalers (GOOGL+AMZN) = 16.12%; Utilities (VST) = 8.89%; Cash = 28.15%. No sector near the 60% informal cap.
+
+**Stops:** 6/6 live 18% trailing stops confirmed — NVDA `54d7d851`, AVGO `cf2956dc`, ETN `abdc232b`, GOOGL `e52a43f1`, AMZN `b55bef05`, VST `5b347be3`.
+
+**Planned action (contingent, for market-open execution):** NVDA and AVGO both independently trigger the proactive-trim heuristic (buffer <3pp, review_by within 5 trading days, no near-term catalyst) on a renewed sector-wide AI-valuation rotation (Micron -5% pre-market, KLA/Marvell/AMD also lower) — not a company-specific thesis break for either (NVDA denied the Kyber delay report; AVGO's Apple partnership extension stands). Plan: trim NVDA 26 of 103 shares and AVGO 6 of 25 shares (~25% each) at market open, each with a stand-down contingency (opens up materially → hold) and an escalation contingency (buffer <1pp at execution → full exit instead). No new buys — see research-log.md. Full detail in research-log.md and trade-log.md.
+
+**Result:** No trades yet (market not open). All 6 positions reviewed; theses intact across the board. Stop audit 6/6 live.
+
+---
+
+## Prior snapshot — 2026-07-06 EOD CLOSE (~4:09 PM ET, post-close)
 
 | Field | Value |
 |---|---|

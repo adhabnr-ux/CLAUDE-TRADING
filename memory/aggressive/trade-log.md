@@ -3243,3 +3243,46 @@ No trades executed. AVGO's sub-1pp full-exit contingency stood down at pre-marke
 
 ### Result
 All 6 positions within guardrails. No trades. All 18% trailing stops active and audited. No stops recreated. NVDA and AVGO both stressed (~4.2-4.3pp buffer) but improving intraday on a broad market bounce, not deteriorating. No new positions opened (midday never opens new positions).
+
+---
+
+## 2026-07-07 — PRE-MARKET (~8:15 AM ET, market closed at run time)
+
+**No trades executed — market not yet open (opens 9:30 AM ET).** Two contingent 25% trims (NVDA, AVGO) planned for market-open execution. Full detail in research-log.md.
+
+### Pre-run checks
+| Check | Result |
+|---|---|
+| Live-switch guard | ALPACA_BASE_URL contains "paper" ✓ |
+| Lock | Clear (`{}`) at start; written for this run ✓ |
+| Control switch | STATUS: ACTIVE ✓ (no NOTE:, no QUERY:) |
+| Market open | false (next open 09:30 AM ET today) |
+
+### Account status
+| Field | Value |
+|---|---|
+| Equity | USD 91,297.47 |
+| Cash | USD 25,696.39 (28.15%) |
+| HWM | USD 101,144.73 |
+| Drawdown from HWM | -9.736% (circuit breaker -20% — NOT triggered) |
+| Shock check | +0.687% vs `last_equity` USD 90,674.09 (data-lag flag: appears stuck at July 2 close, not July 6's USD 92,067.06 — using live equity per standing lesson) |
+
+### Position review (buffers to -12% cut)
+| Symbol | Entry | Current | P/L % | Buffer | Flag |
+|---|---|---|---|---|---|
+| NVDA | USD 213.60 | USD 192.0735 | -10.078% | **1.922pp** | 🔴 CRITICAL — trim planned |
+| AVGO | USD 406.23 | USD 365.85 | -9.940% | **2.060pp** | 🔴 CRITICAL — trim planned |
+| ETN | USD 419.54 | USD 407.01 | -2.987% | 9.013pp | ✓ |
+| GOOGL | USD 370.22 | USD 367.47 | -0.743% | 11.257pp | ✓ |
+| AMZN | USD 247.991111 | USD 245.45 | -1.025% | 10.975pp | ✓ |
+| VST | USD 151.47 | USD 156.10 | +3.057% | comfortable | ✓ only green position |
+
+### Stop audit — 6/6 confirmed live ✓
+NVDA `54d7d851`, AVGO `cf2956dc`, ETN `abdc232b`, GOOGL `e52a43f1`, AMZN `b55bef05`, VST `5b347be3` — all `status: "new"` per Alpaca open-orders list.
+
+### News scan [search: WebSearch fallback — MiniMax M3 MCP not connected this session]
+- **NVDA**: Denied SemiAnalysis's Kyber AI-rack delay report directly to Bloomberg ("roadmap is intact") — thesis-positive. Goldman Sachs called valuation "quite compelling." Drawdown is renewed sector-wide AI-valuation rotation (Micron -5%, KLA, Marvell, AMD all lower pre-market), not company-specific. Decision: proactive 25% trim (buffer 1.922pp triggers the heuristic), thesis HOLD.
+- **AVGO**: Apple custom-silicon/RF partnership extension through 2031 (confirmed July 6) stands; no reversal. Today's pullback is the same sector rotation hitting NVDA. Decision: proactive 25% trim (buffer 2.060pp triggers the heuristic, second trim on this position), thesis HOLD.
+
+### Result
+No trades yet — market not open. Both NVDA and AVGO independently trigger the proactive-trim heuristic (buffer <3pp, review_by within 5 trading days, no near-term catalyst) on a renewed sector-wide AI-valuation rotation; both theses remain intact. Planned: 25% trim on each (NVDA 26 of 103 shares; AVGO 6 of 25 shares) for market-open execution, each with a stand-down contingency (opens up materially → hold) and an escalation contingency (buffer <1pp at execution → full exit instead). No new buys — see research-log.md deployment check. Control: ACTIVE. Full JSON plan in research-log.md.
