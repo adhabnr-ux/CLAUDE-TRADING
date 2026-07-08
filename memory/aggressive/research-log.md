@@ -3773,3 +3773,5 @@ No new positions. NVDA (3.297pp) and AVGO (3.094pp) both round-tripped back to t
   ]
 }
 ```
+
+EXECUTED: 2026-07-08T13:47:00Z (no trades — both contingent trims stood down; NVDA buffer recovered from 3.297pp pre-market to 5.346pp at open [entry USD 213.60, price USD 199.39], AVGO buffer recovered from 3.094pp to 6.221pp [entry USD 406.23, price USD 382.755], both well above the ~4pp stand-down line; news gate clear — no earnings miss/halt/SEC action/major new downgrade for either name [search: WebSearch fallback — MiniMax M3 not available]; ETN buffer 7.103pp, no trim was planned; no shock (+0.409% vs last_equity); drawdown from HWM -9.284% [not circuit breaker]; stop audit 6/6 live 18% trailing stops confirmed — NVDA `e15e7753`, AVGO `ffba9bd5`, ETN `abdc232b`, GOOGL `e52a43f1`, AMZN `b55bef05`, VST `5b347be3`; no new buys, Control: ACTIVE)

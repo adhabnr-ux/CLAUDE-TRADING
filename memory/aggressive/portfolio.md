@@ -4301,3 +4301,33 @@ Next actionable routine: July 8 pre-market.
 **Planned trades (contingent on market-open price):** 25% trim NVDA (19 of 77 shares) and 25% trim AVGO (5 of 19 shares) — gap-risk management, both theses intact. Stand-down if buffers recover above ~4pp; escalate to full exit if buffers are below 1pp at execution. No new buys — cash already at 36.22%, deliberate defensive posture given the live geopolitical shock.
 
 Next actionable routine: July 8 market open.
+
+---
+
+## 2026-07-08 — MARKET OPEN snapshot (~9:47 AM ET)
+
+**No trades executed.** Both contingent NVDA/AVGO trims stood down — buffers recovered well above the plan's ~4pp threshold at open.
+
+**Account:** Equity USD 91,755.12 | Cash USD 32,894.38 (35.85%) | Last equity (July 7 close) USD 91,381.65 | Shock check **+0.409%** (threshold -6%, not triggered).
+
+**HWM:** USD 101,144.73 (set June 4-5, unchanged). Drawdown from HWM: **-9.284%** (circuit breaker -20% — NOT triggered).
+
+**Positions (6 open, unchanged from July 7 close):**
+| Symbol | Qty | Avg Entry | Sector | P/L% | Buffer to -12% | % of Portfolio |
+|---|---|---|---|---|---|---|
+| NVDA | 77 | USD 213.60 | Semiconductors | -6.654% | 5.346pp (stand-down triggered) | 16.71% |
+| AVGO | 19 | USD 406.23 | Semiconductors | -5.779% | 6.221pp (stand-down triggered) | 7.93% |
+| ETN | 34 | USD 419.54 | Industrials/power infra | -4.897% | 7.103pp | 14.80% |
+| GOOGL | 16 | USD 370.22 | Communication Services (hyperscaler) | -1.515% | 10.485pp | 6.36% |
+| AMZN | 36 | USD 247.991111 | Consumer Discretionary (hyperscaler) | -1.690% | 10.310pp | 9.57% |
+| VST | 52 | USD 151.47 | Utilities (nuclear power) | +2.443% | comfortable (only green position) | 8.79% |
+
+**Sector exposure:** Semiconductors (NVDA+AVGO) = 24.64%; Industrials (ETN) = 14.80%; Hyperscalers (GOOGL+AMZN) = 15.93%; Utilities (VST) = 8.79%; Cash = 35.85%. No sector near the 60% informal cap.
+
+**Stops:** 6/6 live 18% trailing stops confirmed unchanged — NVDA `e15e7753`, AVGO `ffba9bd5`, ETN `abdc232b`, GOOGL `e52a43f1`, AMZN `b55bef05`, VST `5b347be3`.
+
+**Breaking-news gate:** No thesis-breaking news for NVDA or AVGO (no earnings miss, halt, SEC action, or new major downgrade) [search: WebSearch fallback — MiniMax M3 not available].
+
+**No trades.** Both planned 25% trims (NVDA, AVGO) stood down per the plan's explicit contingency — buffers recovered from 3.297pp/3.094pp pre-market to 5.346pp/6.221pp at open. No new buys — cash at 35.85% remains a deliberate defensive posture given the still-developing Iran ceasefire situation.
+
+Next actionable routine: July 8 midday.

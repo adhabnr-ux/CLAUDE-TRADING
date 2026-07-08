@@ -3422,3 +3422,44 @@ Trump declared the Iran ceasefire "over" at the NATO summit in Ankara this morni
 
 ### Result
 No trades yet — market not open. Both NVDA (3.297pp) and AVGO (3.094pp) buffers sit right at the proactive-trim line, and are treated as triggering the heuristic given the fresh, still-developing geopolitical shock and NVDA's review_by being tomorrow (July 9). Planned: 25% trim on each (NVDA 19 of 77 shares; AVGO 5 of 19 shares) for market-open execution, each with a stand-down contingency (buffer recovers above ~4pp → hold) and an escalation contingency (buffer <1pp at execution → full exit instead of trim). ETN flagged for a first-look price check at open despite no heuristic trigger. No new buys — cash at 36.22% is deliberate defensive posture. Control: ACTIVE. Full JSON plan in research-log.md.
+
+---
+
+## 2026-07-08 — MARKET OPEN (~9:47 AM ET)
+
+**No trades executed.** Both contingent trims (NVDA, AVGO) stood down — buffers recovered well above the 4pp stand-down line by market open.
+
+### Pre-run checks
+| Check | Result |
+|---|---|
+| Live-switch guard | ALPACA_BASE_URL contains "paper" ✓ |
+| Lock | Clear (`{}`) at start; written for this run ✓ |
+| Control switch | STATUS: ACTIVE ✓ (no NOTE:, no QUERY:) |
+| Plan date | July 8, 2026 — matches today ✓ |
+| Idempotency | No prior EXECUTED: marker under today's plan ✓ |
+| Market open | true (next close 4:00 PM ET) ✓ |
+
+### Breaking-news gate [search: WebSearch fallback — MiniMax M3 not available]
+- **NVDA**: No earnings miss, halt, SEC action, or new major downgrade. Kyber-delay denial and Goldman's "compelling" 21.7x forward P/E call from July 7 stand; one negative item (Chinese firms reportedly favoring domestic AI chips) is a known, gradual competitive dynamic, not a same-day thesis break. Strong Buy consensus (58 buy / 1 sell) intact.
+- **AVGO**: No earnings miss, halt, or SEC action. Apple multiyear ASIC deal (through 2031) confirmed and driving the stock up this morning; the single Erste Group downgrade to Hold (already known from pre-market plan) is priced in against a 26-analyst Buy consensus. Thesis intact and strengthening.
+
+### Re-check before executing
+| Field | Value |
+|---|---|
+| Equity | USD 91,755.12 |
+| Cash | USD 32,894.38 (35.85%) |
+| Last equity | USD 91,381.65 |
+| Shock check | +0.409% — NOT triggered (threshold -6%) |
+| HWM | USD 101,144.73 |
+| Drawdown from HWM | -9.284% — NOT triggered (circuit breaker -20%) |
+| NVDA buffer at execution | 5.346pp (entry USD 213.60, price USD 199.39) — **recovered above 4pp → STAND DOWN** |
+| AVGO buffer at execution | 6.221pp (entry USD 406.23, price USD 382.755) — **recovered above 4pp → STAND DOWN** |
+| ETN buffer at execution | 7.103pp (entry USD 419.54, price USD 399.00) — no trim was planned; confirmed comfortable |
+
+Both contingent trims explicitly written into the plan as "stand down if buffer recovers above ~4pp" — that condition is met for both. No trim executed on either name. No escalation condition (buffer <1pp) applies. No new buys.
+
+### Stop audit — 6/6 confirmed live 18% trailing stops ✓
+NVDA `e15e7753` (77sh), AVGO `ffba9bd5` (19sh), ETN `abdc232b` (34sh), GOOGL `e52a43f1` (16sh), AMZN `b55bef05` (36sh), VST `5b347be3` (52sh) — all `status: "new"`, unchanged since July 7. No gaps, no recreation needed.
+
+### Result
+No trades. Both NVDA and AVGO opened up materially from their pre-market lows, pushing buffers from 3.297pp/3.094pp (pre-market) to 5.346pp/6.221pp (open) — past the plan's explicit stand-down threshold. News gate found nothing thesis-breaking for either name. No new buys — cash remains at 35.85%, still a deliberate defensive posture given the still-developing Iran ceasefire situation. `EXECUTED:` marker appended to research-log.md.
