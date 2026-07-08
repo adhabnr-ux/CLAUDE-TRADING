@@ -7,6 +7,77 @@ _Entries before 2026-06-01 archived to `memory/archive/2026-05.md` (2026-07-01 m
 
 ---
 
+## 2026-07-08 — Pre-market research (~08:07 ET, Wednesday)
+
+### Live-switch guard / Lock / Control switch
+- `ALPACA_BASE_URL` contains "paper" ✓.
+- `memory/_lock` was `{}` (empty) — no other routine active. Lock written for this run, released before commit.
+- `memory/control.md` STATUS: **ACTIVE**. No `NOTE:`/`QUERY:` line to acknowledge.
+
+### Account sync (live Alpaca, ~08:07 ET)
+- Equity **$100,116.04** | Cash **$80,023.72 (79.94%)** | Long market value $20,092.32 | Last equity (July 7 close) $100,127.72.
+- **Shock check:** ($100,116.04 − $100,127.72) / $100,127.72 = **−0.0117%** — no shock ✓ (threshold −4%).
+- **Drawdown note (informational only):** $100,116.04 vs HWM $101,384.21 = **−1.251%** — not a blocking guardrail (removed 2026-06-30).
+
+### Positions & stop audit
+| Symbol | Qty | Avg entry | Current | Mkt value | Unrealized P/L | % port | Stop |
+|---|---|---|---|---|---|---|---|
+| LLY | 10 | $1,093.534 | $1,235.69 | $12,356.90 | +$1,421.56 (+13.00%) | 12.34% | d4147484 (7sh) + 25989fb5 (3sh), HWM $1,249.45, stop $1,124.505 ✓ buffer 9.00% |
+| V | 22 | $323.57 | $351.61 | $7,735.42 | +$616.88 (+8.666%) | 7.73% | 66033918 (22sh), HWM $364.21, stop $327.789 ✓ buffer 6.775% |
+
+**Stop audit: 3/3 PASS ✓** (matches held quantities exactly; no missing stops).
+**Sector exposure:** Healthcare (LLY) 12.34% | Financials (V) 7.73% | Cash 79.94% — no sector above 60% cap ✓.
+
+### Thesis contract review
+- **LLY** review_by 2026-07-21 — not due.
+- **V** review_by 2026-07-28 — not due.
+
+### Market posture (WebSearch) — Iran ceasefire declared over
+- Trump stated at the NATO summit in Ankara that the US ceasefire with Iran "is over," following US strikes in retaliation for attacks on commercial vessels transiting the Strait of Hormuz and the Treasury's withdrawal of Iran's oil-sale waiver. [cnbc.com]
+- WTI +5.69% to $74.45/bbl, Brent +5.85% to $78.50/bbl — both still well below the $100 halt-trigger, but the trend reversed sharply from the prior "holding" status; monitor closely. 10yr yield ticked up 5bp to 4.581% (still below the 4.75% halt trigger). [cnbc.com]
+- S&P 500 futures down; Nasdaq futures down >1% on renewed semiconductor weakness (Intel, AMD leading losses) compounding the sector's existing selloff (LRCX, ETN, VRT all lower — see below). [cnbc.com]
+- Net effect: a genuine geopolitical risk-off catalyst layered on top of an already-weak AI-infrastructure/semi-equipment tape. Reinforces no new positions today regardless of individual gate status.
+
+### Held-position research — "what changed since yesterday"
+- **LLY** ($1,235.69, +13.00% from entry, new highs beyond the prior $1,238 reference): Cantor Fitzgerald raised PT $1,230→$1,350 (Overweight); JPMorgan raised PT to $1,400 from $1,300; Jaypirca (EU) received a positive CHMP opinion, pending EC action. Healthcare is a typical risk-off beneficiary — today's macro shock, if anything, is thesis-supportive. Next earnings confirmed **Aug 5, 2026** — outside the 2-day window. [tipranks.com]
+- **V** ($351.61, roughly flat overnight): Barclays initiated Overweight; Baird raised PT to $412 from $370. No Iran/oil-related read-through identified for payments infrastructure. Thesis (Open USD stablecoin consortium, zero sell ratings among 42 analysts) intact. Next earnings confirmed **July 28, 2026** — outside the 2-day window. [marketbeat.com]
+
+### Earnings-window rule
+- Neither held name reports within the next 2 trading days (LLY Aug 5, V July 28). No restriction on holding; no buy candidates near earnings today.
+
+### Watchlist — ATR gates (LRCX / ETN)
+- **LRCX:** July 7 session H $330.42 / L $313.11 / C $325.94 = **5.31% ATR** — FAILS the ≤5% threshold. Stock fell −6.78% on the day in a broad semiconductor-equipment selloff: a soft monthly revenue read from a major foundry customer, institutional warnings of NAND/mature-logic cyclical cooling (system-shipment growth projected to decelerate to 3% in 2026 from 82% in 2025), and CEO Timothy Archer's ~$11.7M stock sale July 2. [quiverquant.com, tikr.com] **Gate counter resets to 0/2.** Today is also the ~4-week staleness line strategy.md flagged — purge decision stays deferred to Friday's weekly review per the existing plan, not decided in this run.
+- **ETN:** July 7 session H $403.73 / L $388.11 / C $395.62 = **3.95% ATR** ✓ clears; combined with July 6's 3.64% clear, **gate counter reaches 2/2**. However, the approximate 50-day MA (computed from ~45 sessions of Alpaca IEX daily bars) is ~$404.97, and the July 7 close is **−2.31% below it** — fails entry signal #4 (technical confirmation requires trading above the 50-day MA). ETN fell alongside the broader AI-infrastructure complex despite a record ~$22.8B backlog and +240% YoY Electrical Americas data-center orders. [fool.com] **Not promoted — ATR gate cleared but technical confirmation fails.**
+
+### Daily candidate diligence (step 6b) — VRT full pre-trade pass
+Per the 2026-07-07 note flagging VRT/NVT/MOD as undiligenced, ran the full diligence checklist on VRT (the most research-ready of the three) today:
+- **Earnings/guidance:** FY26 guidance raised to $13.5–14.0B net sales (implying ~30% organic growth, ~51% earnings growth); backlog more than doubled to >$15B (12–18 months of forward revenue); ThermoKey acquisition closed June 12 (expands EMEA thermal-management manufacturing); new Johor, Malaysia facility opened July 1. Q2 earnings confirmed ~July 29, 2026 (not an issue today). [sec.gov, seekingalpha.com]
+- **Balance sheet:** $2.50B cash vs $3.26B debt, current ratio 1.49, debt/equity 0.77, ROE 45.1%, ROIC 32.1%, TTM FCF $2.28B on $10.84B revenue — healthy for a capital-intensive hardware business. [gurufocus.com, stockanalysis.com]
+- **Valuation:** Forward P/E ~44–46x (rich), but PEG **1.36** — comfortably under the 2.5 gate given the growth rate. [financecharts.com]
+- **Entry signals 1–3** (earnings momentum, catalyst, valuation) **pass**.
+- **Technical confirmation (entry signal #4) — FAILS:** Computed the approximate 50-day MA from ~45 sessions of Alpaca IEX daily bars (May 1–Jul 7): ~$325.37. July 7 close $305.625 is **−6.07% below it** — a real pullback in the same AI-infra/semi-adjacent selloff hitting LRCX and ETN, not a shallow within-uptrend dip.
+- **ATR gate — FAILS:** July 7 session H $305.98 / L $287.19 / C $305.625 = **6.15% ATR**, above the 5% cap (the stock swung a ~$19 range in one session).
+- **Verdict:** 3 of 5 entry signals clear (earnings momentum, catalyst, valuation) but both the technical-confirmation signal and the ATR gate fail outright. **VRT is NOT promoted to a buy candidate today.** What's still missing: needs to reclaim its 50-day MA and post 2 consecutive ATR-gate-clearing (≤5%) sessions before re-consideration. This diligence pass is now on file — a future re-check only needs to re-verify the technical/ATR posture. NVT and MOD remain undiligenced — next candidates for a future step 6b pass.
+
+### Cash-drag check
+- Cash 79.94% vs. the strategy's 25–40% target band for a 2-position book — well above target, elevated 6+ weeks. No qualifying entry clears today: LRCX's ATR gate just reset to 0/2; ETN's ATR gate cleared but fails technical confirmation; VRT fails both its ATR gate and technical confirmation (fresh diligence today). Combined with today's Iran-ceasefire-breakdown risk-off tape, staying in cash is the correct, deliberate call, not a default.
+
+### Since inception
+- Bull +0.116% ($100,116.04) vs SPY TR ($747.77 July 7 close + $1.76 div = $749.53 vs $739.44 anchor) = +1.3646% → **Bull TRAILS SPY by −1.249pp** (narrowed from July 7 midday's −1.4815pp; LLY's continued rally on analyst-target raises more than offset SPY's own July 7 gain).
+
+### Planned trades for today
+
+No trades planned. LRCX's ATR gate reset to 0/2 (July 7 fail); ETN cleared its ATR gate but fails technical confirmation; VRT's full diligence pass today fails both its ATR gate and technical confirmation. Combined with the Iran-ceasefire-breakdown risk-off macro backdrop, no new positions today.
+
+```json
+{
+  "plan_date": "2026-07-08",
+  "trades": []
+}
+```
+
+---
+
 ## 2026-07-07 — Pre-market research (~08:07 ET, Tuesday)
 
 ### Live-switch guard / Lock / Control switch
