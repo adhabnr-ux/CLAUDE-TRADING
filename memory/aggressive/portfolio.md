@@ -6,7 +6,62 @@ but always re-fetches live data before trading._
 
 ---
 
-## Last snapshot — 2026-07-07 PRE-MARKET (~8:15 AM ET)
+## Last snapshot — 2026-07-08 EOD CLOSE (~4:10 PM ET, post-close)
+
+| Field | Value |
+|---|---|
+| Equity | USD 92,186.69 |
+| Cash | USD 32,894.38 (35.68%) |
+| Long market value | USD 59,292.31 |
+| Open positions | 6 |
+| last_equity (July 7 EOD close) | USD 91,381.65 |
+| Today's P/L | **+USD 805.04 (+0.881%)** |
+| HWM | USD 101,144.73 (confirmed via `history 1A 1D`) |
+| Drawdown from HWM | **-8.859%** (circuit breaker -20% — NOT triggered; 11.141pp headroom, not within 3pp of breaker) |
+
+**Market status:** closed (next open 2026-07-09 09:30 ET; next close 2026-07-09 16:00 ET — normal full session, not a half-day).
+
+**Open positions:**
+
+| Symbol | Qty | Avg Entry | Price | P/L % | -12% Cut Trigger | Buffer | % of Portfolio | Sector |
+|---|---|---|---|---|---|---|---|---|
+| NVDA | 77 | USD 213.60 | USD 204.1199 | -4.438% | USD 187.968 | 7.562pp | 17.05% | Semiconductors |
+| AVGO | 19 | USD 406.23 | USD 388.2503 | -4.426% | USD 357.4824 | 7.574pp | 8.00% | Semiconductors |
+| ETN | 34 | USD 419.54 | USD 399.56 | -4.762% | USD 369.1952 | 7.238pp | 14.74% | Industrials/power infra |
+| GOOGL | 16 | USD 370.22 | USD 361.58 | -2.334% | USD 325.7936 | 9.666pp | 6.28% | Communication Services (hyperscaler) |
+| AMZN | 36 | USD 247.991111 | USD 243.62 | -1.763% | USD 218.2322 | 10.237pp | 9.51% | Consumer Discretionary (hyperscaler) |
+| VST | 52 | USD 151.47 | USD 154.97 | +2.311% | n/a | comfortable | 8.74% | Utilities (nuclear power) |
+
+**Sector exposure:** Semiconductors (NVDA+AVGO) = USD 23,093.99 / USD 92,186.69 = **25.05%**; Industrials (ETN) = 14.74%; Hyperscalers (GOOGL+AMZN) = 15.79%; Utilities (VST) = 8.74%; Cash = 35.68%. No sector near the 60% informal cap.
+
+**Cut rule check (>-12% from entry): NO positions triggered.** All 6 positions recovered well off this morning's pre-market lows; NVDA and AVGO (both trimmed yesterday and this morning's contingent trims stood down) are now comfortably clear at 7.5pp+ buffers.
+**Tighten-stop rule check (>+25% from entry): NO positions triggered.**
+
+**Stops:** 6/6 live 18% trailing stops confirmed unchanged (no trades today) — NVDA `e15e7753`, AVGO `ffba9bd5`, ETN `abdc232b`, GOOGL `e52a43f1`, AMZN `b55bef05`, VST `5b347be3`.
+
+### Performance vs SPY
+| Metric | Value |
+|---|---|
+| Aggro today | +0.881% |
+| SPY today (747.77 → 745.32) | -0.328% |
+| Today vs SPY | **+1.209pp OUTPERFORMING** |
+| Aggro since inception | -7.813% |
+| SPY since inception (754.18 → 745.32) | -1.175% |
+| Alpha since inception | **-6.638pp** |
+
+**Market context [search: WebSearch fallback — MiniMax M3 MCP not connected this session]:** Trump told the NATO summit the Iran ceasefire is "over," sending oil sharply higher (Brent +5.4%, WTI +4.4%) after Tuesday's US strikes on vessels in the Strait of Hormuz. The Dow fell ~1% (500+ points) on the shock and the S&P 500 dropped ~0.2%, but the Nasdaq bucked the trend and closed +0.2%, trimming earlier losses intraday — airlines were the hardest-hit group on oil-price fear, not AI-tech. Semiconductors remained under pressure, extending the multi-day chip rout that began July 7 (Samsung earnings failing to lift sentiment). This is the second consecutive session where a fresh, real geopolitical shock caused pre-market/early weakness in NVDA and AVGO that fully reversed by the time trims would have executed — both contingent trims planned this morning correctly stood down and the book closed comfortably above the proactive-trim line on both names.
+
+**No trades today.** Both contingent 25% trims (NVDA, AVGO) planned at pre-market stood down at market open (buffers recovered from 3.297pp/3.094pp pre-market to 5.346pp/6.221pp at open) and continued to improve through the session (7.562pp/7.574pp at close). No new buys — cash remains at 35.68%, still an explicit defensive posture pending confirmation the Iran situation has actually de-escalated rather than just paused.
+
+**News scan (positions down >5% from entry: NVDA, ETN at midday; both recovered by close) [search: WebSearch fallback — MiniMax M3 not available]:** No thesis-breaking news for either. NVDA's Kyber-delay denial and Goldman's "compelling valuation" call stand; ETN's Q1 results, Dana Reverse Morris Trust merger, and FTSE Russell inclusion are all still in play with no negative company-specific news. Both moves read as sector/macro rotation.
+
+**Stop audit: 6/6 confirmed live** (NVDA `e15e7753`, AVGO `ffba9bd5`, ETN `abdc232b`, GOOGL `e52a43f1`, AMZN `b55bef05`, VST `5b347be3`). No stops missing, no stops needing recreation.
+
+**Result:** No trades executed. All 6 positions within guardrails. All 18% trailing stops active and audited. No closed positions today — closed-trades.md unchanged (last entry MRVL, 2026-06-24). Drawdown from HWM (-8.859%) not within 3pp of the -20% circuit breaker — not flagged.
+
+---
+
+## Prior snapshot — 2026-07-07 PRE-MARKET (~8:15 AM ET)
 
 | Field | Value |
 |---|---|
