@@ -4197,3 +4197,25 @@ No trades today per pre-market plan. AVGO exited automatically. Slots 2 and 3 re
 - **Sector exposure:** Healthcare (LLY) 12.29% | Financials (V) 7.69% | Cash 80.02% — no sector above 60% cap ✓.
 - **No new positions today** — midday routine manages existing risk only, per playbook.
 - **Trades today:** 0.
+
+## 2026-07-08 12:33 ET — MIDDAY ROUTINE (no trades)
+- **Action:** None — no cuts, no tightenings, no new positions. Both positions within all guardrails.
+- **Live-switch guard:** ALPACA_BASE_URL contains "paper" ✓
+- **Lock:** was `{}` — acquired cleanly, no stale lock.
+- **Control switch:** STATUS ACTIVE, no NOTE/QUERY to acknowledge.
+- **Market:** OPEN ✓ (is_open: true, ~12:33 ET, next_close 16:00 ET)
+- **Shock check:** equity USD99,996.24 vs last_equity USD100,127.72 = −USD131.48 (−0.1313%) — no shock ✓ (threshold −4%)
+- **Position review (live prices ~12:33 ET):**
+  - LLY 10sh @ USD1,233.06 (+12.759% from entry USD1,093.534, −0.202% today). Stop HWM USD1,249.45, stop USD1,124.505, buffer USD108.555 (8.804%) ✓. Above the +10%-up news-scan trigger — scanned via WebSearch: no new thesis-breaking news today; today's move continues to reflect the already-known Cantor (USD1,350 PT) / JPMorgan (USD1,400 PT) analyst upgrades and the Medicare Bridge/Jaypirca CHMP catalysts, stock near its all-time high. No new negative catalyst, no FDA setback, no guidance change found dated today. Below the +15% tighten trigger (USD1,257.56) — no action. review_by 2026-07-21 not due. HOLD. Conviction A.
+  - V 22sh @ USD347.36 (+7.352% from entry USD323.57, −1.374% today). Stop HWM USD364.21, stop USD327.789, buffer USD19.571 (5.634%) ✓. Below the +10% scan trigger and not down >3% from entry — no scan run. Mild pullback consistent with the broader risk-off tape (Iran ceasefire breakdown per this morning's macro read); no company-specific news. Thesis intact. HOLD. Conviction B. review_by 2026-07-28.
+- **No cuts** (−7% rule): both positions are gains, far above threshold ✓.
+- **No discretionary tightenings** (+15% trigger = LLY USD1,257.56 / V USD372.10): neither reached ✓.
+- **Stop audit: 3/3 PASS ✓**
+  - LLY (d4147484): 7sh — HWM USD1,249.45, stop USD1,124.505 ✓ (status: new/live)
+  - LLY (25989fb5): 3sh — HWM USD1,249.45, stop USD1,124.505 ✓ (status: new/live)
+  - V (66033918): 22sh — HWM USD364.21, stop USD327.789 ✓ (status: new/live)
+  - Matches held quantities exactly (LLY 7+3=10sh, V 22sh). No missing stops, nothing to recreate.
+- **Exit reconciliation:** No exits since market-open. closed-trades.md current — nothing new required.
+- **Sector exposure:** Healthcare (LLY) USD12,330.60 = 12.33% | Financials (V) USD7,641.92 = 7.64% | Cash USD80,023.72 = 80.03% — no sector above 60% cap ✓.
+- **No new positions today** — midday routine manages existing risk only, per playbook.
+- **Trades today:** 0.
