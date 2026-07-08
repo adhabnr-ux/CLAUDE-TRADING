@@ -4331,3 +4331,33 @@ Next actionable routine: July 8 market open.
 **No trades.** Both planned 25% trims (NVDA, AVGO) stood down per the plan's explicit contingency — buffers recovered from 3.297pp/3.094pp pre-market to 5.346pp/6.221pp at open. No new buys — cash at 35.85% remains a deliberate defensive posture given the still-developing Iran ceasefire situation.
 
 Next actionable routine: July 8 midday.
+
+---
+
+## 2026-07-08 — MIDDAY snapshot (~12:41 PM ET)
+
+**No trades executed.** All positions within guardrails.
+
+**Account:** Equity USD 91,518.36 | Cash USD 32,894.38 (35.94%) | Last equity (prev close) USD 91,381.65 | Shock check **+0.150%** (threshold -6%, not triggered).
+
+**HWM:** USD 101,144.73 (unchanged). Drawdown from HWM: **-9.518%** (circuit breaker -20% — NOT triggered).
+
+**Positions (6 open, unchanged from market open):**
+| Symbol | Qty | Avg Entry | Sector | P/L% | Buffer to -12% | % of Portfolio |
+|---|---|---|---|---|---|---|
+| NVDA | 77 | USD 213.60 | Semiconductors | -6.597% | 5.403pp | 16.79% |
+| AVGO | 19 | USD 406.23 | Semiconductors | -3.416% | 8.584pp | 8.15% |
+| ETN | 34 | USD 419.54 | Industrials/power infra | -6.154% | 5.846pp | 14.63% |
+| GOOGL | 16 | USD 370.22 | Communication Services (hyperscaler) | -2.382% | 9.618pp | 6.32% |
+| AMZN | 36 | USD 247.991111 | Consumer Discretionary (hyperscaler) | -2.490% | 9.510pp | 9.51% |
+| VST | 52 | USD 151.47 | Utilities (nuclear power) | +0.858% | comfortable (only green position) | 8.68% |
+
+**Sector exposure:** Semiconductors (NVDA+AVGO) = 24.94%; Industrials (ETN) = 14.63%; Hyperscalers (GOOGL+AMZN) = 15.83%; Utilities (VST) = 8.68%; Cash = 35.94%. No sector near the 60% informal cap.
+
+**Stops:** 6/6 live 18% trailing stops confirmed — NVDA `e15e7753`, AVGO `ffba9bd5`, ETN `abdc232b`, GOOGL `e52a43f1`, AMZN `b55bef05`, VST `5b347be3`.
+
+**News scan:** NVDA and ETN (both down >5% from entry) checked — no thesis-breaking news for either; both moves read as sector rotation. See research-log.md and trade-log.md for full detail.
+
+**No trades.** Cash at 35.94% remains deliberate defensive posture given the still-developing Iran ceasefire situation.
+
+Next actionable routine: July 8 close.

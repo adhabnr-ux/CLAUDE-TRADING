@@ -3463,3 +3463,51 @@ NVDA `e15e7753` (77sh), AVGO `ffba9bd5` (19sh), ETN `abdc232b` (34sh), GOOGL `e5
 
 ### Result
 No trades. Both NVDA and AVGO opened up materially from their pre-market lows, pushing buffers from 3.297pp/3.094pp (pre-market) to 5.346pp/6.221pp (open) — past the plan's explicit stand-down threshold. News gate found nothing thesis-breaking for either name. No new buys — cash remains at 35.85%, still a deliberate defensive posture given the still-developing Iran ceasefire situation. `EXECUTED:` marker appended to research-log.md.
+
+---
+
+## 2026-07-08 — MIDDAY CHECK (~12:41 PM ET)
+
+**No trades executed.** Risk management only. All positions within guardrails.
+
+### Pre-run checks
+| Check | Result |
+|---|---|
+| Live-switch guard | ALPACA_BASE_URL contains "paper" ✓ |
+| Lock | Clear (`{}`) at start; written for this run ✓ |
+| Control switch | STATUS: ACTIVE ✓ (no NOTE:, no QUERY:) |
+| Market open | true (next close 4:00 PM ET) ✓ |
+
+### Account status
+| Field | Value |
+|---|---|
+| Equity | USD 91,518.36 |
+| Last equity (prev close) | USD 91,381.65 |
+| Intraday change vs last_equity | **+0.150%** (shock threshold -6% — NOT triggered ✓) |
+| Cash | USD 32,894.38 (35.94%) |
+| HWM | USD 101,144.73 |
+| Drawdown from HWM | **-9.518%** (circuit breaker -20% — NOT triggered ✓) |
+
+### Position review
+
+| Symbol | Entry | Current | P/L % | Buffer to -12% | News scan (>5% down)? | Action |
+|---|---|---|---|---|---|---|
+| NVDA | USD 213.60 | USD 199.5085 | -6.597% | 5.403pp | Yes — see below | No action — thesis intact |
+| AVGO | USD 406.23 | USD 392.355 | -3.416% | 8.584pp | No (< 5%) | No action |
+| ETN | USD 419.54 | USD 393.72 | -6.154% | 5.846pp | Yes — see below | No action — thesis intact |
+| GOOGL | USD 370.22 | USD 361.40 | -2.382% | 9.618pp | No | No action |
+| AMZN | USD 247.991111 | USD 241.815 | -2.490% | 9.510pp | No | No action |
+| VST | USD 151.47 | USD 152.77 | +0.858% | comfortable (only green) | No (not >15%) | No action |
+
+**Cut rule check (>-12% from entry): NO positions triggered. All clear.**
+**Tighten-stop rule check (>+25% from entry): NO positions triggered. No green position close to threshold.**
+
+### Stop audit — 6/6 positions confirmed with live 18% trailing stops ✓
+NVDA `e15e7753`, AVGO `ffba9bd5`, ETN `abdc232b`, GOOGL `e52a43f1`, AMZN `b55bef05`, VST `5b347be3` — all `status: "new"` per Alpaca open-orders list. No gaps, no recreation needed.
+
+### News scan [search: WebSearch fallback — MiniMax M3 not available this session]
+- **NVDA** (-6.597%): July 7 Kyber-delay report denial by the company still stands (denial itself boosted the stock +1%+); Goldman Sachs reiterated the 21.7x forward P/E as "compelling." One negative item — Chinese firms (e.g. DeepSeek) reportedly favoring domestic AI chips over NVDA — is a known, gradual competitive dynamic already priced in from prior sessions, not a same-day thesis break. Decision: HOLD, thesis intact.
+- **ETN** (-6.154%): No negative company-specific news found. Q1 2026 results remain record-strong (revenue +17% YoY, EPS beat, data-center orders +240% YoY); Dana Reverse Morris Trust merger and FTSE Russell index-reconstitution inclusion both still in play; backlog at a record ~USD 22.8B. Today's move reads as continued broad-market/sector rotation, not a company-specific event. Decision: HOLD, thesis intact.
+
+### Result
+All 6 positions within guardrails. No trades. All 18% trailing stops active and audited (6/6, no gaps). No exits — nothing to post-mortem, no `trades.jsonl` entries. NVDA and ETN remain the positions with the tightest buffers (5.4pp and 5.8pp) and are the names to check first at close.
