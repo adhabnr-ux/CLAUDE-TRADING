@@ -5,6 +5,28 @@ The weekly new-position count is derived from this log._
 
 _Entries before 2026-06-01 archived to `memory/archive/2026-05.md` (2026-07-01 monthly housekeeping)._
 
+## 2026-07-08 15:51 ET — CLOSE (0 trades; no exits; stop audit 3/3 ✓; Iran-ceasefire-breakdown risk-off tape; LLY −1.603% / V −1.031% today; Bull −0.15262% TRAILS SPY TR +1.00211% → −1.155pp)
+
+- **Action:** None — end-of-day P/L check and journal. Close routine does not place orders.
+- **Live-switch guard:** `ALPACA_BASE_URL` contains "paper" ✓
+- **Lock:** `_lock` was `{}` (free) — acquired for this run, released at end.
+- **Control switch:** `memory/control.md` STATUS: ACTIVE ✓ — no PAUSED/RISK_OFF, no NOTE, no QUERY.
+- **Market clock:** `is_open: true` at run time (~15:51 ET), `next_close: 16:00 ET` — full trading day, not a half-day.
+- **Account (~15:51 ET — live Alpaca):** Equity $99,847.38 | Cash $80,023.72 (80.145%) | LMV $19,823.66 | Last equity (July 7 close) $100,127.72.
+- **Today P/L:** $99,847.38 vs last_equity $100,127.72 = **−$280.34 (−0.28004%)** — no shock ✓ (threshold −4%).
+- **Drawdown vs HWM** $101,384.21 = **−1.516%** — not within 2pp of the −10% circuit-breaker level (informational only), no flag.
+- **LLY** $1,215.76 (+11.177% from entry, −1.603% today): no company-specific news; move tracks the broad Iran-ceasefire-breakdown risk-off tape. Buffer 7.506% ✓. HOLD, Conviction A, review_by 2026-07-21.
+- **V** $348.57 (+7.726% from entry, −1.031% today): mild pullback, no company-specific news, thesis intact. Buffer 5.962% ✓. HOLD, Conviction B, review_by 2026-07-28.
+- **Stop audit 3/3 PASS:** LLY d4147484 (7sh) + 25989fb5 (3sh), HWM $1,249.45, stop $1,124.505, buffer 7.506% ✓; V 66033918 (22sh), HWM $364.21, stop $327.789, buffer 5.962% ✓. All quantities match held positions exactly — nothing missing.
+- **No cuts, no tightenings, no exits.** closed-trades.md unchanged — nothing to reconcile (positions unchanged from midday: LLY 10sh, V 22sh).
+- **Market close context:** Trump declared the US-Iran ceasefire "over" at the NATO summit — Dow −1.1%, S&P 500 −0.5% (7,503.85), Nasdaq −1.2% on weak AI-name performance (MU −4.7%, AMD −6.5%); oil surged (Brent +5.7%, WTI +4.8%). Not thesis-breaking for LLY or V. [thestreet.com](https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-july-8-2026)
+- **Since inception:** Bull −0.15262% ($99,847.38) vs SPY TR **+1.00211%** ($745.09 + $1.76 div vs $739.44 anchor) → **Bull TRAILS SPY −1.155pp** (widened from midday's −0.746pp).
+- **Race scoreboard:** Bull −0.15% | AGGRO −8.70% (per AGGRO's 2026-07-07 pre-market snapshot, equity $91,297.47 — AGGRO's own routines appear a day stale) | SPY +1.00%. Bull leads AGGRO by ~8.55pp.
+- **Friday watchdog:** N/A — today is Wednesday.
+- **Data-quality note:** No close-routine entry exists for 2026-07-07 in portfolio.md or performance.csv — that day's close routine appears not to have run. Flagged in lessons.md.
+- **Performance history:** appended today's row to `memory/performance.csv`.
+- **Telegram notification sent** ✓
+
 ## 2026-07-08 09:36 ET — MARKET-OPEN — no trades (plan was empty)
 
 - **Action:** None. Pre-market plan (`plan_date: 2026-07-08`) was empty — LRCX's ATR gate reset to 0/2 (July 7 fail), ETN cleared its ATR gate but fails technical confirmation, VRT's full diligence pass failed both its ATR gate and technical confirmation, and the Iran-ceasefire-breakdown risk-off tape reinforced staying in cash. Market-open confirmed no trades to execute.

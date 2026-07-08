@@ -3,10 +3,63 @@
 _Updated by every routine from live Alpaca data. The next agent trusts this as
 the last known state, but always re-fetches live data before trading._
 
-**Last updated:** 2026-07-08 12:33 ET (midday routine; `is_open: true`; stop audit 3/3 PASS; LLY $1,233.06 +12.759% / V $347.36 +7.352%; 0 trades — no cuts, no tightenings; Bull TRAILS SPY since inception by −0.746pp)
+**Last updated:** 2026-07-08 15:51 ET (close routine; `is_open: true`, full session (next_close 16:00 ET, not a half-day); stop audit 3/3 PASS; LLY $1,215.76 +11.177% / V $348.57 +7.726%; 0 trades — no exits; Bull TRAILS SPY since inception by −1.155pp)
 **Inception:** 2026-05-21 — starting equity $100,000.00 | SPY anchor price $739.44
 **SPY total-return anchor (post-June 18 ex-div $1.76):** **$741.20**
 **Cumulative SPY dividends since inception (quarterly tracker):** $1.76/sh (June 18 ex-div); next SPY ex-div est. ~September 2026.
+
+---
+
+## Account (close routine, 2026-07-08 ~15:51 ET)
+
+| Metric | Value |
+|--------|-------|
+| Equity | $99,847.38 |
+| Cash | $80,023.72 (80.145%) |
+| Long market value | $19,823.66 |
+| Buying power | ~$80,023.72 (cash) / $375,601.13 (margin, unused) |
+| Last equity (July 7 close) | $100,127.72 |
+
+## Open positions (close routine, 2026-07-08 ~15:51 ET)
+
+| Symbol | Qty | Avg entry | Current price | Mkt value | Unrealized P/L | % of portfolio | Trailing Stop |
+|--------|-----|-----------|--------------|-----------|----------------|----------------|---------------|
+| LLY | 10 | $1,093.534 | $1,215.76 | $12,157.60 | +$1,222.26 (+11.177%) | 12.176% | d4147484 (7sh) + 25989fb5 (3sh), HWM $1,249.45, stop $1,124.505 ✓ — buffer $91.255 (7.506%) ✓ |
+| V | 22 | $323.57 | $348.57 | $7,668.54 | +$550.00 (+7.726%) | 7.679% | 66033918 (22sh), HWM $364.21, stop $327.789 ✓ — buffer $20.781 (5.962%) ✓ |
+
+**Sector exposure (close July 8):**
+- Healthcare (LLY): $12,157.60 = 12.176% | Financials (V): $7,668.54 = 7.679% | Cash: $80,023.72 = 80.145%
+- No sector above 60% cap ✓
+
+**Close July 8 notes (~15:51 ET — Wednesday; stop audit 3/3 PASS; 0 trades; no exits; Iran-ceasefire-breakdown risk-off tape hit both holdings, LLY more than the broad market):**
+- **Live-switch guard:** `ALPACA_BASE_URL` contains "paper" ✓.
+- **Lock:** was `{}` — acquired and will be released cleanly.
+- **Control switch:** STATUS ACTIVE, no `NOTE:`/`QUERY:` to acknowledge.
+- **Market clock:** `is_open: true` at run time, `next_close: 16:00 ET` — full trading day, not a half-day.
+- **Today P/L:** $99,847.38 vs last_equity $100,127.72 = **−$280.34 (−0.28004%)**.
+- **Shock check:** −0.28% — no shock ✓ (threshold −4%).
+- **Drawdown vs HWM:** $99,847.38 vs HWM $101,384.21 = **−1.516%** — not within 2pp of the −10% circuit-breaker level (informational only; not a blocking guardrail per the 2026-06-30 note). No flag.
+- **LLY** $1,215.76 (+11.177% from entry, −1.603% today vs yesterday's $1,235.56 close): no company-specific news found — today's decline tracks the broad risk-off tape (Iran ceasefire declared over, oil spiking, Nasdaq AI names hit hardest) rather than a thesis change. Buffer 7.506% ✓. Below the +15% tighten trigger ($1,257.56). review_by 2026-07-21 not due. HOLD. Conviction A (unchanged).
+- **V** $348.57 (+7.726% from entry, −1.031% today vs yesterday's $352.20 close): mild pullback consistent with the broad risk-off session; no company-specific news. Buffer 5.962% ✓. review_by 2026-07-28 (earnings) not due. HOLD. Conviction B (unchanged).
+- **No cuts** (−7% rule): both positions are large gains, far above threshold ✓.
+- **No discretionary tightenings** (+15% trigger = LLY $1,257.56 / V $372.10): neither reached ✓.
+- **Stop audit (step 1):** 3/3 trailing stops confirmed live via `orders` (LLY 7sh `d4147484` + 3sh `25989fb5` = 10sh; V 22sh `66033918`) — matches held quantities exactly. No missing stops, nothing to recreate.
+- **Exit reconciliation (step 3):** positions unchanged from midday (LLY 10sh, V 22sh) — no fills today, closed-trades.md remains current (VST June 30 win is the latest entry), nothing new to add.
+- **Market close context (WebSearch, "stock market summary today 2026-07-08"):** Trump told the NATO summit in Ankara the US-Iran ceasefire "is over," triggering a broad risk-off session — Dow −1.1%, S&P 500 −0.5% (7,503.85), Nasdaq −1.2% on weak AI-name performance (MU −4.7%, AMD −6.5%); Brent +5.7% to $78.37/bbl, WTI +4.8% to $73.84/bbl. This directly threatens the semiconductor/AI-infra watchlist names (LRCX, ETN, VRT all already gated) but is not a thesis break for LLY (healthcare) or V (financials) — no company-specific news found for either. [thestreet.com](https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-july-8-2026), [247wallst.com](https://247wallst.com/investing/2026/07/08/stock-market-live-july-8-2026-sp-500-spy-slips-on-end-of-ceasefire/)
+- **Trades today:** 0.
+- **Since inception:** Bull −0.15262% ($99,847.38) vs SPY TR **+1.00211%** ($745.09 + $1.76 div = $746.85 vs $739.44 anchor) → **Bull TRAILS SPY by −1.155pp** (widened from midday's −0.746pp — LLY's outsized −1.6% decline outpaced SPY's own −0.36% session).
+- **Race scoreboard:** Bull −0.15% | AGGRO −8.70% (per AGGRO's last available snapshot, 2026-07-07 pre-market, equity $91,297.47 — AGGRO's own routines appear a day stale, similar to the previously-flagged weekly-review gap) | SPY +1.00% (since Bull's May 21 inception). Bull leads AGGRO by ~8.55pp.
+- **Friday watchdog:** N/A — today is Wednesday.
+- **Data-quality note:** `memory/performance.csv` and this file show no close-routine entry for 2026-07-07 (Tuesday) — the close routine appears not to have run that day. Flagged in lessons.md for human attention; not backfilled here since exact 07-07 EOD figures were not captured.
+- **Performance history:** appended today's row to `memory/performance.csv`.
+
+## Performance vs S&P 500
+
+| Period | Bull | SPY | Difference |
+|--------|------|-----|------------|
+| Inception (2026-05-21) | $100,000.00 | $739.44 | — |
+| **Close (2026-07-08)** | **$99,847.38 (−0.15262%)** | **SPY $745.09 + $1.76 div = +1.00211% TR** | **Bull TRAILS SPY −1.155pp** |
+| Midday (2026-07-08) | $99,996.24 (−0.00376%) | SPY $743.17 + $1.76 div = +0.7426% TR | Bull TRAILS SPY −0.746pp |
 
 ---
 
