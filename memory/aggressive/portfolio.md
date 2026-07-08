@@ -4269,3 +4269,35 @@ Next actionable routine: July 7 close.
 **No exits to reconcile** — the two NVDA/AVGO trims were partial (already logged at market open, not closed-trades-eligible); no full closes today.
 
 Next actionable routine: July 8 pre-market.
+
+Next actionable routine: July 8 pre-market.
+
+---
+
+## 2026-07-08 — PRE-MARKET snapshot (~8:15 AM ET, market not yet open)
+
+**No trades yet.** Two contingent 25% trims planned for NVDA and AVGO at market open — see research-log.md and trade-log.md for full detail.
+
+**Account:** Equity USD 90,810.70 | Cash USD 32,894.38 (36.22%) | Last equity (July 7 close) USD 91,381.65 | Shock check **-0.625%** (threshold -6%, not triggered).
+
+**HWM:** USD 101,144.73 (set June 4-5, unchanged). Drawdown from HWM: **-10.217%** (circuit breaker -20% — NOT triggered; 9.783pp headroom).
+
+**Positions (6 open):**
+| Symbol | Qty | Avg Entry | Sector | P/L% | Buffer to -12% | % of Portfolio |
+|---|---|---|---|---|---|---|
+| NVDA | 77 | USD 213.60 | Semiconductors | -8.703% | 3.297pp 🔴 CRITICAL | 16.54% |
+| AVGO | 19 | USD 406.23 | Semiconductors | -8.906% | 3.094pp 🔴 CRITICAL | 7.74% |
+| ETN | 34 | USD 419.54 | Industrials/power infra | -6.650% | 5.350pp ⚠️ | 14.66% |
+| GOOGL | 16 | USD 370.22 | Communication Services (hyperscaler) | -1.834% | 10.166pp | 6.40% |
+| AMZN | 36 | USD 247.991111 | Consumer Discretionary (hyperscaler) | -1.767% | 10.233pp | 9.66% |
+| VST | 52 | USD 151.47 | Utilities (nuclear power) | +1.175% | comfortable (only green position) | 8.78% |
+
+**Sector exposure:** Semiconductors (NVDA+AVGO) = 24.28%; Industrials (ETN) = 14.66%; Hyperscalers (GOOGL+AMZN) = 16.06%; Utilities (VST) = 8.78%; Cash = 36.22%. No sector near the 60% informal cap.
+
+**Stops:** 6/6 live 18% trailing stops confirmed — NVDA `e15e7753`, AVGO `ffba9bd5`, ETN `abdc232b`, GOOGL `e52a43f1`, AMZN `b55bef05`, VST `5b347be3`.
+
+**Market shock:** President Trump declared the Iran ceasefire "over" this morning at the NATO summit, following U.S. strikes on Iran Tuesday. Oil +5-6%, Nasdaq 100 futures -1.1% to -1.6% as of 6:05 AM ET, compounding an already-running multi-day chip-sector selloff (Intel -10%, AMD -8%, SOXX -6% Tuesday). See research-log.md for full detail.
+
+**Planned trades (contingent on market-open price):** 25% trim NVDA (19 of 77 shares) and 25% trim AVGO (5 of 19 shares) — gap-risk management, both theses intact. Stand-down if buffers recover above ~4pp; escalate to full exit if buffers are below 1pp at execution. No new buys — cash already at 36.22%, deliberate defensive posture given the live geopolitical shock.
+
+Next actionable routine: July 8 market open.

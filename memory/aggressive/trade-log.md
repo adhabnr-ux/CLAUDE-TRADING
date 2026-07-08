@@ -3380,3 +3380,45 @@ NVDA `e15e7753` (77sh), AVGO `ffba9bd5` (19sh), ETN `abdc232b` (34sh), GOOGL `e5
 
 ### Result
 Both planned trims executed exactly as scoped — no stand-down, no escalation. No new buys. `trades.jsonl` updated with both fills (agent: aggro). `EXECUTED:` marker appended to research-log.md.
+
+---
+
+## 2026-07-08 — PRE-MARKET (~8:15 AM ET, market closed at run time)
+
+**No trades executed — market not yet open (opens 9:30 AM ET).** Two contingent 25% trims (NVDA, AVGO) planned for market-open execution given a fresh geopolitical shock (Iran ceasefire declared "over") compounding an already-thin buffer situation. Full detail in research-log.md.
+
+### Pre-run checks
+| Check | Result |
+|---|---|
+| Live-switch guard | ALPACA_BASE_URL contains "paper" ✓ |
+| Lock | Clear (`{}`) at start; written for this run ✓ |
+| Control switch | STATUS: ACTIVE ✓ (no NOTE:, no QUERY:) |
+| Market open | false (next open 09:30 AM ET today) |
+
+### Account status
+| Field | Value |
+|---|---|
+| Equity | USD 90,810.70 |
+| Cash | USD 32,894.38 (36.22%) |
+| HWM | USD 101,144.73 |
+| Drawdown from HWM | -10.217% (circuit breaker -20% — NOT triggered) |
+| Shock check | -0.625% vs `last_equity` USD 91,381.65 — NOT triggered (threshold -6%) |
+
+### Position review (buffers to -12% cut)
+| Symbol | Entry | Current | P/L % | Buffer | Flag |
+|---|---|---|---|---|---|
+| NVDA | USD 213.60 | USD 195.01 | -8.703% | **3.297pp** | 🔴 CRITICAL (borderline) — trim planned |
+| AVGO | USD 406.23 | USD 370.05 | -8.906% | **3.094pp** | 🔴 CRITICAL (borderline) — trim planned |
+| ETN | USD 419.54 | USD 391.64 | -6.650% | 5.350pp | ⚠️ watch, no trim |
+| GOOGL | USD 370.22 | USD 363.43 | -1.834% | 10.166pp | ✓ |
+| AMZN | USD 247.991111 | USD 243.61 | -1.767% | 10.233pp | ✓ |
+| VST | USD 151.47 | USD 153.25 | +1.175% | comfortable | ✓ only green position |
+
+### Stop audit — 6/6 confirmed live ✓
+NVDA `e15e7753`, AVGO `ffba9bd5`, ETN `abdc232b`, GOOGL `e52a43f1`, AMZN `b55bef05`, VST `5b347be3` — all `status: "new"` per Alpaca open-orders list.
+
+### Market shock [search: WebSearch fallback — MiniMax M3 MCP not connected this session]
+Trump declared the Iran ceasefire "over" at the NATO summit in Ankara this morning, following U.S. strikes on Iran Tuesday in retaliation for attacks on three commercial vessels in the Strait of Hormuz. Dow futures -527pts (-1%), S&P 500 futures -0.8% to -1.1%, Nasdaq 100 futures -1.1% to -1.6% as of 6:05 AM ET. Oil (Brent) +5.3%, WTI +5%. Compounds a running multi-day chip-sector selloff (Intel -10%, AMD -8%, Applied Materials -10%, SOXX -6% Tuesday on AI-valuation/bubble-risk concerns). NVDA/AVGO thesis-relevant news: Nvidia's Kyber-delay denial and Goldman's compelling-valuation call stand (NVDA); Apple's multiyear deal and OpenAI's Jalapeno chip announcement stand, offset only by one dissenting analyst downgrade (AVGO). Neither position's drawdown is thesis-driven.
+
+### Result
+No trades yet — market not open. Both NVDA (3.297pp) and AVGO (3.094pp) buffers sit right at the proactive-trim line, and are treated as triggering the heuristic given the fresh, still-developing geopolitical shock and NVDA's review_by being tomorrow (July 9). Planned: 25% trim on each (NVDA 19 of 77 shares; AVGO 5 of 19 shares) for market-open execution, each with a stand-down contingency (buffer recovers above ~4pp → hold) and an escalation contingency (buffer <1pp at execution → full exit instead of trim). ETN flagged for a first-look price check at open despite no heuristic trigger. No new buys — cash at 36.22% is deliberate defensive posture. Control: ACTIVE. Full JSON plan in research-log.md.

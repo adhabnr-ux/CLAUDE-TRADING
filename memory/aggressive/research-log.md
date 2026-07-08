@@ -3617,3 +3617,159 @@ No new positions. Both NVDA (1.922pp buffer) and AVGO (2.060pp buffer) independe
 }
 ```
 EXECUTED: 2026-07-07T13:48:34Z (both proactive trims executed as planned, neither stood-down nor escalated — buffers held in the 1-4pp CRITICAL band at execution, not <1pp and not recovered >4pp; NVDA: canceled stop `54d7d851`, sold 26sh @ USD 192.057308, replaced 18% trailing stop `e15e7753` on remaining 77sh (stop USD 157.7598); AVGO: canceled stop `cf2956dc`, sold 6sh @ USD 367.42, replaced 18% trailing stop `ffba9bd5` on remaining 19sh (stop USD 301.5591); breaking-news gate clear for both (Nvidia denied Kyber delay report, Apple/AVGO partnership intact — no thesis-breaking news); no new buys; stop audit 6/6 live confirmed post-trim; equity USD 91,302.01 vs last_equity USD 90,674.09 = +0.693% (not a shock); cash rose from 28.15% to 36.03%)
+
+---
+
+## 2026-07-08 — PRE-MARKET (~8:15 AM ET, market closed at run time)
+
+**No trades executed — market not yet open (opens 9:30 AM ET).** Two contingent 25% trims planned (NVDA, AVGO) for market-open execution given a fresh geopolitical shock compounding an already-thin buffer situation. Full detail below.
+
+### Pre-run checks
+| Check | Result |
+|---|---|
+| Live-switch guard | ALPACA_BASE_URL contains "paper" ✓ |
+| Lock | Clear (`{}`) at start; written for this run ✓ |
+| Control switch | STATUS: ACTIVE ✓ (no NOTE:, no QUERY:) |
+| Market open | false (next open 09:30 AM ET today) |
+
+### Portfolio snapshot (live Alpaca data, ~8:12 AM ET)
+
+| Symbol | Qty | Avg Entry | Current | P/L % | -12% Trigger | Buffer |
+|---|---|---|---|---|---|---|
+| NVDA | 77 | USD 213.60 | USD 195.01 | -8.703% | USD 187.968 | **3.297pp 🔴 CRITICAL (borderline)** |
+| AVGO | 19 | USD 406.23 | USD 370.05 | -8.906% | USD 357.4824 | **3.094pp 🔴 CRITICAL (borderline)** |
+| ETN | 34 | USD 419.54 | USD 391.64 | -6.650% | USD 369.1952 | 5.350pp ⚠️ watch |
+| GOOGL | 16 | USD 370.22 | USD 363.43 | -1.834% | USD 325.7936 | 10.166pp ✓ |
+| AMZN | 36 | USD 247.991111 | USD 243.61 | -1.767% | USD 218.2322 | 10.233pp ✓ |
+| VST | 52 | USD 151.47 | USD 153.25 | +1.175% | n/a | comfortable ✓ only green position |
+
+**Account equity: USD 90,810.70.** Cash USD 32,894.38 (36.22%). `last_equity` USD 91,381.65 (July 7 close). Shock check: (90,810.70-91,381.65)/91,381.65 = **-0.625%** — NOT a shock (threshold -6%).
+**HWM USD 101,144.73 (confirmed via `history 1A 1D`, unchanged since June 4-5).** Drawdown: **-10.217%** — circuit breaker -20% NOT triggered (9.783pp headroom).
+
+### Market posture — fresh geopolitical shock this morning [search: WebSearch fallback — MiniMax M3 not connected this session]
+President Trump told the NATO summit in Ankara, Turkey this morning that the ceasefire with Iran is "over" ("I don't want to deal with them anymore"), following U.S. strikes on Iran Tuesday in retaliation for attacks on three commercial vessels in the Strait of Hormuz. As of ~6:05 AM ET: Dow futures -527 points (-1%), S&P 500 futures -0.8% to -1.1%, Nasdaq 100 futures -1.1% to -1.6%. Brent crude +5.3% to ~USD 78/bbl; WTI +5% to ~USD 74/bbl. This is a fresh, still-developing risk-off catalyst layered on top of an already-running, multi-day chip-sector-specific selloff (Samsung Q2 profit-taking despite a beat-and-raise report; Intel -10%, AMD -8%, Applied Materials -10%, SOXX -6% Tuesday on AI-valuation/bubble-risk concerns, not fundamentals). Today's ~8:12 AM ET account snapshot already shows ~1-1.6% pre-market declines across most of the book (NVDA -0.975%, ETN -1.021%, GOOGL -0.981%, AMZN -0.963%, VST -1.592% vs yesterday's close; AVGO only -0.197% so far), consistent with early pricing of both shocks — with the news only ~2 hours old at run time, there is real risk of further downside into the 9:30 AM open. Date of facts: July 8, 2026, ~6:05-8:15 AM ET (Bloomberg, CNBC, NBC News via WebSearch).
+
+### Held positions — "what changed since yesterday" (required for each)
+
+**NVDA — Thesis: INTACT. Buffer 3.297pp — right at the proactive-trim line, before this morning's shock is fully priced.**
+- *What changed:* No new NVDA-specific negative. Nvidia's Kyber-delay denial (July 7) and Goldman's "compelling" 21.7x forward-P/E call both stand. One incremental negative: reports that some Chinese firms are substituting domestic AI chips for Nvidia parts (~-2% attributed) — a slow-moving competitive-share risk in China, not a hyperscaler-demand or guidance event; does not meet the invalidation bar (no major hyperscaler relationship lost). Today's softness is macro (Iran/oil shock) plus continuation of the chip-sector rotation, not company-specific.
+- Buffer 3.297pp is the second-thinnest reading since the July 7 trim (which took it from 1.922pp to a post-trim high of ~4.2pp) — it has round-tripped back to CRITICAL in one session, before this morning's fresh geopolitical shock is even fully in the price. **Review_by July 9 is 1 trading day away.**
+- Next earnings Aug 26 — no window risk.
+- Source: TradingKey, Yahoo Finance, 247wallst.com (via WebSearch), July 7-8 2026.
+
+**AVGO — Thesis: INTACT, thesis-strengthening (Apple deal). Buffer 3.094pp — same borderline CRITICAL zone as NVDA.**
+- *What changed:* Apple's new multiyear agreement (>USD 30B, 15B+ US-made chips) and the OpenAI "Jalapeno" custom-chip announcement both stand as thesis-positive. One new mixed data point: Erste Group's Hans Engel downgraded AVGO to Hold from Buy — a single-analyst call against a 26-analyst Buy consensus (avg PT USD 501.58, implying +35.6% upside) — noted but not treated as thesis-breaking given the weight of consensus and the concrete Apple/OpenAI catalysts.
+- Buffer 3.094pp — has only partially recovered from the July 7 post-trim high (~4.29pp at that morning's open) before round-tripping back to the CRITICAL zone. This is the position's third round-trip through CRITICAL in eight sessions (June 26, July 2/3, July 7, now July 8) despite two prior 25% trims (34→25→19 shares) — the position is genuinely thin on room left to trim without shrinking the core stake materially.
+- Review_by (renewed July 6 to July 13) — not due today, 4 trading days away, but the proactive-trim heuristic is independently triggered — see below.
+- Next earnings Sep 3 — no window risk.
+- Source: Robinhood, public.com, TradingKey (via WebSearch), July 8 2026.
+
+**ETN — Thesis: INTACT.**
+- *What changed:* FTSE Russell index reconstitution (Russell 1000/Top 200/3000E Growth inclusion) is now officially implemented — a fresh, concrete passive-buying catalyst. Dana Reverse Morris Trust merger (USD 5.1B) and the VoltServer partnership both stand; Q1 record results (revenue +17% YoY, data-center orders +240% YoY in Electrical Americas) unchanged. One low-confidence data point (a scraped "-5.24% since last close" figure) surfaced in search but does not match the live Alpaca feed (-1.021% today) or any confirmed news catalyst — treated as unreliable/stale, not acted on, but ETN is flagged for a first-look price check at market open alongside NVDA/AVGO given the uncertainty.
+- Buffer 5.350pp ⚠️ — comfortable relative to the -12% trigger but the tightest ETN has been recently; industrials carry some sensitivity to the oil-price spike (input costs) though the AI-data-center-capex thesis is unrelated to oil. Review_by July 9 — 1 trading day away, not due today.
+- Next earnings Aug 4 — no window risk.
+- Source: Yahoo Finance, TradingKey (via WebSearch), July 6-8 2026.
+
+**GOOGL — Thesis: INTACT, thesis-strengthening.**
+- *What changed:* Alphabet raised FY2026 capex guidance to USD 180-190B (from prior guide) and declared a 5% dividend increase — both incremental positives confirming continued AI infrastructure commitment. Google Cloud confirmed above USD 20B/quarter (+63% YoY) for Q1. A minor, unrelated €411M investment in Proxima Fusion (fusion-energy startup) is a small strategic/ESG item, not thesis-relevant.
+- Buffer 10.166pp ✓ — comfortable. Review_by (renewed July 6 to July 21) — not due today.
+- Next earnings ~Jul 21-24 — no window risk.
+- Source: TIKR, Yahoo Finance (via WebSearch), July 8 2026.
+
+**AMZN — Thesis: INTACT, thesis-strengthening.**
+- *What changed:* Amazon is raising at least USD 25B via a bond sale specifically to fund AI infrastructure investment — a fresh, concrete confirmation of continued AWS/AI capex commitment; the stock reportedly rose on the news (debt-market access at scale, not a dilution or distress signal).
+- Buffer 10.233pp ✓ — comfortable. Review_by (renewed July 6 to July 30) — not due today.
+- Next earnings Jul 30 — no window risk.
+- Source: Yahoo Finance, Zacks (via WebSearch), July 8 2026.
+
+**VST — Thesis: INTACT. Best performer, only position in the green.**
+- *What changed:* Cogentrix acquisition (adds 5.5 GW gas generation) continues to be digested positively; GF Score 84/100 and "8.2% below GF Value" both reinforce the undervalued-quality read. No negative items. AI-driven data-center electricity demand thesis unaffected by today's oil/geopolitical shock (VST is a power generator, not an oil consumer/importer in a way that changes its PPA economics).
+- +1.175% from entry today (down from +3.057% July 7 pre-market on the broader risk-off tape, but still the only green position). Review_by July 15 — not due today.
+- Next earnings Aug 6 — no window risk.
+- Source: Yahoo Finance, GuruFocus, MarketBeat (via WebSearch), July 8 2026.
+
+### Thesis contract review (step 3b)
+No review_by deadline is formally due today (NVDA/ETN July 9 = 1 trading day away; AVGO July 13; GOOGL July 21; AMZN July 30; VST July 15). However, the **proactive trim heuristic** is treated as triggered today for both NVDA and AVGO despite readings (3.297pp, 3.094pp) sitting just above the strict 3pp line — see reasoning below. Tomorrow's pre-market (July 9) must still complete the formal NVDA and ETN review_by decisions regardless of whether today's trim executes.
+
+### Conviction-weighted holding review (step 3c)
+Today is Wednesday, not Monday — skipped per playbook (Monday-only rule). Last Monday (July 6) rated all 6 positions A; no C-rating carried forward, so the 2-consecutive-Monday-C trim rule is not in play.
+
+### Proactive trim heuristic — NVDA and AVGO, treated as triggered ahead of the strict line
+
+| Symbol | Buffer (8:12 AM) | Review_by | Trading days out | Next earnings | Heuristic triggered? |
+|---|---|---|---|---|---|
+| NVDA | 3.297pp | Jul 9 | 1 | Aug 26 | ✅ Yes (borderline + urgent review_by + live shock) |
+| AVGO | 3.094pp | Jul 13 | 4 | Sep 3 | ✅ Yes (borderline + third round-trip through CRITICAL + live shock) |
+
+Neither strict condition (buffer <3pp) is technically met at this exact 8:12 AM snapshot — both readings sit a few basis points above the line. Three factors justify treating the heuristic as triggered anyway rather than waiting for a possibly-worse open print: (1) a materially significant, still-developing geopolitical shock broke ~2 hours before this reading (Iran ceasefire declared "over," oil +5-6%, Nasdaq 100 futures -1.1% to -1.6% as of 6:05 AM, more than an hour before this snapshot) with real potential for further downside before the 9:30 AM open; (2) NVDA's review_by is tomorrow — a 1-day margin for error is too thin to defer risk management on a borderline reading; (3) AVGO has round-tripped through the CRITICAL zone three times in eight sessions despite two prior trims, showing this buffer level does not hold under the current tape. Neither buffer is below 1pp, so the sub-1pp full-exit escalation does not apply preemptively — this is a standard 25% trim on each, contingent on a fresh price re-check at market open, exactly as done July 7.
+
+**Plan (contingent, for market-open execution):**
+- **NVDA:** Trim 19 of 77 shares (~25%) at market open. **Contingency:** if NVDA opens up materially (buffer recovers above ~4pp), stand down and hold the full position. **Escalation:** if buffer has compressed below 1pp by execution time, escalate to a FULL EXIT of the remaining position instead of a 25% trim.
+- **AVGO:** Trim 5 of 19 shares (~26%) at market open. Same contingency (stand down if buffer recovers above ~4pp) and same escalation (full exit if buffer drops below 1pp at execution) apply.
+- **ETN:** No trim planned (buffer 5.350pp is above the 3pp line) — but market-open must check ETN's price FIRST alongside NVDA/AVGO given the unreliable "-5.24%" data point surfaced in research, even though it doesn't match the live feed.
+- Both NVDA/AVGO trims are gap/binary-risk management on positions whose underlying theses remain intact and, if anything, are strengthening (NVDA roadmap denial, AVGO Apple/OpenAI catalysts) — not thesis-based exits. The exit driver is macro/geopolitical, not company-specific.
+
+### Earnings window check
+| Symbol | Next Earnings | Within 2 trading days? | Action |
+|---|---|---|---|
+| NVDA | Aug 26, 2026 | No | None required |
+| AVGO | Sep 3, 2026 | No | None required |
+| ETN | Aug 4, 2026 | No | None required |
+| GOOGL | ~Jul 21-24, 2026 | No | None required |
+| AMZN | Jul 30, 2026 | No | None required |
+| VST | Aug 6, 2026 | No | None required |
+
+**No earnings window risk for any position or candidate. ✓**
+
+### New position research
+No new-position research conducted today. A morning with an actively escalating geopolitical shock (military strikes, oil +5-6%, broad equity futures down 1%+) plus two of six existing positions being actively trimmed for gap-risk management is not a session to add a seventh name — that would work directly against the risk reduction just executed. Defer any new-candidate work to a session where the tape has stabilized and the Iran situation has clarified.
+
+### Deployment check
+Cash: USD 32,894.38 = 36.22% of equity — well above the 20% mandatory-deployment-note threshold, and set to rise further once the NVDA/AVGO trims execute (~USD 5,500 additional proceeds expected, pushing cash toward ~42%). **Explicit decision: no new buys today.** Reasoning: (1) a live, still-developing geopolitical shock (Iran ceasefire ended, oil spiking) is exactly the kind of event where new risk should not be added until the situation stabilizes; (2) two of six positions are being actively de-risked this morning; (3) the broader chip-sector rotation (Intel/AMD/Applied Materials all down double digits this week) is not a constructive backdrop for any AI-adjacent entry; (4) no watchlist name cleared research this run. High cash here is deliberate defensive posture, not idleness — revisit deployment once the geopolitical situation and the chip-sector tape both stabilize.
+
+### Guardrail check for today
+
+| Rule | Limit | Status |
+|---|---|---|
+| Single position max | 35% | NVDA 16.535% (current, pre-trim) — largest position. ✓ All clear |
+| Cash floor | 2% min | 36.22% — well above minimum ✓ |
+| Weekly new positions | 8 max | 0/8 used this week ✓ |
+| Semi-group concentration (NVDA+AVGO) | informal ≤50% watch | (15,015.77+7,030.95)/90,810.70 = 24.28% pre-trim; ~18.2% post-trim ✓ |
+| Circuit breaker | >20% below HWM | -10.217% — not triggered ✓ |
+| Intraday/pre-market shock | >6% below last_equity | -0.625% — not triggered ✓ |
+| Stop audit | All positions covered | 6/6 live 18% trailing stops confirmed (status: "new") — NVDA `e15e7753`, AVGO `ffba9bd5`, ETN `abdc232b`, GOOGL `e52a43f1`, AMZN `b55bef05`, VST `5b347be3` ✓ |
+| Earnings window | No new buys within 2 days of earnings | No new buys planned |
+| Never average down | — | No adds planned anywhere; both planned trades are sells ✓ |
+
+All guardrails pass.
+
+### Result
+No new positions. NVDA (3.297pp) and AVGO (3.094pp) both round-tripped back to the CRITICAL zone one session after their July 7 trims, and both are treated as triggering the proactive-trim heuristic despite sitting just above the strict 3pp line, given a fresh, still-developing geopolitical shock (Iran ceasefire declared over, oil +5-6%, Nasdaq 100 futures -1.1% to -1.6%) with real potential for further downside before the 9:30 AM open, plus NVDA's review_by being just 1 trading day away. Planned 25% trims on each for market-open execution, each with an explicit stand-down contingency (buffer recovers above ~4pp → hold) and escalation contingency (buffer <1pp at execution → full exit instead of trim). ETN flagged for a first-look price check at open despite no heuristic trigger. No review_by contracts are formally due today (next: NVDA/ETN July 9 — tomorrow). Stop audit 6/6 live. No shock, no circuit breaker. Cash at 36.22% (pre-trim) is deliberate defensive posture given the live geopolitical shock — no new buys.
+
+## Planned trades for today (July 8, 2026 — market open)
+
+**Two contingent trims — see heuristic detail above. No new buys.**
+
+```json
+{
+  "plan_date": "2026-07-08",
+  "trades": [
+    {
+      "action": "sell",
+      "symbol": "NVDA",
+      "qty": 19,
+      "thesis": "25% proactive trim (second trim on this position, following the July 7 103-to-77-share trim) - buffer at 3.297pp pre-market, right at the proactive-trim line, ahead of a fresh geopolitical shock (Trump declared the Iran ceasefire 'over' at the NATO summit this morning, oil +5-6%, Nasdaq 100 futures -1.1% to -1.6%) that had not yet fully priced in at the 8:12 AM reading; NVDA thesis intact and unaffected (Kyber delay denied, Goldman calls valuation compelling); review_by July 9 is 1 trading day away; reduces binary gap-risk on the remaining 58-share core position. CONTINGENT: stand down if NVDA opens up materially (buffer recovers above ~4pp). ESCALATE to full exit of the remaining position if buffer is below 1pp at execution time.",
+      "invalidation": "N/A — trim of existing position",
+      "review_by": "2026-07-09"
+    },
+    {
+      "action": "sell",
+      "symbol": "AVGO",
+      "qty": 5,
+      "thesis": "25% proactive trim (third trim on this position, following July 2 and July 7) - buffer at 3.094pp pre-market, right at the proactive-trim line, on the same fresh geopolitical shock hitting NVDA; AVGO thesis intact and strengthening (Apple multiyear deal, OpenAI Jalapeno custom chip), one dissenting analyst downgrade (Erste Group) against a 26-analyst Buy consensus; review_by renewed July 6 to July 13; reduces binary gap-risk on the remaining 14-share core position. CONTINGENT: stand down if AVGO opens up materially (buffer recovers above ~4pp). ESCALATE to full exit of the remaining position if buffer is below 1pp at execution time.",
+      "invalidation": "N/A — trim of existing position",
+      "review_by": "2026-07-13"
+    }
+  ]
+}
+```
