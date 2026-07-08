@@ -3,10 +3,64 @@
 _Updated by every routine from live Alpaca data. The next agent trusts this as
 the last known state, but always re-fetches live data before trading._
 
-**Last updated:** 2026-07-08 08:07 ET (pre-market routine; `is_open: false`; stop audit 3/3 PASS; LLY $1,235.69 +13.00% / V $351.61 +8.666%; no trades planned — Iran ceasefire ended, semi/industrials selloff continues, VRT diligence completed (not promoted); Bull TRAILS SPY since inception by −1.249pp)
+**Last updated:** 2026-07-08 09:36 ET (market-open routine; `is_open: true`; stop audit 3/3 PASS; LLY $1,218.935 +11.467% / V $348.065 +7.57%; 0 trades — plan was empty; Bull TRAILS SPY since inception by −0.907pp)
 **Inception:** 2026-05-21 — starting equity $100,000.00 | SPY anchor price $739.44
 **SPY total-return anchor (post-June 18 ex-div $1.76):** **$741.20**
 **Cumulative SPY dividends since inception (quarterly tracker):** $1.76/sh (June 18 ex-div); next SPY ex-div est. ~September 2026.
+
+---
+
+## Account (market-open routine, 2026-07-08 ~09:36 ET)
+
+| Metric | Value |
+|--------|-------|
+| Equity | $99,885.82 |
+| Cash | $80,023.72 (80.12%) |
+| Long market value | $19,862.10 |
+| Buying power | ~$80,023.72 (cash) / $375,708.76 (margin, unused) |
+| Last equity (July 7 close) | $100,127.72 |
+
+## Open positions (market-open routine, 2026-07-08 ~09:36 ET)
+
+| Symbol | Qty | Avg entry | Current price | Mkt value | Unrealized P/L | % of portfolio | Trailing Stop |
+|--------|-----|-----------|--------------|-----------|----------------|----------------|---------------|
+| LLY | 10 | $1,093.534 | $1,218.935 | $12,189.35 | +$1,254.01 (+11.467%) | 12.20% | d4147484 (7sh) + 25989fb5 (3sh), HWM $1,249.45, stop $1,124.505 ✓ — buffer $94.43 (7.747%) ✓ |
+| V | 22 | $323.57 | $348.065 | $7,657.43 | +$538.89 (+7.57%) | 7.67% | 66033918 (22sh), HWM $364.21, stop $327.789 ✓ — buffer $20.276 (5.827%) ✓ |
+
+**Sector exposure (market-open July 8):**
+- Healthcare (LLY): $12,189.35 = 12.20% | Financials (V): $7,657.43 = 7.67% | Cash: $80,023.72 = 80.12%
+- No sector above 60% cap ✓
+
+**Trailing stop status (market-open July 8 — confirmed via Alpaca live orders ~09:36 ET):**
+- LLY (d4147484): 7sh — HWM $1,249.45, stop $1,124.505 ✓ (buffer $94.43 = 7.747%)
+- LLY (25989fb5): 3sh — HWM $1,249.45, stop $1,124.505 ✓
+- V (66033918): 22sh — HWM $364.21, stop $327.789 ✓ (buffer $20.276 = 5.827%)
+**Stop audit: 3/3 PASS ✓** (3 live trailing-stop orders across 2 positions; matches held quantities exactly — none missing)
+
+**Market-open July 8 notes (~09:36 ET — Wednesday; stop audit 3/3 PASS; 0 trades — today's plan was empty):**
+- **Live-switch guard:** `ALPACA_BASE_URL` contains "paper" ✓.
+- **Lock:** was `{}` — acquired and will be released cleanly.
+- **Control switch:** STATUS ACTIVE, no `NOTE:`/`QUERY:` to acknowledge.
+- **Plan check:** today's plan block (`plan_date: 2026-07-08`, `trades: []`) confirmed current — pre-market already elected zero new positions (LRCX ATR gate reset to 0/2, ETN clears ATR gate but fails technical confirmation, VRT fails both its ATR gate and technical confirmation; Iran-ceasefire-breakdown risk-off tape). No prior `EXECUTED:` line — first run today.
+- **Market clock:** `is_open: true`, `next_close: 16:00 ET` ✓.
+- **Breaking-news gate:** no planned trades — N/A.
+- **Shock check:** $99,885.82 vs last_equity $100,127.72 = **−$241.90 (−0.2417%)** — no shock ✓ (threshold −4%).
+- **LLY** $1,218.935 (+11.467% from entry, −1.346% today from yesterday's $1,235.56 close): mild pullback, no new negative news since pre-market's analyst-target-raise coverage; thesis intact. Buffer 7.747% ✓. Below the +15% tighten trigger ($1,257.56). review_by 2026-07-21 not due. HOLD. Conviction A (unchanged).
+- **V** $348.065 (+7.57% from entry, −1.174% today from yesterday's $352.20 close): mild pullback consistent with the broader risk-off tape (Iran ceasefire breakdown); no company-specific news. Buffer 5.827% ✓. review_by 2026-07-28 (earnings) not due. HOLD. Conviction B (unchanged).
+- **No cuts** (−7% rule): both positions are gains, far above threshold ✓.
+- **No discretionary tightenings** (+15% trigger = LLY $1,257.56 / V $372.10): neither reached ✓.
+- **Stop audit (step 5):** 3/3 trailing stops confirmed live via `orders open` (LLY 7sh `d4147484` + 3sh `25989fb5` = 10sh; V 22sh `66033918`) — matches held quantities exactly. No missing stops, nothing to recreate.
+- **Exit reconciliation:** no fills since pre-market (positions unchanged: LLY 10sh, V 22sh) — closed-trades.md current, nothing new required.
+- **Trades today:** 0 (plan was empty).
+- **Since inception:** Bull −0.114% ($99,885.82) vs SPY TR **+0.7933%** ($743.545 latest trade + $1.76 div = $745.305 vs $739.44 anchor) → **Bull TRAILS SPY by −0.907pp** (narrowed from pre-market's −1.249pp — SPY gave back more of yesterday's gain on the Iran-ceasefire-breakdown risk-off tape than Bull's diversified, non-tech book did).
+
+## Performance vs S&P 500
+
+| Period | Bull | SPY | Difference |
+|--------|------|-----|------------|
+| Inception (2026-05-21) | $100,000.00 | $739.44 | — |
+| **Market-open (2026-07-08)** | **$99,885.82 (−0.114%)** | **SPY $743.545 + $1.76 div = +0.7933% TR** | **Bull TRAILS SPY −0.907pp** |
+| Pre-market (2026-07-08) | $100,116.04 (+0.116%) | SPY $747.77 + $1.76 div = +1.3646% TR | Bull TRAILS SPY −1.249pp |
 
 ---
 

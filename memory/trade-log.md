@@ -5,6 +5,20 @@ The weekly new-position count is derived from this log._
 
 _Entries before 2026-06-01 archived to `memory/archive/2026-05.md` (2026-07-01 monthly housekeeping)._
 
+## 2026-07-08 09:36 ET — MARKET-OPEN — no trades (plan was empty)
+
+- **Action:** None. Pre-market plan (`plan_date: 2026-07-08`) was empty — LRCX's ATR gate reset to 0/2 (July 7 fail), ETN cleared its ATR gate but fails technical confirmation, VRT's full diligence pass failed both its ATR gate and technical confirmation, and the Iran-ceasefire-breakdown risk-off tape reinforced staying in cash. Market-open confirmed no trades to execute.
+- **Live-switch guard / lock / control:** paper ✓; lock was `{}`, acquired and released cleanly; control STATUS ACTIVE, no NOTE/QUERY.
+- **Market clock:** `is_open: true`, next_close 16:00 ET ✓.
+- **Account (~09:36 ET):** Equity $99,885.82 | Cash $80,023.72 (80.12%) | LMV $19,862.10 | last_equity $100,127.72.
+- **Shock check:** −$241.90 (−0.2417%) — no shock ✓ (threshold −4%).
+- **LLY** $1,218.935 (+11.467% from entry, −1.346% today) — HOLD, Conviction A, review_by 2026-07-21.
+- **V** $348.065 (+7.57% from entry, −1.174% today) — HOLD, Conviction B, review_by 2026-07-28.
+- **Stop audit 3/3 PASS:** LLY d4147484 (7sh) + 25989fb5 (3sh), HWM $1,249.45, stop $1,124.505, buffer 7.747% ✓; V 66033918 (22sh), HWM $364.21, stop $327.789, buffer 5.827% ✓. All quantities match held positions exactly — nothing missing.
+- **No cuts, no tightenings, no exits.** closed-trades.md unchanged — nothing to reconcile.
+- **Since inception:** Bull −0.114% ($99,885.82) vs SPY TR +0.7933% ($743.545 + $1.76 div vs $739.44 anchor) → **Bull TRAILS SPY −0.907pp**.
+- **Telegram notification sent** ✓
+
 ## 2026-07-07 09:36 ET — MARKET-OPEN — no trades (plan was empty)
 
 - **Action:** None. Pre-market plan (`plan_date: 2026-07-07`) was empty — LLY's review_by contract resolved HOLD/renewed to 2026-07-21, CEG diligence failed its technical-confirmation gate, LRCX/ETN still 1/2 through their ATR gate, VRT/NVT/MOD undiligenced. Market-open confirmed no trades to execute.
