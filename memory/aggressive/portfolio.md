@@ -4458,3 +4458,31 @@ Next actionable routine: July 8 midday.
 **No trades.** Cash at 35.94% remains deliberate defensive posture given the still-developing Iran ceasefire situation.
 
 Next actionable routine: July 8 close.
+
+---
+
+## 2026-07-09 — MARKET OPEN snapshot (~9:46 AM ET)
+
+**No trades executed.** Pre-market plan was empty (no candidates cleared research; cash held back given ambiguous overnight Iran-escalation futures reaction).
+
+**Account:** Equity USD 92,603.50 | Cash USD 32,894.38 (35.52%) | Last equity (prev close) USD 92,193.45 | Shock check **+0.445%** (threshold -6%, not triggered).
+
+**HWM:** USD 101,144.73 (unchanged). Drawdown from HWM: **-8.443%** (circuit breaker -20% — NOT triggered).
+
+**Positions (6 open, unchanged from pre-market):**
+| Symbol | Qty | Avg Entry | Sector | P/L% | Buffer to -12% | % of Portfolio |
+|---|---|---|---|---|---|---|
+| NVDA | 77 | USD 213.60 | Semiconductors | -5.517% | 6.483pp | 16.78% |
+| AVGO | 19 | USD 406.23 | Semiconductors | -1.899% | 10.101pp | 8.18% |
+| ETN | 34 | USD 419.54 | Industrials/power infra | -2.548% | 9.452pp | 15.01% |
+| GOOGL | 16 | USD 370.22 | Communication Services (hyperscaler) | -3.339% | 8.661pp | 6.18% |
+| AMZN | 36 | USD 247.991111 | Consumer Discretionary (hyperscaler) | -2.453% | 9.547pp | 9.40% |
+| VST | 52 | USD 151.47 | Utilities (nuclear power) | +4.938% | comfortable (only green position) | 8.93% |
+
+**Sector exposure:** Semiconductors (NVDA+AVGO) = 24.96%; Industrials (ETN) = 15.01%; Hyperscalers (GOOGL+AMZN) = 15.58%; Utilities (VST) = 8.93%; Cash = 35.52%. No sector near the 60% informal cap.
+
+**Stops:** 6/6 live 18% trailing stops confirmed unchanged — NVDA `e15e7753`, AVGO `ffba9bd5`, ETN `abdc232b`, GOOGL `e52a43f1`, AMZN `b55bef05`, VST `5b347be3`.
+
+**No trades.** All 6 positions healed to 6.4pp+ buffer, the best portfolio-wide reading in weeks. Cash at 35.52%, fifth consecutive session above the deployment-note threshold — redeployment decision deferred again to next pre-market pending an unambiguous market read.
+
+Next actionable routine: July 9 midday.

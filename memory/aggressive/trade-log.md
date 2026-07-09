@@ -3570,3 +3570,47 @@ No trades planned.
   "trades": []
 }
 ```
+
+---
+
+## 2026-07-09 — MARKET OPEN (~9:46 AM ET)
+
+**No trades executed.** Pre-market plan correctly called no-trade (empty plan, ambiguous Iran-escalation futures reaction).
+
+### Pre-run checks
+| Check | Result |
+|---|---|
+| Live-switch guard | ALPACA_BASE_URL contains "paper" ✓ |
+| Lock | Clear (`{}`) at start; written for this run ✓ |
+| Control switch | STATUS: ACTIVE ✓ (no NOTE:, no QUERY:) |
+| Plan date | July 9, 2026 — matches today ✓ |
+| Plan trades | [] — empty, no trades planned ✓ |
+| Idempotency | No prior EXECUTED: marker ✓ |
+
+### Market & account status
+| Check | Result |
+|---|---|
+| Market open | true (next close 4:00 PM ET) ✓ |
+| Equity | USD 92,603.50 |
+| Last equity (prev close) | USD 92,193.45 |
+| Intraday change | +0.445% (shock threshold -6% — NOT triggered ✓) |
+| Cash | USD 32,894.38 (35.52%) |
+| Cash floor (2% min) | ✓ |
+| HWM | USD 101,144.73 |
+| Drawdown from HWM | -8.443% (circuit breaker -20% — NOT triggered ✓) |
+
+### Stop audit — 6/6 positions confirmed with live 18% trailing stops ✓
+
+| Symbol | Qty | Current Price | P/L % | Stop Price | Stop Order ID | Buffer to -12% |
+|---|---|---|---|---|---|---|
+| NVDA | 77 | USD 201.8151 | -5.517% | USD 168.223 (`e15e7753`) | ✓ live | 6.483pp |
+| AVGO | 19 | USD 398.515 | -1.899% | USD 331.034 (`ffba9bd5`) | ✓ live | 10.101pp |
+| ETN | 34 | USD 408.85 | -2.548% | USD 350.9026 (`abdc232b`) | ✓ live | 9.452pp |
+| GOOGL | 16 | USD 357.86 | -3.339% | USD 308.1314 (`e52a43f1`) | ✓ live | 8.661pp |
+| AMZN | 36 | USD 241.9068 | -2.453% | USD 207.0705 (`b55bef05`) | ✓ live | 9.547pp |
+| VST | 52 | USD 158.95 | +4.938% | USD 140.507 (`5b347be3`) | ✓ live | comfortable (only green position) |
+
+**No stops missing. No stops needing recreation. All positions protected.**
+
+### Result
+No new positions opened today — plan was empty. All 6 positions at 6.4pp+ buffer to the -12% cut, unchanged in character from pre-market. No exits since last run (same 6 symbols/quantities as pre-market snapshot) — nothing to post-mortem, no `trades.jsonl` entries. Cash remains at 35.52%, fifth consecutive session above the deployment-note threshold; pre-market's flagged redeployment question (clean risk-on or risk-off read) still pending — today's tape opened mixed/modestly positive across the book, not a clean signal either way. No new-buy research was conducted this run per playbook (market-open executes the pre-market plan; it does not originate new candidates). Deployment decision deferred again to next pre-market.
