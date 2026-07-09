@@ -4516,3 +4516,47 @@ Next actionable routine: July 9 midday.
 **No trades.** Cash at 35.51% remains a deliberate defensive posture pending an unambiguous redeployment signal.
 
 Next actionable routine: July 9 close.
+
+---
+
+## 2026-07-09 — EOD CLOSE (~3:50 PM ET)
+
+**No trades executed.** All positions within guardrails; no exits today, no ledger reconciliation needed.
+
+**Control switch:** STATUS: ACTIVE. No NOTE or QUERY lines.
+
+**Account:** Equity USD 92,784.71 | Cash USD 32,894.38 (35.45%) | Last equity (prev close) USD 92,193.45 | Today's P/L **+USD 591.26 (+0.641%)**.
+
+**HWM:** USD 101,144.73 (set June 4-5, unchanged). Drawdown from HWM: **-8.265%** (circuit breaker -20% — NOT triggered; 11.735pp headroom, not within 3% of the breaker level).
+
+**Positions (6 open, unchanged from midday):**
+| Symbol | Qty | Avg Entry | Sector | P/L% | Buffer to -12% | % of Portfolio |
+|---|---|---|---|---|---|---|
+| NVDA | 77 | USD 213.60 | Semiconductors | -5.047% | 6.953pp | 16.83% |
+| AVGO | 19 | USD 406.23 | Semiconductors | -0.918% | 11.082pp | 8.24% |
+| ETN | 34 | USD 419.54 | Industrials/power infra | -3.366% | 8.634pp | 14.86% |
+| GOOGL | 16 | USD 370.22 | Communication Services (hyperscaler) | -3.166% | 8.834pp | 6.18% |
+| AMZN | 36 | USD 247.991111 | Consumer Discretionary (hyperscaler) | -0.400% | 11.600pp | 9.58% |
+| VST | 52 | USD 151.47 | Utilities (nuclear power) | +4.278% | comfortable (only green position) | 8.85% |
+
+**Sector exposure:** Semiconductors (NVDA+AVGO) = 25.07%; Industrials (ETN) = 14.86%; Hyperscalers (GOOGL+AMZN) = 15.76%; Utilities (VST) = 8.85%; Cash = 35.45%. No sector near the 60% informal cap.
+
+**Stop audit — 6/6 confirmed live 18% trailing stops, all unchanged from midday:** NVDA `e15e7753` (stop USD 168.223, HWM 205.15), AVGO `ffba9bd5` (stop USD 334.1664, HWM 407.52), ETN `abdc232b` (stop USD 350.9026, HWM 427.93), GOOGL `e52a43f1` (stop USD 308.1314, HWM 375.77), AMZN `b55bef05` (stop USD 207.0705, HWM 252.525), VST `5b347be3` (stop USD 140.507, HWM 171.35). No gaps, no recreation needed.
+
+**Reconciliation:** Positions unchanged from midday (6/6 match). No exits today — nothing to add to `closed-trades.md`, no new lesson required.
+
+**Market close context** [search: WebSearch fallback — MiniMax M3 not available in this environment]: Major indices advanced despite an overnight escalation in the Iran conflict (fresh US strikes, Iranian retaliation against Gulf targets) — S&P 500 +0.64%, Nasdaq +0.84%, Russell 2000 +1.22%. AI hardware and optical-communication names led the rally (semiconductor gauge +4%; Arm +11%), which strengthens the read-through for the book's semi exposure even though NVDA itself was roughly flat/-0.6% today while AVGO (+3.55%) captured the sector move. Supports rather than threatens current theses — no company-specific negative news for any held name.
+
+### Performance vs SPY
+| Metric | Value |
+|---|---|
+| Aggro today | +0.641% |
+| SPY today (745.32 → 751.71) | +0.858% |
+| Today vs SPY | -0.217pp |
+| Aggro since inception | -7.215% |
+| SPY since inception (754.18 → 751.71) | -0.327% |
+| Alpha since inception | **-6.888pp** |
+
+**Result:** Clean, uneventful close. No trades, no rule triggers, no thesis-contract deadlines today. Cash remains at 35.45%, the deployment-pace question deferred to the next pre-market per the standing lesson (revisit trigger, not open-ended idling).
+
+Next actionable routine: July 10 pre-market.
