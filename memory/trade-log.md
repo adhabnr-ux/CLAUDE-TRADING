@@ -4273,3 +4273,25 @@ No trades today per pre-market plan. AVGO exited automatically. Slots 2 and 3 re
 - **Sector exposure:** Healthcare (LLY) 12.291% | Financials (V) 7.624% | Cash 80.086% — no sector above 60% cap ✓.
 - **No new positions today** — cash remains well above the 25–40% target band; deliberate, not a default (see pre-market cash-drag check).
 - **Since inception:** Bull −0.07946% vs SPY TR +1.3661% → Bull TRAILS SPY by −1.446pp.
+
+## 2026-07-09 15:53 ET — CLOSE ROUTINE (no trades)
+- **Action:** None — 0 trades, no exits, no cuts, no tightenings. Both positions within all guardrails.
+- **Live-switch guard:** ALPACA_BASE_URL contains "paper" ✓
+- **Market:** OPEN at run time ✓ (next_close 16:00 ET, full trading day)
+- **Account:** Equity USD99,819.48 | Cash USD80,023.72 (80.168%) | Last equity (July 8 close) USD99,827.68
+- **Today P/L:** −USD8.20 (−0.0082%) — essentially flat.
+- **Shock check:** −0.0082% — no shock ✓ (threshold −4%)
+- **Drawdown vs HWM:** USD99,819.48 vs HWM USD101,384.21 = −1.5434% — informational only, not near the −10% level.
+- **Position review (live prices ~15:53 ET):**
+  - LLY 10sh @ USD1,214.79 (+11.088% from entry USD1,093.534, −0.086% today). Buffer USD90.285 (7.433%) ✓. review_by 2026-07-21 not due. HOLD. Conviction A.
+  - V 22sh @ USD347.63 (+7.436% from entry USD323.57, +0.029% today). Buffer USD19.841 (5.708%) ✓. review_by 2026-07-28. HOLD. Conviction B.
+- **Stop audit: 3/3 PASS ✓**
+  - LLY (d4147484): 7sh — HWM USD1,249.45, stop USD1,124.505 ✓
+  - LLY (25989fb5): 3sh — HWM USD1,249.45, stop USD1,124.505 ✓
+  - V (66033918): 22sh — HWM USD364.21, stop USD327.789 ✓
+- **Exit reconciliation:** No exits since midday. closed-trades.md current (VST June 30 latest entry) — nothing new required.
+- **Sector exposure:** Healthcare (LLY) 12.169% | Financials (V) 7.662% | Cash 80.168% — no sector above 60% cap ✓.
+- **Market close context:** Chip-sector rebound (Arm, Sandisk, Micron, AMD, Marvell all up 6.5%+) drove the broad tape higher despite fresh US-Iran airstrikes overnight; Bull's non-tech book (LLY, V) sat roughly flat — a repeat of the recurring diversification trade-off on chip-rally days.
+- **Trades today:** 0.
+- **Since inception:** Bull −0.18052% vs SPY TR +1.8224% → Bull TRAILS SPY by −2.003pp.
+- **Race scoreboard:** Bull −0.181% | AGGRO −7.356% (own June 4 inception) | SPY +1.822% (Bull's May 21 inception, TR). Bull leads AGGRO by ~7.18pp.

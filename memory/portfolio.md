@@ -3,10 +3,63 @@
 _Updated by every routine from live Alpaca data. The next agent trusts this as
 the last known state, but always re-fetches live data before trading._
 
-**Last updated:** 2026-07-09 12:34 ET (midday routine; `is_open: true`, next_close 16:00 ET; stop audit 3/3 PASS; LLY $1,202.11 +9.929% / V $347.295 +7.332%; no cuts, no tightenings, no action)
+**Last updated:** 2026-07-09 15:53 ET (close routine; `is_open: true` at run time, next_close 16:00 ET, full trading day; stop audit 3/3 PASS; LLY $1,214.79 +11.088% / V $347.63 +7.436%; no cuts, no tightenings, no exits)
 **Inception:** 2026-05-21 — starting equity $100,000.00 | SPY anchor price $739.44
 **SPY total-return anchor (post-June 18 ex-div $1.76):** **$741.20**
 **Cumulative SPY dividends since inception (quarterly tracker):** $1.76/sh (June 18 ex-div); next SPY ex-div est. ~September 2026.
+
+---
+
+## Account (close routine, 2026-07-09 ~15:53 ET)
+
+| Metric | Value |
+|--------|-------|
+| Equity | $99,819.48 |
+| Cash | $80,023.72 (80.168%) |
+| Long market value | $19,795.76 |
+| Buying power | ~$80,023.72 (cash) / $375,523.01 (margin, unused) |
+| Last equity (July 8 close) | $99,827.68 |
+
+## Open positions (close routine, 2026-07-09 ~15:53 ET)
+
+| Symbol | Qty | Avg entry | Current price | Mkt value | Unrealized P/L | % of portfolio | Trailing Stop |
+|--------|-----|-----------|--------------|-----------|----------------|----------------|---------------|
+| LLY | 10 | $1,093.534 | $1,214.79 | $12,147.90 | +$1,212.56 (+11.088%) | 12.169% | d4147484 (7sh) + 25989fb5 (3sh), HWM $1,249.45, stop $1,124.505 ✓ — buffer $90.285 (7.433%) ✓ |
+| V | 22 | $323.57 | $347.63 | $7,647.86 | +$529.32 (+7.436%) | 7.662% | 66033918 (22sh), HWM $364.21, stop $327.789 ✓ — buffer $19.841 (5.708%) ✓ |
+
+**Sector exposure (close July 9):**
+- Healthcare (LLY): $12,147.90 = 12.169% | Financials (V): $7,647.86 = 7.662% | Cash: $80,023.72 = 80.168%
+- No sector above 60% cap ✓
+
+**Close July 9 notes (~15:53 ET — Thursday; stop audit 3/3 PASS; 0 trades; no exits; fresh US-Iran airstrikes overnight, but a chip-led rebound dominated the tape — LLY/V both roughly flat, in line with the "non-tech book lags/leads opposite the chip trade" pattern):**
+- **Live-switch guard:** `ALPACA_BASE_URL` contains "paper" ✓.
+- **Lock:** was `{}` — acquired cleanly, will be released before final commit.
+- **Control switch:** STATUS ACTIVE, no `NOTE:`/`QUERY:` to acknowledge.
+- **Market clock:** `is_open: true` at run time, `next_close: 16:00 ET` — full trading day, not a half-day.
+- **Dedup check:** no existing 2026-07-09/bull row in `performance.csv` — appending fresh, not updating.
+- **Today P/L:** $99,819.48 vs last_equity $99,827.68 = **−$8.20 (−0.0082%)** — essentially flat.
+- **Shock check:** −0.0082% — no shock ✓ (threshold −4%).
+- **Drawdown vs HWM:** $99,819.48 vs HWM $101,384.21 = **−1.5434%** — not within 2pp of the −10% circuit-breaker level (informational only; not a blocking guardrail per the 2026-06-30 note). No flag.
+- **LLY** $1,214.79 (+11.088% from entry, −0.086% today vs yesterday's $1,215.83 close): essentially flat, no company-specific news found today. Buffer 7.433% ✓. Below the +15% tighten trigger ($1,257.56). review_by 2026-07-21 not due. HOLD. Conviction A (unchanged).
+- **V** $347.63 (+7.436% from entry, +0.029% today vs yesterday's $347.53 close): flat, no company-specific news. Buffer 5.708% ✓. review_by 2026-07-28 (earnings) not due. HOLD. Conviction B (unchanged).
+- **No cuts** (−7% rule): both positions are large gains, far above threshold ✓.
+- **No discretionary tightenings** (+15% trigger = LLY $1,257.56 / V $372.10): neither reached ✓.
+- **Stop audit (step 1):** 3/3 trailing stops confirmed live via `orders open` (LLY 7sh `d4147484` + 3sh `25989fb5` = 10sh; V 22sh `66033918`) — matches held quantities exactly. No missing stops, nothing to recreate.
+- **Exit reconciliation (step 3):** positions unchanged from midday (LLY 10sh, V 22sh) — no fills today, closed-trades.md remains current (VST June 30 win is the latest entry), nothing new to add.
+- **Market close context (WebSearch, "stock market summary today July 9 2026"):** A chip-sector rebound (Arm +11%, Sandisk +9.1%, Micron +7.3%, AMD +7.1%, Marvell +6.5%) powered a broad-market advance even as the US launched fresh airstrikes on Iran overnight and Tehran retaliated against Gulf targets — traders looked past the escalation as oil declined. This is a repeat of the semiconductor/AI-momentum rally pattern that has repeatedly left Bull's non-tech book (healthcare, financials) roughly flat while SPY gained — not a thesis threat to LLY or V, just the familiar diversification trade-off in the other direction. [Motley Fool](https://www.fool.com/coverage/stock-market-today/2026/07/09/stock-market-today-july-9-ai-chip-technology-stocks-rally-overcoming-ceasefire-worries/), [TheStreet](https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-july-9-2026)
+- **Trades today:** 0.
+- **Since inception:** Bull −0.18052% ($99,819.48) vs SPY TR **+1.8224%** ($751.155 + $1.76 div = $752.915 vs $739.44 anchor) → **Bull TRAILS SPY by −2.003pp** (widened slightly from midday's −2.049pp basis but on a like-for-like close-to-close basis, widened from July 8 close's −1.155pp as SPY's chip-led rally continued while LLY/V sat flat).
+- **Race scoreboard:** Bull −0.181% | AGGRO −7.356% (2026-07-09 midday snapshot, equity $92,644.39, since its own June 4 inception) | SPY +1.822% (since Bull's May 21 inception, total return). Bull leads AGGRO by ~7.18pp.
+- **Friday watchdog:** N/A — today is Thursday.
+- **Performance history:** appended today's row to `memory/performance.csv`.
+
+## Performance vs S&P 500
+
+| Period | Bull | SPY | Difference |
+|--------|------|-----|------------|
+| Inception (2026-05-21) | $100,000.00 | $739.44 | — |
+| **Close (2026-07-09)** | **$99,819.48 (−0.18052%)** | **SPY $751.155 + $1.76 div = +1.8224% TR** | **Bull TRAILS SPY −2.003pp** |
+| Midday (2026-07-09) | $99,685.31 (−0.31469%) | SPY $750.50 + $1.76 div = +1.7339% TR | Bull TRAILS SPY −2.049pp |
 
 ---
 
