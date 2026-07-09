@@ -7,6 +7,85 @@ _Entries before 2026-06-01 archived to `memory/archive/2026-05.md` (2026-07-01 m
 
 ---
 
+## 2026-07-09 — Pre-market research (~08:07 ET, Thursday)
+
+### Live-switch guard / Lock / Control switch
+- `ALPACA_BASE_URL` contains "paper" ✓.
+- `memory/_lock` was `{}` (empty) — no other routine active. Lock written for this run, released before commit.
+- `memory/control.md` STATUS: **ACTIVE**. No `NOTE:`/`QUERY:` line to acknowledge.
+
+### Account sync (live Alpaca, ~08:07 ET)
+- Equity **$99,730.28** | Cash **$80,023.72 (80.24%)** | Long market value $19,706.56 | Last equity (July 8 close) $99,827.68.
+- **Shock check:** ($99,730.28 − $99,827.68) / $99,827.68 = **−0.0975%** — no shock ✓ (threshold −4%).
+- **Drawdown note (informational only):** $99,730.28 vs HWM $101,384.21 = **−1.631%** — not a blocking guardrail (removed 2026-06-30).
+
+### Positions & stop audit
+| Symbol | Qty | Avg entry | Current | Mkt value | Unrealized P/L | % port | Stop |
+|---|---|---|---|---|---|---|---|
+| LLY | 10 | $1,093.534 | $1,208.00 | $12,080.00 | +$1,144.66 (+10.468%) | 12.113% | d4147484 (7sh) + 25989fb5 (3sh), HWM $1,249.45, stop $1,124.505 ✓ buffer 6.913% |
+| V | 22 | $323.57 | $346.662 | $7,626.564 | +$508.024 (+7.137%) | 7.648% | 66033918 (22sh), HWM $364.21, stop $327.789 ✓ buffer 5.443% |
+
+**Stop audit: 3/3 PASS ✓** (matches held quantities exactly; no missing stops — order IDs unchanged from July 8, all still `status: new`/live).
+**Sector exposure:** Healthcare (LLY) 12.113% | Financials (V) 7.648% | Cash 80.24% — no sector above 60% cap ✓.
+
+### Thesis contract review
+- **LLY** review_by 2026-07-21 — not due.
+- **V** review_by 2026-07-28 — not due.
+
+### Market posture (WebSearch) — Iran conflict escalates again: fresh US airstrikes
+- The US launched **fresh airstrikes against Iran early Thursday** — over 80 targets hit (air defense, command/control, radar, anti-ship missile capability, small boats) — and Tehran responded by targeting Gulf countries. This is a real escalation beyond yesterday's "ceasefire is over" statement. [bloomberg.com, aljazeera.com]
+- Oil: choppy. Brent/WTI initially popped (+1%) then gave it back intraday (Brent $76.99, WTI $72.64 by mid-morning GMT) — still **well below the $100 halt-trigger**. Some war-risk underwriters are advising shippers to pause Strait of Hormuz voyages / reviewing policy terms after Iran's renewed vessel attacks. [reuters/bloomberg via search]
+- 10yr yield **4.587–4.59%**, a 4-week high, still **below the 4.75% halt trigger** but trending the wrong way on inflation/oil-driven rate concern.
+- S&P futures signal is genuinely mixed across sources this morning (one read −0.8% on yield/inflation jitters, another +0.2%, Polymarket implying 85% odds of a higher open) — net take: elevated geopolitical/rate risk, no halt triggered, but not a "clear to deploy" morning either. [thestreet.com, cnbc.com, cnn.com]
+
+### Held-position research — "what changed since yesterday"
+- **LLY** ($1,208.00, +10.468% from entry, −0.638% since July 8's $1,215.76 close): No new negative news. FY26 revenue guidance raised to $82–85B (already-known catalyst, reconfirmed in today's coverage); JPMorgan's top-pick call ($1,400 PT) and RBC's raise to $1,500 (from $1,250, Outperform) both stand ahead of Q2 preview. Healthcare broadly flagged today as the top 52-week-high sector (defensive rotation heading into a choppy back half of summer) — LLY named as a leader. Pullback this morning tracks the broad risk-off tone from the Iran escalation, not a thesis change. Next earnings confirmed **Aug 5, 2026** — outside the 2-day window. [fool.com, tipranks.com, trefis.com]
+- **V** ($346.662, +7.137% from entry, −0.547% since July 8's $348.57 close): No negative news. Visa General Counsel Julie Rottenberg sold 2,027 shares (~$729,720) July 2 — a routine-sized insider sale, not flagged as bearish (no 10b5-1 status confirmed either way, but the dollar amount is small relative to the CFO's May sale already vetted as a 10b5-1 plan; not thesis-relevant). Barclays Overweight, Wells Fargo Buy, Baird PT $412 all stand. Thesis (payments infrastructure, Great Wealth Transfer tailwind) intact. Next earnings confirmed **July 28, 2026** — outside the 2-day window. [marketscreener.com, investor.visa.com]
+
+### Earnings-window rule
+- Neither held name reports within the next 2 trading days (LLY Aug 5, V July 28). No restriction on holding; no buy candidates near earnings today.
+
+### Watchlist — ATR gates (LRCX / ETN) — both improving
+- **LRCX:** July 8 session H $337.20 / L $323.49 / C $333.19 = **4.116% ATR** ✓ clears — first clean session after the July 7 reset. **Gate counter 1/2.** Notably, the ~50-day MA is now **$325.40** and the July 8 close ($333.19) is **+2.39% above it** — if this holds, LRCX would also clear entry signal #4 (technical confirmation) once the ATR gate finishes. Needs one more ≤5% ATR session to be eligible. Today is also the date strategy.md flagged as the 4-week watchlist-staleness line for LRCX — per the existing plan, the purge/keep decision stays with tomorrow's weekly review, not this run; noting the gate is now trending toward clearing, not just stale.
+- **ETN:** July 8 session H $401.60 / L $390.70 / C $399.71 = **2.727% ATR** ✓ clears (3rd consecutive clean session; gate has been ≥2/2 since July 7). Technical confirmation still fails but is narrowing: ~50-day MA **$405.95**, July 8 close **−1.537% below it** (was −2.31% July 7). **Not yet eligible** — needs to close back above ~$405.95.
+
+### Daily candidate diligence (step 6b) — NVT full pre-trade pass
+Per the 2026-07-08 note flagging NVT/MOD as undiligenced, ran the full diligence checklist on NVT (nVent Electric) today:
+- **Earnings/guidance:** Q1 2026 net sales $1.242B (+53% reported, +34% organic) — record quarter, backlog raised to $2.6B. FY26 guidance raised: reported sales growth 26–28%, organic 21–23%, GAAP EPS $3.68–3.78, **adjusted EPS $4.45–4.55** (up from FY25's $4.00–4.15, i.e. mid-teens+ growth off an already-raised base). Growth broad-based across verticals, led by data-center gray/white-space demand. Next earnings confirmed **July 31, 2026** (not an issue today). [stocktitan.net, tikr.com]
+- **Balance sheet:** Shareholder equity $3.6B, total debt $1.6B (D/E 43.9%), net leverage 1.5x, interest coverage 6.7x (EBIT $573.9M) — healthy debt-service capacity. Cash position is thin ($126.9M) relative to debt, but FCF is strong and improving: Q1 FCF $54M (+21% YoY), FY26 guide is 90–95% FCF conversion of adjusted net income. No balance-sheet red flags. [simplywall.st, macrotrends]
+- **Valuation:** Current price $154.87 (July 8 close) vs adjusted-EPS-midpoint $4.50 → forward P/E ~34.4x (rich in absolute terms, typical for a 25%+-growth industrial). **PEG 1.18** (comfortably under the 2.5 gate) — GuruFocus ranks it better than ~70% of Industrial Products peers on this metric. Average analyst PT $176.64 (19 analysts; several raised post-earnings: UBS $200, Barclays/Evercore $190, Citi/Deutsche $187) — ~14% implied upside from the live $154.87 print. [gurufocus.com, financecharts]
+- **Entry signals 1–3** (earnings momentum, catalyst — data-center buildout, valuation) **pass**.
+- **Technical confirmation (entry signal #4) — FAILS:** 50-day MA (computed from 50 sessions of Alpaca IEX daily bars, Apr 27–Jul 8) = **$164.44**; July 8 close $154.87 is **−5.82% below it** — real, not a shallow dip.
+- **ATR gate — clears:** July 8 session H $155.25 / L $150.58 / C $154.87 = **3.015% ATR**, under the 5% cap.
+- **Verdict:** 3 of 4 checked entry signals clear (earnings momentum, catalyst, valuation) but technical confirmation fails outright — same pattern as LRCX/ETN/VRT/CEG this cycle (fundamentally sound AI-infra-adjacent names caught in the broader semi/AI-capex-scare pullback of the past 2 weeks). **NVT is NOT promoted to a buy candidate today.** What's still missing: needs to reclaim its 50-day MA (or show a clear reversal/basing pattern) before re-consideration. Diligence on file — a future re-check only needs to re-verify price vs. the 50-day MA. MOD remains undiligenced for fundamentals (quick ATR check today: July 8 session ATR = (236.115−221.52)/235.49 = **6.198%**, fails the gate outright — next candidate for a future full pass).
+
+### Fresh candidate scan (Thursday — step 4) — 2 new names added to watchlist, research-only
+- **ABBV (AbbVie)** — Healthcare. Hit a fresh 52-week high ($261.07) July 2 on a Trump-administration proposal to reform the 340B Drug Pricing Program (shifts margin back to drug developers, away from hospital intermediaries) — a genuine regulatory tailwind, not a one-off pop; the whole pharma sector (PPH ETF) rallied on it. Separately, AbbVie announced a **$10.9B acquisition of Apogee Therapeutics** to expand its immunology pipeline, well-received by the market. Fits the healthcare-secular-growth tailwind directly. [gurufocus.com, fool.com]
+- **CAT (Caterpillar)** — Industrials / real-economy rotation. Q1 2026 revenue $17.42B and adjusted EPS $5.54 beat, full-year sales outlook raised; board raised the quarterly dividend 8% (to $1.63/sh, effective Aug 19); Zacks Rank #1 (Strong Buy), positive Earnings ESP ahead of the Aug 4 report; recent Skycatch and RPMGlobal acquisitions. Headwind to note: management guided **$2.2–2.4B in 2026 tariff costs**, compressing Resource Industries margins ~500bp in Q1 — a real cost overhang to weigh before any entry. Fits the real-economy-rotation tailwind (industrials +16% YTD, Dow at record highs on cyclical-blue-chip strength). [yahoo finance, trefis.com]
+- Both added to `memory/strategy.md` watchlist as **research-only** — neither has been through the step-6b diligence/ATR/technical-confirmation gate yet; next candidates in the diligence queue after MOD.
+
+### Cash-drag check
+- Cash 80.24% vs. the strategy's 25–40% target band for a 2-position book — well above target, elevated 7+ weeks. No qualifying entry clears today: LRCX is 1/2 through its ATR gate (though now also above its 50-day MA — improving); ETN's ATR gate is clear but technical confirmation still fails (narrowing, −1.54% below MA); NVT's fresh diligence pass today clears fundamentals/valuation but fails technical confirmation (−5.82% below MA). Combined with a genuine fresh escalation in the Iran conflict (new US airstrikes, Tehran retaliating against Gulf shipping) overnight, staying in cash is the correct, deliberate call today — not a default.
+
+### Since inception
+- Bull −0.26972% ($99,730.28) vs SPY TR ($745.28 July 8 close + $1.76 div = $747.04 vs $739.44 anchor) = +1.02776% → **Bull TRAILS SPY by −1.297pp** (widened slightly from July 8 close's −1.155pp; LLY/V both pulled back modestly pre-market on the fresh Iran-escalation risk-off tone while SPY's marked price is unchanged since its own close).
+
+### Tooling note
+- `./scripts/alpaca.sh bars <SYM> <TF> <LIMIT>` (limit-only, no explicit start/end) returned `{"bars":null,...}` for every symbol tried today (SPY, LLY, LRCX, ETN, NVT, MOD) despite `snapshot` and `account`/`positions` working normally. Root cause: the endpoint needs an explicit date range before market open on a fresh session; a direct query with `&start=...&end=...&feed=iex` returns bars correctly. Worked around it directly via curl for all ATR/50-day-MA calculations in this run. Flagging so a future routine doesn't waste time assuming the data feed itself is down — the account/trading endpoints are fine, only the limit-only `bars` shorthand is affected.
+
+### Planned trades for today
+
+No trades planned. LRCX is 1/2 through its ATR gate; ETN's ATR gate is clear but technical confirmation still fails; NVT's full diligence pass today fails technical confirmation despite passing fundamentals/valuation. Combined with a fresh escalation in the Iran conflict (new US airstrikes overnight), no new positions today. Two new research-only candidates (ABBV, CAT) added to the watchlist from today's Thursday fresh-candidate scan.
+
+```json
+{
+  "plan_date": "2026-07-09",
+  "trades": []
+}
+```
+
+---
+
 ## 2026-07-08 — Pre-market research (~08:07 ET, Wednesday)
 
 ### Live-switch guard / Lock / Control switch

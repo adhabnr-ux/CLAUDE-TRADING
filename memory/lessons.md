@@ -5,6 +5,9 @@ well, fails, or surprises you. Keep the highest-value lessons near the top._
 
 ## Trading lessons (recent)
 
+### 2026-07-09 (pre-market) — `./scripts/alpaca.sh bars <SYM> <TF> <LIMIT>` returns empty before market open on a fresh session
+Calling `bars` with only a limit (no explicit `start`/`end`) returned `{"bars":null,...}` for every symbol tried (SPY, LLY, LRCX, ETN, NVT, MOD) this morning, while `snapshot`, `account`, and `positions` all worked normally. A direct query with explicit `&start=YYYY-MM-DD&end=YYYY-MM-DD&feed=iex` returns bars correctly. Workaround used this run: curl the data endpoint directly with an explicit date range for any ATR/50-day-MA calculation needed before the day's own bar exists. Future routines needing `bars` pre-open (or hitting an empty response at any time) should try an explicit start/end range before concluding the data feed itself is down.
+
 ### 2026-07-08 (close) — 2026-07-07 close routine appears to have never run
 `memory/portfolio.md` and `memory/performance.csv` jump from July 7 market-open directly to July 8 pre-market with no midday or close entry for July 7 in between — the same day AGGRO's own snapshots also went stale (last AGGRO update is 2026-07-07 pre-market). No EOD figures, stop audit, or exit reconciliation exist for that session. This is a ledger-continuity gap distinct from the previously-flagged trades.jsonl defect: it means an entire day's guardrail checks (shock check, −7% cut rule, stop audit) were never performed and never journaled, not just under-logged. Since exact 07-07 EOD numbers were never captured live, this run does not attempt to reconstruct them — flagging for human attention on routine-scheduling reliability. Future routines: if a gap like this appears again, note it explicitly rather than silently continuing, since a missed close means guardrails went unchecked for a full session.
 

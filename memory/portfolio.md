@@ -3,10 +3,68 @@
 _Updated by every routine from live Alpaca data. The next agent trusts this as
 the last known state, but always re-fetches live data before trading._
 
-**Last updated:** 2026-07-08 15:51 ET (close routine; `is_open: true`, full session (next_close 16:00 ET, not a half-day); stop audit 3/3 PASS; LLY $1,215.76 +11.177% / V $348.57 +7.726%; 0 trades — no exits; Bull TRAILS SPY since inception by −1.155pp)
+**Last updated:** 2026-07-09 08:07 ET (pre-market routine; `is_open: false`, next_open 09:30 ET; stop audit 3/3 PASS; LLY $1,208.00 +10.468% / V $346.662 +7.137%; 0 trades planned — market not yet open; Bull TRAILS SPY since inception by −1.297pp)
 **Inception:** 2026-05-21 — starting equity $100,000.00 | SPY anchor price $739.44
 **SPY total-return anchor (post-June 18 ex-div $1.76):** **$741.20**
 **Cumulative SPY dividends since inception (quarterly tracker):** $1.76/sh (June 18 ex-div); next SPY ex-div est. ~September 2026.
+
+---
+
+## Account (pre-market routine, 2026-07-09 ~08:07 ET)
+
+| Metric | Value |
+|--------|-------|
+| Equity | $99,730.28 |
+| Cash | $80,023.72 (80.24%) |
+| Long market value | $19,706.56 |
+| Buying power | ~$80,023.72 (cash) / $375,273.26 (margin, unused) |
+| Last equity (July 8 close) | $99,827.68 |
+
+## Open positions (pre-market routine, 2026-07-09 ~08:07 ET)
+
+| Symbol | Qty | Avg entry | Current price | Mkt value | Unrealized P/L | % of portfolio | Trailing Stop |
+|--------|-----|-----------|--------------|-----------|----------------|----------------|---------------|
+| LLY | 10 | $1,093.534 | $1,208.00 | $12,080.00 | +$1,144.66 (+10.468%) | 12.113% | d4147484 (7sh) + 25989fb5 (3sh), HWM $1,249.45, stop $1,124.505 ✓ — buffer $83.495 (6.913%) ✓ |
+| V | 22 | $323.57 | $346.662 | $7,626.564 | +$508.024 (+7.137%) | 7.648% | 66033918 (22sh), HWM $364.21, stop $327.789 ✓ — buffer $18.873 (5.443%) ✓ |
+
+**Sector exposure (pre-market July 9):**
+- Healthcare (LLY): $12,080.00 = 12.113% | Financials (V): $7,626.564 = 7.648% | Cash: $80,023.72 = 80.24%
+- No sector above 60% cap ✓
+
+**Trailing stop status (pre-market July 9 — confirmed via Alpaca live orders ~08:07 ET):**
+- LLY (d4147484): 7sh — HWM $1,249.45, stop $1,124.505 ✓ (buffer 6.913%)
+- LLY (25989fb5): 3sh — HWM $1,249.45, stop $1,124.505 ✓
+- V (66033918): 22sh — HWM $364.21, stop $327.789 ✓ (buffer 5.443%)
+**Stop audit: 3/3 PASS ✓** (3 live trailing-stop orders across 2 positions; matches held quantities exactly — none missing)
+
+**Pre-market July 9 notes (~08:07 ET — Thursday; stop audit 3/3 PASS; no trades, market not yet open):**
+- **Live-switch guard:** `ALPACA_BASE_URL` contains "paper" ✓.
+- **Lock:** was `{}` — acquired and will be released cleanly.
+- **Control switch:** STATUS ACTIVE, no `NOTE:`/`QUERY:` to acknowledge.
+- **Shock check:** $99,730.28 vs last_equity $99,827.68 = **−$97.40 (−0.0975%)** — no shock ✓ (threshold −4%).
+- **Drawdown note (informational only):** $99,730.28 vs HWM $101,384.21 = **−1.631%** — not a blocking guardrail (removed 2026-06-30).
+- **Macro escalation — fresh US airstrikes on Iran:** The US launched new strikes overnight (80+ targets: air defense, C2, radar, anti-ship capability), Tehran retaliated against Gulf countries. Oil choppy but still well below the USD 100 halt-trigger (Brent ~$77-79, WTI ~$72-74); 10yr yield 4.587-4.59% (4-week high, still below the 4.75% halt trigger). No halt triggered, but reinforces no new positions today.
+- **LLY** $1,208.00 (+10.468% from entry, −0.638% since July 8 close): no negative news; FY26 revenue guidance raised to USD 82-85B, JPMorgan top-pick (PT USD 1,400), RBC PT raised to USD 1,500; healthcare flagged today as the top 52-week-high sector. Buffer 6.913% ✓. review_by 2026-07-21 not due. HOLD. Conviction A (unchanged).
+- **V** $346.662 (+7.137% from entry, −0.547% since July 8 close): no negative news; Barclays Overweight, Wells Fargo Buy, Baird PT USD 412 stand; General Counsel's July 2 Form 4 sale (USD 729,720) is small and not flagged as thesis-relevant. Buffer 5.443% ✓. review_by 2026-07-28 (earnings) not due. HOLD. Conviction B (unchanged).
+- **Earnings window check:** LLY next earnings confirmed Aug 5, 2026 (>2 trading days away). V next earnings confirmed July 28, 2026 (>2 trading days away). Neither held name is within the earnings window today.
+- **No cuts** (−7% rule): both positions are large gains, far above threshold ✓.
+- **No discretionary tightenings** (+15% trigger = LLY $1,257.56 / V $372.10): neither reached ✓.
+- **Stop audit (step 5):** 3/3 trailing stops confirmed live via `orders open` (LLY 7sh `d4147484` + 3sh `25989fb5` = 10sh; V 22sh `66033918`) — matches held quantities exactly. No missing stops, nothing to recreate.
+- **Exit reconciliation:** no fills since July 8 close — closed-trades.md current, nothing new required.
+- **LRCX/ETN ATR gates:** LRCX cleared July 8 (4.116%) — gate counter 1/2, and now trading +2.39% ABOVE its ~50-day MA ($325.40) — improving on both fronts. ETN cleared July 8 (2.727%, 3rd consecutive clean session) but technical confirmation still fails, narrowing to −1.537% below its ~50-day MA ($405.95, was −2.31% July 7). Neither eligible today.
+- **NVT full pre-trade diligence pass (step 6b):** Fundamentals/valuation/catalyst all pass (FY26 adj. EPS guide raised to USD 4.45-4.55, PEG 1.18, backlog USD 2.6B, data-center demand). **Fails entry signal #4 (technical confirmation): July 8 close USD 154.87 is −5.82% below its ~50-day MA (USD 164.44).** ATR gate clears (3.015%). Not promoted — needs to reclaim its 50-day MA. MOD ATR-only checked today (6.198%, fails) — still needs a full diligence pass.
+- **Fresh candidate scan (Thursday):** Added **ABBV** (AbbVie — 52-week high on 340B drug-pricing reform tailwind + USD 10.9B Apogee Therapeutics acquisition) and **CAT** (Caterpillar — Q1 beat/raise, dividend hike, real-economy-rotation tailwind; note USD 2.2-2.4B 2026 tariff-cost headwind) to the watchlist as research-only. Neither diligenced yet.
+- **Cash-drag check:** Cash 80.24%, well above the 25-40% target band, elevated 7+ weeks. No qualifying entry today: LRCX 1/2 through its ATR gate, ETN's technical-confirmation gap narrowing but still failing, NVT's fresh diligence fails technical confirmation despite passing fundamentals. Combined with the fresh Iran-airstrike escalation, staying in cash is the correct, deliberate call today.
+- **Trades today:** 0 planned (market not yet open; plan below is empty).
+- **Since inception:** Bull −0.26972% ($99,730.28) vs SPY TR **+1.02776%** ($745.28 July 8 close + $1.76 div vs $739.44 anchor) → **Bull TRAILS SPY by −1.297pp** (widened slightly from July 8 close's −1.155pp; LLY/V both pulled back modestly pre-market on the fresh Iran-escalation risk-off tone while SPY's marked price is unchanged since its own close).
+
+## Performance vs S&P 500
+
+| Period | Bull | SPY | Difference |
+|--------|------|-----|------------|
+| Inception (2026-05-21) | $100,000.00 | $739.44 | — |
+| **Pre-market (2026-07-09)** | **$99,730.28 (−0.26972%)** | **SPY $745.28 + $1.76 div = +1.02776% TR** | **Bull TRAILS SPY −1.297pp** |
+| Close (2026-07-08) | $99,847.38 (−0.15262%) | SPY $745.09 + $1.76 div = +1.00211% TR | Bull TRAILS SPY −1.155pp |
 
 ---
 
