@@ -4241,3 +4241,20 @@ No trades today per pre-market plan. AVGO exited automatically. Slots 2 and 3 re
 - **Sector exposure:** Healthcare (LLY) USD12,330.60 = 12.33% | Financials (V) USD7,641.92 = 7.64% | Cash USD80,023.72 = 80.03% — no sector above 60% cap ✓.
 - **No new positions today** — midday routine manages existing risk only, per playbook.
 - **Trades today:** 0.
+
+## 2026-07-09 09:36 ET — MARKET-OPEN ROUTINE (no trades)
+- **Action:** None — today's plan (`plan_date: 2026-07-09`, `trades: []`) confirmed current; pre-market found zero qualifying setups (LRCX 1/2 through ATR gate, ETN ATR gate clear but technical confirmation fails, NVT full diligence pass fails technical confirmation despite passing fundamentals/valuation; fresh Iran-airstrike escalation overnight).
+- **Live-switch guard:** ALPACA_BASE_URL contains "paper" ✓
+- **Market:** OPEN ✓ (is_open: true, 09:36 ET, next_close 16:00 ET)
+- **Shock check:** equity USD99,920.54 vs last_equity USD99,827.68 = +USD92.86 (+0.093%) — no shock ✓ (threshold −4%)
+- **Position review (live prices ~09:36 ET):**
+  - LLY 10sh @ USD1,228.18 (+12.313% from entry USD1,093.534, +1.016% today). Stop HWM USD1,249.45, stop USD1,124.505, buffer USD103.675 (8.442%) ✓. review_by 2026-07-21 not due. HOLD. Conviction A.
+  - V 22sh @ USD346.25 (+7.009% from entry USD323.57, −0.368% today). Stop HWM USD364.21, stop USD327.789, buffer USD18.461 (5.331%) ✓. Thesis intact. HOLD. Conviction B. review_by 2026-07-28.
+- **Stop audit: 3/3 PASS ✓**
+  - LLY (d4147484): 7sh — HWM USD1,249.45, stop USD1,124.505 ✓
+  - LLY (25989fb5): 3sh — HWM USD1,249.45, stop USD1,124.505 ✓
+  - V (66033918): 22sh — HWM USD364.21, stop USD327.789 ✓
+- **Exit reconciliation:** No exits since pre-market. Both positions intact. closed-trades.md current ✓.
+- **Sector exposure:** Healthcare (LLY) 12.291% | Financials (V) 7.624% | Cash 80.086% — no sector above 60% cap ✓.
+- **No new positions today** — cash remains well above the 25–40% target band; deliberate, not a default (see pre-market cash-drag check).
+- **Since inception:** Bull −0.07946% vs SPY TR +1.3661% → Bull TRAILS SPY by −1.446pp.
