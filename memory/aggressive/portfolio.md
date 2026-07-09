@@ -6,7 +6,49 @@ but always re-fetches live data before trading._
 
 ---
 
-## Last snapshot — 2026-07-08 EOD CLOSE (~4:10 PM ET, post-close)
+## Last snapshot — 2026-07-09 PRE-MARKET (~8:15 AM ET, market closed at run time)
+
+| Field | Value |
+|---|---|
+| Equity | USD 92,758.68 |
+| Cash | USD 32,894.38 (35.46%) |
+| Long market value | USD 59,864.30 |
+| Open positions | 6 |
+| last_equity (July 8 EOD close) | USD 92,193.45 |
+| Shock check | +0.613% — NOT triggered (threshold -6%) |
+| HWM | USD 101,144.73 (memory-carried; cross-checked via `history 1M 1D`, trailing-30-day max USD 97,144.23 well below — no update needed) |
+| Drawdown from HWM | **-8.293%** (circuit breaker -20% — NOT triggered; 11.707pp headroom) |
+
+**Market status:** closed (next open 2026-07-09 09:30 ET; next close 2026-07-09 16:00 ET).
+
+**Open positions:**
+
+| Symbol | Qty | Avg Entry | Price | P/L % | -12% Cut Trigger | Buffer | % of Portfolio | Sector |
+|---|---|---|---|---|---|---|---|---|
+| NVDA | 77 | USD 213.60 | USD 205.8004 | -3.652% | USD 187.968 | 8.348pp | 17.08% | Semiconductors |
+| AVGO | 19 | USD 406.23 | USD 403.59 | -0.650% | USD 357.4824 | 11.350pp | 8.27% | Semiconductors |
+| ETN | 34 | USD 419.54 | USD 407.54 | -2.860% | USD 369.1952 | 9.140pp | 14.94% | Industrials/power infra |
+| GOOGL | 16 | USD 370.22 | USD 357.6936 | -3.384% | USD 325.7936 | 8.616pp | 6.17% | Communication Services (hyperscaler) |
+| AMZN | 36 | USD 247.991111 | USD 240.50 | -3.021% | USD 218.2322 | 8.979pp | 9.33% | Consumer Discretionary (hyperscaler) |
+| VST | 52 | USD 151.47 | USD 156.00 | +2.991% | n/a | comfortable | 8.75% | Utilities (nuclear power) |
+
+**Sector exposure:** Semiconductors (NVDA+AVGO) = USD 23,514.84 / USD 92,758.68 = **25.35%**; Industrials (ETN) = 14.94%; Hyperscalers (GOOGL+AMZN) = 15.50%; Utilities (VST) = 8.75%; Cash = 35.46%. No sector near the 60% informal cap.
+
+**All 6 positions above 8.3pp buffer** — the first pre-market read in weeks with none in the CRITICAL (<3pp) or WATCH (<6pp) zone. Both July 7-8 contingent trims stood down and the book has fully healed.
+
+**Thesis contracts due today — both renewed HOLD:** NVDA (8.348pp buffer, review_by → 2026-07-23) and ETN (9.140pp buffer, review_by → 2026-07-23). Full reasoning in research-log.md.
+
+**Stops:** 6/6 live 18% trailing stops confirmed unchanged — NVDA `e15e7753`, AVGO `ffba9bd5`, ETN `abdc232b`, GOOGL `e52a43f1`, AMZN `b55bef05`, VST `5b347be3`.
+
+**Market context [search: WebSearch fallback — mcp__minimax__web_search not found this session]:** A third, more serious Iran escalation overnight — actual US airstrikes on Iran and Iranian retaliation against Gulf countries, not just statements. Pre-market futures reaction is genuinely mixed across sources (some positive on improving tech risk sentiment, others negative on a 4-week-high 10-year yield and inflation jitters).
+
+**No trades planned today.** Cash remains at 35.46% for a fourth consecutive session — held back specifically due to the ambiguous, cross-current pre-market reaction to a real overnight escalation (distinct from the clean-reversal pattern of the prior two sessions). No watchlist name cleared research. Flagged for redeployment consideration once the tape gives an unambiguous read.
+
+**Result:** No trades executed, none planned. All 6 positions within guardrails, all buffers healthy. Stop audit 6/6 live. Drawdown from HWM (-8.293%) not within 3pp of the circuit breaker. Two thesis contracts (NVDA, ETN) renewed as HOLD.
+
+---
+
+## Prior snapshot — 2026-07-08 EOD CLOSE (~4:10 PM ET, post-close)
 
 | Field | Value |
 |---|---|

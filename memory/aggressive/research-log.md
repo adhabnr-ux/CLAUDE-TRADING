@@ -3775,3 +3775,135 @@ No new positions. NVDA (3.297pp) and AVGO (3.094pp) both round-tripped back to t
 ```
 
 EXECUTED: 2026-07-08T13:47:00Z (no trades — both contingent trims stood down; NVDA buffer recovered from 3.297pp pre-market to 5.346pp at open [entry USD 213.60, price USD 199.39], AVGO buffer recovered from 3.094pp to 6.221pp [entry USD 406.23, price USD 382.755], both well above the ~4pp stand-down line; news gate clear — no earnings miss/halt/SEC action/major new downgrade for either name [search: WebSearch fallback — MiniMax M3 not available]; ETN buffer 7.103pp, no trim was planned; no shock (+0.409% vs last_equity); drawdown from HWM -9.284% [not circuit breaker]; stop audit 6/6 live 18% trailing stops confirmed — NVDA `e15e7753`, AVGO `ffba9bd5`, ETN `abdc232b`, GOOGL `e52a43f1`, AMZN `b55bef05`, VST `5b347be3`; no new buys, Control: ACTIVE)
+
+---
+
+## 2026-07-09 — WEEK 6 PRE-MARKET (Thursday)
+[search: WebSearch fallback — mcp__minimax__web_search not found via ToolSearch this session; used WebSearch for all queries per protocol]
+
+### Pre-run checks
+| Check | Result |
+|---|---|
+| Live-switch guard | ALPACA_BASE_URL contains "paper" ✓ |
+| Lock | Clear (`{}`) at start; written for this run ✓ |
+| Control switch | STATUS: ACTIVE ✓ (no NOTE:, no QUERY:) |
+| Market open | false at run time (8:12 AM ET); next open 09:30 AM ET today |
+
+### Portfolio snapshot (live Alpaca data, ~8:13 AM ET)
+
+| Symbol | Qty | Avg Entry | Current | P/L % | -12% Trigger | Buffer |
+|---|---|---|---|---|---|---|
+| NVDA | 77 | USD 213.60 | USD 205.8004 | -3.652% | USD 187.968 | 8.348pp ✓ |
+| AVGO | 19 | USD 406.23 | USD 403.59 | -0.650% | USD 357.4824 | 11.350pp ✓ |
+| ETN | 34 | USD 419.54 | USD 407.54 | -2.860% | USD 369.1952 | 9.140pp ✓ |
+| GOOGL | 16 | USD 370.22 | USD 357.6936 | -3.384% | USD 325.7936 | 8.616pp ✓ |
+| AMZN | 36 | USD 247.991111 | USD 240.50 | -3.021% | USD 218.2322 | 8.979pp ✓ |
+| VST | 52 | USD 151.47 | USD 156.00 | +2.991% | n/a | comfortable ✓ only green position |
+
+**Account equity: USD 92,758.68.** Cash USD 32,894.38 (35.46%). `last_equity` USD 92,193.45 (July 8 close). Shock check: (92,758.68-92,193.45)/92,193.45 = **+0.613%** — NOT a shock (threshold -6%).
+**HWM USD 101,144.73** (memory-carried, June 4-5 inception week). Cross-checked `history 1M 1D` — the trailing-30-day series is internally consistent (no repeat of the July 2 corruption bug) and its own max (USD 97,144.23, June 16) sits well below the memory-carried HWM, so no update needed. Drawdown: **-8.293%** — circuit breaker -20% NOT triggered (11.707pp headroom).
+
+**All six positions now carry buffers of 8.3pp or better** — the first pre-market read since late June where none of NVDA/AVGO/ETN sit in the CRITICAL (<3pp) or WATCH (<6pp) zone simultaneously. Two consecutive geopolitical-shock non-events (July 7 chip rout, July 8 "ceasefire over") that both fully reversed by close have let every buffer rebuild.
+
+### Market posture — a third, more serious Iran escalation overnight
+Overnight the conflict moved from rhetoric to action: the US launched fresh airstrikes on Iran early Thursday, and Iran retaliated by targeting Gulf countries. This is qualitatively different from July 7's chip-rout scare and July 8's "ceasefire declared over" statement — actual strikes were exchanged. Futures reaction is mixed/inconclusive across sources: one read has S&P futures +0.2% and Nasdaq futures +0.61% (improving risk sentiment lifting large-cap tech, per Benzinga/TheStreet), another has E-mini S&P down ~0.8% on higher yields (10-year at 4.58%, a 4-week high) and inflation jitters (1-year expectations 3.7%, oil-inventory-driven fuel-price concern). Polymarket implies an 85% probability the index opens higher today. Net read: elevated uncertainty and cross-currents, not a clean risk-off or risk-on signal. Date of facts: July 9, 2026, ~6-8 AM ET (Benzinga, TheStreet, Yahoo Finance, Bloomberg via WebSearch).
+
+### Held positions — "what changed since yesterday" (required for each)
+
+**NVDA — Thesis: INTACT. Buffer 8.348pp — comfortable, review_by due TODAY.**
+- *What changed:* DeepSeek is reportedly building its own AI chip to reduce Nvidia reliance (NVDA -2% on the report) — a real, gradual competitive-share risk in the China market, but not a hyperscaler-demand or guidance event; the core US-hyperscaler Blackwell/Rubin capex cycle is unaffected. The Kyber-delay denial (July 7) and Goldman's "compelling valuation" call both still stand. NVDA was up slightly in Thursday's premarket on improving risk sentiment (Nasdaq futures +0.61%).
+- Buffer improved to 8.348pp from 3.297pp (July 8 pre-market) — fully recovered and then some. Next earnings Aug 26 — no window risk.
+- **Review_by decision (due today): HOLD.** No invalidation condition met (no major hyperscaler lost, no guide cut, no halt/SEC action). DeepSeek's own-chip effort is a multi-year competitive dynamic to track, not a same-day thesis break. Renewing review_by to 2026-07-23 (2 weeks).
+- Source: Benzinga, TradingKey, Reuters (via WebSearch), July 8-9 2026.
+
+**AVGO — Thesis: INTACT, thesis-strengthening (Apple deal). Buffer 11.350pp — best reading in weeks.**
+- *What changed:* The Apple custom-chip deal is now quantified at over USD 30B (multi-year, through 2031, including FBAR filters and AI-likely custom chips) plus a USD 1.5B Colorado manufacturing expansion — a materially larger and more concrete figure than the "extension" language reported July 6. Stock surged ~5% on the news; the lone Erste Group downgrade (Hans Engel, Buy→Hold) from July 8 is unchanged and remains a single dissent against a 48-analyst Strong Buy consensus (avg PT USD 523.73, +33% upside).
+- Buffer 11.350pp, up from 3.094pp two sessions ago — the strongest AVGO reading since the position was first trimmed June 29. Review_by (renewed July 6 to July 13) — 4 trading days away, not due today.
+- Next earnings Sep 3 — no window risk.
+- Source: FXLeaders, Yahoo Finance, CNBC (via WebSearch), July 9 2026.
+
+**ETN — Thesis: INTACT. Buffer 9.140pp — comfortable, review_by due TODAY.**
+- *What changed:* Eaton appointed Dan Simpson as president of Global Energy Infrastructure Solutions (July 6) — a routine executive appointment, not thesis-relevant. The Dana Reverse Morris Trust merger (USD 5.1B, combined powertrain business >USD 10B) continues to progress; FTSE Russell index-reconstitution inclusion (logged July 8) remains in effect. One data point (Zacks Rank #3/Hold) is a short-term quantitative momentum rank, not a change to the fundamental AI-data-center-capex thesis (record Q1 data-center orders +240% YoY, backlog ~USD 22.8B).
+- Buffer 9.140pp, up from 5.350pp July 8 pre-market. Next earnings Aug 4 — no window risk.
+- **Review_by decision (due today): HOLD.** No invalidation condition met (no lost contract, no guide cut, no capex reversal in AI/data-center end markets). The Zacks Hold rank is noted but does not meet the bar (it is a quant momentum score, not new fundamental information). Renewing review_by to 2026-07-23 (2 weeks).
+- Source: CNBC, Yahoo Finance (via WebSearch), July 6-9 2026.
+
+**GOOGL — Thesis: INTACT.**
+- *What changed:* Google lost its final appeal against the EU's record EUR 4.7B / USD ~4.97B antitrust fine (the 2018 Android/shopping-search case) — a real, final cost but unrelated to GCP or TPU, the two levers that would actually invalidate this thesis; already known as a legacy case, not a fresh risk. Reports that >USD 130B in AI data-center projects are "stalled across the US" appear to be an industry-wide permitting/interconnect story (per the 3.3 Layer-2 power-bottleneck framework in the knowledge base), not GOOGL-specific capex news — GOOGL's own USD 180-190B FY26 capex guide (raised, per July 8 research) is unchanged. Waymo expanding driverless rides to 4 more US markets is a minor incremental positive.
+- Buffer 8.616pp ✓ — comfortable. Review_by (renewed July 6 to July 21) — 8 trading days away, not due today.
+- Next earnings ~Jul 21-24 — no window risk.
+- Source: Yahoo Finance, TIKR (via WebSearch), July 9 2026.
+
+**AMZN — Thesis: INTACT, thesis-strengthening.**
+- *What changed:* Prime Day (June 23-26 per the original event, referenced again in July 8-9 coverage) generated a confirmed USD 26.4B in US sales — a concrete positive data point for the Q2 print (guide USD 194-199B revenue). AWS +28% YoY and ad revenue +24% both reaffirmed. The USD 25B AI-infrastructure bond sale (logged July 8) is again flagged as a "less favorable" pricing/investor-concern item and free cash flow is thin (USD 1.2B trailing-12-month) due to heavy AI capex — a real cost of the buildout, consistent with the known thesis (AWS/Trainium capex funded by debt, not equity dilution), not a new invalidation.
+- Buffer 8.979pp ✓ — comfortable. Review_by (renewed July 6 to July 30) — 15 trading days away, not due today.
+- Next earnings Jul 30 — no window risk.
+- Source: FXLeaders, Yahoo Finance (via WebSearch), July 9 2026.
+
+**VST — Thesis: INTACT, thesis-strengthening. Best performer, only position in the green.**
+- *What changed:* PJM Interconnection recorded its highest-ever July 4th-weekend electricity demand during a "once-in-a-decade" heat dome — a direct, concrete confirmation of the tight-power-market / AI-data-center-demand thesis this position is built on. Bernstein and Wells Fargo both maintained Buy ratings. Q2 earnings (Aug 7) expected +140.6% YoY EPS growth.
+- +2.991% from entry, the only green position and the widest margin VST has shown since its June ATH. Review_by July 15 — 4 trading days away, not due today.
+- Next earnings Aug 7 — no window risk (date shifted by one day from the previously logged Aug 6; immaterial, both outside the 2-day window).
+- Source: Yahoo Finance, GuruFocus (via WebSearch), July 9 2026.
+
+### Thesis contract review (step 3b) — NVDA and ETN review_by due TODAY
+
+Both NVDA (review_by 2026-07-09) and ETN (review_by 2026-07-09) hit their contract deadline this session. Per CLAUDE.md, pre-market must force an explicit hold/trim/exit decision for both — not a silent roll-forward.
+
+| Symbol | Buffer | Decision | Reasoning | New review_by |
+|---|---|---|---|---|
+| NVDA | 8.348pp | **HOLD** | No invalidation triggered (no hyperscaler lost, no guide cut); DeepSeek's own-chip effort is a known, gradual competitive dynamic, not a same-day break; Kyber-delay denial and Goldman's compelling-valuation call both stand; buffer has fully recovered from 1.922pp (July 7) to 8.348pp | 2026-07-23 |
+| ETN | 9.140pp | **HOLD** | No invalidation triggered (Dana merger progressing, no lost contract, no capex reversal); Zacks #3/Hold is a quant momentum rank, not new fundamental information; buffer has recovered from 5.350pp (July 8) to 9.140pp | 2026-07-23 |
+
+Both contracts renewed in `portfolio.md` and reflected in the plan JSON below.
+
+### Conviction-weighted holding review (step 3c)
+Today is Thursday, not Monday — skipped per playbook (Monday-only rule). Last Monday (July 6) rated all 6 positions A; no C-rating carried forward, so the 2-consecutive-Monday-C trim rule is not in play.
+
+### Earnings window check
+| Symbol | Next Earnings | Within 2 trading days? | Action |
+|---|---|---|---|
+| NVDA | Aug 26, 2026 | No | None required |
+| AVGO | Sep 3, 2026 | No | None required |
+| ETN | Aug 4, 2026 | No | None required |
+| GOOGL | ~Jul 21-24, 2026 | No | None required |
+| AMZN | Jul 30, 2026 | No | None required |
+| VST | Aug 7, 2026 | No | None required |
+
+**No earnings window risk for any position or candidate. ✓**
+
+### New position research
+No new-position research conducted today. Cash is high (35.46%) and all buffers have healed, but a real kinetic escalation in the Iran conflict broke overnight (actual strikes exchanged, not just rhetoric) with a genuinely mixed pre-market futures reaction across sources (S&P/Nasdaq futures positive per some reads, E-mini down ~0.8% per others, 10-year yield at a 4-week high). This is a materially different, more uncertain situation than the July 7/8 headline-only scares that both fully reversed — adding a seventh position into cross-currents this ambiguous is not the same call as those two prior "stand down and hold" decisions. Defer new-candidate research to a session where the futures picture is unambiguous one way or the other.
+
+### Deployment check
+Cash: USD 32,894.38 = 35.46% of equity — well above the 20% mandatory-deployment-note threshold, for the fourth consecutive pre-market session. **Explicit decision: no new buys today.** Reasoning: (1) a real, still-developing military escalation (actual strikes, not statements) makes the open unusually hard to read, with directly conflicting futures signals across sources; (2) the 10-year yield at a 4-week high and rising inflation expectations argue for some caution on any fresh multiple-sensitive entry regardless of the Iran situation; (3) no watchlist name cleared research this run (MRVL remains too rich per the last valuation check). This is a repeat of the same defensive posture as July 6-8, now extending to a fourth session — flagging explicitly per the July 3 weekly-review lesson on cumulative idle cash: if the tape clarifies (either a clean risk-on open or a clean risk-off one, rather than today's cross-currents) by tomorrow's pre-market, redeployment should be the default question, not a fifth consecutive deferral.
+
+### Guardrail check for today
+
+| Rule | Limit | Status |
+|---|---|---|
+| Single position max | 35% | NVDA 17.08% — largest position. ✓ All clear |
+| Cash floor | 2% min | 35.46% — well above minimum ✓ |
+| Weekly new positions | 8 max | 0/8 used this week ✓ |
+| Semi-group concentration (NVDA+AVGO) | informal ≤50% watch | (15,846.63+7,668.21)/92,758.68 = 25.35% ✓ |
+| Circuit breaker | >20% below HWM | -8.293% — not triggered ✓ |
+| Intraday/pre-market shock | >6% below last_equity | +0.613% — not triggered ✓ |
+| Stop audit | All positions covered | 6/6 live 18% trailing stops confirmed (status: "new") — NVDA `e15e7753`, AVGO `ffba9bd5`, ETN `abdc232b`, GOOGL `e52a43f1`, AMZN `b55bef05`, VST `5b347be3` ✓ |
+| Earnings window | No new buys within 2 days of earnings | No new buys planned |
+| Never average down | — | No adds planned anywhere; no trades planned at all today ✓ |
+
+All guardrails pass.
+
+### Result
+No new positions, no trims. All six positions carry buffers of 8.3pp or better for the first time in weeks — both contingent trims from July 7-8 having stood down and the book having fully healed. Two thesis contracts came due today: NVDA (8.348pp buffer) and ETN (9.140pp buffer) both explicitly renewed as HOLD with new review_by 2026-07-23 — no invalidation condition met for either. No new buys — cash at 35.46% for a fourth consecutive session, held back specifically because of a genuinely mixed pre-market reaction to a real overnight Iran escalation (not the clean-reversal pattern of the prior two sessions); flagged for redeployment consideration as soon as the tape gives an unambiguous read. Stop audit 6/6 live. No shock, no circuit breaker. Control: ACTIVE.
+
+## Planned trades for today (July 9, 2026 — market open)
+
+No trades planned.
+
+```json
+{
+  "plan_date": "2026-07-09",
+  "trades": []
+}
+```

@@ -3511,3 +3511,62 @@ NVDA `e15e7753`, AVGO `ffba9bd5`, ETN `abdc232b`, GOOGL `e52a43f1`, AMZN `b55bef
 
 ### Result
 All 6 positions within guardrails. No trades. All 18% trailing stops active and audited (6/6, no gaps). No exits — nothing to post-mortem, no `trades.jsonl` entries. NVDA and ETN remain the positions with the tightest buffers (5.4pp and 5.8pp) and are the names to check first at close.
+
+---
+
+## 2026-07-09 — PRE-MARKET (~8:15 AM ET, market closed at run time)
+
+**No trades executed — market not yet open (opens 9:30 AM ET). No trades planned for today.**
+
+### Pre-run checks
+| Check | Result |
+|---|---|
+| Live-switch guard | ALPACA_BASE_URL contains "paper" ✓ |
+| Lock | Clear (`{}`) at start; written for this run ✓ |
+| Control switch | STATUS: ACTIVE ✓ (no NOTE:, no QUERY:) |
+| Market open | false (next open 09:30 AM ET today) |
+
+### Account status
+| Field | Value |
+|---|---|
+| Equity | USD 92,758.68 |
+| Cash | USD 32,894.38 (35.46%) |
+| HWM | USD 101,144.73 (memory-carried; cross-checked via `history 1M 1D`, no update needed) |
+| Drawdown from HWM | -8.293% (circuit breaker -20% — NOT triggered) |
+| Shock check | +0.613% vs `last_equity` USD 92,193.45 — NOT triggered (threshold -6%) |
+
+### Position review (buffers to -12% cut)
+| Symbol | Entry | Current | P/L % | Buffer | Flag |
+|---|---|---|---|---|---|
+| NVDA | USD 213.60 | USD 205.8004 | -3.652% | 8.348pp | ✓ review_by due today — see decision below |
+| AVGO | USD 406.23 | USD 403.59 | -0.650% | 11.350pp | ✓ |
+| ETN | USD 419.54 | USD 407.54 | -2.860% | 9.140pp | ✓ review_by due today — see decision below |
+| GOOGL | USD 370.22 | USD 357.6936 | -3.384% | 8.616pp | ✓ |
+| AMZN | USD 247.991111 | USD 240.50 | -3.021% | 8.979pp | ✓ |
+| VST | USD 151.47 | USD 156.00 | +2.991% | comfortable | ✓ only green position |
+
+**All 6 positions above 8.3pp buffer** — the first pre-market read in weeks with no position in the CRITICAL or WATCH zone.
+
+### Stop audit — 6/6 confirmed live ✓
+NVDA `e15e7753`, AVGO `ffba9bd5`, ETN `abdc232b`, GOOGL `e52a43f1`, AMZN `b55bef05`, VST `5b347be3` — all `status: "new"` per Alpaca open-orders list.
+
+### Thesis contract decisions (review_by due today)
+- **NVDA — HOLD.** Buffer 8.348pp, thesis intact (DeepSeek's own-chip effort is a known gradual competitive risk, not a hyperscaler loss; Kyber-delay denial and Goldman's "compelling valuation" call both stand). Review_by renewed to 2026-07-23.
+- **ETN — HOLD.** Buffer 9.140pp, thesis intact (Dana merger progressing, no lost contract, Zacks #3/Hold is a quant momentum rank not new fundamental information). Review_by renewed to 2026-07-23.
+
+### Market posture [search: WebSearch fallback — mcp__minimax__web_search not found this session]
+A third, more serious Iran escalation overnight: the US launched fresh airstrikes on Iran, and Iran retaliated against Gulf countries — actual strikes exchanged, not just rhetoric. Pre-market futures reaction is genuinely mixed across sources (some show S&P/Nasdaq futures modestly positive on improving tech risk sentiment; others show E-mini S&P down ~0.8% on a 4-week-high 10-year yield and inflation jitters). Full detail in research-log.md.
+
+### Result
+No trades — market not open, and none planned for today's open regardless. All 6 positions have healed to 8.3pp+ buffers (both July 7-8 contingent trims having stood down and the book fully recovering). NVDA and ETN thesis contracts (both due today) explicitly renewed as HOLD with new review_by 2026-07-23 — full reasoning in research-log.md. No new buys: cash at 35.46% (fourth consecutive session above the deployment-note threshold) held back specifically because of the ambiguous, cross-current pre-market reaction to a real overnight escalation — not a repeat rationale, a distinct one from the prior two sessions' clean reversals. Stop audit 6/6 live. No shock, no circuit breaker. Control: ACTIVE.
+
+## Planned trades for today (July 9, 2026 — market open)
+
+No trades planned.
+
+```json
+{
+  "plan_date": "2026-07-09",
+  "trades": []
+}
+```
