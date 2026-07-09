@@ -1,5 +1,31 @@
 # Aggressive Bull — Trade Log
 
+## 2026-07-09 — MIDDAY review (no trades)
+
+**Market open, no shock:** equity USD 92,644.39 vs last_equity USD 92,193.45 = +0.489% (threshold -6%, not triggered).
+
+**Positions reviewed (6, unchanged from market-open snapshot):**
+| Symbol | Qty | P/L% | Buffer to -12% cut |
+|---|---|---|---|
+| NVDA | 77 | -5.454% | 6.546pp |
+| AVGO | 19 | -1.043% | 10.957pp |
+| ETN | 34 | -2.699% | 9.301pp |
+| GOOGL | 16 | -4.116% | 7.884pp |
+| AMZN | 36 | -2.279% | 9.721pp |
+| VST | 52 | +5.084% | comfortable (only green position) |
+
+No position below the -12% cut threshold; no position above +25% (winner-protection threshold not applicable). No new buys per playbook (midday never opens positions).
+
+**News scan (positions >5% below entry — NVDA only)** [search: WebSearch fallback — MiniMax M3 MCP not available in this environment]: NVDA (-5.454%) — China reportedly planning to allow top AI firms to buy a limited quantity of H200 chips (mildly positive); broad chip-sector rebound in pre-market; 61-analyst Strong Buy consensus, avg target USD 301.62 (+47.8% upside); French competition-authority probe reportedly winding down with no adverse finding. No negative or thesis-breaking news found — today's -5.45% reading reads as normal drift, not a thesis break. No faster-sell or extra tightening action warranted.
+
+**Stop audit:** 6/6 positions have live 18% trailing stops confirmed in open orders (AMZN `b55bef05`, AVGO `ffba9bd5`, ETN `abdc232b`, GOOGL `e52a43f1`, NVDA `e15e7753`, VST `5b347be3`). No gaps, no action needed.
+
+**No exits this run** — nothing to post-mortem, no `trades.jsonl` entries.
+
+**Result:** All positions within range. No trades. NVDA remains the only position that crossed the 5%-down news-scan trigger; thesis intact, hold.
+
+---
+
 ## 2026-07-07 — MIDDAY review (no trades)
 
 **Market open, no shock:** equity USD 91,241.99 vs last_equity USD 90,674.09 = +0.626% (threshold -6%, not triggered).

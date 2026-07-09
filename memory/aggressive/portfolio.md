@@ -4486,3 +4486,33 @@ Next actionable routine: July 8 close.
 **No trades.** All 6 positions healed to 6.4pp+ buffer, the best portfolio-wide reading in weeks. Cash at 35.52%, fifth consecutive session above the deployment-note threshold — redeployment decision deferred again to next pre-market pending an unambiguous market read.
 
 Next actionable routine: July 9 midday.
+
+---
+
+## 2026-07-09 — MIDDAY snapshot (~12:41 PM ET)
+
+**No trades executed.** All positions within guardrails.
+
+**Account:** Equity USD 92,644.39 | Cash USD 32,894.38 (35.51%) | Last equity (prev close) USD 92,193.45 | Shock check **+0.489%** (threshold -6%, not triggered).
+
+**HWM:** USD 101,144.73 (unchanged). Drawdown from HWM: **-8.412%** (circuit breaker -20% — NOT triggered).
+
+**Positions (6 open, unchanged from market open):**
+| Symbol | Qty | Avg Entry | Sector | P/L% | Buffer to -12% | % of Portfolio |
+|---|---|---|---|---|---|---|
+| NVDA | 77 | USD 213.60 | Semiconductors | -5.454% | 6.546pp | 16.79% |
+| AVGO | 19 | USD 406.23 | Semiconductors | -1.043% | 10.957pp | 8.25% |
+| ETN | 34 | USD 419.54 | Industrials/power infra | -2.699% | 9.301pp | 14.98% |
+| GOOGL | 16 | USD 370.22 | Communication Services (hyperscaler) | -4.116% | 7.884pp | 6.13% |
+| AMZN | 36 | USD 247.991111 | Consumer Discretionary (hyperscaler) | -2.279% | 9.721pp | 9.42% |
+| VST | 52 | USD 151.47 | Utilities (nuclear power) | +5.084% | comfortable (only green position) | 8.93% |
+
+**Sector exposure:** Semiconductors (NVDA+AVGO) = 25.03%; Industrials (ETN) = 14.98%; Hyperscalers (GOOGL+AMZN) = 15.55%; Utilities (VST) = 8.93%; Cash = 35.51%. No sector near the 60% informal cap.
+
+**Stops:** 6/6 live 18% trailing stops confirmed unchanged — NVDA `e15e7753`, AVGO `ffba9bd5`, ETN `abdc232b`, GOOGL `e52a43f1`, AMZN `b55bef05`, VST `5b347be3`.
+
+**News scan:** NVDA (only position down >5% from entry) checked [search: WebSearch fallback] — no thesis-breaking news; China H200 approval chatter and chip-sector rebound read as mildly positive. Thesis intact.
+
+**No trades.** Cash at 35.51% remains a deliberate defensive posture pending an unambiguous redeployment signal.
+
+Next actionable routine: July 9 close.
