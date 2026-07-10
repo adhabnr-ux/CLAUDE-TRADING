@@ -3908,3 +3908,143 @@ No trades planned.
 }
 ```
 EXECUTED: 2026-07-09T13:46:00Z (no trades — plan was empty; stop audit 6/6 ALL LIVE ✓; NVDA -5.517%/6.483pp buffer; AVGO -1.899%/10.101pp; ETN -2.548%/9.452pp; GOOGL -3.339%/8.661pp; AMZN -2.453%/9.547pp; VST +4.938% ✓ (only green); equity USD 92,603.50 / +0.445% vs last_equity (NOT shock, threshold -6%); drawdown -8.443% from HWM USD 101,144.73 (NOT circuit breaker, threshold -20%); cash USD 32,894.38 (35.52%); Control: ACTIVE)
+
+
+---
+
+## 2026-07-10 — WEEK 6 PRE-MARKET (Friday)
+[search: WebSearch fallback — mcp__minimax__web_search not found via ToolSearch this session; used WebSearch for all queries per protocol]
+
+### Pre-run checks
+| Check | Result |
+|---|---|
+| Live-switch guard | ALPACA_BASE_URL contains "paper" ✓ |
+| Lock | Clear (`{}`) at start; written for this run ✓ |
+| Control switch | STATUS: ACTIVE ✓ (no NOTE:, no QUERY:) |
+| Market open | false at run time (~8:26 AM ET); next open 09:30 AM ET today |
+
+### Portfolio snapshot (live Alpaca data, ~8:26 AM ET)
+
+| Symbol | Qty | Avg Entry | Current | P/L % | -12% Trigger | Buffer |
+|---|---|---|---|---|---|---|
+| NVDA | 77 | USD 213.60 | USD 201.47 | -5.679% | USD 187.968 | 6.322pp ✓ |
+| AVGO | 19 | USD 406.23 | USD 397.81 | -2.073% | USD 357.4824 | 9.928pp ✓ |
+| ETN | 34 | USD 419.54 | USD 405.50 | -3.379% | USD 369.1952 | 8.653pp ✓ |
+| GOOGL | 16 | USD 370.22 | USD 357.75 | -3.368% | USD 325.7936 | 8.632pp ✓ |
+| AMZN | 36 | USD 247.991111 | USD 247.54 | -0.182% | USD 218.2322 | 11.818pp ✓ |
+| VST | 52 | USD 151.47 | USD 158.25 | +4.476% | n/a | comfortable ✓ only green position |
+
+**Account equity: USD 92,617.40.** Cash USD 32,894.38 (35.51%). `last_equity` USD 92,778.39 (July 9 close). Shock check: (92,617.40-92,778.39)/92,778.39 = **-0.173%** — NOT a shock (threshold -6%).
+**HWM USD 101,144.73** — cross-checked via `history 1A 1D`: max equity point in the returned series is USD 101,144.73 on 2026-06-05 and the series' last point (USD 92,778.39, July 9) matches the account endpoint exactly — no data corruption, confirmed. Drawdown: **-8.432%** — circuit breaker -20% NOT triggered (11.568pp headroom).
+
+**All six positions comfortable (6.3pp or better)** for a second consecutive pre-market session — the book has fully healed from the July 7-8 chip-rout/geopolitical scares.
+
+### Market posture [search: WebSearch fallback]
+S&P 500 futures roughly flat to slightly higher pre-market (E-mini +0.2%, ES +0.75pts/+0.01%). Two competing forces: (1) SK Hynix's USD 29B Nasdaq listing (ticker SKHY) begins when-issued trading today — the largest-ever US share sale by a foreign firm, 7x oversubscribed, widely framed as "a critical test of investor appetite for AI infrastructure plays" (Morningstar) — structurally the same capital-absorption event class as the June 12 SpaceX IPO that produced same-day drag in correlated AI-tech names without any thesis change; (2) the 10-year Treasury yield is holding near 4.58% (a multi-week high) with fresh inflation-pressure signals (oil-price-driven cost-of-living concerns), a headwind for high-multiple growth names independent of the IPO. Net read: not a clean risk-on session for adding fresh AI-semiconductor exposure, even though the book itself is healthy. Date of facts: July 10, 2026, ~6-8 AM ET (Benzinga, Yahoo Finance, Morningstar, PYMNTS via WebSearch).
+
+### Held positions — "what changed since yesterday" (required for each)
+
+**NVDA — Thesis: INTACT. Buffer 6.322pp — comfortable, review_by not due (renewed July 9 to July 23).**
+- *What changed:* Reports that China will likely allow top domestic AI firms to buy limited quantities of Nvidia H200 chips is a modest incremental positive (extra addressable sales), continuing the same direction as the July 7-9 China-related headlines. Q2 FY2027 earnings guide (USD 91B) unchanged, Aug 26 report date confirmed. 61-analyst Strong Buy consensus, avg target USD 301.62 (+47.8% upside) unchanged. No negative or thesis-breaking news.
+- Buffer improved further from 8.348pp (July 9 pre-market) intraday to a fresh reading of 6.322pp this morning (normal day-to-day noise, not a new stress event — still well outside WATCH territory).
+- Source: FXLeaders, TradingKey, intellectia.ai (via WebSearch), July 10 2026.
+
+**AVGO — Thesis: INTACT, thesis-strengthening (Apple deal). Buffer 9.928pp — comfortable.**
+- *What changed:* The Apple custom-chip agreement is now confirmed at >USD 30B through 2031, covering both FBAR wireless filters and AI-likely custom chips — consistent with and slightly more concrete than the July 9 reporting. AVGO closed July 9 at USD 401.11 (+3.20%) capturing the sector-wide semiconductor rally (SOXX +4%, Arm +11%) noted in yesterday's EOD context; today's pre-market shows a partial giveback (-1.02%) consistent with the broader mixed pre-market tape, not a company-specific negative. 26-analyst Buy consensus, PT USD 550 unchanged.
+- Buffer 9.928pp, down modestly from 11.350pp (July 9 pre-market) but still comfortably outside WATCH territory. Review_by July 13 — 3 trading days away, not due today.
+- Source: Yahoo Finance, public.com (via WebSearch), July 10 2026.
+
+**ETN — Thesis: INTACT.**
+- *What changed:* No new material news beyond the already-logged Dan Simpson (Global Energy Infrastructure Solutions president) appointment and the FranklinWH home-energy-systems partnership (adjacent to, not central to, the AI-data-center-capex thesis). The 100-GW US electricity-shortfall-by-2030 framing (referenced across multiple sources) continues to support the core thesis. Average analyst PT USD 456 (Buy consensus) unchanged.
+- Buffer 8.653pp ✓ — comfortable. Review_by (renewed July 9 to July 23) — not due today.
+- Source: Yahoo Finance, TradingKey (via WebSearch), July 10 2026.
+
+**GOOGL — Thesis: INTACT.**
+- *What changed:* No new negative developments. Reiteration of Q2 revenue trajectory (+21.8% YoY reported previously) and GCP +63% growth. Earnings call now confirmed for July 22 (2-week countdown headline), consensus EPS USD 2.86 (+23.8% YoY) — inside the known window, no action needed today (12 trading days out, well outside the 2-day earnings-window rule). Minor Austria data-center capex item (€1B) is incremental infrastructure spend, thesis-neutral-to-positive.
+- Buffer 8.632pp ✓ — comfortable. Review_by July 21 — 7 trading days away, not due today.
+- Next earnings ~Jul 22, 2026 — no window risk (12 trading days out).
+- Source: Yahoo Finance, cryptonomist.ch, watcher.guru (via WebSearch), July 10 2026.
+
+**AMZN — Thesis: INTACT, thesis-strengthening.**
+- *What changed:* Confirmation of the USD 25B AI-infrastructure bond raise (already logged July 8-9) with no new negative color. No AWS- or Trainium-specific news today. Blue Origin's USD 130B private-fundraise valuation is a Bezos-family-adjacent but corporately unrelated item — noted for awareness only, no thesis relevance to AMZN equity.
+- Buffer 11.818pp ✓ — comfortable, widest buffer in the book after VST. Review_by July 30 — 14 trading days away, not due today.
+- Next earnings Jul 29-30, 2026 — no window risk.
+- Source: Robinhood, Fool.com (via WebSearch), July 10 2026.
+
+**VST — Thesis: INTACT, thesis-strengthening. Best performer, only position in the green.**
+- *What changed:* VST closed July 9 at USD 157.98 (+2.04%), outperforming SPY's +0.81% that session, extending the pattern from the PJM record-demand heat-dome catalyst (logged July 9). Consensus still expects +140.6% YoY EPS growth at the Aug 7 print. No negative items found.
+- +4.476% from entry pre-market — the widest margin since the June ATH cycle. Review_by July 15 — 3 trading days away, not due today.
+- Next earnings Aug 7 — no window risk.
+- Source: Yahoo Finance, Simply Wall St, MarketBeat (via WebSearch), July 10 2026.
+
+### Thesis contract review (step 3b)
+No review_by deadline is due today (nearest: AVGO/VST July 13/15). No invalidation events triggered for any position. No action required.
+
+### Conviction-weighted holding review (step 3c)
+Today is Friday, not Monday — skipped per playbook (Monday-only rule). Last Monday (July 6) rated all 6 positions A; no C-rating carried forward, so the 2-consecutive-Monday-C trim rule is not in play.
+
+### Earnings window check
+| Symbol | Next Earnings | Within 2 trading days? | Action |
+|---|---|---|---|
+| NVDA | Aug 26, 2026 | No | None required |
+| AVGO | Sep 3, 2026 | No | None required |
+| ETN | Aug 4, 2026 | No | None required |
+| GOOGL | ~Jul 22, 2026 | No | None required |
+| AMZN | ~Jul 29-30, 2026 | No | None required |
+| VST | Aug 7, 2026 | No | None required |
+
+**No earnings window risk for any held position. ✓**
+
+### New position research
+Checked MRVL (the standing watchlist re-entry candidate, flagged "too rich" every prior session it was checked): still trailing P/E ~84-107x, forward P/E ~54-76x, 123% above the technology-sector-average P/E of 37.27 per Simply Wall St's July valuation piece — no change from the prior "too rich" read; still not a qualifying entry. No other Tier 3 watchlist name (AMZN, GOOGL already held; TSM not screened today) cleared research given the SK Hynix IPO backdrop below. **Decision: no new position names today.**
+
+### Deployment check — pyramid add to VST instead of a new name
+Cash: USD 32,894.38 = 35.51% of equity — well above the 20% mandatory-deployment-note threshold, for a **5th consecutive pre-market session**. Per the standing July 3 weekly-review lesson on cumulative idle cash, today's clear tape (all buffers healthy, no live geopolitical shock in progress) means a fifth consecutive blanket deferral is not acceptable without either a qualifying trade or a session-specific reason distinct from the prior four days' reasons (each of which was a live, developing shock).
+
+**Reasoning for today:** SK Hynix's USD 29B Nasdaq IPO listing (ticker SKHY, when-issued trading begins today) is explicitly the same event class as the June 12 SpaceX mega-IPO, which the standing lesson identifies as producing same-session capital-absorption drag in correlated AI-tech names without any change to underlying fundamentals ("mega-IPO debut days = plan no new [AI-adjacent] trades"). Combined with the 10-year yield sitting near a multi-week high (4.58%) — a real, independent headwind for high-multiple growth/semiconductor names — today is not the day to add a fresh, AI-semiconductor-correlated name (which rules out MRVL even if its valuation had cleared, and rules out AMD/TSM as fresh entries).
+
+**However, VST is not AI-semiconductor-correlated (it is a nuclear-power utility, PPA-driven, uncorrelated to chip-sector or IPO-liquidity effects per 8+ prior lessons on this exact point) and is the one position that is unambiguously working** — +4.476% from entry, widest margin since the June ATH, thesis strengthening on the PJM record-demand/heat-dome catalyst, only green position in the book. Strategy.md explicitly permits pyramiding winners aggressively (never averaging down into losers). Entry-signal check: signal 3 (high-volume breakout continuation — new post-ATH high watermark set repeatedly through late June/early July) and signal 4 (sector/macro tailwind confirmed — PJM record electricity demand, AI data-center power crunch) both confirm; 2+ signals met.
+
+**Plan: buy 15 additional VST shares (~USD 2,374 notional, ~2.56% of equity — well under the 60% daily-deployment cap) at market open**, bringing the position to 67 shares at a blended average entry, then verify the existing 18% trailing stop order `5b347be3` (currently sized for 52 shares) is replaced/reissued to cover the full 67-share position — market-open must not leave 15 shares unprotected. This is a pyramid add to an existing position, not a new position name, so it does not count against the 8-new-positions/week cap (0/8 used this week regardless). Post-trade cash: ~USD 30,520 (~32.95% of equity) — still well above the 2% floor, and a deliberate partial (not full) redeployment given the AI-semi-specific caution above.
+
+**Volatility check note:** `./scripts/alpaca.sh bars VST 1Day 21` returned an empty bar series (`{"bars":null}`) for VST and for a control symbol (NVDA) — a data-availability issue with the bars endpoint this run, not specific to VST. Used the two most recent daily bars available from the `snapshot` endpoint as a rough proxy instead: July 9 daily range (161.08-157.59)/158.00 = 2.21%; July 8 daily range (156.31-151.5)/154.795 = 3.11%. Both well under the 5% flag threshold — no special note needed on the 18% stop's adequacy for this add. Flagging the bars-endpoint outage for awareness; if it recurs across multiple routines, treat as a standing tooling issue worth investigating (same category as the July 2 `history` corruption, now resolved).
+
+### Guardrail check for today
+
+| Rule | Limit | Status |
+|---|---|---|
+| Single position max | 35% | VST post-trade ~11.45% — well clear. NVDA 16.75% (current largest). ✓ All clear |
+| Cash floor | 2% min | 35.51% pre-trade, ~32.95% post-trade — well above minimum ✓ |
+| Weekly new positions | 8 max | 0/8 used this week (VST add is not a new name) ✓ |
+| Daily new-buy deployment | 60% max | ~2.56% of equity (VST add only) ✓ |
+| Semi-group concentration (NVDA+AVGO) | informal ≤50% watch | (15,513.19+7,558.39)/92,617.40 = 24.98% — unaffected by this trade ✓ |
+| Circuit breaker | >20% below HWM | -8.432% — not triggered ✓ |
+| Intraday/pre-market shock | >6% below last_equity | -0.173% — not triggered ✓ |
+| Stop audit | All positions covered | 6/6 live 18% trailing stops confirmed — NVDA `e15e7753`, AVGO `ffba9bd5`, ETN `abdc232b`, GOOGL `e52a43f1`, AMZN `b55bef05`, VST `5b347be3`; market-open must reissue VST's stop to cover the post-add 67-share total ✓ |
+| Earnings window | No new buys within 2 days of earnings | VST next earnings Aug 7 — clear; no other new names planned |
+| Never average down | — | VST is a pyramid add to a winning position (+4.476%), not an average-down ✓ |
+
+All guardrails pass.
+
+### Result
+No new position names today — SK Hynix's USD 29B mega-IPO listing (same capital-absorption pattern as the June 12 SpaceX IPO) plus a 10-year yield near a multi-week high argue against adding fresh AI-semiconductor-correlated exposure, and MRVL (the standing watchlist candidate) remains too rich (P/E ~84-107x). Instead, planned a pyramid add of 15 shares to VST — the one clearly working, thesis-strengthening, non-AI-chip-correlated position — for market-open execution, addressing the 5th-consecutive-session elevated-cash concern with a targeted, guardrail-compliant redeployment rather than either a blanket 6th deferral or a rushed new-name entry. All 6 existing positions comfortable (6.3pp+ buffers), no review_by deadlines due, no earnings window risk, stop audit 6/6 live. No shock, no circuit breaker. Control: ACTIVE.
+
+## Planned trades for today (July 10, 2026 — market open)
+
+**One pyramid add (VST). No new position names.**
+
+```json
+{
+  "plan_date": "2026-07-10",
+  "trades": [
+    {
+      "action": "buy",
+      "symbol": "VST",
+      "qty": 15,
+      "thesis": "Pyramid add to existing winning position (+4.476% from entry, only green position in the book, widest margin since the June ATH). PJM Interconnection recorded its highest-ever July 4th-weekend electricity demand during a heat dome, directly confirming the AI-data-center power-crunch thesis; Bernstein and Wells Fargo both maintain Buy; Q2 earnings (Aug 7) expected +140.6% YoY EPS growth. Entry signals: high-volume breakout continuation (repeated new ATHs through late June/early July) + sector/macro tailwind confirmed (PJM record demand). Not AI-semiconductor-correlated, so unaffected by today's SK Hynix mega-IPO capital-absorption caution that ruled out any fresh chip-sector name. Never averaging down — this is an add to a winner per strategy.md pyramiding rules. Market-open MUST reissue/replace the existing 18% trailing stop (order `5b347be3`, currently sized for 52 shares) to cover the full post-add 67-share position — do not leave the added 15 shares unprotected.",
+      "invalidation": "VST loses a major PPA (Meta or AWS) OR the AI-data-center power-demand thesis reverses (e.g., a hyperscaler shifts materially away from nuclear-sourced power) OR price closes below the reissued 18% trailing stop",
+      "review_by": "2026-07-15"
+    }
+  ]
+}
+```

@@ -324,3 +324,7 @@ surprises you._
 ### 2026-07-09 — midday: notify.sh prefix slipped (process note, not a trading lesson)
 
 - **This run's notify.sh message omitted the mandatory `🔥 AGGRO Bull` prefix** (sent as plain "AGGRO Bull midday 2026-07-09: ..."). CLAUDE.md requires every Aggressive Bull Telegram message to start with `🔥 AGGRO Bull`. No trading impact — content and data were correct — but future runs should double-check the literal prefix string before calling notify.sh, not just the routine name and date.
+
+### 2026-07-10 — pre-market: notify.sh prefix slipped a second time (process note, not a trading lesson)
+
+- **The same `🔥 AGGRO Bull` prefix omission recurred one session later** (sent as plain "AGGRO Bull pre-market 2026-07-10: ..."), despite being flagged the prior session. A single journaled lesson is not a sufficient control — the fix needs to be mechanical, not just remembered. **Going forward: before calling `notify.sh`, always start the message literally with `🔥 AGGRO Bull ` (emoji, space, then the routine/date text) as the very first characters typed, not added as an afterthought.** If this recurs a third time, treat it as a standing process gap worth a one-line pre-flight check written into the notify step itself.

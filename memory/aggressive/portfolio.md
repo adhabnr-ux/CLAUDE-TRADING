@@ -4560,3 +4560,27 @@ Next actionable routine: July 9 close.
 **Result:** Clean, uneventful close. No trades, no rule triggers, no thesis-contract deadlines today. Cash remains at 35.45%, the deployment-pace question deferred to the next pre-market per the standing lesson (revisit trigger, not open-ended idling).
 
 Next actionable routine: July 10 pre-market.
+
+## 2026-07-10 — PRE-MARKET snapshot (~8:26 AM ET)
+
+**Account:** Equity USD 92,617.40 (-0.173% vs last_equity USD 92,778.39); cash USD 32,894.38 (35.51%); drawdown from HWM USD 101,144.73 -8.432% (breaker at -20%, not triggered, 11.568pp headroom). HWM cross-checked via `history 1A 1D` — no data corruption, matches memory-carried value.
+
+**Positions (6 open):**
+| Symbol | Qty | Sector | P/L% | Buffer to -12% | Rating (carried from July 6 Monday) |
+|---|---|---|---|---|---|
+| NVDA | 77 | Semiconductors | -5.679% | 6.322pp | A |
+| AVGO | 19 | Semiconductors | -2.073% | 9.928pp | A |
+| ETN | 34 | Industrials/power infra | -3.379% | 8.653pp | A |
+| GOOGL | 16 | Communication Services (hyperscaler) | -3.368% | 8.632pp | A |
+| AMZN | 36 | Consumer Discretionary (hyperscaler) | -0.182% | 11.818pp | A |
+| VST | 52 | Utilities (nuclear power) | +4.476% | comfortable (only green position) | A |
+
+**Sector exposure:** Semiconductors (NVDA+AVGO) = 24.98%; Industrials (ETN) = 14.89%; Hyperscalers (GOOGL+AMZN) = 15.82%; Utilities (VST) = 8.89%; Cash = 35.51%. No sector near the 60% informal cap.
+
+**Stops:** 6/6 live 18% trailing stops confirmed, unchanged order IDs (NVDA `e15e7753`, AVGO `ffba9bd5`, ETN `abdc232b`, GOOGL `e52a43f1`, AMZN `b55bef05`, VST `5b347be3`).
+
+**Thesis contracts:** No review_by deadlines due today (NVDA/ETN renewed July 9 to July 23; AVGO July 13; GOOGL July 21; AMZN July 30; VST July 15). Conviction-weighted review skipped — today is Friday, not Monday.
+
+**Deployment decision:** Cash at 35.51% for a 5th consecutive pre-market session. Planned a pyramid add to VST (the one clear winner, thesis-strengthening) rather than a new AI-semi name, given SK Hynix's USD 29B Nasdaq IPO listing today is the same capital-absorption/liquidity-risk pattern flagged in the standing SpaceX-IPO lesson for AI-adjacent names — see research-log.md for full reasoning. No new position names added (does not count against the 8/week new-position cap).
+
+Next actionable routine: July 10 market-open.
