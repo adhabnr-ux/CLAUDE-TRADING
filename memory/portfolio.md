@@ -3,10 +3,68 @@
 _Updated by every routine from live Alpaca data. The next agent trusts this as
 the last known state, but always re-fetches live data before trading._
 
-**Last updated:** 2026-07-09 15:53 ET (close routine; `is_open: true` at run time, next_close 16:00 ET, full trading day; stop audit 3/3 PASS; LLY $1,214.79 +11.088% / V $347.63 +7.436%; no cuts, no tightenings, no exits)
+**Last updated:** 2026-07-10 08:14 ET (pre-market routine; market not yet open, `is_open: false`, next_open 09:30 ET; stop audit 3/3 PASS; LLY $1,221.50 +11.702% / V $349.245 +7.943%; 0 trades planned, market not yet open)
 **Inception:** 2026-05-21 — starting equity $100,000.00 | SPY anchor price $739.44
 **SPY total-return anchor (post-June 18 ex-div $1.76):** **$741.20**
 **Cumulative SPY dividends since inception (quarterly tracker):** $1.76/sh (June 18 ex-div); next SPY ex-div est. ~September 2026.
+
+---
+
+## Account (pre-market routine, 2026-07-10 ~08:14 ET)
+
+| Metric | Value |
+|--------|-------|
+| Equity | $99,922.11 |
+| Cash | $80,023.72 (80.080%) |
+| Long market value | $19,898.39 |
+| Buying power | ~$80,023.72 (cash) / $375,810.37 (margin, unused) |
+| Last equity (July 9 close) | $99,853.62 |
+
+## Open positions (pre-market routine, 2026-07-10 ~08:14 ET)
+
+| Symbol | Qty | Avg entry | Current price | Mkt value | Unrealized P/L | % of portfolio | Trailing Stop |
+|--------|-----|-----------|--------------|-----------|----------------|----------------|---------------|
+| LLY | 10 | $1,093.534 | $1,221.50 | $12,215.00 | +$1,279.66 (+11.702%) | 12.223% | d4147484 (7sh) + 25989fb5 (3sh), HWM $1,249.45, stop $1,124.505 ✓ — buffer $96.995 (7.941%) ✓ |
+| V | 22 | $323.57 | $349.245 | $7,683.39 | +$564.85 (+7.935%) | 7.690% | 66033918 (22sh), HWM $364.21, stop $327.789 ✓ — buffer $21.456 (6.143%) ✓ |
+
+**Sector exposure (pre-market July 10):**
+- Healthcare (LLY): $12,215.00 = 12.223% | Financials (V): $7,683.39 = 7.690% | Cash: $80,023.72 = 80.080%
+- No sector above 60% cap ✓
+
+**Trailing stop status (pre-market July 10 — confirmed via Alpaca live orders ~08:14 ET):**
+- LLY (d4147484): 7sh — HWM $1,249.45, stop $1,124.505 ✓ (buffer 7.941%)
+- LLY (25989fb5): 3sh — HWM $1,249.45, stop $1,124.505 ✓
+- V (66033918): 22sh — HWM $364.21, stop $327.789 ✓ (buffer 6.143%)
+**Stop audit: 3/3 PASS ✓** (3 live trailing-stop orders across 2 positions; matches held quantities exactly — none missing)
+
+**Pre-market July 10 notes (~08:14 ET — Friday; stop audit 3/3 PASS; no trades, market not yet open):**
+- **Live-switch guard:** `ALPACA_BASE_URL` contains "paper" ✓.
+- **Lock:** was `{}` — acquired and will be released cleanly.
+- **Control switch:** STATUS ACTIVE, no `NOTE:`/`QUERY:` to acknowledge.
+- **Shock check:** $99,922.11 vs last_equity $99,853.62 = **+$68.49 (+0.0686%)** — no shock ✓ (threshold −4%).
+- **Drawdown note (informational only):** $99,922.11 vs HWM $101,384.21 = **−1.442%** — not a blocking guardrail (removed 2026-06-30).
+- **Macro:** Iran ceasefire remains broken (fresh US-Iran strikes this week, Hormuz shipping near standstill) but the market shrugged it off Thursday — S&P 500 +0.81%, Nasdaq +1.30%, oil fell to ~$71.93 WTI, 10yr eased to ~4.54-4.58%. Neither halt trigger (oil >100, 10yr >4.75%) close to tripping. June CPI lands Tuesday July 14 — the last major inflation read before the July 29 FOMC.
+- **LLY** $1,221.50 (+11.702% from entry, +0.386% since July 9 close $1,216.95): no company-specific news; presenting at AAIC (Alzheimer's conference) July 12-15. Buffer 7.941% ✓. review_by 2026-07-21 not due. HOLD. Conviction A (unchanged).
+- **V** $349.245 (+7.943% from entry, +0.301% since July 9 close $348.20): launched Visa Threat Intelligence Platform (fraud/cyber detection) — incremental, not thesis-moving. Buffer 6.143% ✓. review_by 2026-07-28 not due. HOLD. Conviction B (unchanged).
+- **Earnings window check:** LLY next earnings Aug 5, 2026; V next earnings July 28, 2026 — neither within 2 trading days.
+- **No cuts** (−7% rule): both positions are large gains ✓.
+- **No discretionary tightenings** (+15% trigger = LLY $1,257.56 / V $372.10): neither reached ✓.
+- **Stop audit (step 1):** 3/3 trailing stops confirmed live via `orders open` — matches held quantities exactly. No missing stops.
+- **Exit reconciliation:** no fills since July 9 close — closed-trades.md current, nothing new to reconcile.
+- **LRCX ATR gate FAILED July 9 (5.466%)** — a chase-y ~6-7% pop on analyst PT hikes (TD Cowen $340→$400, Mizuho $380→$400) + broad semi relief rally, no fresh LRCX-specific fundamentals; the stock was already ~56% above its 200-day MA before the move. Gate counter reset to 0/2; technical confirmation strengthened to +7.88% above 50-day MA. Hit the 4-week staleness line — purge/keep decision deferred to today's 2026-07-10 weekly review.
+- **ETN ATR gate cleared again July 9 (2.135%); technical confirmation flipped to barely PASSING** — July 9 close $405.92 only +0.047% above its ~50-day MA ($405.73), a noise-level margin. Not promoted; needs a session with real separation above the MA.
+- **ABBV full pre-trade diligence pass (step 6b):** Q1 beat (EPS $2.65 vs $2.59, rev $15.0B vs $14.72B), 340B/Apogee catalysts real and advancing, PEG 0.41-0.91 (cheap vs peers) — but **FAILS entry signal #4** (extended +13% above its ~50-day MA of ~$222, over the 10% not-extended gate) and FY26 EPS guidance was trimmed to $13.91-14.11 (below the $14.25 Street consensus) on July 9, the day before this review — undercutting the beat+raise signal. Interest coverage ~3.33x is also weak vs. healthcare peers. **Not promoted.**
+- **Cash-drag check:** Cash 80.08%, well above the 25-40% target band, elevated 8+ weeks. No qualifying entry today — LRCX's ATR gate just failed on a chase-y pop, ETN's technical-confirmation cross is noise-level (+0.047%), and ABBV explicitly fails the extension gate plus had guidance trimmed yesterday. Staying in cash is the correct, deliberate call today, not a default; today's weekly review should weigh whether the pipeline needs a further refresh given 8 straight weeks with zero new positions.
+- **Trades today:** 0 planned (market not yet open; plan below is empty).
+- **Since inception:** Bull −0.07789% ($99,922.11) vs SPY TR **+1.9221%** ($751.89 latest pre-market trade + $1.76 div vs $739.44 anchor) → **Bull TRAILS SPY by −2.000pp** (widened from July 9 close's −2.003pp — essentially unchanged).
+
+## Performance vs S&P 500
+
+| Period | Bull | SPY | Difference |
+|--------|------|-----|------------|
+| Inception (2026-05-21) | $100,000.00 | $739.44 | — |
+| **Pre-market (2026-07-10)** | **$99,922.11 (−0.07789%)** | **SPY $751.89 + $1.76 div = +1.9221% TR** | **Bull TRAILS SPY −2.000pp** |
+| Close (2026-07-09) | $99,819.48 (−0.18052%) | SPY $751.155 + $1.76 div = +1.8224% TR | Bull TRAILS SPY −2.003pp |
 
 ---
 

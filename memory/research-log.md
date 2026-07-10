@@ -7,6 +7,81 @@ _Entries before 2026-06-01 archived to `memory/archive/2026-05.md` (2026-07-01 m
 
 ---
 
+## 2026-07-10 — Pre-market research (~08:14 ET, Friday)
+
+### Live-switch guard / Lock / Control switch
+- `ALPACA_BASE_URL` contains "paper" ✓.
+- `memory/_lock` was `{}` (empty) — no other routine active. Lock written for this run, released before commit.
+- `memory/control.md` STATUS: **ACTIVE**. No `NOTE:`/`QUERY:` line to acknowledge.
+
+### Account sync (live Alpaca, ~08:14 ET)
+- Equity **$99,922.11** | Cash **$80,023.72 (80.080%)** | Long market value $19,898.39 | Last equity (July 9 close) $99,853.62.
+- **Shock check:** ($99,922.11 − $99,853.62) / $99,853.62 = **+0.0686%** — no shock ✓ (threshold −4%).
+- **Drawdown note (informational only):** $99,922.11 vs HWM $101,384.21 = **−1.442%** — not a blocking guardrail (removed 2026-06-30).
+
+### Positions & stop audit
+| Symbol | Qty | Avg entry | Current | Mkt value | Unrealized P/L | % port | Stop |
+|---|---|---|---|---|---|---|---|
+| LLY | 10 | $1,093.534 | $1,221.50 | $12,215.00 | +$1,279.66 (+11.702%) | 12.223% | d4147484 (7sh) + 25989fb5 (3sh), HWM $1,249.45, stop $1,124.505 ✓ buffer 7.941% |
+| V | 22 | $323.57 | $349.245 | $7,683.39 | +$564.85 (+7.935%) | 7.690% | 66033918 (22sh), HWM $364.21, stop $327.789 ✓ buffer 6.143% |
+
+**Stop audit: 3/3 PASS ✓** (matches held quantities exactly; no missing stops).
+**Sector exposure:** Healthcare (LLY) 12.223% | Financials (V) 7.690% | Cash 80.080% — no sector above 60% cap ✓.
+
+### Thesis contract review
+- **LLY** review_by 2026-07-21 — not due.
+- **V** review_by 2026-07-28 — not due.
+
+### Market posture (WebSearch) — Iran ceasefire remains broken, market shrugging it off
+- Fresh US-Iran strikes continued this week; Tehran retaliated, and Strait of Hormuz shipping is near a standstill (~13 vessels/24h vs. ~110/day pre-war). [CNN, Horizons MEA, July 9-10]
+- Despite the escalation, stocks rallied Thursday July 9: S&P 500 +0.81% to 7,543.64, Nasdaq +1.30% to 26,206.89, Dow +0.27% to 52,487.41, led by semiconductors and falling oil. [CNBC, July 9]
+- Oil fell even as the conflict worsened: WTI ~$71.93 (down from an intraweek high near $76.70), Brent similar — both well below the $100 halt-trigger, but the intraweek swing (69→76.70→72) shows how fast this can move on Iran headlines. [Fortune/FX Leaders, July 10]
+- 10yr yield eased to ~4.54-4.58%, a second straight session lower as falling oil reduced inflation-tightening fears — below the 4.75% halt trigger. [TradingEconomics/Investrade, July 10]
+- S&P futures roughly flat to slightly up pre-market; Nasdaq futures giving back a little of Thursday's gains but still up ~1.4% on the week. [Benzinga, July 10]
+- Upcoming: June CPI (last major inflation read before the July 29 FOMC) lands Tuesday July 14; FOMC minutes the following Wednesday.
+- **Neither halt trigger is close to tripping** (10yr well below 4.75%, oil well below $100), but Iran remains the single biggest swing factor for oil this week and bears re-checking at market open.
+
+### Held-position research — "what changed since yesterday"
+- **LLY** ($1,221.50, +11.702% from entry, +0.386% since July 9's $1,216.95 close): no negative news. Shares near all-time highs on continued Mounjaro/Zepbound demand. Next scheduled event is presenting 16 abstracts at the Alzheimer's Association International Conference (AAIC), July 12-15, 2026, in London — not earnings, no thesis implication. Next earnings confirmed **Aug 5, 2026** — outside the 2-day window. [GuruFocus, FX Leaders, July 10]
+- **V** ($349.245, +7.935% from entry, +0.301% since July 9's $348.20 close): no negative news. Visa launched the Visa Threat Intelligence Platform (VTIP), a fraud/cyber-threat detection product for financial institutions — incremental positive, not thesis-moving. Continued thematic coverage on stablecoin competition and multi-rail payments strategy, background only. Next earnings confirmed **July 28, 2026** — outside the 2-day window. [Africa Business Communities, Motley Fool, July 8-10]
+
+### Earnings-window rule
+- Neither held name reports within the next 2 trading days (LLY Aug 5, V July 28). No restriction on holding; no buy candidates near earnings today.
+
+### Watchlist — ATR gates (LRCX / ETN) — re-checked with July 9 session data
+- **LRCX:** July 9 session H $369.77 / L $350.47 / C $353.07 = **5.466% ATR** — **FAILS** the 5% gate, breaking the July 8 streak. The stock gapped up hard (July 8 close $333.19 → July 9 open ~$362.79, ranging to $369.77 before fading to $353.07) on **analyst price-target hikes** (TD Cowen $340→$400, Mizuho $380→$400) plus a broad semiconductor-equipment relief rally — not a company-specific earnings, guidance, or M&A event. LRCX was already ~56% above its 200-day MA before the move, so this reads as a chase-y, analyst-upgrade-driven pop with real one-day mean-reversion risk (some of the intraday high was already faded into the close), not a fresh fundamental catalyst. **Gate counter reset to 0/2.** 50-day MA is now **$327.27**; July 9 close **+7.883% above it** — technical confirmation strengthened even as the ATR gate failed. LRCX confirmed FQ4/FY26 earnings call **July 29, 2026** (~13 trading days out — not a blocker yet, but tracking). This is also the date flagged as LRCX's 4-week watchlist-staleness line — the purge/keep decision stays with today's 2026-07-10 weekly review per the existing plan, not this run.
+- **ETN:** July 9 session H $412.97 / L $404.31 / C $405.92 = **2.135% ATR** ✓ clears (extends the clean-session streak). 50-day MA is now **$405.73**; July 9 close **+0.047% above it** — technical confirmation flipped from FAILING (July 8: −1.537%) to nominally PASSING, but the margin is noise-level (a $0.19 gap on a $406 stock), not a confirmed break. **Not treating this as a clean entry signal today** — this isn't a new invented gate, just applying entry signal #4 ("above the 50-day MA") with the judgment that a 0.05% crossing isn't meaningfully "above" anything. Will re-check Monday 2026-07-13 for a session with genuine separation (targeting >1%) before promoting.
+
+### Daily candidate diligence (step 6b) — ABBV full pre-trade pass
+Per the 2026-07-09 note flagging ABBV as a fresh, undiligenced watchlist addition, ran the full diligence checklist on ABBV (AbbVie) today:
+- **Earnings/guidance:** Q1 2026 adjusted EPS $2.65 vs. $2.59 consensus (beat), revenue $15.0B vs. $14.72B consensus (beat, +12.4% YoY), driven by Skyrizi (+29% op.) and Rinvoq (+20% op.) more than offsetting Humira erosion. At the Q1 call, FY26 adjusted EPS guidance was raised to $14.08-14.28. **However, guidance was trimmed again as of July 9** (one day before this review) to $13.91-14.11 — below the current $14.25 Street consensus — with Q2-specific guidance of $3.57-3.61 also below the $3.77 consensus. The math is consistent with the ~$0.14 EPS dilution AbbVie flagged from the Apogee deal (deal-related trim, not an operational miss), but the *most current* full-year guide is now below consensus — this undercuts the "beat + raise" entry signal rather than confirming it. [StockTitan, Investing.com (Apr 2026); DailyPolitical, TickerReport (Jul 9 2026)]
+- **Valuation:** Price ~$249.91 (July 9 close $252.74). Forward P/E ~16.0-16.5x — cheaper than JNJ (~20.1x), MRK (~21.1x), LLY (~29.8x), pricier than PFE (~8.3x). PEG 0.41-0.91 depending on source — comfortably under the 2.5 gate either way. [GuruFocus, ValueInvesting.io, StockAnalysis, late June/July 2026]
+- **Balance sheet:** Total debt ~$67.1B, net debt ~$61.6B. Shareholders' equity is structurally negative (legacy of the Allergan deal), not a new issue. **Interest coverage ~3.33x TTM — weak relative to healthcare peers** (JNJ/LLY typically run well above 10x); one source shows coverage falling from 7.04x (2022) to 2.32x (2024) as debt-funded M&A (ImmunoGen, Cerevel, now Apogee) reloads leverage. Credit rating A2/A- (investment grade, stable) despite the compression. Leverage trend is mixed, not cleanly improving — a real, if moderate, balance-sheet flag. [MacroTrends, GuruFocus, Stock-analysis-on.net]
+- **Catalyst check:** July 2 CMS proposal to align 340B payment rates with acquisition cost (potentially cutting ~$5.7B in hospital-side drug spending) drove ABBV to its 52-week high; separately, Senate HELP Chair Cassidy released a broader 340B reform discussion draft June 25 with a stakeholder comment period running through **August 28, 2026** — real and advancing, but neither is finalized. Apogee Therapeutics acquisition (~$10.9B, announced June 22, closing Q3 2026) extends the immunology pipeline with modest near-term dilution (~$0.14 EPS 2026). [Mintz, GuruFocus, CNBC, AbbVie IR — June 22-Jul 2 2026]
+- **Next earnings:** Q2 2026 confirmed for **July 31, 2026** — well outside the 2-day window. [AbbVie IR, BioSpace]
+- **Technical confirmation (entry signal #4) — FAILS:** ~50-day MA ≈ $222.23; current price ~$250 is **+13% above it** — over the strategy's explicit "not extended >10% above" gate. A bullish 10/50-day MA crossover occurred May 20, 2026, and moving-average signals are broadly "Buy," but the stock is genuinely extended short-term after its 52-week-high run, with mean-reversion risk into the July 31 print.
+- **ATR check:** July 10 pre-market range ~$247.99-254.86, ~2.7% high-low/close spread — well under the 5% gate; not an unusually volatile name (beta ~0.28-0.34).
+- **Verdict:** 3 of the 5 entry signals clear cleanly (catalyst, valuation, macro/sector tailwind); earnings momentum is muddied by the just-trimmed guidance; technical confirmation explicitly **FAILS** the extension gate. **ABBV is NOT promoted to a buy candidate today.** What's still missing: needs to pull back toward its 50-day MA (or consolidate) before re-consideration, and the guidance figures should be verified directly against AbbVie's own IR release (the July 9 trim came from secondary aggregator sites, not a primary 8-K) before any future promotion. Diligence is on file — a future re-check only needs to re-verify price vs. the 50-day MA and confirm the primary-source guidance number.
+
+### Cash-drag check
+- Cash 80.08% vs. the strategy's 25-40% target band for a 2-position book — well above target, elevated 8+ weeks now. No qualifying entry clears today: LRCX's ATR gate just failed on a chase-y analyst-upgrade pop; ETN's technical-confirmation cross is a noise-level +0.047%, not a confirmed break; ABBV's fresh diligence pass explicitly fails the extension gate and had its guidance trimmed below consensus the day before this review. Staying in cash is the correct, deliberate call today — not a default. Flagging for today's separately-scheduled weekly review: this is now 8 consecutive weeks with zero new positions, several names have failed on razor-thin technical margins (ETN twice now), and the pipeline may need either fresh, less-correlated candidates or a review of whether the technical-confirmation signal is calibrated too tightly for this market regime.
+
+### Since inception
+- Bull −0.07789% ($99,922.11) vs SPY TR ($751.89 pre-market trade + $1.76 div = $753.65 vs $739.44 anchor) = +1.9221% → **Bull TRAILS SPY by −2.000pp** (essentially unchanged from July 9 close's −2.003pp).
+
+### Planned trades for today
+
+No trades planned. LRCX's ATR gate failed again July 9 on a chase-y analyst-upgrade pop (gate reset to 0/2); ETN's technical-confirmation cross is noise-level (+0.047% above its 50-day MA); ABBV's full diligence pass today fails the extension gate (+13% above its 50-day MA) and had guidance trimmed below consensus the day before this review. Combined with the still-unresolved Iran conflict, no new positions today.
+
+```json
+{
+  "plan_date": "2026-07-10",
+  "trades": []
+}
+```
+
+---
+
 ## 2026-07-09 — Pre-market research (~08:07 ET, Thursday)
 
 ### Live-switch guard / Lock / Control switch
