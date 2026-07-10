@@ -1,5 +1,23 @@
 # Aggressive Bull — Research Log
 
+## 2026-07-10 — WEEKLY REVIEW (week of July 6–10)
+
+mcp__minimax__web_search was not found via ToolSearch this session — used WebSearch fallback for all queries per the search protocol. [search: WebSearch fallback]
+
+**S&P 500 weekly performance** (`S&P 500 weekly performance July 6 to July 10 2026`): Index recorded a >1% weekly advance, led by tech — Nasdaq +1.3% on the week, Nvidia +~4% and Meta +~6% cited as standouts by Friday's close. Consistent with the account's own SPY bars: SPY closed 744.86 (July 3) → 754.94 (July 10), +1.353% for the week. [search: WebSearch fallback]
+
+**Market week in review / sector winners-losers** (`stock market week in review July 10 2026 Fed sector winners losers`): 9 of 11 S&P sectors ended in the red for the week even as the index rose — narrow, mega-cap-tech-driven breadth. Winners: Technology (XLK +1.2%) and Energy (XLE +1.8%). Losers: Materials (XLB -2.6%), Financials (XLF -1.9%), Consumer Discretionary (XLY -1.8%). Fed: rate-hike odds for the July FOMC fell to 20% (from 30% last week) on a soft jobs report and falling oil — a dovish repricing that supported the late-week tech bounce. Notable event: SK Hynix (memory/HBM) began trading on Nasdaq via ADR, pricing at USD 149 and popping to USD 175 same-day — a fresh signal of capital appetite for AI-memory names, distinct from the GPU/ASIC layer we're concentrated in. [search: WebSearch fallback]
+
+**Per-position checks — NVDA / AVGO** (`NVDA AVGO stock week July 10 2026 AI chip selloff news`): The AI-chip-sector selloff that began ~July 7 continued through the week (Broadcom, AMD, Nvidia all down multiple percent on the worst days), driven by three overlapping, non-thesis-specific pressures: AI-margin-pressure worries, a hawkish Fed repricing (now reversing per the jobs-report news above), and capital rotation into a wave of approaching mega AI IPOs (SK Hynix this week). NVDA is described as down ~17% from its all-time high year-to-date while still trading at ~15x FY2028 estimated earnings on 85% revenue growth last quarter — external commentary reads this as a valuation/rotation story, not a demand story. No thesis-breaking, company-specific news for either name this week; both closed the week meaningfully off their intraweek lows (NVDA 8.3–10.7pp buffer to the -12% cut by Friday). [search: WebSearch fallback]
+
+**Per-position checks — VST / ETN** (`Vistra VST ETN Eaton stock news July 10 2026`): VST — 20-analyst consensus remains Strong Buy, 12-month price target USD 222.89 (+40.65% from Friday's price); Q2 2026 earnings confirmed for Aug 7; the KKR/NVDA/Kuwait Investment Authority/Vistra "Helix Digital Infrastructure" USD 10B AI-power venture (Vistra as preferred power provider) continues to be cited as the core thesis validator. ETN — BofA reiterated Buy (July 2); the company highlighted USD 2.1B in cumulative R&D spend on energy-efficiency/safety/productivity products since 2020, thesis-supporting context but not a new catalyst. No negative news for either. [search: WebSearch fallback]
+
+**Best-performers-this-week scan** (`best performing stocks this week July 10 2026`): No new, portfolio-relevant single-name leader emerged distinct from what's already tracked — the notable new name is SK Hynix (HBM memory), a fresh IPO with one day of trading history, too new/untested for entry consideration. Micron (MU) and Intel are called out among 2026's strongest quarterly performers on the memory/AI-infrastructure angle — MU remains on the informal watchlist from the June 24 pre-market note (Micron earnings binary) but has not yet been re-evaluated for entry; worth a dedicated look next week given cash is sitting idle and MU offers memory/HBM exposure distinct from (though still correlated to) the existing NVDA/AVGO GPU/ASIC book. [search: WebSearch fallback]
+
+**Conclusion:** No thesis-breaking news for any of the 6 held positions this week. The AI-chip-sector rotation/selloff that drove Monday's proactive NVDA/AVGO trims and Tuesday's stood-down contingent trims is macro/valuation-driven (Fed repricing, mega-IPO capital rotation, margin-pressure chatter), not company-specific — consistent with the conviction ratings already on file. No trades placed this run (weekly review does not trade).
+
+---
+
 ## 2026-07-07 — MIDDAY news scan (NVDA, AVGO, ETN — all >5% below entry)
 
 MiniMax M3 (`mcp__minimax__web_search`) was not available in this session (tool not found via search) — used WebSearch fallback for all three queries per the search protocol. [search: WebSearch fallback]

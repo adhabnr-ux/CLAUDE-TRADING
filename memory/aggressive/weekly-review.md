@@ -5,6 +5,103 @@ return, SPY return, result, A–F grade, what worked, what didn't, adjustments._
 
 ---
 
+## Week 6 — 2026-07-06 through 2026-07-10
+
+**Period**: July 6–10, 2026 (5 trading days; first full normal week since the July 3/4/5 holiday closure).
+
+| Metric | Value |
+|---|---|
+| Aggro return this week | **+3.010%** (equity: USD 90,674.09 → USD 93,403.14) |
+| SPY return this week | **+1.353%** (SPY: 744.86 → 754.94) |
+| Week vs SPY | **+1.657pp OUTPERFORMING** |
+| Aggro return since inception | **-6.597%** |
+| SPY return since inception | **+0.101%** (754.18 → 754.94) |
+| Alpha since inception | **-6.698pp** (improved from -8.090pp last review) |
+| Starting equity (period) | USD 90,674.09 |
+| Ending equity | USD 93,403.14 |
+| HWM | USD 101,144.73 (set June 4–5; unchanged, cross-checked via `history 1A 1D`) |
+| Drawdown from HWM | **-7.654%** (circuit breaker -20% — NOT triggered; 12.346pp headroom, not within 5pp of the breaker) |
+| Positions open (end of period) | 6 (NVDA, AVGO, ETN, GOOGL, AMZN, VST) |
+| Positions closed this period | 0 (two partial trims — NVDA, AVGO on July 7 — and one pyramid add — VST on July 10 — but no full closes) |
+| Process grade | **B-** |
+
+---
+
+### Trade Statistics (since inception)
+
+**Source**: `memory/aggressive/closed-trades.md` (narrative ledger, authoritative) cross-checked against `memory/trades.jsonl` aggro rows — both agree on 4 closed trades; no new closes this period, so the numbers are unchanged from the prior review.
+
+| Metric | Value |
+|---|---|
+| Total closed trades | **4** (AMD, MSFT, META, MRVL) |
+| Win rate | **0%** (0 wins / 4 closed trades) |
+| Average win % | N/A — no winning closed trades yet |
+| Average loss % | **-11.035%** (mean of -13.28%, -13.22%, -9.841%, -7.80%) |
+| Profit factor | **0.00** (no gains to offset realized losses) |
+| Avg holding days — losers | **12.5 days** (5, 17, 19, 9) |
+| Avg holding days — winners | N/A — no winners yet |
+
+⚠️ **Sample still under 5 closed trades — do not over-read these statistics.** No new closed trades this period; the standing 0-for-4 record (all macro-forced exits, no thesis breaks) is unchanged.
+
+**Ledger sync**: `closed-trades.md` (4 entries) and `trades.jsonl` aggro rows (4 `close`/full-exit fills: AMD, MSFT, META, MRVL) remain in sync. This week's two trims (NVDA -10.09%/-9.55% on trimmed shares, AVGO similar) and one pyramid add (VST) are all correctly logged as partial actions (`trim`/`buy`), not counted as closed trades.
+
+---
+
+### Process Audit
+
+- **Earnings discipline**: ✅ Pass. No held position reports earnings this week (NVDA/AVGO/ETN review_by-adjacent but not earnings-adjacent; nearest earnings GOOGL ~Jul 21-24, AMZN Jul 30, VST Aug 7, ETN Aug 4). No new position opened, so the 2-day earnings window was never at issue.
+- **Stop discipline**: ✅ Pass. 6/6 live 18% trailing stops confirmed at every single routine this week (pre-market, open, midday, close, five days straight). The cancel-then-sell(-then-reissue) sequence was applied correctly three times: NVDA trim (July 7), AVGO trim (July 7), and the VST pyramid add's stop reissue to cover the full 67-share position (July 10). No position was ever found unprotected, and the plan-to-execution handoff gap flagged in the prior review (the July 2 AVGO trim that didn't fire on schedule) did not recur — every contingent plan this week (July 7 NVDA/AVGO trims, July 8 stand-downs, July 10 VST add) executed exactly as pre-market scoped, with explicit stand-down/escalation checks re-verified at execution time.
+- **Post-mortem completeness**: N/A / Pass. No positions closed this week — nothing to post-mortem.
+- **Deployment pace**: ⚠️ **Fail.** Average cash across the 5 sessions (from `memory/performance.csv` aggro rows) was **33.54%** of equity (27.91% Mon → 36.01% Tue → 35.68% Wed → 35.45% Thu → 32.67% Fri) — up from last period's already-flagged 27.2% average, and moving in the wrong direction against last week's explicit review directive to "actively look for redeployment... rather than letting cash idle by default." The only capital deployed this week was a USD 2,378 (≈2.5% of equity) pyramid add to VST, an existing position — not new diversification — while two proactive trims (NVDA, AVGO) pulled additional cash out. Each individual day's no-new-buy decision was well-reasoned and documented (Iran-ceasefire-"over" shock July 7-8, continuing AI-chip-sector rotation, SK Hynix mega-IPO capital-rotation day July 10), but the cumulative effect is a second consecutive period where the "deploy fast, concentrate in conviction" mandate lost ground to defensive posture. This is graded down as the standout process gap this week.
+- **Concentration**: ✅ Pass. No position breached the 35% single-position cap (NVDA largest at 17.36% of equity). Semi-group (NVDA+AVGO) at 25.49% — well within the informal 50% watch line and lower than at any point in the last month, a direct result of this week's two trims. No sector exceeded 60%.
+- **Thesis contracts**: ✅ Pass. NVDA and ETN review_by dates (both due July 9) were explicitly renewed as HOLD with documented reasoning (DeepSeek's own-chip effort assessed as a known, gradual competitive risk, not a thesis break; Dana merger and FTSE Russell inclusion still in play for ETN) and new review_by dates set to 2026-07-23. No contract was allowed to expire unexamined.
+- **Weekly review cadence**: ✅ Pass. This review runs on schedule, one week after the July 3 catch-up review — the cadence discipline flagged as the prior period's headline failure has held for a full cycle.
+
+**Process grade: B-**. *Justification: risk management and execution were essentially flawless this week — stops always live, the exact cancel-sell-reissue sequence applied correctly three times, no plan-to-execution gaps (a direct improvement on the prior period's worst failure), thesis contracts renewed on schedule, weekly review cadence held. But the one specific, actionable item the prior review called out by name — redeploy the elevated cash pile rather than letting it idle — moved in the wrong direction: average cash rose from 27.2% to 33.54%, and the week's only new capital commitment was a small add to an existing winner, not diversification. A week that executes intraday risk management perfectly while ignoring its own prior week's stated priority does not earn better than a B-, regardless of the strong relative-return week.*
+
+---
+
+### What Worked
+
+1. **Flawless plan-to-execution handoff, three times.** The July 7 NVDA/AVGO trims, the July 8 stand-downs, and the July 10 VST pyramid add all executed exactly as their pre-market/prior-session plans specified, with stand-down/escalation conditions correctly re-checked at execution time. This directly closes the gap identified as the prior period's second-biggest failure (the July 2 AVGO trim that missed its window).
+2. **Proactive trims protected the book through a real macro shock.** NVDA and AVGO were trimmed 25% each on July 7 as buffers compressed toward the -12% cut line during a renewed AI-valuation sector rotation; both positions then absorbed the July 8 Iran-escalation shock from a healthier, smaller base and recovered to 8-11pp buffers by Friday. The proactive-trim heuristic (formalized Week 3, first tested on MSFT/META) continues to outperform waiting for the mechanical rule.
+3. **VST remains the standout position and the pyramid-add discipline worked as designed.** The July 10 add (15 shares at USD 158.54, blended entry now USD 153.05) was a textbook "add to a winner, never average down" execution — VST is the only green position in the book (+3.79% blended), backed by a Strong Buy consensus, a confirmed Q2 earnings date, and the KKR/NVDA/Vistra Helix venture.
+4. **The book outperformed SPY by +1.657pp this week**, and since-inception alpha improved by 1.39pp (from -8.090pp to -6.698pp) — the second consecutive positive data point (the two trims plus the tech-led market bounce) after a rough June.
+5. **Thesis contract discipline held**: both NVDA and ETN review_by deadlines were met with explicit, reasoned HOLD decisions rather than silent rollover.
+
+---
+
+### What Didn't Work
+
+1. **Cash climbed further, against explicit direction from the prior review.** Average cash this week (33.54%) is the highest weekly average since inception, continuing a now multi-week drift that the July 3 catch-up review explicitly flagged and asked to be reversed. The account is behaving more like Cautious Bull than its own "deploy fast, 80%+ invested" mandate.
+2. **No new diversifying name was added.** The only new capital deployed was a same-name pyramid add (VST); the MU/memory angle and other Tier 3 candidates flagged in past reviews remain unexamined for actual entry.
+3. **Trade record remains 0-for-4 since inception** — unchanged this period, but worth restating: the strategy has yet to prove out a winning closed trade.
+4. **Alpha since inception remains meaningfully negative (-6.698pp)** despite this week's improvement — concentrated AI-tech/power exposure is still recovering from the multi-week drawdown earlier in the account's life.
+
+---
+
+### Adjustments for next week (starting 2026-07-13)
+
+1. **Redeployment is not optional next week.** Cash at 32.67% (end of week) with all 6 positions healthy (8+pp buffers) and no near-term binary risk flagged is the clearest "should be buying" setup the account has had in weeks. Pre-market July 13 must produce at least one concrete, actionable new-position candidate — not another deferral — or an explicit, specific reason why not (not a repeat of "the tape is ambiguous").
+2. **Evaluate MU (Micron) for entry.** Surfaced again this week as a memory/HBM-cycle name with distinct (though not zero) correlation to the existing NVDA/AVGO book; do the fundamental/valuation work rather than deferring again.
+3. **Continue the proactive-trim discipline that worked well this week** — no change needed, keep applying the <3pp-buffer/review_by-within-5-days/no-near-term-catalyst heuristic exactly as executed on NVDA/AVGO.
+4. **GOOGL and AMZN next review_by dates** — confirm and journal explicitly at the next session they come due (both were renewed July 6-7 per standing thesis-contract discipline; verify exact dates in the market-open routine).
+5. **Watch the SK Hynix / mega-IPO capital-rotation pattern.** A second consecutive week of large tech IPOs (SpaceX in June, SK Hynix this week) pulling capital from adjacent AI names is now a recognizable, repeatable pattern — treat future mega-IPO trading debuts as same-session drag days for the existing book, consistent with the June 12 lesson, and do not read the drag as thesis deterioration.
+
+---
+
+### Aggro vs Cautious Bull (Race Scoreboard)
+*(Cautious Bull's `memory/portfolio.md` not read this run — Aggressive Bull only reads it during Cautious Bull's own weekly review per the CLAUDE.md cross-read rule; this section is populated from what's already on file.)*
+
+| Metric | Aggressive Bull | Cautious Bull |
+|---|---|---|
+| Since inception return | **-6.597%** | Not read this run (see CLAUDE.md cross-read scope) |
+| Drawdown from HWM | -7.654% | — |
+| Style | Concentrated AI tech + power infra, 18% stops | Diversified, 10% stops |
+| Lesson for Cautious | Proactive trimming (NVDA/AVGO, July 7) ahead of a mechanical rule, followed by disciplined stand-downs when buffers recovered, protected the book through two real macro shocks (chip-sector rotation, Iran escalation) this week without ever breaching a cut threshold — the "trim early, don't wait for the rule" pattern first proven on MSFT/META (June) continues to generalize. Cost of the same discipline: cash sitting at 33.54% average, the highest weekly average since inception, which is a real drag when the market is climbing. | — |
+
+---
+
 ## Weeks 4+5 (catch-up) — 2026-06-22 through 2026-07-03
 
 **Period**: 10 trading days (June 22, 23, 24, 25, 26, 29, 30, July 1, 2; July 3 market closed for the Independence Day holiday). **This review is 14 days late** — see Process Audit. It replaces the two weekly reviews (Week 4: June 22–26, and what would have been Week 5: June 29–July 3) that were never filed.

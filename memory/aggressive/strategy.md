@@ -240,6 +240,17 @@ This is NOT a hard rule — it is a discretionary risk management tool. A trim r
 
 ---
 
+## Week 6 priorities (as of 2026-07-10 weekly review)
+
+- **Redeployment is the top priority for the week of July 13.** Average cash this week was 33.54% (up from 27.2% the prior period), the highest weekly average since inception, despite the July 3 review already flagging the same issue. All 6 positions are healthy (8pp+ buffer, no CRITICAL/WATCH names) — this is the best-conditioned the book has looked since inception, which makes continued idle cash a missed opportunity, not prudent caution.
+- **MU (Micron) is the leading redeployment candidate** — memory/HBM AI-infrastructure exposure, distinct from (though not zero-correlated to) the existing NVDA/AVGO GPU/ASIC book. Do the fundamental/valuation work at the next pre-market rather than deferring again. SK Hynix's Nasdaq debut this week (priced USD 149, popped to USD 175) is a fresh signal of capital appetite for the memory/HBM layer but is too new/untested (one day of trading history) for entry consideration itself.
+- **Semi-group concentration (NVDA+AVGO) is now 25.49%** — the lowest it has been in weeks, following the July 7 trims. This creates room for a new, non-semi or complementary AI-infrastructure name without breaching the informal 50% watch line.
+- **NVDA and ETN review_by renewed to 2026-07-23** (both decided HOLD at July 9 pre-market). GOOGL and AMZN review_by dates should be confirmed and journaled explicitly at the next session they come due.
+- **Stop-discipline and proactive-trim process are working well — no change needed.** The <3pp-buffer/review_by-within-5-days/no-near-term-catalyst heuristic, and the cancel-stop-then-sell(-then-reissue) execution sequence, were applied correctly three times this week (NVDA trim, AVGO trim, VST pyramid-add stop reissue) with zero plan-to-execution gaps.
+- **Alpha since inception: -6.698pp** (Aggro -6.597% vs SPY +0.101%), improved from -8.090pp last review. VST remains the standout position (+3.79% blended, only green name in the book).
+
+---
+
 ## Benchmark tracking
 
 Every weekly review computes:
