@@ -3,10 +3,58 @@
 _Updated by every routine from live Alpaca data. The next agent trusts this as
 the last known state, but always re-fetches live data before trading._
 
-**Last updated:** 2026-07-10 12:34 ET (midday routine; market open, `is_open: true`; stop audit 3/3 PASS; LLY $1,186.70 +8.52% / V $345.855 +6.887%; no action — no cuts, no tightenings)
+**Last updated:** 2026-07-10 15:52 ET (close routine; market open at run time, full session (not a half-day); stop audit 3/3 PASS; LLY $1,190.37 +8.855% / V $348.93 +7.838%; 0 trades today; Bull TRAILS SPY by −2.787pp since inception)
 **Inception:** 2026-05-21 — starting equity $100,000.00 | SPY anchor price $739.44
 **SPY total-return anchor (post-June 18 ex-div $1.76):** **$741.20**
 **Cumulative SPY dividends since inception (quarterly tracker):** $1.76/sh (June 18 ex-div); next SPY ex-div est. ~September 2026.
+
+---
+
+## Account (close routine, 2026-07-10 ~15:52 ET — EOD)
+
+| Metric | Value |
+|--------|-------|
+| Equity | $99,603.88 |
+| Cash | $80,023.72 (80.343%) |
+| Long market value | $19,580.16 |
+| Last equity (July 9 close) | $99,853.62 |
+| Today's P/L | **−$249.74 (−0.250%)** |
+| HWM | $101,384.21 (confirmed via `history 1A 1D`) |
+| Drawdown from HWM | **−1.756%** — well within the −10% circuit breaker (8.244pp headroom), not flagged |
+
+## Open positions (close routine, 2026-07-10 ~15:52 ET)
+
+| Symbol | Qty | Avg entry | Current price | Mkt value | Unrealized P/L | % of portfolio | Trailing Stop |
+|--------|-----|-----------|--------------|-----------|----------------|----------------|---------------|
+| LLY | 10 | $1,093.534 | $1,190.37 | $11,903.70 | +$968.36 (+8.855%) | 11.951% | d4147484 (7sh) + 25989fb5 (3sh), HWM $1,249.45, stop $1,124.505 ✓ — buffer $65.865 (5.535%) ✓ |
+| V | 22 | $323.57 | $348.93 | $7,676.46 | +$557.92 (+7.838%) | 7.708% | 66033918 (22sh), HWM $364.21, stop $327.789 ✓ — buffer $21.141 (6.058%) ✓ |
+
+**Sector exposure (close July 10):**
+- Healthcare (LLY): $11,903.70 = 11.951% | Financials (V): $7,676.46 = 7.708% | Cash: $80,023.72 = 80.343%
+- No sector above 60% cap ✓
+
+**Trailing stop status (close July 10 — confirmed via Alpaca live orders ~15:52 ET):**
+- LLY (d4147484): 7sh — HWM $1,249.45, stop $1,124.505 ✓ (buffer 5.535%)
+- LLY (25989fb5): 3sh — HWM $1,249.45, stop $1,124.505 ✓
+- V (66033918): 22sh — HWM $364.21, stop $327.789 ✓ (buffer 6.058%)
+**Stop audit: 3/3 PASS ✓** (3 live trailing-stop orders across 2 positions; matches held quantities exactly — none missing)
+
+### Performance vs SPY (close, 2026-07-10)
+| Metric | Value |
+|---|---|
+| Bull today | −0.250% |
+| SPY today ($751.55 → $755.36) | +0.507% |
+| Bull since inception | −0.396% |
+| SPY since inception (TR, $739.44 anchor + $1.76 div) | +2.391% |
+| Bull vs SPY since inception | **TRAILS by −2.787pp** (was −2.003pp at July 9 close; gap widened −0.784pp today) |
+
+**Race scoreboard:** Bull −0.396% | AGGRO −6.612% (own 2026-06-04 inception, latest AGGRO midday equity $93,388.04) | SPY +2.391% (Bull's 2026-05-21 inception, TR). Bull leads AGGRO by ~6.22pp.
+
+**Market close context (WebSearch):** AI/chip trade regained momentum into the SK Hynix Nasdaq IPO debut (opened +14% at $170, raising $26.5B) and META's AI custom-chip manufacturing plans (META +4.7%); oil fell despite continued Iran-conflict escalation, easing inflation-tightening fears — a constructive tape for tech/semis specifically. Bull's non-tech book (LLY, V) sat out the rally: LLY pulled back −2.184% intraday (no negative company news found — normal pullback on a mixed-futures morning, not a thesis event) while V was roughly flat (+0.210%). This is the recurring diversification trade-off on chip-rally days already logged multiple times (July 6, etc.) — not a new pattern, no thesis threat to either held name.
+
+**Result:** Clean, uneventful close. 0 trades, no exits, no cuts, no discretionary tightenings. Both positions within all guardrails. Stop audit 3/3 PASS. Drawdown from HWM (−1.756%) not near the circuit breaker. closed-trades.md unchanged (VST June 30 remains the latest entry) — no exits to reconcile.
+
+Next actionable routine: weekly review (today, 4:30 PM ET) — this is Week 8 (5 active trading days: Mon Jul 6 – Fri Jul 10).
 
 ---
 

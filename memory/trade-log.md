@@ -5,6 +5,29 @@ The weekly new-position count is derived from this log._
 
 _Entries before 2026-06-01 archived to `memory/archive/2026-05.md` (2026-07-01 monthly housekeeping)._
 
+## 2026-07-10 15:52 ET — CLOSE ROUTINE (no trades)
+
+- **Action:** None — 0 trades, no exits, no cuts, no tightenings. Both positions within all guardrails.
+- **Live-switch guard:** `ALPACA_BASE_URL` contains "paper" ✓
+- **Market:** OPEN at run time ✓ (next_close 16:00 ET, full trading day — not a half-day)
+- **Account:** Equity $99,603.88 | Cash $80,023.72 (80.343%) | Last equity (July 9 close) $99,853.62
+- **Today P/L:** −$249.74 (−0.250%)
+- **Shock check:** −0.250% — no shock ✓ (threshold −4%)
+- **Drawdown vs HWM:** $99,603.88 vs HWM $101,384.21 = −1.756% — informational only, 8.244pp headroom to the −10% circuit breaker, not flagged.
+- **Position review (live prices ~15:52 ET):**
+  - LLY 10sh @ $1,190.37 (+8.855% from entry $1,093.534, −2.184% today from yesterday's $1,216.95 close). Buffer $65.865 (5.535%) ✓. review_by 2026-07-21 not due. HOLD. Conviction A.
+  - V 22sh @ $348.93 (+7.838% from entry $323.57, +0.210% today from yesterday's $348.20 close). Buffer $21.141 (6.058%) ✓. review_by 2026-07-28 not due. HOLD. Conviction B.
+- **Stop audit: 3/3 PASS ✓**
+  - LLY (d4147484): 7sh — HWM $1,249.45, stop $1,124.505 ✓
+  - LLY (25989fb5): 3sh — HWM $1,249.45, stop $1,124.505 ✓
+  - V (66033918): 22sh — HWM $364.21, stop $327.789 ✓
+- **Exit reconciliation:** No exits today. closed-trades.md current (VST June 30 latest entry) — nothing new required.
+- **Sector exposure:** Healthcare (LLY) 11.951% | Financials (V) 7.708% | Cash 80.343% — no sector above 60% cap ✓.
+- **Market close context:** AI/chip trade regained momentum into the SK Hynix Nasdaq IPO debut (opened +14% at $170) and META's AI custom-chip manufacturing plans (META +4.7%); oil fell despite continued Iran-conflict escalation, easing inflation-tightening fears. Bull's non-tech book (LLY, V) sat out the chip rally — LLY −2.184% intraday (no negative news, normal pullback), V roughly flat. Repeat of the recurring diversification trade-off on chip-rally days; no thesis threat. [Yahoo Finance, TheStreet, July 10]
+- **Trades today:** 0.
+- **Since inception:** Bull −0.396% vs SPY TR +2.391% → Bull TRAILS SPY by −2.787pp (was −2.003pp at July 9 close; gap widened −0.784pp today on SPY's chip-led rally).
+- **Race scoreboard:** Bull −0.396% | AGGRO −6.612% (own June 4 inception) | SPY +2.391% (Bull's May 21 inception, TR). Bull leads AGGRO by ~6.22pp.
+
 ## 2026-07-10 12:34 ET — MIDDAY — no action (stop audit 3/3 PASS; no cuts, no tightenings)
 
 - **Action:** None — risk-management check only. Both positions comfortably within range; no −7% cuts, no +15% tighten triggers, no missing stops.
