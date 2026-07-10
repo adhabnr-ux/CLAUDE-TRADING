@@ -48,10 +48,26 @@ Open a new position only when **at least two** of these apply:
 3. Reasonable valuation — PEG ratio < 2.5, or at a discount vs. peers on
    NTM P/E or EV/FCF.
 4. Technical confirmation: stock is above its 50-day moving average and not
-   extended > 10% above it (avoid chasing blow-off moves).
+   extended > 10% above it (avoid chasing blow-off moves). **A close must be
+   at least 0.5% above the 50-day MA to count as "above" it** — a same-day
+   noise-level crossing (e.g. +0.05%) does not confirm. This is the one
+   fixed number for this signal; do not tighten it further ad hoc per name
+   (codified 2026-07-10 after ETN sat in noise-level-crossing limbo for two
+   sessions with no written threshold to apply).
 5. Macro tailwind: sector trend is intact and no major contrary catalyst looms.
 
 Write a thesis sentence before every buy. If you can't write one, don't trade.
+
+**Pullback-watch protocol (added 2026-07-10):** when a candidate passes
+signals #1, #2, #3, and #5 but fails only #4 (technical/extension), log an
+explicit pullback target price (its 50-day MA at diligence time) in the
+watchlist row instead of re-running a full diligence pass every session.
+Future pre-markets just check the live price against the stored target;
+promote to a buy candidate automatically once price reaches it, provided the
+other signals still hold (re-verify #1/#2/#3/#5 briefly, not from scratch).
+This was added after six consecutive diligenced names (LRCX, ETN, CEG, VRT,
+NVT, ABBV) all failed only the technical-extension gate — the pipeline is
+finding real theses, just too late in their run-up.
 
 **Technical-gate discipline:** Do not invent volatility/ATR "gates" or cooldown
 periods beyond what's written here. If a name needs to cool off after a
@@ -111,7 +127,7 @@ Do NOT sell on day-to-day noise. Sell on thesis changes.
 
 ## Watchlist
 
-_Watchlist hygiene (updated 2026-07-10 pre-market): entries require date added + catalyst with expiry. Stale entries (4+ weeks, catalyst expired) purged. **LRCX's ATR gate FAILED again July 9 (5.466%) — a chase-y ~6-7% pop on analyst PT hikes + a broad semi relief rally, not fresh fundamentals; gate counter reset to 0/2, though technical confirmation is now strongly positive (+7.88% above 50-day MA).** Hit the 4-week staleness line — purge/keep decision at today's 2026-07-10 weekly review per existing plan. **ETN's ATR gate cleared again July 9 (2.135%) and technical confirmation flipped to barely PASSING (July 9 close only +0.047% above its ~50-day MA — noise-level, not a confirmed break)** — not promoted, needs a session with real separation above the MA. CEG diligenced 2026-07-07 — still fails technical confirmation, not re-checked since. VRT received its full pre-trade diligence pass 2026-07-08 — fundamentals/valuation pass (PEG 1.36) but fails both technical confirmation (~6% below 50-day MA) and the ATR gate (6.15% July 7) — not promoted, not re-checked since. NVT received its full pre-trade diligence pass 2026-07-09 — fundamentals/valuation/catalyst pass but fails technical confirmation (−5.82% below its ~50-day MA) — not promoted, not re-checked since. MOD ATR-only checked 2026-07-09 (6.198%, fails) — still needs a full diligence pass. **ABBV received its full pre-trade diligence pass 2026-07-10** — fundamentals/valuation pass (PEG 0.41-0.91, real 340B/Apogee catalysts) but FAILS technical confirmation (+13% extended above its ~50-day MA, over the 10% not-extended gate) and its FY26 guidance was trimmed below Street consensus just one day before this review — not promoted. CAT remains research-only, undiligenced (next in the diligence queue).
+_Watchlist hygiene (updated 2026-07-10 weekly review): entries require date added + catalyst with expiry. Stale entries (4+ weeks, catalyst expired) purged. **LRCX PURGED this review** — see "Purged from watchlist" below; hit the 4-week staleness line with 3+ ATR-gate failures and never cleared its entry gate. **ETN's ATR gate cleared again July 9 (2.135%) but technical confirmation remains noise-level (July 9 close only +0.047% above its ~50-day MA)** — now formally fails the newly-codified 0.5%-minimum-separation rule (see Entry Signals #4); not promoted, needs a session with real separation above the MA. CEG diligenced 2026-07-07 — still fails technical confirmation, not re-checked since. VRT received its full pre-trade diligence pass 2026-07-08 — fundamentals/valuation pass (PEG 1.36) but fails both technical confirmation (~6% below 50-day MA) and the ATR gate (6.15% July 7) — not promoted, not re-checked since. NVT received its full pre-trade diligence pass 2026-07-09 — fundamentals/valuation/catalyst pass but fails technical confirmation (−5.82% below its ~50-day MA) — not promoted, not re-checked since. MOD ATR-only checked 2026-07-09 (6.198%, fails) — still needs a full diligence pass. **ABBV received its full pre-trade diligence pass 2026-07-10** — fundamentals/valuation pass (PEG 0.41-0.91, real 340B/Apogee catalysts) but FAILS technical confirmation (+13% extended above its ~50-day MA, over the 10% not-extended gate) and its FY26 guidance was trimmed below Street consensus just one day before this review — not promoted. CAT remains research-only, undiligenced (next in the diligence queue).
 
 | Ticker | Sector | Date Added | One-line reason | Catalyst Expiry |
 |--------|--------|------------|-----------------|-----------------|
@@ -119,7 +135,6 @@ _Watchlist hygiene (updated 2026-07-10 pre-market): entries require date added +
 | V      | Financials | 2026-06-10 | **HELD** 22sh @ $323.57 — payments infrastructure; OpenAI partnership; Open USD stablecoin consortium (140+ partners); zero sell ratings among 42 analysts; +7.82% from entry (pulled back from +11.64% on July 6 profit-taking/sector rotation, not thesis-related) | Review by July 28 (earnings) |
 | VST    | Energy / Utilities | 2026-06-09 (closed 2026-06-30, WIN +7.66%) | **NOT HELD** — pulled back to ~$151–153 (below the $160.20 exit); Wells Fargo Buy July 3; but NEW: FERC colocation-deal scrutiny risk + June 25 technical sell signal + insider selling — fails technical-confirmation entry signal, not a falling-knife buy | Not eligible today — needs a confirmed bottom (reversal + volume) and FERC-risk clarity before re-entry; re-check ATR/technicals each pre-market |
 | ETN    | Industrials / AI Power | 2026-06-26 | Eaton electrical equipment — direct critical-path input to hyperscale data centers; BMO Buy July 2; FY26 guidance raised (EPS est. $3.07, +4.07% YoY); record USD22.8B backlog, Electrical Americas data-center orders +240% YoY | **ATR gate cleared again July 9 (2.135%). Technical confirmation flipped from FAILING to barely PASSING — July 9 close $405.92 is only +0.047% above its ~50-day MA ($405.73), a noise-level margin, not a confirmed break.** Not promoted — needs a session with genuine separation (>1%) above the MA before entry; re-check Monday 2026-07-13 |
-| LRCX   | Semi Equipment | 2026-06-08 | AI fab investment wave; Cantor PT $500, Susquehanna $475 (June 29); CEO Timothy Archer sold ~USD11.7M stock July 2 | **ATR gate FAILED July 9 (5.466%) — stock surged ~6-7% on analyst PT hikes (TD Cowen $340→$400, Mizuho $380→$400) + a broad semi-sector relief rally, not fresh company fundamentals; one-day-pop/chase risk since LRCX was already ~56% above its 200-day MA before the move. Gate counter reset to 0/2. Technical confirmation strengthened to +7.88% above 50-day MA.** Hit its 4-week staleness line — purge/keep decision at today's 2026-07-10 weekly review per existing plan |
 | CEG    | Utilities / Nuclear | 2026-07-06 | Constellation Energy; nuclear power, Microsoft Three Mile Island restart PPA; premium pricing power as AI demand grows; **full diligence pass 2026-07-07: Q1 beat (EPS $4.49), FY26 guide affirmed, PEG 1.19, analyst consensus Buy — but FAILS technical confirmation (11.55% below 50-day MA, confirmed downtrend since July 1-2 selloff)** | Not eligible — needs to reclaim 50-day MA or show a clear reversal/basing pattern before re-consideration |
 | VRT    | Industrials / AI Cooling | 2026-07-06 | Vertiv; full power+cooling stack, deep NVIDIA integration; **full diligence pass 2026-07-08: FY26 guide raised to USD13.5-14.0B (+30% organic), backlog >USD15B, PEG 1.36, ROE 45.1%/ROIC 32.1%, healthy balance sheet (current ratio 1.49, D/E 0.77) — but FAILS technical confirmation (~6.1% below approx 50-day MA, USD305.625 vs ~USD325.37) AND the ATR gate (6.15% July 7, above 5% cap)** | Not eligible — needs to reclaim 50-day MA and post 2 consecutive ATR-gate-clearing sessions (≤5%) before re-consideration |
 | NVT    | Industrials / AI Cooling | 2026-07-06 | nVent Electric; liquid cooling distribution + high-density power distribution units; **full diligence pass 2026-07-09: FY26 adj. EPS guide raised to USD 4.45-4.55, backlog USD 2.6B, PEG 1.18, D/E 43.9%, interest coverage 6.7x — passes fundamentals/valuation/ATR gate (3.015%) but FAILS technical confirmation (−5.82% below ~50-day MA of USD 164.44)** | Not eligible — needs to reclaim its 50-day MA before re-consideration |
@@ -131,6 +146,9 @@ _Watchlist hygiene (updated 2026-07-10 pre-market): entries require date added +
 | PWR    | Industrials | 2026-06-12 | Quanta Services; grid/data-center infrastructure buildout; Q1 EPS +31.4% beat; PT upgrades TD Cowen $775 / Citi $837; ATR elevated + insider selling $123M flag; P/E ~95 | Re-evaluate late July; needs ATR normalization + insider selling to abate |
 | JNJ    | Healthcare | 2026-05-22 | Defensive quality compounder; resilient earnings; reasonable valuation; inflation-resistant | Ongoing; no hard expiry |
 | WMT    | Consumer Defensive | 2026-05-22 | Market-share gains from cost-conscious consumer; AI supply-chain edge; defensive in inflation environment | Ongoing; no hard expiry |
+
+_Purged from watchlist (2026-07-10 weekly review):_
+- **LRCX:** REMOVED — added 2026-06-08, hit the 4-week watchlist-staleness line without ever clearing its entry gate. Failed its ATR gate 3+ times, most recently July 9 (5.466%) on a chase-y analyst-PT-hike pop (TD Cowen $340→$400, Mizuho $380→$400), not fresh fundamentals — LRCX was already ~56% above its 200-day MA before that move. CEO Timothy Archer sold ~USD11.7M stock July 2. Fundamental AI-fab-investment thesis is not broken, but re-entry needs a fresh diligence pass and a genuinely calm technical setup, not an automatic re-add.
 
 _Purged from watchlist (2026-06-26 weekly review):_
 - **NVDA:** REMOVED — second trailing stop in 5 weeks (June 5: −3.36%; June 25: −9.78%). GPU B200 hourly spot price −31% in 3 weeks ($6.11→$4.22) is a fundamental margin-pressure concern. Re-add only when: (a) GPU spot prices recover above $5.50/hr OR (b) confirmed major new hyperscaler deployment catalyst; cooling period capped at 2 weeks from June 25 per 2026-07-01 strategy update (was 4 weeks) — re-eligible July 9.
@@ -172,6 +190,10 @@ _Previously purged (still excluded):_
 - **MOD:** ATR-only checked 2026-07-09 (6.198%, fails gate) — still needs a full diligence pass.
 - **ABBV diligence completed 2026-07-10:** fundamentals/valuation pass (PEG 0.41-0.91) but FAILS technical confirmation (+13% extended above 50-day MA) and FY26 guidance was trimmed below Street consensus July 9 — not promoted.
 - **CAT:** still research-only, undiligenced — next in the diligence queue.
+
+## Weekly review summary (2026-07-10)
+
+Week 8 (Jul 6–10): Bull −0.525% vs SPY +1.353% = lagged −1.879pp (AI/semi trade rallied hard — Meta custom-chip news, SK Hynix IPO — while an 80%-cash, non-tech book sat out). Since inception: Bull −0.396% vs SPY TR +2.391% = trails −2.787pp, the worst since-inception reading yet (was −0.84pp last review). Zero trades this week; win rate/profit factor unchanged (1/7, 14.3%, 0.192). Grade: C+. LRCX purged (4-week staleness, repeated ATR-gate failures). Codified a 0.5% minimum-separation rule for entry signal #4 and added a "pullback-watch" protocol after 6 consecutive diligenced names failed only the technical-extension gate — see Entry Signals section above. Full detail in `weekly-review.md`.
 
 ## Weekly review summary (2026-07-03)
 

@@ -2,6 +2,96 @@
 
 _Written every Friday by the weekly-review routine. Newest at the top._
 
+## Week ending 2026-07-10 (Week 8 — 5 active trading days: Mon Jul 6, Tue Jul 7, Wed Jul 8, Thu Jul 9, Fri Jul 10)
+
+- **Control switch:** `memory/control.md` STATUS: ACTIVE all week. No `NOTE:`/`QUERY:` line. `CROSS_BULL_LEARNING:` line blank (not triggered) — see cross-Bull section below.
+- **Bull return (week):** −0.525% ($100,129.68 Jul 2 close → $99,603.88 Jul 10 close-routine mark, ~15:52 ET)
+- **SPY return (week):** +1.353% ($744.86 → $754.94, official close; no dividend this week)
+- **Result:** LAGGED SPY by **−1.879pp** — a rally week for the broad market (AI/semi trade regained momentum: Nvidia +4%, Meta +6-7% on custom-chip news, SK Hynix's US IPO debut +14%) with an 80%-cash, non-tech book unable to participate
+- **Since inception (2026-05-21):** Bull −0.396% vs SPY TR +2.391% ($755.36 live mark + $1.76 div vs $739.44 anchor) = **Bull TRAILS SPY by −2.787pp** (was −0.841pp entering this week — a −1.946pp swing, the largest weekly gap-widening since inception, and the worst since-inception reading on record)
+- **HWM:** $101,384.21 | current drawdown −1.756% — well within the −10% circuit breaker ✓
+- **Grade:** C+
+
+### Trade statistics (unchanged this week — zero trades; closed-trades.md authoritative)
+
+| Metric | Value |
+|--------|-------|
+| New trades this week | **0** — no entries, no exits, no cuts, no discretionary tightenings |
+| Weekly position slots used | 0/3, every session (LRCX ATR gate failed repeatedly; ETN technical confirmation stuck at noise-level; CEG/VRT/NVT/ABBV all diligenced and rejected on the technical-extension gate; MOD/CAT still pre-diligence) |
+| Total closed trades to date | **7** (AMZN, AVGO, NVDA×1, MSFT, META, NVDA×2, VST) — unchanged |
+| Wins | **1** (VST, +7.66%) |
+| Losses | 6 |
+| Win rate | **14.3%** (unchanged) |
+| Average win % | **+7.66%** (single data point — VST) |
+| Average loss % | **5.03%** (unchanged) |
+| Profit factor | **0.192** (unchanged) |
+| Avg holding days: winner | **21 days** (VST) |
+| Avg holding days: losers | **10.2 days** |
+| Losers vs. winner holding pattern | Winner held longer than every loser — consistent with "let winners run, cut losers fast" |
+| Biggest repeated lesson | Same as last review — no new closed trades to add data |
+
+⚠️ **trades.jsonl gap persists, unresolved for a 5th consecutive weekly review** (flagged Jun 12, Jun 19, Jun 26, Jul 3, and now Jul 10): bull-tagged records remain exactly **4** (V buy, META stop_fill, NVDA buy, NVDA stop_fill) against 7 closed trades and 2 open positions in the narrative ledger. No new bull-tagged fills occurred this week to widen the gap further, but nothing has been backfilled either. `closed-trades.md` remains the authoritative source. **This is a real, un-remediated tooling defect** — market-open/midday routines have not been appending fills to `trades.jsonl` at execution time despite four prior flags. Given it hasn't self-corrected across a month of reviews, this needs either a one-time backfill pass or direct human attention rather than a sixth identical flag next week.
+
+### Process audit
+
+| Check | Result | Grade |
+|-------|--------|-------|
+| Cash drag (80.343% vs 25–40% target for a 2-position book) | Each individual day's deferral was well-reasoned (real ATR-gate failures, real technical-extension failures, no forced trades) — but this is now **month-plus of cash stuck at ~80%** with the last new position (NVDA, Jun 22) surviving only 3 days before its stop fired. The pipeline problem identified in the last 2 reviews has not been fixed. | ⚠️ Justified daily, failed in aggregate — see adjustments below (this is the primary driver of the grade) |
+| Sector caps | Healthcare 11.951%, Financials 7.708% — far below 60% cap | ✓ |
+| Stop discipline | 3/3 confirmed every single session this week (Jul 6 MO/midday, Jul 7 midday, Jul 8 midday, Jul 9 MO/close, Jul 10 pre-market/close) — zero missing stops, zero manual overrides | ✓ PERFECT |
+| Post-mortems | No exits this week — nothing to post-mortem | ✓ N/A |
+| Weekly new-position count | 0/3 slots, explicitly justified each session | ✓ Justified individually |
+| Thesis contracts | LLY review_by 2026-07-07 resolved HOLD, renewed to 2026-07-21 (handled correctly at the mandatory checkpoint); V review_by 2026-07-28 — both tracked, no silent rot | ✓ |
+| Drawdown CB | $99,603.88 vs HWM $101,384.21 = −1.756% — NOT triggered (8.244pp headroom) | ✓ |
+
+### What worked
+
+- **Flawless risk-management execution.** Every stop audit passed, every thesis-contract deadline was met with an explicit, reasoned decision (LLY's July 7 review_by renewal cited the FDA PreCheck pilot selection and Leerink's $1,232 PT — a real, positive re-confirmation, not a rubber stamp), and every "no trade" decision was backed by a specific, checkable reason (ATR reading, MA distance, guidance date) rather than a vague deferral.
+- **Both held positions kept confirming, not just holding.** LLY closed the week +8.855% from entry (JPMorgan PT raised to $1,400, RBC to $1,500 this week) and V +7.838% (UBS Buy July 9, Barclays Buy July 8, and a securities-fraud lawsuit dismissed without leave to amend). Zero negative company-specific news surfaced on either name across 5 live WebSearch checks this week.
+- **Diligence discipline on new candidates stayed rigorous.** ABBV's full pass on July 10 correctly caught a guidance trim below Street consensus (published just one day before promotion would have happened) and blocked the entry — exactly the kind of catch this process exists to make.
+
+### What didn't work
+
+- **The since-inception gap vs SPY hit its worst level ever this week: −2.787pp, up from −0.841pp two Fridays ago.** This is not a one-day event — it is 5 straight sessions of an 80%-cash, 2-position book missing a broad-market rally (AI/semi trade regained momentum on Meta's custom-chip plans and the SK Hynix IPO). The cash cushion's well-documented downside protection has a real, now-quantified upside cost, and that cost has been compounding for over a month with no correction attempted.
+- **A structural pattern emerged across this month's diligence pipeline that hadn't been named until now: every single fundamentally-sound candidate diligenced since mid-June (LRCX, ETN, CEG, VRT, NVT, ABBV) has failed on the *technical/extension* gate (entry signal #4), not on fundamentals, catalyst, or valuation.** The pipeline is correctly finding real theses — it is finding them too late, after the move that made them screen well has already extended the stock past the "not >10% above the 50-day MA" gate. Re-running full diligence on the same handful of names every few days, only to hit the same technical gate each time, has produced zero conversions in 5+ weeks.
+- **LRCX hit its 4-week watchlist-staleness line with a 3rd consecutive ATR-gate failure** (July 9: 5.466%, a chase-y analyst-upgrade pop, not fresh fundamentals) — added June 8, 32 days without ever clearing its entry gate.
+- **ETN's technical-confirmation cross remained noise-level for a second straight session** (July 9: +0.047% above its 50-day MA) — the strategy's entry signal #4 has no written minimum-separation threshold, so each pre-market routine has been applying its own ad hoc judgment call ("not meaningfully above") rather than a fixed rule, which is itself a discipline gap per the strategy's own "do not invent gates beyond what's written" principle.
+
+### Macro context (week of July 6–10, 2026)
+
+- **Broad market rallied on renewed AI/semi enthusiasm**, notching its best week in over a month: S&P 500 +1.35% (settled) to $754.94, Nasdaq +1.3% Thursday alone, Dow +0.3% Thursday. Nvidia +~4% and Meta +6-7% on Meta's plan to begin manufacturing its own custom AI chip from September (target: 14 GW of compute by 2027); SK Hynix's US ADR IPO opened +14%, raising $26.5B. [CNBC, TheStreet, Yahoo Finance, July 9–10]
+- **Iran conflict escalated further but markets shrugged it off**: fresh US airstrikes and Iranian retaliation against Gulf states mid-week; Strait of Hormuz shipping near a standstill (~13 vessels/24h vs. ~110/day pre-war). Oil fell anyway (WTI ~$71.93, well below the $100 halt-trigger) as easing inflation-tightening fears outweighed the geopolitical risk; 10yr yield eased to ~4.54–4.58% (below the 4.75% halt trigger). Neither circuit-breaker macro trigger came close to tripping this week.
+- **Energy sector strong on a YTD basis** (S&P Energy +36.5% YTD per multiple sources) on AI-power-demand and geopolitical tailwinds — reinforces the existing VST/ETN/CEG power-infrastructure thesis rather than surfacing a wholly new name.
+- **June CPI (last major inflation read before the July 29 FOMC) lands Tuesday July 14** — the key data point to watch next week.
+
+### Aggressive Bull lesson (section 7b)
+
+**Data-quality note:** Aggressive Bull's own `weekly-review.md` is still on its Week 4+5 catch-up entry (period ending 2026-07-03) — no Week 6 (July 6–10) self-review has been filed there as of this read. `memory/aggressive/portfolio.md`'s newest snapshot entry is dated July 9 pre-market, but `trades.jsonl` and AGGRO's own `trade-log.md` show a July 10 market-open trade was executed (see below) — AGGRO's portfolio.md snapshot has not been refreshed to reflect it, the same "trade executed but not reflected in the narrative memory" sync gap AGGRO's own weekly-review has flagged in itself before.
+
+**AGGRO performance (from its own trade-log.md, July 10 ~9:46 ET; Cautious Bull does not query AGGRO's live account):**
+- AGGRO equity: **~$92,900** (post-trade July 10 market-open), up from $90,674.09 on July 3 — a partial recovery this week (+~2.5%)
+- Cautious Bull's own close-routine cross-reference (Jul 10) logged AGGRO's latest known equity at **$93,388.04** (midday reading) = **−6.612%** since AGGRO's own June 4 inception
+- **Cautious Bull LEADS AGGRO by ~6.2pp** since AGGRO's June 4 inception — the gap narrowed from ~9.5pp last week as AGGRO's concentrated AI/semi book participated in this week's rally, while Cautious sat out in cash. This is the same trade-off from the opposite side: concentration + full deployment captured this week's rally; diversification + heavy cash missed it.
+
+**Key AGGRO event this week:** A disciplined pyramid add — 15 more VST shares (its only green position, +4.476% from entry pre-market) bought July 10 at $158.54, funded from cash, with the trailing stop immediately reissued to cover the full 67-share position. AGGRO explicitly reasoned "never averaging down — this is an add to a winner," consistent with its own strategy rules. This is a clean example of using cash productively on a confirming winner rather than letting it sit idle by default — worth noting as a contrast to Cautious Bull's own un-deployed cash this week (Cautious Bull has no comparable "add to LLY/V" pyramiding rule in its own strategy.md).
+
+**Lesson for Cautious Bull (dated 2026-07-10):** AGGRO's one productive use of cash this week was adding to an *existing, confirming winner* (VST), not chasing a new name. Cautious Bull's own strategy.md has no explicit pyramiding rule for LLY or V despite both being clean, confirming winners (+8.855% and +7.838% respectively) with ample buffer. **Concrete rule proposal (not adopted this run, flagged for consideration):** define a disciplined scale-up trigger for existing winners — e.g., a position that has cleared +15% unrealized gain, still has an intact thesis, and has not yet hit the 20% single-position cap, is eligible for a small (2-4% of portfolio) add funded from excess cash, subject to the same sizing/cap guardrails as a new entry. This would give the deployment problem a second outlet beyond "clear a new name's gates" without abandoning diversification (LLY and V are already both below their 20% caps at ~12% and ~7.7%). Not implemented this run — proposing for the next strategy revision rather than acting unilaterally on a single week's observation.
+
+**Cross-Bull learning counter update:**
+- AGGRO is BEHIND Cautious Bull by ~6.2pp since AGGRO's own June 4 inception. AGGRO is NOT beating Cautious.
+- Trigger condition (AGGRO leads Cautious by >5pp for 2 consecutive weekly reviews): **NOT MET**. Counter = **0** (unchanged; has never been above 0).
+- `CROSS_BULL_LEARNING:` in `memory/control.md`: **unchanged, remains blank**.
+
+### Strategy adjustments for week of July 13+
+
+1. **LRCX purged from the watchlist.** Added 2026-06-08, hit its 4-week staleness line, failed its ATR gate 3+ times (most recently on a chase-y analyst-upgrade pop, not fresh fundamentals), and the CEO sold ~$11.7M of stock July 2. Fundamental thesis (AI fab investment wave) is not broken, but the entry has never cleared cleanly in a month. Removed from the active watchlist table in `strategy.md`; would need a fresh diligence pass and a genuinely calm technical setup to re-enter consideration, not an automatic re-add.
+2. **Codified a numeric minimum-separation threshold for entry signal #4** (the "above the 50-day MA" technical-confirmation test) in `strategy.md`: a close must be at least 0.5% above the 50-day MA to count as confirmed. This replaces the ad hoc "needs genuine separation" judgment call pre-market routines have been applying inconsistently to ETN for two sessions running — a concrete number closes the gap flagged by the strategy's own "do not invent gates beyond what's written" rule.
+3. **New "pullback-watch" protocol added to strategy.md.** Six consecutive diligenced names (LRCX, ETN, CEG, VRT, NVT, ABBV) have passed fundamentals/valuation/catalyst but failed only the technical-extension gate. Rather than re-running a full diligence pass on the same names every few days, a name that passes signals #1/#2/#3/#5 but fails only #4 now gets an explicit pullback target price (its 50-day MA) logged once; future pre-markets just check price vs. that stored target instead of re-diligencing from scratch, and promote automatically if price reaches it while the other signals still hold.
+4. **trades.jsonl backfill still owed** — see trade-statistics section above; this is the 5th consecutive flag with no fix.
+5. **Pyramiding-into-winners rule proposed but not adopted** — see Aggressive Bull section above; flagged for the next strategy revision, not implemented unilaterally this run.
+
+---
+
 ## Week ending 2026-07-03 (Week 7 — 4 active trading days: Mon Jun 29, Tue Jun 30, Wed Jul 1, Thu Jul 2; Fri Jul 3 market holiday, Independence Day observed)
 
 - **Control switch:** `memory/control.md` STATUS: ACTIVE all week. No `NOTE:`/`QUERY:` line. `CROSS_BULL_LEARNING:` line blank (not triggered) — see section below.
