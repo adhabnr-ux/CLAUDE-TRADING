@@ -5,6 +5,19 @@ The weekly new-position count is derived from this log._
 
 _Entries before 2026-06-01 archived to `memory/archive/2026-05.md` (2026-07-01 monthly housekeeping)._
 
+## 2026-07-10 09:36 ET — MARKET-OPEN — no trades (plan was empty; stop audit 3/3 PASS)
+
+- **Action:** None — pre-market's plan for today (`memory/research-log.md` plan_date 2026-07-10) was empty. LRCX's ATR gate failed July 9 on a chase-y analyst-upgrade pop; ETN's technical confirmation is noise-level (+0.047% above 50-day MA); ABBV's full diligence pass fails the extension gate and had guidance trimmed below consensus the day before. No breaking news gate needed (no planned trades to screen).
+- **Live-switch guard / lock / control:** `ALPACA_BASE_URL` contains "paper" ✓; `_lock` was `{}`, acquired and released; control STATUS ACTIVE, no NOTE/QUERY.
+- **Market clock:** `is_open: true`, next_close 16:00 ET ✓.
+- **Account (~09:36 ET):** Equity $99,558.95 | Cash $80,023.72 (80.378%) | LMV $19,535.23 | Last equity (July 9 close) $99,853.62.
+- **Shock check:** ($99,558.95 − $99,853.62) / $99,853.62 = **−0.2951%** — no shock ✓ (threshold −4%).
+- **LLY** $1,187.07 (+8.554% from entry, −2.455% intraday from yesterday's $1,216.95 close). WebSearch found no negative company news — Truist raised PT to $1,370 (Buy); presenting at AAIC July 12-15; the dip tracks a mixed-futures morning (Nasdaq futures −0.45% ahead of the SK Hynix US IPO), not a thesis event. Stop buffer 5.271%. review_by 2026-07-21 not due. HOLD, Conviction A.
+- **V** $348.3875 (+7.67% from entry, +0.054% intraday). No negative news, thesis intact. Stop buffer 5.913%. review_by 2026-07-28 not due. HOLD, Conviction B.
+- **Stop audit:** 3/3 trailing-stop orders confirmed live via `orders open`, matching held quantities exactly (LLY 7sh `d4147484` + 3sh `25989fb5` = 10sh; V 22sh `66033918`) — none missing, nothing recreated.
+- **Exit reconciliation:** positions unchanged from pre-market (LLY 10sh, V 22sh) — no fills since pre-market; `closed-trades.md` remains current.
+- **No cuts, no discretionary tightenings.**
+
 ## 2026-07-09 12:34 ET — MIDDAY — no action (stop audit 3/3 PASS; no cuts, no tightenings)
 
 - **Action:** None — risk-management check only. Both positions comfortably within range; no −7% cuts, no +15% tighten triggers, no missing stops.
