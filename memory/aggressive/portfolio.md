@@ -4638,3 +4638,51 @@ Next actionable routine: July 10 market-open.
 Next actionable routine: July 10 close.
 
 Next actionable routine: July 10 midday.
+
+---
+
+## 2026-07-10 — EOD CLOSE (~4:10 PM ET)
+
+**No trades executed at close.** One trade earlier today (VST pyramid add at market-open, already logged). All positions within guardrails; no exits today, no ledger reconciliation needed.
+
+**Control switch:** STATUS: ACTIVE. No NOTE or QUERY lines.
+
+**Half-day check:** Not a half-day — `clock` endpoint confirms `next_close` 2026-07-13 (normal weekend, next session Monday).
+
+**Account:** Equity USD 93,403.14 | Cash USD 30,516.28 (32.67%) | Last equity (prev close) USD 92,778.39 | Today's P/L **+USD 624.75 (+0.673%)**.
+
+**HWM:** USD 101,144.73 (set June 4-5, unchanged). Drawdown from HWM: **-7.654%** (circuit breaker -20% — NOT triggered; 12.346pp headroom, not within 3% of the breaker level).
+
+**Positions (6 open, unchanged from midday):**
+| Symbol | Qty | Avg Entry | Sector | P/L% | Buffer to -12% | % of Portfolio |
+|---|---|---|---|---|---|---|
+| NVDA | 77 | USD 213.60 | Semiconductors | -1.273% | 10.727pp | 17.39% |
+| AVGO | 19 | USD 406.23 | Semiconductors | -1.534% | 10.466pp | 8.14% |
+| ETN | 34 | USD 419.54 | Industrials/power infra | -2.922% | 9.078pp | 14.83% |
+| GOOGL | 16 | USD 370.22 | Communication Services (hyperscaler) | -3.455% | 8.545pp | 6.12% |
+| AMZN | 36 | USD 247.991111 | Consumer Discretionary (hyperscaler) | -0.992% | 11.008pp | 9.46% |
+| VST | 67 | USD 153.052835 (blended) | Utilities (nuclear power) | +3.794% | comfortable (only green position) | 11.40% |
+
+**Sector exposure:** Semiconductors (NVDA+AVGO) = 25.52%; Industrials (ETN) = 14.83%; Hyperscalers (GOOGL+AMZN) = 15.59%; Utilities (VST) = 11.40%; Cash = 32.67%. No sector near the 60% informal cap. Single-position cap (35% max): NVDA largest at 17.39% — well clear.
+
+**Stop audit — 6/6 confirmed live 18% trailing stops, all reconfirmed via open-orders pull:** NVDA `e15e7753` (stop USD 173.02, HWM 211), AVGO `ffba9bd5` (stop USD 334.1664, HWM 407.52), ETN `abdc232b` (stop USD 350.9026, HWM 427.93), GOOGL `e52a43f1` (stop USD 308.1314, HWM 375.77), AMZN `b55bef05` (stop USD 207.0705, HWM 252.525), VST `e3a7985f` (stop USD 130.8884, HWM 159.62). No gaps, no recreation needed.
+
+**Reconciliation:** Positions unchanged from midday (6/6 match, same quantities as market-open post-VST-add). No exits today — nothing to add to `closed-trades.md`, no new lesson required.
+
+**Market close context** [search: WebSearch fallback — mcp__minimax__web_search not found this session]: Major indices closed higher — S&P 500 +0.8%, Nasdaq +1.3%, Dow +0.3% — as the AI trade regained momentum and crude oil eased despite the ongoing Middle East conflict. Meta jumped ~18% on a new cloud-business announcement; Micron and Meta both a highlighted mover. SK Hynix's Nasdaq debut (SKHY) opened up ~14%, absorbing IPO-day liquidity without derailing the broader AI-tech rally. Supports rather than threatens current theses — NVDA (+3.99% intraday per Alpaca) and AVGO both participated in the AI-tech strength; no company-specific negative news for any held name. Source: Yahoo Finance, TheStreet (via WebSearch), July 10 2026.
+
+### Performance vs SPY
+| Metric | Value |
+|---|---|
+| Aggro today | +0.673% |
+| SPY today (751.55 → 754.94) | +0.451% |
+| Today vs SPY | **+0.222pp (outperforming)** |
+| Aggro since inception | -6.597% |
+| SPY since inception (754.18 → 754.94) | +0.101% |
+| Alpha since inception | **-6.698pp (underperforming)** |
+
+**Weekly review watchdog:** `weekly-review.md`'s newest entry is dated 2026-07-03 — exactly 7 days old today, not yet stale (>7-day threshold not crossed). Today's weekly-review routine (4:30 PM ET) is expected to file the Week 6 review after this close run; no 🚨 flag needed.
+
+**Result:** Clean close after one clean trade this morning (VST pyramid add). No rule triggers, no thesis-contract deadlines due, no circuit-breaker proximity. Today's outperformance (+0.222pp) is the first positive-vs-SPY daily read in several sessions, though since-inception alpha remains materially negative at -6.698pp — consistent with the sustained AI-tech-sector drag documented across every prior weekly review.
+
+Next actionable routine: July 10 weekly review.
