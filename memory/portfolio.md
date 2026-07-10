@@ -3,10 +3,45 @@
 _Updated by every routine from live Alpaca data. The next agent trusts this as
 the last known state, but always re-fetches live data before trading._
 
-**Last updated:** 2026-07-10 09:36 ET (market-open routine; market open, `is_open: true`; stop audit 3/3 PASS; LLY $1,187.07 +8.554% / V $348.3875 +7.67%; 0 trades — plan was empty)
+**Last updated:** 2026-07-10 12:34 ET (midday routine; market open, `is_open: true`; stop audit 3/3 PASS; LLY $1,186.70 +8.52% / V $345.855 +6.887%; no action — no cuts, no tightenings)
 **Inception:** 2026-05-21 — starting equity $100,000.00 | SPY anchor price $739.44
 **SPY total-return anchor (post-June 18 ex-div $1.76):** **$741.20**
 **Cumulative SPY dividends since inception (quarterly tracker):** $1.76/sh (June 18 ex-div); next SPY ex-div est. ~September 2026.
+
+---
+
+## Account (midday routine, 2026-07-10 ~12:34 ET)
+
+| Metric | Value |
+|--------|-------|
+| Equity | $99,499.53 |
+| Cash | $80,023.72 (80.427%) |
+| Long market value | $19,475.81 |
+| Buying power | ~$80,023.72 (cash) / $374,627.15 (margin, unused) |
+| Last equity (July 9 close) | $99,853.62 |
+
+## Open positions (midday routine, 2026-07-10 ~12:34 ET)
+
+| Symbol | Qty | Avg entry | Current price | Mkt value | Unrealized P/L | % of portfolio | Trailing Stop |
+|--------|-----|-----------|--------------|-----------|----------------|----------------|---------------|
+| LLY | 10 | $1,093.534 | $1,186.70 | $11,867.00 | +$931.66 (+8.52%) | 11.927% | d4147484 (7sh) + 25989fb5 (3sh), HWM $1,249.45, stop $1,124.505 ✓ — buffer $62.195 (5.241%) ✓ |
+| V | 22 | $323.57 | $345.855 | $7,608.81 | +$490.27 (+6.887%) | 7.647% | 66033918 (22sh), HWM $364.21, stop $327.789 ✓ — buffer $18.066 (5.224%) ✓ |
+
+**Sector exposure (midday July 10):**
+- Healthcare (LLY): $11,867.00 = 11.927% | Financials (V): $7,608.81 = 7.647% | Cash: $80,023.72 = 80.427%
+- No sector above 60% cap ✓
+
+**Trailing stop status (midday July 10 — confirmed via Alpaca live orders ~12:34 ET):**
+- LLY (d4147484): 7sh — HWM $1,249.45, stop $1,124.505 ✓ (buffer 5.241%)
+- LLY (25989fb5): 3sh — HWM $1,249.45, stop $1,124.505 ✓
+- V (66033918): 22sh — HWM $364.21, stop $327.789 ✓ (buffer 5.224%)
+**Stop audit: 3/3 PASS ✓** (3 live trailing-stop orders across 2 positions; matches held quantities exactly — none missing)
+
+**Midday July 10 notes (~12:34 ET — Friday; no action):**
+- **Shock check:** $99,499.53 vs last_equity $99,853.62 = **−0.3546%** — no shock ✓ (threshold −4%).
+- **LLY** $1,186.70 (+8.52% from entry): below both the +10% news-scan threshold and the +15% tighten trigger. Buffer 5.241% ✓. HOLD, Conviction A.
+- **V** $345.855 (+6.887% from entry): within normal range. Buffer 5.224% ✓. HOLD, Conviction B.
+- **No cuts, no discretionary tightenings, no missing stops.**
 
 ---
 
