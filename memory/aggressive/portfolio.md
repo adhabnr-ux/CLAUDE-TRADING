@@ -4584,3 +4584,29 @@ Next actionable routine: July 10 pre-market.
 **Deployment decision:** Cash at 35.51% for a 5th consecutive pre-market session. Planned a pyramid add to VST (the one clear winner, thesis-strengthening) rather than a new AI-semi name, given SK Hynix's USD 29B Nasdaq IPO listing today is the same capital-absorption/liquidity-risk pattern flagged in the standing SpaceX-IPO lesson for AI-adjacent names — see research-log.md for full reasoning. No new position names added (does not count against the 8/week new-position cap).
 
 Next actionable routine: July 10 market-open.
+
+---
+
+## 2026-07-10 — MARKET OPEN snapshot (~9:49 AM ET)
+
+**One trade executed:** VST pyramid add, 15 shares @ USD 158.539996 avg fill (marketable limit USD 158.82, computed from latest-trade price because the quote endpoint returned an anomalous odd-lot NBBO — see trade-log.md/research-log.md for detail).
+
+**Account:** Equity USD 93,038.57 (+0.280% vs last_equity USD 92,778.39, not a shock); cash USD 30,516.28 (32.80%); drawdown from HWM USD 101,144.73 **-8.014%** (breaker at -20%, not triggered, 11.986pp headroom).
+
+**Positions (6 open):**
+| Symbol | Qty | Avg Entry | Sector | P/L% | Buffer to -12% | % of Portfolio |
+|---|---|---|---|---|---|---|
+| NVDA | 77 | USD 213.60 | Semiconductors | -3.380% | 8.620pp | 17.08% |
+| AVGO | 19 | USD 406.23 | Semiconductors | -1.228% | 10.772pp | 8.19% |
+| ETN | 34 | USD 419.54 | Industrials/power infra | -3.251% | 8.749pp | 14.83% |
+| GOOGL | 16 | USD 370.22 | Communication Services (hyperscaler) | -3.834% | 8.166pp | 6.12% |
+| AMZN | 36 | USD 247.991111 | Consumer Discretionary (hyperscaler) | -0.404% | 11.596pp | 9.56% |
+| VST | 67 | USD 153.052835 (blended) | Utilities (nuclear power) | +3.592% | comfortable (only green position) | 11.42% |
+
+**Sector exposure:** Semiconductors (NVDA+AVGO) = 25.27%; Industrials (ETN) = 14.83%; Hyperscalers (GOOGL+AMZN) = 15.68%; Utilities (VST) = 11.42%; Cash = 32.80%. No sector near the 60% informal cap. Single-position cap (35% max): NVDA largest at 17.08% — well clear.
+
+**Stops:** 6/6 live 18% trailing stops confirmed — NVDA `e15e7753`, AVGO `ffba9bd5`, ETN `abdc232b`, GOOGL `e52a43f1`, AMZN `b55bef05`, VST `e3a7985f` (reissued this run, replaces `5b347be3`, now covers full 67-share position).
+
+**No exits.** Nothing to post-mortem. `trades.jsonl` updated with the VST buy (agent: aggro).
+
+Next actionable routine: July 10 midday.

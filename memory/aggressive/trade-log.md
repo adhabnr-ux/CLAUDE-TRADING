@@ -3640,3 +3640,61 @@ No trades planned.
 
 ### Result
 No new positions opened today — plan was empty. All 6 positions at 6.4pp+ buffer to the -12% cut, unchanged in character from pre-market. No exits since last run (same 6 symbols/quantities as pre-market snapshot) — nothing to post-mortem, no `trades.jsonl` entries. Cash remains at 35.52%, fifth consecutive session above the deployment-note threshold; pre-market's flagged redeployment question (clean risk-on or risk-off read) still pending — today's tape opened mixed/modestly positive across the book, not a clean signal either way. No new-buy research was conducted this run per playbook (market-open executes the pre-market plan; it does not originate new candidates). Deployment decision deferred again to next pre-market.
+
+---
+
+## 2026-07-10 — MARKET OPEN (~9:46 AM ET)
+
+### Pre-run checks
+| Check | Result |
+|---|---|
+| Live-switch guard | ALPACA_BASE_URL contains "paper" ✓ |
+| Lock | Clear at start; written for this run ✓ |
+| Control switch | STATUS: ACTIVE ✓ |
+| Plan date | July 10, 2026 — matches today ✓ |
+| Idempotency | No prior EXECUTED: marker ✓ |
+| Market open | true (next close 4:00 PM ET) ✓ |
+
+### Breaking-news gate
+VST: WebSearch found no thesis-breaking news (no earnings miss, no downgrade, no trading halt, no SEC action, no lost PPA). Up ~2% on the session, outpacing SPY; recent analyst actions are Buy ratings from Bernstein (July 6) and Wells Fargo (July 3). Cleared to proceed. [search: WebSearch fallback — mcp__minimax__web_search not found via ToolSearch this session]
+
+### Re-check before executing
+| Field | Value |
+|---|---|
+| Equity | USD 92,913.08 |
+| Last equity | USD 92,778.39 |
+| Shock check | +0.145% — NOT triggered (threshold -6%) |
+| VST price at execution | ~USD 158.3 (1-min bars/latest trade); quote endpoint anomalous (see below) |
+
+**Data-quality flag:** `./scripts/alpaca.sh quote VST` returned an odd-lot-flagged (`"c":["R"]`) NBBO of ask USD 167.57 / bid USD 149.62 — an ~11% spread, persisting across two calls 5s apart. This contradicted the `snapshot`/`bars` endpoints, which showed tight, consistent 1-minute prints at USD 158.0-158.4 throughout the morning. Treated the ask as unreliable and computed the marketable limit from the latest trade price (USD 158.345 × 1.003 = USD 158.82) instead of the stale/thin quote, consistent with the standing lesson to distrust anomalous single-venue (IEX) quotes on this account. Logged for awareness — same category as the July 2 `history` corruption and the July 10 pre-market `bars` outage.
+
+### Trade — BUY VST (pyramid add)
+| Field | Value |
+|---|---|
+| Action | BUY |
+| Symbol | VST |
+| Qty | 15 |
+| Order type | Limit (marketable), limit price USD 158.82 |
+| Fill price | USD 158.539996 avg |
+| Notional | USD 2,378.10 |
+| Why | Pyramid add to the only green position in the book (+4.476% from entry pre-market). PJM record July 4th-weekend heat-dome demand confirms the AI-power-crunch thesis; Bernstein/Wells Fargo Buy; Q2 earnings (Aug 7) guide +140.6% YoY EPS. Not AI-semiconductor-correlated, so unaffected by the SK Hynix mega-IPO caution that ruled out fresh chip-sector names today. Never averaging down — an add to a winner per strategy.md. |
+| Sequence | Canceled old 52-share trailing stop `5b347be3` first, then reissued a new 18% trailing stop for the full 67-share position |
+| New trailing stop | 18%; order id `e3a7985f`; qty 67; stop price USD 129.8552 (HWM USD 158.36) |
+| Verified | ✓ position confirmed at 67 shares, avg entry USD 153.052835 blended; new stop confirmed live in open orders |
+
+### Stop audit — 6/6 confirmed live post-trade ✓
+NVDA `e15e7753` (77sh), AVGO `ffba9bd5` (19sh), ETN `abdc232b` (34sh), GOOGL `e52a43f1` (16sh), AMZN `b55bef05` (36sh), VST `e3a7985f` (67sh) — all `status: "new"`.
+
+### Account after trade
+| Field | Value |
+|---|---|
+| Equity | ~USD 92,900 (pre/post-trade roughly flat; trade is a cash-to-equity swap) |
+| Cash | ~USD 30,516 (~32.85%) |
+| Cash floor (2% min) | ✓ well clear |
+| Single-position cap (35% max) | VST post-trade ~11.4% of equity — well clear |
+| Daily deployment (60% max) | ~2.56% of equity — well clear |
+| Weekly new positions (8 max) | 0/8 used — pyramid add to an existing name doesn't count |
+| Circuit breaker (20% drawdown) | -8.43% from HWM — not triggered |
+
+### Result
+One trade executed exactly as pre-market planned: 15-share VST pyramid add, filled at USD 158.539996, trailing stop reissued to cover the full 67-share position. No other trades. `trades.jsonl` updated (agent: aggro). `EXECUTED:` marker appended to research-log.md.
