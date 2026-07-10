@@ -1,5 +1,31 @@
 # Aggressive Bull — Trade Log
 
+## 2026-07-10 — MIDDAY review (no trades)
+
+**Market open, no shock:** equity USD 93,388.04 vs last_equity USD 92,778.39 = +0.657% (threshold -6%, not triggered).
+
+**Positions reviewed (6, unchanged from market-open snapshot — VST now 67sh post pyramid-add):**
+| Symbol | Qty | P/L% | Buffer to -12% cut |
+|---|---|---|---|
+| NVDA | 77 | -1.716% | 10.284pp |
+| AVGO | 19 | -1.263% | 10.737pp |
+| ETN | 34 | -2.300% | 9.700pp |
+| GOOGL | 16 | -3.918% | 8.082pp |
+| AMZN | 36 | -0.867% | 11.133pp |
+| VST | 67 | +3.428% | comfortable (only green position) |
+
+No position below the -12% cut threshold; no position above +25% (winner-protection threshold not applicable — VST at +3.428% doesn't qualify). No new buys per playbook (midday never opens positions).
+
+**News scan:** not triggered this run — no position is down more than 5% or up more than 15% from entry (GOOGL closest at -3.918%, well inside the 5% threshold).
+
+**Stop audit:** 6/6 positions have live 18% trailing stops confirmed in open orders (NVDA `e15e7753`, AVGO `ffba9bd5`, ETN `abdc232b`, GOOGL `e52a43f1`, AMZN `b55bef05`, VST `e3a7985f` — reissued this morning to cover the full 67-share position). No gaps, no action needed.
+
+**No exits this run** — nothing to post-mortem, no `trades.jsonl` entries.
+
+**Result:** All positions within range. No trades. Quiet, uneventful midday check.
+
+---
+
 ## 2026-07-09 — MIDDAY review (no trades)
 
 **Market open, no shock:** equity USD 92,644.39 vs last_equity USD 92,193.45 = +0.489% (threshold -6%, not triggered).

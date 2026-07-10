@@ -4609,4 +4609,32 @@ Next actionable routine: July 10 market-open.
 
 **No exits.** Nothing to post-mortem. `trades.jsonl` updated with the VST buy (agent: aggro).
 
+---
+
+## 2026-07-10 — MIDDAY snapshot (~12:41 PM ET)
+
+**No trades executed.** Risk management only, all positions within guardrails.
+
+**Account:** Equity USD 93,388.04 (+0.657% vs last_equity USD 92,778.39, not a shock); cash USD 30,516.28 (32.68%); drawdown from HWM USD 101,144.73 **-7.664%** (breaker at -20%, not triggered, 12.336pp headroom).
+
+**Positions (6 open, unchanged from market-open — VST 67sh post pyramid):**
+| Symbol | Qty | Avg Entry | Sector | P/L% | Buffer to -12% | % of Portfolio |
+|---|---|---|---|---|---|---|
+| NVDA | 77 | USD 213.60 | Semiconductors | -1.716% | 10.284pp | 17.31% |
+| AVGO | 19 | USD 406.23 | Semiconductors | -1.263% | 10.737pp | 8.16% |
+| ETN | 34 | USD 419.54 | Industrials/power infra | -2.300% | 9.700pp | 14.92% |
+| GOOGL | 16 | USD 370.22 | Communication Services (hyperscaler) | -3.918% | 8.082pp | 6.10% |
+| AMZN | 36 | USD 247.991111 | Consumer Discretionary (hyperscaler) | -0.867% | 11.133pp | 9.48% |
+| VST | 67 | USD 153.052835 (blended) | Utilities (nuclear power) | +3.428% | comfortable (only green position) | 11.36% |
+
+**Sector exposure:** Semiconductors (NVDA+AVGO) = 25.47%; Industrials (ETN) = 14.92%; Hyperscalers (GOOGL+AMZN) = 15.58%; Utilities (VST) = 11.36%; Cash = 32.68%. No sector near the 60% informal cap. Single-position cap (35% max): NVDA largest at 17.31% — well clear.
+
+**Stops:** 6/6 live 18% trailing stops confirmed unchanged — NVDA `e15e7753`, AVGO `ffba9bd5`, ETN `abdc232b`, GOOGL `e52a43f1`, AMZN `b55bef05`, VST `e3a7985f`.
+
+**News scan:** not triggered — no position crossed the ±5%/15% thresholds (GOOGL closest at -3.918%).
+
+**No exits.** Nothing to post-mortem, no `trades.jsonl` entries.
+
+Next actionable routine: July 10 close.
+
 Next actionable routine: July 10 midday.
