@@ -5,6 +5,24 @@ The weekly new-position count is derived from this log._
 
 _Entries before 2026-06-01 archived to `memory/archive/2026-05.md` (2026-07-01 monthly housekeeping)._
 
+## 2026-07-13 09:37 ET — MARKET OPEN — BUY CAT 4sh
+
+- **Live-switch guard / lock / control:** `ALPACA_BASE_URL` contains "paper" ✓; `_lock` was `{}`, acquired and released. Control STATUS ACTIVE, no NOTE/QUERY.
+- **Plan source:** Today's `research-log.md` plan (plan_date 2026-07-13) — 1 planned trade, no prior EXECUTED line (first run today).
+- **Market clock:** `is_open: true` at run time ✓.
+- **Breaking-news gate:** Searched "CAT stock news this morning July 13 2026". No thesis-breaking event (earnings miss, halt, SEC action, major downgrade). Michael Burry's short (disclosed June 30), the USD 2.2-2.4B tariff-cost overhang, and the "~18% overvalued" valuation debate are all pre-existing factors already weighed in this morning's pre-market diligence — not new. Proceeded.
+- **Account re-check:** Equity USD 99,550.37 | Cash USD 80,023.72 (80.4%) | Last equity (July 10 close) USD 99,586.86.
+- **Shock check:** (99,550.37 − 99,586.86) / 99,586.86 = **−0.0366%** — no shock ✓ (threshold −4%).
+- **Price re-check:** CAT ask USD 945.42 (plan assumed ~951.67 Friday close) — thesis unaffected, still above the 50-day MA (~925.64).
+- **Order:** BUY CAT 4sh, marketable limit 948.26 (ask 945.42 × 1.003, rounded to cents). Filled @ **944.73** avg (order 3f9e8f6f).
+- **Guardrail math:** Cost basis USD 3,778.92 = **3.797%** of portfolio (≤ 20% single-position cap ✓, ≤ 25% daily-deployment cap ✓). Cash after fill ≈ 76.6% (≥ 5% min ✓). Industrials sector 0% → ~3.8% (≤ 60% cap ✓). Next CAT earnings Aug 4 — 15 trading days out, outside the 2-day earnings window ✓.
+- **Stop:** 10% trailing stop placed and verified immediately after fill — order 6103c146, HWM 943.02, stop 848.718 ✓.
+- **Thesis:** Q1 2026 beat (EPS USD 5.50 vs ~4.58 est, +20%; revenue +22% YoY), raised FY26/27 consensus, Skycatch AI-mining acquisition + American Intelligence & Power hyperscale-AI power alliance extend the AI-infrastructure angle beyond core machinery cycle, PEG ~1.3-1.6 clears the valuation gate on a technicality, technical confirmation +2.81% above the 50-day MA (first name to clear the extension gate since VST). Sized at half a starter position (ATR 3.219% > 3% threshold rule).
+- **Invalidation:** Close back below ~925.64 (50-day MA) on volume; Aug 4 earnings show a guidance cut or worse-than-flagged tariff impact; credible evidence of the ~18% overvaluation thesis (Burry short) playing out via sustained de-rating without a fundamental trigger. **review_by: 2026-08-03.**
+- **Stop audit (post-trade):** 4/4 PASS — CAT 4sh/4sh stop ✓, LLY 10sh (7sh+3sh stop orders) ✓, V 22sh/22sh stop ✓.
+- **trades.jsonl:** appended (buy, CAT, 4sh, 944.73).
+- **EXECUTED line** appended under today's plan in `research-log.md`.
+
 ## 2026-07-10 15:52 ET — CLOSE ROUTINE (no trades)
 
 - **Action:** None — 0 trades, no exits, no cuts, no tightenings. Both positions within all guardrails.

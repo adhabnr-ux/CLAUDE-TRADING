@@ -105,6 +105,8 @@ Per the standing note that CAT was "next in the diligence queue," ran the full d
 }
 ```
 
+EXECUTED: 2026-07-13T13:38:06Z — Bought CAT 4sh @ 944.73 (limit 948.26, ask was 945.42; marketable-limit 0.3% over ask). No breaking news found (Burry short / tariff overhang / "18% overvalued" debate are known factors already priced into the pre-market diligence, not new this morning). Shock check −0.0366% (no shock, threshold −4%). Trailing stop 6103c146 (10%, HWM 943.02, stop 848.718) placed and verified immediately after fill. Stop audit 4/4 PASS: CAT 4sh/4sh stop ✓, LLY 10sh (7sh+3sh stop orders) ✓, V 22sh/22sh stop ✓. Position sizing: CAT 3,778.92 cost basis ≈ 3.797% of portfolio (well within 20% cap and 25% daily-deployment cap); cash after fill ≈ 76.6% (well above 5% min); Industrials sector 0%→~3.8% (nowhere near 60% cap). No earnings-window conflict (CAT reports Aug 4, 15 trading days out).
+
 ---
 
 ## 2026-07-10 — Pre-market research (~08:14 ET, Friday)

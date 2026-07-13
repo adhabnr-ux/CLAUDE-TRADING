@@ -3,41 +3,52 @@
 _Updated by every routine from live Alpaca data. The next agent trusts this as
 the last known state, but always re-fetches live data before trading._
 
-**Last updated:** 2026-07-13 08:08 ET (pre-market routine; stop audit 3/3 PASS; LLY $1,182.00 +8.09% / V $349.00 +7.859%; 1 trade planned today (BUY CAT 4sh); Bull TRAILS SPY by ~−2.869pp since inception)
+**Last updated:** 2026-07-13 09:37 ET (market-open routine; BUY CAT 4sh @ 944.73, 10% trailing stop set; stop audit 4/4 PASS; Bull TRAILS SPY by ~−2.598pp since inception)
 **Inception:** 2026-05-21 — starting equity $100,000.00 | SPY anchor price $739.44
 **SPY total-return anchor (post-June 18 ex-div $1.76):** **$741.20**
 **Cumulative SPY dividends since inception (quarterly tracker):** $1.76/sh (June 18 ex-div); next SPY ex-div est. ~September 2026.
 
 ---
 
-## Account (pre-market routine, 2026-07-13 ~08:08 ET)
+## Account (market-open routine, 2026-07-13 ~09:37 ET)
 
 | Metric | Value |
 |--------|-------|
-| Equity | $99,521.72 |
-| Cash | $80,023.72 (80.406%) |
-| Long market value | $19,498.00 |
-| Buying power | ~$80,023.72 (cash) / $374,689.28 (margin, unused) |
+| Equity | $99,535.08 |
+| Cash | $76,244.80 (76.599%) |
+| Long market value | $23,290.28 |
+| Buying power | ~$76,244.80 (cash) / $370,191.97 (margin, unused) |
 | Last equity (July 10 close) | $99,586.86 |
 | HWM | $101,384.21 (confirmed via `history 1A 1D`) |
-| Drawdown from HWM | −1.837% — informational only, not a blocking guardrail |
+| Drawdown from HWM | −1.826% — informational only, not a blocking guardrail |
 
-## Open positions (pre-market routine, 2026-07-13 ~08:08 ET)
+## Open positions (market-open routine, 2026-07-13 ~09:37 ET)
 
 | Symbol | Qty | Avg entry | Current price | Mkt value | Unrealized P/L | % of portfolio | Trailing Stop |
 |--------|-----|-----------|--------------|-----------|----------------|----------------|---------------|
-| LLY | 10 | $1,093.534 | $1,182.00 | $11,820.00 | +$884.66 (+8.09%) | 11.877% | d4147484 (7sh) + 25989fb5 (3sh), HWM $1,249.45, stop $1,124.505 ✓ — buffer $57.495 (4.865%) ✓ |
-| V | 22 | $323.57 | $349.00 | $7,678.00 | +$559.46 (+7.859%) | 7.715% | 66033918 (22sh), HWM $364.21, stop $327.789 ✓ — buffer $21.211 (6.078%) ✓ |
+| CAT | 4 | $944.73 | $942.61 | $3,770.44 | −$8.48 (−0.224%) | 3.789% | 6103c146 (4sh), HWM $943.02, stop $848.718 ✓ — new position, just filled |
+| LLY | 10 | $1,093.534 | $1,173.14 | $11,731.40 | +$796.06 (+7.28%) | 11.787% | d4147484 (7sh) + 25989fb5 (3sh), HWM $1,249.45, stop $1,124.505 ✓ — buffer $48.635 (4.146%) ✓ |
+| V | 22 | $323.57 | $354.02 | $7,788.44 | +$669.90 (+9.411%) | 7.825% | 66033918 (22sh), HWM $364.21, stop $327.789 ✓ — buffer $26.231 (7.409%) ✓ |
 
-**Sector exposure (pre-market July 13):**
-- Healthcare (LLY): $11,820.00 = 11.877% | Financials (V): $7,678.00 = 7.715% | Cash: $80,023.72 = 80.406%
+**Sector exposure (market-open July 13):**
+- Industrials (CAT): $3,770.44 = 3.789% | Healthcare (LLY): $11,731.40 = 11.787% | Financials (V): $7,788.44 = 7.825% | Cash: $76,244.80 = 76.599%
 - No sector above 60% cap ✓
 
-**Trailing stop status (pre-market July 13 — confirmed via Alpaca live orders ~08:08 ET):**
-- LLY (d4147484): 7sh — HWM $1,249.45, stop $1,124.505 ✓ (buffer 4.865%)
+**Trailing stop status (market-open July 13 — confirmed via Alpaca live orders ~09:38 ET):**
+- CAT (6103c146): 4sh — HWM $943.02, stop $848.718 ✓ (new position)
+- LLY (d4147484): 7sh — HWM $1,249.45, stop $1,124.505 ✓ (buffer 4.146%)
 - LLY (25989fb5): 3sh — HWM $1,249.45, stop $1,124.505 ✓
-- V (66033918): 22sh — HWM $364.21, stop $327.789 ✓ (buffer 6.078%)
-**Stop audit: 3/3 PASS ✓** (3 live trailing-stop orders across 2 positions; matches held quantities exactly — none missing)
+- V (66033918): 22sh — HWM $364.21, stop $327.789 ✓ (buffer 7.409%)
+**Stop audit: 4/4 PASS ✓** (4 live trailing-stop orders across 3 positions; matches held quantities exactly — none missing)
+
+**Market-open July 13 notes (~09:37 ET):**
+- **Live-switch guard / lock / control:** `ALPACA_BASE_URL` contains "paper" ✓; `_lock` acquired and released cleanly; control STATUS ACTIVE, no NOTE/QUERY.
+- **Plan:** Today's research-log.md plan (plan_date 2026-07-13) called for BUY CAT 4sh — no prior EXECUTED line, first run today.
+- **Breaking-news gate:** No thesis-breaking news for CAT this morning; Burry short / tariff overhang / valuation debate are pre-existing factors already weighed in pre-market diligence.
+- **Shock check:** ($99,550.37 − $99,586.86) / $99,586.86 = −0.0366% — no shock ✓ (threshold −4%).
+- **Trade:** BUY CAT 4sh, marketable limit $948.26 (ask $945.42 × 1.003) → filled @ $944.73. 10% trailing stop placed and verified (6103c146).
+- **Guardrail math:** CAT cost basis $3,778.92 = 3.797% of portfolio (≤20% cap ✓, ≤25% daily-deployment cap ✓); cash after fill 76.599% (≥5% min ✓); Industrials sector 3.789% (≤60% cap ✓); next CAT earnings Aug 4 — outside the 2-day window ✓.
+- **Trades today:** 1 (BUY CAT 4sh).
 
 **Pre-market July 13 notes (~08:08 ET — Monday; stop audit 3/3 PASS; 1 trade planned, market not yet open):**
 - **Live-switch guard:** `ALPACA_BASE_URL` contains "paper" ✓.
@@ -63,7 +74,8 @@ the last known state, but always re-fetches live data before trading._
 | Period | Bull | SPY | Difference |
 |--------|------|-----|------------|
 | Inception (2026-05-21) | $100,000.00 | $739.44 | — |
-| **Pre-market (2026-07-13)** | **$99,521.72 (−0.478%)** | **SPY (July 10 close) $755.36 + $1.76 div = +2.391% TR** | **Bull TRAILS SPY by ~−2.869pp** |
+| Pre-market (2026-07-13) | $99,521.72 (−0.478%) | SPY (July 10 close) $755.36 + $1.76 div = +2.391% TR | Bull TRAILS SPY by ~−2.869pp |
+| **Market-open (2026-07-13)** | **$99,535.08 (−0.465%)** | **SPY $753.45 + $1.76 div = +2.133% TR** | **Bull TRAILS SPY by ~−2.598pp** |
 
 ---
 
