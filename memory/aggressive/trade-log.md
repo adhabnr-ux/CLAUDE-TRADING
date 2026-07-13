@@ -1,5 +1,48 @@
 # Aggressive Bull — Trade Log
 
+## 2026-07-13 — MARKET OPEN (~9:47 AM ET)
+
+**No trades executed.** Planned MU buy (8 shares) SKIPPED at the breaking-news gate.
+
+### Pre-run checks
+| Check | Result |
+|---|---|
+| Live-switch guard | ALPACA_BASE_URL contains "paper" ✓ |
+| Lock | Clear at start; written for this run ✓ |
+| Control switch | STATUS: ACTIVE ✓ |
+| Plan date | 2026-07-13 — matches today ✓ (plan: BUY MU 8sh) |
+| Idempotency | No prior EXECUTED: marker — first run today ✓ |
+| Market open | true (`clock`: is_open true, next close 4:00 PM ET) ✓ |
+
+### Breaking-news gate — MU SKIPPED
+[search: WebSearch fallback — mcp__minimax__web_search not found via ToolSearch this session]. A Korean brokerage (KIS) cut its SK Hynix Q2 2026 estimate ~8% below consensus, explicitly citing a slower-than-expected HBM4 shipment ramp — directly touching MU's own HBM-demand thesis pillar, not generic sector rotation. SK Hynix fell -15% in Asia (record single-day drop), KOSPI -9% with a 20-minute trading halt, and the shock dragged down SanDisk/Western Digital/Seagate/Micron. MU quoted ~USD 910 vs Thursday's close USD 979.36 (-7.05%), worse than the -5.75% premarket estimate. Also flagged: a July 6 SEC filing showing MU's Chief People Officer sold 40,000 shares (~USD 43.3M) on July 1 — largest MU insider sale of 2026. **Decision: SKIP the planned entry.** The bar for opening a brand-new position is higher than for holding an existing one — do not buy into an unresolved, thesis-specific demand scare at a worse price than planned. Thesis and plan carried forward (review_by 2026-07-27 unchanged) for re-evaluation once the SK Hynix HBM4 read is confirmed or refuted.
+
+### Account status
+| Field | Value |
+|---|---|
+| Equity | USD 92,798.53 |
+| Cash | USD 30,516.27 |
+| last_equity (July 10 EOD close) | USD 93,397.88 |
+| Shock check | -0.641% vs last_equity — NOT triggered (threshold -6%) |
+
+### Stop audit — 6/6 confirmed live ✓
+AMZN `b55bef05`, AVGO `ffba9bd5`, ETN `abdc232b`, GOOGL `e52a43f1`, NVDA `e15e7753`, VST `e3a7985f` — all `status: "new"` per Alpaca open-orders list, all matched 1:1 to the 6 open positions. No gaps, no stops filled since last run.
+
+### Position snapshot (context only, no action — midday's job to enforce the -12% cut)
+| Symbol | Qty | Entry | Current | P/L % |
+|---|---|---|---|---|
+| NVDA | 77 | USD 213.60 | USD 208.43 | -2.420% |
+| AVGO | 19 | USD 406.23 | USD 387.69 | -4.564% |
+| ETN | 34 | USD 419.54 | USD 401.66 | -4.262% |
+| GOOGL | 16 | USD 370.22 | USD 357.65 | -3.395% |
+| AMZN | 36 | USD 247.991111 | USD 247.64 | -0.142% |
+| VST | 67 | USD 153.052836 | USD 157.815 | +3.111% |
+
+### Result
+No trades. MU entry skipped at the breaking-news gate (SK Hynix HBM4 demand scare, sector-wide memory selloff, MU -7.05%). All 6 existing positions held, stops confirmed live 6/6. No shock, no circuit breaker. Control: ACTIVE.
+
+---
+
 ## 2026-07-13 — PRE-MARKET (~8:13 AM ET, market closed at run time)
 
 **No trades executed — market not yet open (opens 9:30 AM ET).** One new position planned for market-open execution: BUY MU (8 shares). Full detail in research-log.md.

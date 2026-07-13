@@ -6,47 +6,37 @@ but always re-fetches live data before trading._
 
 ---
 
-## Last snapshot — 2026-07-13 PRE-MARKET (~8:13 AM ET, market closed at run time)
+## Last snapshot — 2026-07-13 MARKET OPEN (~9:47 AM ET)
 
 | Field | Value |
 |---|---|
-| Equity | USD 92,751.92 |
-| Cash | USD 30,516.27 (32.90%) |
-| Long market value | USD 62,235.65 |
+| Equity | USD 92,798.53 |
+| Cash | USD 30,516.27 (32.88%) |
+| Long market value | USD 62,282.26 |
 | Open positions | 6 |
 | last_equity (July 10 EOD close) | USD 93,397.88 |
-| Shock check | -0.692% — NOT triggered (threshold -6%) |
+| Shock check | -0.641% — NOT triggered (threshold -6%) |
 | HWM | USD 101,144.73 (confirmed via `history 1A 1D`, max over trailing 252 sessions) |
-| Drawdown from HWM | **-8.298%** (circuit breaker -20% — NOT triggered; 11.702pp headroom) |
+| Drawdown from HWM | ~-8.25% (circuit breaker -20% — NOT triggered) |
 
-**Market status:** closed (next open 2026-07-13 09:30 ET; next close 2026-07-13 16:00 ET).
+**Market status:** open (next close 2026-07-13 16:00 ET).
 
 **Open positions:**
 
-| Symbol | Qty | Avg Entry | Price | P/L % | -12% Cut Trigger | Buffer | % of Portfolio | Sector |
-|---|---|---|---|---|---|---|---|---|
-| NVDA | 77 | USD 213.60 | USD 208.19 | -2.533% | USD 187.968 | 9.467pp | 17.28% | Semiconductors |
-| AVGO | 19 | USD 406.23 | USD 393.34 | -3.173% | USD 357.4824 | 8.827pp | 8.06% | Semiconductors |
-| ETN | 34 | USD 419.54 | USD 402.00 | -4.181% | USD 369.1952 | 7.819pp | 14.74% | Industrials/power infra |
-| GOOGL | 16 | USD 370.22 | USD 355.53 | -3.968% | USD 325.7936 | 8.032pp | 6.13% | Communication Services (hyperscaler) |
-| AMZN | 36 | USD 247.991111 | USD 244.93 | -1.234% | USD 218.2322 | 10.766pp | 9.51% | Consumer Discretionary (hyperscaler) |
-| VST | 67 | USD 153.052836 | USD 157.5761 | +2.955% | n/a | comfortable | 11.38% | Utilities (nuclear power) |
+| Symbol | Qty | Avg Entry | Price | P/L % | Sector |
+|---|---|---|---|---|---|
+| NVDA | 77 | USD 213.60 | USD 208.43 | -2.420% | Semiconductors |
+| AVGO | 19 | USD 406.23 | USD 387.69 | -4.564% | Semiconductors |
+| ETN | 34 | USD 419.54 | USD 401.66 | -4.262% | Industrials/power infra |
+| GOOGL | 16 | USD 370.22 | USD 357.65 | -3.395% | Communication Services (hyperscaler) |
+| AMZN | 36 | USD 247.991111 | USD 247.64 | -0.142% | Consumer Discretionary (hyperscaler) |
+| VST | 67 | USD 153.052836 | USD 157.815 | +3.111% | Utilities (nuclear power) |
 
-**Sector exposure:** Semiconductors (NVDA+AVGO) = USD 23,504.09 / USD 92,751.92 = **25.35%**; Industrials (ETN) = 14.74%; Hyperscalers (GOOGL+AMZN) = 15.64%; Utilities (VST) = 11.38%; Cash = 32.90%. No sector near the 60% informal cap.
-
-**All 6 positions healthy** — buffers range 7.8pp to 10.8pp (plus VST green); none in the CRITICAL (<3pp) or WATCH (<6pp) zone.
-
-**Thesis contract due today — AVGO renewed HOLD:** buffer 8.827pp; Apple partnership (USD 30B, 15B+ chips through 2031) remains thesis-strengthening; review_by → 2026-07-27. GOOGL earnings confirmed July 22 (not yet in the 2-day window; flag for pre-market ~July 20).
-
-**Monday conviction-weighted review:** all 6 positions rated A (unchanged from last Monday, July 6). No C-ratings; no trim triggered.
+**No trades this run.** Planned MU buy (8 shares) was SKIPPED at the breaking-news gate: a Korean brokerage cut its SK Hynix Q2 2026 estimate ~8% below consensus citing slower HBM4 shipments — a demand scare directly touching MU's own thesis. SK Hynix -15% in Asia, KOSPI -9% with a trading halt, memory-sector selloff dragged MU to ~USD 910 (-7.05% from Thursday's close), worse than the -5.75% premarket read. MU thesis/plan carried forward for next pre-market (review_by 2026-07-27 unchanged).
 
 **Stops:** 6/6 live 18% trailing stops confirmed — NVDA `e15e7753`, AVGO `ffba9bd5`, ETN `abdc232b`, GOOGL `e52a43f1`, AMZN `b55bef05`, VST `e3a7985f`.
 
-**Market context [search: WebSearch fallback — mcp__minimax__web_search not found this session]:** S&P 500 futures +0.4% pre-market on cooling global inflation signals (France CPI 1.8%) — a constructive, risk-on tape distinct from the last two weeks' geopolitical-shock pattern.
-
-**One new position planned today: BUY MU (Micron), 8 shares (~8.1-8.5% of portfolio)** — the redeployment action called for by the July 10 weekly review (cash was above the 20% threshold for a third consecutive week). AI-memory/HBM bellwether; 20-day avg daily range 7.097% (above the 5% flag, judged acceptable given no near-term earnings — confirmed Sept 29 — and the 18% stop's ~2.5x cushion). Full thesis in research-log.md.
-
-**Result:** No trades executed yet (market closed at run time); one new position planned for market-open. All 6 positions within guardrails, all buffers healthy. Stop audit 6/6 live. AVGO thesis contract renewed as HOLD. Monday conviction review: all A, no trim.
+**Result:** No trades. All 6 positions held, no shock, no circuit breaker. Control: ACTIVE.
 
 ---
 
