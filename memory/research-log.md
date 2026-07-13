@@ -7,6 +7,106 @@ _Entries before 2026-06-01 archived to `memory/archive/2026-05.md` (2026-07-01 m
 
 ---
 
+## 2026-07-13 — Pre-market research (~08:08 ET, Monday)
+
+### Live-switch guard / Lock / Control switch
+- `ALPACA_BASE_URL` contains "paper" ✓.
+- `memory/_lock` was `{}` (empty) — no other routine active. Lock written for this run, released before commit.
+- `memory/control.md` STATUS: **ACTIVE**. No `NOTE:`/`QUERY:` line to acknowledge.
+
+### Account sync (live Alpaca, ~08:08 ET)
+- Equity **$99,521.72** | Cash **$80,023.72 (80.406%)** | Long market value $19,498.00 | Last equity (July 10 close) $99,586.86.
+- **Shock check:** ($99,521.72 − $99,586.86) / $99,586.86 = **−0.0654%** — no shock ✓ (threshold −4%).
+- **Drawdown note (informational only):** $99,521.72 vs HWM $101,384.21 = **−1.837%** — not a blocking guardrail (removed 2026-06-30).
+
+### Positions & stop audit
+| Symbol | Qty | Avg entry | Current | Mkt value | Unrealized P/L | % port | Stop |
+|---|---|---|---|---|---|---|---|
+| LLY | 10 | $1,093.534 | $1,182.00 | $11,820.00 | +$884.66 (+8.09%) | 11.877% | d4147484 (7sh) + 25989fb5 (3sh), HWM $1,249.45, stop $1,124.505 ✓ buffer 4.865% |
+| V | 22 | $323.57 | $349.00 | $7,678.00 | +$559.46 (+7.859%) | 7.715% | 66033918 (22sh), HWM $364.21, stop $327.789 ✓ buffer 6.078% |
+
+**Stop audit: 3/3 PASS ✓** (matches held quantities exactly; no missing stops).
+**Sector exposure:** Healthcare (LLY) 11.877% | Financials (V) 7.715% | Cash 80.406% — no sector above 60% cap ✓.
+
+### Thesis contract review
+- **LLY** review_by 2026-07-21 — not due.
+- **V** review_by 2026-07-28 — not due.
+
+### Monday conviction-weighted holding review
+- **LLY: A (unchanged).** Thesis intact and confirming — JPMorgan raised its PT to $1,400 (July 7) citing Mounjaro international expansion and US obesity-market growth; stock made a fresh ATH ($1,235.56) July 7 before a mild pullback. No negative news. 0/3 weeks at C.
+- **V: B (unchanged).** Thesis intact — a securities-fraud lawsuit against Visa was dismissed without leave to amend (July 9); Barclays/Wells Fargo/UBS all carry Buy ratings; new 9Pay partnership in Vietnam is incremental, not thesis-moving. 0/3 weeks at C.
+- Neither position is at risk of the 3-consecutive-C trim rule (both have never been rated C).
+
+### Market posture (WebSearch) — Iran ceasefire effectively over, market shrugging it off again
+- US stock futures pointed higher pre-market (S&P e-mini +~0.4%) as cooling global inflation (France CPI 1.8%) offset a busy earnings-week setup and continued Middle East tension. [Yahoo Finance, Benzinga, July 13]
+- Iran/Israel ceasefire status: fresh US strikes on Iran in retaliation for Strait of Hormuz tanker attacks; oil settled ~$71/bbl (week's gain ~4%) after an intraweek spike to WTI ~$75 / Brent ~$79. Shipping through the Strait remains significantly disrupted, keeping a risk premium in oil, but levels remain well below the $100 halt-trigger. [The Hill, CNBC, July 13]
+- 10yr yield not re-fetched fresh this run; last confirmed read (July 10) was ~4.54-4.58%, below the 4.75% halt trigger — no reason to expect a jump absent new data; June CPI lands tomorrow (July 14), the last major inflation print before the July 29 FOMC.
+- Neither macro halt trigger (oil >$100, 10yr >4.75%) is close to tripping.
+- Sector color: Industrials (XLI) +12.5% YTD, +13.3% over 6 months — power/AI-capex-adjacent names outperforming, relevant to today's CAT diligence. Healthcare also seeing a 52-week-high cluster (ALHC, HCSG, MRNA) alongside LLY — a defensive-growth rotation theme.
+
+### Held-position research — "what changed since yesterday"
+- **LLY** ($1,182.00, +8.09% from entry, −0.554% vs Friday's $1,188.58 close): no negative news. JPMorgan PT raise to $1,400 (July 7) is the week's key catalyst, already reflected; presenting 16 abstracts at AAIC (Alzheimer's conference), July 12-15 — ongoing, not a new thesis event. Next earnings confirmed **Aug 5, 2026** — outside the 2-day window.
+- **V** ($349.00, +7.859% from entry, +0.009% vs Friday's $348.97 close): no negative news. Securities-fraud suit dismissed July 9 (incremental positive); Vietnam 9Pay partnership announced (incremental, not thesis-moving). Next earnings confirmed **July 28, 2026** — outside the 2-day window.
+
+### Earnings-window rule
+- Neither held name reports within the next 2 trading days (LLY Aug 5, V July 28). No restriction on holding.
+- CAT (today's buy candidate) next reports **Aug 4, 2026** — ~15 trading days out, well outside the 2-day window. No restriction on opening the position.
+
+### Watchlist — re-checks (LRCX purged; ETN / CEG / VRT / NVT pullback-watch; MOD/ABBV not re-checked today)
+- **ETN:** 50-day MA $405.61, July 10 close $407.11 = **+0.37% above** — still under the 0.5% minimum-separation floor (was +0.047% July 9), though the gap continues to close. ATR 3.107% clears the 5% gate. **Not promoted** — needs one more session of genuine separation.
+- **CEG (pullback-watch):** 50-day MA now $273.19 vs July 10 close $251.335 = **−8.0% below** (improved from −11.55% at July 7 diligence). Still well short of its pullback target. ATR 3.286% would clear if reclaimed.
+- **VRT (pullback-watch):** 50-day MA now $324.74 vs July 10 close $318.82 = **−1.82% below** (improved from −6.1% at July 8 diligence) — closing in but not reclaimed. ATR 5.179% still fails the 5% gate (barely).
+- **NVT (pullback-watch):** 50-day MA now $165.22 vs July 10 close $160.96 = **−2.58% below** (improved from −5.82% at July 9 diligence) — closing in but not reclaimed. ATR 3.614% clears.
+- **MOD, ABBV:** not re-checked this run — CAT took today's step-6b diligence slot (see below).
+
+### Daily candidate diligence (step 6b) — CAT full pre-trade pass → PROMOTED
+
+Per the standing note that CAT was "next in the diligence queue," ran the full diligence checklist today:
+- **Earnings/guidance:** Q1 2026 EPS $5.50 (vs. ~$4.58 est., a ~20% beat), revenue $17.4B (+22% YoY), net income $2.55B (+27% YoY). FY26/FY27 consensus estimates have been revised up over the past 90 days (Zacks: 2026 EPS growth +29.4% YoY, 2027 +24.4% YoY). Dividend hiked 8%. Zacks Rank #1 (Strong Buy). [Yahoo Finance, Zacks, StockAnalysis — July 2026]
+- **Catalyst:** July 7 acquisition of Skycatch adds AI-powered spatial-data/digital-twin technology to CAT's mining platform (deal terms undisclosed) — extends the earlier RPMGlobal mine-planning-software acquisition. Separately, American Intelligence & Power formed a strategic alliance with Caterpillar/Boyd CAT to deploy 2 GW of dedicated power generation for hyperscale AI infrastructure (deliveries Sept 2026–Aug 2027) — a genuine, if indirect, AI-infrastructure demand angle for CAT's power-generation equipment business. [Mining.com, Caterpillar IR, StockTitan — July 2026]
+- **Valuation:** Price (July 10 close) $951.67. Trailing P/E ~47.1x, forward P/E ~37.3x — a real premium to peer average (~31.2x) and the broader Machinery industry (~26.5x); CAT does NOT clear the "discount vs. peers" half of entry signal #3. **PEG ~1.27-1.6** (forward P/E ÷ 2026/2027 EPS growth) is comfortably under the 2.5 gate, so signal #3 passes via PEG only — a real but not disqualifying valuation caveat. One Simply Wall St analysis argues CAT could be ~18% overvalued post-Skycatch; view is contested (28-analyst average rating remains Buy, avg 12-month target ~$951, essentially in line with spot). [StockAnalysis, Simply Wall St, Yahoo Finance — July 2026]
+- **Balance sheet:** Total debt $43.066B (down $264M since year-end 2025), most of it Cat Financial captive-finance debt (normal structure for an industrial with a financial-products arm, not comparable 1:1 to an industrial-only balance sheet). Cash $4.072B (down $5.908B since year-end 2025, largely working-capital/dividend/buyback timing). $11.5B in undrawn credit facilities. No acute liquidity concern found. [SEC 10-Q, Macrotrends — Q1 2026]
+- **Insider activity:** Most recent open-market insider sale found was Group President Denise Johnson selling ~12,605 shares in May 2026 (~$904-912/sh, ~$11.4-11.5M) following an option exercise — routine post-exercise selling, not a fresh signal. No July 2026 open-market sales surfaced in this search (recent July Form 4s found were compensation-related phantom-stock grants, not sales). The "~$99.5M insider selling in recent months" figure cited by one secondary source could not be independently corroborated to a specific filing in this session — flagged as unverified, not treated as a hard red flag.
+- **Next earnings:** confirmed **Aug 4, 2026**, before market open — ~15 trading days out, outside the 2-day window.
+- **Technical confirmation (signal #4) — PASSES:** 50-day MA (Alpaca daily bars, 50-session average) = $925.64; July 10 close $951.67 = **+2.81% above** — clears both the "not >10% extended" ceiling and the newly-codified 0.5% minimum-separation floor.
+- **ATR check:** 20-day average daily range = **3.219%** (Alpaca daily bars, (high−low)/close averaged over the last 20 sessions) — clears the 5% hard gate but **exceeds the 3% halved-sizing threshold**, so position size is halved per the pre-market playbook's volatility-check rule.
+- **Verdict:** 4 of 5 entry signals clear cleanly (earnings momentum, catalyst, technical, macro); the valuation signal (#3) passes on a technicality (PEG under 2.5) while failing its peer-discount alternative — a real but not disqualifying caveat, consistent with the strategy's "≥2 of 5" bar. **CAT is PROMOTED to a buy candidate today**, sized at half a starter position (per the ATR>3% rule) to reflect the valuation stretch, elevated beta (1.60), and the stock's +167% 52-week run rather than full starter conviction. This is the first name to clear the technical-extension gate cleanly since VST (mid-June) — LRCX, ETN, CEG, VRT, NVT, and ABBV have all failed on it since.
+
+### Cash-drag check
+- Cash 80.406% vs. the strategy's 25-40% target band for a 2-position book — elevated for **9 consecutive weeks** now with zero new positions. Today's CAT diligence clears the entry gates for the first time in over a month — see Planned trades below. This is a deliberate, diligenced deployment, not a rush to "look active": CAT is sized at half a starter position specifically because of its ATR reading and valuation stretch, not treated as a green light to chase.
+
+### Since inception
+- Bull −0.478% ($99,521.72) vs SPY TR (using July 10 close $755.36 + $1.76 div = $757.12 vs $739.44 anchor = +2.391%) → **Bull TRAILS SPY by −2.869pp** (essentially unchanged from July 10 close's −2.787pp; small further slippage on CAT-adjacent pre-market softness, not company-specific).
+
+### Planned trades for today
+
+**1 new position: BUY CAT 4 shares** (whole-share limit order, ~0.3% below opening quote per lessons.md, so a trailing stop can be set)
+
+*Thesis:* Caterpillar's Q1 2026 beat (EPS $5.50 vs. ~$4.58 est., +20%; revenue +22% YoY) and upwardly-revised FY26/FY27 consensus estimates reflect broadening industrial and AI-adjacent infrastructure capex demand. The July 7 Skycatch acquisition (AI-powered mining digital-twin tech) and the American Intelligence & Power 2GW hyperscale-AI power alliance extend CAT's exposure to the AI-infrastructure buildout beyond its core machinery cycle. PEG (~1.27-1.6) clears the valuation gate despite a real premium P/E to peers. Technical confirmation clears cleanly at +2.81% above the 50-day MA — the first name to clear this gate since VST.
+*Invalidation:* Stock closes back below its 50-day MA (~$925.64) on volume; Aug 4 earnings show a guidance cut or tariff-cost impact materially worse than the flagged USD 2.2-2.4B/~500bp Resource Industries estimate; or credible evidence emerges of the ~18% overvaluation thesis playing out (sustained de-rating without a fundamental trigger).
+*review_by:* 2026-08-03 (day before Aug 4 earnings — forces an explicit hold/trim/exit decision ahead of the print).
+*Sizing:* 4 shares × ~$951.67 ≈ USD 3,807 ≈ 3.826% of portfolio — half a starter position (7-9% halved to ~3.5-4.5%) per the ATR>3% rule (ATR 3.219%). Well within the 20% single-position cap, the 25% daily-deployment cap, and leaves cash at ~76.6%, far above the 5% minimum. Sector exposure after fill: Industrials ~3.8%, nowhere near the 60% cap.
+*Stop:* 10% trailing stop placed immediately after fill, per guardrails.
+
+**No action on:**
+- LLY: HOLD — Conviction A, thesis confirming, review_by 2026-07-21 not due.
+- V: HOLD — Conviction B, thesis intact, review_by 2026-07-28 not due.
+- ETN/CEG/VRT/NVT: not promoted — see watchlist re-checks above.
+- MOD/ABBV: not re-checked today; CAT took today's diligence slot.
+
+```json
+{
+  "plan_date": "2026-07-13",
+  "trades": [
+    {"action": "buy", "symbol": "CAT", "qty": 4, "thesis": "Q1 beat + raised FY26/27 estimates, Skycatch AI-mining acquisition and AI-power hyperscale alliance extend the AI-infrastructure angle, PEG ~1.3-1.6 clears valuation gate, technical confirmation +2.81% above 50-day MA clears the extension gate for the first time since VST",
+     "invalidation": "Close back below the ~$925.64 50-day MA on volume, or Aug 4 earnings show a guidance cut / worse-than-flagged tariff impact",
+     "review_by": "2026-08-03"}
+  ]
+}
+```
+
+---
+
 ## 2026-07-10 — Pre-market research (~08:14 ET, Friday)
 
 ### Live-switch guard / Lock / Control switch
