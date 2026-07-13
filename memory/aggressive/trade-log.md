@@ -1,5 +1,56 @@
 # Aggressive Bull — Trade Log
 
+## 2026-07-13 — PRE-MARKET (~8:13 AM ET, market closed at run time)
+
+**No trades executed — market not yet open (opens 9:30 AM ET).** One new position planned for market-open execution: BUY MU (8 shares). Full detail in research-log.md.
+
+### Pre-run checks
+| Check | Result |
+|---|---|
+| Live-switch guard | ALPACA_BASE_URL contains "paper" ✓ |
+| Lock | Clear (`{}`) at start; written for this run ✓ |
+| Control switch | STATUS: ACTIVE ✓ (no NOTE:, no QUERY:) |
+| Market open | false (next open 09:30 AM ET today, per `clock`) |
+
+### Account status
+| Field | Value |
+|---|---|
+| Equity | USD 92,751.92 |
+| Cash | USD 30,516.27 (32.90%) |
+| last_equity (July 10 EOD close) | USD 93,397.88 |
+| Shock check | -0.692% vs last_equity — NOT triggered (threshold -6%) |
+| HWM | USD 101,144.73 (confirmed via `history 1A 1D`, max over trailing 252 days) |
+| Drawdown from HWM | **-8.298%** (circuit breaker -20% — NOT triggered; 11.702pp headroom) |
+
+### Position review (buffers to -12% cut)
+| Symbol | Qty | Entry | Current | P/L % | Buffer | % of Portfolio | Sector |
+|---|---|---|---|---|---|---|---|
+| NVDA | 77 | USD 213.60 | USD 208.19 | -2.533% | 9.467pp | 17.28% | Semiconductors |
+| AVGO | 19 | USD 406.23 | USD 393.34 | -3.173% | 8.827pp | 8.06% | Semiconductors |
+| ETN | 34 | USD 419.54 | USD 402.00 | -4.181% | 7.819pp | 14.74% | Industrials/power infra |
+| GOOGL | 16 | USD 370.22 | USD 355.53 | -3.968% | 8.032pp | 6.13% | Communication Services (hyperscaler) |
+| AMZN | 36 | USD 247.991111 | USD 244.93 | -1.234% | 10.766pp | 9.51% | Consumer Discretionary (hyperscaler) |
+| VST | 67 | USD 153.052836 | USD 157.5761 | +2.955% | comfortable | 11.38% | Utilities (nuclear power) |
+
+**Sector exposure:** Semiconductors (NVDA+AVGO) = 25.35%; Industrials (ETN) = 14.74%; Hyperscalers (GOOGL+AMZN) = 15.64%; Utilities (VST) = 11.38%; Cash = 32.90%. No sector near the 60% informal cap.
+
+### Stop audit — 6/6 confirmed live ✓
+NVDA `e15e7753`, AVGO `ffba9bd5`, ETN `abdc232b`, GOOGL `e52a43f1`, AMZN `b55bef05`, VST `e3a7985f` (reissued July 10 to cover the full 67-share pyramided position) — all `status: "new"` per Alpaca open-orders list.
+
+### Thesis contract due today — AVGO (review_by 2026-07-13)
+Buffer 8.827pp (healthy, not stressed). Apple partnership (USD 30B, 15B+ chips through 2031) remains the dominant, thesis-strengthening catalyst; 26-analyst Buy consensus, PT USD 501.58. **Decision: HOLD. Review_by renewed to 2026-07-27.** Full reasoning in research-log.md.
+
+### Monday conviction-weighted review
+All 6 positions rated **A** (NVDA, AVGO, ETN, GOOGL, AMZN, VST) — same as last Monday (July 6, also all A). No C-ratings; no 2-consecutive-Monday-C trim triggered.
+
+### Deployment / redeployment
+Cash at 32.90% (above the 20% threshold) with a constructive tape (S&P futures +0.4%, cooling global inflation) and no near-term binary risk in the book — per the July 10 weekly review's explicit directive to produce a concrete new-position candidate today. **Planned: BUY MU (Micron), 8 shares (~8.1-8.5% of portfolio)** — AI-memory/HBM bellwether, diversifies into the memory layer distinct from the existing NVDA/AVGO GPU/ASIC book. Full thesis, invalidation, review_by, and volatility check (20-day avg daily range 7.097%, above the 5% flag but judged acceptable given no near-term earnings and the 18% stop's ~2.5x cushion) in research-log.md.
+
+### Result
+No trades yet (market not open). One new position planned for market-open execution (MU). AVGO review_by contract renewed as HOLD. Monday conviction review: all 6 positions A, no trim triggered. All 6 stops confirmed live. Control: ACTIVE. Full JSON plan in research-log.md.
+
+---
+
 ## 2026-07-10 — MIDDAY review (no trades)
 
 **Market open, no shock:** equity USD 93,388.04 vs last_equity USD 92,778.39 = +0.657% (threshold -6%, not triggered).

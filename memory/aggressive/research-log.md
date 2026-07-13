@@ -1,5 +1,73 @@
 # Aggressive Bull — Research Log
 
+## 2026-07-13 — PRE-MARKET (~8:15 AM ET, market closed at run time)
+
+mcp__minimax__web_search was not found via ToolSearch this session (only the built-in `WebSearch` tool resolved) — used WebSearch fallback for every query this run per the search protocol. [search: WebSearch fallback]
+
+### Market posture
+
+**S&P 500 futures pre-market July 13** (`S&P 500 futures pre-market July 13 2026`): E-mini S&P 500 futures up ~0.4%, digesting cooling global inflation prints (France CPI 1.8%) alongside uneven overseas growth signals — a constructive, risk-on tape distinct from the last two weeks' geopolitical-shock pattern. [search: WebSearch fallback]
+
+### Held positions — news scan (all 6)
+
+- **NVDA** (`NVDA Nvidia stock news July 13 2026`): USD 208.00, P/E 32.31x. The July 7 Kyber NVL144 delay report remains denied by the company (roadmap intact); Goldman Sachs continues to call the 21.7x forward P/E "compelling" vs. the 5-year average of 72x. No new negative news. Thesis fully intact. [search: WebSearch fallback]
+- **AVGO** (`AVGO Broadcom stock news July 13 2026`): The Apple custom-silicon/RF partnership (USD 30B, 15B+ chips through 2031) continues to be the dominant catalyst; AVGO defied the broader chip-sector selloff, rising >4% on the news day. 26-analyst Buy consensus, avg PT USD 501.58 (as of July 12). Broadcom crossed a USD 2T market cap in April. No negative news — thesis strengthening, not just intact. This is AVGO's **review_by = 2026-07-13 (today)** — see Thesis Contract Review below. [search: WebSearch fallback]
+- **ETN** (`ETN Eaton stock news July 13 2026`): Citi raised its PT to USD 471 (from USD 464), Buy maintained; 11 Buy / 2 Hold across 13 analysts, no Sells. New FranklinWH home-energy-systems collaboration is incremental, not thesis-defining. AI-data-center electrical demand thesis intact, no negative news. [search: WebSearch fallback]
+- **GOOGL** (`GOOGL Alphabet stock news July 13 2026`): Mixed analyst tape (UBS Hold, KeyBanc Buy, Citi Buy July 9) but sentiment "overwhelmingly bullish" on long-term AI monetization per one summary. GCP +63% YoY confirmed last quarter; 2026 capex guidance raised to USD 180–190B (pressuring FCF -47% YoY, a known and accepted cost of the AI buildout, not a thesis break). **Earnings confirmed for July 22, 2026** — 9 calendar days / ~7 trading days away, outside the 2-day earnings window for today but requires a hold/trim/exit decision before ~July 20. [search: WebSearch fallback]
+- **AMZN** (`AMZN Amazon stock news July 13 2026`): AWS growth at its fastest pace in 15 quarters; AWS backlog USD 364B, Trainium commitments >USD 225B. Goldman raised AWS capex forecast to ~USD 827B cumulative 2026-2028. Free cash flow pressured by capex (thesis-known cost, not a break). No negative company-specific news. Thesis intact. [search: WebSearch fallback]
+- **VST** (`VST Vistra stock news July 13 2026`): Closed at USD 157.98 (+2.04%), +11.75% over the past month — the book's standout performer. New: a planned ~USD 4B acquisition of a 5,500 MW Cogentrix natural-gas portfolio and a planned restart of the Perry nuclear plant, both expanding AI-power generation capacity. Helix Digital Infrastructure (KKR/NVDA/Vistra/KIA) venture continues to validate the thesis. Q2 earnings confirmed Aug 7 (+140.6% YoY EPS expected). 20-analyst Strong Buy, PT USD 222.89 (+40.65% upside). No negative news — thesis strengthening. [search: WebSearch fallback]
+
+**Conclusion: no thesis-breaking news for any of the 6 held positions.** All theses intact-to-strengthening. No earnings within the 2-trading-day window for any held name (nearest is GOOGL, July 22).
+
+### Thesis Contract Review — AVGO (review_by = 2026-07-13, due today)
+
+AVGO's buffer to the -12% midday cut is a healthy 8.827pp (USD 393.34 vs. entry USD 406.23, -3.173% P/L) — this is not a stressed position; the review is a scheduled contract check, not a crisis response. The Apple partnership (confirmed extended through 2031, USD 30B / 15B+ chips) remains the dominant, thesis-strengthening catalyst, and Broadcom's own AI-semiconductor guidance (FY2027 AI revenue >USD 100B) is unchanged and unchallenged by any news found today. **Decision: HOLD. Review_by renewed to 2026-07-27** (2 weeks — ahead of AVGO's next print, no confirmed date yet but historically early-to-mid September).
+
+### Monday conviction-weighted holding review (2026-07-13)
+
+Last Monday (July 6) all 6 positions were rated A with no C-rated holdings, so the 2-consecutive-Monday-C trim rule has no positions in its pipeline this week. Re-ranking today:
+
+| Symbol | Buffer | Rating | Basis |
+|---|---|---|---|
+| NVDA | 9.467pp | **A** | Kyber-delay denial holds; Goldman calls valuation compelling; no negative news |
+| AVGO | 8.827pp | **A** | Apple deal strengthening; review_by renewed today (see above) |
+| ETN | 7.819pp | **A** | Citi PT raise; AI-data-center electrical demand intact |
+| GOOGL | 8.032pp | **A** | GCP +63%; earnings July 22 on the radar but not yet actionable |
+| AMZN | 10.766pp | **A** | AWS reaccelerating; largest buffer in the book |
+| VST | comfortable (+2.955%) | **A** | Best performer; Cogentrix acquisition + Perry restart expand the thesis |
+
+**All 6 positions rated A. No C-ratings, no trim triggered.**
+
+### Deployment check — redeployment candidate: MU (Micron)
+
+Cash is USD 30,516.27 (32.90% of equity) — above the 20% threshold that requires either a qualifying entry or an explicit reason to hold back, and this is the third consecutive weekly review to flag Micron (MU) as the leading redeployment candidate without yet doing the work. Today's tape is constructive (futures +0.4%, cooling global inflation) and no held position carries near-term binary risk. Per the July 10 weekly review's explicit directive ("pre-market July 13 must produce at least one concrete, actionable new-position candidate — not another deferral"), doing the MU work now:
+
+- **Thesis**: Micron is the AI-memory/HBM bellwether. 16 non-cancelable contracts worth >USD 22B of committed HBM revenue extending through 2027–2028; new Anthropic supply/co-development agreement for HBM and memory tuned to Anthropic's AI workloads; FQ4 FY2026 guide USD 50B ± USD 1B revenue, ~86% gross margin, record EPS guide USD 31 ± USD 1. Trades at ~14x forward earnings — a discount to AI-infrastructure peers — despite the stock's own +250% YTD run (currently ~20% off its all-time high, a normal pullback rather than a reversal). Adds AI-infrastructure exposure at the **memory** layer, distinct from (though not zero-correlated to) the existing NVDA/AVGO GPU/ASIC book.
+- **Valuation caveat**: one source (GuruFocus GF Value) flags MU as ~90% overvalued on a pure mean-reversion model; this conflicts with the "cheap on forward P/E" read. Given this disagreement and the stock's outsized 2026 run, sizing at the smaller end of the Tier 2/3 band rather than a top-conviction size.
+- **Earnings check**: next earnings confirmed 2026-09-29 (after market close) — no near-term binary event; clear of the 2-trading-day earnings window.
+- **Volatility check** (`bars MU 1Day 21`): 20-day mean daily range = **7.097% of price** — above the 5% flag threshold. The 18% trailing stop is ~2.5x this daily average range, giving meaningful room before a normal volatile session alone could trigger it; combined with no near-term earnings catalyst, 18% is judged sufficient room for this name.
+- **Sizing**: 8 shares at an assumed ~USD 935–980 range (pre-market quote showed a wide, thin bid/ask spread — actual fill will be confirmed at market open) ≈ USD 7,500–7,840, roughly 8.1–8.5% of portfolio. Semiconductor-sector concentration (NVDA + AVGO + MU) would rise to ~33–34% of equity, still well inside the informal 50% watch line.
+- **Invalidation**: MU closes below its 18% trailing stop, OR a major hyperscaler/AI-lab HBM contract is cancelled or materially renegotiated down, OR DRAM/NAND ASPs enter a QoQ price collapse signaling memory oversupply.
+- **Review_by**: 2026-07-27 (2 weeks — a shorter-than-usual contract given the stock's extended 2026 run and the conflicting valuation reads).
+
+**Planned trades for today:**
+
+```json
+{
+  "plan_date": "2026-07-13",
+  "trades": [
+    {"action": "buy", "symbol": "MU", "qty": 8,
+     "thesis": "AI-memory/HBM bellwether — >USD 22B committed non-cancelable HBM contracts through 2027-2028, new Anthropic supply deal, FQ4 guide USD 50B revenue/record EPS, ~14x forward P/E despite +250% YTD run; diversifies AI-infrastructure exposure into the memory layer distinct from the existing NVDA/AVGO GPU/ASIC book",
+     "invalidation": "MU closes below its 18% trailing stop, OR a major hyperscaler/AI-lab HBM contract is cancelled/renegotiated down, OR DRAM/NAND ASPs enter a QoQ price collapse",
+     "review_by": "2026-07-27"}
+  ]
+}
+```
+
+**Result:** No trades yet (market closed at run time). One new position planned for market-open execution (MU, ~8.1-8.5% of portfolio) — the redeployment action called for by the July 10 weekly review. AVGO's review_by contract renewed (HOLD, healthy 8.827pp buffer, new review_by 2026-07-27). Monday conviction review: all 6 positions rated A, no trim triggered. All 6 stops confirmed live. No earnings-window conflicts for the planned buy or any held position.
+
+---
+
 ## 2026-07-10 — WEEKLY REVIEW (week of July 6–10)
 
 mcp__minimax__web_search was not found via ToolSearch this session — used WebSearch fallback for all queries per the search protocol. [search: WebSearch fallback]
