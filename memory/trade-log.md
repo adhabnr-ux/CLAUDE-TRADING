@@ -5,6 +5,29 @@ The weekly new-position count is derived from this log._
 
 _Entries before 2026-06-01 archived to `memory/archive/2026-05.md` (2026-07-01 monthly housekeeping)._
 
+## 2026-07-13 15:52 ET — CLOSE ROUTINE (no trades, EOD)
+
+- **Action:** None — no cuts, no tightenings, no new positions, no exits. All 3 positions within all guardrails.
+- **Live-switch guard:** `ALPACA_BASE_URL` contains "paper" ✓
+- **Lock:** was `{}` — acquired cleanly, released before commit.
+- **Control switch:** STATUS ACTIVE, no NOTE/QUERY to acknowledge.
+- **Market:** OPEN at time of run (`is_open: true`, next_close 16:00 ET) — routine run ~10 min before the closing bell, consistent with the 3:50 PM ET schedule.
+- **Account:** Equity USD 99,703.11 | Cash USD 76,244.80 (76.472%) | Last equity (July 10 close) USD 99,586.86 | Today's P/L +USD 116.25 (+0.1167%).
+- **HWM:** USD 101,384.21 (confirmed via `history 1A 1D`) | Drawdown −1.658% — well within the −10% circuit breaker, not flagged.
+- **Position review (live prices ~15:52 ET):**
+  - CAT 4sh @ USD 933.06 (−1.235% from entry USD 944.73). Bought this morning. Not close to the −7% cut threshold. Stop buffer: HWM USD 946.17, stop USD 851.553 ✓.
+  - LLY 10sh @ USD 1,187.075 (+8.554% from entry USD 1,093.534). Below both the +10% scan and +15% tighten triggers. review_by 2026-07-21 not due. HOLD. Conviction A.
+  - V 22sh @ USD 357.06 (+10.35% from entry USD 323.57). Just crossed the +10% news-scan trigger intraday (+2.318% today) — no negative news found; securities-fraud suit already dismissed July 9, thesis intact. Below the +15% tighten trigger. HOLD. Conviction B. review_by 2026-07-28.
+- **No cuts** (−7% rule): all 3 positions are gains or a shallow loss, far above threshold ✓.
+- **No discretionary tightenings** (+15% trigger): none of the 3 positions reached it ✓.
+- **Stop audit: 4/4 PASS ✓** — CAT (6103c146) 4sh, LLY (d4147484) 7sh + (25989fb5) 3sh, V (66033918) 22sh — all live, HWM/stop values confirmed via `orders open`, matches held quantities exactly.
+- **Exit reconciliation:** No exits today. closed-trades.md unchanged (VST June 30 remains latest) — nothing new required.
+- **Sector exposure:** Industrials (CAT) 3.743% | Healthcare (LLY) 11.907% | Financials (V) 7.879% | Cash 76.472% — no sector above 60% cap ✓.
+- **Market close context (WebSearch):** US-Iran ceasefire collapsed further (fresh strikes/retaliation), oil +~5%; risk-off hit semiconductors hardest (SK Hynix −15%, Samsung down sharply); S&P 500 −0.39%, Nasdaq −0.92%, Dow −0.21% (energy cushioned). Healthcare sector −1.08% broadly but LLY held up well; CAT dipped with cyclicals/oil-shock tone; V bucked the tape entirely (+2.318% today) with no negative news. Bull's non-semi book was the right place to be today. Earnings season begins tomorrow (July 14) with major bank Q2 reports.
+- **Performance vs SPY:** Bull today +0.1167%, since inception −0.2969%. SPY today −0.7431%, since inception (TR) +1.5755%. Bull TRAILS SPY by −1.872pp since inception (narrowed from −1.953pp at midday).
+- **Race scoreboard:** Bull −0.297% (since 5/21) | AGGRO −7.600% (own 6/4 inception, latest midday equity USD 92,400.22) | SPY +1.576% (since Bull's inception). On AGGRO's own inception window: Bull −0.118% vs AGGRO −7.600% vs SPY −0.410% — Bull leads AGGRO by ~7.3pp.
+- **Trades today:** 1 total (BUY CAT 4sh at market-open; 0 at midday, 0 at close).
+
 ## 2026-07-13 12:34 ET — MIDDAY ROUTINE (no trades)
 
 - **Action:** None — no cuts, no tightenings, no new positions. All 3 positions within all guardrails.

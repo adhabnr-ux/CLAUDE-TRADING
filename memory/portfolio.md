@@ -3,10 +3,58 @@
 _Updated by every routine from live Alpaca data. The next agent trusts this as
 the last known state, but always re-fetches live data before trading._
 
-**Last updated:** 2026-07-13 12:34 ET (midday routine; no trades, all guardrails clean, stop audit 4/4 PASS; Bull TRAILS SPY by ~−1.953pp since inception)
+**Last updated:** 2026-07-13 15:52 ET (close routine; no trades, all guardrails clean, stop audit 4/4 PASS; Bull TRAILS SPY by ~−1.872pp since inception)
 **Inception:** 2026-05-21 — starting equity $100,000.00 | SPY anchor price $739.44
 **SPY total-return anchor (post-June 18 ex-div $1.76):** **$741.20**
 **Cumulative SPY dividends since inception (quarterly tracker):** $1.76/sh (June 18 ex-div); next SPY ex-div est. ~September 2026.
+
+---
+
+## Account (close routine, 2026-07-13 ~15:52 ET — EOD)
+
+| Metric | Value |
+|--------|-------|
+| Equity | $99,703.11 |
+| Cash | $76,244.80 (76.472%) |
+| Long market value | $23,458.31 |
+| Last equity (July 10 close) | $99,586.86 |
+| Today's P/L | **+$116.25 (+0.1167%)** |
+| HWM | $101,384.21 (confirmed via `history 1A 1D`) |
+| Drawdown from HWM | **−1.658%** — well within the −10% circuit breaker (8.342pp headroom), not flagged |
+
+## Open positions (close routine, 2026-07-13 ~15:52 ET)
+
+| Symbol | Qty | Avg entry | Current price | Mkt value | Unrealized P/L | % of portfolio | Trailing Stop |
+|--------|-----|-----------|--------------|-----------|----------------|----------------|---------------|
+| CAT | 4 | $944.73 | $933.06 | $3,732.24 | −$46.68 (−1.235%) | 3.743% | 6103c146 (4sh), HWM $946.17, stop $851.553 ✓ |
+| LLY | 10 | $1,093.534 | $1,187.075 | $11,870.75 | +$935.41 (+8.554%) | 11.907% | d4147484 (7sh) + 25989fb5 (3sh), HWM $1,249.45, stop $1,124.505 ✓ |
+| V | 22 | $323.57 | $357.06 | $7,855.32 | +$736.78 (+10.35%) | 7.879% | 66033918 (22sh), HWM $364.21, stop $327.789 ✓ |
+
+**Sector exposure (close July 13):**
+- Industrials (CAT): $3,732.24 = 3.743% | Healthcare (LLY): $11,870.75 = 11.907% | Financials (V): $7,855.32 = 7.879% | Cash: $76,244.80 = 76.472%
+- No sector above 60% cap ✓
+
+**Trailing stop status (close July 13 — confirmed via Alpaca live orders ~15:52 ET):**
+- CAT (6103c146): 4sh — HWM $946.17, stop $851.553 ✓
+- LLY (d4147484): 7sh — HWM $1,249.45, stop $1,124.505 ✓
+- LLY (25989fb5): 3sh — HWM $1,249.45, stop $1,124.505 ✓
+- V (66033918): 22sh — HWM $364.21, stop $327.789 ✓
+**Stop audit: 4/4 PASS ✓** (matches held quantities exactly — none missing)
+
+### Performance vs SPY (close, 2026-07-13)
+| Metric | Value |
+|---|---|
+| Bull today | +0.1167% |
+| SPY today ($754.94 → $749.33) | −0.7431% |
+| Bull since inception | −0.2969% |
+| SPY since inception (TR, $739.44 anchor + $1.76 div) | +1.5755% |
+| Bull vs SPY since inception | **TRAILS by −1.8724pp** (was −1.953pp at midday; gap narrowed −0.081pp as V and CAT outperformed a broad risk-off, semi-led selloff today) |
+
+**Race scoreboard:** Bull −0.297% (since 2026-05-21 inception) | AGGRO −7.600% (own 2026-06-04 inception, latest midday equity USD 92,400.22) | SPY +1.576% (since Bull's 2026-05-21 inception, TR). Bull leads AGGRO by ~7.3pp (on AGGRO's own inception window: Bull −0.118% vs AGGRO −7.600% vs SPY −0.410%, all since 2026-06-04).
+
+**Market close context (WebSearch):** Geopolitical escalation dominated the tape — the US-Iran ceasefire collapsed further with fresh strikes and retaliation, and oil jumped ~5% on the news. Risk-off hit semiconductors hardest (SK Hynix −15% in South Korea, Samsung down sharply, dragging the Nasdaq −0.92%); the S&P 500 fell ~0.39% and the Dow was cushioned by energy names (+0.21%... down slightly) as oil-linked stocks gained. Healthcare broadly fell ~1.08% on the day, but LLY held up much better than its sector (+8.554% from entry, only modestly softer than midday) — no negative company-specific news found. CAT (industrials) slipped −1.235% from entry, consistent with the broad risk-off/oil-price-shock tone hitting cyclicals. V bucked the risk-off tape entirely, +2.318% intraday to +10.35% from entry — no negative news, thesis intact. Bull's non-semiconductor book was the right place to be on a day chip stocks were hit hardest. Earnings season begins tomorrow (July 14) as major banks report Q2 — a catalyst to watch given V's financials exposure.
+
+**Result:** Clean, uneventful close. 0 trades, no exits, no cuts, no discretionary tightenings. All 3 positions within all guardrails. Stop audit 4/4 PASS. Drawdown from HWM (−1.658%) not near the circuit breaker. closed-trades.md unchanged (VST June 30 remains the latest entry) — no exits to reconcile today.
 
 ---
 
@@ -119,6 +167,7 @@ the last known state, but always re-fetches live data before trading._
 | Inception (2026-05-21) | $100,000.00 | $739.44 | — |
 | Pre-market (2026-07-13) | $99,521.72 (−0.478%) | SPY (July 10 close) $755.36 + $1.76 div = +2.391% TR | Bull TRAILS SPY by ~−2.869pp |
 | **Market-open (2026-07-13)** | **$99,535.08 (−0.465%)** | **SPY $753.45 + $1.76 div = +2.133% TR** | **Bull TRAILS SPY by ~−2.598pp** |
+| **Close (2026-07-13)** | **$99,703.11 (−0.297%)** | **SPY $749.33 + $1.76 div = +1.5755% TR** | **Bull TRAILS SPY by ~−1.872pp** |
 
 ---
 
