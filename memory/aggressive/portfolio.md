@@ -6,7 +6,45 @@ but always re-fetches live data before trading._
 
 ---
 
-## Last snapshot — 2026-07-13 MIDDAY (~12:41 PM ET)
+## Last snapshot — 2026-07-13 EOD CLOSE (~4:10 PM ET, post-close)
+
+| Field | Value |
+|---|---|
+| Equity | USD 92,213.20 |
+| Cash | USD 30,516.27 (33.09%) |
+| Long market value | USD 61,696.93 |
+| Open positions | 6 |
+| last_equity (July 10 EOD close) | USD 93,397.88 |
+| Today's P/L | **-USD 1,184.68 (-1.269%)** |
+| HWM | USD 101,144.73 (confirmed via `history 1A 1D`) |
+| Drawdown from HWM | **-8.831%** (circuit breaker -20% — NOT triggered; 11.169pp headroom) |
+
+**Market status:** closed (next open 2026-07-14 09:30 ET; next close 2026-07-14 16:00 ET).
+
+**Open positions:**
+
+| Symbol | Qty | Avg Entry | Price | P/L % | Buffer to -12% | % of Portfolio | Sector |
+|---|---|---|---|---|---|---|---|
+| NVDA | 77 | USD 213.60 | USD 203.1709 | -4.883% | 7.117pp | 16.97% | Semiconductors |
+| AVGO | 19 | USD 406.23 | USD 383.3296 | -5.637% | 6.363pp | 7.90% | Semiconductors |
+| ETN | 34 | USD 419.54 | USD 402.9174 | -3.962% | 8.038pp | 14.86% | Industrials/power infra |
+| GOOGL | 16 | USD 370.22 | USD 352.64 | -4.749% | 7.251pp | 6.12% | Communication Services (hyperscaler) |
+| AMZN | 36 | USD 247.991111 | USD 247.05 | -0.379% | 11.621pp | 9.64% | Consumer Discretionary (hyperscaler) |
+| VST | 67 | USD 153.052836 | USD 157.20 | +2.710% | comfortable | 11.42% | Utilities (nuclear power) |
+
+**Sector exposure:** Semiconductors (NVDA+AVGO) = 24.86%; Industrials (ETN) = 14.86%; Hyperscalers (GOOGL+AMZN) = 15.76%; Utilities (VST) = 11.42%; Cash = 33.09%. No sector near the 60% informal cap.
+
+**Benchmark:** SPY today 754.94 → 749.13 = -0.770%. SPY since inception (anchor 754.18) = -0.670%. Aggro since inception = -7.787%. **Alpha since inception = -7.117pp** (widened from -6.698pp at last Friday's review).
+
+**No trades today.** All 6 positions held; no cut, no trim, no shock. Renewed US-Iran conflict (ceasefire/MOU collapse) plus a continuing SK Hynix-driven memory-sector selloff pressured the semiconductor book (NVDA, AVGO) and the broader Nasdaq — macro/sector driven, not a thesis break.
+
+**Stops:** 6/6 live 18% trailing stops confirmed — NVDA `e15e7753`, AVGO `ffba9bd5`, ETN `abdc232b`, GOOGL `e52a43f1`, AMZN `b55bef05`, VST `e3a7985f`.
+
+**Result:** No trades. All 6 positions held, no shock, no circuit breaker. Control: ACTIVE.
+
+---
+
+## Prior snapshot — 2026-07-13 MIDDAY (~12:41 PM ET)
 
 | Field | Value |
 |---|---|

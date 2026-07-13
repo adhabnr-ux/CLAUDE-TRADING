@@ -1,5 +1,67 @@
 # Aggressive Bull — Trade Log
 
+## 2026-07-13 — EOD CLOSE (~4:10 PM ET, post-close)
+
+**No trades executed today.** No exits, no new entries (MU skipped at market-open breaking-news gate).
+
+### Pre-run checks
+| Check | Result |
+|---|---|
+| Live-switch guard | ALPACA_BASE_URL contains "paper" ✓ |
+| Lock | Clear at start; written for this run ✓ |
+| Control switch | STATUS: ACTIVE ✓ |
+| Half-day check | Not a half-day; next_close 2026-07-14 16:00 ET (normal session) |
+| Dedup check | No `aggro` row yet for 2026-07-13 in performance.csv — appending |
+
+### Account status
+| Field | Value |
+|---|---|
+| Equity | USD 92,213.20 |
+| Cash | USD 30,516.27 (33.09%) |
+| Long market value | USD 61,696.93 |
+| last_equity (July 10 EOD close) | USD 93,397.88 |
+| Today's P/L | **-USD 1,184.68 (-1.269%)** |
+| HWM | USD 101,144.73 (confirmed via `history 1A 1D`, max over trailing 252 sessions) |
+| Drawdown from HWM | **-8.831%** (circuit breaker -20% — NOT triggered; 11.169pp headroom, not within 3pp of breaker) |
+
+### Benchmark
+| Field | Value |
+|---|---|
+| SPY today | 754.94 → 749.13 = **-0.770%** |
+| SPY since inception (anchor 754.18, 2026-06-03) | 749.13 = **-0.670%** |
+| Aggro since inception | -7.787% |
+| **Alpha since inception** | **-7.117pp** (widened from -6.698pp at last Friday's weekly review) |
+
+### Final position snapshot
+
+| Symbol | Qty | Avg Entry | Price | P/L % | Buffer to -12% | % of Portfolio | Sector |
+|---|---|---|---|---|---|---|---|
+| NVDA | 77 | USD 213.60 | USD 203.1709 | -4.883% | 7.117pp | 16.97% | Semiconductors |
+| AVGO | 19 | USD 406.23 | USD 383.3296 | -5.637% | 6.363pp | 7.90% | Semiconductors |
+| ETN | 34 | USD 419.54 | USD 402.9174 | -3.962% | 8.038pp | 14.86% | Industrials/power infra |
+| GOOGL | 16 | USD 370.22 | USD 352.64 | -4.749% | 7.251pp | 6.12% | Communication Services (hyperscaler) |
+| AMZN | 36 | USD 247.991111 | USD 247.05 | -0.379% | 11.621pp | 9.64% | Consumer Discretionary (hyperscaler) |
+| VST | 67 | USD 153.052836 | USD 157.20 | +2.710% | comfortable | 11.42% | Utilities (nuclear power) |
+
+**Sector exposure:** Semiconductors (NVDA+AVGO) = 24.86%; Industrials (ETN) = 14.86%; Hyperscalers (GOOGL+AMZN) = 15.76%; Utilities (VST) = 11.42%; Cash = 33.09%. No sector near the 60% informal cap.
+
+**Cut rule check (>-12% from entry):** No positions triggered. All 6 buffers comfortably above the 6pp line despite today's semi-sector pressure.
+**Tighten-stop rule check (>+25% from entry):** No positions triggered.
+
+### Stop audit — 6/6 confirmed live ✓
+NVDA `e15e7753`, AVGO `ffba9bd5`, ETN `abdc232b`, GOOGL `e52a43f1`, AMZN `b55bef05`, VST `e3a7985f` — all `status: "new"` per Alpaca open-orders list, all matched 1:1 to the 6 open positions. No gaps, no action needed.
+
+### Reconciliation vs closed-trades.md
+Positions today (AMZN, AVGO, ETN, GOOGL, NVDA, VST) are identical to the market-open/midday snapshot — no exits occurred. `closed-trades.md` unchanged this run; nothing to post-mortem.
+
+### Market close context [search: WebSearch fallback — mcp__minimax__web_search not found this session]
+Renewed US-Iran conflict was the dominant driver: Trump resumed the Iran blockade as the prior ceasefire/MOU fell apart, driving a risk-off tape (oil +~5%) that compounded the morning's SK Hynix-driven memory-sector selloff (SK Hynix -15% in South Korea) already pressuring NVDA/AVGO. S&P 500 and Nasdaq both fell on the day (Nasdaq underperforming on semi weakness) while energy stocks cushioned the Dow. This threatens the near-term sentiment around the semiconductor book (NVDA, AVGO) via both the geopolitical risk-off and the HBM/memory-demand-scare angle that already caused MU to be skipped at market-open — not a company-specific thesis break for either name, consistent with the macro-driven pattern seen repeatedly since inception (Iran war, FOMC, index rebalancing).
+
+### Result
+No trades. All 6 positions held, all stops live, no cut/trim/shock triggered. Drawdown from HWM (-8.831%) not near the circuit breaker. Alpha since inception widened to -7.117pp on a broad macro-driven risk-off day (Iran conflict re-escalation + semiconductor sector selloff), not a thesis failure. Control: ACTIVE.
+
+---
+
 ## 2026-07-13 — MIDDAY review (no trades)
 
 **Market open, no shock:** equity USD 92,400.22 vs last_equity USD 93,397.88 = -1.068% (threshold -6%, not triggered).
