@@ -6,7 +6,43 @@ but always re-fetches live data before trading._
 
 ---
 
-## Last snapshot — 2026-07-13 MARKET OPEN (~9:47 AM ET)
+## Last snapshot — 2026-07-13 MIDDAY (~12:41 PM ET)
+
+| Field | Value |
+|---|---|
+| Equity | USD 92,400.22 |
+| Cash | USD 30,516.27 (33.03%) |
+| Long market value | USD 61,883.95 |
+| Open positions | 6 |
+| last_equity (July 10 EOD close) | USD 93,397.88 |
+| Shock check | -1.068% — NOT triggered (threshold -6%) |
+| HWM | USD 101,144.73 (memory-carried) |
+| Drawdown from HWM | ~-8.64% (circuit breaker -20% — NOT triggered) |
+
+**Market status:** open (next close 2026-07-13 16:00 ET).
+
+**Open positions:**
+
+| Symbol | Qty | Avg Entry | Price | P/L % | Buffer to -12% | % of Portfolio | Sector |
+|---|---|---|---|---|---|---|---|
+| NVDA | 77 | USD 213.60 | USD 204.99 | -4.031% | 7.969pp | 17.08% | Semiconductors |
+| AVGO | 19 | USD 406.23 | USD 387.08 | -4.714% | 7.286pp | 7.96% | Semiconductors |
+| ETN | 34 | USD 419.54 | USD 399.14 | -4.862% | 7.138pp | 14.69% | Industrials/power infra |
+| GOOGL | 16 | USD 370.22 | USD 356.18 | -3.792% | 8.208pp | 6.17% | Communication Services (hyperscaler) |
+| AMZN | 36 | USD 247.991111 | USD 248.33 | +0.137% | 12.137pp | 9.68% | Consumer Discretionary (hyperscaler) |
+| VST | 67 | USD 153.052836 | USD 157.26 | +2.749% | comfortable | 11.40% | Utilities (nuclear power) |
+
+**Sector exposure:** Semiconductors (NVDA+AVGO) = 25.04%; Industrials (ETN) = 14.69%; Hyperscalers (GOOGL+AMZN) = 15.84%; Utilities (VST) = 11.40%; Cash = 33.03%. No sector near the 60% informal cap.
+
+**No trades this run.** All 6 positions within guardrails; no cut, no trim, no news-scan trigger (nothing crossed ±5%/15% from entry).
+
+**Stops:** 6/6 live 18% trailing stops confirmed — NVDA `e15e7753`, AVGO `ffba9bd5`, ETN `abdc232b`, GOOGL `e52a43f1`, AMZN `b55bef05`, VST `e3a7985f`.
+
+**Result:** No trades. All 6 positions held, no shock, no circuit breaker. Control: ACTIVE.
+
+---
+
+## Prior snapshot — 2026-07-13 MARKET OPEN (~9:47 AM ET)
 
 | Field | Value |
 |---|---|

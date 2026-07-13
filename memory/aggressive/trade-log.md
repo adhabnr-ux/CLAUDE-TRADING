@@ -1,5 +1,33 @@
 # Aggressive Bull — Trade Log
 
+## 2026-07-13 — MIDDAY review (no trades)
+
+**Market open, no shock:** equity USD 92,400.22 vs last_equity USD 93,397.88 = -1.068% (threshold -6%, not triggered).
+
+**Positions reviewed (6, unchanged from market-open snapshot):**
+| Symbol | Qty | Entry | Current | P/L % | Buffer to -12% cut | % of Portfolio |
+|---|---|---|---|---|---|---|
+| NVDA | 77 | USD 213.60 | USD 204.99 | -4.031% | 7.969pp | 17.08% |
+| AVGO | 19 | USD 406.23 | USD 387.08 | -4.714% | 7.286pp | 7.96% |
+| ETN | 34 | USD 419.54 | USD 399.14 | -4.862% | 7.138pp | 14.69% |
+| GOOGL | 16 | USD 370.22 | USD 356.18 | -3.792% | 8.208pp | 6.17% |
+| AMZN | 36 | USD 247.991111 | USD 248.33 | +0.137% | 12.137pp | 9.68% |
+| VST | 67 | USD 153.052836 | USD 157.26 | +2.749% | comfortable | 11.40% |
+
+No position below the -12% cut threshold; no position above +25% (winner-protection threshold not applicable — VST +2.749% is the only green name). No new buys per playbook (midday never opens positions).
+
+**News scan:** not triggered this run — no position is down more than 5% or up more than 15% from entry (ETN closest at -4.862%, AVGO -4.714%, both just inside the 5% threshold).
+
+**Stop audit:** 6/6 positions have live 18% trailing stops confirmed in open orders (NVDA `e15e7753`, AVGO `ffba9bd5`, ETN `abdc232b`, GOOGL `e52a43f1`, AMZN `b55bef05`, VST `e3a7985f`). No gaps, no action needed.
+
+**Sector exposure:** Semiconductors (NVDA+AVGO) = 25.04%; Industrials (ETN) = 14.69%; Hyperscalers (GOOGL+AMZN) = 15.84%; Utilities (VST) = 11.40%; Cash = 33.03%. No sector near the 60% cap.
+
+**No exits this run** — nothing to post-mortem, no `trades.jsonl` entries.
+
+**Result:** All positions within range, NVDA/AVGO/ETN all in the 7-8pp buffer band but none in WATCH/CRITICAL territory. No trades. Quiet midday check — same broad tech softness seen at market-open persisting into midday.
+
+---
+
 ## 2026-07-13 — MARKET OPEN (~9:47 AM ET)
 
 **No trades executed.** Planned MU buy (8 shares) SKIPPED at the breaking-news gate.
