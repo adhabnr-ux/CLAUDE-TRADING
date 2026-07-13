@@ -5,6 +5,31 @@ The weekly new-position count is derived from this log._
 
 _Entries before 2026-06-01 archived to `memory/archive/2026-05.md` (2026-07-01 monthly housekeeping)._
 
+## 2026-07-13 12:34 ET — MIDDAY ROUTINE (no trades)
+
+- **Action:** None — no cuts, no tightenings, no new positions. All 3 positions within all guardrails.
+- **Live-switch guard:** `ALPACA_BASE_URL` contains "paper" ✓
+- **Lock:** was `{}` — acquired cleanly, no stale lock.
+- **Control switch:** STATUS ACTIVE, no NOTE/QUERY to acknowledge.
+- **Market:** OPEN ✓ (is_open: true, ~12:34 ET, next_close 16:00 ET)
+- **Shock check:** equity USD 99,668.36 vs last_equity USD 99,586.86 (July 10 close) = +USD 81.50 (+0.0818%) — no shock ✓ (threshold −4%)
+- **Position review (live prices ~12:34 ET):**
+  - CAT 4sh @ USD 927.59 (−1.814% from entry USD 944.73, −2.606% today). Bought this morning (market-open). Far above the −7% cut threshold. Not down >3% from entry — no news scan triggered. Stop buffer: HWM USD 946.17, stop USD 851.553 = USD 76.037 (8.196%) ✓. review_by 2026-08-03. HOLD.
+  - LLY 10sh @ USD 1,188.89 (+8.720% from entry USD 1,093.534, +0.026% today). Below both the +10% scan trigger and the +15% tighten trigger. review_by 2026-07-21 not due. HOLD. Conviction A.
+  - V 22sh @ USD 355.65 (+9.914% from entry USD 323.57, +1.914% today). Just under the +10% scan trigger; below the +15% tighten trigger. Thesis intact. HOLD. Conviction B. review_by 2026-07-28.
+- **No cuts** (−7% rule): all 3 positions are gains or a shallow loss, far above threshold ✓.
+- **No discretionary tightenings** (+15% trigger): none of the 3 positions reached it ✓.
+- **Stop audit: 4/4 PASS ✓**
+  - CAT (6103c146): 4sh — HWM USD 946.17, stop USD 851.553 ✓
+  - LLY (d4147484): 7sh — HWM USD 1,249.45, stop USD 1,124.505 ✓
+  - LLY (25989fb5): 3sh — HWM USD 1,249.45, stop USD 1,124.505 ✓
+  - V (66033918): 22sh — HWM USD 364.21, stop USD 327.789 ✓
+  - Matches held quantities exactly (CAT 4sh, LLY 7+3=10sh, V 22sh). No missing stops, nothing to recreate.
+- **Exit reconciliation:** No exits since this morning's CAT buy. closed-trades.md current — nothing new required.
+- **Sector exposure:** Industrials (CAT) 3.723% | Healthcare (LLY) 11.928% | Financials (V) 7.850% | Cash 76.498% — no sector above 60% cap ✓.
+- **No new positions today** — midday routine manages existing risk only, per playbook.
+- **Trades today:** 0 (CAT buy already logged in this morning's market-open entry below).
+
 ## 2026-07-13 09:37 ET — MARKET OPEN — BUY CAT 4sh
 
 - **Live-switch guard / lock / control:** `ALPACA_BASE_URL` contains "paper" ✓; `_lock` was `{}`, acquired and released. Control STATUS ACTIVE, no NOTE/QUERY.
