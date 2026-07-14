@@ -3,7 +3,7 @@
 _Updated by every routine from live Alpaca data. The next agent trusts this as
 the last known state, but always re-fetches live data before trading._
 
-**Last updated:** 2026-07-14 09:36 ET (market-open routine; no trades — plan was empty, stop audit 4/4 PASS; Bull TRAILS SPY by ~−2.222pp since inception)
+**Last updated:** 2026-07-14 12:34 ET (midday routine; no trades — stop audit 4/4 PASS, V news-scanned at +10.877% from entry, no thesis break; Bull TRAILS SPY by ~−2.520pp since inception)
 **Inception:** 2026-05-21 — starting equity $100,000.00 | SPY anchor price $739.44
 **SPY total-return anchor (post-June 18 ex-div $1.76):** **$741.20**
 **Cumulative SPY dividends since inception (quarterly tracker):** $1.76/sh (June 18 ex-div); next SPY ex-div est. ~September 2026.
@@ -43,6 +43,43 @@ the last known state, but always re-fetches live data before trading._
 **Pre-market July 14 notes (~08:10 ET, Tuesday):** Shock check −0.0281% (no shock, threshold −4%). No cuts (−7% rule): all 3 positions are gains or a shallow loss, far above threshold. No discretionary tightenings (+15% trigger): none reached. MOD's full diligence pass failed cleanly on the technical (−13.02% below 50-day MA) and ATR (5.42% > 5% cap) gates — not promoted. ETN/CEG/VRT/NVT all lost ground vs. their pullback targets on Monday's broad selloff — no promotions. June CPI lands at 8:30 AM ET today; 10yr yield at a ~2-month high (4.59–4.62%) but still below the 4.75% halt trigger; WTI ~$79.56, below the $100 halt trigger. No trades planned today. Full detail in today's research-log.md entry.
 
 **Since inception:** Bull −0.368% ($99,631.83) vs SPY TR (pre-market ~$747.79 + $1.76 div = +1.367%) → **Bull TRAILS SPY by ~−1.735pp**.
+
+---
+
+## Account (midday routine, 2026-07-14 ~12:34 ET)
+
+| Metric | Value |
+|--------|-------|
+| Equity | $99,365.10 |
+| Cash | $76,244.79 (76.732%) |
+| Long market value | $23,120.31 |
+| Last equity (July 13 close) | $99,659.87 |
+| Shock check | −0.2958% — no shock (threshold −4%) |
+| HWM | $101,384.21 |
+| Drawdown from HWM | −1.991% — informational only, not a blocking guardrail |
+
+## Open positions (midday routine, 2026-07-14 ~12:34 ET)
+
+| Symbol | Qty | Avg entry | Current price | Mkt value | Unrealized P/L | % of portfolio | Trailing Stop |
+|--------|-----|-----------|--------------|-----------|----------------|----------------|---------------|
+| CAT | 4 | $944.73 | $929.37 | $3,717.48 | −$61.44 (−1.626%) | 3.741% | 6103c146 (4sh), HWM $964.62, stop $868.158 ✓ |
+| LLY | 10 | $1,093.534 | $1,151.00 | $11,510.00 | +$574.66 (+5.255%) | 11.584% | d4147484 (7sh) + 25989fb5 (3sh), HWM $1,249.45, stop $1,124.505 ✓ |
+| V | 22 | $323.57 | $358.765 | $7,892.83 | +$774.29 (+10.877%) | 7.943% | 66033918 (22sh), HWM $364.21, stop $327.789 ✓ |
+
+**Sector exposure (midday July 14):**
+- Industrials (CAT): $3,717.48 = 3.741% | Healthcare (LLY): $11,510.00 = 11.584% | Financials (V): $7,892.83 = 7.943% | Cash: $76,244.79 = 76.732%
+- No sector above 60% cap ✓
+
+**Trailing stop status (midday July 14 — confirmed via Alpaca live orders ~12:34 ET):**
+- CAT (6103c146): 4sh — HWM $964.62, stop $868.158 ✓
+- LLY (d4147484): 7sh — HWM $1,249.45, stop $1,124.505 ✓
+- LLY (25989fb5): 3sh — HWM $1,249.45, stop $1,124.505 ✓
+- V (66033918): 22sh — HWM $364.21, stop $327.789 ✓
+**Stop audit: 4/4 PASS ✓** (matches held quantities exactly — none missing)
+
+**Midday July 14 notes (~12:34 ET, Tuesday):** Shock check −0.2958% (no shock, threshold −4%). No cuts (−7% rule): CAT −1.626%, LLY +5.255%, V +10.877% — none below the cut threshold. No discretionary tightenings (+15% trigger): V is the closest at +10.877%, still below 15%. V crossed the +10%-from-entry news-scan trigger — WebSearch found only the already-known ACE Money Transfer partnership and continued Strong Buy analyst sentiment (38 buy / 0 sell); no thesis-breaking news, HOLD. LLY pulled back intraday (−2.612%) with no negative news — normal noise, thesis intact.
+
+**Since inception:** Bull −0.635% ($99,365.10) vs SPY TR (SPY $750.97 + $1.76 div = +1.797%) → **Bull TRAILS SPY by ~−2.432pp**.
 
 ---
 
