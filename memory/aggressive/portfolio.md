@@ -6,7 +6,45 @@ but always re-fetches live data before trading._
 
 ---
 
-## Last snapshot — 2026-07-14 PRE-MARKET (~8:15 AM ET, market closed at run time)
+## Last snapshot — 2026-07-14 EOD CLOSE (~4:10 PM ET, post-close)
+
+| Field | Value |
+|---|---|
+| Equity | USD 93,528.33 |
+| Cash | USD 30,516.27 (32.628%) |
+| Long market value | USD 63,012.06 |
+| Open positions | 6 |
+| last_equity (July 13 EOD close) | USD 92,319.29 |
+| Today's P/L | **+USD 1,209.04 (+1.310%)** |
+| HWM | USD 101,144.73 (confirmed via `history 1A 1D`) |
+| Drawdown from HWM | **-7.530%** (circuit breaker -20% — NOT triggered; 12.470pp headroom) |
+
+**Market status:** closed (next open 2026-07-15 09:30 ET; next close 2026-07-15 16:00 ET).
+
+**Open positions:**
+
+| Symbol | Qty | Avg Entry | Price | P/L % | Buffer to -12% | % of Portfolio | Sector |
+|---|---|---|---|---|---|---|---|
+| NVDA | 77 | USD 213.60 | USD 211.8013 | -0.842% | 11.158pp | 17.437% | Semiconductors |
+| AVGO | 19 | USD 406.23 | USD 389.3852 | -4.147% | 7.853pp | 7.910% | Semiconductors |
+| ETN | 34 | USD 419.54 | USD 415.52 | -0.958% | 11.042pp | 15.105% | Industrials/power infra |
+| GOOGL | 16 | USD 370.22 | USD 358.89 | -3.060% | 8.940pp | 6.140% | Communication Services (hyperscaler) |
+| AMZN | 36 | USD 247.991111 | USD 247.00 | -0.400% | 11.600pp | 9.507% | Consumer Discretionary (hyperscaler) |
+| VST | 67 | USD 153.052836 | USD 157.36 | +2.814% | comfortable | 11.273% | Utilities (nuclear power) |
+
+**Sector exposure:** Semiconductors (NVDA+AVGO) = 25.347%; Industrials (ETN) = 15.105%; Hyperscalers (GOOGL+AMZN) = 15.647%; Utilities (VST) = 11.273%; Cash = 32.628%. No sector near the 60% informal cap.
+
+**Benchmark:** SPY today 749.13 → 751.83 = +0.360%. SPY since inception (anchor 754.18) = -0.312%. Aggro since inception = -6.472%. **Alpha since inception = -6.160pp** (improved from -7.117pp yesterday's close).
+
+**No trades today.** All 6 positions held; no cut, no trim, no shock. June CPI printed 3.5% (below 3.8% consensus), driving a broad relief rally (S&P +0.4%, Nasdaq +0.9%) that specifically unwound the memory-sector demand scare pressuring the semi book — NVDA, ETN, GOOGL, AVGO all participated; VST lagged (-0.48%, less rate-sensitive).
+
+**Stops:** 6/6 live 18% trailing stops confirmed — NVDA `e15e7753` (ratcheted to USD 174.291), AVGO `ffba9bd5`, ETN `abdc232b`, GOOGL `e52a43f1`, AMZN `b55bef05`, VST `e3a7985f` (ratcheted to USD 137.9322).
+
+**Result:** No trades. All 6 positions held, no shock, no circuit breaker. Best-conditioned book close in weeks (all buffers 7.8pp+). Control: ACTIVE.
+
+---
+
+## Prior snapshot — 2026-07-14 PRE-MARKET (~8:15 AM ET, market closed at run time)
 
 | Field | Value |
 |---|---|

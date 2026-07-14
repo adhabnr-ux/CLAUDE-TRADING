@@ -1,5 +1,67 @@
 # Aggressive Bull — Trade Log
 
+## 2026-07-14 — EOD CLOSE (~4:10 PM ET, post-close)
+
+**No trades executed today.** No exits, no new entries (midday held 6/6 unchanged; no cut/trim/shock triggers fired all day).
+
+### Pre-run checks
+| Check | Result |
+|---|---|
+| Live-switch guard | ALPACA_BASE_URL contains "paper" ✓ |
+| Lock | Clear (`{}`) at start; written for this run ✓ |
+| Control switch | STATUS: ACTIVE, no NOTE/QUERY ✓ |
+| Half-day check | Not a half-day; next_close 2026-07-15 16:00 ET (normal session) |
+| Dedup check | No `aggro` row yet for 2026-07-14 in performance.csv — appending |
+
+### Account status
+| Field | Value |
+|---|---|
+| Equity | USD 93,528.33 |
+| Cash | USD 30,516.27 (32.628%) |
+| Long market value | USD 63,012.06 |
+| last_equity (July 13 EOD close) | USD 92,319.29 |
+| Today's P/L | **+USD 1,209.04 (+1.310%)** |
+| HWM | USD 101,144.73 (confirmed via `history 1A 1D`, max over trailing 252 sessions) |
+| Drawdown from HWM | **-7.530%** (circuit breaker -20% — NOT triggered; 12.470pp headroom, not within 3pp of the breaker) |
+
+### Benchmark
+| Field | Value |
+|---|---|
+| SPY today | 749.13 → 751.83 = **+0.360%** |
+| SPY since inception (anchor 754.18, 2026-06-03) | 751.83 = **-0.312%** |
+| Aggro since inception | -6.472% |
+| **Alpha since inception** | **-6.160pp** (improved from -7.117pp at yesterday's close, and from -6.698pp at last Friday's weekly review) |
+
+### Final position snapshot
+
+| Symbol | Qty | Avg Entry | Price | P/L % | Buffer to -12% | % of Portfolio | Sector |
+|---|---|---|---|---|---|---|---|
+| NVDA | 77 | USD 213.60 | USD 211.8013 | -0.842% | 11.158pp | 17.437% | Semiconductors |
+| AVGO | 19 | USD 406.23 | USD 389.3852 | -4.147% | 7.853pp | 7.910% | Semiconductors |
+| ETN | 34 | USD 419.54 | USD 415.52 | -0.958% | 11.042pp | 15.105% | Industrials/power infra |
+| GOOGL | 16 | USD 370.22 | USD 358.89 | -3.060% | 8.940pp | 6.140% | Communication Services (hyperscaler) |
+| AMZN | 36 | USD 247.991111 | USD 247.00 | -0.400% | 11.600pp | 9.507% | Consumer Discretionary (hyperscaler) |
+| VST | 67 | USD 153.052836 | USD 157.36 | +2.814% | comfortable | 11.273% | Utilities (nuclear power) |
+
+**Sector exposure:** Semiconductors (NVDA+AVGO) = 25.347%; Industrials (ETN) = 15.105%; Hyperscalers (GOOGL+AMZN) = 15.647%; Utilities (VST) = 11.273%; Cash = 32.628%. No sector near the 60% cap. Single-position cap (35% max): NVDA largest at 17.437% — well clear.
+
+**Cut rule check (>-12% from entry):** No positions triggered. All 6 buffers 7.8pp+ above the -12% line — the best-conditioned book close in weeks, all positions rallying today.
+**Tighten-stop rule check (>+25% from entry):** No positions triggered.
+
+### Stop audit — 6/6 confirmed live ✓
+NVDA `e15e7753` (stop USD 174.291, HWM 212.55, ratcheted up today), AVGO `ffba9bd5` (stop USD 334.1664, HWM 407.52), ETN `abdc232b` (stop USD 350.9026, HWM 427.93), GOOGL `e52a43f1` (stop USD 308.1314, HWM 375.77), AMZN `b55bef05` (stop USD 207.0705, HWM 252.525), VST `e3a7985f` (stop USD 137.9322, HWM 168.21) — all `status: "new"` per Alpaca open-orders list, all matched 1:1 to the 6 open positions. No gaps, no action needed.
+
+### Reconciliation vs closed-trades.md
+Positions today (AMZN, AVGO, ETN, GOOGL, NVDA, VST) are identical to the market-open/midday snapshot — no exits occurred. `closed-trades.md` unchanged this run; nothing to post-mortem.
+
+### Market close context [search: WebSearch fallback — MiniMax M3 MCP not found via ToolSearch this session]
+June CPI printed 3.5% YoY, below the 3.8% consensus estimate, easing pressure off the Fed and driving a broad relief rally: S&P 500 +0.4%, Nasdaq +0.9%. Semiconductor and memory names (SK Hynix, Micron) jumped as the CPI cooling directly unwound the memory-sector demand-scare narrative that had been pressuring the book (and had caused MU to be skipped/deferred at the last two pre-market sessions). Bank earnings (JPMorgan, BofA, Wells Fargo, Citi, Goldman) beat on trading revenue — a healthy-market signal, not company-specific to any held name. IBM fell ~25% on an enterprise-spending-shift warning (software/mainframe → AI infrastructure) — thesis-irrelevant to the book (no IBM exposure) but directionally supportive of the AI-infra thesis (NVDA/AVGO/ETN). Iran-tension-driven oil strength continued in the background but did not offset the CPI-driven rally today. This context directly explains today's book performance: NVDA +4.06% intraday, ETN +3.15%, GOOGL +1.81%, AVGO +1.39% all participated in the rally; VST -0.48% lagged (nuclear/power thesis less tied to rate-cut relief than semis).
+
+### Result
+No trades. All 6 positions held, all stops live (NVDA and VST both ratcheted their trailing stops higher on today's gains), no cut/trim/shock triggered. Drawdown from HWM (-7.530%) improved from yesterday's -8.831% and is well clear of the circuit breaker. Alpha since inception improved to -6.160pp (from -7.117pp yesterday) on a broad CPI-relief rally that specifically resolved the memory-sector fear that had been the standing rationale for deferring the MU redeployment candidate. Control: ACTIVE.
+
+---
+
 ## 2026-07-14 — MIDDAY review (no trades)
 
 **Market open, no shock:** equity USD 93,342.35 vs last_equity USD 92,319.29 = +1.108% (threshold -6%, not triggered).
