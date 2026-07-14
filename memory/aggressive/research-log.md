@@ -1,5 +1,43 @@
 # Aggressive Bull — Research Log
 
+## 2026-07-14 — PRE-MARKET (~8:15 AM ET, market closed at run time)
+
+mcp__minimax__web_search was not found via ToolSearch this session (only the built-in `WebSearch` tool resolved) — used WebSearch fallback for every query this run per the search protocol. [search: WebSearch fallback]
+
+### Market posture
+
+**S&P 500 futures pre-market July 14** (`S&P 500 futures pre-market July 14 2026`): E-mini S&P 500 futures down ~0.2%. Markets awaiting the CPI report at 8:30 AM ET, recalibrating AI-trade bets, and monitoring rising oil prices amid the renewed US-Iran war (Trump declared a resumed conflict). Economists expect June CPI cooled, but bond traders are increasing bets on a July 28-29 Fed hike anyway — a hawkish-leaning bond market against a dovish consensus forecast is a genuine two-sided risk for today's print. Polymarket gives the July 14 open a 56% chance of rebounding (tech strength vs. Iran-war overhang). Mixed, event-risk-heavy tape, not a clean risk-on or risk-off read. [search: WebSearch fallback]
+
+### Held positions — news scan (all 6)
+
+- **NVDA** (`NVDA Nvidia stock news July 14 2026`): Closed USD 203.53 Monday (-3.52% on the day), part of the broad semiconductor selloff (NVDA, AMD, INTC, MU, SNDK all fell in sympathy with the SK Hynix HBM4 scare). New competitive note: Google is expanding external sales of its AI TPUs to other cloud providers as a lower-cost Nvidia alternative — a known, gradual competitive risk already priced into the thesis, not a new thesis-breaking event. No NVDA-specific negative news. Thesis intact. [search: WebSearch fallback]
+- **AVGO** (`AVGO Broadcom stock news July 14 2026`): No new negative company-specific news. Apple custom-silicon/RF partnership (USD 30B+ through 2031) remains the dominant, unchanged catalyst; 26-analyst Buy consensus, avg PT USD 501.58 (as of July 12, unchanged). Broadly caught in the same chip-sector selloff as NVDA — sector/macro, not company-specific. Thesis intact. [search: WebSearch fallback]
+- **ETN** (`ETN Eaton stock news July 14 2026`): Down ~1.76% today (part of the broad-tape pullback), Q2 2026 earnings confirmed July 31 (18 trading days away, outside any window). New: Dan Simpson named president, Global Energy Infrastructure Solutions (leadership news, thesis-neutral) and a new FranklinWH home-energy-systems collaboration (incremental, not thesis-defining). Data-center-demand backlog and AI-power-infrastructure thesis intact, no negative news. [search: WebSearch fallback]
+- **GOOGL** (`GOOGL Alphabet stock news July 14 2026`): Earnings confirmed for **2026-07-22** — 6 trading days away (July 15, 16, 17, 20, 21, 22), outside the 2-day earnings window for today but review_by (2026-07-21) will force an explicit hold/trim/exit decision one trading day before the print, as it should. GCP +63% YoY confirmed intact; some analyst commentary flags AI capex pressure on margins (known, not new). No thesis-breaking news. [search: WebSearch fallback]
+- **AMZN** (`AMZN Amazon stock news July 14 2026`): New this week — Amazon priced a USD 25B bond offering to fund data-center/AI-infrastructure expansion, completed just before the July 30 earnings release; trailing-12-month free cash flow has fallen to USD 1.2B (from USD 25.9B a year ago) on the AI capex ramp. This is a known, thesis-consistent cost of the AI buildout (heavy capex, not a revenue or AWS-demand problem) — AWS itself still growing 28% YoY with a USD 364B backlog. Not thesis-breaking, but worth flagging as the most material "what changed" for AMZN this week. Thesis intact. [search: WebSearch fallback]
+- **VST** (`VST Vistra stock news July 14 2026`): USD 158.12, essentially flat (-0.47% Monday). No new negative news. AI-power/nuclear-PPA thesis unchanged; Q2 earnings confirmed Aug 7 (+140.6% YoY EPS expected); 19-analyst Strong Buy, PT USD 222.89. Thesis intact, still the standout performer (+3.317% from blended entry). Review_by 2026-07-15 is tomorrow, not today — no decision required this run. [search: WebSearch fallback]
+
+**Conclusion: no thesis-breaking news for any of the 6 held positions.** All theses intact. No held name reports earnings within the next 2 trading days (nearest is GOOGL, July 22, 6 trading days out).
+
+### Redeployment candidate re-check — MU (Micron), carried forward from July 13
+
+**MU / SK Hynix scare, day 2** (`Micron MU stock news SK Hynix HBM4 July 14 2026`): The KIS estimate cut on SK Hynix (Q2 2026 profit ~8% below consensus, citing slower HBM4 shipment ramp) that broke July 13 has NOT resolved — SK Hynix fell -15% in Asia Monday (largest single-day drop on record, KOSPI trading halt), and MU itself was down another ~5.1% in pre-market trading today on top of Monday's move, with insider-selling concerns (the July 1 CPO share sale flagged July 13) still in the commentary. Micron's own fundamentals are unchanged and thesis-supportive: CEO Sanjay Mehrotra reaffirmed FQ4 FY2026 guidance of USD 50B ± USD 1B revenue, ~85% gross margin, citing multi-year Strategic Customer Agreements and HBM4 already in high-volume shipment — this is a sympathy/sentiment selloff on a competitor's estimate cut, not a Micron-specific thesis break.
+
+**Decision: hold off the MU entry one more session.** Two distinct, unresolved event risks stack on top of each other this morning: (1) the memory-sector demand scare is now in its second day without stabilizing, and (2) the 8:30 AM ET CPI print (ahead of today's open) lands into a bond market already pricing higher July-FOMC hike odds despite a consensus-cooler CPI forecast — a genuine two-sided data risk. Entering a fresh, high-volatility (7%+ daily range) position on a morning carrying both risks at once is worse risk/reward than waiting one more session for either to clear. This is the second consecutive pre-market deferring this specific, concrete candidate (not a new generic excuse) — per the standing lesson on not letting a named redeployment directive rot indefinitely, if MU remains unstable a third session running, the next pre-market should rotate to an alternate Tier 3 name (TSM) rather than deferring again. MU plan carried forward unchanged: 8 shares, review_by 2026-07-27.
+
+**No trades planned for today.**
+
+```json
+{
+  "plan_date": "2026-07-14",
+  "trades": []
+}
+```
+
+**Result:** No trades planned (market closed at run time). All 6 positions held, no thesis-contract deadlines due today (VST is tomorrow), all 6 stops confirmed live. MU redeployment candidate held back a second session on two stacked, distinct event risks (unresolved memory-sector scare + today's CPI print) — carried forward with an explicit three-strikes-then-rotate condition rather than an open-ended deferral.
+
+---
+
 ## 2026-07-13 — PRE-MARKET (~8:15 AM ET, market closed at run time)
 
 mcp__minimax__web_search was not found via ToolSearch this session (only the built-in `WebSearch` tool resolved) — used WebSearch fallback for every query this run per the search protocol. [search: WebSearch fallback]

@@ -1,5 +1,53 @@
 # Aggressive Bull — Trade Log
 
+## 2026-07-14 — PRE-MARKET (~8:15 AM ET, market closed at run time)
+
+**No trades planned.** Market closed at run time; all 6 positions held unchanged.
+
+### Pre-run checks
+| Check | Result |
+|---|---|
+| Live-switch guard | ALPACA_BASE_URL contains "paper" ✓ |
+| Lock | Clear at start; written for this run ✓ |
+| Control switch | STATUS: ACTIVE, no NOTE/QUERY ✓ |
+| Strategy STATUS | ACTIVE (not first-run) |
+
+### Account status
+| Field | Value |
+|---|---|
+| Equity | USD 92,663.17 |
+| Cash | USD 30,516.27 (32.94%) |
+| last_equity (July 13 EOD, per account API) | USD 92,319.29 |
+| Shock check | +0.373% — NOT triggered (threshold -6%) |
+| HWM | USD 101,144.73 (confirmed via `history 1A 1D`) |
+| Drawdown from HWM | **-8.386%** (circuit breaker -20% — NOT triggered; 11.614pp headroom) |
+
+### Positions (6, unchanged)
+| Symbol | Qty | Avg Entry | Price | P/L % | Buffer to -12% | % of Portfolio |
+|---|---|---|---|---|---|---|
+| NVDA | 77 | USD 213.60 | USD 205.6865 | -3.705% | 8.295pp | 17.09% |
+| AVGO | 19 | USD 406.23 | USD 391.85 | -3.540% | 8.460pp | 8.04% |
+| ETN | 34 | USD 419.54 | USD 406.03 | -3.220% | 8.780pp | 14.90% |
+| GOOGL | 16 | USD 370.22 | USD 350.06 | -5.445% | 6.555pp | 6.05% |
+| AMZN | 36 | USD 247.991111 | USD 246.20 | -0.722% | 11.278pp | 9.57% |
+| VST | 67 | USD 153.052836 | USD 158.13 | +3.317% | comfortable | 11.43% |
+
+### Thesis contracts
+No review_by deadlines due today. VST due tomorrow (2026-07-15). All 6 positions rated A (last Monday review, July 13; not due again until July 20).
+
+### Deployment check
+Cash 32.94%, above the 20% threshold. MU (Micron) redeployment candidate carried forward from July 13 held back a second session — see research-log.md for full reasoning (unresolved 2-day SK Hynix/HBM4 memory-sector scare stacked with today's 8:30 AM CPI print). No qualifying entry today.
+
+### Stop audit — 6/6 confirmed live ✓
+NVDA `e15e7753`, AVGO `ffba9bd5`, ETN `abdc232b`, GOOGL `e52a43f1`, AMZN `b55bef05`, VST `e3a7985f` — all `status: "new"`, all matched 1:1 to the 6 open positions. No gaps, no action needed.
+
+### Result
+No trades. All 6 positions held, no shock, no circuit breaker, no thesis-contract deadlines due today. Control: ACTIVE.
+
+Next actionable routine: July 14 market-open.
+
+---
+
 ## 2026-07-13 — EOD CLOSE (~4:10 PM ET, post-close)
 
 **No trades executed today.** No exits, no new entries (MU skipped at market-open breaking-news gate).

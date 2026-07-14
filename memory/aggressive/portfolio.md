@@ -6,7 +6,49 @@ but always re-fetches live data before trading._
 
 ---
 
-## Last snapshot — 2026-07-13 EOD CLOSE (~4:10 PM ET, post-close)
+## Last snapshot — 2026-07-14 PRE-MARKET (~8:15 AM ET, market closed at run time)
+
+| Field | Value |
+|---|---|
+| Equity | USD 92,663.17 |
+| Cash | USD 30,516.27 (32.94%) |
+| Long market value | USD 62,146.90 |
+| Open positions | 6 |
+| last_equity (July 13 EOD close, per account API) | USD 92,319.29 |
+| Shock check | +0.373% — NOT triggered (threshold -6%) |
+| HWM | USD 101,144.73 (confirmed via `history 1A 1D`, max over trailing 252 sessions, set 2026-06-05) |
+| Drawdown from HWM | **-8.386%** (circuit breaker -20% — NOT triggered; 11.614pp headroom) |
+
+**Market status:** closed (next open 2026-07-14 09:30 ET; next close 2026-07-14 16:00 ET).
+
+**Open positions:**
+
+| Symbol | Qty | Avg Entry | Price | P/L % | Buffer to -12% | % of Portfolio | Sector |
+|---|---|---|---|---|---|---|---|
+| NVDA | 77 | USD 213.60 | USD 205.6865 | -3.705% | 8.295pp | 17.09% | Semiconductors |
+| AVGO | 19 | USD 406.23 | USD 391.85 | -3.540% | 8.460pp | 8.04% | Semiconductors |
+| ETN | 34 | USD 419.54 | USD 406.03 | -3.220% | 8.780pp | 14.90% | Industrials/power infra |
+| GOOGL | 16 | USD 370.22 | USD 350.06 | -5.445% | 6.555pp | 6.05% | Communication Services (hyperscaler) |
+| AMZN | 36 | USD 247.991111 | USD 246.20 | -0.722% | 11.278pp | 9.57% | Consumer Discretionary (hyperscaler) |
+| VST | 67 | USD 153.052836 | USD 158.13 | +3.317% | comfortable | 11.43% | Utilities (nuclear power) |
+
+**Sector exposure:** Semiconductors (NVDA+AVGO) = 25.13%; Industrials (ETN) = 14.90%; Hyperscalers (GOOGL+AMZN) = 15.62%; Utilities (VST) = 11.43%; Cash = 32.94%. No sector near the 60% informal cap. Single-position cap (35% max): NVDA largest at 17.09% — well clear.
+
+**Thesis contracts:** No review_by deadlines due today. Nearest: VST 2026-07-15 (tomorrow), NVDA/ETN 2026-07-23, GOOGL 2026-07-21, AVGO 2026-07-27, AMZN 2026-07-30. All 6 positions rated A as of the July 13 Monday conviction review (not due again until next Monday, July 20).
+
+**No thesis-breaking news for any of the 6 held positions.** GOOGL earnings confirmed 2026-07-22 (6 trading days away — outside the 2-day window, review_by 2026-07-21 will force the hold/trim/exit call before then). No held name reports within the next 2 trading days.
+
+**No trades planned today.** Cash 32.94% remains above the 20% deployment-check threshold for a continuing run of sessions. The standing MU (Micron) redeployment candidate — carried forward from the July 13 pre-market plan that was skipped at the breaking-news gate — is held back one more session: the SK Hynix/HBM4 memory-sector demand scare is now in its second day (SK Hynix -15% Monday in Asia, MU pre-market -5.1% today on top of Monday's -3.5%+ semi-sector move) without stabilizing, and a CPI print lands at 8:30 AM ET today (bond market already pricing higher July FOMC hike odds) — a second, distinct binary macro event landing before this session's open. Micron's own fundamentals are unchanged (CEO reaffirmed FQ4 guide USD 50B ± USD 1B, HBM4 in high-volume shipments) — this is not a thesis break, but stacking a fresh high-volatility entry on top of two live, unresolved event risks the same morning is not the right day. Plan carried forward unchanged (8 shares, review_by 2026-07-27); re-evaluate at the next pre-market once today's CPI reaction is known and check whether MU/SK Hynix has stabilized. This is the second consecutive session deferring this specific candidate — if it remains unstable a third session running, rotate to an alternate Tier 3 name (TSM) rather than deferring indefinitely.
+
+**Stops:** 6/6 live 18% trailing stops confirmed via open-orders pull — NVDA `e15e7753` (stop USD 173.02, HWM 211.00), AVGO `ffba9bd5` (stop USD 334.1664, HWM 407.52), ETN `abdc232b` (stop USD 350.9026, HWM 427.93), GOOGL `e52a43f1` (stop USD 308.1314, HWM 375.77), AMZN `b55bef05` (stop USD 207.0705, HWM 252.525), VST `e3a7985f` (stop USD 130.8884, HWM 159.62). No gaps, no recreation needed.
+
+**Result:** No trades planned. All 6 positions held, no shock, no circuit breaker, no thesis-contract deadlines due today. Control: ACTIVE, no NOTE/QUERY.
+
+Next actionable routine: July 14 market-open.
+
+---
+
+## Prior snapshot — 2026-07-13 EOD CLOSE (~4:10 PM ET, post-close)
 
 | Field | Value |
 |---|---|
