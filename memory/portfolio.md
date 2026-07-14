@@ -3,10 +3,53 @@
 _Updated by every routine from live Alpaca data. The next agent trusts this as
 the last known state, but always re-fetches live data before trading._
 
-**Last updated:** 2026-07-14 12:34 ET (midday routine; no trades — stop audit 4/4 PASS, V news-scanned at +10.877% from entry, no thesis break; Bull TRAILS SPY by ~−2.520pp since inception)
+**Last updated:** 2026-07-14 ~15:52 ET (close routine; 0 trades, 0 exits, stop audit 4/4 PASS; Bull TRAILS SPY by ~−2.590pp since inception)
 **Inception:** 2026-05-21 — starting equity $100,000.00 | SPY anchor price $739.44
 **SPY total-return anchor (post-June 18 ex-div $1.76):** **$741.20**
 **Cumulative SPY dividends since inception (quarterly tracker):** $1.76/sh (June 18 ex-div); next SPY ex-div est. ~September 2026.
+
+---
+
+## Account (close routine, 2026-07-14 ~15:52 ET — EOD)
+
+| Metric | Value |
+|--------|-------|
+| Equity | $99,368.15 |
+| Cash | $76,244.79 (76.729%) |
+| Long market value | $23,123.36 |
+| Last equity (July 13 close) | $99,659.87 |
+| Today's P/L | **−$291.72 (−0.2927%)** |
+| HWM | $101,384.21 (confirmed via `history 1A 1D`) |
+| Drawdown from HWM | **−1.988%** — well within the −10% circuit breaker (8.012pp headroom), not flagged |
+
+## Open positions (close routine, 2026-07-14 ~15:52 ET)
+
+| Symbol | Qty | Avg entry | Current price | Mkt value | Unrealized P/L | % of portfolio | Trailing Stop |
+|--------|-----|-----------|--------------|-----------|----------------|----------------|---------------|
+| CAT | 4 | $944.73 | $934.47 | $3,737.88 | −$41.04 (−1.086%) | 3.762% | 6103c146 (4sh), HWM $964.62, stop $868.158 ✓ |
+| LLY | 10 | $1,093.534 | $1,155.26 | $11,552.60 | +$617.26 (+5.645%) | 11.626% | d4147484 (7sh) + 25989fb5 (3sh), HWM $1,249.45, stop $1,124.505 ✓ |
+| V | 22 | $323.57 | $356.04 | $7,832.88 | +$714.34 (+10.035%) | 7.883% | 66033918 (22sh), HWM $364.21, stop $327.789 ✓ |
+
+**Sector exposure (close July 14):**
+- Industrials (CAT): $3,737.88 = 3.762% | Healthcare (LLY): $11,552.60 = 11.626% | Financials (V): $7,832.88 = 7.883% | Cash: $76,244.79 = 76.729%
+- No sector above 60% cap ✓
+
+**Trailing stop status (close July 14 — confirmed via Alpaca live orders ~15:52 ET):**
+- CAT (6103c146): 4sh — HWM $964.62, stop $868.158 ✓
+- LLY (d4147484): 7sh — HWM $1,249.45, stop $1,124.505 ✓
+- LLY (25989fb5): 3sh — HWM $1,249.45, stop $1,124.505 ✓
+- V (66033918): 22sh — HWM $364.21, stop $327.789 ✓
+**Stop audit: 4/4 PASS ✓** (matches held quantities exactly — none missing)
+
+**Exit reconciliation:** No exits since midday. All 4 stop orders still `status: new` (unfilled). closed-trades.md current (VST June 30 latest entry) — nothing new required.
+
+**Market close context (July 14):** S&P 500 +0.4%, Nasdaq +1% on a cooler-than-expected June CPI (3.5% YoY, core also soft); Dow −0.1% dragged down by IBM's ~25% plunge on an enterprise-software-to-AI-infra spending-shift warning. Bank earnings (JPM, BAC, WFC, C, GS) beat broadly. Oil rose on renewed Strait-of-Hormuz shipping-fee/blockade risk. Net: a supportive tape for Bull's held names (no rate-driven headwind), consistent with LLY/V theses; CAT's industrials exposure unaffected by the IBM-specific news.
+
+**Trades today:** 0. No new positions (pre-market plan was `trades: []`); no cuts (CAT −1.086%, LLY +5.645%, V +10.035% — none near the −7% threshold); no exits.
+
+**Since inception:** Bull −0.632% ($99,368.15) vs SPY TR ($752.16 + $1.76 div = +1.9585%, anchor $739.44) → **Bull TRAILS SPY by ~−2.590pp**.
+
+**Race scoreboard (since AGGRO's own 2026-06-04 inception, for comparability):** Bull −0.454% (anchor $99,820.82) | AGGRO −7.337% (equity $92,663.17, latest known snapshot — AGGRO's own pre-market July 14 read, not re-queried live) | SPY −0.035% (anchor $754.18 + $1.76 div). **Bull leads AGGRO by ~+6.88pp.**
 
 ---
 

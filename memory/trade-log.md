@@ -5,6 +5,24 @@ The weekly new-position count is derived from this log._
 
 _Entries before 2026-06-01 archived to `memory/archive/2026-05.md` (2026-07-01 monthly housekeeping)._
 
+## 2026-07-14 15:52 ET — CLOSE ROUTINE (no trades, EOD)
+
+- **Action:** None — 0 trades, 0 exits, 0 cuts, 0 tightenings. All 3 positions within all guardrails.
+- **Live-switch guard / lock / control:** `ALPACA_BASE_URL` contains "paper" ✓; `_lock` was `{}`, acquired and released. Control STATUS ACTIVE, no NOTE/QUERY.
+- **Market:** OPEN at run time ✓ (next_close 16:00 ET, full trading day, no half-day).
+- **Account:** Equity USD 99,368.15 | Cash USD 76,244.79 (76.729%) | Last equity (July 13 close) USD 99,659.87.
+- **Today's P/L:** −USD 291.72 (−0.2927%).
+- **HWM / drawdown:** HWM USD 101,384.21 (via `history 1A 1D`) — drawdown −1.988%, well within the −10% circuit breaker (8.012pp headroom), not flagged.
+- **Position review (live prices ~15:52 ET):** CAT 4sh @ USD 934.47 (−1.086% from entry) — HOLD. LLY 10sh @ USD 1,155.26 (+5.645% from entry) — HOLD, review_by 2026-07-21 not due. V 22sh @ USD 356.04 (+10.035% from entry) — HOLD, review_by 2026-07-28 not due.
+- **No cuts** (−7% rule): none near threshold ✓. **No discretionary tightenings** (+15%): none reached ✓.
+- **Stop audit: 4/4 PASS ✓** — CAT (6103c146) 4sh HWM 964.62/stop 868.158, LLY (d4147484) 7sh + (25989fb5) 3sh HWM 1249.45/stop 1124.505, V (66033918) 22sh HWM 364.21/stop 327.789. All confirmed `status: new` (live, unfilled) via `orders open`, matches held quantities exactly — none missing.
+- **Exit reconciliation:** No exits since midday. closed-trades.md current (VST June 30 latest entry) — nothing new required.
+- **Sector exposure:** Industrials (CAT) 3.762% | Healthcare (LLY) 11.626% | Financials (V) 7.883% | Cash 76.729% — no sector above 60% cap ✓.
+- **Market close context:** S&P 500 +0.4%, Nasdaq +1% on a cooler-than-expected June CPI (3.5% YoY); Dow −0.1% on IBM's ~25% earnings-warning plunge (enterprise spend shifting from software/mainframes to AI infra). Bank earnings (JPM/BAC/WFC/C/GS) beat broadly. Oil rose on renewed Strait-of-Hormuz shipping-fee/blockade risk. Supportive tape overall; no threat to LLY/V/CAT theses.
+- **Trades today:** 0.
+- **Since inception:** Bull −0.632% (USD 99,368.15) vs SPY TR (SPY USD 752.16 + USD 1.76 div = +1.9585%) → **Bull TRAILS SPY by ~−2.590pp**.
+- **Race scoreboard:** Bull −0.454% (own June 4 anchor USD 99,820.82) | AGGRO −7.337% (own June 4 inception, equity USD 92,663.17 — latest known snapshot, AGGRO's July 14 pre-market read) | SPY −0.035% (AGGRO's June 4 anchor USD 754.18 + div). Bull leads AGGRO by ~+6.88pp.
+
 ## 2026-07-14 12:34 ET — MIDDAY ROUTINE (no trades)
 
 - **Action:** None — risk-management check only. All 3 positions within all guardrails.
