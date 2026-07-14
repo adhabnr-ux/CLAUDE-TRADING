@@ -7,6 +7,55 @@ _Entries before 2026-06-01 archived to `memory/archive/2026-05.md` (2026-07-01 m
 
 ---
 
+## 2026-07-14 — Pre-market research (~08:10 ET, Tuesday)
+
+**Live-switch guard / lock / control:** `ALPACA_BASE_URL` contains "paper" ✓. `_lock` was `{}`, acquired and will be released before commit. Control STATUS ACTIVE, no NOTE/QUERY to acknowledge.
+
+**Account snapshot (~08:08 ET):** Equity USD 99,631.83 | Cash USD 76,244.79 (76.529%) | Last equity (July 13 close) USD 99,659.87. Shock check: −0.0281% — no shock ✓ (threshold −4%). Drawdown vs HWM USD 101,384.21: −1.728% — informational only, not near the −10% circuit breaker.
+
+**Positions (live prices ~08:08 ET), one line each:**
+- CAT 4sh @ USD 944.37 (−0.038% from entry USD 944.73). Oppenheimer raised PT to USD 1,105 (from USD 980) July 9 — already known/positive, no new thesis-breaking news. Dividend ex-date July 20 (minor). 50-day MA now USD 928.07, July 13 close USD 931.96 = +0.42% above — separation has compressed from +2.81% at entry but still clears the floor; not a decision point (already held, review_by 2026-08-03 not due). HOLD.
+- LLY 10sh @ USD 1,179.01 (+7.816% from entry USD 1,093.534). Nothing material since yesterday — presenting final day at AAIC (Alzheimer's conference) today/July 15; JPMorgan's USD 1,400 PT (July 7) remains the operative catalyst. review_by 2026-07-21 not due. HOLD. Conviction A.
+- V 22sh @ USD 355.43 (+9.846% from entry USD 323.57). ACE Money Transfer partnership (incremental, not thesis-moving) drove yesterday's +2.4% move; confirmed next earnings **July 28, 2026** (fiscal Q3, after close) — outside the 2-day window, not a restriction today. review_by 2026-07-28 not due. HOLD. Conviction B.
+
+**Stop audit:** 4/4 PASS — CAT (6103c146) 4sh, LLY (d4147484 7sh + 25989fb5 3sh) 10sh, V (66033918) 22sh — all live via `orders open`, matches held quantities exactly. No missing stops.
+
+**Thesis contract review:** CAT review_by 2026-08-03, LLY review_by 2026-07-21, V review_by 2026-07-28 — none due today.
+
+**Earnings window:** CAT next earnings Aug 4 (confirmed), LLY Aug 5 (confirmed), V July 28 (confirmed) — none within 2 trading days. No restriction on holding or on any new entry today.
+
+**Macro (WebSearch):** June CPI lands at 8:30 AM ET today — Cleveland Fed nowcast projects headline roughly flat to slightly down m/m (~3.9% YoY, down from May's 4.2%) on a sharp June gasoline-price decline tied to the reopened Strait of Hormuz; core seen ~+0.2% m/m / ~2.85% YoY. This is the last major inflation print before the July 29 FOMC — a key data point, not yet released as of this research pass. S&P 500 futures were down ~0.2% pre-market awaiting the print, with Dow futures −0.3% and Nasdaq 100 futures +0.2% (mixed). **Geopolitical escalation continuing:** Iran declared the Strait of Hormuz "closed until further notice" after fresh US-Iran strikes; Trump said the US would reinstate a blockade of Iranian vessels plus a 20% transit fee. WTI ~USD 79.56 (+2%) — still well below the USD 100 halt-trigger. **10yr yield 4.59–4.62%, a ~2-month high** — still below the 4.75% halt-trigger but rising and worth watching closely given the trend; no halt triggered today.
+
+**Watchlist re-checks (pullback-watch names, via Alpaca bars with explicit start/end + feed=iex — the "no bars pre-open" workaround from the 2026-07-09 lesson):**
+- **ETN:** 50-day MA USD 405.45, July 13 close USD 402.76 = **−0.66% below** — reversed back below the MA (was +0.37% above July 10) on Monday's broad semiconductor-led risk-off selloff. Not promoted; separation lost, not gained.
+- **CEG:** 50-day MA USD 272.40, July 13 close USD 257.57 = **−5.44% below** (was −8.0% July 10) — improving but still well short of reclaiming the MA. ATR 3.30% would clear.
+- **VRT:** 50-day MA USD 324.73, July 13 close USD 305.77 = **−5.84% below** (was −1.82% July 10) — reversed further away from its pullback target on Monday's selloff. ATR 5.15% still fails the 5% gate.
+- **NVT:** 50-day MA USD 165.63, July 13 close USD 158.00 = **−4.61% below** (was −2.58% July 10) — also lost ground Monday. ATR 3.56% clears.
+- None of the four reclaimed their 50-day MA; Monday's broad semiconductor/industrial-adjacent selloff pushed all four further from their pullback targets rather than closer. No promotions.
+
+**Daily candidate diligence (step 6b) — MOD (Modine Manufacturing) full pre-trade pass → NOT PROMOTED:**
+Per the standing note that MOD was the last research-only, undiligenced watchlist entry, ran the full diligence checklist today:
+- **Earnings/guidance:** FY26 (ended March 2026) was a fourth consecutive record year — Q4 net sales USD 954.4M (+47% YoY), adjusted EBITDA USD 146.1M (+40% YoY), 21% organic growth driven by a 78% increase in data-center sales; Climate Solutions segment (data-center cooling) generated >USD 400M in sales, backed by a long-term USD 4B capacity agreement with a large hyperscale customer. FY27 guidance: net sales growth 20–35%. Next earnings confirmed **Aug 5, 2026** — outside the 2-day window either way.
+- **Catalyst / real overhang:** May 26 announcement of a Reverse Morris Trust spin-off — separating the legacy Performance Technologies (vehicular) segment and combining it with Gentherm — to leave a pure-play Climate Solutions company. The deal carries genuine multi-step completion risk: Gentherm shareholder approval, regulatory clearance, and an IRS tax-opinion condition, any of which could delay or derail it; at least one analyst has flagged the RMT structure itself as a source of potential earnings/share-price pressure independent of the underlying business. The stock fell −8.6% on the announcement (June 26) as investors digested both the deal complexity and a prior sharp run-up, and has not recovered since — closing progressively lower through July 13 (USD 234.10, well off the June highs near USD 297).
+- **Technical confirmation (signal #4) — FAILS badly:** 50-day MA USD 269.13, July 13 close USD 234.10 = **−13.02% below** — the worst technical reading of any name checked today, driven by the spin-off announcement and its aftermath, not a shallow pullback.
+- **ATR check — FAILS the hard gate:** 20-day average daily range = **5.42%**, above the 5% cap (vs. 6.20% on the last ATR-only check July 9 — volatility has stayed elevated, not normalized).
+- **Verdict:** Fundamentals remain genuinely strong (data-center cooling growth, raised guidance) but MOD fails both the technical-confirmation gate and the hard ATR gate, and now carries a real, event-driven overhang (RMT completion risk) that didn't exist before June 26 — this is not a "wait for the market to notice" case like CAT was, but a name in active post-announcement digestion. **Not promoted.** Needs: (a) ATR back under 5% for consecutive sessions, (b) price to stabilize and begin reclaiming the 50-day MA, and (c) some concrete progress on the Gentherm deal's approval conditions, before the next diligence attempt. This closes out the "MOD ATR-only, still needs a full pass" note that had been carried since July 9 — the full pass is done; the verdict is a clean not-yet, not a missing check.
+
+**Cash-drag check:** Cash 76.529% — elevated for 10 consecutive weeks against the 25–40% target band for a 3-position book. Yesterday's CAT diligence cleared the pipeline for the first time in over a month; today's MOD diligence closes out the other pending research-only name and fails cleanly on hard, objective gates (technical −13%, ATR 5.42% > 5% cap), not a judgment call. All four pullback-watch names (ETN/CEG/VRT/NVT) lost ground on Monday's broad selloff rather than gaining it. There is no qualifying entry today; staying in cash is the correct read of an empty, honestly-diligenced pipeline, not a passive default.
+
+**Since inception:** Bull −0.368% (USD 99,631.83) vs SPY TR (pre-market quote ~USD 747.79 + USD 1.76 div = USD 749.55 vs USD 739.44 anchor = +1.367%) → **Bull TRAILS SPY by ~−1.735pp** (essentially flat vs. July 13 close's −1.872pp; both sides drifted down slightly overnight/pre-market).
+
+### Planned trades for today
+
+No trades planned. All three held positions (CAT, LLY, V) are clean HOLDs with intact theses, no thesis-contract deadlines due, and no earnings-window conflicts. MOD's diligence pass failed cleanly on objective gates; ETN/CEG/VRT/NVT all lost ground versus their pullback targets on Monday's selloff. June CPI at 8:30 AM ET is today's key catalyst to watch, but it does not change today's guardrail-driven plan either way — no restriction, no trigger.
+
+```json
+{
+  "plan_date": "2026-07-14",
+  "trades": []
+}
+```
+
 ## 2026-07-13 — Pre-market research (~08:08 ET, Monday)
 
 ### Live-switch guard / Lock / Control switch

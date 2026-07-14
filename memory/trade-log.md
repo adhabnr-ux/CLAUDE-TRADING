@@ -5,6 +5,24 @@ The weekly new-position count is derived from this log._
 
 _Entries before 2026-06-01 archived to `memory/archive/2026-05.md` (2026-07-01 monthly housekeeping)._
 
+## 2026-07-14 08:10 ET — PRE-MARKET ROUTINE (no trades planned)
+
+- **Action:** None — no trades planned for today. All 3 positions (CAT, LLY, V) are clean HOLDs.
+- **Live-switch guard:** `ALPACA_BASE_URL` contains "paper" ✓
+- **Lock:** was `{}` — acquired cleanly, released before commit.
+- **Control switch:** STATUS ACTIVE, no NOTE/QUERY to acknowledge.
+- **Account:** Equity USD 99,631.83 | Cash USD 76,244.79 (76.529%) | Last equity (July 13 close) USD 99,659.87. Shock check −0.0281% — no shock ✓.
+- **HWM:** USD 101,384.21 | Drawdown −1.728% — informational only.
+- **Position review:** CAT 4sh −0.038% from entry (HOLD, Oppenheimer PT raise to USD 1,105 already known); LLY 10sh +7.816% (HOLD, Conviction A, review_by 2026-07-21 not due); V 22sh +9.846% (HOLD, Conviction B, review_by 2026-07-28 not due, ACE Money Transfer partnership incremental).
+- **Stop audit: 4/4 PASS ✓** — CAT (6103c146) 4sh, LLY (d4147484 7sh + 25989fb5 3sh) 10sh, V (66033918) 22sh.
+- **Daily diligence (step 6b):** Full pass on MOD (Modine) — NOT PROMOTED. Fails technical confirmation (−13.02% below 50-day MA) and the hard ATR gate (5.42% > 5%); real RMT spin-off (Gentherm) completion-risk overhang since June 26. See research-log.md for full detail.
+- **Watchlist re-checks:** ETN, CEG, VRT, NVT all lost ground vs. their pullback targets on Monday's broad selloff — no promotions.
+- **Earnings window:** CAT Aug 4, LLY Aug 5, V July 28 — none within 2 trading days.
+- **Macro:** June CPI due 8:30 AM ET today (last major print before July 29 FOMC). 10yr yield 4.59-4.62% (~2-month high, still below 4.75% halt trigger). WTI ~USD 79.56 (below USD 100 halt trigger). Iran/Hormuz tensions ongoing.
+- **Cash-drag:** 76.529%, elevated 10 consecutive weeks — MOD diligence closes out the last research-only candidate, fails on hard objective gates, not a judgment call. No qualifying entry today.
+- **Trades today:** 0 planned.
+- **Since inception:** Bull −0.368% vs SPY TR ~+1.367% → Bull TRAILS SPY by ~−1.735pp.
+
 ## 2026-07-13 15:52 ET — CLOSE ROUTINE (no trades, EOD)
 
 - **Action:** None — no cuts, no tightenings, no new positions, no exits. All 3 positions within all guardrails.
