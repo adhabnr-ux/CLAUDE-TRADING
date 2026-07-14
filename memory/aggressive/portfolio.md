@@ -4836,3 +4836,29 @@ Next actionable routine: July 10 midday.
 **Result:** Clean close after one clean trade this morning (VST pyramid add). No rule triggers, no thesis-contract deadlines due, no circuit-breaker proximity. Today's outperformance (+0.222pp) is the first positive-vs-SPY daily read in several sessions, though since-inception alpha remains materially negative at -6.698pp — consistent with the sustained AI-tech-sector drag documented across every prior weekly review.
 
 Next actionable routine: July 10 weekly review.
+
+---
+
+## 2026-07-14 — MARKET OPEN snapshot (~9:46 AM ET)
+
+**No trades executed.** Today's pre-market plan was empty (MU held back a second session on the SK Hynix HBM4 scare + CPI print). Nothing to execute; stop audit clean.
+
+**Account:** Equity USD 93,211.26 (+0.966% vs last_equity USD 92,319.29, not a shock); cash USD 30,516.27 (32.74%); drawdown from HWM USD 101,144.73 **-7.844%** (breaker at -20%, not triggered, 12.156pp headroom).
+
+**Positions (6 open, unchanged):**
+| Symbol | Qty | Avg Entry | Sector | P/L% | % of Portfolio |
+|---|---|---|---|---|---|
+| NVDA | 77 | USD 213.60 | Semiconductors | -4.073% | 16.93% |
+| AVGO | 19 | USD 406.23 | Semiconductors | -4.058% | 7.94% |
+| ETN | 34 | USD 419.54 | Industrials/power infra | -1.797% | 15.03% |
+| GOOGL | 16 | USD 370.22 | Communication Services (hyperscaler) | -4.242% | 6.09% |
+| AMZN | 36 | USD 247.991111 | Consumer Discretionary (hyperscaler) | -0.894% | 9.49% |
+| VST | 67 | USD 153.052836 (blended) | Utilities (nuclear power) | +7.045% | 11.78% |
+
+**Sector exposure:** Semiconductors (NVDA+AVGO) = 24.87%; Industrials (ETN) = 15.03%; Hyperscalers (GOOGL+AMZN) = 15.58%; Utilities (VST) = 11.78%; Cash = 32.74%. No sector near the 60% informal cap. Single-position cap (35% max): NVDA largest at 16.93% — well clear.
+
+**Stops:** 6/6 live 18% trailing stops confirmed — NVDA `e15e7753`, AVGO `ffba9bd5`, ETN `abdc232b`, GOOGL `e52a43f1`, AMZN `b55bef05`, VST `e3a7985f`. No gaps.
+
+**No exits.** Nothing to post-mortem, no `trades.jsonl` entries.
+
+Next actionable routine: July 14 midday.

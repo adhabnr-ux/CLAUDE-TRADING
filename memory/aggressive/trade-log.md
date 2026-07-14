@@ -1,5 +1,46 @@
 # Aggressive Bull — Trade Log
 
+## 2026-07-14 — MARKET OPEN (~9:46 AM ET)
+
+**No trades executed.** Today's pre-market plan (`plan_date: 2026-07-14`) had an empty trades list — MU redeployment held back a second session on the unresolved SK Hynix HBM4 scare plus the 8:30 AM CPI print. Nothing to execute; breaking-news gate not applicable (no planned symbols).
+
+### Pre-run checks
+| Check | Result |
+|---|---|
+| Live-switch guard | ALPACA_BASE_URL contains "paper" ✓ |
+| Lock | Clear at start ({}); written for this run ✓ |
+| Control switch | STATUS: ACTIVE, no NOTE/QUERY ✓ |
+| Plan_date match | 2026-07-14 plan confirmed today's date, trades: [] ✓ |
+| Idempotency | No prior EXECUTED line under today's plan — first run today ✓ |
+| Market clock | is_open: true ✓ |
+
+### Account status
+| Field | Value |
+|---|---|
+| Equity | USD 93,211.26 |
+| Cash | USD 30,516.27 (32.74%) |
+| last_equity (July 13 EOD) | USD 92,319.29 |
+| Shock check | +0.966% — NOT triggered (threshold -6%) |
+| HWM | USD 101,144.73 |
+| Drawdown from HWM | -7.844% (circuit breaker -20% — NOT triggered; 12.156pp headroom) |
+
+### Positions (6, unchanged)
+| Symbol | Qty | Avg Entry | Price | P/L % | % of Portfolio |
+|---|---|---|---|---|---|
+| NVDA | 77 | USD 213.60 | USD 204.90 | -4.073% | 16.93% |
+| AVGO | 19 | USD 406.23 | USD 389.745 | -4.058% | 7.94% |
+| ETN | 34 | USD 419.54 | USD 412.0001 | -1.797% | 15.03% |
+| GOOGL | 16 | USD 370.22 | USD 354.515 | -4.242% | 6.09% |
+| AMZN | 36 | USD 247.991111 | USD 245.775 | -0.894% | 9.49% |
+| VST | 67 | USD 153.052836 | USD 163.835 | +7.045% | 11.78% |
+
+### Stop audit — 6/6 PASS
+NVDA `e15e7753`, AVGO `ffba9bd5`, ETN `abdc232b`, GOOGL `e52a43f1`, AMZN `b55bef05`, VST `e3a7985f` — all live 18% trailing stops, quantities match positions exactly. No gaps, no recreation needed. No stops filled since last run — no exits, nothing for `closed-trades.md`.
+
+**Result:** No trades, no exits, stops clean. Deployment remains at ~67% invested / 33% cash pending MU (or a rotated alternate) once the memory-sector scare clears.
+
+---
+
 ## 2026-07-14 — PRE-MARKET (~8:15 AM ET, market closed at run time)
 
 **No trades planned.** Market closed at run time; all 6 positions held unchanged.
