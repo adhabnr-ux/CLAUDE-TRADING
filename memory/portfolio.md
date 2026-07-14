@@ -3,7 +3,7 @@
 _Updated by every routine from live Alpaca data. The next agent trusts this as
 the last known state, but always re-fetches live data before trading._
 
-**Last updated:** 2026-07-14 08:10 ET (pre-market routine; no trades planned, all guardrails clean, stop audit 4/4 PASS; Bull TRAILS SPY by ~−1.735pp since inception)
+**Last updated:** 2026-07-14 09:36 ET (market-open routine; no trades — plan was empty, stop audit 4/4 PASS; Bull TRAILS SPY by ~−2.222pp since inception)
 **Inception:** 2026-05-21 — starting equity $100,000.00 | SPY anchor price $739.44
 **SPY total-return anchor (post-June 18 ex-div $1.76):** **$741.20**
 **Cumulative SPY dividends since inception (quarterly tracker):** $1.76/sh (June 18 ex-div); next SPY ex-div est. ~September 2026.
@@ -43,6 +43,43 @@ the last known state, but always re-fetches live data before trading._
 **Pre-market July 14 notes (~08:10 ET, Tuesday):** Shock check −0.0281% (no shock, threshold −4%). No cuts (−7% rule): all 3 positions are gains or a shallow loss, far above threshold. No discretionary tightenings (+15% trigger): none reached. MOD's full diligence pass failed cleanly on the technical (−13.02% below 50-day MA) and ATR (5.42% > 5% cap) gates — not promoted. ETN/CEG/VRT/NVT all lost ground vs. their pullback targets on Monday's broad selloff — no promotions. June CPI lands at 8:30 AM ET today; 10yr yield at a ~2-month high (4.59–4.62%) but still below the 4.75% halt trigger; WTI ~$79.56, below the $100 halt trigger. No trades planned today. Full detail in today's research-log.md entry.
 
 **Since inception:** Bull −0.368% ($99,631.83) vs SPY TR (pre-market ~$747.79 + $1.76 div = +1.367%) → **Bull TRAILS SPY by ~−1.735pp**.
+
+---
+
+## Account (market-open routine, 2026-07-14 ~09:36 ET)
+
+| Metric | Value |
+|--------|-------|
+| Equity | $99,443.81 |
+| Cash | $76,244.79 (76.674%) |
+| Long market value | $23,199.02 |
+| Last equity (July 13 close) | $99,659.87 |
+| Shock check | −0.2168% — no shock (threshold −4%) |
+| HWM | $101,384.21 |
+| Drawdown from HWM | −1.914% — informational only, not a blocking guardrail |
+
+## Open positions (market-open routine, 2026-07-14 ~09:36 ET)
+
+| Symbol | Qty | Avg entry | Current price | Mkt value | Unrealized P/L | % of portfolio | Trailing Stop |
+|--------|-----|-----------|--------------|-----------|----------------|----------------|---------------|
+| CAT | 4 | $944.73 | $962.25 | $3,849.00 | +$70.08 (+1.854%) | 3.871% | 6103c146 (4sh), HWM $964.62, stop $868.158 ✓ |
+| LLY | 10 | $1,093.534 | $1,151.24 | $11,512.40 | +$577.06 (+5.277%) | 11.578% | d4147484 (7sh) + 25989fb5 (3sh), HWM $1,249.45, stop $1,124.505 ✓ |
+| V | 22 | $323.57 | $356.56 | $7,844.32 | +$725.78 (+10.196%) | 7.889% | 66033918 (22sh), HWM $364.21, stop $327.789 ✓ |
+
+**Sector exposure (market-open July 14):**
+- Industrials (CAT): $3,849.00 = 3.871% | Healthcare (LLY): $11,512.40 = 11.578% | Financials (V): $7,844.32 = 7.889% | Cash: $76,244.79 = 76.674%
+- No sector above 60% cap ✓
+
+**Trailing stop status (market-open July 14 — confirmed via Alpaca live orders ~09:36 ET):**
+- CAT (6103c146): 4sh — HWM $964.62, stop $868.158 ✓
+- LLY (d4147484): 7sh — HWM $1,249.45, stop $1,124.505 ✓
+- LLY (25989fb5): 3sh — HWM $1,249.45, stop $1,124.505 ✓
+- V (66033918): 22sh — HWM $364.21, stop $327.789 ✓
+**Stop audit: 4/4 PASS ✓** (matches held quantities exactly — none missing)
+
+**Market-open July 14 notes (~09:36 ET, Tuesday):** Today's plan (pre-market, `plan_date: 2026-07-14`) had `trades: []` — no breaking-news gate or execution needed. Shock check −0.2168% (no shock). CAT up +3.30% intraday on no specific news found; LLY pulled back −2.59% intraday (thesis intact, no negative catalyst); V roughly flat. All guardrails clean.
+
+**Since inception:** Bull −0.556% ($99,443.81) vs SPY TR (SPY $750.00 + $1.76 div = +1.666%) → **Bull TRAILS SPY by ~−2.222pp**.
 
 ---
 

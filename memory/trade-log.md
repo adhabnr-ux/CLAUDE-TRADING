@@ -5,6 +5,23 @@ The weekly new-position count is derived from this log._
 
 _Entries before 2026-06-01 archived to `memory/archive/2026-05.md` (2026-07-01 monthly housekeeping)._
 
+## 2026-07-14 09:36 ET — MARKET-OPEN ROUTINE (no trades, plan was empty)
+
+- **Action:** None — pre-market's plan for today (`plan_date: 2026-07-14`) had `trades: []`. No breaking-news gate or execution needed; went straight to the stop audit.
+- **Live-switch guard:** `ALPACA_BASE_URL` contains "paper" ✓
+- **Lock:** was `{}` — acquired cleanly, released before commit.
+- **Control switch:** STATUS ACTIVE, no NOTE/QUERY to acknowledge.
+- **Market:** OPEN (`is_open: true`, next_close 16:00 ET).
+- **Account:** Equity USD 99,443.81 | Cash USD 76,244.79 (76.674%) | Last equity (July 13 close) USD 99,659.87.
+- **Shock check:** (99,443.81 − 99,659.87) / 99,659.87 = **−0.2168%** — no shock ✓ (threshold −4%).
+- **Position review (live prices ~09:36 ET):**
+  - CAT 4sh @ USD 962.25 (+1.854% from entry USD 944.73, +3.304% today).
+  - LLY 10sh @ USD 1,151.24 (+5.277% from entry USD 1,093.534, −2.592% today).
+  - V 22sh @ USD 356.56 (+10.196% from entry USD 323.57, −0.333% today).
+- **Stop audit: 4/4 PASS ✓** — CAT (6103c146) 4sh HWM 964.62/stop 868.158, LLY (d4147484) 7sh + (25989fb5) 3sh HWM 1249.45/stop 1124.505, V (66033918) 22sh HWM 364.21/stop 327.789. All live via `orders open`, matches held quantities exactly — none missing.
+- **Trades today:** 0 (plan was empty).
+- **Since inception:** Bull −0.556% (USD 99,443.81) vs SPY TR (SPY USD 750.00 + USD 1.76 div = USD 751.76 vs USD 739.44 anchor = +1.666%) → **Bull TRAILS SPY by ~−2.222pp**.
+
 ## 2026-07-14 08:10 ET — PRE-MARKET ROUTINE (no trades planned)
 
 - **Action:** None — no trades planned for today. All 3 positions (CAT, LLY, V) are clean HOLDs.
