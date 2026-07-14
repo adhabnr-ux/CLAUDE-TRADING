@@ -1,5 +1,41 @@
 # Aggressive Bull — Trade Log
 
+## 2026-07-14 — MIDDAY review (no trades)
+
+**Market open, no shock:** equity USD 93,342.35 vs last_equity USD 92,319.29 = +1.108% (threshold -6%, not triggered).
+
+### Pre-run checks
+| Check | Result |
+|---|---|
+| Live-switch guard | ALPACA_BASE_URL contains "paper" ✓ |
+| Lock | Clear (`{}`) at start; written for this run ✓ |
+| Control switch | STATUS: ACTIVE, no NOTE/QUERY ✓ |
+| Market open | true (`clock`: is_open true, next close 4:00 PM ET) ✓ |
+
+**Positions reviewed (6, unchanged from market-open snapshot):**
+| Symbol | Qty | Entry | Current | P/L % | Buffer to -12% cut | % of Portfolio |
+|---|---|---|---|---|---|---|
+| NVDA | 77 | USD 213.60 | USD 209.725 | -1.814% | 10.186pp | 17.30% |
+| AVGO | 19 | USD 406.23 | USD 393.0801 | -3.237% | 8.763pp | 8.00% |
+| ETN | 34 | USD 419.54 | USD 410.09 | -2.252% | 9.748pp | 14.94% |
+| GOOGL | 16 | USD 370.22 | USD 356.12 | -3.809% | 8.191pp | 6.10% |
+| AMZN | 36 | USD 247.991111 | USD 245.82 | -0.875% | 11.125pp | 9.48% |
+| VST | 67 | USD 153.052836 | USD 160.005 | +4.542% | comfortable (only green position) | 11.48% |
+
+No position below the -12% cut threshold; no position above +25% (winner-protection threshold not applicable — VST +4.542% is the only green name). No new buys per playbook (midday never opens positions).
+
+**News scan:** not triggered this run — no position is down more than 5% or up more than 15% from entry (GOOGL closest at -3.809%, well inside the 5% threshold).
+
+**Stop audit — 6/6 confirmed live 18% trailing stops, quantities match positions exactly:** NVDA `e15e7753` (stop USD 173.02), AVGO `ffba9bd5` (stop USD 334.1664), ETN `abdc232b` (stop USD 350.9026), GOOGL `e52a43f1` (stop USD 308.1314), AMZN `b55bef05` (stop USD 207.0705), VST `e3a7985f` (stop USD 137.9322). No gaps, no action needed.
+
+**Sector exposure:** Semiconductors (NVDA+AVGO) = 25.30%; Industrials (ETN) = 14.94%; Hyperscalers (GOOGL+AMZN) = 15.58%; Utilities (VST) = 11.48%; Cash = 32.69%. No sector near the 60% cap. Single-position cap (35% max): NVDA largest at 17.30% — well clear.
+
+**No exits this run** — nothing to post-mortem, no `trades.jsonl` entries.
+
+**Result:** All positions within range. No trades. Quiet midday check — same broad tech softness seen at market-open, with a modest intraday bounce (all 6 positions green intraday) that hasn't materially changed any buffer.
+
+---
+
 ## 2026-07-14 — MARKET OPEN (~9:46 AM ET)
 
 **No trades executed.** Today's pre-market plan (`plan_date: 2026-07-14`) had an empty trades list — MU redeployment held back a second session on the unresolved SK Hynix HBM4 scare plus the 8:30 AM CPI print. Nothing to execute; breaking-news gate not applicable (no planned symbols).

@@ -4862,3 +4862,33 @@ Next actionable routine: July 10 weekly review.
 **No exits.** Nothing to post-mortem, no `trades.jsonl` entries.
 
 Next actionable routine: July 14 midday.
+
+---
+
+## 2026-07-14 — MIDDAY snapshot (~12:40 PM ET)
+
+**No trades.** Risk management only — all positions within range.
+
+**Account:** Equity USD 93,342.35 (+1.108% vs last_equity USD 92,319.29, not a shock); cash USD 30,516.27 (32.69%).
+
+**Positions (6 open, unchanged):**
+| Symbol | Qty | Avg Entry | Sector | P/L% | Buffer to -12% | % of Portfolio |
+|---|---|---|---|---|---|---|
+| NVDA | 77 | USD 213.60 | Semiconductors | -1.814% | 10.186pp | 17.30% |
+| AVGO | 19 | USD 406.23 | Semiconductors | -3.237% | 8.763pp | 8.00% |
+| ETN | 34 | USD 419.54 | Industrials/power infra | -2.252% | 9.748pp | 14.94% |
+| GOOGL | 16 | USD 370.22 | Communication Services (hyperscaler) | -3.809% | 8.191pp | 6.10% |
+| AMZN | 36 | USD 247.991111 | Consumer Discretionary (hyperscaler) | -0.875% | 11.125pp | 9.48% |
+| VST | 67 | USD 153.052836 (blended) | Utilities (nuclear power) | +4.542% | comfortable | 11.48% |
+
+**Sector exposure:** Semiconductors (NVDA+AVGO) = 25.30%; Industrials (ETN) = 14.94%; Hyperscalers (GOOGL+AMZN) = 15.58%; Utilities (VST) = 11.48%; Cash = 32.69%. No sector near the 60% informal cap. Single-position cap (35% max): NVDA largest at 17.30% — well clear.
+
+**Stops:** 6/6 live 18% trailing stops confirmed — NVDA `e15e7753`, AVGO `ffba9bd5`, ETN `abdc232b`, GOOGL `e52a43f1`, AMZN `b55bef05`, VST `e3a7985f`. No gaps, no recreation needed.
+
+**News scan:** not triggered — no position down >5% or up >15% from entry.
+
+**No exits.** Nothing to post-mortem, no `trades.jsonl` entries.
+
+**Result:** Quiet midday check. All 6 positions bounced intraday (green vs prior close) with buffers comfortably above the -12% cut line. No cuts, no stop tightening, no news scan required.
+
+Next actionable routine: July 14 close.
