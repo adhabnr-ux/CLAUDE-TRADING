@@ -1,5 +1,60 @@
 # Aggressive Bull — Research Log
 
+## 2026-07-15 — PRE-MARKET (~8:11 AM ET, market closed at run time)
+
+mcp__minimax__web_search was not found via ToolSearch this session (only the built-in `WebSearch` tool resolved) — used WebSearch fallback for every query this run per the search protocol. [search: WebSearch fallback]
+
+### Market posture
+
+**S&P 500 futures pre-market July 15** (`S&P 500 futures pre-market July 15 2026`): E-mini S&P 500 futures up ~0.18% (as of 6:09 AM ET). Polymarket traders expect the S&P 500 to open higher after cooler inflation sharply reduced July FOMC hike expectations — the probability of a July hike fell to 17% from 42% a day earlier. Futures also firm ahead of today's PPI print and a fresh wave of corporate earnings. Constructive, risk-on tape — a genuine improvement from the mixed/event-risk-heavy read at yesterday's pre-market. [search: WebSearch fallback]
+
+### Held positions — news scan (all 6), "what changed since yesterday"
+
+- **NVDA** (`NVDA Nvidia stock news July 15 2026`): USD 211.81, market cap above USD 5.1T. Continued strength from the July 10 UAE export-control easing (new addressable revenue stream for advanced AI chips). DeepSeek's own in-house AI chip effort (Reuters) is a known, gradual competitive risk already flagged in prior sessions — NVDA's China data-center revenue has already fallen from ~USD 4.6B/year to near-zero on existing export restrictions, so this is a marginal, already-priced negative, not a new thesis break. **What changed: nothing material — thesis unchanged, still strengthening on UAE access.** [search: WebSearch fallback]
+- **AVGO** (`AVGO Broadcom stock news July 15 2026`): Fell -3.98% to USD 384.05 on July 14 "due to overall market fear and selling" (broad chip-sector risk-off), despite record AI-chip revenue (Q2 FY2026: USD 22.2B total revenue +48% YoY; AI chips USD 10.8B +143% YoY) and Q3 guide of USD 29.4B (+84% YoY). Apple partnership (USD 30B+ through 2031) unchanged. **What changed: a macro/sentiment pullback on strong fundamentals — thesis intact, not thesis-breaking.** [search: WebSearch fallback]
+- **ETN** (`ETN Eaton stock news July 15 2026`): +3.24% to USD 415.52 on July 14 on continued data-center/AI-power-infrastructure demand confidence. Average analyst PT USD 456 (Buy consensus). Earnings confirmed July 31 (12 trading days out). **What changed: positive continuation, no new negative news — thesis strengthening.** [search: WebSearch fallback]
+- **GOOGL** (`GOOGL Alphabet stock news July 15 2026`): Traded USD 349.56–360.16 July 14. UBS trimmed its PT to USD 400 (from USD 410, Neutral) — a modest, not thesis-breaking, valuation reset. **New and material: three major publishers (Hachette, Cengage, Elsevier) plus author Scott Turow filed a class-action copyright suit (SDNY, filed July 14) alleging Gemini was trained on millions of copyrighted books without authorization, seeking damages the plaintiffs' cited internal Google document pegs at "USD 10Bs–100Bs" in potential exposure.** This is a new, Section-230-pattern-style tail-legal-risk (analogous to META's June 17 ruling) — litigation timelines run years, GCP (+63% YoY) and ad-revenue thesis are unaffected in the near term, and no near-term financial impact is expected. Not thesis-breaking today, but flagged as a new invalidation-adjacent risk to track at every remaining session before GOOGL's July 22 earnings and review_by (2026-07-21). Google also confirmed it's expanding external TPU sales to compete with Nvidia — a la-carte read-through that is thesis-neutral-to-positive for GOOGL itself (new revenue line) even though it's a competitive signal for NVDA. **What changed: new copyright litigation (watch, not act) + minor PT trim.** [search: WebSearch fallback]
+- **AMZN** (`AMZN Amazon stock news July 15 2026`): USD 247.49, range USD 243.80–248.56. AWS +28% YoY (fastest in 15 quarters) confirmed; USD 200B 2026 AI capex plan; trailing-12-month FCF down to USD 1.2B from USD 25.9B YoY — a known, thesis-consistent capex cost, not a revenue problem. Earnings July 30 (11 trading days out). **What changed: nothing material — thesis unchanged.** [search: WebSearch fallback]
+- **VST** (`VST Vistra stock news July 15 2026`): USD 158.12 (July 13 read), market cap ~USD 53.6B. New: Vistra is positioned to benefit from an upcoming PJM capacity auction amid rising AI/data-center electricity demand — an incremental, thesis-strengthening catalyst. PPAs with Meta and AWS continue to underpin revenue stability. Earnings confirmed Aug 7, 2026. Analyst PT USD 212.93 (Buy). **What changed: PJM capacity-auction catalyst surfaced — thesis strengthening. This is VST's review_by date (see Thesis Contract Review below).** [search: WebSearch fallback]
+
+**Conclusion: no thesis-breaking news for any of the 6 held positions.** One new material-but-not-actionable risk (GOOGL copyright suit) to track. No held name reports earnings within the next 2 trading days (nearest is GOOGL, July 22, 5 trading days out).
+
+### Thesis Contract Review — VST (review_by = 2026-07-15, due today)
+
+VST is the book's standout performer (+4.539% from blended entry, comfortable buffer, only position with no proximity to the -12% cut). The PPA-backed nuclear-power/AI-demand thesis has only strengthened since entry: the KKR/NVDA/Vistra/KIA Helix Digital Infrastructure venture remains in place, and today's news adds a fresh, concrete catalyst — Vistra is positioned to benefit from an upcoming PJM capacity auction as AI/data-center electricity demand keeps climbing. No negative news of any kind found. **Decision: HOLD. Review_by renewed to 2026-08-05** (2 trading days before the confirmed Aug 7 earnings date, forcing an explicit pre-earnings hold/trim/exit decision rather than letting the contract roll silently into the print).
+
+### Redeployment — MU (Micron) resolved, entering today
+
+**MU / SK Hynix scare: resolved via a sharp reversal, not further deterioration** (`Micron MU stock SK Hynix HBM4 news July 15 2026`): The specific event that drove two consecutive deferrals (July 13, July 14) was the KIS-driven SK Hynix estimate cut and its -15% Asian selloff. That has now reversed hard: SK Hynix surged +27% Monday July 14 (from USD 152 to USD 186), recovering from Sunday's worst-ever Seoul session, driven by a Barclays Overweight initiation and South Korea's record AI budget. MU itself moved from USD 936.99 (July 13 close) to USD 982.68 (July 14 close, +4.9%), with KeyBanc's John Vinh raising his MU price target to USD 1,750 (from USD 1,600) after an Asia supply-chain visit. Micron confirmed it has already secured pricing/volume agreements for its full 2026 HBM supply including next-generation HBM4 — the company-specific fundamentals were never actually impaired; this was a pure sympathy/sentiment selloff on a competitor's guidance miss, and that sentiment has now flipped.
+
+**Volatility check** (`bars MU 1Day` explicit date range 2026-06-15 to 2026-07-14, 20 sessions — the bare `limit=` query returned `bars:null` for every symbol tested this run, a data-endpoint quirk; explicit `start`/`end` params resolved it cleanly): 20-day mean daily range = **6.706% of price** (high−low)/close average) — still above the 5% flag threshold. The 18% trailing stop is ~2.7x this daily range, and MU carries no earnings catalyst for 10+ weeks (confirmed 2026-09-29), so the stop has ample room; this is stated explicitly per the playbook's volatility-check requirement, not glossed over.
+
+**Chase-risk flagged explicitly:** entering the session after MU's own +4.9% single-day pop (and SK Hynix's +27% day) carries near-term give-back risk — this is a resolution-rally entry, not a dip entry. The distinguishing factor from "just buying because it's day three of deferring": the specific, named catalyst that caused the two prior deferrals (an unresolved, worsening memory-sector demand scare) has concretely reversed with hard data (analyst PT raise, competitor's own stock +27%, Micron's supply-agreement confirmation) rather than merely having had time pass. Sizing at the smaller end of the Tier 2/3 band (per the July 13 plan) partially offsets the chase-risk.
+
+**Decision: BUY MU, 8 shares** (~USD 7,880 at an assumed ~USD 985 open, ~8.4% of portfolio). Thesis, invalidation, and review_by carried forward from the July 13 draft (unchanged — the underlying investment case was never in question, only the timing). Semiconductor-broad exposure after this add: NVDA (17.33%) + AVGO (7.94%) + MU (~8.4%) ≈ 33.7% — still well inside the informal 50% AI-semis watch line, and MU sits in a genuinely distinct sub-layer (memory/HBM vs. GPU/ASIC).
+
+### Monday conviction-weighted holding review
+
+Not applicable today (Wednesday). Last Monday (July 13) review: all 6 positions rated A, no C-ratings, no trim pipeline.
+
+**Planned trades for today:**
+
+```json
+{
+  "plan_date": "2026-07-15",
+  "trades": [
+    {"action": "buy", "symbol": "MU", "qty": 8,
+     "thesis": "AI-memory/HBM bellwether; the SK Hynix HBM4 demand scare that drove two prior deferrals has reversed (SK Hynix +27% Monday, MU +4.9% July 14, KeyBanc PT raised to USD 1,750); >USD 22B non-cancelable HBM contracts through 2027-2028 plus Anthropic supply deal intact; diversifies AI-infrastructure exposure into the memory layer distinct from the existing NVDA/AVGO GPU/ASIC book",
+     "invalidation": "MU closes below its 18% trailing stop, OR a major hyperscaler/AI-lab HBM contract is cancelled or materially renegotiated down, OR DRAM/NAND ASPs enter a QoQ price collapse signaling memory oversupply",
+     "review_by": "2026-07-27"}
+  ]
+}
+```
+
+**Result:** One new position planned for market-open execution (MU, 8 shares) — the redeployment candidate flagged across three consecutive weekly-review/pre-market cycles, entered now that the specific event risk behind the two prior deferrals has concretely resolved. VST's review_by (today) renewed as HOLD with a new PJM-auction catalyst, extended to 2026-08-05 (pre-earnings). GOOGL copyright lawsuit logged as a new watch-item, not yet actionable. No other thesis-contract deadlines due today. All 6 existing positions held, no shock, no circuit-breaker proximity (-7.222% from HWM, 12.778pp headroom). Control: ACTIVE.
+
+---
+
 ## 2026-07-14 — PRE-MARKET (~8:15 AM ET, market closed at run time)
 
 mcp__minimax__web_search was not found via ToolSearch this session (only the built-in `WebSearch` tool resolved) — used WebSearch fallback for every query this run per the search protocol. [search: WebSearch fallback]

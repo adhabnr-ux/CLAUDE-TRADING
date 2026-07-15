@@ -1,5 +1,55 @@
 # Aggressive Bull — Trade Log
 
+## 2026-07-15 — PRE-MARKET (~8:11 AM ET, market closed at run time)
+
+**No trades executed — market not yet open (opens 9:30 AM ET).** One new position planned for market-open execution: BUY MU (8 shares). Full detail in research-log.md.
+
+### Pre-run checks
+| Check | Result |
+|---|---|
+| Live-switch guard | ALPACA_BASE_URL contains "paper" ✓ |
+| Lock | Clear (`{}`) at start; written for this run ✓ |
+| Control switch | STATUS: ACTIVE ✓ (no NOTE:, no QUERY:) |
+| Market open | false (next open 09:30 AM ET today, per `clock`) |
+
+### Account status
+| Field | Value |
+|---|---|
+| Equity | USD 93,840.45 |
+| Cash | USD 30,516.27 (32.523%) |
+| last_equity (July 14 EOD) | USD 93,622.25 |
+| Shock check | +0.233% — NOT triggered (threshold -6%) |
+| HWM | USD 101,144.73 (confirmed via `history 1A 1D`, max over trailing 252 days) |
+| Drawdown from HWM | **-7.222%** (circuit breaker -20% — NOT triggered; 12.778pp headroom) |
+
+### Position review (buffers to -12% cut)
+| Symbol | Qty | Entry | Current | P/L % | Buffer | % of Portfolio | Sector |
+|---|---|---|---|---|---|---|---|
+| NVDA | 77 | USD 213.60 | USD 211.15 | -1.147% | 10.853pp | 17.328% | Semiconductors |
+| AVGO | 19 | USD 406.23 | USD 392.15 | -3.466% | 8.534pp | 7.940% | Semiconductors |
+| ETN | 34 | USD 419.54 | USD 419.2326 | -0.073% | 11.927pp | 15.191% | Industrials/power infra |
+| GOOGL | 16 | USD 370.22 | USD 357.22 | -3.511% | 8.489pp | 6.091% | Communication Services (hyperscaler) |
+| AMZN | 36 | USD 247.991111 | USD 247.9265 | -0.026% | 11.974pp | 9.513% | Consumer Discretionary (hyperscaler) |
+| VST | 67 | USD 153.052836 | USD 160.00 | +4.539% | comfortable | 11.425% | Utilities (nuclear power) |
+
+**Sector exposure:** Semiconductors (NVDA+AVGO) = 25.268%; Industrials (ETN) = 15.191%; Hyperscalers (GOOGL+AMZN) = 15.604%; Utilities (VST) = 11.425%; Cash = 32.523%. No sector near the 60% informal cap.
+
+### Stop audit — 6/6 confirmed live ✓
+NVDA `e15e7753`, AVGO `ffba9bd5`, ETN `abdc232b`, GOOGL `e52a43f1`, AMZN `b55bef05`, VST `e3a7985f` — all `status: "new"` per Alpaca open-orders list, all matched 1:1 to the 6 open positions.
+
+### Thesis contract due today — VST (review_by 2026-07-15)
+Comfortable buffer (+4.539% from entry), best-performing position. New PJM capacity-auction catalyst; PPAs with Meta/AWS unchanged. **Decision: HOLD. Review_by renewed to 2026-08-05** (pre-Aug 7 earnings). Full reasoning in research-log.md.
+
+### Deployment / redeployment
+Cash at 32.523% (above the 20% threshold), constructive tape (futures +0.18%, July Fed-hike odds fell to 17% from 42% on cooler inflation). **Planned: BUY MU (Micron), 8 shares (~8.4% of portfolio)** — the SK Hynix HBM4 sympathy scare that caused two prior deferrals (July 13, July 14) has reversed (SK Hynix +27% Monday, MU +4.9% July 14, KeyBanc PT raised to USD 1,750). Full thesis, invalidation, review_by, and volatility check (20-day avg daily range 6.706%, above the 5% flag but judged acceptable given no earnings for 10+ weeks and the 18% stop's ~2.7x cushion) in research-log.md.
+
+### Result
+No trades yet (market not open). One new position planned for market-open execution (MU). VST review_by contract renewed as HOLD with a new catalyst. GOOGL copyright-lawsuit risk logged as a watch item, not actionable today. All 6 stops confirmed live. Control: ACTIVE. Full JSON plan in research-log.md.
+
+Next actionable routine: July 15 market-open.
+
+---
+
 ## 2026-07-14 — EOD CLOSE (~4:10 PM ET, post-close)
 
 **No trades executed today.** No exits, no new entries (midday held 6/6 unchanged; no cut/trim/shock triggers fired all day).

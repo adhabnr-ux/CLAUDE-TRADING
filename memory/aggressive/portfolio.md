@@ -4929,4 +4929,36 @@ Next actionable routine: July 14 midday.
 
 **Result:** Quiet midday check. All 6 positions bounced intraday (green vs prior close) with buffers comfortably above the -12% cut line. No cuts, no stop tightening, no news scan required.
 
+---
+
+## 2026-07-15 — PRE-MARKET snapshot (~8:11 AM ET, market closed at run time)
+
+**No trades executed** (market not yet open, opens 9:30 AM ET). One new position planned for market-open execution: BUY MU (8 shares). Full detail in research-log.md.
+
+**Account:** Equity USD 93,840.45 | Cash USD 30,516.27 (32.523%) | last_equity (July 14 EOD) USD 93,622.25 | Shock check +0.233% — NOT triggered (threshold -6%).
+
+**HWM:** USD 101,144.73 (set June 4-5, unchanged). Drawdown from HWM: **-7.222%** (circuit breaker -20% — NOT triggered; 12.778pp headroom).
+
+**Positions (6 open, unchanged):**
+| Symbol | Qty | Avg Entry | Sector | P/L% | Buffer to -12% | % of Portfolio |
+|---|---|---|---|---|---|---|
+| NVDA | 77 | USD 213.60 | Semiconductors | -1.147% | 10.853pp | 17.328% |
+| AVGO | 19 | USD 406.23 | Semiconductors | -3.466% | 8.534pp | 7.940% |
+| ETN | 34 | USD 419.54 | Industrials/power infra | -0.073% | 11.927pp | 15.191% |
+| GOOGL | 16 | USD 370.22 | Communication Services (hyperscaler) | -3.511% | 8.489pp | 6.091% |
+| AMZN | 36 | USD 247.991111 | Consumer Discretionary (hyperscaler) | -0.026% | 11.974pp | 9.513% |
+| VST | 67 | USD 153.052836 (blended) | Utilities (nuclear power) | +4.539% | comfortable | 11.425% |
+
+**Sector exposure:** Semiconductors (NVDA+AVGO) = 25.268%; Industrials (ETN) = 15.191%; Hyperscalers (GOOGL+AMZN) = 15.604%; Utilities (VST) = 11.425%; Cash = 32.523%. No sector near the 60% informal cap. Single-position cap (35% max): NVDA largest at 17.328% — well clear.
+
+**Thesis contract due today — VST (review_by 2026-07-15):** HOLD. New PJM capacity-auction catalyst; PPAs with Meta/AWS unchanged; only green position in the book. Review_by renewed to 2026-08-05 (pre-Aug 7 earnings). Full reasoning in research-log.md.
+
+**Deployment plan:** Cash 32.523%, above the 20% threshold. MU (Micron) redeployment candidate — deferred twice on an SK Hynix HBM4 sympathy scare that has now reversed (SK Hynix +27% Monday, MU +4.9% July 14, KeyBanc PT raised to USD 1,750) — planned for entry at market-open, 8 shares (~8.4% of portfolio). Post-entry semiconductor-broad exposure (NVDA+AVGO+MU) ≈ 33.7%, still inside the informal 50% watch line. Full thesis, invalidation, review_by, and volatility check (20-day avg daily range 6.706%, above the 5% flag but judged acceptable given no earnings for 10+ weeks and the 18% stop's ~2.7x cushion) in research-log.md.
+
+**Stop audit — 6/6 confirmed live ✓:** NVDA `e15e7753` (stop USD 174.291, HWM 212.55), AVGO `ffba9bd5` (stop USD 334.1664, HWM 407.52), ETN `abdc232b` (stop USD 350.9026, HWM 427.93), GOOGL `e52a43f1` (stop USD 308.1314, HWM 375.77), AMZN `b55bef05` (stop USD 207.0705, HWM 252.525), VST `e3a7985f` (stop USD 137.9322, HWM 168.21) — all `status: "new"`, all matched 1:1 to the 6 open positions. No gaps, no action needed.
+
+**Result:** No trades yet (market not open). One new position planned for market-open execution (MU). VST review_by renewed as HOLD with a new catalyst. GOOGL copyright-suit risk logged as a watch item (not actionable today). All 6 stops confirmed live. Control: ACTIVE. Full JSON plan in research-log.md.
+
+Next actionable routine: July 15 market-open.
+
 Next actionable routine: July 14 close.
