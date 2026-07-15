@@ -5002,4 +5002,55 @@ Next actionable routine: July 14 close.
 
 **Result:** Quiet midday check aside from the backfilled process gap. All 7 positions within guardrail thresholds, MU the only news-scan trigger (sentiment, not thesis). No trades, no cuts, no tightening. Stop audit clean 7/7.
 
+---
+
+## 2026-07-15 — EOD CLOSE (~4:08 PM ET)
+
+**Control switch:** STATUS: ACTIVE (no NOTE:, no QUERY:). No orders placed this run (close routine journals only).
+
+**Account:** Equity USD 93,899.03 | Cash USD 22,884.90 (24.372%) | last_equity (July 14 close) USD 93,622.25.
+
+**Today's P/L:** +USD 276.78 (**+0.296%**).
+
+**SPY:** July 15 close USD 754.77 (IEX feed) vs July 14 close USD 751.94 → today's SPY return **+0.376%**. Since-inception anchor USD 754.18 (2026-06-03 close) → SPY since-inception return **+0.078%**.
+
+**Data-quality note:** The default `./scripts/alpaca.sh bars SPY 1Day 30` call returned a single bar (SIP feed, close USD 754.81) instead of the requested 30-day history; a direct `feed=iex` query with explicit start/end returned the full series. Used the IEX series for consistency with every prior EOD entry's inception anchor (754.18, which matches IEX's 2026-06-03 bar). Same class of intermittent data-endpoint gap already logged for `history` (July 2), `bars` (July 10 pre-market), and `quote` (July 10 market-open) — no action needed, just noting the workaround.
+
+**Aggro vs SPY (since inception, anchor 2026-06-03):**
+
+| Metric | Value |
+|---|---|
+| Aggro return since inception | **(93,899.03 − 100,000) / 100,000 = −6.101%** |
+| SPY return since inception (754.18 → 754.77) | **+0.078%** |
+| Alpha since inception | **−6.179pp** (vs −6.698pp at last Friday's review — improving) |
+| Today vs SPY | +0.296% vs +0.376% = **−0.080pp** (slight underperformance today) |
+
+**HWM / circuit breaker:** HWM USD 101,144.73 (set June 4-5, unchanged). Drawdown from HWM: **−7.164%** (breaker at −20%; 12.836pp headroom — not near, no flag).
+
+**Positions (7 open, unchanged from midday):**
+
+| Symbol | Qty | Avg Entry | Sector | Current | P/L% | % of Portfolio |
+|---|---|---|---|---|---|---|
+| NVDA | 77 | USD 213.60 | Semiconductors | USD 212.4937 | −0.518% | 17.426% |
+| AVGO | 19 | USD 406.23 | Semiconductors | USD 394.28 | −2.942% | 7.978% |
+| MU | 8 | USD 953.92125 | Semiconductors (memory/HBM) | USD 901.00 | −5.548% | 7.677% |
+| ETN | 34 | USD 419.54 | Industrials/power infra | USD 414.639 | −1.168% | 15.014% |
+| GOOGL | 16 | USD 370.22 | Communication Services (hyperscaler) | USD 371.0036 | +0.212% | 6.322% |
+| AMZN | 36 | USD 247.991111 | Consumer Discretionary (hyperscaler) | USD 255.10 | +2.867% | 9.780% |
+| VST | 67 | USD 153.052836 (blended) | Utilities (nuclear power) | USD 160.23 | +4.689% | 11.433% |
+
+**Sector exposure:** Semiconductors (NVDA+AVGO+MU) = **33.081%**; Industrials (ETN) = 15.014%; Hyperscalers (GOOGL+AMZN) = 16.102%; Utilities (VST) = 11.433%; Cash = 24.372%. No sector near the 60% cap. Single-position cap (35% max): NVDA largest at 17.426% — well clear.
+
+**Reconciliation vs midday/trade-log/closed-trades.md:** Positions unchanged from midday (7/7 match, same quantities). No exits today — nothing to add to `closed-trades.md`, no new lesson required.
+
+**Stop audit — 7/7 confirmed live via `orders open` ✓:** NVDA `e15e7753` (stop USD 175.3242, HWM 213.81), AVGO `ffba9bd5` (stop USD 334.1664, HWM 407.52), ETN `abdc232b` (stop USD 350.9026, HWM 427.93), GOOGL `e52a43f1` (stop USD 308.1314, HWM 375.77), AMZN `b55bef05` (stop USD 210.3136, HWM 256.48), VST `e3a7985f` (stop USD 137.9322, HWM 168.21), MU `a6cd1e46` (stop USD 786.1504, HWM 958.72). No gaps, no stops needing recreation.
+
+**Market close context:** [search: WebSearch fallback] US stocks rose broadly (S&P +0.3%, Nasdaq +0.6%, Dow +0.2%) on a softer-than-expected June PPI print (following yesterday's soft CPI), easing near-term Fed-hike odds, plus Big Tech strength (Alphabet ~+3%, Amazon/Microsoft ~+3%, Apple +4% to a record high on China AI-feature approval news) and a bullish ASML outlook lifting chip-equipment sentiment. This directly supports the GOOGL/AMZN hyperscaler theses (both green today, GOOGL +3.2% / AMZN +3.1% intraday per midday read) and is broadly thesis-neutral-to-positive for the semiconductor holdings (NVDA, AVGO recovered intraday; MU's -8.35% intraday move was profit-taking plus an unconfirmed HBM-export-restriction rumor, not a confirmed policy or thesis break per midday's news scan).
+
+**Trades today:** 1 (MU buy at market-open, 8 shares @ USD 953.92125, 18% trailing stop placed — backfilled into the record by the midday routine; see lessons.md 2026-07-15 process note). No trades placed by this close routine.
+
+**Result:** Quiet, orderly close. Book up +0.296% on a day SPY rose +0.376% (−0.080pp today), driven by MU's rumor-driven pullback offsetting broad-market and hyperscaler strength elsewhere in the book. All 7 stops confirmed live, no exits, no guardrail breaches, drawdown-from-HWM comfortably clear of the circuit breaker. Since-inception alpha improved slightly to −6.179pp (from −6.698pp at last Friday's review).
+
+Next actionable routine: July 16 pre-market.
+
 Next actionable routine: July 15 close.
