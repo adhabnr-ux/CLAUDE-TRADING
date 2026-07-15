@@ -6,7 +6,44 @@ but always re-fetches live data before trading._
 
 ---
 
-## Last snapshot — 2026-07-14 EOD CLOSE (~4:10 PM ET, post-close)
+## Last snapshot — 2026-07-15 MARKET OPEN (~9:47 AM ET)
+
+| Field | Value |
+|---|---|
+| Equity | USD 94,264.28 |
+| Cash | USD 22,884.90 (24.276%) |
+| Long market value | USD 71,379.38 |
+| Open positions | 7 |
+| last_equity (July 14 EOD close) | USD 93,622.25 |
+| Shock check | +0.660% — NOT triggered (threshold -6%) |
+| HWM | USD 101,144.73 (confirmed via `history 1A 1D`) |
+| Drawdown from HWM | **-6.807%** (circuit breaker -20% — NOT triggered) |
+
+**Market status:** open (next close 2026-07-15 16:00 ET).
+
+**Trade executed:** BUY MU, 8 shares @ USD 953.92125 avg fill (~8.109% of portfolio) — the AI-memory/HBM redeployment candidate carried forward from July 13, entered once the SK Hynix HBM4 sympathy scare concretely reversed. 18% trailing stop placed and verified (`a6cd1e46`, stop USD 784.74).
+
+**Open positions:**
+
+| Symbol | Qty | Avg Entry | Price | P/L % | % of Portfolio | Sector |
+|---|---|---|---|---|---|---|
+| NVDA | 77 | USD 213.60 | USD 211.68 | -0.899% | 17.293% | Semiconductors |
+| AVGO | 19 | USD 406.23 | USD 396.19 | -2.472% | 7.986% | Semiconductors |
+| MU | 8 | USD 953.92125 | USD 955.46 | +0.161% | 8.109% | Semiconductors (memory/HBM) |
+| ETN | 34 | USD 419.54 | USD 413.87 | -1.351% | 14.928% | Industrials/power infra |
+| GOOGL | 16 | USD 370.22 | USD 364.455 | -1.557% | 6.186% | Communication Services (hyperscaler) |
+| AMZN | 36 | USD 247.991111 | USD 251.365 | +1.360% | 9.600% | Consumer Discretionary (hyperscaler) |
+| VST | 67 | USD 153.052836 | USD 163.555 | +6.862% | 11.626% | Utilities (nuclear power) |
+
+**Sector exposure:** Semiconductors (NVDA+AVGO+MU) = 33.388%; Industrials (ETN) = 14.928%; Hyperscalers (GOOGL+AMZN) = 15.786%; Utilities (VST) = 11.626%; Cash = 24.276%. No sector near the 60% informal cap. Single-position cap (35% max): NVDA largest at 17.293% — well clear.
+
+**Stops:** 7/7 live 18% trailing stops confirmed — NVDA `e15e7753`, AVGO `ffba9bd5`, ETN `abdc232b`, GOOGL `e52a43f1`, AMZN `b55bef05`, VST `e3a7985f`, MU `a6cd1e46` (new).
+
+**Result:** One trade executed (MU, 8 shares). All 7 positions held, no shock, no circuit breaker. Cash deployment: 24.276% remaining, above the 2% minimum. Weekly new-position count: 1/8. Daily deployment: ~8.1% of portfolio value, well under the 60% cap. Control: ACTIVE.
+
+---
+
+## Prior snapshot — 2026-07-14 EOD CLOSE (~4:10 PM ET, post-close)
 
 | Field | Value |
 |---|---|

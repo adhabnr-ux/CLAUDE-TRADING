@@ -1,5 +1,65 @@
 # Aggressive Bull — Trade Log
 
+## 2026-07-15 — MARKET OPEN (~9:47 AM ET)
+
+**One trade executed: BUY MU.** [search: WebSearch fallback — mcp__minimax web search tool not found via ToolSearch this session]
+
+### Pre-run checks
+| Check | Result |
+|---|---|
+| Live-switch guard | ALPACA_BASE_URL contains "paper" ✓ |
+| Lock | Clear (`{}`) at start; written for this run ✓ |
+| Control switch | STATUS: ACTIVE, no NOTE/QUERY ✓ |
+| Plan_date match | 2026-07-15 plan confirmed today's date, trades: [BUY MU 8sh] ✓ |
+| Idempotency | No prior EXECUTED: marker — first run today ✓ |
+| Market clock | is_open: true ✓ |
+
+### Breaking-news gate — MU CLEARED
+Premarket search found only routine profit-taking chatter (MU down ~1% premarket on broad semiconductor-sector profit-taking after the multi-month AI rally) — no earnings miss, downgrade, halt, or SEC action. KeyBanc PT raise to USD 1,750 (July 14) and Buy consensus (avg PT USD 1,548.86) unchanged. Thesis intact — proceeded with the planned entry.
+
+### Account status
+| Field | Value |
+|---|---|
+| Equity | USD 94,240.43 |
+| Cash (pre-trade) | USD 30,516.27 (32.38%) |
+| last_equity (July 14 EOD) | USD 93,622.25 |
+| Shock check | +0.660% — NOT triggered (threshold -6%) |
+
+### Guardrail math (BUY MU, 8 shares)
+| Guardrail | Value | Cap | Pass |
+|---|---|---|---|
+| Single position | ~8.1% of portfolio | 35% max | ✓ |
+| New positions this week | 1st this week | 8/week max | ✓ |
+| Daily deployment | ~8.1% of portfolio | 60% max daily | ✓ |
+| Cash after buy | ~24.3% | 2% min | ✓ |
+| Earnings window | next earnings 2026-09-29 (10+ weeks out) | 2-day exclusion | ✓ |
+| Drawdown circuit breaker | -7.222% from HWM (pre-market read) | -20% trip | ✓ |
+
+### Trade — BUY MU
+| Field | Value |
+|---|---|
+| Action | BUY |
+| Symbol | MU |
+| Qty | 8 shares |
+| Ask at decision | USD 954.99 |
+| Marketable limit | USD 957.85 (ask × 1.003) |
+| Fill price | USD 953.92125 avg |
+| Cost basis | USD 7,631.37 |
+| Portfolio % | ~8.109% |
+| Thesis | AI-memory/HBM bellwether; SK Hynix HBM4 demand scare that drove two prior deferrals has reversed (SK Hynix +27% Monday, MU +4.9% July 14, KeyBanc PT raised to USD 1,750); >USD 22B non-cancelable HBM contracts through 2027-2028 plus Anthropic supply deal intact; diversifies AI-infrastructure exposure into the memory layer distinct from the existing NVDA/AVGO GPU/ASIC book |
+| Invalidation | MU closes below its 18% trailing stop, OR a major hyperscaler/AI-lab HBM contract is cancelled or materially renegotiated down, OR DRAM/NAND ASPs enter a QoQ price collapse signaling memory oversupply |
+| Review_by | 2026-07-27 |
+| Trailing stop | 18%; order id `a6cd1e46`; stop price USD 784.74 (HWM USD 955.125) |
+| Verified | ✓ position confirmed live (8 shares @ USD 953.92125); trailing stop confirmed in open orders, status "new" |
+
+### Stop audit — 7/7 confirmed live ✓
+NVDA `e15e7753`, AVGO `ffba9bd5`, ETN `abdc232b`, GOOGL `e52a43f1`, AMZN `b55bef05`, VST `e3a7985f`, MU `a6cd1e46` (new) — all `status: "new"`, quantities match positions 1:1. No gaps, no recreation needed.
+
+### Result
+One trade executed (BUY MU, 8 shares, 18% trailing stop verified). All guardrails passed with room to spare. No exits, no stop fills since last run. Sector exposure post-trade: Semiconductors (NVDA+AVGO+MU) = 33.388% — still well inside the informal 50% AI-semis watch line and the 60% sector cap. Control: ACTIVE.
+
+---
+
 ## 2026-07-15 — PRE-MARKET (~8:11 AM ET, market closed at run time)
 
 **No trades executed — market not yet open (opens 9:30 AM ET).** One new position planned for market-open execution: BUY MU (8 shares). Full detail in research-log.md.
