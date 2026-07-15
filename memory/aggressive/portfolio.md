@@ -4962,3 +4962,44 @@ Next actionable routine: July 14 midday.
 Next actionable routine: July 15 market-open.
 
 Next actionable routine: July 14 close.
+
+---
+
+## 2026-07-15 — MARKET OPEN snapshot (backfilled by midday routine — see process-gap note)
+
+**Trade executed ~9:47 AM ET (confirmed via Alpaca fill/order timestamps, not journaled at the time):** BUY MU, 8 shares @ USD 953.92125 avg, 18% trailing stop `a6cd1e46` placed at USD 786.1504 (HWM USD 958.72). Matches the July 15 pre-market plan exactly. The market-open routine executed correctly via the API but never wrote this snapshot, the trade-log entry, the research-log `EXECUTED:` marker, or a `trades.jsonl` line, and never committed — backfilled now by the midday routine. See lessons.md 2026-07-15 for the process lesson.
+
+**Positions (7 open):** NVDA 77, AVGO 19, ETN 34, GOOGL 16, AMZN 36, MU 8 (new), VST 67.
+
+---
+
+## 2026-07-15 — MIDDAY snapshot (~12:41 PM ET)
+
+**No new trades this run** — risk management only, plus the market-open backfill above.
+
+**Account:** Equity USD 92,588.02 (-1.105% vs last_equity USD 93,622.25, not a shock; threshold -6%); cash USD 22,884.90 (24.719%).
+
+**Positions (7 open):**
+| Symbol | Qty | Avg Entry | Sector | P/L% | Buffer to -12% | % of Portfolio |
+|---|---|---|---|---|---|---|
+| NVDA | 77 | USD 213.60 | Semiconductors | -3.448% | 8.552pp | 17.153% |
+| AVGO | 19 | USD 406.23 | Semiconductors | -4.736% | 7.264pp | 7.943% |
+| ETN | 34 | USD 419.54 | Industrials/power infra | -4.256% | 7.744pp | 14.752% |
+| GOOGL | 16 | USD 370.22 | Communication Services (hyperscaler) | +0.664% | comfortable | 6.441% |
+| AMZN | 36 | USD 247.991111 | Consumer Discretionary (hyperscaler) | +3.201% | comfortable | 9.951% |
+| MU | 8 | USD 953.92125 | Semiconductors (memory/HBM) | -8.188% | 3.812pp | 7.567% |
+| VST | 67 | USD 153.052836 (blended) | Utilities (nuclear power) | +3.618% | comfortable | 11.478% |
+
+**Sector exposure:** Semiconductors (NVDA+AVGO+MU) = 32.663%; Industrials (ETN) = 14.752%; Hyperscalers (GOOGL+AMZN) = 16.392%; Utilities (VST) = 11.478%; Cash = 24.719%. No sector near the 60% informal cap. Single-position cap (35% max): NVDA largest at 17.153% — well clear.
+
+**News scan:** MU only (-8.188%, >5% threshold) — profit-taking plus an unconfirmed report of possible new US HBM export restrictions; no confirmed policy change, no lost contract, no earnings miss. Not thesis-breaking; Strong Buy consensus intact (avg PT USD 1,569.29). Hold.
+
+**Stops:** 7/7 live 18% trailing stops confirmed — NVDA `e15e7753`, AVGO `ffba9bd5`, ETN `abdc232b`, GOOGL `e52a43f1`, AMZN `b55bef05`, VST `e3a7985f`, MU `a6cd1e46`. No gaps.
+
+**No exits.** No cuts (-12% threshold), no tighten-stop triggers (+25% threshold).
+
+**Process note:** Discovered and backfilled a market-open journaling gap this run — MU was bought and stopped correctly via the API but never logged; see lessons.md and the MARKET OPEN snapshot above.
+
+**Result:** Quiet midday check aside from the backfilled process gap. All 7 positions within guardrail thresholds, MU the only news-scan trigger (sentiment, not thesis). No trades, no cuts, no tightening. Stop audit clean 7/7.
+
+Next actionable routine: July 15 close.

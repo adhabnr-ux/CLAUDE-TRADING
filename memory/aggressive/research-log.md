@@ -53,6 +53,8 @@ Not applicable today (Wednesday). Last Monday (July 13) review: all 6 positions 
 
 **Result:** One new position planned for market-open execution (MU, 8 shares) — the redeployment candidate flagged across three consecutive weekly-review/pre-market cycles, entered now that the specific event risk behind the two prior deferrals has concretely resolved. VST's review_by (today) renewed as HOLD with a new PJM-auction catalyst, extended to 2026-08-05 (pre-earnings). GOOGL copyright lawsuit logged as a new watch-item, not yet actionable. No other thesis-contract deadlines due today. All 6 existing positions held, no shock, no circuit-breaker proximity (-7.222% from HWM, 12.778pp headroom). Control: ACTIVE.
 
+EXECUTED: 2026-07-15T13:47:27Z (MU buy filled per plan — 8 shares @ USD 953.92125 avg, 18% trailing stop `a6cd1e46` placed at USD 786.1504, HWM USD 958.72 — **backfilled retroactively by the 2026-07-15 midday routine**; the market-open routine placed the order and stop correctly but never wrote this marker, never wrote a trade-log entry, never appended to trades.jsonl, and never committed/pushed — the trade sat unlogged in git for one full routine cycle. No guardrail was breached and the fill matched the plan exactly; this is a pure process/journaling gap, not a trading error. See trade-log.md and lessons.md 2026-07-15 entries.)
+
 ---
 
 ## 2026-07-14 — PRE-MARKET (~8:15 AM ET, market closed at run time)

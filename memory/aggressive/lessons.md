@@ -23,6 +23,11 @@ surprises you._
 
 ## Trading lessons
 
+### 2026-07-15 — Market-open routine executed a trade but never journaled it
+- **A routine can place a real order/stop via the Alpaca API and still fail to leave any record of it.** The July 15 market-open routine bought MU (8 shares @ USD 953.92125 avg) and placed its 18% trailing stop (`a6cd1e46`) exactly per the pre-market plan — confirmed live via Alpaca fill/order timestamps (~9:47 AM ET) — but never wrote a trade-log.md entry, never added an `EXECUTED:` marker to research-log.md, never appended to `trades.jsonl`, and never committed/pushed to main. The gap was only caught because the midday routine cross-checked `positions`/`orders` against the last aggro git commit and found a live position with no paper trail.
+- **Root cause is unconfirmed but the pattern matches "died after the order call, before the journal write."** Nothing in the guardrails was violated — the fill matched the plan exactly — but an unlogged trade defeats the entire stateless-memory model: if the account had been checked by a human (or a later routine) before the gap was caught, there would have been no way to reconstruct the thesis, invalidation, or review_by from the repo alone.
+- **New standing check for every routine that follows a pre-market/market-open plan:** before trusting the trade-log for "no trades happened," diff the live `positions`/`orders` output against what the last aggro commit's journal describes. If a position or stop exists that the trade-log doesn't account for, backfill it immediately (research-log `EXECUTED:` marker, trade-log entry, `trades.jsonl` line) before doing anything else — the same discipline as the July 3 "verify the prior routine's plan actually executed" lesson, just checking for the opposite failure mode (executed-but-unlogged, not planned-but-unexecuted).
+
 ### 2026-06-04 — Day 1 close
 - **Buy-the-non-thesis-dip worked on Day 1 (AVGO):** AVGO fell -12.76% from its June 3 close
   as the post-earnings gap-down played out through the session. Because we entered at $406.23

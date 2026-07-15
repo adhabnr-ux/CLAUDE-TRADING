@@ -1,5 +1,65 @@
 # Aggressive Bull — Trade Log
 
+## 2026-07-15 — MIDDAY review (no new trades; process gap backfilled)
+
+**Market open, no shock:** equity USD 92,588.02 vs last_equity USD 93,622.25 = -1.105% (threshold -6%, not triggered).
+
+### Pre-run checks
+| Check | Result |
+|---|---|
+| Live-switch guard | ALPACA_BASE_URL contains "paper" ✓ |
+| Lock | Clear (`{}`) at start; written for this run ✓ |
+| Control switch | STATUS: ACTIVE, no NOTE/QUERY ✓ |
+| Market open | true (`clock`: is_open true, next close 4:00 PM ET) ✓ |
+
+### Process gap discovered and backfilled
+The account showed 7 open positions (6 prior + MU, 8 shares, filled ~9:47 AM ET per order timestamp) with a live 18% trailing stop on MU (`a6cd1e46`), but **no aggro-market-open journal entry, no `EXECUTED:` marker in research-log.md, no `trades.jsonl` line, and no git commit existed for this trade** — the last aggro commit before this run was the July 15 pre-market plan (`fa361bd`). The market-open routine executed the plan correctly via the Alpaca API but crashed or was interrupted before writing/committing its records. No guardrail was breached and the fill matches the pre-market plan exactly (8 shares, thesis, invalidation, review_by unchanged) — this is a pure journaling/process failure, not a trading error. Backfilled this run: `EXECUTED:` marker in research-log.md, the MARKET OPEN entry below, and a `trades.jsonl` buy line. Dated lesson added to `lessons.md`.
+
+### Backfilled — 2026-07-15 MARKET OPEN (~9:47 AM ET, reconstructed from Alpaca fill/order data)
+
+**Trade — BUY MU**
+| Field | Value |
+|---|---|
+| Action | BUY |
+| Symbol | MU |
+| Qty | 8 shares |
+| Fill price | USD 953.92125 avg |
+| Cost basis | USD 7,631.37 |
+| Portfolio % (at fill) | ~8.2% |
+| Thesis | AI-memory/HBM bellwether; SK Hynix HBM4 demand scare (drove two prior deferrals) reversed (SK Hynix +27% Mon, MU +4.9% Jul 14, KeyBanc PT raised to USD 1,750); >USD 22B non-cancelable HBM contracts through 2027-2028; diversifies into memory layer distinct from NVDA/AVGO GPU/ASIC book |
+| Invalidation | MU closes below its 18% trailing stop, OR a major hyperscaler/AI-lab HBM contract is cancelled/renegotiated down, OR DRAM/NAND ASPs enter a QoQ price collapse |
+| Review_by | 2026-07-27 |
+| Trailing stop | 18%; order id `a6cd1e46`; stop price USD 786.1504 (HWM USD 958.72) |
+| Verified | ✓ position confirmed live (8 shares); trailing stop confirmed in open orders |
+
+### Position review (buffers to -12% cut, 7 positions)
+| Symbol | Qty | Entry | Current | P/L % | Buffer | % of Portfolio |
+|---|---|---|---|---|---|---|
+| NVDA | 77 | USD 213.60 | USD 206.235 | -3.448% | 8.552pp | 17.153% |
+| AVGO | 19 | USD 406.23 | USD 386.99 | -4.736% | 7.264pp | 7.943% |
+| ETN | 34 | USD 419.54 | USD 401.685 | -4.256% | 7.744pp | 14.752% |
+| GOOGL | 16 | USD 370.22 | USD 372.68 | +0.664% | comfortable | 6.441% |
+| AMZN | 36 | USD 247.991111 | USD 255.93 | +3.201% | comfortable | 9.951% |
+| MU | 8 | USD 953.92125 | USD 875.8144 | -8.188% | 3.812pp | 7.567% |
+| VST | 67 | USD 153.052836 | USD 158.59 | +3.618% | comfortable | 11.478% |
+
+No position below the -12% cut threshold; no position above +25% (winner-protection not applicable — best is VST +3.618%). No new buys — midday never opens positions.
+
+### News scan (positions >5% down or >15% up) — MU only, -8.188%
+[search: WebSearch fallback — mcp__minimax__web_search not found via ToolSearch this session] Micron down ~7-8% on profit-taking after its recent rally plus renewed reports the US government may tighten unilateral export restrictions on HBM products; broader semiconductor sector retreat on geopolitical tension and memory-cycle sustainability concerns. No confirmed policy change, no lost contract, no earnings miss — this is sentiment/profit-taking + an unconfirmed regulatory report, not a thesis break. Analyst consensus remains Strong Buy (29 Buy / 1 Hold), avg PT USD 1,569.29 (+72% upside). 3.812pp buffer to the -12% cut is intact; the HBM export-restriction report is a new watch item for the next pre-market, not an action item today.
+
+### Stop audit — 7/7 confirmed live ✓
+NVDA `e15e7753` (stop USD 175.3242), AVGO `ffba9bd5` (stop USD 334.1664), ETN `abdc232b` (stop USD 350.9026), GOOGL `e52a43f1` (stop USD 308.1314), AMZN `b55bef05` (stop USD 210.3136), VST `e3a7985f` (stop USD 137.9322), MU `a6cd1e46` (stop USD 786.1504) — all `status: "new"`, all matched 1:1 to the 7 open positions. No gaps, no recreation needed.
+
+### Sector exposure
+Semiconductors (NVDA+AVGO+MU) = 32.663%; Industrials (ETN) = 14.752%; Hyperscalers (GOOGL+AMZN) = 16.392%; Utilities (VST) = 11.478%; Cash = 24.719%. No sector near the 60% cap. Single-position cap (35% max): NVDA largest at 17.153% — well clear.
+
+**No exits this run** — nothing to post-mortem beyond the backfilled MU buy above; no `trades.jsonl` exit entries (one backfilled buy entry added, see trades.jsonl).
+
+**Result:** No new trades this run — risk management only, and one process gap (unlogged MU buy from market-open) discovered and fully backfilled. All 7 positions within guardrail thresholds. MU is the only position that crossed the 5%-down news-scan trigger; the move reads as profit-taking plus an unconfirmed HBM-export-restriction report, not a thesis break — hold. Stop audit clean 7/7. Control: ACTIVE.
+
+---
+
 ## 2026-07-15 — PRE-MARKET (~8:11 AM ET, market closed at run time)
 
 **No trades executed — market not yet open (opens 9:30 AM ET).** One new position planned for market-open execution: BUY MU (8 shares). Full detail in research-log.md.
