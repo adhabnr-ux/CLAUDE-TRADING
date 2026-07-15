@@ -4482,3 +4482,34 @@ No trades today per pre-market plan. AVGO exited automatically. Slots 2 and 3 re
 - **Trades today:** 0.
 - **Since inception:** Bull −0.18052% vs SPY TR +1.8224% → Bull TRAILS SPY by −2.003pp.
 - **Race scoreboard:** Bull −0.181% | AGGRO −7.356% (own June 4 inception) | SPY +1.822% (Bull's May 21 inception, TR). Bull leads AGGRO by ~7.18pp.
+
+## 2026-07-15 09:39 ET — MARKET-OPEN ROUTINE (1 trade: BUY ETN)
+- **Live-switch guard:** ALPACA_BASE_URL contains "paper" ✓
+- **Lock:** was `{}` — acquired cleanly, no stale lock; released before this commit.
+- **Control switch:** STATUS ACTIVE, no NOTE/QUERY to acknowledge.
+- **Plan:** Today's research-log.md plan (`plan_date: 2026-07-15`) called for BUY ETN 19sh — no prior EXECUTED line, first run today.
+- **Market:** OPEN ✓ (is_open: true, ~09:36 ET, next_close 16:00 ET)
+- **Breaking-news gate (WebSearch):** ETN — no thesis-breaking news found dated today (no earnings miss, downgrade, halt, SEC action, or guidance cut). July 14 close was up +3.24% on AI-datacenter/power optimism and a cooler CPI print; Evercore ISI and Morgan Stanley raised PTs. Gate CLEAR.
+- **Shock check:** equity USD99,204.36 vs last_equity USD99,335.99 = −USD131.63 (−0.1325%) — no shock ✓ (threshold −4%).
+- **Guardrail math (ETN buy, 19sh):** 19sh × ~USD415 ≈ USD7,884 cost basis ≈ 7.95% of portfolio — well under the 20% single-position cap. Daily deployment: 7.95% of portfolio, well under the 25% cap (only trade today). Cash after fill: ~68.9%, far above the 5% minimum. Sector cap: Industrials (CAT + ETN) → ~11.7%, far under the 60% cap. Earnings window: ETN confirmed July 31 — 12 trading days out, outside the 2-day window.
+- **Data-quality note — stale quote:** `./scripts/alpaca.sh quote ETN` returned a frozen NBBO (bid USD394.74 / ask USD439.95, ~10.3% spread, condition code "R") that did not change across 3 polls over ~15 seconds while trades were actively printing USD417–419 on the tape (confirmed via `snapshot` latestTrade and `bars ETN 1Min`). Treated the quote as unreliable rather than following the playbook literally (ask × 1.003 would have computed an absurd USD441+ limit). Used the latest trade price (USD416.75) as the reference instead: limit = 416.75 × 1.003 = **USD418.00**. Flagging this as a process deviation for the record, not a guardrail violation — the resulting limit was reasonable and the fill confirms it (avg fill USD414.99, inside the limit).
+- **Execution:** `buy-limit ETN 19 418.00` submitted 13:38:56 UTC. Filled in full: 19sh @ avg USD414.99 (verified via `position ETN`). Cost basis USD7,884.81.
+- **Stop placed:** `trailing-stop ETN sell 19 10` — order d0bb8b7c, HWM USD414.24, stop USD372.816. Verified live via `orders open`.
+- **trades.jsonl:** appended (buy, ETN, 19sh, 414.99, ts 2026-07-15T13:38:56Z).
+- **research-log.md:** EXECUTED line appended under today's plan block to prevent double-buy on a re-run.
+- **Stop audit: 5/5 PASS ✓**
+  - CAT (6103c146): 4sh — HWM USD964.62, stop USD868.158 ✓
+  - LLY (d4147484): 7sh — HWM USD1,249.45, stop USD1,124.505 ✓
+  - LLY (25989fb5): 3sh — HWM USD1,249.45, stop USD1,124.505 ✓
+  - V (66033918): 22sh — HWM USD364.21, stop USD327.789 ✓
+  - ETN (d0bb8b7c): 19sh — HWM USD414.24, stop USD372.816 ✓ (new)
+  - Matches held quantities exactly (CAT 4, LLY 7+3=10, V 22, ETN 19). No missing stops.
+- **Exit reconciliation:** No exits since pre-market. closed-trades.md current (VST June 30 latest entry) — nothing new required.
+- **Position review (live prices post-fill ~09:39 ET):**
+  - CAT 4sh @ USD933.13 (−1.228% from entry USD944.73). review_by 2026-08-03 not due. HOLD.
+  - LLY 10sh @ USD1,142.38 (+4.467% from entry USD1,093.534). review_by 2026-07-21 not due. HOLD. Conviction A.
+  - V 22sh @ USD353.14 (+9.139% from entry USD323.57). review_by 2026-07-28 not due. HOLD. Conviction B.
+  - ETN 19sh @ USD413.83 (−0.280% from entry USD414.99, new position). review_by 2026-07-30.
+- **Sector exposure (post-fill):** Industrials (CAT+ETN) USD11,595.29 = 11.694% | Healthcare (LLY) USD11,423.80 = 11.522% | Financials (V) USD7,769.08 = 7.835% | Cash USD68,359.98 = 68.937% — no sector above 60% cap ✓.
+- **Account:** Equity USD99,148.15 | Cash USD68,359.98 (68.937%).
+- **Since inception:** Bull −0.852% vs SPY TR +1.831% ($754.77 vs $741.20 anchor) → Bull TRAILS SPY by −2.683pp.

@@ -3,46 +3,48 @@
 _Updated by every routine from live Alpaca data. The next agent trusts this as
 the last known state, but always re-fetches live data before trading._
 
-**Last updated:** 2026-07-15 ~08:07 ET (pre-market routine; ETN promoted via pullback-watch protocol, plan written for market-open; no trades executed yet)
+**Last updated:** 2026-07-15 ~09:39 ET (market-open routine; BUY ETN 19sh executed, 10% trailing stop placed and verified)
 **Inception:** 2026-05-21 — starting equity $100,000.00 | SPY anchor price $739.44
 **SPY total-return anchor (post-June 18 ex-div $1.76):** **$741.20**
 **Cumulative SPY dividends since inception (quarterly tracker):** $1.76/sh (June 18 ex-div); next SPY ex-div est. ~September 2026.
 
 ---
 
-## Account (pre-market routine, 2026-07-15 ~08:07 ET)
+## Account (market-open routine, 2026-07-15 ~09:39 ET)
 
 | Metric | Value |
 |--------|-------|
-| Equity | $99,339.01 |
-| Cash | $76,244.79 (76.745%) |
-| Long market value | $23,094.22 |
+| Equity | $99,148.15 |
+| Cash | $68,359.98 (68.937%) |
+| Long market value | $30,788.17 |
 | Last equity (July 14 close) | $99,335.99 |
 | HWM | $101,384.21 (confirmed via `history 1A 1D`) |
-| Drawdown from HWM | **−2.017%** — informational only, not a blocking guardrail |
+| Drawdown from HWM | **−2.204%** — informational only, not a blocking guardrail |
 
-## Open positions (pre-market routine, 2026-07-15 ~08:07 ET)
+## Open positions (market-open routine, 2026-07-15 ~09:39 ET)
 
 | Symbol | Qty | Avg entry | Current price | Mkt value | Unrealized P/L | % of portfolio | Trailing Stop |
 |--------|-----|-----------|--------------|-----------|----------------|----------------|---------------|
-| CAT | 4 | $944.73 | $936.80 | $3,747.20 | −$31.72 (−0.839%) | 3.772% | 6103c146 (4sh), HWM $964.62, stop $868.158 ✓ |
-| LLY | 10 | $1,093.534 | $1,152.58 | $11,525.80 | +$590.46 (+5.400%) | 11.605% | d4147484 (7sh) + 25989fb5 (3sh), HWM $1,249.45, stop $1,124.505 ✓ |
-| V | 22 | $323.57 | $355.51 | $7,821.22 | +$702.68 (+9.871%) | 7.874% | 66033918 (22sh), HWM $364.21, stop $327.789 ✓ |
+| CAT | 4 | $944.73 | $933.13 | $3,732.52 | −$46.40 (−1.228%) | 3.765% | 6103c146 (4sh), HWM $964.62, stop $868.158 ✓ |
+| ETN | 19 | $414.99 | $413.83 | $7,862.77 | −$22.04 (−0.280%) | 7.931% | d0bb8b7c (19sh), HWM $414.24, stop $372.816 ✓ **NEW** |
+| LLY | 10 | $1,093.534 | $1,142.38 | $11,423.80 | +$488.46 (+4.467%) | 11.522% | d4147484 (7sh) + 25989fb5 (3sh), HWM $1,249.45, stop $1,124.505 ✓ |
+| V | 22 | $323.57 | $353.14 | $7,769.08 | +$650.54 (+9.139%) | 7.835% | 66033918 (22sh), HWM $364.21, stop $327.789 ✓ |
 
-**Sector exposure (pre-market July 15):**
-- Industrials (CAT): $3,747.20 = 3.772% | Healthcare (LLY): $11,525.80 = 11.605% | Financials (V): $7,821.22 = 7.874% | Cash: $76,244.79 = 76.745%
-- No sector above 60% cap ✓ (Industrials would rise to ~11.7% if ETN fills today — still far below cap)
+**Sector exposure (market-open July 15, post-fill):**
+- Industrials (CAT + ETN): $11,595.29 = 11.694% | Healthcare (LLY): $11,423.80 = 11.522% | Financials (V): $7,769.08 = 7.835% | Cash: $68,359.98 = 68.937%
+- No sector above 60% cap ✓
 
-**Trailing stop status (pre-market July 15 — confirmed via Alpaca live orders ~08:07 ET):**
+**Trailing stop status (market-open July 15 — confirmed via Alpaca live orders ~09:39 ET):**
 - CAT (6103c146): 4sh — HWM $964.62, stop $868.158 ✓
+- ETN (d0bb8b7c): 19sh — HWM $414.24, stop $372.816 ✓ **NEW**
 - LLY (d4147484): 7sh — HWM $1,249.45, stop $1,124.505 ✓
 - LLY (25989fb5): 3sh — HWM $1,249.45, stop $1,124.505 ✓
 - V (66033918): 22sh — HWM $364.21, stop $327.789 ✓
-**Stop audit: 4/4 PASS ✓** (matches held quantities exactly — none missing)
+**Stop audit: 5/5 PASS ✓** (matches held quantities exactly — none missing)
 
-**Plan for today:** BUY ETN ~19sh (pullback-watch protocol promotion — see research-log.md for full diligence re-verification). See "Planned trades for today" JSON block in today's research-log.md entry.
+**Trade executed today:** BUY ETN 19sh @ avg $414.99 (limit $418.00, computed from last-trade price $416.75 after the `quote` endpoint returned a stale/frozen NBBO — see trade-log.md for the data-quality note). 10% trailing stop placed and verified immediately after fill.
 
-**Since inception:** Bull −0.661% ($99,339.01) vs SPY TR (pre-market $753.11 + $1.76 div = $754.87 vs $739.44 anchor = +2.087%) → **Bull TRAILS SPY by ~−2.748pp**.
+**Since inception:** Bull −0.852% ($99,148.15) vs SPY TR ($754.77 vs $741.20 anchor = +1.831%) → **Bull TRAILS SPY by ~−2.683pp**.
 
 ---
 

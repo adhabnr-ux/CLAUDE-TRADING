@@ -74,6 +74,8 @@ COST has sat on the watchlist since 2026-05-29 without ever receiving the full d
 }
 ```
 
+EXECUTED: 2026-07-15T13:38:56Z — BUY ETN 19sh @ USD 414.99 avg fill (limit order 418.00, computed from last-trade price 416.75 rather than the quote endpoint's ask — see market-open journal entry for the data-quality note on a stale/frozen NBBO quote). 10% trailing stop placed immediately (order d0bb8b7c, HWM USD 414.24, stop USD 372.816). Verified via `position ETN` and `orders open`.
+
 ---
 
 ## 2026-07-14 — Pre-market research (~08:10 ET, Tuesday)
