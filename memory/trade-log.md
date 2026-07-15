@@ -5,6 +5,24 @@ The weekly new-position count is derived from this log._
 
 _Entries before 2026-06-01 archived to `memory/archive/2026-05.md` (2026-07-01 monthly housekeeping)._
 
+## 2026-07-15 15:51 ET — CLOSE ROUTINE (no trades, EOD)
+
+- **Action:** None — 0 trades, 0 exits, 0 cuts, 0 tightenings. All 4 positions within all guardrails.
+- **Live-switch guard / lock / control:** `ALPACA_BASE_URL` contains "paper" ✓; `_lock` was `{}`, acquired and released. Control STATUS ACTIVE, no NOTE/QUERY.
+- **Market:** OPEN at run time (`is_open: true`, next_close 16:00 ET, full trading day, no half-day).
+- **Account:** Equity USD 99,267.59 | Cash USD 68,359.98 (68.859%) | Last equity (July 14 close) USD 99,335.99.
+- **Today's P/L:** −USD 68.40 (−0.0689%).
+- **HWM / drawdown:** HWM USD 101,384.21 (via `history 1A 1D`) — drawdown −2.088%, well within the −10% circuit breaker (7.912pp headroom), not flagged.
+- **Position review (live prices ~15:51 ET):** CAT 4sh @ USD 915.89 (−3.053% from entry, −1.870% today) — HOLD, no cut trigger, review_by 2026-08-03 not due. ETN 19sh @ USD 414.065 (−0.223% from entry, −0.350% today) — HOLD, bought this morning, review_by 2026-07-30 not due. LLY 10sh @ USD 1,153.615 (+5.494% from entry, +0.093% today) — HOLD, review_by 2026-07-21 not due. V 22sh @ USD 356.39 (+10.143% from entry, +0.104% today) — HOLD, review_by 2026-07-28 not due.
+- **No cuts** (−7% rule): none near threshold ✓. **No discretionary tightenings** (+15%): none reached ✓.
+- **Stop audit: 5/5 PASS ✓** — CAT (6103c146) 4sh HWM 964.62/stop 868.158, ETN (d0bb8b7c) 19sh HWM 415.8/stop 374.22, LLY (d4147484) 7sh + (25989fb5) 3sh HWM 1249.45/stop 1124.505, V (66033918) 22sh HWM 364.21/stop 327.789. All confirmed `status: new` (live, unfilled) via `orders open`, matches held quantities exactly — none missing.
+- **Exit reconciliation:** No exits today. closed-trades.md current (VST June 30 latest entry) — nothing new required.
+- **Sector exposure:** Industrials (CAT+ETN) 11.617% | Healthcare (LLY) 11.622% | Financials (V) 7.898% | Cash 68.859% — no sector above 60% cap ✓.
+- **Market close context:** S&P 500 +0.4%, Dow +0.3%, Nasdaq +0.6% — Big Tech rally on ASML's bullish AI-equipment outlook plus a softer-than-expected June PPI print (echoing Tuesday's cool CPI). SpaceX fell below its IPO price for the first time (−34% from post-listing highs) — no read-through to held names. Broadly supportive, risk-on tape; nothing thesis-threatening for CAT/ETN/LLY/V.
+- **Trades today:** 0.
+- **Since inception:** Bull −0.732% (USD 99,267.59) vs SPY TR (SPY USD 754.04 + USD 1.76 div vs USD 741.20 anchor = +1.733%) → **Bull TRAILS SPY by ~−2.465pp**.
+- **Race scoreboard:** Bull −0.554% (own June 4 anchor USD 99,820.82) | AGGRO −6.472% (own June 4 inception, equity USD 93,528.33 — latest known snapshot, AGGRO's July 14 EOD close) | SPY −0.251% (AGGRO's June 4 anchor USD 754.18 + div). Bull leads AGGRO by ~+5.92pp.
+
 ## 2026-07-14 15:52 ET — CLOSE ROUTINE (no trades, EOD)
 
 - **Action:** None — 0 trades, 0 exits, 0 cuts, 0 tightenings. All 3 positions within all guardrails.
