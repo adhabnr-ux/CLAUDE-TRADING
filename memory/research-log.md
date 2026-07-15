@@ -7,6 +7,75 @@ _Entries before 2026-06-01 archived to `memory/archive/2026-05.md` (2026-07-01 m
 
 ---
 
+## 2026-07-15 — Pre-market research (~08:07 ET, Wednesday)
+
+**Live-switch guard / lock / control:** `ALPACA_BASE_URL` contains "paper" ✓. `_lock` was `{}`, acquired and will be released before commit. Control STATUS ACTIVE, no NOTE/QUERY to acknowledge.
+
+**Account snapshot (~08:07 ET):** Equity USD 99,339.01 | Cash USD 76,244.79 (76.745%) | Last equity (July 14 close) USD 99,335.99. Shock check: +0.003% — no shock ✓ (threshold −4%). Drawdown vs HWM USD 101,384.21: −2.017% — informational only, not near the −10% circuit breaker.
+
+**Positions (live prices ~08:07 ET), one line each — "what changed since yesterday":**
+- CAT 4sh @ USD 936.80 (−0.839% from entry USD 944.73). FY2026 revenue outlook raised to low-double-digit growth; record USD 63B backlog; Power and Energy segment +41% on hyperscaler AI-data-center capex — thesis-confirming, not new since the July 13 diligence pass. Valuation debate (P/E ~38x vs. 5-yr avg 19x; Michael Burry short) is a known factor, not new today. Ex-div July 20 (USD 1.63/sh). review_by 2026-08-03 not due. HOLD.
+- LLY 10sh @ USD 1,152.58 (+5.400% from entry USD 1,093.534). July 14 close was −3.10% on broad sector rotation out of high-multiple metabolic-health/growth names into cyclicals (per market commentary) — not company-specific, no thesis break. Bernstein raised PT to USD 1,385, UBS to USD 1,425, Guggenheim to USD 1,273 (all in the last few days, all positive). review_by 2026-07-21 not due. HOLD. Conviction A.
+- V 22sh @ USD 355.51 (+9.871% from entry USD 323.57). ACE Money Transfer partnership (already known, July 13) plus a new AI Financial Assistant product announcement; consensus Buy, median PT ~USD 401-410. No thesis-breaking news. review_by 2026-07-28 not due. HOLD. Conviction B.
+
+**Stop audit:** 4/4 PASS — CAT (6103c146) 4sh, LLY (d4147484 7sh + 25989fb5 3sh) 10sh, V (66033918) 22sh — all live via `orders open`, matches held quantities exactly. No missing stops.
+
+**Thesis contract review:** CAT review_by 2026-08-03, LLY review_by 2026-07-21, V review_by 2026-07-28 — none due today. No invalidation conditions triggered for any held position.
+
+**Earnings window:** CAT next earnings Aug 4 (confirmed), LLY Aug 5 (confirmed), V July 28 (confirmed) — none within 2 trading days. No restriction on holding. ETN (today's buy candidate) confirmed July 31 — 12 trading days out, no restriction on opening the position.
+
+**Macro (WebSearch):** S&P 500 futures +0.18% pre-market on cooling inflation — Polymarket-implied odds of a July Fed hike fell to 17% from 42% a day earlier; today's PPI print and a fresh wave of earnings are the session's key catalysts. PayPal surged on ~USD 53B takeover-offer reports; chip stocks broadly higher, lifting Nasdaq futures. 10yr yield 4.57% (down ~6bp) — below the 4.75% halt-trigger. WTI ~USD 79.64-80.58/bbl — below the USD 100 halt-trigger despite ongoing Strait-of-Hormuz tension. Neither macro circuit-breaker close to tripping. Overall: constructive, risk-on tape.
+
+**Watchlist re-checks (pullback-watch names, via Alpaca bars with explicit start/end + feed=iex):**
+- **ETN: CLEARED — PROMOTED.** 50-day MA USD 405.09, July 14 close USD 415.65 = **+2.606% above** (was −0.66% below July 13) — a clean reversal on the broad risk-on move, clearing both the 0.5% minimum-separation floor and the 10% extension ceiling for the first time since diligence began June 26. ATR (20-day) 2.967% — under the 3% halved-sizing threshold, so no size reduction needed. Per the pullback-watch protocol, re-verified signals #1/#2/#3/#5 briefly rather than from scratch: #1 earnings momentum — Q1 2026 record sales USD 7.5B (+17% YoY), record adj EPS USD 2.81, both already-known and unchanged; #2 catalyst — AI-data-center power-infrastructure buildout, structurally intact, no new negative; #3 valuation — 25-analyst consensus Buy, mean PT USD 455.79 (+13.5% upside from July 14 close), consistent with the original diligence pass; #5 macro tailwind — industrials/AI-capex sector strength intact (XLI still leading per recent reads), no contrary catalyst. Next earnings confirmed **July 31, 2026** — 12 trading days out, outside the 2-day window. **All conditions met — promoted to today's buy plan.**
+- **CEG:** 50-day MA USD 271.27, July 14 close USD 256.41 = **−5.476% below** (essentially unchanged from −5.44% July 14) — still well short of reclaiming the MA. ATR 3.366% would clear.
+- **VRT:** 50-day MA USD 324.23, July 14 close USD 303.67 = **−6.342% below** (worse than −5.84% July 14) — lost further ground. ATR 5.261% still fails the 5% gate.
+- **NVT:** 50-day MA USD 166.01, July 14 close USD 161.80 = **−2.537% below** (improved from −4.61% July 14) — closing in but not reclaimed. ATR 3.574% clears.
+
+**Daily candidate diligence (step 6b) — COST (Costco) full pre-trade pass → NOT PROMOTED:**
+COST has sat on the watchlist since 2026-05-29 without ever receiving the full diligence checklist described in step 6b (unlike CAT/MOD/ABBV/ETN/CEG/VRT/NVT, which have all been through it) — ran it today to close that gap:
+- **Earnings/guidance:** Q3 FY2026 (reported May 28) beat: net sales USD 69.15B (+11.6% YoY), adjusted comparable sales +9.8%, membership fee income USD 1.37B (+10.7%), digitally-enabled sales +21%, paid executive memberships 41.2M (+9.6%). Genuinely strong, broad-based growth — signal #1 passes cleanly.
+- **Catalyst:** No fresh, dated catalyst found beyond steady membership/comp-sales momentum — the Q3 print is already 7 weeks old and priced in. Signal #2 is weak/does not clearly pass.
+- **Valuation — FAILS:** Trades at roughly 47-49x trailing earnings vs. its own 10-year average of ~39x and peer multiples in the low 20s. No discount vs. history or peers; at this multiple even Costco's high-single/low-double-digit earnings growth does not produce a PEG under the 2.5 gate. Signal #3 fails.
+- **Technical confirmation — FAILS:** 50-day MA USD 982.13, July 14 close USD 921.65 = **−6.158% below**. Signal #4 fails outright (not just under-extended, actually below the MA).
+- **ATR:** 1.774% (20-day) — very low volatility, clears the gate easily; not the constraint here.
+- **Next earnings:** confirmed **September 24, 2026** (fiscal Q4, after close) — corrects the prior watchlist note of "mid-August"; well outside any near-term window either way.
+- **Verdict:** Only 1 of 5 entry signals (earnings momentum) clears cleanly; valuation and technical both fail outright, catalyst is weak. **Not promoted.** Needs the multiple to compress toward its historical range (or a peer-relative discount to emerge) and price to reclaim the 50-day MA before reconsideration. This closes out COST's diligence gap — it is no longer an undiligenced legacy entry.
+
+**Cash-drag check:** Cash 76.745% — elevated for 11 consecutive weeks against the 25-40% target band for a 3-4 position book. Today's ETN promotion is a genuine, diligenced qualifying entry (not a forced trade) — see Planned trades below. This is the second new position in three sessions (CAT July 13, ETN today) after a month-plus entry drought; cash will step down to ~69% after the ETN fill, still elevated but moving in the right direction as the diligence pipeline finally converts research into positions.
+
+**Since inception:** Bull −0.661% (USD 99,339.01) vs SPY TR (pre-market USD 753.11 + USD 1.76 div = USD 754.87 vs USD 739.44 anchor = +2.087%) → **Bull TRAILS SPY by ~−2.748pp** (widened slightly from July 14 close's −2.590pp on LLY's sector-rotation pullback).
+
+### Planned trades for today
+
+**1 new position: BUY ETN 19 shares** (whole-share limit order, ~0.3% below opening quote per lessons.md, so a trailing stop can be set)
+
+*Thesis:* Eaton's electrical equipment is a direct critical-path input to hyperscale AI data centers. Q1 2026 delivered record sales (USD 7.5B, +17% YoY) and record adjusted EPS (USD 2.81); 25-analyst consensus Buy with a mean price target of USD 455.79 (+13.5% upside). Technical confirmation cleared cleanly for the first time since diligence began June 26 — July 14 close is +2.606% above its 50-day MA, well clear of the 0.5% separation floor, with ATR (2.967%) under the halved-sizing threshold. Earnings confirmed July 31, outside the 2-day window.
+*Invalidation:* Close back below the 50-day MA (~USD 405) on volume, the AI-data-center power-infrastructure demand narrative materially reverses, or Q2 earnings (July 31) show a guidance cut.
+*review_by:* 2026-07-30 (day before July 31 earnings — forces an explicit hold/trim/exit decision ahead of the print).
+*Sizing:* 19 shares × ~USD 415.65 (July 14 reference close) ≈ USD 7,897 ≈ 7.949% of portfolio — standard starter conviction (no ATR-based halving needed since 2.967% is under the 3% threshold). Well within the 20% single-position cap and the 25% daily-deployment cap; cash after fill ≈ 68.8%, far above the 5% minimum. Sector exposure after fill: Industrials (CAT + ETN) ≈ 11.7%, nowhere near the 60% cap.
+*Stop:* 10% trailing stop placed immediately after fill, per guardrails.
+
+**No action on:**
+- CAT: HOLD — thesis confirming (raised FY26 outlook, record backlog), review_by 2026-08-03 not due.
+- LLY: HOLD — Conviction A, July 14 pullback is sector rotation not thesis-related, review_by 2026-07-21 not due.
+- V: HOLD — Conviction B, thesis intact, review_by 2026-07-28 not due.
+- CEG/VRT/NVT: not promoted — see watchlist re-checks above.
+- COST: not promoted — see step 6b diligence above.
+
+```json
+{
+  "plan_date": "2026-07-15",
+  "trades": [
+    {"action": "buy", "symbol": "ETN", "qty": 19, "thesis": "Eaton electrical equipment is critical-path input to hyperscale AI data centers; Q1 2026 record sales USD 7.5B (+17% YoY) and record adj EPS USD 2.81; 25-analyst Buy consensus, mean PT USD 455.79; technical confirmation cleared cleanly for the first time since diligence began (+2.606% above 50-day MA, ATR 2.967% under the halving threshold)",
+     "invalidation": "Close back below the ~USD 405 50-day MA on volume, the AI-data-center power-infrastructure narrative materially reverses, or July 31 earnings show a guidance cut",
+     "review_by": "2026-07-30"}
+  ]
+}
+```
+
+---
+
 ## 2026-07-14 — Pre-market research (~08:10 ET, Tuesday)
 
 **Live-switch guard / lock / control:** `ALPACA_BASE_URL` contains "paper" ✓. `_lock` was `{}`, acquired and will be released before commit. Control STATUS ACTIVE, no NOTE/QUERY to acknowledge.
