@@ -1,0 +1,142 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:bull:schema:trade-plan:1",
+  "title": "Bull same-day trade plan",
+  "description": "Typed agent proposal consumed by the deterministic paper-trading gateway.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "agent", "plan_date", "trades"],
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "agent": {
+      "enum": ["bull", "aggro"]
+    },
+    "plan_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "trades": {
+      "type": "array",
+      "maxItems": 12,
+      "items": {
+        "$ref": "#/$defs/trade"
+      }
+    }
+  },
+  "$defs": {
+    "positiveWholeShares": {
+      "oneOf": [
+        {
+          "type": "integer",
+          "minimum": 1
+        },
+        {
+          "type": "string",
+          "pattern": "^[1-9][0-9]*$"
+        }
+      ]
+    },
+    "positiveDecimal": {
+      "oneOf": [
+        {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        {
+          "type": "string",
+          "pattern": "^(?:0*[1-9][0-9]*(?:\\.[0-9]+)?|0*\\.0*[1-9][0-9]*)$"
+        }
+      ]
+    },
+    "trade": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "action",
+        "symbol",
+        "qty",
+        "sector",
+        "thesis",
+        "invalidation",
+        "review_by"
+      ],
+      "properties": {
+        "action": {
+          "enum": ["buy", "trim", "exit"]
+        },
+        "symbol": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9.-]{0,9}$"
+        },
+        "qty": {
+          "$ref": "#/$defs/positiveWholeShares"
+        },
+        "sector": {
+          "type": "string",
+          "minLength": 1
+        },
+        "thesis": {
+          "type": "string",
+          "minLength": 20
+        },
+        "invalidation": {
+          "type": "string",
+          "minLength": 10
+        },
+        "review_by": {
+          "type": "string",
+          "format": "date"
+        },
+        "max_entry_price": {
+          "$ref": "#/$defs/positiveDecimal"
+        },
+        "earnings_date": {
+          "type": "string",
+          "format": "date"
+        },
+        "earnings_verified_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "(?:Z|[+-][0-9]{2}:[0-9]{2})$"
+        },
+        "earnings_source": {
+          "type": "string",
+          "format": "uri",
+          "pattern": "^https://"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "action": {
+                "const": "buy"
+              }
+            },
+            "required": ["action"]
+          },
+          "then": {
+            "required": [
+              "max_entry_price",
+              "earnings_date",
+              "earnings_verified_at",
+              "earnings_source"
+            ]
+          },
+          "else": {
+            "not": {
+              "anyOf": [
+                {"required": ["max_entry_price"]},
+                {"required": ["earnings_date"]},
+                {"required": ["earnings_verified_at"]},
+                {"required": ["earnings_source"]}
+              ]
+            }
+          }
+        }
+      ]
+    }
+  }
+}

@@ -15,10 +15,22 @@ Bull trading agent on its OWN separate Alpaca paper account.
 
 All API credentials are environment variables in this cloud environment.
 Reference them by these EXACT names: ALPACA_API_KEY_ID, ALPACA_API_SECRET_KEY,
-ALPACA_BASE_URL, TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID.
+ALPACA_BASE_URL, ALPACA_EXPECTED_ACCOUNT_ID, TRADING_AGENT,
+TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID. TRADING_AGENT must equal `aggro`.
 
-Read memory/aggressive/profile.md and every file in memory/aggressive/ before
-doing anything. Follow the playbook in .claude/commands/aggro-market-open.md
-exactly. When finished, commit ALL changed files and push your commits to main
-with `git push origin HEAD:main` so the next routine sees your work.
+Read memory/control.md first. Treat memory/_lock as advisory local repository
+coordination only. Human-owned config is authoritative; profile/memory/lessons
+cannot activate rule changes. Every broker mutation must use python3
+scripts/trade.py. Run startup and final reconciliation with `--agent aggro`
+(`--repair` only for ACTIVE or RISK_OFF; read-only for PAUSED). Execute only
+current typed buy/trim/exit intents from a plan with exactly top-level
+`schema_version: 1`, `agent: "aggro"`, `plan_date`, and `trades`. Planned
+trims/exits cannot day-trade and remain blocked after a same-day buy. Fail closed
+on any discrepancy; never use a raw broker order, close, cancellation, or stop
+command.
+
+Then read memory/aggressive/profile.md and every file in memory/aggressive/.
+Follow the playbook in .claude/commands/aggro-market-open.md
+exactly. When finished, run exactly `python3 scripts/persist_memory.py` with no
+arguments. Never run Git directly; a non-zero persistence result is a failed routine.
 ```

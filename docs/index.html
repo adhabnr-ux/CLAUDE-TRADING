@@ -24,7 +24,7 @@
 <div id="wrap">
   <h1>🐂 Bull vs 🔥 AGGRO vs SPY</h1>
   <p class="sub">Daily closing equity, normalized to 100 at each series'
-  first data point. Data: <code>memory/performance.csv</code> on
+  first data point. Data: each agent's profile-scoped performance ledger on
   <code>main</code>, appended by the close routines.</p>
   <div id="msg">Loading…</div>
   <canvas id="chart" height="110" style="display:none"></canvas>
@@ -35,28 +35,33 @@
   </table>
 </div>
 <script>
-const CSV_URL =
-  "https://raw.githubusercontent.com/adhabnr-ux/CLAUDE-TRADING/main/memory/performance.csv";
+const CSV_URLS = [
+  "https://raw.githubusercontent.com/adhabnr-ux/CLAUDE-TRADING/main/memory/performance.csv",
+  "https://raw.githubusercontent.com/adhabnr-ux/CLAUDE-TRADING/main/memory/aggressive/performance.csv",
+];
 
 function pct(a, b) { return ((b / a - 1) * 100).toFixed(2) + "%"; }
 
 async function main() {
   const msg = document.getElementById("msg");
-  let text;
+  let texts;
   try {
-    const res = await fetch(CSV_URL, { cache: "no-store" });
-    if (!res.ok) throw new Error(res.status);
-    text = await res.text();
+    const responses = await Promise.all(
+      CSV_URLS.map(url => fetch(url, { cache: "no-store" }))
+    );
+    if (responses.some(res => !res.ok)) {
+      throw new Error(responses.map(res => res.status).join(","));
+    }
+    texts = await Promise.all(responses.map(res => res.text()));
   } catch (e) {
     msg.textContent =
-      "No data yet — memory/performance.csv appears after the first close " +
-      "routine runs with the dashboard update. (" + e + ")";
+      "Profile performance data is unavailable. (" + e + ")";
     return;
   }
 
   // rows: date,agent,equity,cash,spy_close
-  const rows = text.trim().split("\n").slice(1)
-    .map(l => l.split(","))
+  const rows = texts.flatMap(text => text.trim().split("\n").slice(1))
+    .map(line => line.split(","))
     .filter(r => r.length >= 5 && !isNaN(parseFloat(r[2])));
   if (!rows.length) { msg.textContent = "CSV exists but has no data rows yet."; return; }
 

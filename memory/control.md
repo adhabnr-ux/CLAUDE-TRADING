@@ -4,7 +4,12 @@ The human edits this file (directly on GitHub — web or mobile app) to control
 both agents instantly, without touching the cloud environments. Agents obey it
 but **never** edit it.
 
-STATUS: ACTIVE
+STATUS: PAUSED
+
+NOTE: Institutional risk-foundation rollout in progress. Keep scheduled broker
+mutations disabled until the draft PR is reviewed, both account fingerprints
+are configured, the trusted earnings calendar is populated, and read-only
+reconciliation passes for each paper account.
 
 ## Valid STATUS values
 
@@ -22,8 +27,9 @@ their next run and acknowledge it in their journal.
 ## Asking Bull a question
 
 Add a line starting with `QUERY:` and the next routine to run will read it,
-include a paragraph answer in its Telegram notify, and clear the line by
-rewriting the file. Bull does NOT trade on a query — answers only.
+include a paragraph answer in its Telegram notify, and leave this file unchanged.
+The human clears the line after reading the answer. Bull does NOT trade on a
+query — answers only.
 
 ## Cross-Bull learning trigger
 
@@ -33,5 +39,6 @@ next weekly review must journal one specific lesson learned from AGGRO and
 propose one concrete rule change (sizing, deployment pace, watchlist, or
 exit). Set the line below to `TRIGGERED: <date>` when this condition first
 fires; clear it once the lesson is journaled. Both Bulls read this line.
+Only the human sets or clears this field; agents report completion elsewhere.
 
 CROSS_BULL_LEARNING:

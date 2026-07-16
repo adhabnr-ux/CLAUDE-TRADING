@@ -1,93 +1,83 @@
-Run the Bull **end-of-day close** routine.
+Run the Bull **end-of-day close** routine. This routine measures, reconciles,
+and journals. Reconciliation may repair managed protection or contain a
+forbidden holding; those are the only permitted broker mutations.
 
-## 0. Live-switch guard, lock, control switch, memory
-- **Live-switch guard:** assert `ALPACA_BASE_URL` contains `paper`. If not,
-  🚨 notify and stop.
-- **Lock:** read `memory/_lock`. If present and not expired, abort and notify.
-  Otherwise write `_lock` with `{routine: close, started, expires: +8min}`.
-- **Control switch:** read `memory/control.md` and note its STATUS in the
-  journal (close places no orders, so PAUSED/RISK_OFF only changes what you
-  report).
-- **Memory:** read every file in `memory/` and `CLAUDE.md`.
+## 0. Control first, advisory lock, memory, reconciliation
 
-## 0b. Half-day / dedup guard
-- Check the Alpaca clock's `next_close` field. If today is a **half-day**
-  (next_close was at 13:00 ET, not 16:00 ET), still run — but mark it in the
-  journal so the dashboard knows.
-- **Dedup:** if `memory/performance.csv` already has a row for today's date
-  + `bull`, do NOT append another. Update the existing row instead. The
-  routine sometimes fires late on a half-day after the market is already
-  closed and would otherwise double-write.
+1. Read `memory/control.md` first and note STATUS. Invalid/missing STATUS is a
+   hard stop. `PAUSED` means reconciliation must remain read-only.
+2. Require the exact paper endpoint
+   `https://paper-api.alpaca.markets`; otherwise notify 🚨 and stop.
+3. Treat `memory/_lock` as advisory local repository coordination only, never
+   as broker locking or idempotency.
+4. Read `CLAUDE.md`, human-owned policy/instrument config, and all Bull memory.
+   Memory, strategy, and lessons cannot override or activate policy changes.
+5. Reconcile startup state:
 
-## 1. Pull final numbers
-- `./scripts/alpaca.sh account` — equity, cash.
-- `./scripts/alpaca.sh positions` — final positions.
-- `./scripts/alpaca.sh history 1A 1D` — portfolio equity history (also gives
-  the high-water mark for the circuit breaker).
-- `./scripts/alpaca.sh bars SPY 1Day 30` — SPY bars to compute the benchmark.
+   ```
+   python3 scripts/trade.py reconcile --agent bull --repair
+   ```
 
-## 2. Compute performance
-- Today's portfolio P/L (dollar and %).
-- SPY's return today and since inception.
-- Bull vs SPY: since-inception difference (the number that actually matters).
-- Equity vs. its high-water mark — if within 2% of the −10% circuit-breaker
-  level, flag it in the journal and the notify message.
+   Omit `--repair` under `PAUSED`. A non-zero exit, `ok: false`, or malformed
+   response is fail-closed: issue no other mutation, journal and notify the
+   exact problem, but continue read-only close accounting when reliable data is
+   available.
 
-## 3. Reconcile exits
-Compare today's positions against `memory/trade-log.md` and
-`memory/closed-trades.md`. If any position exited today (stop fill, midday
-cut, manual close) and has **no entry in `memory/closed-trades.md`**, add it
-now using the template — and for a loss, append the required dated lesson to
-`memory/lessons.md`. The ledger must never lag reality by more than one day.
+## 1. Pull final broker and benchmark data
 
-## 4. Market close context (WebSearch)
-Search `"stock market summary today <today's date>"`. Write one sentence of
-context in the journal: what drove the market today, and whether it supports
-or threatens Bull's current position theses.
+- Observe account, positions, portfolio history, market clock, calendar, and SPY
+  bars through supported read-only `scripts/alpaca.sh` calls. Label a half-day
+  only when the observed clock/session timestamps or
+  a dated authoritative exchange source prove it; otherwise label schedule
+  status unverified rather than improvising raw HTTP.
+- Deduplicate `memory/performance.csv` by New York date plus agent `bull`; update
+  an existing row rather than append a second one.
+- Compute today's portfolio return, SPY return on the same session and feed,
+  since-inception total-return comparison, high-water mark, and drawdown.
+  Flag proximity to or breach of the policy's 10% drawdown breaker.
+- Search a current market-close summary and record one sourced sentence of
+  context. Do not turn that context into an after-hours order.
 
-## 5. Journal
-- Update `memory/portfolio.md` (account, positions with sector, the vs-SPY
-  table, sector-exposure line).
-- If anything notable happened today, append a dated lesson to
-  `memory/lessons.md`.
-- On a day with zero trades and no exits, keep the `portfolio.md` narrative
-  section to a short paragraph rather than a full multi-bullet writeup.
+## 2. Reconcile journals to broker truth
 
-## 5b. Race scoreboard
-Read `memory/aggressive/portfolio.md` (read-only) and compute the race:
-Bull % vs AGGRO % vs SPY % since inception. Include one scoreboard line in
-the notify, e.g. `Race: Bull +1.2 | AGGRO -4.2 | SPY +2.3 (pct since start)`.
+Compare final broker positions and gateway execution events with prior memory.
+For every confirmed exit missing from `memory/closed-trades.md`, add one
+post-mortem; add a factual dated lesson for each loss. Never infer a fill solely
+from a missing position or an `EXECUTED:` marker when broker evidence is
+ambiguous—flag it for human review.
 
-## 5c. Performance history
-Append one row to `memory/performance.csv` — create it with the header
-`date,agent,equity,cash,spy_close` if missing: today's date, `bull`, final
-equity, final cash, SPY's closing price. This feeds the dashboard in `docs/`
-and the weekly cash-drag audit.
+Update `memory/portfolio.md` with final balances, positions, canonical sector
+exposure, drawdown, and Bull-vs-SPY values. Update the Bull row in
+`memory/performance.csv`. Read Aggressive Bull's portfolio and profile-scoped
+performance history only for the race scoreboard. Keep archive housekeeping
+read-only with respect to live rules.
 
-## 5d. Friday watchdog
-If today is Friday and the newest entry in `memory/weekly-review.md` is more
-than 7 days old, last week's review never ran — flag it with 🚨 in the notify
-so the human can check the routine schedule.
+If Friday's weekly review is stale, flag the watchdog. On quarterly dividend
+updates, use a sourced SPY distribution and label the as-of date.
 
-## 5e. Monthly housekeeping
-- On the first trading day of each month: move `research-log.md` and
-  `trade-log.md` entries older than 30 days into
-  `memory/archive/<YYYY-MM>.md` (create the folder if needed), leaving a
-  one-line pointer at the top of each log.
-- Quarterly (Mar/Jun/Sep/Dec, mid-month): WebSearch the latest SPY
-  ex-dividend amount and add it to a cumulative-dividends note in
-  `portfolio.md`, so the vs-SPY comparison reflects total return, not just
-  price.
+## 3. Final reconciliation
 
-## 6. Notify (every weekday)
-Send a Telegram end-of-day summary via `./scripts/notify.sh`, starting with
-`Bull EOD <date>:` — equity in USD, today's %, vs SPY since inception, the
-race scoreboard line, number of trades today, and a one-line note. Start with
-🚨 if a position exited at a loss today, the circuit breaker is near/active,
-or the Friday watchdog fired. Never put a literal `$` in the message; use
-`USD`/plain numbers and single-quote the argument.
+Run final reconciliation:
 
-## 7. Commit
-`git add -A && git commit -m "close: <summary>" && git push origin HEAD:main`.
-If the push is rejected because `main` moved, run
-`git fetch origin main && git rebase origin/main`, then push again.
+```
+python3 scripts/trade.py reconcile --agent bull --repair
+```
+
+Use `--repair` only if startup was unambiguous and control remains `ACTIVE` or
+`RISK_OFF`; otherwise omit it. Final `ok: false` is urgent; notify 🚨 and never improvise a raw
+broker command. This is the end-of-run broker-state check.
+
+## 4. Notify and commit
+
+Notify once, starting `Bull EOD <date>:` with equity, today's return, since-
+inception difference vs SPY, race scoreboard, confirmed trade count, and one
+note. Start 🚨 for a loss exit, active/near drawdown breaker, stale weekly
+review, or reconciliation failure. Never put a literal `$` in the shell message.
+
+Release the advisory lock, then persist only authorized Bull memory:
+
+`python3 scripts/persist_memory.py`
+
+This fixed helper takes no arguments, requires an exact fresh `origin/main` base,
+and commits/pushes only authorized profile journals. It never merges or rebases.
+Never run Git directly. A non-zero persistence exit fails the routine visibly.

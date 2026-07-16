@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "agent": "bull",
+  "plan_date": "2026-07-16",
+  "trades": [
+    {
+      "action": "buy",
+      "symbol": "ETN",
+      "qty": 10,
+      "sector": "Industrials",
+      "thesis": "Data-center power demand supports durable multi-quarter growth.",
+      "invalidation": "Management cuts organic-growth guidance.",
+      "review_by": "2026-08-14",
+      "max_entry_price": "425.00",
+      "earnings_date": "2026-08-05",
+      "earnings_verified_at": "2026-07-16T08:00:00-04:00",
+      "earnings_source": "https://calendar.example.invalid/etn"
+    },
+    {
+      "action": "trim",
+      "symbol": "V",
+      "qty": 5,
+      "sector": "Financials",
+      "thesis": "Reduce concentration while retaining the long-term payment thesis.",
+      "invalidation": "Position remains above its approved concentration band.",
+      "review_by": "2026-07-31"
+    },
+    {
+      "action": "exit",
+      "symbol": "LLY",
+      "qty": 4,
+      "sector": "Healthcare",
+      "thesis": "Exit after the original demand thesis fails its stated evidence test.",
+      "invalidation": "Confirmed thesis failure requires a complete exit.",
+      "review_by": "2026-07-16"
+    }
+  ]
+}

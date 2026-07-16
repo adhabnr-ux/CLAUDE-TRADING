@@ -65,12 +65,10 @@ COST has sat on the watchlist since 2026-05-29 without ever receiving the full d
 
 ```json
 {
+  "schema_version": 1,
+  "agent": "bull",
   "plan_date": "2026-07-15",
-  "trades": [
-    {"action": "buy", "symbol": "ETN", "qty": 19, "thesis": "Eaton electrical equipment is critical-path input to hyperscale AI data centers; Q1 2026 record sales USD 7.5B (+17% YoY) and record adj EPS USD 2.81; 25-analyst Buy consensus, mean PT USD 455.79; technical confirmation cleared cleanly for the first time since diligence began (+2.606% above 50-day MA, ATR 2.967% under the halving threshold)",
-     "invalidation": "Close back below the ~USD 405 50-day MA on volume, the AI-data-center power-infrastructure narrative materially reverses, or July 31 earnings show a guidance cut",
-     "review_by": "2026-07-30"}
-  ]
+  "trades": []
 }
 ```
 
@@ -4570,4 +4568,3 @@ Snowflake Q1. Starting at 9.3% of portfolio — room to scale.
 - LLY: CVS Foundayo coverage effective today. Monitor for any secondary price response.
 
 ---
-

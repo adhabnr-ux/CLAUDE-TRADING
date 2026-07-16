@@ -41,13 +41,10 @@ Not applicable today (Wednesday). Last Monday (July 13) review: all 6 positions 
 
 ```json
 {
+  "schema_version": 1,
+  "agent": "aggro",
   "plan_date": "2026-07-15",
-  "trades": [
-    {"action": "buy", "symbol": "MU", "qty": 8,
-     "thesis": "AI-memory/HBM bellwether; the SK Hynix HBM4 demand scare that drove two prior deferrals has reversed (SK Hynix +27% Monday, MU +4.9% July 14, KeyBanc PT raised to USD 1,750); >USD 22B non-cancelable HBM contracts through 2027-2028 plus Anthropic supply deal intact; diversifies AI-infrastructure exposure into the memory layer distinct from the existing NVDA/AVGO GPU/ASIC book",
-     "invalidation": "MU closes below its 18% trailing stop, OR a major hyperscaler/AI-lab HBM contract is cancelled or materially renegotiated down, OR DRAM/NAND ASPs enter a QoQ price collapse signaling memory oversupply",
-     "review_by": "2026-07-27"}
-  ]
+  "trades": []
 }
 ```
 

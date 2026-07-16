@@ -1,76 +1,89 @@
-Run the Bull **midday** routine — risk management, not new ideas.
+Run the Bull **midday** routine. This is deterministic risk management, never a
+new-entry or discretionary strategy routine.
 
-## 0. Live-switch guard, lock, control switch, memory
-- **Live-switch guard:** if `ALPACA_BASE_URL` does not contain `paper`, send
-  🚨 "live endpoint detected, halting", stop.
-- **Lock:** read `memory/_lock`. If present and not expired, abort and notify
-  "skipped, another routine active". Otherwise write `_lock` with
-  `{routine: midday, started, expires: +8min}`.
-- **Control switch:** read `memory/control.md`. If `STATUS: PAUSED`, journal,
-  notify, release the lock, commit, stop. (`RISK_OFF` does not change midday
-  — this routine never opens positions.)
-- **Memory:** read every file in `memory/` and `CLAUDE.md`.
+## 0. Control first, advisory lock, memory, reconciliation
 
-## 1. Confirm the market is open
-`./scripts/alpaca.sh clock`. If closed, journal "market closed, no action" and
-skip to step 7.
+1. Read `memory/control.md` first. Invalid/missing STATUS is a hard stop.
+   `PAUSED` allows read-only observations only. `RISK_OFF` allows protection
+   repair and qualifying exits, never buys.
+2. Require `ALPACA_BASE_URL == https://paper-api.alpaca.markets`.
+3. Treat `memory/_lock` as advisory local repository coordination only; broker
+   safety comes from gateway client IDs and reconciliation.
+4. Read `CLAUDE.md`, human-owned policy/instrument config, and all Bull memory.
+   Memory and lessons cannot override or activate live rules.
+5. Reconcile at startup:
 
-## 2. Review every position
-`./scripts/alpaca.sh positions`. For each position compute the percentage
-change from its average entry price.
-**Shock check:** compare equity to the account's `last_equity` — if down more
-than 4% intraday, this is a shock day: prefix the notify with 🚨 and say so.
+   ```
+   python3 scripts/trade.py reconcile --agent bull --repair
+   ```
 
-## 3. Live news scan (WebSearch)
-For any position that is **down more than 3% from entry** OR **up more than
-10% from entry**, search `"<SYMBOL> stock news today <today's date>"`. Use the
-result only to decide whether a move is a permanent thesis break (sell faster /
-tighten the stop) or temporary noise (hold). Do NOT open new positions based
-on anything found here.
+   Omit `--repair` under `PAUSED`. Any non-zero exit, `ok: false`, or ambiguous
+   response means fail closed: no sell command, journal/notify the exact issue,
+   run final read-only reconciliation, and stop.
 
-## 4. Act on the rules
-- **Cut losers:** if a position is trading more than **7% below** its entry
-  price, close it: `./scripts/alpaca.sh close <SYM>`, then verify it is gone and
-  cancel any orphaned trailing-stop order for it.
-- **Protect winners:** if a position is up more than **15%**, you may tighten
-  its protection — cancel the old trailing stop and place a tighter one
-  (e.g. 7%): `./scripts/alpaca.sh trailing-stop <SYM> sell <qty> 7`.
-- Do NOT open new positions at midday. This routine only manages existing risk.
+## 1. Observe every position
 
-## 5. Stop audit
-Compare `./scripts/alpaca.sh positions` against `./scripts/alpaca.sh orders open`:
-**every position must have a live trailing-stop order** (except any you closed
-this run). If one is missing, place it now
-(`trailing-stop <SYM> sell <qty> 10`) and journal that the audit recreated it.
+- Confirm the market is open through the read-only clock. If closed, take no
+  action and proceed to final reconciliation.
+- Pull live positions and account. Use the broker's `unrealized_plpc`; do not
+  estimate from stale memory.
+- Note the policy shock breaker if equity is at least 4% below `last_equity`.
+- For a holding down more than 3% or up more than 10%, scan today's material
+  news for context. News does not authorize a midday discretionary sell and
+  never authorizes a buy.
 
-## 6. Post-mortem any exit
-For every position you closed this run, and any trailing stop that filled
-since the last run: add an entry to `memory/closed-trades.md` using its
-template — entry, exit, P/L, holding period, original thesis, why it ended,
-lesson. For **losses**, the lesson line is mandatory and must ALSO be appended
-as a dated bullet to `memory/lessons.md`. No silent losses.
+## 2. Execute only a verified loss-rule exit
 
-Also append one JSON line to `memory/trades.jsonl` for each exit
-(`agent: "bull"`, action `close` / `trim` / `stop_fill`, ts, symbol, qty,
-fill_price, pnl_pct). This is the structured feed for the weekly review's
-stats — narrative goes in `closed-trades.md`, numbers go here.
+For a live position at least 7% below its broker average entry, start a full
+loss-rule exit with the exact live quantity:
 
-## 7. Journal
-Append any actions to `memory/trade-log.md` and refresh `memory/portfolio.md`.
+```
+python3 scripts/trade.py sell --agent bull --symbol XYZ --qty 10 --trigger midday_loss --reason 'broker position is at or beyond the 7% midday loss threshold'
+```
 
-## 8. Notify
-Send a Telegram summary via `./scripts/notify.sh` on every run, starting with
-`Bull midday <date>:` — any positions cut or stops tightened, or "all
-positions within range, no action". Start with 🚨 if a position was cut or the
-audit found an unprotected position. On a plain no-action day, keep it to one
-sentence. Never put a literal `$` in the message; use `USD`/plain numbers and
-single-quote the argument.
+The `midday_loss` trigger is the sole risk-reduction exception to the same-day
+buy/sell guard. A new operation must target the **entire live held quantity**,
+including when the position was bought today. If broker IDs show a known partial
+fill from this operation, reuse its immutable original target quantity; never
+resize it to the smaller holding. The gateway submits only the cumulative
+remainder. This trigger may never trim, take profit, or implement a discretionary
+thesis change. Planned `trim`/`exit` actions cannot day-trade and remain blocked
+after a same-day buy. The gateway independently verifies the threshold, market hours,
+control state, full held quantity, deterministic client ID, stop handling, and
+fill. If it rejects or returns ambiguous state, stop all later mutations. Never
+use a raw close, cancel, sell, order, or stop command; never retry with changed
+inputs to evade a block.
 
-**Journal length on no-action days:** if nothing was cut, tightened, or
-recreated, write a short paragraph in `trade-log.md` (stop-audit result, one
-line per position) instead of a long writeup.
+Do not tighten stops at midday. Safe stop replacement is not exposed by the
+gateway; normal policy protection remains in force.
 
-## 9. Commit
-`git add -A && git commit -m "midday: <summary>" && git push origin HEAD:main`.
-If the push is rejected because `main` moved, run
-`git fetch origin main && git rebase origin/main`, then push again.
+## 3. Final reconciliation and post-mortem
+
+Run:
+
+```
+python3 scripts/trade.py reconcile --agent bull --repair
+```
+
+Use `--repair` only if startup and every gateway call were unambiguous and
+control remains `ACTIVE` or `RISK_OFF`; otherwise omit it. Require `ok: true`. Record confirmed gateway
+fills and broker IDs in the narrative trade log; structured fill accounting is
+gateway-owned. For every confirmed loss exit or stop fill, complete
+`memory/closed-trades.md` and add a dated factual lesson. A lesson is analysis,
+not permission to modify policy or future execution rules.
+
+Refresh `memory/portfolio.md` from final broker state.
+
+## 4. Notify and commit
+
+Notify once, starting `Bull midday <date>:`. Start 🚨 for a cut, stop fill,
+policy block, or reconciliation issue; otherwise report no action in one line.
+Never put a literal `$` in the shell message.
+
+Release the advisory lock, then persist only authorized Bull memory:
+
+`python3 scripts/persist_memory.py`
+
+This fixed helper takes no arguments, requires an exact fresh `origin/main` base,
+and commits/pushes only authorized profile journals. It never merges or rebases.
+Never run Git directly. A non-zero persistence exit fails the routine visibly.

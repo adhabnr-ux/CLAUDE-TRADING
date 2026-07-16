@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "instruments": {
+    "ABBV": {"sector": "Healthcare"},
+    "AMD": {"sector": "Semiconductors"},
+    "AMZN": {"sector": "Consumer Discretionary"},
+    "AVGO": {"sector": "Semiconductors"},
+    "CAT": {"sector": "Industrials"},
+    "CEG": {"sector": "Utilities"},
+    "COST": {"sector": "Consumer Defensive"},
+    "ETN": {"sector": "Industrials"},
+    "GOOGL": {"sector": "Communication Services"},
+    "JNJ": {"sector": "Healthcare"},
+    "LLY": {"sector": "Healthcare"},
+    "LRCX": {"sector": "Semiconductors"},
+    "META": {"sector": "Communication Services"},
+    "MOD": {"sector": "Industrials"},
+    "MRVL": {"sector": "Semiconductors"},
+    "MSFT": {"sector": "Technology"},
+    "MU": {"sector": "Semiconductors"},
+    "NVDA": {"sector": "Semiconductors"},
+    "NVT": {"sector": "Industrials"},
+    "PWR": {"sector": "Industrials"},
+    "SPY": {"sector": "Broad Market ETF", "benchmark_only": true},
+    "TSM": {"sector": "Semiconductors"},
+    "UNH": {"sector": "Healthcare"},
+    "V": {"sector": "Financials"},
+    "VRT": {"sector": "Industrials"},
+    "VST": {"sector": "Utilities"},
+    "WMT": {"sector": "Consumer Defensive"},
+    "XOM": {"sector": "Energy"}
+  }
+}
