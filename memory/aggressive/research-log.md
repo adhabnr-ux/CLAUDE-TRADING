@@ -1,5 +1,137 @@
 # Aggressive Bull — Research Log
 
+## 2026-07-16 — PRE-MARKET (~8:15 AM ET, market closed at run time)
+
+mcp__minimax__web_search was not found via ToolSearch this session (only the built-in `WebSearch` tool resolved) — used WebSearch fallback for every query this run per the search protocol. [search: WebSearch fallback]
+
+### Pre-run checks
+Live-switch guard: `ALPACA_BASE_URL` contains "paper" ✓. Lock: clear (`{}`) at start, written for this run ✓. Control switch: STATUS: ACTIVE, no NOTE:, no QUERY: ✓. Market: `clock` — closed at run time, next open 09:30 AM ET today ✓.
+
+### Account snapshot (live Alpaca data, ~8:12 AM ET)
+Equity **USD 92,630.89** | Cash **USD 22,884.89 (24.706%)** | `last_equity` (July 15 close) USD 93,858.88 → shock check **-1.308%** — NOT triggered (threshold -6%). HWM **USD 101,144.73** (cross-checked via `history 1A 1D`: max of the trailing-1-year series, matches memory-carried value exactly, set June 4-5, unchanged) → drawdown **-8.421%** — circuit breaker -20% NOT triggered (11.579pp headroom).
+
+### Market posture
+**S&P 500 futures pre-market July 16** (`S&P 500 futures pre-market July 16 2026`): Futures modestly higher (E-mini S&P +0.2%) after June CPI cooled to +3.5% YoY (core steady at 2.6%), pulling the 10-year toward 4.57%. An earlier read had futures down -0.1% before the inflation print digested positive — net a constructive, not risk-off, tape by pre-market open. [search: WebSearch fallback]
+
+### Held positions — "what changed since yesterday" (required for each)
+
+**NVDA — Thesis: INTACT.**
+- *What changed:* CEO Jensen Huang confirmed the next-gen Vera Rubin accelerator is in production, directly countering delay rumors (same category as the July 7 Kyber denial). Nebius (Nvidia-backed) launching an "asset-light" AI data-center model is a thesis-adjacent positive. Forward P/E described as its lowest in 7 years — Goldman's "compelling valuation" read continues to hold. No negative news.
+- Current USD 208.87, P/L -2.214%, buffer **9.786pp** ✓ comfortable. Review_by 2026-07-23 — not due today. Next earnings Aug 26 — no window risk.
+- Source: TradingKey, Motley Fool, CNBC (via WebSearch), July 16 2026.
+
+**AVGO — Thesis: INTACT, strengthening.**
+- *What changed:* Morgan Stanley reaffirmed Buy July 15, calling AVGO "a core AI winner." The Apple >USD 30B multiyear chip-supply agreement (through 2031) remains the dominant catalyst, unchanged. One data point of note: CLO Mark Brazeal sold 25K shares (~USD 10.03M) July 10 — routine-sized insider sale, not treated as a signal on its own. No negative news.
+- Current USD 384.6732, P/L -5.307%, buffer **6.693pp** ✓ — WATCH-adjacent but not CRITICAL (>3pp trim line, >1pp escalation line). Review_by 2026-07-27 (renewed July 13) — not due today. Next earnings Sep 3 — no window risk.
+- Source: MarketBeat, Robinhood (via WebSearch), July 16 2026.
+
+**ETN — Thesis: INTACT.**
+- *What changed:* Shares rose +3.24% July 14 on sustained electrical-infrastructure/power-management demand confidence (GF Score 89 cited). FranklinWH home-energy collaboration remains incremental, not thesis-defining. Q2 earnings confirmed for July 31 (analysts expect strong growth). No negative news.
+- Current USD 403.00, P/L -3.942%, buffer **8.058pp** ✓ comfortable. Review_by 2026-07-23 — not due today. Next earnings Jul 31 — 10 trading days out, no window risk yet (will need to flag as it approaches).
+- Source: TradingKey, GuruFocus (via WebSearch), July 16 2026.
+
+**GOOGL — Thesis: INTACT, strengthening.**
+- *What changed:* Warren Buffett publicly confirmed Berkshire Hathaway's GOOGL stake on CNBC — a notable sentiment catalyst (stock +3.65% on related coverage, +3.17% July 15 close). New USD 3.5B solar-project investment is thesis-adjacent (AI data-center power draw). EU Commission reportedly preparing a new antitrust fine wave — a known, ongoing legal-risk category, not a new invalidation event. Q2 earnings confirmed July 22.
+- Current USD 374.71, P/L +1.213% — comfortable (green). Review_by 2026-07-21 — not due today (due in 3 trading days; must produce an explicit hold/trim/exit decision at or before that session). Next earnings Jul 22 — 4 trading days out, outside the 2-day window for today.
+- Source: Yahoo Finance, MarketBeat (via WebSearch), July 16 2026.
+
+**AMZN — Thesis: INTACT, strengthening.**
+- *What changed:* CEO Andy Jassy said Trainium AI-chip demand is "very strong," citing enterprises choosing it on performance-per-dollar — directly supports the AWS/Trainium thesis pillar. Prime Day (July 15+) reported record early consumer spend. Leadership change (AWS Compute/ML head transition, effective Aug 1) is organizational, not thesis-relevant. No negative news.
+- Current USD 256.379, P/L +3.382% — comfortable (green, widest non-VST buffer). Review_by 2026-07-30 — not due today. Next earnings Jul 30 — no window risk yet.
+- Source: TradingKey (via WebSearch), July 16 2026.
+
+**VST — Thesis: INTACT, strengthening. Best performer.**
+- *What changed:* No new negative items. Consensus reaffirmed (Bernstein Outperform USD 187 PT, Morgan Stanley Overweight USD 210 PT, Street avg USD 230.31). Preferred-power-provider positioning for AI data centers in the PJM market remains the core catalyst. Preferred-share semi-annual dividend declared July 15 (Series C, USD 44.375/share) — administrative, not thesis-relevant to the common position held.
+- Current USD 157.7912, P/L +3.096% — comfortable (green). Review_by 2026-08-05 (renewed July 14) — not due today. Next earnings Aug 7 — no window risk.
+- Source: Yahoo Finance, MarketBeat (via WebSearch), July 16 2026.
+
+**MU — Thesis: STRESSED, NOT INVALIDATED. 🚨 CRITICAL BUFFER — see heuristic override below.**
+- *What changed:* MU fell -6.96% July 15 and is now showing **-10.171% from the July 15 entry (USD 953.92125)** in this morning's pre-market read (current USD 856.90) — the second distinct HBM-sector scare in three trading days (following the July 13 SK Hynix HBM4 estimate-cut shock that caused that day's planned MU entry to be skipped at the breaking-news gate). Today's drivers are two **new, real, not-yet-confirmed** catalysts: (1) Chinese memory maker CXMT is reportedly planning an USD 8.5B IPO, a direct competitive-supply threat to the HBM/DRAM market MU dominates; (2) reports that the US government is "considering more stringent unilateral restrictions" on high-bandwidth-memory exports — regulatory risk directly threatening MU's international HBM revenue if it materializes. Neither is confirmed policy or a signed/lost contract. Analyst consensus remains Buy (avg PT USD 1,462.09) — external sentiment has not yet capitulated. Strictly, none of MU's three invalidation conditions (stop breach, contract cancellation, ASP collapse) have fired.
+- Current USD 856.90, P/L **-10.171%**, buffer to the -12% cut (trigger USD 839.4507) = **1.829pp — CRITICAL**, the tightest buffer in the book by a wide margin and among the tightest readings on record for this account, reached one trading day after entry.
+- Source: TradingKey (via WebSearch), July 16 2026.
+
+### Thesis contract review (step 3b)
+No review_by deadline is formally due today (nearest: GOOGL July 21, in 3 trading days). No invalidation condition has technically fired for any of the 7 positions, including MU. However, MU's buffer compression to 1.829pp one day after entry is addressed below as a discretionary, severity-driven override of the proactive-trim heuristic.
+
+### Conviction-weighted holding review (step 3c)
+Today is Thursday, not Monday — skipped per playbook. Last Monday (July 13) rated all 6 then-held positions A; no C-rating carried forward (MU did not exist yet). No 2-consecutive-Monday-C trim in the pipeline.
+
+### Proactive trim heuristic override — MU
+
+MU does not strictly satisfy all three formal conditions of the proactive-trim heuristic (buffer <3pp ✓; review_by within 5 trading days ✗ — review_by is 2026-07-27, 8 trading days out; no near-term catalyst ✓ — next earnings Sep 29). The literal review_by-proximity test is not met because MU is a **brand-new position** whose contract was only written yesterday — the test was designed as a proxy for "a decision is coming soon anyway," which does not fit a one-day-old position, but the underlying purpose of the heuristic (reduce binary gap-risk on a thin buffer before the mechanical rule fires at a worse price) applies with unusual force here:
+
+1. Buffer compressed from entry (0pp, by definition) to 1.829pp CRITICAL in a single trading day — a compression rate with no precedent in this account's history for a position this young.
+2. Two distinct, real (if unconfirmed) negative catalysts are compounding on the same day, both striking directly at MU's core HBM-demand thesis pillar (competitive supply from CXMT; regulatory export risk) — categorically different from the macro/sector-rotation noise that has driven most past CRITICAL readings (NVDA, AVGO) on thesis-intact names.
+3. This is MU's **second** HBM-sector scare in three sessions (July 13 SK Hynix estimate cut caused that day's planned entry to be skipped entirely) — the memory/HBM segment specifically, not the broader semiconductor book, is proving more fragile than modeled at entry.
+4. Precedent for overriding the literal 5-day review_by test on severity grounds is established (NVDA/AVGO, July 8, buffers just above the 3pp line but treated as triggered given a live shock).
+
+**Decision: 25% proactive trim (2 of 8 shares) at market open, contingent on a fresh price re-check**, consistent with the account's standing "trim before the mechanical rule fires" discipline:
+- **Stand down** (hold full 8 shares, no trim) if MU opens up materially and buffer recovers above ~4pp (price ≥ ~USD 877.61).
+- **Escalate to a full exit** of the remaining position instead of a 25% trim if buffer is below 1pp at execution time (price ≤ ~USD 848.99) — the market tape itself is not risk-off today (S&P futures +0.2%), so this is a stock-specific escalation trigger, not the MSFT/META risk-off-tape protocol, but the same principle: a position this close to the mechanical cut should not be allowed to gap through it.
+- **Review_by shortened from 2026-07-27 to 2026-07-20** (next Monday) given the compressed situation — the original 2-week contract was written before either of today's catalysts existed; a fresh, explicit look in 2 trading days is warranted rather than letting an 8-trading-day-old contract stand unexamined through this volatility.
+- This is buffer/binary-risk management, not a thesis-break exit — MU's core HBM-contract book (>USD 22B non-cancelable through 2027-2028, Anthropic deal) is unaffected by either of today's catalysts unless they are confirmed.
+
+### Earnings window check
+| Symbol | Next Earnings | Within 2 trading days? | Action |
+|---|---|---|---|
+| NVDA | Aug 26, 2026 | No | None required |
+| AVGO | Sep 3, 2026 | No | None required |
+| ETN | Jul 31, 2026 | No | None required |
+| GOOGL | Jul 22, 2026 | No (4 trading days out) | None required today; review_by decision due Jul 21 regardless |
+| AMZN | Jul 30, 2026 | No | None required |
+| VST | Aug 7, 2026 | No | None required |
+| MU | Sep 29, 2026 | No | None required |
+
+**No earnings window risk for any held position. ✓**
+
+### New position research
+None conducted today. The one live risk-management item (MU) is a same-day priority, and adding a fresh AI-semiconductor-correlated name the same morning MU is being actively de-risked would work directly against that risk reduction. No other Tier 3 watchlist name was screened this run.
+
+### Deployment check
+Cash: USD 22,884.89 = 24.706% of equity — above the 20% mandatory-deployment-note threshold, requiring an explicit decision. **Explicit decision: no new buys today.** Reasoning: (1) MU, opened just yesterday, requires active de-risking this morning — committing fresh capital to the same sector the same session would contradict that action; (2) cash will rise modestly once the MU trim executes, which is deliberate risk reduction, not idle drift; (3) no watchlist name was screened this run given the MU priority. This is a one-session, reason-specific pause, not a return to the multi-week idle-cash pattern flagged in the July 10 weekly review — that pattern was addressed by the July 13/15 MU entry itself.
+
+### Guardrail check for today
+
+| Rule | Limit | Status |
+|---|---|---|
+| Single position max | 35% | NVDA 17.365% — largest position. ✓ All clear |
+| Cash floor | 2% min | 24.706% — well above minimum ✓ |
+| Weekly new positions | 8 max | 1/8 used this week (MU, July 15) ✓ |
+| Daily new-buy deployment | 60% max | No buys planned — N/A |
+| Semi-group concentration (NVDA+AVGO+MU) | informal ≤50% watch | (16,082.99+7,308.79+6,855.20)/92,630.89 = 32.657% — will decrease slightly post-trim ✓ |
+| Circuit breaker | >20% below HWM | -8.421% — not triggered ✓ |
+| Intraday/pre-market shock | >6% below last_equity | -1.308% — not triggered ✓ |
+| Stop audit | All positions covered | 7/7 live 18% trailing stops confirmed via `orders open` — NVDA `e15e7753`, AVGO `ffba9bd5`, ETN `abdc232b`, GOOGL `e52a43f1`, AMZN `b55bef05`, VST `e3a7985f`, MU `a6cd1e46` ✓ |
+| Earnings window | No new buys within 2 days of earnings | No new buys planned |
+| Never average down | — | Planned action is a trim (sell), not an add ✓ |
+
+All guardrails pass.
+
+### Result
+No new positions today. One contingent proactive trim planned for market-open execution: **MU, 2 of 8 shares (~25%)**, addressing a buffer that compressed to 1.829pp CRITICAL just one trading day after entry, on two new (unconfirmed) HBM-sector-specific catalysts — a Chinese competitor's (CXMT) planned USD 8.5B IPO and reports of possible new US HBM export restrictions. This is a discretionary override of the literal proactive-trim heuristic (review_by is not within 5 trading days) justified by the severity and speed of the compression and the position's newness — full reasoning above. Explicit stand-down (buffer recovers above ~4pp) and escalation (buffer below 1pp → full exit instead of trim) contingencies apply at execution. MU's review_by shortened from July 27 to July 20. The other 6 positions are all comfortable-to-WATCH (6.7pp+ buffers), no review_by deadlines due, no earnings-window risk. Stop audit 7/7 live. No shock, no circuit breaker. Control: ACTIVE.
+
+## Planned trades for today (July 16, 2026 — market open)
+
+**One contingent proactive trim (MU). No new buys.**
+
+```json
+{
+  "plan_date": "2026-07-16",
+  "trades": [
+    {
+      "action": "sell",
+      "symbol": "MU",
+      "qty": 2,
+      "thesis": "25% proactive trim, one trading day after entry — buffer compressed to 1.829pp from the -12% cut trigger (USD 839.4507) on two new, unconfirmed HBM-sector-specific catalysts: Chinese competitor CXMT's reported USD 8.5B IPO (competitive HBM/DRAM supply threat) and reports the US government is considering stricter unilateral HBM export restrictions (regulatory risk to international revenue). This is a discretionary override of the literal proactive-trim heuristic (review_by is 8 trading days out, not within the standard 5-day test) justified by the unprecedented one-day compression speed for a brand-new position and the fact this is MU's second distinct HBM-sector scare in three sessions (following the July 13 SK Hynix-driven entry skip). Core thesis (>USD 22B non-cancelable HBM contracts through 2027-2028, Anthropic supply deal) is unaffected unless either catalyst is confirmed — this is binary gap-risk management, not a thesis-break exit. CONTINGENT: stand down (hold full 8 shares) if MU opens up materially and buffer recovers above ~4pp (price >= ~USD 877.61). ESCALATE to a full exit of the remaining position instead of a 25% trim if buffer is below 1pp at execution time (price <= ~USD 848.99).",
+      "invalidation": "N/A — trim of existing position",
+      "review_by": "2026-07-20"
+    }
+  ]
+}
+```
+
+---
+
 ## 2026-07-15 — PRE-MARKET (~8:11 AM ET, market closed at run time)
 
 mcp__minimax__web_search was not found via ToolSearch this session (only the built-in `WebSearch` tool resolved) — used WebSearch fallback for every query this run per the search protocol. [search: WebSearch fallback]

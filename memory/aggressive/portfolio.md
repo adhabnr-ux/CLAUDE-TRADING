@@ -6,7 +6,45 @@ but always re-fetches live data before trading._
 
 ---
 
-## Last snapshot — 2026-07-14 EOD CLOSE (~4:10 PM ET, post-close)
+## Last snapshot — 2026-07-16 PRE-MARKET (~8:15 AM ET, market closed at run time)
+
+| Field | Value |
+|---|---|
+| Equity | USD 92,630.89 |
+| Cash | USD 22,884.89 (24.706%) |
+| Long market value | USD 69,746.00 |
+| `last_equity` (July 15 close) | USD 93,858.88 |
+| Shock check | -1.308% — NOT triggered (threshold -6%) |
+| HWM | USD 101,144.73 (June 4-5 inception; cross-checked via `history 1A 1D`, unchanged) |
+| Drawdown from HWM | -8.421% — circuit breaker -20% NOT triggered (11.579pp headroom) |
+
+**Positions (7 open):**
+
+| Symbol | Qty | Avg Entry | Sector | Current | P/L% | Buffer to -12% | % of Portfolio |
+|---|---|---|---|---|---|---|---|
+| NVDA | 77 | USD 213.60 | Semiconductors | USD 208.87 | -2.214% | 9.786pp | 17.365% |
+| AVGO | 19 | USD 406.23 | Semiconductors | USD 384.6732 | -5.307% | 6.693pp | 7.891% |
+| ETN | 34 | USD 419.54 | Industrials/power infra | USD 403.00 | -3.942% | 8.058pp | 14.792% |
+| GOOGL | 16 | USD 370.22 | Communication Services (hyperscaler) | USD 374.71 | +1.213% | comfortable | 6.474% |
+| AMZN | 36 | USD 247.991111 | Consumer Discretionary (hyperscaler) | USD 256.379 | +3.382% | comfortable | 9.965% |
+| MU | 8 | USD 953.92125 | Semiconductors (memory/HBM) | USD 856.90 | **-10.171%** | **1.829pp 🚨 CRITICAL** | 7.401% |
+| VST | 67 | USD 153.052836 (blended) | Utilities (nuclear power) | USD 157.7912 | +3.096% | comfortable | 11.414% |
+
+**Sector exposure:** Semiconductors (NVDA+AVGO+MU) = **32.657%**; Industrials (ETN) = 14.792%; Hyperscalers (GOOGL+AMZN) = 16.439%; Utilities (VST) = 11.414%; Cash = 24.706%. No sector near the 60% informal cap. Single-position cap (35% max): NVDA largest at 17.365% — well clear.
+
+**MU is CRITICAL (1.829pp buffer), one trading day after entry** — see research-log.md for the full proactive-trim-heuristic override. Two new, unconfirmed HBM-sector catalysts (CXMT's reported USD 8.5B IPO; possible new US HBM export restrictions) compressed the buffer from 0pp to 1.829pp in a single session. Plan: 25% contingent trim (2 shares) at market open, with explicit stand-down (buffer recovers above ~4pp) and escalation (buffer below 1pp → full exit) triggers. Review_by shortened from 2026-07-27 to 2026-07-20.
+
+**Stop audit — 7/7 confirmed live via `orders open` ✓:** NVDA `e15e7753` (stop USD 175.3242, HWM 213.81), AVGO `ffba9bd5` (stop USD 334.1664, HWM 407.52), ETN `abdc232b` (stop USD 350.9026, HWM 427.93), GOOGL `e52a43f1` (stop USD 308.1314, HWM 375.77), AMZN `b55bef05` (stop USD 210.3136, HWM 256.48), VST `e3a7985f` (stop USD 137.9322, HWM 168.21), MU `a6cd1e46` (stop USD 786.1504, HWM 958.72). No gaps.
+
+**Thesis contracts:** No review_by deadline due today (nearest: GOOGL July 21). MU's contract shortened to July 20 given today's compression (see above).
+
+**Result:** No trades yet (market not open). One contingent proactive trim planned for market-open execution (MU, 2 of 8 shares). All other 6 positions comfortable-to-WATCH (6.7pp+ buffers). No new buys — cash 24.706%, held back this session specifically to avoid adding fresh AI-semiconductor exposure while actively de-risking MU. Stop audit 7/7 live. No shock, no circuit breaker. Control: ACTIVE. Full reasoning and JSON plan in research-log.md.
+
+Next actionable routine: July 16 market-open.
+
+---
+
+## 2026-07-14 EOD CLOSE (~4:10 PM ET, post-close)
 
 | Field | Value |
 |---|---|
