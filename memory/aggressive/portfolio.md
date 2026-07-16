@@ -6,7 +6,45 @@ but always re-fetches live data before trading._
 
 ---
 
-## Last snapshot — 2026-07-16 PRE-MARKET (~8:15 AM ET, market closed at run time)
+## Last snapshot — 2026-07-16 MARKET OPEN (~9:48 AM ET)
+
+| Field | Value |
+|---|---|
+| Equity | USD 91,741.11 |
+| Cash | USD 24,605.18 (~26.82%) |
+| Long market value | USD 67,135.93 |
+| `last_equity` (July 15 close) | USD 93,858.88 |
+| Shock check | -2.211% — NOT triggered (threshold -6%) |
+| HWM | USD 101,144.73 (June 4-5 inception, unchanged) |
+| Drawdown from HWM | ~-9.32% — circuit breaker -20% NOT triggered |
+
+**Positions (7 open):**
+
+| Symbol | Qty | Avg Entry | Sector | Current | P/L% | % of Portfolio |
+|---|---|---|---|---|---|---|
+| NVDA | 77 | USD 213.60 | Semiconductors | USD 207.55 | -2.832% | 17.421% |
+| AVGO | 19 | USD 406.23 | Semiconductors | USD 378.99 | -6.706% | 7.848% |
+| ETN | 34 | USD 419.54 | Industrials/power infra | USD 398.67 | -4.974% | 14.775% |
+| GOOGL | 16 | USD 370.22 | Communication Services (hyperscaler) | USD 370.38 | +0.043% | 6.460% |
+| AMZN | 36 | USD 247.991111 | Consumer Discretionary (hyperscaler) | USD 254.08 | +2.455% | 9.972% |
+| MU | 6 | USD 953.92125 | Semiconductors (memory/HBM) | USD 858.07 | -10.048% | 5.613% |
+| VST | 67 | USD 153.052836 (blended) | Utilities (nuclear power) | USD 152.44 | -0.400% | 11.134% |
+
+**Sector exposure:** Semiconductors (NVDA+AVGO+MU) = 30.882%; Industrials (ETN) = 14.775%; Hyperscalers (GOOGL+AMZN) = 16.432%; Utilities (VST) = 11.134%; Cash = 26.821%. No sector near the 60% informal cap. Single-position cap (35% max): NVDA largest at 17.421% — well clear.
+
+**Trade executed: MU 25% proactive trim** (2 of 8 shares sold @ USD 860.145 avg, realized -USD 187.553) exactly per the pre-market contingent plan — price at execution was between the escalation and stand-down triggers, confirming the trim as-is. Old 8-share trailing stop `a6cd1e46` canceled and reissued as `5d6ca010` (18% trail, stop USD 702.896128) covering the remaining 6-share position. review_by remains 2026-07-20. No new buys today.
+
+**Stop audit — 7/7 confirmed live via `orders open` ✓:** NVDA `e15e7753`, AVGO `ffba9bd5`, ETN `abdc232b`, GOOGL `e52a43f1`, AMZN `b55bef05`, VST `e3a7985f`, MU `5d6ca010`. No gaps.
+
+**Thesis contracts:** No review_by deadline due today (nearest: GOOGL July 21; MU July 20).
+
+**Result:** One trade — MU 25% proactive trim, executed exactly as planned, no deviation from contingency bands. No new buys. Stop audit 7/7 live. No shock, no circuit breaker. Control: ACTIVE. Full reasoning in research-log.md and trade-log.md.
+
+Next actionable routine: July 16 midday.
+
+---
+
+## 2026-07-16 PRE-MARKET (~8:15 AM ET, market closed at run time)
 
 | Field | Value |
 |---|---|

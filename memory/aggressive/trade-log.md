@@ -4205,3 +4205,41 @@ NVDA `e15e7753` (77sh), AVGO `ffba9bd5` (19sh), ETN `abdc232b` (34sh), GOOGL `e5
 
 ### Result
 One trade executed exactly as pre-market planned: 15-share VST pyramid add, filled at USD 158.539996, trailing stop reissued to cover the full 67-share position. No other trades. `trades.jsonl` updated (agent: aggro). `EXECUTED:` marker appended to research-log.md.
+
+## 2026-07-16 — MARKET OPEN
+
+### Trade — SELL MU (25% proactive trim)
+| Field | Value |
+|---|---|
+| Action | SELL (trim) |
+| Symbol | MU |
+| Qty | 2 of 8 shares (25%) |
+| Order type | Market sell |
+| Fill price | USD 860.145 avg |
+| Notional | USD 1,720.29 |
+| Realized P/L on trim | (860.145 - 953.92125) x 2 = -USD 187.553 |
+| Why | Pre-market flagged MU's buffer to the -12% cut compressed to 1.829pp CRITICAL just one trading day after entry (July 15), on two new unconfirmed HBM-sector catalysts: Chinese competitor CXMT's reported USD 8.5B IPO (competitive HBM/DRAM supply threat) and reports the US government is considering stricter unilateral HBM export restrictions. Discretionary override of the literal proactive-trim heuristic (review_by was 8 trading days out, not within the standard 5-day test) justified by the compression speed and the position's newness — this is MU's second distinct HBM-sector scare in three sessions (following the Jul 13 SK Hynix-driven entry skip). Core thesis (>USD 22B non-cancelable HBM contracts through 2027-2028, Anthropic deal) unaffected unless either catalyst is confirmed — binary gap-risk management, not a thesis-break exit. |
+| Contingency check at execution | Price at execution (latest trade USD 861.24) was between the escalation trigger (<=USD 848.99 -> would have meant full exit instead) and the stand-down trigger (>=USD 877.61 -> would have meant hold, no trim) — confirmed the planned 25% trim as-is, no deviation. |
+| Breaking-news gate | [search: WebSearch fallback — mcp__minimax__web_search not found via ToolSearch this session] No earnings miss/downgrade/halt/SEC action found; KeyBanc actually raised PT to USD 1,750 on Jul 14 — no thesis-breaking news. |
+| Sequence | Canceled existing 8-share trailing stop `a6cd1e46` first (to free shares held by the working order), sold 2 shares, then reissued an 18% trailing stop on the remaining 6-share position |
+| New trailing stop | 18%; order id `5d6ca010`; qty 6; stop price USD 702.896128 (HWM USD 857.1904) |
+| Verified | Position confirmed at 6 shares (avg entry unchanged, USD 953.92125); new stop confirmed live in open orders |
+| review_by | Shortened Jul 16 pre-market to 2026-07-20 (unchanged by this trim) |
+
+### Stop audit — 7/7 confirmed live post-trade
+NVDA `e15e7753` (77sh), AVGO `ffba9bd5` (19sh), ETN `abdc232b` (34sh), GOOGL `e52a43f1` (16sh), AMZN `b55bef05` (36sh), VST `e3a7985f` (67sh), MU `5d6ca010` (6sh) — all `status: "new"`.
+
+### Account after trade
+| Field | Value |
+|---|---|
+| Equity | USD 91,741.11 |
+| Cash | USD 24,605.18 (~26.82%) |
+| Cash floor (2% min) | Well clear |
+| Single-position cap (35% max) | NVDA largest at ~17.4% — well clear |
+| Daily deployment (60% max) | No buys today — N/A |
+| Weekly new positions (8 max) | 1/8 used this week (MU, Jul 15) — this trim doesn't consume a slot |
+| Circuit breaker (20% drawdown) | ~-9.3% from HWM USD 101,144.73 — not triggered |
+| Shock check | -2.211% vs last_equity USD 93,858.88 — not triggered (threshold -6%) |
+
+### Result
+One trade executed exactly as pre-market planned (contingent 25% MU trim), no deviation from the contingency bands. No new buys today. `trades.jsonl` updated (agent: aggro). `EXECUTED:` marker appended to research-log.md.
