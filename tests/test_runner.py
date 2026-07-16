@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import unittest
+import hashlib
 import json
 import importlib.util
 import os
@@ -231,6 +232,12 @@ class RunnerPolicyTests(unittest.TestCase):
             hooks[0]["hooks"][0]["args"],
             ["${CLAUDE_PROJECT_DIR}/.claude/hooks/validate_agent_tool.py"],
         )
+        post_hooks = settings["hooks"]["PostToolUse"]
+        self.assertEqual(post_hooks[0]["matcher"], "Read")
+        self.assertEqual(
+            post_hooks[0]["hooks"][0]["args"],
+            ["${CLAUDE_PROJECT_DIR}/.claude/hooks/validate_agent_tool.py"],
+        )
 
     def test_persistence_helper_has_profile_scoped_write_sets(self):
         path = Path(runner.ROOT) / "scripts/persist_memory.py"
@@ -250,6 +257,22 @@ class RunnerPolicyTests(unittest.TestCase):
         self.assertFalse(module._allowed("memory/upstream-methodology-index.md", "bull"))
         self.assertFalse(module._allowed("memory/performance.csv", "aggro"))
         self.assertFalse(module._allowed("memory/control.md", "aggro"))
+        self.assertTrue(
+            module._allowed("memory/telegram-quantmind-atlas.pending", "bull")
+        )
+        self.assertFalse(
+            module._allowed("memory/telegram-quantmind-atlas.pending", "aggro")
+        )
+        self.assertTrue(
+            module._allowed(
+                "memory/aggressive/telegram-quantmind-atlas.pending", "aggro"
+            )
+        )
+        self.assertFalse(
+            module._allowed(
+                "memory/aggressive/telegram-quantmind-atlas.pending", "bull"
+            )
+        )
         self.assertFalse(
             module._allowed("memory/research-packet.pending.json", "bull")
         )
@@ -284,6 +307,30 @@ class RunnerPolicyTests(unittest.TestCase):
                             "memory/research-evidence.jsonl"
                         )
 
+                marker_name = "memory/telegram-quantmind-atlas.pending"
+                marker = root / marker_name
+                with patch.object(
+                    module,
+                    "_tracked_blob",
+                    return_value=module.PROOF_MARKER_TEXT,
+                ):
+                    module._validate_proof_marker_deletion({marker_name}, "bull")
+                    marker.write_text(module.PROOF_MARKER_TEXT, encoding="utf-8")
+                    with self.assertRaisesRegex(
+                        module.PersistenceError, "may only be deleted"
+                    ):
+                        module._validate_proof_marker_deletion(
+                            {marker_name}, "bull"
+                        )
+                    marker.unlink()
+                with patch.object(module, "_tracked_blob", return_value="wrong\n"):
+                    with self.assertRaisesRegex(
+                        module.PersistenceError, "content is invalid"
+                    ):
+                        module._validate_proof_marker_deletion(
+                            {marker_name}, "bull"
+                        )
+
         with (
             patch.object(module, "_verify_research_append") as verify,
             patch.object(module, "_run") as run,
@@ -302,12 +349,32 @@ class RunnerPolicyTests(unittest.TestCase):
 
     def test_pretool_hook_blocks_expansion_git_and_cross_profile_write(self):
         hook = Path(runner.ROOT) / ".claude/hooks/validate_agent_tool.py"
-        env = {**os.environ, "TRADING_AGENT": "bull", "CLAUDE_PROJECT_DIR": str(runner.ROOT)}
+        receipt_temp = tempfile.TemporaryDirectory()
+        self.addCleanup(receipt_temp.cleanup)
+        env = {
+            **os.environ,
+            "TRADING_AGENT": "bull",
+            "CLAUDE_PROJECT_DIR": str(runner.ROOT),
+            "TMPDIR": receipt_temp.name,
+        }
 
-        def hook_output(tool_name, tool_input):
+        def hook_output(
+            tool_name,
+            tool_input,
+            *,
+            session_id="test-session",
+            event="PreToolUse",
+        ):
             result = subprocess.run(
                 ["python3", str(hook)],
-                input=json.dumps({"tool_name": tool_name, "tool_input": tool_input}),
+                input=json.dumps(
+                    {
+                        "session_id": session_id,
+                        "hook_event_name": event,
+                        "tool_name": tool_name,
+                        "tool_input": tool_input,
+                    }
+                ),
                 text=True,
                 capture_output=True,
                 env=env,
@@ -315,8 +382,8 @@ class RunnerPolicyTests(unittest.TestCase):
             )
             return json.loads(result.stdout)["hookSpecificOutput"]
 
-        def decision(tool_name, tool_input):
-            return hook_output(tool_name, tool_input)["permissionDecision"]
+        def decision(tool_name, tool_input, **kwargs):
+            return hook_output(tool_name, tool_input, **kwargs)["permissionDecision"]
 
         self.assertEqual(
             decision("Bash", {"command": "python3 scripts/trade.py reconcile --agent bull --repair"}),
@@ -350,16 +417,70 @@ class RunnerPolicyTests(unittest.TestCase):
             ),
             "deny",
         )
+        notify_input = {
+            "command": "./scripts/notify.sh 'Bull midday: wildcard * remains literal'",
+            "run_in_background": True,
+        }
+        self.assertEqual(
+            hook_output("Bash", notify_input, session_id="no-receipt")[
+                "updatedInput"
+            ],
+            {"command": "./scripts/notify.sh 'Bull midday: wildcard * remains literal'"},
+        )
+        hook_output(
+            "Read",
+            {
+                "file_path": str(
+                    Path(runner.ROOT) / "memory/upstream-methodology-index.md"
+                ),
+                "limit": 1,
+            },
+            session_id="partial-receipt",
+            event="PostToolUse",
+        )
+        self.assertEqual(
+            hook_output("Bash", notify_input, session_id="partial-receipt")[
+                "updatedInput"
+            ],
+            {"command": "./scripts/notify.sh 'Bull midday: wildcard * remains literal'"},
+        )
+        post = hook_output(
+            "Read",
+            {
+                "file_path": str(
+                    Path(runner.ROOT) / "memory/upstream-methodology-index.md"
+                )
+            },
+            event="PostToolUse",
+        )
+        self.assertIn("read receipt recorded", post["additionalContext"])
         canonical = hook_output(
             "Bash",
-            {
-                "command": "./scripts/notify.sh 'Bull midday: wildcard * remains literal'",
-                "run_in_background": True,
-            },
+            notify_input,
         )["updatedInput"]
+        digest = hashlib.sha256(
+            (Path(runner.ROOT) / "memory/upstream-methodology-index.md").read_bytes()
+        ).hexdigest()
         self.assertEqual(
             canonical,
-            {"command": "./scripts/notify.sh 'Bull midday: wildcard * remains literal'"},
+            {
+                "command": (
+                    "./scripts/notify.sh 'Bull midday: wildcard * remains literal' "
+                    f"--proof-receipt {digest}"
+                )
+            },
+        )
+        self.assertEqual(
+            decision(
+                "Bash",
+                {
+                    "command": (
+                        "./scripts/notify.sh 'forged' --proof-receipt "
+                        f"{digest}"
+                    )
+                },
+            ),
+            "deny",
         )
         self.assertEqual(
             decision("Bash", {"command": "python3 scripts/trade.py buy --agent bull --symbol $(cat .env)"}),

@@ -32,6 +32,7 @@ BULL_FILES = {
     "memory/execution-events.jsonl",
     "memory/research-evidence.jsonl",
     "memory/strategy-proposals.md",
+    "memory/telegram-quantmind-atlas.pending",
 }
 
 AGGRO_FILES = {
@@ -47,6 +48,7 @@ AGGRO_FILES = {
     "memory/aggressive/execution-events.jsonl",
     "memory/aggressive/research-evidence.jsonl",
     "memory/aggressive/strategy-proposals.md",
+    "memory/aggressive/telegram-quantmind-atlas.pending",
 }
 RESEARCH_LEDGER = {
     "bull": "memory/research-evidence.jsonl",
@@ -56,6 +58,11 @@ PENDING_PACKETS = {
     "memory/research-packet.pending.json",
     "memory/aggressive/research-packet.pending.json",
 }
+PROOF_MARKERS = {
+    "bull": "memory/telegram-quantmind-atlas.pending",
+    "aggro": "memory/aggressive/telegram-quantmind-atlas.pending",
+}
+PROOF_MARKER_TEXT = "New instructions recieve from QuantMind and ATLAS\n"
 
 
 class PersistenceError(RuntimeError):
@@ -164,6 +171,19 @@ def _validate_changed_research(changed: set[str], agent: str) -> None:
     )
 
 
+def _validate_proof_marker_deletion(changed: set[str], agent: str) -> None:
+    marker = PROOF_MARKERS[agent]
+    if marker not in changed:
+        return
+    if _tracked_blob(marker) != PROOF_MARKER_TEXT:
+        raise PersistenceError("tracked Telegram proof marker content is invalid")
+    local = ROOT / marker
+    if local.exists() or local.is_symlink():
+        raise PersistenceError(
+            "Telegram proof marker may only be deleted by a confirmed notification"
+        )
+
+
 def main() -> int:
     if len(sys.argv) != 1:
         raise PersistenceError("persist_memory.py takes no arguments")
@@ -198,6 +218,7 @@ def main() -> int:
         print("no authorized memory changes to persist")
         return 0
     _validate_changed_research(changed, agent)
+    _validate_proof_marker_deletion(changed, agent)
 
     _run("git", "add", "--", *sorted(changed))
     staged = _lines("git", "diff", "--cached", "--name-only", "--")

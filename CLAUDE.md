@@ -335,6 +335,13 @@ Keep messages short. Notify only when a routine says to. **Never put a literal
 text. Write dollar amounts as plain numbers or with `USD` (e.g. `100K`,
 `USD 100,000`), and single-quote the argument.
 
+If notification output says `"proof_appended": true`, release the advisory
+lock and run `python3 scripts/persist_memory.py` immediately. Never notify again
+in that run. If persistence fails, stop and report the failure through the
+routine result; a human must resolve the still-tracked proof marker before any
+retry because Telegram delivery is at-least-once until that deletion reaches
+`main`.
+
 **Urgency prefix:** start the message with 🚨 when any of these happened this
 run: a trailing stop filled, a position was cut by the loss rule, or a stop
 audit found an unprotected position. Otherwise use the plain routine prefix.

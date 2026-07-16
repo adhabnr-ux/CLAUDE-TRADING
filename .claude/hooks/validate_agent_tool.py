@@ -1,14 +1,17 @@
 #!/usr/bin/env python3
-"""Fail-closed PreToolUse policy for unattended Claude Code routines."""
+"""Fail-closed tool policy and instruction receipts for unattended routines."""
 
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import os
 import re
 import shlex
 import sys
+import tempfile
+import time
 from decimal import Decimal, InvalidOperation
 from pathlib import Path
 from urllib.parse import unquote, urlsplit
@@ -77,6 +80,8 @@ UPSTREAM_REMOTE_TOKENS = (
 SHARED_IMMUTABLE_PATHS = {
     (ROOT / relative).resolve() for relative in SHARED_IMMUTABLE
 }
+METHODOLOGY_INDEX = (ROOT / "memory/upstream-methodology-index.md").resolve()
+RECEIPT_TTL_SECONDS = 8 * 60 * 60
 
 
 class Denied(ValueError):
@@ -150,6 +155,108 @@ def _decision(
     if updated_input is not None:
         output["hookSpecificOutput"]["updatedInput"] = updated_input
     print(json.dumps(output))
+
+
+def _post_context(message: str | None = None) -> None:
+    output: dict[str, object] = {
+        "hookSpecificOutput": {"hookEventName": "PostToolUse"}
+    }
+    if message:
+        output["hookSpecificOutput"]["additionalContext"] = message
+    print(json.dumps(output))
+
+
+def _session_receipt_path(payload: dict[str, object]) -> Path:
+    session_id = payload.get("session_id")
+    if not isinstance(session_id, str) or not session_id or len(session_id) > 500:
+        raise Denied("a valid Claude session_id is required for instruction receipts")
+    root_key = hashlib.sha256(str(ROOT).encode("utf-8")).hexdigest()[:20]
+    session_key = hashlib.sha256(session_id.encode("utf-8")).hexdigest()
+    directory = Path(tempfile.gettempdir()) / "claude-trading-instruction-receipts"
+    directory.mkdir(mode=0o700, parents=True, exist_ok=True)
+    return directory / f"{root_key}-{session_key}.json"
+
+
+def _index_sha256() -> str:
+    try:
+        return hashlib.sha256(METHODOLOGY_INDEX.read_bytes()).hexdigest()
+    except OSError as exc:
+        raise Denied("mandatory methodology index is unavailable") from exc
+
+
+def _record_methodology_receipt(payload: dict[str, object]) -> bool:
+    tool_input = payload.get("tool_input") or {}
+    if not isinstance(tool_input, dict):
+        return False
+    try:
+        resolved = _resolve_repo_path(tool_input.get("file_path"))
+    except Denied:
+        return False
+    if not _matches_path(resolved, METHODOLOGY_INDEX):
+        return False
+    if tool_input.get("offset") is not None or tool_input.get("limit") is not None:
+        return False
+    receipt = {
+        "schema_version": 1,
+        "index_sha256": _index_sha256(),
+        "recorded_at": time.time(),
+    }
+    path = _session_receipt_path(payload)
+    temporary = path.with_name(f".{path.name}.{os.getpid()}.{time.time_ns()}")
+    try:
+        with temporary.open("x", encoding="utf-8") as handle:
+            os.chmod(temporary, 0o600)
+            json.dump(receipt, handle, sort_keys=True)
+            handle.write("\n")
+            handle.flush()
+            os.fsync(handle.fileno())
+        os.replace(temporary, path)
+    finally:
+        temporary.unlink(missing_ok=True)
+    return True
+
+
+def _methodology_receipt(payload: dict[str, object]) -> str | None:
+    try:
+        path = _session_receipt_path(payload)
+        receipt = json.loads(path.read_text(encoding="utf-8"))
+        recorded_at = float(receipt["recorded_at"])
+        digest = receipt["index_sha256"]
+        current_digest = _index_sha256()
+    except (
+        Denied,
+        OSError,
+        UnicodeError,
+        json.JSONDecodeError,
+        KeyError,
+        TypeError,
+        ValueError,
+    ):
+        return None
+    age = time.time() - recorded_at
+    if (
+        age < -60
+        or age > RECEIPT_TTL_SECONDS
+        or not isinstance(digest, str)
+        or digest != current_digest
+    ):
+        return None
+    return digest
+
+
+def _is_notify_command(command: str) -> bool:
+    tokens = shlex.split(command, posix=True)
+    offset = 1 if tokens and tokens[0] == "bash" else 0
+    return (
+        len(tokens) > offset
+        and tokens[offset] in {"./scripts/notify.sh", "scripts/notify.sh"}
+    )
+
+
+def _inject_proof_receipt(command: str, digest: str) -> str:
+    if not re.fullmatch(r"[0-9a-f]{64}", digest):
+        raise Denied("invalid QuantMind/ATLAS instruction receipt")
+    return shlex.join([*shlex.split(command, posix=True), "--proof-receipt", digest])
 
 
 def _agent() -> str:
@@ -355,12 +462,32 @@ def _webfetch(raw: object) -> None:
 def main() -> int:
     try:
         payload = json.load(sys.stdin)
+        event = payload.get("hook_event_name", "PreToolUse")
         tool = payload.get("tool_name")
         tool_input = payload.get("tool_input") or {}
         agent = _agent()
+        if event == "PostToolUse":
+            if tool != "Read":
+                _post_context()
+                return 0
+            if _record_methodology_receipt(payload):
+                _post_context(
+                    "QuantMind/ATLAS methodology index read receipt recorded for "
+                    "this session. Telegram proof is now eligible after the playbook finishes."
+                )
+            else:
+                _post_context()
+            return 0
+        if event != "PreToolUse":
+            raise Denied(f"unexpected hook event: {event}")
         updated_input = None
         if tool == "Bash":
-            updated_input = {"command": _bash(tool_input.get("command"), agent)}
+            canonical = _bash(tool_input.get("command"), agent)
+            if _is_notify_command(canonical):
+                receipt = _methodology_receipt(payload)
+                if receipt is not None:
+                    canonical = _inject_proof_receipt(canonical, receipt)
+            updated_input = {"command": canonical}
         elif tool in {"Edit", "Write"}:
             _write_path(tool_input.get("file_path"), agent)
         elif tool == "Read":
