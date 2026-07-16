@@ -282,6 +282,7 @@ def deliver(
         "message_id": message_id,
         "proof_appended": proof_appended,
         "proof_pending": armed and not proof_appended,
+        "remote_environment": remote,
         "delivery_semantics": "at_least_once_until_persisted",
     }
 

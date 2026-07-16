@@ -63,6 +63,7 @@ class NotifyTests(unittest.TestCase):
         aggro = self._arm("aggro")
         result = self._deliver_proof("Bull pre-market: complete")
         self.assertTrue(result["proof_appended"])
+        self.assertTrue(result["remote_environment"])
         self.assertEqual(
             self.sent,
             [
@@ -93,6 +94,7 @@ class NotifyTests(unittest.TestCase):
         env = {**self.env, "CLAUDE_CODE_REMOTE": "false"}
         result = notify.deliver("Local check", env=env, sender=self._sender)
         self.assertFalse(result["proof_appended"])
+        self.assertFalse(result["remote_environment"])
         self.assertEqual(self.sent[-1], "Local check")
         self.assertTrue(marker.exists())
 
