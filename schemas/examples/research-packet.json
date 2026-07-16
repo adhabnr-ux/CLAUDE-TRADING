@@ -1,0 +1,144 @@
+{
+  "schema_version": 1,
+  "packet_id": "bull:2026-07-16:premarket:example",
+  "agent": "bull",
+  "routine": "premarket",
+  "decision_time": "2026-07-16T12:00:00Z",
+  "market_data_cutoff": "2026-07-16T11:55:00Z",
+  "window": {
+    "start": "2026-07-15T12:00:00Z",
+    "end": "2026-07-16T11:59:00Z",
+    "complete": true,
+    "failures": [],
+    "limitations": []
+  },
+  "sources": [
+    {
+      "source_id": "src-company-release",
+      "source_type": "company_release",
+      "tier": 1,
+      "url": "https://issuer.example.invalid/investors/update",
+      "publisher": "Example Issuer",
+      "published_at": "2026-07-16T10:00:00Z",
+      "fetched_at": "2026-07-16T11:30:00Z",
+      "as_of": "2026-07-16T10:00:00Z",
+      "content_sha256": null,
+      "hash_status": "not_captured",
+      "locator": "Investor update, guidance section",
+      "limitations": ["Issuer-provided information is not independent verification."]
+    },
+    {
+      "source_id": "src-regulatory-filing",
+      "source_type": "regulatory_filing",
+      "tier": 1,
+      "url": "https://regulator.example.invalid/filing/123",
+      "publisher": "Example Regulator",
+      "published_at": "2026-07-15T20:00:00Z",
+      "fetched_at": "2026-07-16T11:32:00Z",
+      "as_of": "2026-07-15T20:00:00Z",
+      "content_sha256": null,
+      "hash_status": "not_captured",
+      "locator": "Quarterly filing, revenue and cash-flow tables",
+      "limitations": []
+    },
+    {
+      "source_id": "src-independent-risk",
+      "source_type": "reputable_secondary",
+      "tier": 2,
+      "url": "https://research.example.invalid/company-risk",
+      "publisher": "Example Independent Research",
+      "published_at": "2026-07-16T09:00:00Z",
+      "fetched_at": "2026-07-16T11:35:00Z",
+      "as_of": "2026-07-16T09:00:00Z",
+      "content_sha256": null,
+      "hash_status": "not_captured",
+      "locator": "Risk analysis, demand sensitivity section",
+      "limitations": ["Secondary analysis may rely on undisclosed estimates."]
+    },
+    {
+      "source_id": "src-exchange-market",
+      "source_type": "exchange_market_data",
+      "tier": 1,
+      "url": "https://www.nyse.com/quote/XNYS:ETN",
+      "publisher": "New York Stock Exchange",
+      "published_at": null,
+      "fetched_at": "2026-07-16T11:40:00Z",
+      "as_of": "2026-07-16T11:39:00Z",
+      "content_sha256": null,
+      "hash_status": "not_captured",
+      "locator": "Illustrative ETN quote and market-status observation",
+      "limitations": ["Illustrative fixture; no live quote is asserted by this file."]
+    }
+  ],
+  "claims": [
+    {
+      "claim_id": "claim-guidance",
+      "text": "Management maintained the previously published full-year revenue range.",
+      "symbols": ["ETN"],
+      "source_ids": ["src-company-release"],
+      "as_of": "2026-07-16T10:00:00Z",
+      "stance": "supports",
+      "confidence": "high",
+      "limitations": []
+    },
+    {
+      "claim_id": "claim-cash-flow",
+      "text": "The filed cash-flow statement shows operating cash generation remained positive.",
+      "symbols": ["ETN"],
+      "source_ids": ["src-regulatory-filing"],
+      "as_of": "2026-07-15T20:00:00Z",
+      "stance": "supports",
+      "confidence": "high",
+      "limitations": []
+    },
+    {
+      "claim_id": "claim-demand-risk",
+      "text": "Independent analysis identifies customer concentration as a material downside risk.",
+      "symbols": ["ETN"],
+      "source_ids": ["src-independent-risk"],
+      "as_of": "2026-07-16T09:00:00Z",
+      "stance": "opposes",
+      "confidence": "medium",
+      "limitations": ["The concentration estimate was not independently reconstructed."]
+    },
+    {
+      "claim_id": "claim-current-market",
+      "text": "A current exchange observation was included to anchor the assessment to the decision session.",
+      "symbols": ["ETN"],
+      "source_ids": ["src-exchange-market"],
+      "as_of": "2026-07-16T11:39:00Z",
+      "stance": "supports",
+      "confidence": "medium",
+      "limitations": ["Illustrative fixture; this is not a live market assertion."]
+    }
+  ],
+  "inferences": [
+    {
+      "inference_id": "inference-fundamental-support",
+      "text": "Unchanged guidance and positive operating cash generation support continued fundamental monitoring.",
+      "symbols": ["ETN"],
+      "claim_ids": ["claim-guidance", "claim-cash-flow", "claim-current-market"],
+      "kind": "company",
+      "horizon": "months",
+      "confidence": "medium",
+      "falsifier": "A guidance cut or negative operating cash flow would invalidate this inference.",
+      "limitations": ["No valuation conclusion is implied."]
+    }
+  ],
+  "decision_support": [
+    {
+      "symbol": "ETN",
+      "assessment": "watch",
+      "supporting_inference_ids": ["inference-fundamental-support"],
+      "opposing_claim_ids": ["claim-demand-risk"],
+      "strongest_counterargument": "Customer concentration could make maintained guidance fragile if one large buyer slows spending.",
+      "critical_unknowns": [],
+      "thesis": "Data-center power demand supports durable multi-quarter growth.",
+      "invalidation": "Management cuts organic-growth guidance.",
+      "review_by": "2026-08-14",
+      "status": "research_only"
+    }
+  ],
+  "untrusted_instructions_detected": false,
+  "packet_limitations": ["Illustrative schema fixture; it is not market research or a trade recommendation."]
+}

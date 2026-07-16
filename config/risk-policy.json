@@ -7,6 +7,8 @@
     "timezone": "America/New_York",
     "minimum_stock_price": 5.0,
     "maximum_quote_age_seconds": 120,
+    "research_candidate_max_age_minutes": 240,
+    "research_market_source_max_age_minutes": 120,
     "maximum_limit_markup_pct": 0.3,
     "fill_timeout_seconds": 75,
     "maximum_entry_attempts": 2,

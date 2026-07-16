@@ -1,0 +1,239 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:bull:schema:strategy-experiment:1",
+  "title": "Bull inactive strategy experiment draft checklist",
+  "description": "Drafting aid only. It does not register, run, validate, promote, or authorize an experiment, strategy, trade, or policy change.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "experiment_id",
+    "owner",
+    "status",
+    "created_at",
+    "source_lineage",
+    "hypothesis",
+    "single_change",
+    "signal",
+    "data",
+    "evaluation",
+    "shadow_plan",
+    "rollback",
+    "human_review"
+  ],
+  "properties": {
+    "schema_version": {"const": 1},
+    "experiment_id": {"$ref": "#/$defs/id"},
+    "owner": {"enum": ["bull", "aggro"]},
+    "status": {"enum": ["DRAFT", "REJECTED"]},
+    "created_at": {"$ref": "#/$defs/timestamp"},
+    "source_lineage": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 20,
+      "items": {"$ref": "#/$defs/lineage"}
+    },
+    "hypothesis": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["claim", "causal_mechanism", "expected_failure_mode"],
+      "properties": {
+        "claim": {"$ref": "#/$defs/nonPlaceholder"},
+        "causal_mechanism": {"$ref": "#/$defs/nonPlaceholder"},
+        "expected_failure_mode": {"$ref": "#/$defs/nonPlaceholder"}
+      }
+    },
+    "single_change": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["target", "baseline_commit", "baseline_artifact_sha256", "proposed_diff"],
+      "properties": {
+        "target": {"type": "string", "minLength": 1, "maxLength": 500},
+        "baseline_commit": {
+          "oneOf": [{"$ref": "#/$defs/gitSha"}, {"const": "UNKNOWN"}]
+        },
+        "baseline_artifact_sha256": {
+          "oneOf": [{"$ref": "#/$defs/sha256"}, {"const": "UNKNOWN"}]
+        },
+        "proposed_diff": {"$ref": "#/$defs/nonPlaceholder"}
+      }
+    },
+    "signal": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "equation",
+        "inputs",
+        "universe",
+        "exclusions",
+        "horizon",
+        "rebalance",
+        "execution_lag"
+      ],
+      "properties": {
+        "equation": {"$ref": "#/$defs/nonPlaceholder"},
+        "inputs": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 50,
+          "items": {"$ref": "#/$defs/signalInput"}
+        },
+        "universe": {"$ref": "#/$defs/nonPlaceholder"},
+        "exclusions": {"$ref": "#/$defs/stringList"},
+        "horizon": {"$ref": "#/$defs/nonPlaceholder"},
+        "rebalance": {"$ref": "#/$defs/nonPlaceholder"},
+        "execution_lag": {"$ref": "#/$defs/nonPlaceholder"}
+      }
+    },
+    "data": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "snapshot_id",
+        "snapshot_sha256",
+        "as_of_cutoff",
+        "point_in_time",
+        "survivorship_free",
+        "corporate_action_policy",
+        "train_window",
+        "validation_window",
+        "untouched_test_window",
+        "purge_days",
+        "embargo_days"
+      ],
+      "properties": {
+        "snapshot_id": {"type": "string", "minLength": 1, "maxLength": 200},
+        "snapshot_sha256": {
+          "oneOf": [{"$ref": "#/$defs/sha256"}, {"const": "UNKNOWN"}]
+        },
+        "as_of_cutoff": {
+          "oneOf": [{"$ref": "#/$defs/timestamp"}, {"const": "UNKNOWN"}]
+        },
+        "point_in_time": {"oneOf": [{"type": "boolean"}, {"const": "UNKNOWN"}]},
+        "survivorship_free": {"oneOf": [{"type": "boolean"}, {"const": "UNKNOWN"}]},
+        "corporate_action_policy": {"$ref": "#/$defs/nonPlaceholder"},
+        "train_window": {"$ref": "#/$defs/windowOrUnknown"},
+        "validation_window": {"$ref": "#/$defs/windowOrUnknown"},
+        "untouched_test_window": {"$ref": "#/$defs/windowOrUnknown"},
+        "purge_days": {"oneOf": [{"type": "integer", "minimum": 0}, {"const": "UNKNOWN"}]},
+        "embargo_days": {"oneOf": [{"type": "integer", "minimum": 0}, {"const": "UNKNOWN"}]}
+      }
+    },
+    "evaluation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "benchmark",
+        "primary_metric",
+        "minimum_effect",
+        "sample_floor",
+        "cost_model",
+        "turnover_limit",
+        "capacity_assumption",
+        "uncertainty_method",
+        "multiple_testing_family",
+        "dependence_control",
+        "regime_slices",
+        "parameter_sensitivity"
+      ],
+      "properties": {
+        "benchmark": {"type": "string", "minLength": 1, "maxLength": 100},
+        "primary_metric": {"$ref": "#/$defs/nonPlaceholder"},
+        "minimum_effect": {"$ref": "#/$defs/nonPlaceholder"},
+        "sample_floor": {"oneOf": [{"type": "integer", "minimum": 30}, {"const": "UNKNOWN"}]},
+        "cost_model": {"$ref": "#/$defs/nonPlaceholder"},
+        "turnover_limit": {"$ref": "#/$defs/nonPlaceholder"},
+        "capacity_assumption": {"$ref": "#/$defs/nonPlaceholder"},
+        "uncertainty_method": {"$ref": "#/$defs/nonPlaceholder"},
+        "multiple_testing_family": {"$ref": "#/$defs/nonPlaceholder"},
+        "dependence_control": {"$ref": "#/$defs/nonPlaceholder"},
+        "regime_slices": {"$ref": "#/$defs/stringList"},
+        "parameter_sensitivity": {"$ref": "#/$defs/nonPlaceholder"}
+      }
+    },
+    "shadow_plan": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["minimum_sessions", "minimum_decisions", "acceptance_rule", "no_test_reuse"],
+      "properties": {
+        "minimum_sessions": {"oneOf": [{"type": "integer", "minimum": 20}, {"const": "UNKNOWN"}]},
+        "minimum_decisions": {"oneOf": [{"type": "integer", "minimum": 30}, {"const": "UNKNOWN"}]},
+        "acceptance_rule": {"$ref": "#/$defs/nonPlaceholder"},
+        "no_test_reuse": {"const": true}
+      }
+    },
+    "rollback": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["trigger", "maximum_drawdown", "data_quality_trigger"],
+      "properties": {
+        "trigger": {"$ref": "#/$defs/nonPlaceholder"},
+        "maximum_drawdown": {"$ref": "#/$defs/nonPlaceholder"},
+        "data_quality_trigger": {"$ref": "#/$defs/nonPlaceholder"}
+      }
+    },
+    "human_review": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["required", "decision", "reviewer", "reviewed_at"],
+      "properties": {
+        "required": {"const": true},
+        "decision": {"enum": ["PENDING", "REJECTED"]},
+        "reviewer": {"type": "null"},
+        "reviewed_at": {"type": "null"}
+      }
+    }
+  },
+  "$defs": {
+    "id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9._:-]{2,127}$"},
+    "gitSha": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "pattern": "(?:Z|[+-][0-9]{2}:[0-9]{2})$"
+    },
+    "nonPlaceholder": {"type": "string", "minLength": 15, "maxLength": 4000},
+    "stringList": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 50,
+      "uniqueItems": true,
+      "items": {"type": "string", "minLength": 1, "maxLength": 1000}
+    },
+    "lineage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["repository", "commit", "source_paths", "concept"],
+      "properties": {
+        "repository": {"type": "string", "format": "uri", "pattern": "^https://github.com/"},
+        "commit": {"$ref": "#/$defs/gitSha"},
+        "source_paths": {"$ref": "#/$defs/stringList"},
+        "concept": {"$ref": "#/$defs/nonPlaceholder"}
+      }
+    },
+    "signalInput": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "definition", "availability_lag", "source"],
+      "properties": {
+        "name": {"type": "string", "minLength": 1, "maxLength": 100},
+        "definition": {"$ref": "#/$defs/nonPlaceholder"},
+        "availability_lag": {"$ref": "#/$defs/nonPlaceholder"},
+        "source": {"$ref": "#/$defs/nonPlaceholder"}
+      }
+    },
+    "window": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["start", "end"],
+      "properties": {
+        "start": {"type": "string", "format": "date"},
+        "end": {"type": "string", "format": "date"}
+      }
+    },
+    "windowOrUnknown": {
+      "oneOf": [{"$ref": "#/$defs/window"}, {"const": "UNKNOWN"}]
+    }
+  }
+}

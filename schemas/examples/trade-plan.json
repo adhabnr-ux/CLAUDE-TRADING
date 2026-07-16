@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "agent": "bull",
   "plan_date": "2026-07-16",
   "trades": [
@@ -14,7 +14,9 @@
       "max_entry_price": "425.00",
       "earnings_date": "2026-08-05",
       "earnings_verified_at": "2026-07-16T08:00:00-04:00",
-      "earnings_source": "https://calendar.example.invalid/etn"
+      "earnings_source": "https://calendar.example.invalid/etn",
+      "research_packet_id": "bull:2026-07-16:premarket:example",
+      "research_packet_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
     },
     {
       "action": "trim",

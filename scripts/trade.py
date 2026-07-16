@@ -17,6 +17,7 @@ from bulltrader.execution import execute_buy, execute_sell, reconcile  # noqa: E
 from bulltrader.lock import account_lock  # noqa: E402
 from bulltrader.plan import PlanError, find_intent  # noqa: E402
 from bulltrader.policy import PolicyError, load_policy  # noqa: E402
+from bulltrader.research import ResearchError, require_current_candidate  # noqa: E402
 from bulltrader.risk import RiskRejected  # noqa: E402
 
 
@@ -93,6 +94,22 @@ def _execute(args: argparse.Namespace, policy, client: AlpacaClient, now: dateti
             intent=intent,
             now=now,
             control_path=control_path,
+            fresh_buy_guard=lambda: require_current_candidate(
+                ROOT,
+                args.agent,
+                symbol,
+                now,
+                str(policy.system["timezone"]),
+                thesis=intent.thesis,
+                invalidation=intent.invalidation,
+                review_by=intent.review_by,
+                candidate_max_age_minutes=int(
+                    policy.system["research_candidate_max_age_minutes"]
+                ),
+                market_source_max_age_minutes=int(
+                    policy.system["research_market_source_max_age_minutes"]
+                ),
+            ),
             root=ROOT,
             dry_run=args.dry_run,
         )
@@ -131,7 +148,7 @@ def main() -> int:
         with account_lock(expected_account_id):
             client = AlpacaClient.from_env(policy)
             return _execute(args, policy, client, now)
-    except (BrokerError, PlanError, PolicyError, RiskRejected) as exc:
+    except (BrokerError, PlanError, PolicyError, ResearchError, RiskRejected) as exc:
         print(json.dumps({"status": "blocked", "error": str(exc)}, indent=2), file=sys.stderr)
         return 2
 

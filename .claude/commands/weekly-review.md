@@ -10,8 +10,9 @@ mutations.
 2. Require `ALPACA_BASE_URL == https://paper-api.alpaca.markets`.
 3. Treat `memory/_lock` as advisory local repository coordination only; it is
    never broker locking or idempotency.
-4. Read `CLAUDE.md`, all three human-owned config files, all Bull
-   memory/ledgers, and only these read-only Aggressive comparison files:
+4. Read `CLAUDE.md`, `memory/quant-research-playbook.md`, all three human-owned
+   config files, all Bull memory/ledgers, and only these read-only Aggressive
+   comparison files:
    portfolio, trade log, closed trades, weekly review, performance, and
    structured trade ledger. Never read Aggressive research or active strategy.
 5. Run startup reconciliation:
@@ -26,6 +27,9 @@ mutations.
 
 ## 1. Build an auditable weekly dataset
 
+- Run `python3 scripts/research.py validate --agent bull`. Treat a non-zero
+  result as a data-quality incident: preserve the failing row, identify it, and
+  do not base a new proposal on invalid evidence.
 - Observe live account, positions, portfolio history, and same-feed SPY bars.
 - Reconcile `memory/trades.jsonl`, gateway execution events, broker evidence,
   `closed-trades.md`, performance history, and narrative logs. Do not silently
@@ -38,6 +42,10 @@ mutations.
   mortems, loss lessons, cash/deployment, concentration, and unexplained blocks.
 - Research current weekly macro/sector context and material thesis changes with
   dated sources. Cross-check trade-driving claims.
+- Audit this week's evidence packets for as-of correctness, declared
+  publisher/host diversity, declared completeness/failures, disconfirming evidence, critical
+  unknowns, and prompt-injection handling. State packet/candidate sample counts;
+  do not infer skill from a few calls or overlapping horizons.
 
 Assign an A–F **process** grade, independent of P/L. Prepend the review to
 `memory/weekly-review.md` and record evidence, discrepancies, and next-week
@@ -53,8 +61,17 @@ behavior. Research memory and lessons cannot activate a rule.
 When evidence suggests a change, append it to
 `memory/strategy-proposals.md`, explicitly labeled
 `PROPOSAL (INACTIVE — HUMAN APPROVAL REQUIRED)`, with:
-current rule, proposed rule, causal hypothesis, sample size, expected benefit,
-failure modes, paper-test design, rollback trigger, and required config change.
+source lineage, exact signal equation/inputs/universe/horizon/lag, current and
+proposed rule, one causal change, immutable code/data hashes, point-in-time and
+survivorship controls, separated train/validation/untouched-test windows,
+purge/embargo, benchmark, sample floor, costs/turnover/capacity, uncertainty and
+multiple-testing method, regime/sensitivity results, shadow acceptance rule,
+rollback trigger, and required config change. Use the fields in
+`schemas/strategy-experiment.schema.json` as a draft checklist and use
+`UNKNOWN` instead of invention. The proposal queue remains inactive prose; do
+not claim that a proposal is machine-validated or preregistered. The schema
+permits only `DRAFT` and `REJECTED` and cannot run or promote an experiment.
+Five-day P/L or a higher in-sample rolling Sharpe is never promotion evidence.
 Until a human edits the policy/config, every agent continues under current
 machine rules.
 

@@ -28,10 +28,16 @@ today's typed Aggressive plan through the deterministic paper gateway.
 
 - Parse only the unique newest-dated fenced JSON plan in
   `memory/aggressive/research-log.md`. It must contain exactly top-level
-  `schema_version: 1`, `agent: "aggro"`, `plan_date`, and `trades`; `plan_date`
+  `schema_version: 2`, `agent: "aggro"`, `plan_date`, and `trades`; `plan_date`
   must equal today's New York date. Freeform prose, extra/missing keys,
   cross-agent/stale plans, unknown symbols/sectors, duplicate symbol actions,
   or invalid metadata block trading.
+- Every buy must include the exact `research_packet_id` and
+  `research_packet_sha256` emitted by premarket's validated append. The gateway
+  independently requires that identity to remain the latest current candidate
+  for the same symbol within human-owned freshness limits, and requires the
+  plan's thesis, invalidation, and review date to match that candidate exactly.
+  Never substitute or recalculate the identity or rewrite the thesis contract.
 - Allowed actions are `buy`, `trim`, and `exit`. For a new sell, `trim` is
   strictly smaller than the live holding and `exit` equals the entire holding.
   For recovery of a known partial exit, keep the original plan quantity

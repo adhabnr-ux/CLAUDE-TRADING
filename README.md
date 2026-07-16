@@ -30,7 +30,10 @@ The authority order is:
    execution, idempotency, and reconciliation.
 3. A current fenced JSON trade plan in the applicable research log — an agent
    proposal that must satisfy the typed contract.
-4. Narrative research, strategies, lessons, and prompts — context only; they
+4. A current schema-validated, symbol/thesis/invalidation/review-date-bound
+   declared-evidence packet — required by the fresh-buy gateway, but still
+   non-executable, unverified as to source truth, and never order authority.
+5. Narrative research, strategies, lessons, and prompts — context only; they
    cannot override the controls above.
 
 Direct order mutations are disabled in `scripts/alpaca.sh`. The gateway verifies
@@ -45,8 +48,10 @@ duplicate resistance for one canonical operation, not general serialization.
 Do not overlap external routines for the same account; a durable distributed
 lease is still required before calling the paper system operationally mature.
 
-See [Risk engine and operations](docs/RISK_ENGINE.md) and the
-[trade-plan schema](schemas/trade-plan.schema.json).
+See [Risk engine and operations](docs/RISK_ENGINE.md), the
+[quant research integration](docs/QUANT_RESEARCH_INTEGRATION.md), the
+[trade-plan schema](schemas/trade-plan.schema.json), and the
+[research-packet schema](schemas/research-packet.schema.json).
 
 ## Machine-enforced profiles
 
@@ -64,6 +69,8 @@ See [Risk engine and operations](docs/RISK_ENGINE.md) and the
 | High-water drawdown breaker | 10% | 20% |
 | Max modeled risk at stop/projected position | 1.5% | 3.6% |
 | Max quoted spread | 35 bps | 60 bps |
+| Max candidate-packet age | 240 min | 240 min |
+| Max supporting exchange-market source age | 120 min | 120 min |
 
 Shared gates also require whole shares, an approved instrument and canonical
 sector, an active tradable US equity priced at least $5, a fresh IEX quote, a
@@ -74,6 +81,12 @@ round-trip. A full-position `midday_loss` exit is the sole same-day
 risk-reduction exception. Stop percentages model risk for sizing; gaps and
 slippage can make realized losses larger. Entry and exit loops are bounded to
 two attempts, and a cancellation must be broker-confirmed before continuing.
+
+A genuinely new buy also needs the latest same-session candidate packet and an
+exact plan match on packet ID/hash, symbol, thesis, invalidation, and review
+date. Packet validation checks declared structure and freshness; it does not
+verify that a URL exists, content was fetched, a publisher is independent, or a
+claim is true. See the integration document for the explicit trust boundary.
 
 ## Repository map
 
@@ -86,17 +99,20 @@ config/
 bulltrader/
   alpaca.py                 Exact-endpoint broker client
   plan.py                   Typed plan parser
+  research.py               Evidence-packet and provenance validator
   risk.py                   Pre-trade and control checks
   execution.py              Idempotent execution, protection, reconciliation
 scripts/
   trade.py                  Only authorized order-mutation entry point
   alpaca.sh                 Read-only broker and market-data inspection
   persist_memory.py         Fixed profile-scoped journal publisher
+  research.py               Fixed pending-packet append and profile validation
 memory/                     Cautious state plus shared human control
 memory/aggressive/          AGGRO state and profile-scoped ledgers
+memory/quant-research-playbook.md  Shared immutable research protocol
 .claude/commands/           Scheduled routine playbooks
 routines/                   Routine schedules and launch prompts
-schemas/                    Machine-readable plan contract and example
+schemas/                    Plan/evidence schemas and experiment draft checklist
 tests/                      Policy, risk, idempotency, and protection tests
 docs/index.html             GitHub Pages performance dashboard
 ```
@@ -136,6 +152,12 @@ TRADING_AGENT=bull python3 scripts/trade.py reconcile --agent bull --repair
 
 # Validate a same-day planned buy without submitting it
 TRADING_AGENT=bull python3 scripts/trade.py buy --agent bull --symbol ETN --dry-run
+
+# Append an already-prepared fixed pending packet, then validate the ledger
+TRADING_AGENT=bull python3 scripts/research.py append --agent bull
+TRADING_AGENT=aggro python3 scripts/research.py append --agent aggro
+python3 scripts/research.py validate --agent bull
+python3 scripts/research.py validate --agent aggro
 
 # Execute only a matching, fully validated plan intent
 TRADING_AGENT=bull python3 scripts/trade.py buy --agent bull --symbol ETN
@@ -190,13 +212,17 @@ performance observation.
    Pin a reviewed model in the scheduler; the repository cannot validate a
    model choice configured only in the Claude cloud UI. If using the optional
    GitHub/Groq runner, set the repository variable `GROQ_MODEL`; that runner
-   refuses silent model fallback.
+   refuses silent model fallback. Groq exposes search discovery but no trusted
+   content fetch, so its append process is machine-blocked from accepting
+   `candidate` research; it may record only `hold`, `watch`, or `avoid`, and it
+   must not create a fresh-buy plan.
 6. Run the repository checks before enabling or changing a routine:
 
 ```bash
 python3 -m unittest discover -s tests -v
 python3 -m compileall -q bulltrader runner.py scripts/trade.py \
-  scripts/persist_memory.py .claude/hooks/validate_agent_tool.py
+  scripts/research.py scripts/persist_memory.py \
+  .claude/hooks/validate_agent_tool.py
 bash -n scripts/*.sh
 ```
 
@@ -216,7 +242,11 @@ Agents may append research-backed proposals to the
 [AGGRO queue](memory/aggressive/strategy-proposals.md). They must not rewrite
 the machine policy or silently activate a lesson. A human reviews evidence,
 testing, conflicts, rollback criteria, and the proposed diff before changing
-`config/` or execution code.
+`config/` or execution code. Draft prose uses the fields in the
+[strategy-experiment schema](schemas/strategy-experiment.schema.json) as a
+checklist. The schema permits only `DRAFT` and `REJECTED`; it does not register,
+run, validate, or promote an experiment. Unknown inputs remain `UNKNOWN`; a
+short P/L window or higher in-sample Sharpe is not promotion evidence.
 
 ## Disclaimer
 

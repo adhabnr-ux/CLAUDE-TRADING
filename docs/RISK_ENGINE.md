@@ -22,6 +22,7 @@ come from `config/risk-policy.json`, not agent prose.
 | `bulltrader/` | Deterministic parsing, risk, broker, execution | Enforces config |
 | `scripts/trade.py` | Authorized mutation interface | No |
 | Current research-log JSON plan | Proposed buy/trim/exit intent | No |
+| Current research-evidence packet | Declared support or veto for a fresh buy | No |
 | Strategy, lessons, prompts, web research | Analysis and context | No |
 | Broker | Orders, fills, positions, cash, equity | Operational source of truth |
 
@@ -44,35 +45,44 @@ sequence:
 1. Load schema-versioned policy, instrument master, and trusted earnings
    calendar.
 2. Read the latest fenced JSON object from the applicable research log.
-3. Require schema version 1, an `agent` value matching the selected account
-   profile, and a same-day, unique `buy` intent for the requested symbol.
+3. Require a supported schema version, an `agent` value matching the selected
+   account profile, and a same-day, unique `buy` intent for the requested
+   symbol. New plans use version 2; version 1 remains legacy-only.
 4. Parse and type-check the plan, including whole-share quantity, canonical
    sector, thesis contract, maximum entry, and earnings metadata that must
    exactly match a human-owned record no more than 72 hours old.
 5. Reconcile broker positions, open orders, and protective stops. A normal buy
    repairs managed-state drift; `--dry-run` is read-only. Any unresolved issue
    blocks entry.
-6. Confirm the control switch permits opening exposure.
-7. Confirm an active, unblocked account; an open market; and an active, tradable
+6. Look up every deterministic entry-attempt ID. If no attempt exists, require
+   the latest same-session premarket research packet to be within the
+   human-owned freshness limits and contain exactly one candidate for the
+   symbol. Its packet ID, canonical content hash, thesis, invalidation, and
+   review date must exactly match the version-2 buy plan. Filled or partially
+   filled recovery and protective containment do not reopen this new-entry
+   gate. A zero-fill attempt found after restart cannot authorize another buy
+   attempt; it is contained and the operation stops.
+7. Confirm the control switch permits opening exposure.
+8. Confirm an active, unblocked account; an open market; and an active, tradable
    US equity.
-8. Require a valid positive bid/ask quote no more than 120 seconds old, an ask
+9. Require a valid positive bid/ask quote no more than 120 seconds old, an ask
    of at least $5, and a midpoint spread no wider than the profile cap. Reject
    when the ask exceeds the planned maximum entry.
-9. Calculate a cent-rounded-down limit no more than 0.3% over the ask and never
+10. Calculate a cent-rounded-down limit no more than 0.3% over the ask and never
    above the plan's maximum entry.
-10. Re-read broker equity, cash, last equity, portfolio history, positions, open
+11. Re-read broker equity, cash, last equity, portfolio history, positions, open
     and recent orders, and market calendar. Apply every portfolio and event gate,
     including pending buy exposure.
-11. Look up the deterministic `client_order_id` before submitting. If absent,
+12. Recheck the deterministic `client_order_id` before submitting. If absent,
     submit a day limit order; after an ambiguous submission error, look up the
     same ID before deciding whether submission failed.
-12. Poll for at most 75 seconds. Confirm that a still-open order becomes
+13. Poll for at most 75 seconds. Confirm that a still-open order becomes
     terminal after cancellation before another attempt. Make at most two bounded
     entry attempts.
-13. For any filled quantity, submit exactly that quantity as a GTC trailing
+14. For any filled quantity, submit exactly that quantity as a GTC trailing
     stop. If protection submission fails, make at most two idempotent emergency
     market-liquidation attempts and restore protection to any residual holding.
-14. Append broker identifiers and execution events. Broker state remains the
+15. Append broker identifiers and execution events. Broker state remains the
     authoritative record.
 
 A non-dry-run rerun that finds a filled entry never buys again. It reports the
@@ -260,9 +270,10 @@ but is not the execution authority.
 
 The top-level envelope contains exactly `schema_version`, `agent`, `plan_date`,
 and `trades`; unknown fields fail. Each intent contains exactly its typed common
-fields. Only `buy` accepts and requires the four entry/earnings fields; `trim`
-and `exit` reject them. The selected profile must match `agent`, and one symbol
-may have only one action in a plan.
+fields. A version-2 `buy` accepts and requires the four entry/earnings fields
+plus `research_packet_id` and `research_packet_sha256`; `trim` and `exit` reject
+all six. The selected profile must match `agent`, and one symbol may have only
+one action in a plan.
 
 The following is a **structural illustration only**. Its placeholder earnings
 source is not in the checked-in trusted calendar, so it cannot authorize a buy.
@@ -271,7 +282,7 @@ human-owned calendar record.
 
 ```json
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "agent": "bull",
   "plan_date": "2026-07-16",
   "trades": [
@@ -286,7 +297,9 @@ human-owned calendar record.
       "max_entry_price": "425.00",
       "earnings_date": "2026-08-05",
       "earnings_verified_at": "2026-07-16T08:00:00-04:00",
-      "earnings_source": "https://calendar.example.invalid/etn"
+      "earnings_source": "https://calendar.example.invalid/etn",
+      "research_packet_id": "bull:2026-07-16:premarket:example",
+      "research_packet_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
     },
     {
       "action": "trim",
@@ -302,13 +315,25 @@ human-owned calendar record.
 ```
 
 The parser selects by maximum `plan_date`, not file position, because historical
-logs have used both prepend and append conventions. Multiple schema-version-1
+logs have used both prepend and append conventions. Multiple supported-schema
 plans on the newest date, or any malformed fenced JSON block, fail closed.
 
 An empty `trades` array is valid and is preferable to inventing a low-quality
-trade. `schema_version` must be `1`; `agent` must match the gateway profile.
-Plans may contain at most 12 intents. A symbol may appear only once per plan,
-regardless of action.
+trade. New plans use `schema_version: 2`; `agent` must match the gateway profile.
+Version 1 is parsed only for legacy continuity and cannot authorize a genuinely
+new buy because it has no research identity. It has no scheduled-playbook path;
+all scheduled plans require version 2. Plans may contain at most 12 intents. A
+symbol may appear only once per plan, regardless of action.
+
+New packet appends use the current human-owned market-source age. Whole-ledger
+validation uses the immutable schema-v1 ceiling of 1,440 minutes so tightening
+today's policy does not invalidate accepted history. Execution then applies the
+current tighter limit again. Pending packets are atomically renamed to a unique
+claim before validation; a failed claim is restored only when doing so cannot
+overwrite a newer producer's packet. Its claim link is retained for audit and
+blocks persistence. An exact retry that consumes the same inode removes both
+links; a distinct retained claim requires human inspection and explicit cleanup,
+never blind deletion by an agent.
 
 ## Audit data and recovery
 
@@ -344,6 +369,12 @@ After a timeout, crash, conflicting report, or unexpected position:
 - No strategy in this repository has established future alpha. Backtests,
   walk-forward validation, realistic costs, capacity analysis, and independent
   model-risk review are not supplied by this control layer.
+- Research packets are structurally validated declarations. The current code
+  does not fetch and attest source content, verify publisher ownership or source
+  tier, require a captured content hash, or independently detect prompt
+  injection. Declared completeness and distinct hosts are not proof of complete
+  coverage or source independence. Until trusted acquisition exists, this is a
+  fail-closed governance scaffold, not verified investment evidence.
 - Human earnings-calendar content can still be wrong. The gateway requires an
   exact match to the fresh human-owned record; it does not independently prove
   that the human-selected source is correct.

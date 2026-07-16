@@ -26,8 +26,13 @@ cannot activate rule changes. Every broker mutation must use python3
 scripts/trade.py. Run startup and final reconciliation with `--agent aggro`
 (`--repair` only for ACTIVE or RISK_OFF; read-only for PAUSED). Fail closed on
 any discrepancy; never use a raw broker order, close, cancellation, or stop
-command. Today's fenced plan must have exactly top-level `schema_version: 1`,
+command. Today's fenced plan must have exactly top-level `schema_version: 2`,
 `agent: "aggro"`, `plan_date`, and `trades`.
+
+The `/aggro-premarket` command owns the
+`memory/quant-research-playbook.md` protocol, fixed pending-packet append, and
+ledger validation. Do not perform or repeat those steps separately in this
+outer routine.
 
 Then read memory/aggressive/profile.md and every file in memory/aggressive/.
 Follow the playbook in .claude/commands/aggro-premarket.md

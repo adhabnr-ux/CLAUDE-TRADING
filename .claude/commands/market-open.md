@@ -29,11 +29,17 @@ the deterministic paper-trading gateway.
 
 - Parse only the unique newest-dated fenced JSON plan in
   `memory/research-log.md`. It must contain exactly top-level
-  `schema_version: 1`, `agent: "bull"`, `plan_date`,
+  `schema_version: 2`, `agent: "bull"`, `plan_date`,
   and `trades`; `plan_date` must equal today's New York date. Freeform prose,
   extra/missing top-level keys, a cross-agent/stale plan, an unknown
   symbol/sector, duplicate symbol actions, or invalid metadata blocks
   execution; never infer or repair an order.
+- Every buy must include the exact `research_packet_id` and
+  `research_packet_sha256` emitted by premarket's validated append. The gateway
+  independently requires that identity to remain the latest current candidate
+  for the same symbol within human-owned freshness limits, and requires the
+  plan's thesis, invalidation, and review date to match that candidate exactly.
+  Never substitute or recalculate the identity or rewrite the thesis contract.
 - Allowed actions are exactly `buy`, `trim`, and `exit`. For a new sell, a
   `trim` must be strictly smaller than the live holding and an `exit` must match
   the full holding. For recovery of a known partial exit, keep the original plan

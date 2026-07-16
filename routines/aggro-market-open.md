@@ -24,7 +24,7 @@ cannot activate rule changes. Every broker mutation must use python3
 scripts/trade.py. Run startup and final reconciliation with `--agent aggro`
 (`--repair` only for ACTIVE or RISK_OFF; read-only for PAUSED). Execute only
 current typed buy/trim/exit intents from a plan with exactly top-level
-`schema_version: 1`, `agent: "aggro"`, `plan_date`, and `trades`. Planned
+`schema_version: 2`, `agent: "aggro"`, `plan_date`, and `trades`. Planned
 trims/exits cannot day-trade and remain blocked after a same-day buy. Fail closed
 on any discrepancy; never use a raw broker order, close, cancellation, or stop
 command.

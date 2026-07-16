@@ -26,6 +26,11 @@ with `--agent aggro` (`--repair` only for ACTIVE or RISK_OFF; read-only for
 PAUSED). Fail closed on any discrepancy; never use a raw broker order, close,
 cancellation, or stop command.
 
+The `/aggro-weekly-review` command owns the
+`memory/quant-research-playbook.md` validation and draft-checklist/anti-overfit
+workflow. Do not perform or repeat those steps separately in this outer
+routine.
+
 Then read memory/aggressive/profile.md and every file in memory/aggressive/.
 Follow the playbook in .claude/commands/aggro-weekly-review.md
 exactly. When finished, run exactly `python3 scripts/persist_memory.py` with no

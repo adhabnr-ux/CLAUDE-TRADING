@@ -35,7 +35,8 @@ jobs:
       - name: Compile Python
         run: >-
           python -m compileall -q bulltrader runner.py scripts/trade.py
-          scripts/persist_memory.py .claude/hooks/validate_agent_tool.py
+          scripts/research.py scripts/persist_memory.py
+          .claude/hooks/validate_agent_tool.py
 
       - name: Check shell syntax
         run: bash -n scripts/*.sh
@@ -58,13 +59,18 @@ jobs:
                   parsed[path] = json.load(handle)
               print(f"valid JSON: {path}")
 
-          schema_path = Path("schemas/trade-plan.schema.json")
-          schema = parsed[schema_path]
-          Draft202012Validator.check_schema(schema)
-          validator = Draft202012Validator(schema, format_checker=FormatChecker())
-          for example in sorted(Path("schemas/examples").glob("*.json")):
-              validator.validate(parsed[example])
-              print(f"valid trade plan: {example}")
+          examples = {
+              Path("schemas/examples/trade-plan.json"): Path("schemas/trade-plan.schema.json"),
+              Path("schemas/examples/research-packet.json"): Path("schemas/research-packet.schema.json"),
+              Path("schemas/examples/strategy-experiment.json"): Path("schemas/strategy-experiment.schema.json"),
+          }
+          for example, schema_path in examples.items():
+              schema = parsed[schema_path]
+              Draft202012Validator.check_schema(schema)
+              Draft202012Validator(
+                  schema, format_checker=FormatChecker()
+              ).validate(parsed[example])
+              print(f"valid schema example: {example}")
 
           policy = parsed[Path("config/risk-policy.json")]
           instruments = parsed[Path("config/instruments.json")]

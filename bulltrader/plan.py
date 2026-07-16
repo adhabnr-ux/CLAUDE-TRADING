@@ -29,6 +29,8 @@ class TradeIntent:
     earnings_date: date | None
     earnings_verified_at: datetime | None
     earnings_source: str | None
+    research_packet_id: str | None
+    research_packet_sha256: str | None
 
     def canonical(self) -> dict[str, str | None]:
         return {
@@ -46,6 +48,8 @@ class TradeIntent:
                 self.earnings_verified_at.isoformat() if self.earnings_verified_at else None
             ),
             "earnings_source": self.earnings_source,
+            "research_packet_id": self.research_packet_id,
+            "research_packet_sha256": self.research_packet_sha256,
         }
 
 
@@ -76,22 +80,34 @@ def _decimal(value: Any, field: str) -> Decimal:
     return result
 
 
-def parse_trade(plan_date: date, raw: dict[str, Any], policy: Policy) -> TradeIntent:
+def parse_trade(
+    plan_date: date,
+    raw: dict[str, Any],
+    policy: Policy,
+    schema_version: int = 2,
+) -> TradeIntent:
     action = str(raw.get("action", "")).lower().strip()
     if action not in {"buy", "trim", "exit"}:
         raise PlanError("trade action must be buy, trim, or exit")
     common_fields = {"action", "symbol", "qty", "sector", "thesis", "invalidation", "review_by"}
-    buy_fields = common_fields | {
+    legacy_buy_fields = common_fields | {
         "max_entry_price",
         "earnings_date",
         "earnings_verified_at",
         "earnings_source",
     }
+    research_fields = {
+        "research_packet_id",
+        "research_packet_sha256",
+    }
+    buy_fields = legacy_buy_fields | research_fields if schema_version == 2 else legacy_buy_fields
     allowed_fields = buy_fields if action == "buy" else common_fields
     if unknown := sorted(set(raw) - allowed_fields):
         raise PlanError(f"unknown fields in {action} intent: {', '.join(unknown)}")
     if missing := sorted(common_fields - set(raw)):
         raise PlanError(f"required trade fields missing: {', '.join(missing)}")
+    if action == "buy" and (missing := sorted(buy_fields - set(raw))):
+        raise PlanError(f"required buy fields missing: {', '.join(missing)}")
     symbol = str(raw.get("symbol", "")).upper().strip()
     if not re.fullmatch(r"[A-Z][A-Z0-9.\-]{0,9}", symbol):
         raise PlanError(f"invalid symbol: {symbol!r}")
@@ -119,6 +135,8 @@ def parse_trade(plan_date: date, raw: dict[str, Any], policy: Policy) -> TradeIn
     earnings_date = None
     earnings_verified_at = None
     earnings_source = None
+    research_packet_id = None
+    research_packet_sha256 = None
     if action == "buy":
         max_entry_price = _decimal(raw.get("max_entry_price"), "max_entry_price")
         earnings_date = _date(raw.get("earnings_date"), "earnings_date")
@@ -126,6 +144,19 @@ def parse_trade(plan_date: date, raw: dict[str, Any], policy: Policy) -> TradeIn
         earnings_source = str(raw.get("earnings_source", "")).strip()
         if not earnings_source.startswith("https://"):
             raise PlanError("earnings_source must be an https URL")
+        if schema_version == 2:
+            research_packet_id = raw["research_packet_id"]
+            if (
+                not isinstance(research_packet_id, str)
+                or research_packet_id != research_packet_id.strip()
+                or not re.fullmatch(r"[a-z0-9][a-z0-9._:-]{2,127}", research_packet_id)
+            ):
+                raise PlanError("research_packet_id must be a canonical packet identifier")
+            research_packet_sha256 = raw["research_packet_sha256"]
+            if not isinstance(research_packet_sha256, str) or not re.fullmatch(
+                r"[0-9a-f]{64}", research_packet_sha256
+            ):
+                raise PlanError("research_packet_sha256 must be a lowercase sha256")
     return TradeIntent(
         plan_date=plan_date,
         action=action,
@@ -139,6 +170,8 @@ def parse_trade(plan_date: date, raw: dict[str, Any], policy: Policy) -> TradeIn
         earnings_date=earnings_date,
         earnings_verified_at=earnings_verified_at,
         earnings_source=earnings_source,
+        research_packet_id=research_packet_id,
+        research_packet_sha256=research_packet_sha256,
     )
 
 
@@ -161,7 +194,12 @@ def latest_plan(path: Path, policy: Policy) -> tuple[date, list[TradeIntent]]:
         candidates.append((_date(parsed.get("plan_date"), "plan_date"), parsed))
     newest_date = max(item[0] for item in candidates)
     newest = [item[1] for item in candidates if item[0] == newest_date]
-    typed_newest = [item for item in newest if item.get("schema_version") == 1]
+    typed_newest = [
+        item
+        for item in newest
+        if type(item.get("schema_version")) is int
+        and item.get("schema_version") in {1, 2}
+    ]
     if len(typed_newest) == 1:
         raw = typed_newest[0]
     elif len(newest) == 1:
@@ -172,7 +210,8 @@ def latest_plan(path: Path, policy: Policy) -> tuple[date, list[TradeIntent]]:
         raise PlanError(
             "plan object must contain exactly schema_version, agent, plan_date, and trades"
         )
-    if raw.get("schema_version") != 1:
+    schema_version = raw.get("schema_version")
+    if type(schema_version) is not int or schema_version not in {1, 2}:
         raise PlanError("unsupported trade-plan schema_version")
     if raw.get("agent") != policy.agent_name:
         raise PlanError(
@@ -189,7 +228,7 @@ def latest_plan(path: Path, policy: Policy) -> tuple[date, list[TradeIntent]]:
     for item in trades:
         if not isinstance(item, dict):
             raise PlanError("every trade must be a JSON object")
-        intent = parse_trade(plan_date, item, policy)
+        intent = parse_trade(plan_date, item, policy, schema_version)
         if intent.symbol in seen:
             raise PlanError(f"a plan may contain only one action for {intent.symbol}")
         seen.add(intent.symbol)

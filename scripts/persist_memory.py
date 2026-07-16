@@ -3,7 +3,8 @@
 
 This fixed, no-argument helper is the only Git capability exposed to scheduled
 Claude Code routines. It rejects stale bases, staged changes, foreign-profile
-writes, control-plane changes, and unexpected remotes before committing.
+writes, control-plane changes, pending research packets, rewritten research
+history, and unexpected remotes before committing.
 """
 
 from __future__ import annotations
@@ -29,6 +30,7 @@ BULL_FILES = {
     "memory/performance.csv",
     "memory/trades.jsonl",
     "memory/execution-events.jsonl",
+    "memory/research-evidence.jsonl",
     "memory/strategy-proposals.md",
 }
 
@@ -43,7 +45,16 @@ AGGRO_FILES = {
     "memory/aggressive/performance.csv",
     "memory/aggressive/trades.jsonl",
     "memory/aggressive/execution-events.jsonl",
+    "memory/aggressive/research-evidence.jsonl",
     "memory/aggressive/strategy-proposals.md",
+}
+RESEARCH_LEDGER = {
+    "bull": "memory/research-evidence.jsonl",
+    "aggro": "memory/aggressive/research-evidence.jsonl",
+}
+PENDING_PACKETS = {
+    "memory/research-packet.pending.json",
+    "memory/aggressive/research-packet.pending.json",
 }
 
 
@@ -92,6 +103,67 @@ def _changed_paths() -> set[str]:
     return changed
 
 
+def _reject_pending_packets() -> None:
+    present = {
+        path
+        for path in PENDING_PACKETS
+        if (ROOT / path).exists() or (ROOT / path).is_symlink()
+    }
+    for directory in (ROOT / "memory", ROOT / "memory" / "aggressive"):
+        if directory.is_dir():
+            present.update(
+                path.relative_to(ROOT).as_posix()
+                for path in directory.glob(".research-packet.claimed-*.json")
+            )
+    if present:
+        raise PersistenceError(
+            "unconsumed research pending packet(s): " + ", ".join(sorted(present))
+        )
+
+
+def _tracked_blob(path: str) -> str:
+    for reference in ("HEAD", "refs/remotes/origin/main"):
+        result = _run("git", "show", f"{reference}:{path}", check=False)
+        if result.returncode == 0:
+            return result.stdout
+    raise PersistenceError(
+        f"research ledger {path} is not tracked in HEAD or origin/main"
+    )
+
+
+def _verify_research_append(path: str) -> None:
+    local_path = ROOT / path
+    if local_path.is_symlink() or not local_path.is_file():
+        raise PersistenceError(f"research ledger {path} must be a regular file")
+    try:
+        current = local_path.read_text(encoding="utf-8")
+    except (OSError, UnicodeError) as exc:
+        raise PersistenceError(f"could not read research ledger {path}: {exc}") from exc
+    baseline = _tracked_blob(path)
+    if not current.startswith(baseline):
+        raise PersistenceError(
+            f"research ledger {path} rewrote or deleted tracked history; only exact append is allowed"
+        )
+    if current == baseline:
+        raise PersistenceError(
+            f"research ledger {path} changed without appending a packet"
+        )
+
+
+def _validate_changed_research(changed: set[str], agent: str) -> None:
+    ledger = RESEARCH_LEDGER[agent]
+    if ledger not in changed:
+        return
+    _verify_research_append(ledger)
+    _run(
+        sys.executable,
+        "scripts/research.py",
+        "validate",
+        "--agent",
+        agent,
+    )
+
+
 def main() -> int:
     if len(sys.argv) != 1:
         raise PersistenceError("persist_memory.py takes no arguments")
@@ -102,6 +174,7 @@ def main() -> int:
     lock_path = ROOT / "memory" / "_lock"
     if lock_path.exists() and lock_path.read_text(encoding="utf-8").strip() not in {"", "{}"}:
         raise PersistenceError("memory/_lock must be released before persistence")
+    _reject_pending_packets()
 
     _verify_remote()
     if _lines("git", "diff", "--cached", "--name-only", "--"):
@@ -124,15 +197,18 @@ def main() -> int:
     if not changed:
         print("no authorized memory changes to persist")
         return 0
+    _validate_changed_research(changed, agent)
 
     _run("git", "add", "--", *sorted(changed))
     staged = _lines("git", "diff", "--cached", "--name-only", "--")
     if staged != changed or any(not _allowed(path, agent) for path in staged):
         raise PersistenceError("staged change set differs from verified journal change set")
+    _reject_pending_packets()
 
     _run("git", "config", "user.email", f"{agent}-bull-bot@users.noreply.github.com")
     _run("git", "config", "user.name", "Aggro Bull Bot" if agent == "aggro" else "Bull Bot")
     _run("git", "commit", "-m", f"{agent}: verified scheduled memory update")
+    _reject_pending_packets()
     _run("git", "push", "origin", "HEAD:main")
     print(f"persisted {len(staged)} authorized {agent} memory file(s) to main")
     return 0

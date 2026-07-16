@@ -29,6 +29,24 @@ COMMON_READ = {
     "memory/_lock",
     "memory/control.md",
     "memory/knowledge-base.md",
+    "memory/quant-research-playbook.md",
+}
+SHARED_IMMUTABLE = {
+    "memory/control.md",
+    "memory/knowledge-base.md",
+    "memory/quant-research-playbook.md",
+}
+RESEARCH_LEDGER = {
+    "bull": "memory/research-evidence.jsonl",
+    "aggro": "memory/aggressive/research-evidence.jsonl",
+}
+RESEARCH_PENDING = {
+    "bull": "memory/research-packet.pending.json",
+    "aggro": "memory/aggressive/research-packet.pending.json",
+}
+MEMORY_ROOT = (ROOT / "memory").resolve()
+SHARED_IMMUTABLE_PATHS = {
+    (ROOT / relative).resolve() for relative in SHARED_IMMUTABLE
 }
 
 
@@ -39,6 +57,52 @@ class Denied(ValueError):
 class QuietParser(argparse.ArgumentParser):
     def error(self, message: str) -> None:
         raise Denied(message)
+
+
+def _require_canonical_path_case(relative: Path) -> None:
+    if ".." in relative.parts:
+        raise Denied("path traversal components are not allowed")
+    current = ROOT
+    for component in relative.parts:
+        if current.is_dir():
+            try:
+                names = {entry.name for entry in current.iterdir()}
+            except OSError as exc:
+                raise Denied(f"cannot verify canonical path components: {exc}") from exc
+            if component not in names and any(
+                name.casefold() == component.casefold() for name in names
+            ):
+                raise Denied(
+                    "path component casing must match the repository entry exactly"
+                )
+        current /= component
+
+
+def _resolve_repo_path(raw: object) -> Path:
+    if not isinstance(raw, str) or not raw:
+        raise Denied("missing repository path")
+    supplied = Path(raw)
+    candidate = supplied if supplied.is_absolute() else ROOT / supplied
+    try:
+        lexical_relative = candidate.relative_to(ROOT)
+    except ValueError as exc:
+        raise Denied("path is outside the repository") from exc
+    _require_canonical_path_case(lexical_relative)
+    resolved = candidate.resolve(strict=False)
+    if not resolved.is_relative_to(ROOT):
+        raise Denied("path escapes the repository")
+    return resolved
+
+
+def _same_existing_file(left: Path, right: Path) -> bool:
+    try:
+        return left.exists() and right.exists() and left.samefile(right)
+    except OSError:
+        return False
+
+
+def _matches_path(candidate: Path, canonical: Path) -> bool:
+    return candidate == canonical or _same_existing_file(candidate, canonical)
 
 
 def _decision(
@@ -155,6 +219,15 @@ def _bash(command: object, agent: str) -> str:
     if tokens[:2] == ["python3", "scripts/trade.py"]:
         _trade(tokens[2:], agent)
         return shlex.join(tokens)
+    if tokens[:2] == ["python3", "scripts/research.py"]:
+        if tuple(tokens[2:]) not in {
+            ("validate", "--agent", agent),
+            ("append", "--agent", agent),
+        }:
+            raise Denied(
+                "research.py accepts exactly validate|append --agent for the bound profile"
+            )
+        return shlex.join(tokens)
 
     offset = 0
     if tokens[0] == "bash":
@@ -171,15 +244,20 @@ def _bash(command: object, agent: str) -> str:
 
 
 def _write_path(raw: object, agent: str) -> None:
-    if not isinstance(raw, str) or not raw:
-        raise Denied("missing write path")
-    path = Path(raw)
-    resolved = (path if path.is_absolute() else ROOT / path).resolve(strict=False)
-    if not resolved.is_relative_to(ROOT / "memory"):
+    resolved = _resolve_repo_path(raw)
+    if not resolved.is_relative_to(MEMORY_ROOT):
         raise Denied("writes are confined to memory")
     relative = resolved.relative_to(ROOT).as_posix()
     if relative == "memory/_lock":
         return
+    if any(_matches_path(resolved, item) for item in SHARED_IMMUTABLE_PATHS):
+        raise Denied("shared control and research references are human-owned")
+    ledger = (ROOT / RESEARCH_LEDGER[agent]).resolve()
+    if _matches_path(resolved, ledger):
+        raise Denied(
+            "research evidence is append-only through scripts/research.py; "
+            "write the profile pending packet instead"
+        )
     if agent == "bull":
         if relative.startswith("memory/aggressive/") or relative in {"memory/control.md", "memory/strategy.md"}:
             raise Denied("Bull cannot write shared control, active strategy, or AGGRO memory")
@@ -191,14 +269,16 @@ def _write_path(raw: object, agent: str) -> None:
         }:
             raise Denied("AGGRO cannot write outside mutable AGGRO memory")
     if resolved.suffix.lower() not in {".md", ".csv", ".jsonl"}:
-        raise Denied("unsupported journal file type")
+        pending = (ROOT / RESEARCH_PENDING[agent]).resolve()
+        if resolved.suffix.lower() != ".json" or not _matches_path(resolved, pending):
+            raise Denied(
+                "unsupported journal file type; only the bound "
+                "research-packet.pending.json may use .json"
+            )
 
 
 def _read_path(raw: object, agent: str) -> None:
-    if not isinstance(raw, str) or not raw:
-        raise Denied("missing read path")
-    path = Path(raw)
-    resolved = (path if path.is_absolute() else ROOT / path).resolve(strict=False)
+    resolved = _resolve_repo_path(raw)
     if not resolved.is_relative_to(ROOT) or not resolved.is_file():
         raise Denied("read path must be an existing repository file")
     relative = resolved.relative_to(ROOT).as_posix()

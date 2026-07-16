@@ -24,6 +24,11 @@ with `--agent bull` (`--repair` only for ACTIVE or RISK_OFF; read-only for
 PAUSED). Fail closed on any discrepancy; never use a raw broker order, close,
 cancellation, or stop command.
 
+The `/weekly-review` command owns the
+`memory/quant-research-playbook.md` validation and draft-checklist/anti-overfit
+workflow. Do not perform or repeat those steps separately in this outer
+routine.
+
 Then read authorized Bull files in top-level memory/. Cross-profile reads are
 limited to the comparison files explicitly named by the playbook; never read
 Aggressive research or active strategy. Follow the playbook in

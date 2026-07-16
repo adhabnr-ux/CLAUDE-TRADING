@@ -31,6 +31,31 @@ repository; it does not mean error-free, profitable, or ready for live capital.
 - [x] Automated tests and CI for policy, parsing, risk, idempotency, recovery,
   stop handling, runner boundaries, shell syntax, and schemas.
 
+## Implemented research-governance foundation
+
+- [x] Shared immutable quant-research playbook with evidence/inference
+  separation, source tiers, explicit as-of time, visible collection failures,
+  adversarial review, abstention, and prompt-injection boundaries.
+- [x] Strict profile-isolated research packets with canonical-URL duplicate
+  and captured-content duplicate checks, referential integrity, symbol-scoped
+  support, candidate source diversity, tier-1 primary evidence, opposing
+  evidence, and critical-unknown gates.
+- [x] Locked validate-before-append ledgers plus a deterministic fresh-buy gate.
+  A new buy requires the latest same-session premarket packet to contain an
+  exact-symbol candidate within human-owned age limits; packet ID/hash, thesis,
+  invalidation, and review date must match the buy plan, and the evidence
+  identity is written to execution audit records. Filled/partial recovery,
+  protective actions, sells, and
+  reconciliation remain available independently of research state.
+- [x] Inactive strategy-experiment draft checklist with source lineage,
+  one-change fields, immutable hashes, point-in-time/holdout controls, costs,
+  uncertainty, multiple-testing, sensitivity, shadow, rollback, and human
+  review. It permits only `DRAFT` and `REJECTED` and does not register, run,
+  validate, or promote an experiment.
+
+These controls improve research hygiene; they do not supply a dataset,
+backtester, portfolio model, proven signal, or evidence of alpha.
+
 ## P0 - production-grade paper operations
 
 These are prerequisites for calling the paper system operationally mature.
@@ -80,6 +105,15 @@ These are prerequisites for calling the paper system operationally mature.
 7. Register strategy versions. Agents may propose a change, but promotion needs
    reproducible evidence, review, a shadow period, rollback criteria, and a
    human-approved policy diff.
+8. Add trusted acquisition receipts, a human-owned source registry, and a
+   content-origin resolver. Agent-declared publisher, domain, source tier,
+   timestamps, hashes, completeness, and prompt-injection status are not proof;
+   fetched bytes, syndicated ownership, and privileged primary classifications
+   need deterministic verification.
+9. Build a real experiment registry and semantic validator for ordered,
+   non-overlapping windows, immutable evaluator/environment hashes, effective
+   independent sample size, power/precision targets, trial-family size,
+   multiplicity correction, typed base/stress costs, and forecast calibration.
 
 ## P2 - execution and portfolio sophistication
 

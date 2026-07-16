@@ -36,6 +36,11 @@ class ExecutionTests(unittest.TestCase):
         (self.root / "memory").mkdir()
         self.control = self.root / "memory" / "control.md"
         self.control.write_text("STATUS: ACTIVE\n", encoding="utf-8")
+        self.research_evidence = {
+            "packet_id": "bull:2026-07-16:premarket:test",
+            "packet_sha256": "a" * 64,
+        }
+        self.research_guard = lambda: self.research_evidence.copy()
 
     def tearDown(self):
         self.tmp.cleanup()
@@ -48,15 +53,81 @@ class ExecutionTests(unittest.TestCase):
             intent=intent(self.now),
             now=self.now,
             control_path=self.control,
+            fresh_buy_guard=self.research_guard,
             root=self.root,
             sleep=lambda _: None,
         )
         self.assertEqual(result["status"], "filled")
+        self.assertEqual(result["research_packet_id"], self.research_evidence["packet_id"])
+        self.assertEqual(
+            result["research_packet_sha256"], self.research_evidence["packet_sha256"]
+        )
         self.assertEqual([item["type"] for item in self.client.submissions], ["limit", "trailing_stop"])
         self.assertEqual(self.client.submissions[1]["qty"], "10")
         row = json.loads((self.root / "memory" / "trades.jsonl").read_text())
         self.assertEqual(row["broker_order_id"], "order-1")
         self.assertEqual(row["protective_order_id"], "order-2")
+        self.assertEqual(row["research_packet_id"], self.research_evidence["packet_id"])
+        self.assertEqual(
+            row["research_packet_sha256"], self.research_evidence["packet_sha256"]
+        )
+
+    def test_fresh_buy_fails_closed_when_research_gate_rejects(self):
+        def blocked():
+            raise RiskRejected("no current candidate research")
+
+        with self.assertRaisesRegex(RiskRejected, "no current candidate research"):
+            execute_buy(
+                client=self.client,
+                policy=self.policy,
+                agent="bull",
+                intent=intent(self.now),
+                now=self.now,
+                control_path=self.control,
+                fresh_buy_guard=blocked,
+                root=self.root,
+                sleep=lambda _: None,
+            )
+        self.assertEqual(self.client.submissions, [])
+
+    def test_fresh_buy_rejects_mismatched_or_legacy_research_identity(self):
+        def mismatched():
+            return {
+                "packet_id": "bull:2026-07-16:premarket:different",
+                "packet_sha256": "b" * 64,
+            }
+        with self.assertRaisesRegex(RiskRejected, "does not match the planned buy"):
+            execute_buy(
+                client=self.client,
+                policy=self.policy,
+                agent="bull",
+                intent=intent(self.now),
+                now=self.now,
+                control_path=self.control,
+                fresh_buy_guard=mismatched,
+                root=self.root,
+                sleep=lambda _: None,
+            )
+        self.assertEqual(self.client.submissions, [])
+
+        legacy = replace(
+            intent(self.now),
+            research_packet_id=None,
+            research_packet_sha256=None,
+        )
+        with self.assertRaisesRegex(RiskRejected, "does not match the planned buy"):
+            execute_buy(
+                client=self.client,
+                policy=self.policy,
+                agent="bull",
+                intent=legacy,
+                now=self.now,
+                control_path=self.control,
+                fresh_buy_guard=self.research_guard,
+                root=self.root,
+                sleep=lambda _: None,
+            )
+        self.assertEqual(self.client.submissions, [])
 
     def test_broker_guaranteed_or_next_session_statuses_are_not_terminal(self):
         self.assertIn("stopped", OPEN_ORDER_STATUSES)
@@ -96,6 +167,7 @@ class ExecutionTests(unittest.TestCase):
                 intent=trade,
                 now=self.now,
                 control_path=self.control,
+                fresh_buy_guard=self.research_guard,
                 root=self.root,
                 sleep=lambda _: None,
             )
@@ -109,10 +181,17 @@ class ExecutionTests(unittest.TestCase):
             intent=intent(self.now),
             now=self.now,
             control_path=self.control,
+            fresh_buy_guard=self.research_guard,
             root=self.root,
             sleep=lambda _: None,
         )
         count = len(self.client.submissions)
+        guard_calls = []
+
+        def stale_research():
+            guard_calls.append(True)
+            raise RiskRejected("research became unavailable")
+
         second = execute_buy(
             client=self.client,
             policy=self.policy,
@@ -120,11 +199,61 @@ class ExecutionTests(unittest.TestCase):
             intent=intent(self.now),
             now=self.now,
             control_path=self.control,
+            fresh_buy_guard=stale_research,
             root=self.root,
             sleep=lambda _: None,
         )
         self.assertEqual(first["entry_order_id"], second["entry_order_id"])
         self.assertEqual(len(self.client.submissions), count)
+        self.assertEqual(guard_calls, [])
+
+    def test_started_zero_fill_operation_cannot_mint_retry_after_restart(self):
+        trade = intent(self.now)
+        payload = {
+            "agent": "bull",
+            "plan_date": trade.plan_date.isoformat(),
+            "action": "buy",
+            "symbol": trade.symbol,
+        }
+        first_client_id = _client_id(
+            f"bull-{trade.plan_date.isoformat()}-{trade.symbol}-a1", payload
+        )
+        self.client.seed_order(
+            symbol="ETN",
+            qty="10",
+            filled_qty="0",
+            side="buy",
+            type="limit",
+            status="canceled",
+            client_order_id=first_client_id,
+        )
+
+        changed_legacy_plan = replace(
+            trade,
+            thesis="A changed thesis must not inherit an earlier broker authorization.",
+            research_packet_id=None,
+            research_packet_sha256=None,
+        )
+        guard_calls = []
+
+        def stale_research():
+            guard_calls.append(True)
+            raise RiskRejected("research became unavailable")
+
+        with self.assertRaisesRegex(RiskRejected, "cannot authorize a new attempt"):
+            execute_buy(
+                client=self.client,
+                policy=self.policy,
+                agent="bull",
+                intent=changed_legacy_plan,
+                now=self.now,
+                control_path=self.control,
+                fresh_buy_guard=stale_research,
+                root=self.root,
+                sleep=lambda _: None,
+            )
+        self.assertEqual(guard_calls, [])
+        self.assertEqual(self.client.submissions, [])
 
     def test_rerun_cancels_partially_filled_live_entry_before_completion(self):
         trade = intent(self.now)
@@ -161,6 +290,7 @@ class ExecutionTests(unittest.TestCase):
             intent=trade,
             now=self.now,
             control_path=self.control,
+            fresh_buy_guard=self.research_guard,
             root=self.root,
             sleep=lambda _: None,
         )
@@ -197,6 +327,7 @@ class ExecutionTests(unittest.TestCase):
                 intent=intent(self.now),
                 now=self.now,
                 control_path=self.control,
+                fresh_buy_guard=self.research_guard,
                 root=self.root,
                 sleep=lambda _: None,
             )
@@ -238,6 +369,7 @@ class ExecutionTests(unittest.TestCase):
             intent=intent(self.now),
             now=self.now,
             control_path=self.control,
+            fresh_buy_guard=self.research_guard,
             root=self.root,
             sleep=lambda _: None,
         )
@@ -251,6 +383,7 @@ class ExecutionTests(unittest.TestCase):
             intent=intent(self.now),
             now=self.now,
             control_path=self.control,
+            fresh_buy_guard=self.research_guard,
             root=self.root,
             sleep=lambda _: None,
         )
@@ -265,6 +398,7 @@ class ExecutionTests(unittest.TestCase):
             intent=intent(self.now),
             now=self.now,
             control_path=self.control,
+            fresh_buy_guard=self.research_guard,
             root=self.root,
             sleep=lambda _: None,
         )
@@ -277,6 +411,7 @@ class ExecutionTests(unittest.TestCase):
             intent=intent(self.now),
             now=self.now,
             control_path=self.control,
+            fresh_buy_guard=self.research_guard,
             root=self.root,
             sleep=lambda _: None,
         )
@@ -294,6 +429,7 @@ class ExecutionTests(unittest.TestCase):
             intent=first_intent,
             now=self.now,
             control_path=self.control,
+            fresh_buy_guard=self.research_guard,
             root=self.root,
             sleep=lambda _: None,
         )
@@ -309,6 +445,7 @@ class ExecutionTests(unittest.TestCase):
             intent=revised,
             now=self.now,
             control_path=self.control,
+            fresh_buy_guard=self.research_guard,
             root=self.root,
             sleep=lambda _: None,
         )
@@ -344,6 +481,7 @@ class ExecutionTests(unittest.TestCase):
                 intent=revised,
                 now=self.now,
                 control_path=self.control,
+                fresh_buy_guard=self.research_guard,
                 root=self.root,
                 sleep=lambda _: None,
             )
@@ -377,6 +515,7 @@ class ExecutionTests(unittest.TestCase):
                 intent=trade,
                 now=self.now,
                 control_path=self.control,
+                fresh_buy_guard=self.research_guard,
                 root=self.root,
                 sleep=lambda _: None,
             )
@@ -522,6 +661,8 @@ class ExecutionTests(unittest.TestCase):
             earnings_date=None,
             earnings_verified_at=None,
             earnings_source=None,
+            research_packet_id=None,
+            research_packet_sha256=None,
         )
 
     def test_planned_trim_confirms_stop_cancel_and_reprotects_remainder(self):

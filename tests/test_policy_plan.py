@@ -20,7 +20,7 @@ ROOT = Path(__file__).resolve().parents[1]
 class PolicyPlanTests(unittest.TestCase):
     def _valid_plan(self):
         return {
-            "schema_version": 1,
+            "schema_version": 2,
             "agent": "bull",
             "plan_date": "2026-07-16",
             "trades": [
@@ -36,6 +36,8 @@ class PolicyPlanTests(unittest.TestCase):
                     "earnings_date": "2026-07-31",
                     "earnings_verified_at": "2026-07-16T11:30:00-04:00",
                     "earnings_source": "https://example.com/earnings",
+                    "research_packet_id": "bull:2026-07-16:premarket:test",
+                    "research_packet_sha256": "a" * 64,
                 }
             ],
         }
@@ -104,6 +106,16 @@ class PolicyPlanTests(unittest.TestCase):
         plan_date, intents = self._parse(self._valid_plan())
         self.assertEqual(plan_date, date(2026, 7, 16))
         self.assertEqual(intents[0].symbol, "ETN")
+        self.assertEqual(
+            intents[0].research_packet_id,
+            "bull:2026-07-16:premarket:test",
+        )
+        self.assertEqual(intents[0].research_packet_sha256, "a" * 64)
+
+        missing_identity = self._valid_plan()
+        missing_identity["trades"][0].pop("research_packet_sha256")
+        with self.assertRaisesRegex(PlanError, "required buy fields missing"):
+            self._parse(missing_identity)
 
     def test_plan_rejects_wrong_sector_and_missing_earnings(self):
         policy = load_policy("bull", ROOT)
@@ -159,6 +171,8 @@ class PolicyPlanTests(unittest.TestCase):
             "earnings_date",
             "earnings_verified_at",
             "earnings_source",
+            "research_packet_id",
+            "research_packet_sha256",
         ):
             duplicate.pop(key)
         plan["trades"].append(duplicate)
@@ -211,18 +225,40 @@ class PolicyPlanTests(unittest.TestCase):
             self.assertEqual(intents, [])
 
     def test_invalid_policy_semantics_fail_before_trading(self):
-        policy = json.loads((ROOT / "config" / "risk-policy.json").read_text())
+        base_policy = json.loads((ROOT / "config" / "risk-policy.json").read_text())
         instruments = (ROOT / "config" / "instruments.json").read_text()
         earnings = (ROOT / "config" / "earnings-calendar.json").read_text()
-        policy["system"]["maximum_entry_attempts"] = 0
-        with tempfile.TemporaryDirectory() as tmp:
-            config = Path(tmp) / "config"
-            config.mkdir()
-            (config / "risk-policy.json").write_text(json.dumps(policy), encoding="utf-8")
-            (config / "instruments.json").write_text(instruments, encoding="utf-8")
-            (config / "earnings-calendar.json").write_text(earnings, encoding="utf-8")
-            with self.assertRaisesRegex(Exception, "greater than zero"):
-                load_policy("bull", Path(tmp))
+
+        def rejected(updates, message):
+            policy = deepcopy(base_policy)
+            policy["system"].update(updates)
+            with tempfile.TemporaryDirectory() as tmp:
+                config = Path(tmp) / "config"
+                config.mkdir()
+                (config / "risk-policy.json").write_text(
+                    json.dumps(policy), encoding="utf-8"
+                )
+                (config / "instruments.json").write_text(
+                    instruments, encoding="utf-8"
+                )
+                (config / "earnings-calendar.json").write_text(
+                    earnings, encoding="utf-8"
+                )
+                with self.assertRaisesRegex(Exception, message):
+                    load_policy("bull", Path(tmp))
+
+        rejected({"maximum_entry_attempts": 0}, "greater than zero")
+        rejected(
+            {"research_candidate_max_age_minutes": 1441},
+            "cannot exceed 1440",
+        )
+        rejected(
+            {
+                "research_candidate_max_age_minutes": 60,
+                "research_market_source_max_age_minutes": 61,
+            },
+            "cannot exceed research_candidate_max_age_minutes",
+        )
 
 
 if __name__ == "__main__":

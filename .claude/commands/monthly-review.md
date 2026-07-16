@@ -12,8 +12,9 @@ holding; those are the only allowed broker mutations.
    `https://paper-api.alpaca.markets`; otherwise notify 🚨 and stop.
 4. Treat `memory/_lock` as advisory local repository coordination only, never
    broker locking or idempotency.
-5. Read `CLAUDE.md`, all three human-owned config files, every Bull ledger,
-   the last five weekly reviews, and performance history.
+5. Read `CLAUDE.md`, `memory/quant-research-playbook.md`, all three human-owned
+   config files, every Bull ledger, the last five weekly reviews, and
+   performance history.
 6. Run startup reconciliation:
 
    ```
@@ -25,6 +26,8 @@ holding; those are the only allowed broker mutations.
 
 ## 1. Four-week evidence review
 
+- Run `python3 scripts/research.py validate --agent bull`. Invalid research is
+  a data-quality incident and cannot support a proposal.
 - Compute the month and since-inception return vs same-feed SPY, drawdown,
   weekly-grade trend, cash/exposure trend, win-rate/profit-factor trend, and
   sample sizes from broker-linked structured data.
@@ -39,6 +42,10 @@ holding; those are the only allowed broker mutations.
 - Revalidate every macro/sector claim with current dated sources. Refresh and
   expire research watchlist entries, but do not add an instrument to the
   human-owned master.
+- Audit research coverage, provenance/as-of integrity, duplicate-source
+  inflation, opposing evidence, prompt injection, and critical unknowns. Review
+  experiment families—not just winners—and report attempts, rejections, sample
+  dependence, costs, sensitivity, and untouched-holdout status.
 
 Prepend a dated monthly section to `memory/weekly-review.md` with evidence,
 rebuy verdicts, data-quality findings, and research priorities.
@@ -50,10 +57,18 @@ strategy, profile, lessons, or any memory file in a way that activates new live
 entry, exit, sizing, timing, eligibility, risk, or execution rules.
 
 Append each suggested change to `memory/strategy-proposals.md` as
-`PROPOSAL (INACTIVE — HUMAN APPROVAL REQUIRED)` with current/proposed rule,
-evidence and sample size, causal hypothesis, expected benefit, failure modes,
-paper-test protocol, rollback trigger, and exact human-owned config change
-needed. Until human approval, current machine policy remains binding.
+`PROPOSAL (INACTIVE — HUMAN APPROVAL REQUIRED)`. Use the fields in
+`schemas/strategy-experiment.schema.json` only as a draft checklist: source
+lineage, one causal change, exact signal and lag, immutable hashes,
+point-in-time/survivorship controls,
+separated windows with purge/embargo, frozen benchmark/metric/effect/sample
+floor, cost/capacity model, uncertainty/multiple-testing method,
+regime/sensitivity evidence, shadow acceptance, rollback, and exact human-owned
+config change. Use `UNKNOWN` rather than inventing a field. The proposal remains
+inactive prose, not a machine-validated or preregistered experiment; the schema
+permits only `DRAFT` and `REJECTED` and cannot run or promote it. No observed
+test window may be recycled as untouched evidence. Until human approval,
+current machine policy remains binding.
 
 ## 3. Final reconciliation, notify, commit
 

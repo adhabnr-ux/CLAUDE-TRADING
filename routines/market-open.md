@@ -21,7 +21,7 @@ coordination only. Human-owned config is authoritative; no memory or lesson can
 activate a rule change. Every broker mutation must use python3 scripts/trade.py.
 Run startup and final reconciliation with `--agent bull` (`--repair` only for
 ACTIVE or RISK_OFF; read-only for PAUSED). Execute only current typed
-buy/trim/exit intents from a plan with exactly top-level `schema_version: 1`,
+buy/trim/exit intents from a plan with exactly top-level `schema_version: 2`,
 `agent: "bull"`, `plan_date`, and `trades`. Planned trims/exits cannot day-trade
 and remain blocked after a same-day buy. Fail closed on any discrepancy; never
 use a raw broker order, close, cancellation, or stop command.

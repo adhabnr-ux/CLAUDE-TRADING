@@ -9,8 +9,11 @@ from pathlib import Path
 from typing import Any
 from zoneinfo import ZoneInfo, ZoneInfoNotFoundError
 
+from .research import SCHEMA_MARKET_SOURCE_MAX_AGE_MINUTES
+
 
 ROOT = Path(__file__).resolve().parents[1]
+MAX_RESEARCH_FRESHNESS_MINUTES = SCHEMA_MARKET_SOURCE_MAX_AGE_MINUTES
 
 
 class PolicyError(RuntimeError):
@@ -65,6 +68,8 @@ def load_policy(agent: str, root: Path = ROOT) -> Policy:
         "timezone",
         "minimum_stock_price",
         "maximum_quote_age_seconds",
+        "research_candidate_max_age_minutes",
+        "research_market_source_max_age_minutes",
         "maximum_limit_markup_pct",
         "fill_timeout_seconds",
         "maximum_entry_attempts",
@@ -112,6 +117,8 @@ def load_policy(agent: str, root: Path = ROOT) -> Policy:
             raise PolicyError(f"risk policy {field} must be finite and non-negative")
     integer_fields = {
         "maximum_quote_age_seconds",
+        "research_candidate_max_age_minutes",
+        "research_market_source_max_age_minutes",
         "fill_timeout_seconds",
         "maximum_entry_attempts",
         "maximum_exit_attempts",
@@ -127,6 +134,8 @@ def load_policy(agent: str, root: Path = ROOT) -> Policy:
     for field in {
         "minimum_stock_price",
         "maximum_quote_age_seconds",
+        "research_candidate_max_age_minutes",
+        "research_market_source_max_age_minutes",
         "fill_timeout_seconds",
         "maximum_entry_attempts",
         "maximum_exit_attempts",
@@ -136,6 +145,23 @@ def load_policy(agent: str, root: Path = ROOT) -> Policy:
         value = system[field] if field in system else agent_policy[field]
         if Decimal(str(value)) <= 0:
             raise PolicyError(f"risk policy {field} must be greater than zero")
+    candidate_age = int(Decimal(str(system["research_candidate_max_age_minutes"])))
+    market_source_age = int(
+        Decimal(str(system["research_market_source_max_age_minutes"]))
+    )
+    if candidate_age > MAX_RESEARCH_FRESHNESS_MINUTES:
+        raise PolicyError(
+            "research_candidate_max_age_minutes cannot exceed 1440"
+        )
+    if market_source_age > MAX_RESEARCH_FRESHNESS_MINUTES:
+        raise PolicyError(
+            "research_market_source_max_age_minutes cannot exceed 1440"
+        )
+    if market_source_age > candidate_age:
+        raise PolicyError(
+            "research_market_source_max_age_minutes cannot exceed "
+            "research_candidate_max_age_minutes"
+        )
     percentage_fields = required_agent - {"max_new_positions_per_week", "max_spread_bps"}
     for field in percentage_fields:
         parsed = Decimal(str(agent_policy[field]))

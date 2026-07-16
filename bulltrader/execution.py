@@ -678,6 +678,7 @@ def _record_fill(
     intent: TradeIntent,
     order: dict[str, Any],
     stops: list[dict[str, Any]],
+    research_fields: dict[str, str] | None = None,
 ) -> None:
     trade_path = _agent_memory(root, agent) / "trades.jsonl"
     order_id = str(order.get("id", ""))
@@ -685,25 +686,26 @@ def _record_fill(
         encoding="utf-8"
     ).replace(" ", ""):
         return
-    _append_jsonl(
-        trade_path,
-        {
-            "ts": order.get("filled_at") or datetime.now(timezone.utc).isoformat().replace("+00:00", "Z"),
-            "agent": agent,
-            "action": "buy",
-            "symbol": intent.symbol,
-            "qty": float(D(order.get("filled_qty"), "filled_qty")),
-            "fill_price": float(D(order.get("filled_avg_price"), "filled_avg_price")),
-            "thesis": intent.thesis,
-            "invalidation": intent.invalidation,
-            "review_by": intent.review_by.isoformat(),
-            "sector": intent.sector,
-            "broker_order_id": order_id,
-            "client_order_id": order.get("client_order_id"),
-            "protective_order_id": stops[0].get("id") if stops else None,
-            "protective_order_ids": [item.get("id") for item in stops],
-        },
-    )
+    row = {
+        "ts": order.get("filled_at")
+        or datetime.now(timezone.utc).isoformat().replace("+00:00", "Z"),
+        "agent": agent,
+        "action": "buy",
+        "symbol": intent.symbol,
+        "qty": float(D(order.get("filled_qty"), "filled_qty")),
+        "fill_price": float(D(order.get("filled_avg_price"), "filled_avg_price")),
+        "thesis": intent.thesis,
+        "invalidation": intent.invalidation,
+        "review_by": intent.review_by.isoformat(),
+        "sector": intent.sector,
+        "broker_order_id": order_id,
+        "client_order_id": order.get("client_order_id"),
+        "protective_order_id": stops[0].get("id") if stops else None,
+        "protective_order_ids": [item.get("id") for item in stops],
+    }
+    if research_fields:
+        row.update(research_fields)
+    _append_jsonl(trade_path, row)
 
 
 def _record_sell_fill(
@@ -790,9 +792,17 @@ def _safe_record_buy(
     intent: TradeIntent,
     order: dict[str, Any],
     stops: list[dict[str, Any]],
+    research_fields: dict[str, str] | None = None,
 ) -> str | None:
     try:
-        _record_fill(root, agent=agent, intent=intent, order=order, stops=stops)
+        _record_fill(
+            root,
+            agent=agent,
+            intent=intent,
+            order=order,
+            stops=stops,
+            research_fields=research_fields,
+        )
     except (OSError, RiskRejected) as exc:
         return f"trade ledger write failed: {exc}"
     return None
@@ -969,6 +979,7 @@ def execute_buy(
     intent: TradeIntent,
     now: datetime,
     control_path: Path,
+    fresh_buy_guard: Callable[[], dict[str, str]],
     root: Path = ROOT,
     dry_run: bool = False,
     sleep: Callable[[float], None] = time.sleep,
@@ -1020,6 +1031,34 @@ def execute_buy(
         existing_attempts,
         f"{agent} {intent.plan_date.isoformat()} buy {intent.symbol}",
     )
+    resumed_attempt_history = any(existing_attempts)
+    research_evidence: dict[str, str] | None = None
+    if not any(existing_attempts):
+        research_evidence = fresh_buy_guard()
+        if not isinstance(research_evidence, dict) or set(research_evidence) != {
+            "packet_id",
+            "packet_sha256",
+        }:
+            raise RiskRejected("fresh-buy research gate returned an invalid evidence identity")
+        if not re.fullmatch(
+            r"[a-z0-9][a-z0-9._:-]{2,127}", research_evidence["packet_id"]
+        ) or not re.fullmatch(r"[0-9a-f]{64}", research_evidence["packet_sha256"]):
+            raise RiskRejected("fresh-buy research gate returned malformed evidence identity")
+        if (
+            research_evidence["packet_id"] != intent.research_packet_id
+            or research_evidence["packet_sha256"] != intent.research_packet_sha256
+        ):
+            raise RiskRejected(
+                "latest candidate research identity does not match the planned buy"
+            )
+    research_fields = (
+        {
+            "research_packet_id": research_evidence["packet_id"],
+            "research_packet_sha256": research_evidence["packet_sha256"],
+        }
+        if research_evidence
+        else {}
+    )
     for attempt, (client_order_id, existing) in enumerate(
         zip(client_ids, existing_attempts), start=1
     ):
@@ -1043,6 +1082,11 @@ def execute_buy(
                 repair=not dry_run,
             )
         if existing is None:
+            if resumed_attempt_history:
+                raise RiskRejected(
+                    "an existing zero-fill entry history cannot authorize a new "
+                    "attempt after restart; submit no additional buy"
+                )
             approval = approve_buy(
                 client=client,
                 policy=policy,
@@ -1051,7 +1095,7 @@ def execute_buy(
                 control_path=control_path,
             )
             if dry_run:
-                return {
+                result = {
                     "status": "approved",
                     "client_order_id": client_order_id,
                     "limit_price": str(approval.limit_price),
@@ -1061,6 +1105,8 @@ def execute_buy(
                     "daily_buy_pct_after": str(approval.daily_buy_pct_after),
                     "drawdown_pct": str(approval.drawdown_pct),
                 }
+                result.update(research_fields)
+                return result
             event(
                 root,
                 "buy_preflight_approved",
@@ -1070,6 +1116,7 @@ def execute_buy(
                 client_order_id=client_order_id,
                 limit_price=str(approval.limit_price),
                 notional=str(approval.notional),
+                **research_fields,
             )
             existing = _submit_idempotent(
                 client,
@@ -1147,6 +1194,7 @@ def execute_buy(
             intent=intent,
             order=order,
             stops=[stop],
+            research_fields=research_fields,
         )
         event(
             root,
@@ -1157,6 +1205,7 @@ def execute_buy(
             fill_price=str(order.get("filled_avg_price")),
             entry_order_id=order.get("id"),
             protective_order_id=stop.get("id"),
+            **research_fields,
         )
         result = {
             "status": "filled" if filled_qty == intent.qty else "partially_filled",
@@ -1167,6 +1216,7 @@ def execute_buy(
             "client_order_id": client_order_id,
             "protective_order_id": stop.get("id"),
         }
+        result.update(research_fields)
         if warning:
             result["audit_warning"] = warning
         return result

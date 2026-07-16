@@ -38,6 +38,19 @@ class DataIsolationTests(unittest.TestCase):
                 {expected_agent},
             )
 
+    def test_research_ledgers_are_profile_scoped_jsonl(self):
+        for relative, expected_agent in (
+            ("memory/research-evidence.jsonl", "bull"),
+            ("memory/aggressive/research-evidence.jsonl", "aggro"),
+        ):
+            rows = [
+                json.loads(line)
+                for line in (ROOT / relative).read_text(encoding="utf-8").splitlines()
+                if line.strip()
+            ]
+            self.assertTrue(rows, relative)
+            self.assertEqual({row.get("agent") for row in rows}, {expected_agent})
+
 
 if __name__ == "__main__":
     unittest.main()

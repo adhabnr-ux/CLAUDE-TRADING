@@ -11,7 +11,8 @@ permitted broker mutations.
 3. Treat `memory/_lock` as advisory local repository coordination only, never
    broker locking or idempotency.
 4. Read `CLAUDE.md`, human-owned policy/instrument config, Aggressive
-   profile/memory, shared knowledge-base, performance data, gateway execution
+   profile/memory, shared knowledge-base, `memory/quant-research-playbook.md`,
+   performance data, gateway execution
    events, and `memory/aggressive/trades.jsonl`. The root
    `memory/trades.jsonl` is Bull-only after the audited legacy-ledger migration.
 5. Run startup reconciliation:
@@ -25,6 +26,9 @@ permitted broker mutations.
 
 ## 1. Build an auditable weekly dataset
 
+- Run `python3 scripts/research.py validate --agent aggro`. Treat a non-zero
+  result as a data-quality incident: preserve the failing row, identify it, and
+  do not base a new proposal on invalid evidence.
 - Observe the Aggressive account, positions, history, and same-feed SPY bars.
 - Reconcile broker evidence, execution events, Aggro structured rows,
   closed-trades, performance history, and narrative logs. Flag gaps rather than
@@ -37,6 +41,10 @@ permitted broker mutations.
   3.6% stop-risk limits, eight-position pace, and unexplained blocks.
 - Research current macro/sector context and each held thesis with dated,
   cross-checked sources.
+- Audit this week's evidence packets for as-of correctness, declared
+  publisher/host diversity, declared completeness/failures, disconfirming evidence, critical
+  unknowns, and prompt-injection handling. State packet/candidate sample counts;
+  do not infer skill from a few calls or overlapping horizons.
 
 Assign an A–F process grade independent of P/L. Prepend a dated entry to
 `memory/aggressive/weekly-review.md` with evidence, discrepancies, and next-week
@@ -51,10 +59,19 @@ eligibility, timing, protection, risk, or execution behavior.
 
 Append a suggested change only to
 `memory/aggressive/strategy-proposals.md`, labeled
-`PROPOSAL (INACTIVE — HUMAN APPROVAL REQUIRED)` with current/proposed rule,
-causal hypothesis, evidence and sample size, expected benefit, failure modes,
-paper-test design, rollback trigger, and exact config change required. Until a
-human edits config, current machine policy remains binding.
+`PROPOSAL (INACTIVE — HUMAN APPROVAL REQUIRED)` with source lineage, exact
+signal equation/inputs/universe/horizon/lag, one causal change, immutable
+code/data hashes, point-in-time and survivorship controls, separated
+train/validation/untouched-test windows, purge/embargo, benchmark, sample floor,
+costs/turnover/capacity, uncertainty and multiple-testing method,
+regime/sensitivity results, shadow acceptance rule, rollback trigger, and exact
+config change required. Use the fields in
+`schemas/strategy-experiment.schema.json` as a draft checklist and use
+`UNKNOWN` instead of invention. The proposal queue remains inactive prose; do
+not claim that a proposal is machine-validated or preregistered. The schema
+permits only `DRAFT` and `REJECTED` and cannot run or promote an experiment.
+Five-day P/L or a higher in-sample rolling Sharpe is never promotion evidence.
+Until a human edits config, current machine policy remains binding.
 
 Watchlist research can be refreshed/date-stamped/purged, but an unknown symbol
 stays research-only and cannot be inserted into the human-owned instrument

@@ -1,7 +1,8 @@
 # Control Switch — both Bulls read this FIRST, every run
 
 The human edits this file (directly on GitHub — web or mobile app) to control
-both agents instantly, without touching the cloud environments. Agents obey it
+both agents at the start of the next synced run, without touching the cloud
+environments. It is not an out-of-process mid-run kill switch. Agents obey it
 but **never** edit it.
 
 STATUS: PAUSED

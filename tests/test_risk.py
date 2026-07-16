@@ -3,7 +3,7 @@ from __future__ import annotations
 import tempfile
 import unittest
 from dataclasses import replace
-from datetime import date, datetime, timedelta, timezone
+from datetime import datetime, timedelta, timezone
 from decimal import Decimal
 from pathlib import Path
 
@@ -31,6 +31,8 @@ def intent(now: datetime, qty: str = "10", earnings_days: int = 20) -> TradeInte
         earnings_date=today + timedelta(days=earnings_days),
         earnings_verified_at=now,
         earnings_source="https://example.com/earnings",
+        research_packet_id="bull:2026-07-16:premarket:test",
+        research_packet_sha256="a" * 64,
     )
 
 
