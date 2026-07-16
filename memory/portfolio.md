@@ -3,41 +3,41 @@
 _Updated by every routine from live Alpaca data. The next agent trusts this as
 the last known state, but always re-fetches live data before trading._
 
-**Last updated:** 2026-07-15 ~15:51 ET (close routine; no action, all positions within range)
+**Last updated:** 2026-07-16 ~08:07 ET (pre-market routine; JNJ buy planned for today's open)
 **Inception:** 2026-05-21 — starting equity $100,000.00 | SPY anchor price $739.44
 **SPY total-return anchor (post-June 18 ex-div $1.76):** **$741.20**
 **Cumulative SPY dividends since inception (quarterly tracker):** $1.76/sh (June 18 ex-div); next SPY ex-div est. ~September 2026.
 
 ---
 
-## Account (close routine, 2026-07-15 ~15:51 ET)
+## Account (pre-market routine, 2026-07-16 ~08:07 ET)
 
 | Metric | Value |
 |--------|-------|
-| Equity | $99,267.59 |
-| Cash | $68,359.98 (68.859%) |
-| Long market value | $30,907.61 |
-| Last equity (July 14 close) | $99,335.99 |
-| Today's P/L | −$68.40 (−0.0689%) |
+| Equity | $99,059.52 |
+| Cash | $68,359.97 (68.995%) |
+| Long market value | $30,699.55 |
+| Last equity (July 15 close) | $99,240.89 |
+| Today's P/L (pre-market) | −$181.37 (−0.183%) |
 | HWM | $101,384.21 |
-| Drawdown from HWM | −2.088% — well within the −10% circuit breaker (7.912pp headroom) |
+| Drawdown from HWM | −2.293% — well within the −10% circuit breaker (7.707pp headroom); informational only, not a hard guardrail |
 
-## Open positions (close routine, 2026-07-15 ~15:51 ET)
+## Open positions (pre-market routine, 2026-07-16 ~08:07 ET)
 
 | Symbol | Qty | Avg entry | Current price | Mkt value | Unrealized P/L | % of portfolio | Trailing Stop |
 |--------|-----|-----------|--------------|-----------|----------------|----------------|---------------|
-| CAT | 4 | $944.73 | $915.89 | $3,663.56 | −$115.36 (−3.053%) | 3.690% | 6103c146 (4sh), HWM $964.62, stop $868.158 ✓ |
-| ETN | 19 | $414.99 | $414.065 | $7,867.235 | −$17.575 (−0.223%) | 7.926% | d0bb8b7c (19sh), HWM $415.8, stop $374.22 ✓ |
-| LLY | 10 | $1,093.534 | $1,153.615 | $11,536.15 | +$600.81 (+5.494%) | 11.622% | d4147484 (7sh) + 25989fb5 (3sh), HWM $1,249.45, stop $1,124.505 ✓ |
-| V | 22 | $323.57 | $356.39 | $7,840.58 | +$722.04 (+10.143%) | 7.898% | 66033918 (22sh), HWM $364.21, stop $327.789 ✓ |
+| CAT | 4 | $944.73 | $888.50 | $3,554.00 | −$224.92 (−5.952%) | 3.588% | 6103c146 (4sh), HWM $964.62, stop $868.158 ✓ |
+| ETN | 19 | $414.99 | $402.95 | $7,656.05 | −$228.76 (−2.901%) | 7.729% | d0bb8b7c (19sh), HWM $415.8, stop $374.22 ✓ |
+| LLY | 10 | $1,093.534 | $1,163.00 | $11,630.00 | +$694.66 (+6.352%) | 11.740% | d4147484 (7sh) + 25989fb5 (3sh), HWM $1,249.45, stop $1,124.505 ✓ |
+| V | 22 | $323.57 | $357.25 | $7,859.50 | +$740.96 (+10.409%) | 7.934% | 66033918 (22sh), HWM $364.21, stop $327.789 ✓ |
 
-**Sector exposure (close July 15):**
-- Industrials (CAT + ETN): $11,530.795 = 11.617% | Healthcare (LLY): $11,536.15 = 11.622% | Financials (V): $7,840.58 = 7.898% | Cash: $68,359.98 = 68.859%
-- No sector above 60% cap ✓
+**Sector exposure (pre-market July 16):**
+- Industrials (CAT + ETN): $11,210.05 = 11.317% | Healthcare (LLY): $11,630.00 = 11.740% | Financials (V): $7,859.50 = 7.934% | Cash: $68,359.97 = 68.995%
+- No sector above 60% cap ✓ (JNJ buy planned today would add Healthcare → ~19.7%, still well under cap)
 
-**Stop audit: 5/5 PASS ✓** — every open position has a live trailing stop covering its full quantity. No action taken this run.
+**Stop audit: 4/4 PASS ✓** — every open position has a live trailing stop covering its full quantity. No action taken this run.
 
-**Close actions:** None. No cuts, no tightenings, no exits. Market close context: S&P +0.4%, Dow +0.3%, Nasdaq +0.6% on Big Tech strength (ASML's bullish AI outlook) and a cooler June PPI print, echoing Tuesday's CPI. Broadly supportive, risk-on tape; no thesis-threatening news for CAT, ETN, LLY, or V.
+**Pre-market context:** CAT down sharply the last 2 sessions (July 15 close −2.15% day/day, today's pre-market a further −2.822%) on dealer-inventory-build/margin-compression/cooling-industrial-cycle commentary — an incremental headwind layered on the already-known tariff-cost/Burry-short risks. July 15 close ($914.13) fell below CAT's 50-day MA (~$929.44) but on below-average volume (0.70x the 20-day average) — the written invalidation ("close below ~$925.64 MA on volume") has NOT technically triggered since volume didn't confirm. CAT is now the closest position to the −7% midday cut rule (−5.952%) — flagged for priority monitoring at today's midday routine. ETN's dip is sympathetic/macro (industrials weak on CAT-driven sentiment), not company-specific; ETN closed July 15 still above its 50-day MA (+2.0%), no invalidation concern. LLY and V both constructive — no thesis-threatening news. See research-log.md for full write-up and the JNJ buy plan.
 
 **Since inception:** Bull −0.732% ($99,267.59) vs SPY TR ($754.04 + $1.76 div vs $741.20 anchor = +1.733%) → **Bull TRAILS SPY by ~−2.465pp**.
 

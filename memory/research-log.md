@@ -4571,3 +4571,76 @@ Snowflake Q1. Starting at 9.3% of portfolio — room to scale.
 
 ---
 
+## 2026-07-16 — Pre-market research (~08:07 ET)
+
+Control switch: STATUS ACTIVE, no NOTE, no QUERY. Today is Thursday — fresh-candidate scan runs (step 4).
+
+### Macro
+S&P 500 futures modestly higher (~+0.2%, one source flagged −0.1% — mixed signals) on a cooler-than-expected June CPI: headline −0.4% MoM, YoY eased to 3.5%; core held at 2.6%. 10yr yield ~4.57% (below the 4.75% halt trigger). WTI/Brent not re-checked today — no new Hormuz escalation reported. No halt triggers close to tripping. Constructive-but-mixed, no reason for a defensive pivot. [Yahoo Finance, Benzinga — July 16, 2026]
+
+### Held positions — what changed since yesterday
+
+- **CAT** ($888.50 pre-market, −5.952% from entry, −2.822% intraday): Down sharply for a second session. July 15 closed −2.15% day/day at $914.13 — below its 50-day MA ($929.44, −1.63%) but on volume only 0.70x the 20-day average, so the written invalidation ("close below ~$925.64 MA **on volume**") has NOT technically triggered. Cause: fresh commentary on dealer inventory build, margin compression, cooling global industrial cycle, and mining conglomerates deferring capex on volatile commodity prices — layers on top of the already-known ~USD 2.2-2.4B tariff-cost drag and the Michael Burry short thesis (both known since before entry). Aug 4 earnings confirmed (outside 2-day window). **Decision: HOLD, not a confirmed thesis break** — no company disclosure, no guidance cut, and the technical breach lacked volume confirmation; the existing invalidation criteria are deliberately volume-gated to avoid overreacting to noise-level breaks. However CAT is now the closest position to the −7% midday cut rule (−5.952% and falling pre-market) — **flagged HIGH PRIORITY for today's midday routine.** review_by 2026-08-03 renewed, not due.
+- **ETN** ($402.95 pre-market, −2.901% from entry, −2.4% intraday): Sympathetic weakness alongside CAT/industrials, not company-specific — no negative ETN news found. July 14 close ($412.86) was still +2.0% above its 50-day MA (~$404.8); invalidation ("close below ~USD 405 MA on volume") not triggered. FranklinWH home-energy partnership and the Dana Mobility-business combination (USD 5.1B) both reported as recent positives; Buy-rated by multiple analysts, avg PT USD 456. July 31 earnings confirmed (outside 2-day window). HOLD, thesis intact. review_by 2026-07-30 not due.
+- **LLY** ($1,163.00 pre-market, +6.352% from entry): Constructive — Bernstein PT USD 1,385, UBS USD 1,425, Guggenheim USD 1,273 (all raised mid-July, already known). New since last check: full FDA approval for Retevmo (oncology) and reported acquisition interest in AtaiBeckley — both incremental positives, not thesis-moving. Stock hit its ATH July 7 at USD 1,249.45 (still the HWM). No thesis break. review_by 2026-07-21 not due. Conviction A.
+- **V** ($357.25 pre-market, +10.409% from entry): Constructive — AI Financial Assistant launch and the ACE Money Transfer partnership (both already known) continue to be cited positively; consensus target ~USD 401-410, no sell ratings. Touched a 52-week high USD 365.02 July 6, now −2.2% off that peak — normal pullback, not a reversal. Q3 earnings July 28 (12 days away — outside the 2-day window, will need a hold/trim decision as it approaches). No thesis break. review_by 2026-07-28 not due. Conviction B.
+
+### 3b. Thesis contract review
+All four review_by dates checked against today (2026-07-16): LLY (07-21), ETN (07-30), V (07-28), CAT (08-03) — none due. No invalidation triggered on any held name (see per-position notes above); CAT's technical breach explicitly failed the volume-confirmation clause, so it does not count as triggered. All four contracts renewed as-is (no new review_by needed since none expired).
+
+### 6b. Daily candidate diligence — JNJ (full pass)
+
+JNJ has sat on the watchlist since 2026-05-22 (8 weeks) with only passive "no new signal" notes and no full diligence pass — the most overdue name in the research queue (ahead of WMT, added same day, and PWR, added 2026-06-12). Picked as today's diligence target.
+
+- **Catalyst — Q2 2026 earnings, reported yesterday July 15:** Sales USD 25.3B (+6.6% reported, +5.6% operational) beat consensus ~USD 25.05B. Adjusted EPS USD 2.90 beat the USD 2.85 consensus (reported EPS USD 2.27). Innovative Medicine segment +7.8% to USD 16.38B; MedTech +4.5% to USD 8.93B. **FY26 guidance raised**: sales to USD 101.1B (+7.3% midpoint) — first time in JNJ's 140-year history crossing USD 100B; adjusted EPS raised USD 0.13 to USD 11.68 midpoint (+8.2%). [JNJ investor relations, BioSpace, Yahoo Finance — July 15-16, 2026]
+- **Analyst reaction:** RBC (Shagun Singh Chadha) raised PT to USD 287 from USD 265, Outperform. TD Cowen (Michael Nedelcovych) raised PT to USD 300 from USD 250, Buy — a materially more bullish stance post-print. 19-of-24-analyst consensus is Buy as of early July; consensus PT ~USD 257-261 (will likely move up further as more analysts update post-print).
+- **Valuation — FAILS the gate:** Trailing P/E ~27.87x; forward P/E 21.17x vs sector average 18.49x and JNJ's own 5-year historical average 15.65x. No discount to peers or own history; roughly PEG ≈ 21.17/8.2 ≈ 2.58, just over the 2.5 threshold. This is a real valuation stretch, acknowledged and outweighed by the other four signals below.
+- **Technical — passes:** 50-day MA (through July 15) = USD 237.59; last close USD 247.02 = **+3.967% above the MA** — clears the 0.5% separation floor and stays well under the 10% extension ceiling. 20-day ATR = 2.293% — under the 3% halving threshold, full starter size is appropriate.
+- **Macro/sector tailwind — passes:** Healthcare secular growth is one of the strategy's three named tailwinds; defensive-quality compounder positioning is a good complement to LLY (GLP-1 growth stock) — diversifies the healthcare sleeve by sub-theme rather than doubling down on one name's risk.
+- **Entry signal count: 4 of 5 clear** (earnings momentum, catalyst, technical, macro) — valuation is the lone miss. Strategy requires "at least two," so this comfortably qualifies. Buying one session after a confirmed beat+raise with a positive market reaction (not before, avoiding the earnings-gap-risk lesson) is the correct sequencing.
+- **Earnings window:** JNJ reported yesterday (July 15) — no upcoming-earnings conflict; next report is ~mid-October 2026.
+- **Not promoted — WMT and PWR:** both remain in the "no new signal" holding pattern (unchanged from prior weeks); neither got today's diligence slot. Will rotate to one of them on a future pre-market if no fresher catalyst emerges first.
+
+**Decision: PROMOTE JNJ to a buy candidate for today's market-open.** See "Planned trades for today" below.
+
+### Fresh-candidate scan (Thursday)
+
+Searched for AI-infrastructure/real-economy/healthcare names not already on the watchlist. Most-cited AI-infra names this week (Teradyne, Ouster, Vishay Precision Group per 24/7 Wall St) are chip-test/component plays, not previously diligenced here.
+
+- **Added research-only: TER (Teradyne)** — semiconductor test equipment, a picks-and-shovels play on AI-accelerator production volume (test capacity scales with chip output, distinct exposure from GPU/ASIC makers already implicitly covered via AGGRO's book). Not diligenced today — JNJ took today's diligence slot. Logged to strategy.md watchlist for a future full pass (fundamentals, valuation, technical, ATR).
+- Ouster (lidar) and Vishay Precision Group (sensors) considered but skipped — lidar/autonomous-driving exposure is a weaker fit for the strategy's three named tailwinds than direct AI-power/AI-test infrastructure; not added.
+
+### Cash-drag check (step 6)
+
+Cash is 68.995% of portfolio — well above the 25-40% target band for a 4-position book, and has been above band since inception (structural, not new). Tape is constructive-but-mixed (cooling CPI vs. a shaky industrials tape on CAT-specific weakness). Per policy, this qualifies as "cash above band for more than a week + constructive tape" → today's JNJ buy plan (below) is the qualifying entry that addresses the cash-drag check; no separate sentence needed since a trade is planned.
+
+### Guardrail check for the JNJ plan
+
+| Check | Value | Limit | Status |
+|-------|-------|-------|--------|
+| Position size | 32sh × ~USD 247.02 ≈ USD 7,904.64 = 7.98% of portfolio | ≤20% | ✓ |
+| Single-order size | 7.98% | ≤15% | ✓ |
+| Daily new-buy deployment | 7.98% of portfolio | ≤25% (~USD 24,765) | ✓ |
+| Cash after fill | ~USD 60,455 (61.0%) | ≥5% | ✓ |
+| Sector (Healthcare) after fill | LLY 11.740% + JNJ 7.98% ≈ 19.72% | ≤60% | ✓ |
+| Earnings window | JNJ reported yesterday (July 15); next ~mid-Oct | No buy within 2 days before | ✓ |
+| ATR (20-day) | 2.293% | Halve if >3% | ✓ under threshold, full size |
+| Market open today? | Opens 9:30 AM ET July 16 | Must be open | ✓ (confirmed via clock) |
+
+### Planned trades for today
+
+**1 new position: BUY JNJ.** No other trades — CAT/ETN/LLY/V all HOLD (see per-position notes above); no exits or trims warranted (no confirmed thesis breaks, no −7% breach yet — that's midday's call if CAT keeps falling).
+
+```json
+{
+  "plan_date": "2026-07-16",
+  "trades": [
+    {"action": "buy", "symbol": "JNJ", "qty": 32, "thesis": "Q2 2026 beat+raise reported July 15 (sales USD 25.3B +6.6%, adj EPS USD 2.90 vs USD 2.85 est, FY26 guidance raised to USD 100B+ revenue milestone); TD Cowen and RBC both raised PT post-print; technical confirmation +3.97% above 50-day MA, ATR 2.293% under the halving threshold; healthcare secular-growth tailwind, diversifies the healthcare sleeve away from pure GLP-1 exposure; valuation is rich (forward P/E 21.17x vs 5-yr avg 15.65x) but 4 of 5 entry signals clear",
+     "invalidation": "Close back below the ~USD 237.59 pre-earnings 50-day MA on volume, OR management/analysts walk back the raised FY26 guidance, OR the forward P/E de-rates toward its historical average without a fundamental trigger",
+     "review_by": "2026-08-15"}
+  ]
+}
+```
+
+---
+
