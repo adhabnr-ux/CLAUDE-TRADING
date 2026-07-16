@@ -3,10 +3,46 @@
 _Updated by every routine from live Alpaca data. The next agent trusts this as
 the last known state, but always re-fetches live data before trading._
 
-**Last updated:** 2026-07-16 ~08:07 ET (pre-market routine; JNJ buy planned for today's open)
+**Last updated:** 2026-07-16 ~09:38 ET (market-open routine; bought JNJ 32sh)
 **Inception:** 2026-05-21 — starting equity $100,000.00 | SPY anchor price $739.44
 **SPY total-return anchor (post-June 18 ex-div $1.76):** **$741.20**
 **Cumulative SPY dividends since inception (quarterly tracker):** $1.76/sh (June 18 ex-div); next SPY ex-div est. ~September 2026.
+
+---
+
+## Account (market-open routine, 2026-07-16 ~09:38 ET)
+
+| Metric | Value |
+|--------|-------|
+| Equity | $98,948.02 |
+| Cash | $60,398.05 (61.037%) |
+| Long market value | $38,549.97 |
+| Last equity (July 15 close) | $99,240.89 |
+| Today's P/L | −$292.87 (−0.295%) |
+| HWM | $101,384.21 |
+| Drawdown from HWM | −2.404% — informational only, not a hard guardrail |
+
+## Open positions (market-open routine, 2026-07-16 ~09:38 ET)
+
+| Symbol | Qty | Avg entry | Current price | Mkt value | Unrealized P/L | % of portfolio | Trailing Stop |
+|--------|-----|-----------|--------------|-----------|----------------|----------------|---------------|
+| CAT | 4 | $944.73 | $893.00 | $3,572.00 | −$206.92 (−5.476%) | 3.609% | 6103c146 (4sh), HWM $964.62, stop $868.158 ✓ |
+| ETN | 19 | $414.99 | $402.74 | $7,652.06 | −$232.75 (−2.951%) | 7.734% | d0bb8b7c (19sh), HWM $415.8, stop $374.22 ✓ |
+| LLY | 10 | $1,093.534 | $1,147.08 | $11,470.80 | +$535.46 (+4.897%) | 11.593% | d4147484 (7sh) + 25989fb5 (3sh), HWM $1,249.45, stop $1,124.505 ✓ |
+| V | 22 | $323.57 | $358.74 | $7,892.28 | +$773.74 (+10.869%) | 7.977% | 66033918 (22sh), HWM $364.21, stop $327.789 ✓ |
+| JNJ | 32 | $248.81 | $249.01 | $7,968.36 | +$6.44 (+0.081%) | 8.053% | 133d116a (32sh), HWM $248.64, stop $223.776 ✓ (new) |
+
+**Sector exposure (market-open July 16, post-fill):**
+- Industrials (CAT + ETN): $11,224.06 = 11.343% | Healthcare (LLY + JNJ): $19,439.16 = 19.646% | Financials (V): $7,892.28 = 7.977% | Cash: $60,398.05 = 61.037%
+- No sector above 60% cap ✓
+
+**Stop audit: 6/6 PASS ✓** — every open position has a live trailing stop covering its full quantity, including the new JNJ position.
+
+**Market-open context:** Bought JNJ 32sh @ avg $248.81 per today's pre-market plan (Q2 beat+raise, technical confirmation, healthcare diversification). Breaking-news gate clear — the July 15 earnings-day sell-off (~−3%, Abiomed/Impella concerns) was already reflected in the close the plan used. CAT continues to be the position closest to the −7% midday cut rule (−5.476%, was −5.952% pre-market) — flagged for the midday routine. No other trades; ETN/LLY/V all HOLD. See trade-log.md and research-log.md for full detail.
+
+**Since inception:** Bull −1.052% ($98,948.02) vs SPY TR ($751.85 vs $741.20 anchor = +1.437%) → **Bull TRAILS SPY by ~−2.489pp**.
+
+**Race scoreboard:** Bull −0.554% (own June 4 anchor $99,820.82, last recomputed July 15 EOD) vs AGGRO −6.472% (own June 4 inception, $93,528.33 — AGGRO's July 14 EOD snapshot, not re-checked this run) vs SPY −0.251% (AGGRO's June 4 anchor + div) — Bull leads AGGRO by ~+5.92pp (unchanged from last close, AGGRO memory not re-read this run per playbook scope).
 
 ---
 

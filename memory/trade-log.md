@@ -5,6 +5,39 @@ The weekly new-position count is derived from this log._
 
 _Entries before 2026-06-01 archived to `memory/archive/2026-05.md` (2026-07-01 monthly housekeeping)._
 
+## 2026-07-16 09:37 ET — MARKET-OPEN ROUTINE (1 trade: BUY JNJ)
+
+- **Live-switch guard:** `ALPACA_BASE_URL` contains "paper" ✓
+- **Lock:** was `{}` — acquired cleanly, no stale lock; released before this commit.
+- **Control switch:** STATUS ACTIVE, no NOTE/QUERY to acknowledge.
+- **Plan:** today's research-log.md plan (`plan_date: 2026-07-16`) called for BUY JNJ 32sh — no prior EXECUTED line, first run today.
+- **Market:** OPEN ✓ (`is_open: true`, ~09:36 ET, next_close 16:00 ET).
+- **Breaking-news gate (WebSearch):** JNJ — no fresh thesis-breaking news this morning. The Q2 earnings-day reaction (stock down ~3% on July 15, on CFO comments re: Abiomed/Impella pump concerns from a UK study, alongside ongoing talc litigation and the known Stelara/FTC antitrust matter) was already reflected in the July 15 closing price (USD 247.02) the pre-market diligence used for its technical check — not new information. No halt, no SEC action, no fresh downgrade found for today. Gate CLEAR.
+- **Shock check:** equity USD 98,964.01 vs last_equity USD 99,240.89 = −0.279% — no shock (threshold −4%).
+- **Guardrail math (JNJ buy, 32sh):** ask USD 248.64 → 32sh × ~USD 248.81 avg fill ≈ USD 7,961.92 ≈ 8.05% of portfolio — well under the 20% single-position cap and the 15% single-order cap. Daily deployment: 8.05% of portfolio, well under the 25% cap (only trade today). Cash after fill: ~USD 60,398 (61.0%), far above the 5% minimum. Sector cap: Healthcare (LLY + JNJ) ≈ 19.65%, far under the 60% cap. Earnings window: JNJ reported yesterday (July 15), next ~mid-Oct — outside the 2-day window.
+- **Execution:** ask USD 248.64 → marketable limit = 248.64 × 1.003 = USD 249.39. `buy-limit JNJ 32 249.39` submitted 13:37:25 UTC. Filled in full: 32sh @ avg USD 248.81 (verified via `position JNJ`). Cost basis USD 7,961.92.
+- **Stop placed:** `trailing-stop JNJ sell 32 10` — order 133d116a, HWM USD 248.64, stop USD 223.776. Verified live via `orders open`.
+- **trades.jsonl:** appended (buy, JNJ, 32sh, 248.81, ts 2026-07-16T13:37:25Z).
+- **research-log.md:** EXECUTED line appended under today's plan block to prevent double-buy on a re-run.
+- **Stop audit: 6/6 PASS ✓**
+  - CAT (6103c146): 4sh — HWM USD 964.62, stop USD 868.158 ✓
+  - ETN (d0bb8b7c): 19sh — HWM USD 415.8, stop USD 374.22 ✓
+  - LLY (d4147484): 7sh — HWM USD 1,249.45, stop USD 1,124.505 ✓
+  - LLY (25989fb5): 3sh — HWM USD 1,249.45, stop USD 1,124.505 ✓
+  - V (66033918): 22sh — HWM USD 364.21, stop USD 327.789 ✓
+  - JNJ (133d116a): 32sh — HWM USD 248.64, stop USD 223.776 ✓ (new)
+  - Matches held quantities exactly (CAT 4, ETN 19, LLY 7+3=10, V 22, JNJ 32). No missing stops.
+- **Exit reconciliation:** No exits since pre-market. closed-trades.md current (VST June 30 latest entry) — nothing new required.
+- **Position review (live prices post-fill ~09:38 ET):**
+  - CAT 4sh @ USD 893.00 (−5.476% from entry USD 944.73). Flagged high-priority for today's midday routine per pre-market note (closest to the −7% cut threshold) — market-open does not cut positions, that's midday's call. review_by 2026-08-03 not due. HOLD.
+  - ETN 19sh @ USD 402.74 (−2.951% from entry USD 414.99). review_by 2026-07-30 not due. HOLD.
+  - LLY 10sh @ USD 1,147.08 (+4.897% from entry USD 1,093.534). review_by 2026-07-21 not due. HOLD. Conviction A.
+  - V 22sh @ USD 358.74 (+10.869% from entry USD 323.57). review_by 2026-07-28 not due. HOLD. Conviction B.
+  - JNJ 32sh @ USD 249.01 (+0.081% from entry USD 248.81, new position). review_by 2026-08-15.
+- **Sector exposure (post-fill):** Industrials (CAT+ETN) USD 11,224.06 = 11.343% | Healthcare (LLY+JNJ) USD 19,439.16 = 19.646% | Financials (V) USD 7,892.28 = 7.977% | Cash USD 60,398.05 = 61.037% — no sector above 60% cap ✓.
+- **Account:** Equity USD 98,948.02 | Cash USD 60,398.05 (61.037%).
+- **Since inception:** Bull −1.052% (USD 98,948.02) vs SPY TR (SPY USD 751.85 vs USD 741.20 anchor = +1.437%) → **Bull TRAILS SPY by ~−2.489pp**.
+
 ## 2026-07-15 15:51 ET — CLOSE ROUTINE (no trades, EOD)
 
 - **Action:** None — 0 trades, 0 exits, 0 cuts, 0 tightenings. All 4 positions within all guardrails.
