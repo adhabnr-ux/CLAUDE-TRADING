@@ -4205,3 +4205,89 @@ NVDA `e15e7753` (77sh), AVGO `ffba9bd5` (19sh), ETN `abdc232b` (34sh), GOOGL `e5
 
 ### Result
 One trade executed exactly as pre-market planned: 15-share VST pyramid add, filled at USD 158.539996, trailing stop reissued to cover the full 67-share position. No other trades. `trades.jsonl` updated (agent: aggro). `EXECUTED:` marker appended to research-log.md.
+
+## 2026-07-16 — MARKET OPEN
+
+### Trade — SELL MU (25% proactive trim)
+| Field | Value |
+|---|---|
+| Action | SELL (trim) |
+| Symbol | MU |
+| Qty | 2 of 8 shares (25%) |
+| Order type | Market sell |
+| Fill price | USD 860.145 avg |
+| Notional | USD 1,720.29 |
+| Realized P/L on trim | (860.145 - 953.92125) x 2 = -USD 187.553 |
+| Why | Pre-market flagged MU's buffer to the -12% cut compressed to 1.829pp CRITICAL just one trading day after entry (July 15), on two new unconfirmed HBM-sector catalysts: Chinese competitor CXMT's reported USD 8.5B IPO (competitive HBM/DRAM supply threat) and reports the US government is considering stricter unilateral HBM export restrictions. Discretionary override of the literal proactive-trim heuristic (review_by was 8 trading days out, not within the standard 5-day test) justified by the compression speed and the position's newness — this is MU's second distinct HBM-sector scare in three sessions (following the Jul 13 SK Hynix-driven entry skip). Core thesis (>USD 22B non-cancelable HBM contracts through 2027-2028, Anthropic deal) unaffected unless either catalyst is confirmed — binary gap-risk management, not a thesis-break exit. |
+| Contingency check at execution | Price at execution (latest trade USD 861.24) was between the escalation trigger (<=USD 848.99 -> would have meant full exit instead) and the stand-down trigger (>=USD 877.61 -> would have meant hold, no trim) — confirmed the planned 25% trim as-is, no deviation. |
+| Breaking-news gate | [search: WebSearch fallback — mcp__minimax__web_search not found via ToolSearch this session] No earnings miss/downgrade/halt/SEC action found; KeyBanc actually raised PT to USD 1,750 on Jul 14 — no thesis-breaking news. |
+| Sequence | Canceled existing 8-share trailing stop `a6cd1e46` first (to free shares held by the working order), sold 2 shares, then reissued an 18% trailing stop on the remaining 6-share position |
+| New trailing stop | 18%; order id `5d6ca010`; qty 6; stop price USD 702.896128 (HWM USD 857.1904) |
+| Verified | Position confirmed at 6 shares (avg entry unchanged, USD 953.92125); new stop confirmed live in open orders |
+| review_by | Shortened Jul 16 pre-market to 2026-07-20 (unchanged by this trim) |
+
+### Stop audit — 7/7 confirmed live post-trade
+NVDA `e15e7753` (77sh), AVGO `ffba9bd5` (19sh), ETN `abdc232b` (34sh), GOOGL `e52a43f1` (16sh), AMZN `b55bef05` (36sh), VST `e3a7985f` (67sh), MU `5d6ca010` (6sh) — all `status: "new"`.
+
+### Account after trade
+| Field | Value |
+|---|---|
+| Equity | USD 91,741.11 |
+| Cash | USD 24,605.18 (~26.82%) |
+| Cash floor (2% min) | Well clear |
+| Single-position cap (35% max) | NVDA largest at ~17.4% — well clear |
+| Daily deployment (60% max) | No buys today — N/A |
+| Weekly new positions (8 max) | 1/8 used this week (MU, Jul 15) — this trim doesn't consume a slot |
+| Circuit breaker (20% drawdown) | ~-9.3% from HWM USD 101,144.73 — not triggered |
+| Shock check | -2.211% vs last_equity USD 93,858.88 — not triggered (threshold -6%) |
+
+### Result
+One trade executed exactly as pre-market planned (contingent 25% MU trim), no deviation from the contingency bands. No new buys today. `trades.jsonl` updated (agent: aggro). `EXECUTED:` marker appended to research-log.md.
+
+---
+
+## 2026-07-16 — MIDDAY review (no trades)
+
+**Market open, no shock:** equity USD 91,352.21 vs last_equity USD 93,858.88 = -2.671% (threshold -6%, not triggered).
+
+### Pre-run checks
+| Check | Result |
+|---|---|
+| Live-switch guard | ALPACA_BASE_URL contains "paper" ✓ |
+| Lock | Clear (`{}`) at start; written for this run ✓ |
+| Control switch | STATUS: ACTIVE, no NOTE/QUERY ✓ |
+| Market open | true (`clock`: is_open true, next close 4:00 PM ET) ✓ |
+
+### Position review (buffers to -12% cut, 7 positions)
+| Symbol | Qty | Entry | Current | P/L % | Buffer | % of Portfolio |
+|---|---|---|---|---|---|---|
+| NVDA | 77 | USD 213.60 | USD 207.20 | -2.996% | 9.004pp | 17.466% |
+| AVGO | 19 | USD 406.23 | USD 380.59 | -6.312% | 5.688pp | 7.916% |
+| ETN | 34 | USD 419.54 | USD 391.26 | -6.740% | 5.260pp | 14.562% |
+| GOOGL | 16 | USD 370.22 | USD 371.36 | +0.308% | comfortable | 6.505% |
+| AMZN | 36 | USD 247.991111 | USD 255.64 | +3.084% | comfortable | 10.076% |
+| MU | 6 | USD 953.92125 | USD 852.48 | -10.635% | 1.365pp 🚨 CRITICAL | 5.599% |
+| VST | 67 | USD 153.052836 | USD 149.08 | -2.596% | 9.404pp | 10.934% |
+
+No position below the -12% cut threshold (MU closest, CRITICAL buffer 1.365pp, watch item only — the midday rule is a binary -12% cut, not a partial trim). No position above +25% (winner-protection not applicable — best is AMZN +3.084%). No new buys — midday never opens positions.
+
+### News scan (positions >5% down or >15% up) — AVGO, ETN, MU
+[search: WebSearch fallback — mcp__minimax__web_search not found via ToolSearch this session]
+
+- **AVGO (-6.312%):** Q2 2026 EPS USD 2.44 beat estimates of USD 2.32; new Standard Chartered banking-infrastructure partnership; a Samsung/Netlist patent-infringement matter drawing regulatory scrutiny (not an AVGO liability event); CLO disclosed a ~USD 10M share sale (routine-sized, not alarming). No thesis break — sentiment/sector pressure, hold.
+- **ETN (-6.740%):** Broadly positive backdrop — closed +3.24% on July 14, data-center/AI power-demand tailwind intact, USD 5.1B Mobility-division spinoff announced, FranklinWH partnership; Q2 earnings not until July 31 (outside today's window). No negative company-specific news found; today's pullback reads as sector rotation/profit-taking, not a thesis break. Hold.
+- **MU (-10.635%):** Same unconfirmed narrative flagged at pre-market and this morning's market-open trim — broader semiconductor-sector retreat on reports the US government may tighten HBM/advanced chip-equipment export restrictions, compounded by China's CXMT announcing an ~USD 8.5B IPO. No confirmed policy action, no lost contract, no earnings miss. Positive counterpoints: 7 new automotive chip contracts signed; a fund manager publicly named MU his top single-stock pick citing ~30% of market cap in cash flow over 18 months; consensus remains Buy, avg PT USD 1,548.86 (+82% upside from current price). Buffer is now CRITICAL (1.365pp) after this morning's 25% trim already de-risked the position once — no further action under the strict -12% cut rule, but this is the clear watch item for the next routine (close or pre-market): a further ~1.4pp move triggers the mechanical cut.
+
+### Act on rules (step 4)
+No cuts (no position beyond -12%). No winner-tightening (no position beyond +25%). No new buys per playbook.
+
+### Stop audit — 7/7 confirmed live ✓
+NVDA `e15e7753` (stop USD 175.3242), AVGO `ffba9bd5` (stop USD 334.1664), ETN `abdc232b` (stop USD 350.9026), GOOGL `e52a43f1` (stop USD 308.1314), AMZN `b55bef05` (stop USD 211.62765), VST `e3a7985f` (stop USD 137.9322), MU `5d6ca010` (stop USD 721.518, reissued this morning post-trim for the 6-share position) — all `status: "new"`, all matched 1:1 to the 7 open positions, quantities correct. No gaps, no recreation needed.
+
+### Sector exposure
+Semiconductors (NVDA+AVGO+MU) = 30.981%; Industrials (ETN) = 14.562%; Hyperscalers (GOOGL+AMZN) = 16.581%; Utilities (VST) = 10.934%; Cash = 26.937%. No sector near the 60% cap. Single-position cap (35% max): NVDA largest at 17.466% — well clear.
+
+**No exits this run** — nothing to post-mortem, no `trades.jsonl` entries.
+
+### Result
+No new trades this run — risk management only. All 7 positions within the -12%/+25% action thresholds. MU is the standing watch item: CRITICAL buffer (1.365pp) on a still-unconfirmed HBM-export-restriction/CXMT-IPO narrative, already trimmed 25% this morning; a further small move down triggers the mechanical -12% cut at the next check. AVGO and ETN both crossed the 5%-down news-scan trigger but show no thesis-breaking news — sector rotation/profit-taking, hold. Stop audit clean 7/7. Control: ACTIVE.

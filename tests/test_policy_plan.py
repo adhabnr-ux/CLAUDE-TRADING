@@ -221,7 +221,7 @@ class PolicyPlanTests(unittest.TestCase):
             ("aggro", "memory/aggressive/research-log.md"),
         ):
             plan_date, intents = latest_plan(ROOT / relative, load_policy(agent, ROOT))
-            self.assertEqual(plan_date, date(2026, 7, 15))
+            self.assertEqual(plan_date, date(2026, 7, 16))
             self.assertEqual(intents, [])
 
     def test_invalid_policy_semantics_fail_before_trading(self):
