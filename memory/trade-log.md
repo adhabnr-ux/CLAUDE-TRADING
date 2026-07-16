@@ -5,6 +5,27 @@ The weekly new-position count is derived from this log._
 
 _Entries before 2026-06-01 archived to `memory/archive/2026-05.md` (2026-07-01 monthly housekeeping)._
 
+## 2026-07-16 12:35 ET — MIDDAY ROUTINE (no trades)
+
+- **Action:** None — risk-management check only. All 5 positions within all guardrails.
+- **Live-switch guard / lock / control:** `ALPACA_BASE_URL` contains "paper" ✓; `_lock` was `{}`, acquired and released. Control STATUS ACTIVE, no NOTE/QUERY.
+- **Market:** OPEN ✓ (is_open: true, ~12:34 ET, next_close 16:00 ET).
+- **Account:** Equity USD 99,069.66 | Cash USD 60,398.05 (60.965%) | Last equity (July 15 close) USD 99,240.89.
+- **Shock check:** (99,069.66 − 99,240.89) / 99,240.89 = **−0.1726%** — no shock ✓ (threshold −4%).
+- **Position review (live prices ~12:34 ET):**
+  - CAT 4sh @ USD 879.206 (**−6.936%** from entry USD 944.73, −3.838% today) — closest position to the −7% cut line but does NOT cross it (needs "more than 7% below"). News scan run (cooling global industrial cycle / mining capex caution / dealer-inventory-margin-compression commentary) — this is a continuation of the same macro/sector headwind already flagged July 15 and this morning's pre-market note, not a fresh company-specific break. HOLD, flagged CRITICAL for the close routine given the intraday trend.
+  - ETN 19sh @ USD 392.14 (−5.506% from entry USD 414.99, −5.019% today) — crossed the −3% news-scan trigger. News scan found no negative catalyst; actually a positive data point (USD 5.1B Mobility-division spin-off announced, unlocking value; data-center power-demand thesis intact). HOLD. review_by 2026-07-30 not due.
+  - JNJ 32sh @ USD 249.84 (+0.414% from entry USD 248.81) — below both scan thresholds. HOLD. review_by 2026-08-15 not due.
+  - LLY 10sh @ USD 1,175.96 (+7.538% from entry USD 1,093.534) — below the +10% scan trigger. HOLD. review_by 2026-07-21 not due. Conviction A.
+  - V 22sh @ USD 361.3475 (+11.675% from entry USD 323.57) — crossed the +10% news-scan trigger. News scan: Visa launched its new Stablecoin Platform (VSP) today, stock +1.7% intraday on the news; BMO raised PT to USD 387 (from 375), Clear Street initiated Buy. Thesis-confirming, not thesis-breaking. Below the +15% discretionary-tighten trigger. HOLD. review_by 2026-07-28 not due. Conviction B.
+- **No cuts** (−7% rule): CAT closest at −6.936%, does not cross ✓.
+- **No discretionary tightenings** (+15% trigger): V closest at +11.675%, still below ✓.
+- **Stop audit: 6/6 PASS ✓** — CAT (6103c146) 4sh HWM 964.62/stop 868.158, ETN (d0bb8b7c) 19sh HWM 415.8/stop 374.22, JNJ (133d116a) 32sh HWM 253.545/stop 228.1905, LLY (d4147484) 7sh + (25989fb5) 3sh HWM 1249.45/stop 1124.505, V (66033918) 22sh HWM 364.21/stop 327.789. All live via `orders open`, matches held quantities exactly — none missing.
+- **Sector exposure:** Industrials (CAT+ETN) USD 10,967.48 = 11.070% | Healthcare (LLY+JNJ) USD 19,754.48 = 19.940% | Financials (V) USD 7,949.65 = 8.024% | Cash USD 60,398.05 = 60.965% — no sector above 60% cap ✓.
+- **No new positions today** — midday routine manages existing risk only, per playbook.
+- **Trades today:** 1 total (BUY JNJ at market-open; 0 at this midday check).
+- **Since inception:** Bull −0.930% (USD 99,069.66) vs SPY (not re-fetched this run — see close routine for the authoritative daily comparison).
+
 ## 2026-07-16 09:37 ET — MARKET-OPEN ROUTINE (1 trade: BUY JNJ)
 
 - **Live-switch guard:** `ALPACA_BASE_URL` contains "paper" ✓
