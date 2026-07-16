@@ -27,8 +27,9 @@ have exactly top-level `schema_version: 2`, `agent: "bull"`, `plan_date`, and
 `trades`.
 
 The `/premarket` command owns the `memory/quant-research-playbook.md` protocol,
-fixed pending-packet append, and ledger validation. Do not perform or repeat
-those steps separately in this outer routine.
+the mandatory `memory/upstream-methodology-index.md` rules, fixed pending-packet
+append, and ledger validation. Do not perform or repeat those steps separately
+in this outer routine.
 
 Then read only the authorized Bull files in top-level memory/; do not read the
 memory/aggressive/ subtree. Follow the playbook in

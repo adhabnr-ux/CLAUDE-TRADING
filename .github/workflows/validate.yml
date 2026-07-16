@@ -32,10 +32,14 @@ jobs:
       - name: Run unit tests
         run: python -m unittest discover -s tests -p "test_*.py" -t . -v
 
+      - name: Verify reviewed upstream snapshots
+        run: python scripts/verify_upstream_snapshots.py
+
       - name: Compile Python
         run: >-
           python -m compileall -q bulltrader runner.py scripts/trade.py
           scripts/research.py scripts/persist_memory.py
+          scripts/verify_upstream_snapshots.py
           .claude/hooks/validate_agent_tool.py
 
       - name: Check shell syntax

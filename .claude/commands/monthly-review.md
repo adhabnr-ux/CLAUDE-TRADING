@@ -12,7 +12,8 @@ holding; those are the only allowed broker mutations.
    `https://paper-api.alpaca.markets`; otherwise notify 🚨 and stop.
 4. Treat `memory/_lock` as advisory local repository coordination only, never
    broker locking or idempotency.
-5. Read `CLAUDE.md`, `memory/quant-research-playbook.md`, all three human-owned
+5. Read `CLAUDE.md`, `memory/quant-research-playbook.md`,
+   `memory/upstream-methodology-index.md`, all three human-owned
    config files, every Bull ledger, the last five weekly reviews, and
    performance history.
 6. Run startup reconciliation:

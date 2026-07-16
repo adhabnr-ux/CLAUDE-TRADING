@@ -1,0 +1,3 @@
+# Preserve reviewed upstream bytes exactly and suppress noisy third-party diffs.
+third_party/quant-mind/** -text -diff linguist-vendored
+third_party/atlas-gic/** -text -diff linguist-vendored

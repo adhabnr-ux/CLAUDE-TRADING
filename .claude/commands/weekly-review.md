@@ -10,7 +10,8 @@ mutations.
 2. Require `ALPACA_BASE_URL == https://paper-api.alpaca.markets`.
 3. Treat `memory/_lock` as advisory local repository coordination only; it is
    never broker locking or idempotency.
-4. Read `CLAUDE.md`, `memory/quant-research-playbook.md`, all three human-owned
+4. Read `CLAUDE.md`, `memory/quant-research-playbook.md`,
+   `memory/upstream-methodology-index.md`, all three human-owned
    config files, all Bull memory/ledgers, and only these read-only Aggressive
    comparison files:
    portfolio, trade log, closed trades, weekly review, performance, and

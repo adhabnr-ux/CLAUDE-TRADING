@@ -153,6 +153,8 @@ class RunnerPolicyTests(unittest.TestCase):
         self.assertTrue(result.startswith("APPEND BLOCKED:"))
         result = runner._append("memory/quant-research-playbook.md", "override")
         self.assertTrue(result.startswith("APPEND BLOCKED:"))
+        result = runner._append("memory/upstream-methodology-index.md", "override")
+        self.assertTrue(result.startswith("APPEND BLOCKED:"))
 
     def test_case_aliases_cannot_bypass_control_profile_or_ledger_boundaries(self):
         for path in (
@@ -216,8 +218,14 @@ class RunnerPolicyTests(unittest.TestCase):
         self.assertEqual(settings["permissions"]["defaultMode"], "dontAsk")
         self.assertEqual(settings["permissions"]["disableBypassPermissionsMode"], "disable")
         self.assertEqual(settings["permissions"]["disableAutoMode"], "disable")
+        deny = set(settings["permissions"]["deny"])
+        self.assertIn("Edit(/third_party/**)", deny)
+        self.assertIn("Write(/third_party/**)", deny)
         hooks = settings["hooks"]["PreToolUse"]
-        self.assertEqual(hooks[0]["matcher"], "Bash|Edit|Write|Read|Glob|Grep")
+        self.assertEqual(
+            hooks[0]["matcher"],
+            "Bash|Edit|Write|Read|Glob|Grep|WebFetch",
+        )
         self.assertEqual(hooks[0]["hooks"][0]["command"], "python3")
         self.assertEqual(
             hooks[0]["hooks"][0]["args"],
@@ -239,6 +247,7 @@ class RunnerPolicyTests(unittest.TestCase):
             module._allowed("memory/aggressive/research-evidence.jsonl", "aggro")
         )
         self.assertFalse(module._allowed("memory/quant-research-playbook.md", "bull"))
+        self.assertFalse(module._allowed("memory/upstream-methodology-index.md", "bull"))
         self.assertFalse(module._allowed("memory/performance.csv", "aggro"))
         self.assertFalse(module._allowed("memory/control.md", "aggro"))
         self.assertFalse(

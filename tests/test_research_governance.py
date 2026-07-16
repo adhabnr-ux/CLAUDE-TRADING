@@ -15,7 +15,7 @@ class ResearchGovernanceTests(unittest.TestCase):
         path = ROOT / "memory/quant-research-playbook.md"
         text = path.read_text(encoding="utf-8")
         self.assertLessEqual(len(text), runner.MAX_READ_CHARS)
-        self.assertIn("168720dc5f4eed3d8b2e55f23026fe77ecb95b67", text)
+        self.assertIn("2c1f2cb9ae278cbee7c69a982a9151230be596f1", text)
         self.assertIn("fcfc40dcf628f6af091c28cb2c33827f42cef8fd", text)
         self.assertGreaterEqual(text.count("MIT"), 2)
         self.assertIn("There is no autonomous path to `ACTIVE`", text)
@@ -39,10 +39,12 @@ class ResearchGovernanceTests(unittest.TestCase):
         for relative in commands:
             text = (ROOT / relative).read_text(encoding="utf-8")
             self.assertIn("quant-research-playbook.md", text, relative)
+            self.assertIn("upstream-methodology-index.md", text, relative)
             self.assertIn("scripts/research.py validate", text, relative)
         for relative in routines:
             text = (ROOT / relative).read_text(encoding="utf-8")
             self.assertIn("quant-research-playbook.md", text, relative)
+            self.assertIn("upstream-methodology-index.md", text, relative)
             self.assertIn("command owns", text, relative)
             self.assertNotIn("scripts/research.py", text, relative)
 

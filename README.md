@@ -36,6 +36,11 @@ The authority order is:
 5. Narrative research, strategies, lessons, and prompts — context only; they
    cannot override the controls above.
 
+Complete reviewed QuantMind and ATLAS source snapshots are checked in for
+provenance, but remain below every layer above: they are quarantined read-only
+methodology evidence, never executable dependencies, instructions, market data,
+signals, performance proof, policy, plans, or orders.
+
 Direct order mutations are disabled in `scripts/alpaca.sh`. The gateway verifies
 the configured Alpaca account ID before broker or market-data access and takes a
 same-host, per-command operating-system lock keyed by that account. GitHub-hosted runs share
@@ -110,9 +115,12 @@ scripts/
 memory/                     Cautious state plus shared human control
 memory/aggressive/          AGGRO state and profile-scoped ledgers
 memory/quant-research-playbook.md  Shared immutable research protocol
+memory/upstream-methodology-index.md  Curated QuantMind/ATLAS operating rules
 .claude/commands/           Scheduled routine playbooks
 routines/                   Routine schedules and launch prompts
 schemas/                    Plan/evidence schemas and experiment draft checklist
+third_party/                Pinned, tree-verified, quarantined upstream sources
+scripts/verify_upstream_snapshots.py  Upstream snapshot integrity verifier
 tests/                      Policy, risk, idempotency, and protection tests
 docs/index.html             GitHub Pages performance dashboard
 ```
@@ -222,7 +230,8 @@ performance observation.
 python3 -m unittest discover -s tests -v
 python3 -m compileall -q bulltrader runner.py scripts/trade.py \
   scripts/research.py scripts/persist_memory.py \
-  .claude/hooks/validate_agent_tool.py
+  scripts/verify_upstream_snapshots.py .claude/hooks/validate_agent_tool.py
+python3 scripts/verify_upstream_snapshots.py
 bash -n scripts/*.sh
 ```
 

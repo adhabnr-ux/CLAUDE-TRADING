@@ -30,9 +30,10 @@ are ALPACA_API_KEY_ID, ALPACA_API_SECRET_KEY, ALPACA_BASE_URL,
 ALPACA_EXPECTED_ACCOUNT_ID, TRADING_AGENT, TELEGRAM_BOT_TOKEN, and
 TELEGRAM_CHAT_ID; TRADING_AGENT must equal `bull`.
 The `/monthly-review` command owns the
-`memory/quant-research-playbook.md` validation and full-family audit before any
-inactive draft proposal. Do not perform or repeat those steps separately in
-this outer routine.
+`memory/quant-research-playbook.md` validation, the mandatory
+`memory/upstream-methodology-index.md` rules, and full-family audit before any
+inactive draft proposal. Do not perform or repeat those steps separately in this
+outer routine.
 Then run exactly `python3 scripts/persist_memory.py` with no arguments. Never
 run Git directly.
 ```

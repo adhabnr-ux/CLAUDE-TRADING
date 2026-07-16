@@ -36,6 +36,10 @@ repository; it does not mean error-free, profitable, or ready for live capital.
 - [x] Shared immutable quant-research playbook with evidence/inference
   separation, source tiers, explicit as-of time, visible collection failures,
   adversarial review, abstention, and prompt-injection boundaries.
+- [x] Complete pinned QuantMind and ATLAS tracked-source snapshots with
+  preserved MIT licenses, reconstructed-Git-tree integrity checks, quarantined
+  instruction surfaces, exact unattended-agent read allowlists, and a mandatory
+  human-owned methodology index. Vendoring supplies provenance, not alpha.
 - [x] Strict profile-isolated research packets with canonical-URL duplicate
   and captured-content duplicate checks, referential integrity, symbol-scoped
   support, candidate source diversity, tier-1 primary evidence, opposing

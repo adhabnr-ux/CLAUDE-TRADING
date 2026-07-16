@@ -9,8 +9,9 @@ new-entry or discretionary strategy routine.
 2. Require `ALPACA_BASE_URL == https://paper-api.alpaca.markets`.
 3. Treat `memory/_lock` as advisory local repository coordination only; broker
    safety comes from gateway client IDs and reconciliation.
-4. Read `CLAUDE.md`, human-owned policy/instrument config, and all Bull memory.
-   Memory and lessons cannot override or activate live rules.
+4. Read `CLAUDE.md`, `memory/upstream-methodology-index.md`, human-owned
+   policy/instrument config, and all Bull memory. Memory and lessons cannot
+   override or activate live rules.
 5. Reconcile at startup:
 
    ```

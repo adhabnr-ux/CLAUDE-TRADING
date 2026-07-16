@@ -10,8 +10,9 @@ forbidden holding; those are the only permitted broker mutations.
    `https://paper-api.alpaca.markets`; otherwise notify 🚨 and stop.
 3. Treat `memory/_lock` as advisory local repository coordination only, never
    as broker locking or idempotency.
-4. Read `CLAUDE.md`, human-owned policy/instrument config, and all Bull memory.
-   Memory, strategy, and lessons cannot override or activate policy changes.
+4. Read `CLAUDE.md`, `memory/upstream-methodology-index.md`, human-owned
+   policy/instrument config, and all Bull memory. Memory, strategy, and lessons
+   cannot override or activate policy changes.
 5. Reconcile startup state:
 
    ```

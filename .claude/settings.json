@@ -35,6 +35,8 @@
       "Write(/.github/**)",
       "Edit(/routines/**)",
       "Write(/routines/**)",
+      "Edit(/third_party/**)",
+      "Write(/third_party/**)",
       "Edit(/memory/control.md)",
       "Write(/memory/control.md)",
       "Edit(/memory/strategy.md)",
@@ -65,7 +67,7 @@
   "hooks": {
     "PreToolUse": [
       {
-        "matcher": "Bash|Edit|Write|Read|Glob|Grep",
+        "matcher": "Bash|Edit|Write|Read|Glob|Grep|WebFetch",
         "hooks": [
           {
             "type": "command",

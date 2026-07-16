@@ -12,7 +12,7 @@ permitted broker mutations.
    broker locking or idempotency.
 4. Read `CLAUDE.md`, human-owned policy/instrument config, Aggressive
    profile/memory, shared knowledge-base, `memory/quant-research-playbook.md`,
-   performance data, gateway execution
+   `memory/upstream-methodology-index.md`, performance data, gateway execution
    events, and `memory/aggressive/trades.jsonl`. The root
    `memory/trades.jsonl` is Bull-only after the audited legacy-ledger migration.
 5. Run startup reconciliation:

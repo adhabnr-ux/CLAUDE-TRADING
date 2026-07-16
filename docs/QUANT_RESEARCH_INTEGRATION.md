@@ -2,10 +2,13 @@
 
 ## Scope and safety boundary
 
-This integration reviewed two public repositories as untrusted source material
-and translated selected concepts into Bull's own research-governance system. No
-third-party runtime, prompt, model weight, dataset, signal, threshold, trade,
-or performance claim was imported. No upstream code was executed.
+This integration reviewed two public repositories as untrusted source material,
+vendored their complete tracked trees for reproducible provenance, and
+translated selected concepts into Bull's own research-governance system. The
+snapshots are source evidence, not active dependencies: no third-party package
+is installed or imported at runtime, and no upstream code, prompt, workflow,
+model weight, dataset, result, signal, threshold, trade, or performance claim is
+executed or accepted as authority.
 
 The result is intentionally asymmetric: research may become stricter and may
 veto a candidate, but it cannot authorize an order, loosen a limit, change
@@ -16,23 +19,39 @@ remain paper-only and `memory/control.md` remains the human switch.
 
 | Repository | Snapshot | License | Used for |
 |---|---|---|---|
-| [LLMQuant/quant-mind](https://github.com/LLMQuant/quant-mind) | `168720dc5f4eed3d8b2e55f23026fe77ecb95b67` | MIT, Copyright 2025 LLMQuant | Evidence/provenance schemas, explicit as-of time, completeness/failures, strict validation |
+| [LLMQuant/quant-mind](https://github.com/LLMQuant/quant-mind) | `2c1f2cb9ae278cbee7c69a982a9151230be596f1` | MIT, Copyright 2025 LLMQuant | Evidence/provenance schemas, dual financial time, canonical/derived separation, completeness/failures, strict validation |
 | [chrisworsey55/atlas-gic](https://github.com/chrisworsey55/atlas-gic) | `fcfc40dcf628f6af091c28cb2c33827f42cef8fd` | MIT for framework architecture, documentation, and example prompts; production prompts absent | Layered specialist review, adversarial CRO lens, reversible single-change experiments |
 
-This repository uses an original synthesis and original implementation. The
-upstream license notices and disclaimers remain in their repositories. If
-future work copies a substantial portion of upstream software or documentation,
-the applicable MIT notice must travel with that material.
+The exact source trees live in `third_party/quant-mind/` and
+`third_party/atlas-gic/`; their MIT license files are preserved. QuantMind's
+`CLAUDE.md`, `AGENTS.md`, `.claude/`, and `.agents/` paths were renamed without
+changing their bytes so they cannot become active project instructions or
+skills. `third_party/snapshots.json` records commits, Git tree IDs, archive
+hashes, sizes, counts, and path rewrites. Offline CI verifies local bytes,
+paths, modes, counts, sizes, and each recorded Git tree; commit IDs and archive
+hashes remain human-reviewed provenance metadata because CI does not fetch
+upstream or prove the commit-to-tree relationship. It rejects any missing,
+extra, modified, remoded, symlinked, or special file. Agents can read only exact paths in
+`memory/upstream-methodology-index.md`; they cannot list or execute a snapshot.
+
+Bull's operating contract and deterministic implementation remain an original
+synthesis. Vendoring is for traceability and on-demand methodological review,
+not silent code reuse or activation.
 
 ## What was adopted from QuantMind
 
 The useful implemented ideas came primarily from
 `quantmind/knowledge/_base.py`, `quantmind/knowledge/paper.py`,
 `quantmind/preprocess/_news_types.py`, `quantmind/preprocess/news.py`,
-`quantmind/flows/batch.py`, and `docs/design/en/news.md`:
+`quantmind/flows/batch.py`, `docs/design/en/news.md`, `docs/library.md`, and
+`quantmind/library/`:
 
 - Source observations and agent interpretations are different records.
-- Every financial claim needs a time of validity and typed provenance fields.
+- Every financial claim needs both an information cutoff (`as_of`) and declared
+  observability. Bull records a `published_at` believed trustworthy, or null
+  plus the conservative `fetched_at` bound. Validation checks format and order,
+  not factual authenticity. Historical filters must apply availability before
+  ranking; unknown availability is not permission to assume midnight.
 - Collection defines a replayable window, reports completeness, and preserves
   partial failures instead of silently dropping them.
 - Stable identities and canonical URLs identify exact or replayed URL
@@ -41,6 +60,11 @@ The useful implemented ideas came primarily from
 - Strict, no-extra-field schemas reduce quiet contract drift.
 - Deterministic offline validation is separate from optional live source-health
   checks.
+- Canonical typed evidence is source of truth; embeddings, projections, filter
+  columns, indexes, and rankings are rebuildable derivatives bound to content,
+  model, dimension, and schema identities.
+- Retrieval may operate at item, tree-root, or node grain, but every hit must
+  resolve back to canonical cited evidence. Similarity is relevance, not alpha.
 
 Bull implements those ideas through:
 
@@ -50,6 +74,8 @@ Bull implements those ideas through:
 - atomically claimed fixed pending packets, retained failure artifacts, plus
   `scripts/research.py append --agent ...` and `validate --agent ...`;
 - the mandatory compact playbook in `memory/quant-research-playbook.md`.
+- the mandatory upstream operating index in
+  `memory/upstream-methodology-index.md`.
 
 The packet contains sources, claims, inferences, and non-executable decision
 support as separate layers. Candidate assessments require self-declared complete
@@ -65,24 +91,32 @@ protocol ceiling, so later policy tightening cannot rewrite or brick the
 append-only record. The execution gate separately applies the current, tighter
 policy again at order time.
 
-### QuantMind concepts deliberately not imported
+### QuantMind mechanisms deliberately not activated
 
-QuantMind is a document-acquisition and extraction project in active migration,
-not a complete trading research platform. At the reviewed snapshot:
+QuantMind is a document-acquisition, typed-knowledge, and local-retrieval project
+in active migration, not a complete trading research platform. At the reviewed
+snapshot:
 
-- storage/retrieval and `mind/` memory described in some docs were absent;
 - graph, factor, and thesis models were placeholders;
 - citations were requested from an LLM but not source-span verified;
 - some memory, budget, and archive hooks were no-ops;
+- the local library uses SQLite plus an embedding provider, but `available_at`
+  remains optional and some date-only examples normalize releases to midnight;
+- embedding requests lack a complete timeout/cost/retry policy, locking is
+  process-local rather than distributed, and exact cosine loads the local index
+  in memory;
 - no replication, temporal-leakage, investability, or cost filter was evident
   in the reviewed paper-catalog path or its metadata.
 
-Therefore Bull did not vendor its package, dump its paper list into context,
-add embeddings, or treat extracted text as validated investment knowledge.
+Therefore Bull vendors the bytes for audit but does not install, import, or run
+the QuantMind package, dump its paper list into agent context, call its
+embedding library, or treat extracted/retrieved text as validated investment
+knowledge. Its bundled catalog and example database are not market data or a
+research corpus for Bull.
 
-## What was adopted from ATLAS
+## What ATLAS inspired and Bull corrected
 
-The useful conceptual material came from `architecture/overview.md`,
+The useful conceptual inspiration came from `architecture/overview.md`,
 `architecture/layers.md`, and `architecture/autoresearch.md`:
 
 - move from evidence collection through domain analysis to synthesis;
@@ -100,7 +134,7 @@ multiple-testing families, sensitivity, shadow criteria, rollback, and human
 review. It permits only `DRAFT` and `REJECTED`; it does not register, run,
 validate, or promote an experiment.
 
-### ATLAS mechanisms deliberately not imported
+### ATLAS mechanisms deliberately not activated
 
 The public repository is illustrative rather than a deployable trading system.
 Core orchestration, data clients, risk logic, trained prompts, scorecards, and
@@ -123,9 +157,10 @@ artifacts contain research defects:
   checked artifacts also disagree on dates, starting values, and experiment
   counts.
 
-Bull therefore did not import Darwinian weights, JANUS blending, MiroFish
-probabilities, autorewrites, automatic agent spawning, or any advertised trade
-result. Scenario generation remains a source of stress-test ideas only.
+Bull therefore vendors the source for audit but does not activate Darwinian
+weights, JANUS blending, MiroFish probabilities, autorewrites, automatic agent
+spawning, or any advertised trade result. Scenario generation remains a source
+of stress-test ideas only.
 
 ## Operating workflow
 

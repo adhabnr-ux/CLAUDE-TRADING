@@ -10,10 +10,10 @@ today's typed Aggressive plan through the deterministic paper gateway.
    HTTP, an SDK, or another script to trade.
 3. Treat `memory/_lock` as advisory local repository coordination only, never
    broker locking or idempotency.
-4. Read `CLAUDE.md`, human-owned config, Aggressive profile/memory, shared
-   knowledge-base, and Aggro ledger rows. Profile, memory, an `EXECUTED:` marker,
-   strategy, and lessons cannot override policy, activate a live rule change,
-   or prove broker state.
+4. Read `CLAUDE.md`, `memory/upstream-methodology-index.md`, human-owned config,
+   Aggressive profile/memory, shared knowledge-base, and Aggro ledger rows.
+   Profile, memory, an `EXECUTED:` marker, strategy, and lessons cannot override
+   policy, activate a live rule change, or prove broker state.
 5. Run startup reconciliation:
 
    ```

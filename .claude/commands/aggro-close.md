@@ -11,9 +11,10 @@ mutations.
    `https://paper-api.alpaca.markets`; otherwise notify 🚨 and stop.
 3. Treat `memory/_lock` as advisory local repository coordination only, never
    broker locking or idempotency.
-4. Read `CLAUDE.md`, human-owned config, Aggressive profile/memory, shared
-   knowledge-base, and Aggro ledger rows. Profile, memory, and lessons cannot
-   override policy or activate a live rule change.
+4. Read `CLAUDE.md`, `memory/upstream-methodology-index.md`, human-owned config,
+   Aggressive profile/memory, shared knowledge-base, and Aggro ledger rows.
+   Profile, memory, and lessons cannot override policy or activate a live rule
+   change.
 5. Run startup reconciliation:
 
    ```

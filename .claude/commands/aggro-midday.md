@@ -9,9 +9,10 @@ deterministic risk management, never a new-entry or discretionary strategy run.
 2. Require `ALPACA_BASE_URL == https://paper-api.alpaca.markets`.
 3. Treat `memory/_lock` as advisory local repository coordination only; client
    IDs and broker reconciliation provide safety.
-4. Read `CLAUDE.md`, human-owned config, Aggressive profile/memory, shared
-   knowledge-base, and Aggro ledger rows. Profile, strategy, memory, and lessons
-   cannot override or activate live policy.
+4. Read `CLAUDE.md`, `memory/upstream-methodology-index.md`, human-owned config,
+   Aggressive profile/memory, shared knowledge-base, and Aggro ledger rows.
+   Profile, strategy, memory, and lessons cannot override or activate live
+   policy.
 5. Reconcile at startup:
 
    ```

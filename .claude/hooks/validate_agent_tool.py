@@ -11,6 +11,7 @@ import shlex
 import sys
 from decimal import Decimal, InvalidOperation
 from pathlib import Path
+from urllib.parse import unquote, urlsplit
 
 
 ROOT = Path(os.environ.get("CLAUDE_PROJECT_DIR", Path.cwd())).resolve()
@@ -30,11 +31,35 @@ COMMON_READ = {
     "memory/control.md",
     "memory/knowledge-base.md",
     "memory/quant-research-playbook.md",
+    "memory/upstream-methodology-index.md",
+    "third_party/README.md",
+    "third_party/snapshots.json",
 }
 SHARED_IMMUTABLE = {
     "memory/control.md",
     "memory/knowledge-base.md",
     "memory/quant-research-playbook.md",
+    "memory/upstream-methodology-index.md",
+}
+UPSTREAM_REFERENCE_READ = {
+    "third_party/quant-mind/LICENSE",
+    "third_party/quant-mind/docs/library.md",
+    "third_party/quant-mind/docs/design/en/news.md",
+    "third_party/quant-mind/quantmind/knowledge/_base.py",
+    "third_party/quant-mind/quantmind/knowledge/_tree.py",
+    "third_party/quant-mind/quantmind/knowledge/paper.py",
+    "third_party/quant-mind/quantmind/preprocess/_news_types.py",
+    "third_party/quant-mind/quantmind/preprocess/news.py",
+    "third_party/quant-mind/quantmind/flows/batch.py",
+    "third_party/quant-mind/quantmind/library/_types.py",
+    "third_party/quant-mind/quantmind/library/local.py",
+    "third_party/quant-mind/quantmind/library/_internal/retrieval_targets.py",
+    "third_party/quant-mind/quantmind/library/_internal/exact_cosine.py",
+    "third_party/quant-mind/quantmind/library/_internal/sqlite_store.py",
+    "third_party/atlas-gic/LICENSE",
+    "third_party/atlas-gic/architecture/overview.md",
+    "third_party/atlas-gic/architecture/layers.md",
+    "third_party/atlas-gic/architecture/autoresearch.md",
 }
 RESEARCH_LEDGER = {
     "bull": "memory/research-evidence.jsonl",
@@ -45,6 +70,10 @@ RESEARCH_PENDING = {
     "aggro": "memory/aggressive/research-packet.pending.json",
 }
 MEMORY_ROOT = (ROOT / "memory").resolve()
+UPSTREAM_REMOTE_TOKENS = (
+    "llmquant/quant-mind",
+    "chrisworsey55/atlas-gic",
+)
 SHARED_IMMUTABLE_PATHS = {
     (ROOT / relative).resolve() for relative in SHARED_IMMUTABLE
 }
@@ -282,7 +311,7 @@ def _read_path(raw: object, agent: str) -> None:
     if not resolved.is_relative_to(ROOT) or not resolved.is_file():
         raise Denied("read path must be an existing repository file")
     relative = resolved.relative_to(ROOT).as_posix()
-    if relative in COMMON_READ:
+    if relative in COMMON_READ or relative in UPSTREAM_REFERENCE_READ:
         return
     if relative.startswith(("config/", "schemas/")):
         return
@@ -303,6 +332,26 @@ def _read_path(raw: object, agent: str) -> None:
     raise Denied(f"{agent} read is outside its profile allowlist")
 
 
+def _webfetch(raw: object) -> None:
+    if not isinstance(raw, str) or not raw.strip() or "\x00" in raw:
+        raise Denied("WebFetch requires a URL")
+    parsed = urlsplit(raw)
+    if parsed.scheme.lower() not in {"http", "https"} or not parsed.hostname:
+        raise Denied("WebFetch is limited to HTTP(S) sources")
+    decoded = raw
+    for _ in range(3):
+        expanded = unquote(decoded)
+        if expanded == decoded:
+            break
+        decoded = expanded
+    normalized = decoded.casefold().replace("\\", "/")
+    if any(token in normalized for token in UPSTREAM_REMOTE_TOKENS):
+        raise Denied(
+            "remote QuantMind/ATLAS fetches are blocked; use only the pinned "
+            "local reference paths in memory/upstream-methodology-index.md"
+        )
+
+
 def main() -> int:
     try:
         payload = json.load(sys.stdin)
@@ -316,6 +365,8 @@ def main() -> int:
             _write_path(tool_input.get("file_path"), agent)
         elif tool == "Read":
             _read_path(tool_input.get("file_path"), agent)
+        elif tool == "WebFetch":
+            _webfetch(tool_input.get("url"))
         elif tool in {"Glob", "Grep"}:
             raise Denied(f"{tool} is disabled; read only explicit profile-scoped files")
         else:
