@@ -1,16 +1,8 @@
 #!/usr/bin/env bash
-# Send a Telegram notification via the BullTheBullishBot.
-# Credentials are read from environment variables only.
+# Send a Telegram notification via the trusted Python delivery helper.
 set -euo pipefail
 
 msg="${1:?usage: ./scripts/notify.sh \"message\"}"
-
-if [[ -z "${TELEGRAM_BOT_TOKEN:-}" || -z "${TELEGRAM_CHAT_ID:-}" ]]; then
-  echo "ERROR: TELEGRAM_BOT_TOKEN and TELEGRAM_CHAT_ID must be set as environment variables." >&2
-  exit 1
-fi
-
-curl --fail-with-body -sS -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
-  --data-urlencode "chat_id=${TELEGRAM_CHAT_ID}" \
-  --data-urlencode "text=${msg}"
-echo
+shift
+script_dir="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
+exec python3 "${script_dir}/notify.py" "${msg}" "$@"

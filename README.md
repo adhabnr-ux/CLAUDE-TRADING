@@ -53,6 +53,12 @@ duplicate resistance for one canonical operation, not general serialization.
 Do not overlap external routines for the same account; a durable distributed
 lease is still required before calling the paper system operationally mature.
 
+Telegram proof markers are also at-least-once until their deletion is committed
+to `main`. Telegram provides no idempotency key across independent cloud
+checkouts. Do not overlap one profile's routines. After a proof-bearing message,
+persist immediately; if persistence fails, stop without notifying again and
+resolve the still-tracked marker manually to avoid a later duplicate.
+
 See [Risk engine and operations](docs/RISK_ENGINE.md), the
 [quant research integration](docs/QUANT_RESEARCH_INTEGRATION.md), the
 [trade-plan schema](schemas/trade-plan.schema.json), and the
@@ -110,6 +116,7 @@ bulltrader/
 scripts/
   trade.py                  Only authorized order-mutation entry point
   alpaca.sh                 Read-only broker and market-data inspection
+  notify.py                 Telegram delivery and one-time proof acknowledgements
   persist_memory.py         Fixed profile-scoped journal publisher
   research.py               Fixed pending-packet append and profile validation
 memory/                     Cautious state plus shared human control
@@ -229,7 +236,7 @@ performance observation.
 ```bash
 python3 -m unittest discover -s tests -v
 python3 -m compileall -q bulltrader runner.py scripts/trade.py \
-  scripts/research.py scripts/persist_memory.py \
+  scripts/research.py scripts/persist_memory.py scripts/notify.py \
   scripts/verify_upstream_snapshots.py .claude/hooks/validate_agent_tool.py
 python3 scripts/verify_upstream_snapshots.py
 bash -n scripts/*.sh

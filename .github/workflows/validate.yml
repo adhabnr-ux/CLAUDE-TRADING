@@ -38,7 +38,7 @@ jobs:
       - name: Compile Python
         run: >-
           python -m compileall -q bulltrader runner.py scripts/trade.py
-          scripts/research.py scripts/persist_memory.py
+          scripts/research.py scripts/persist_memory.py scripts/notify.py
           scripts/verify_upstream_snapshots.py
           .claude/hooks/validate_agent_tool.py
 
