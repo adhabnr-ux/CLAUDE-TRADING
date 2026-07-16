@@ -1,0 +1,307 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:bull:schema:research-packet:1",
+  "title": "Bull non-executable research evidence packet",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "packet_id",
+    "agent",
+    "routine",
+    "decision_time",
+    "market_data_cutoff",
+    "window",
+    "sources",
+    "claims",
+    "inferences",
+    "decision_support",
+    "untrusted_instructions_detected",
+    "packet_limitations"
+  ],
+  "properties": {
+    "schema_version": {"const": 1},
+    "packet_id": {"$ref": "#/$defs/id"},
+    "agent": {"enum": ["bull", "aggro"]},
+    "routine": {
+      "enum": ["premarket", "weekly-review", "monthly-review", "knowledge-import"]
+    },
+    "decision_time": {"$ref": "#/$defs/timestamp"},
+    "market_data_cutoff": {"$ref": "#/$defs/timestamp"},
+    "window": {"$ref": "#/$defs/window"},
+    "sources": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 100,
+      "items": {"$ref": "#/$defs/source"}
+    },
+    "claims": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 200,
+      "items": {"$ref": "#/$defs/claim"}
+    },
+    "inferences": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 100,
+      "items": {"$ref": "#/$defs/inference"}
+    },
+    "decision_support": {
+      "type": "array",
+      "maxItems": 50,
+      "items": {"$ref": "#/$defs/decisionSupport"}
+    },
+    "untrusted_instructions_detected": {"type": "boolean"},
+    "packet_limitations": {"$ref": "#/$defs/stringList"}
+  },
+  "$defs": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9._:-]{2,127}$"
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "pattern": "^(?!.*-00:00$)[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(?:\\.[0-9]{1,6})?(?:Z|[+-][0-9]{2}:[0-9]{2})$"
+    },
+    "stringList": {
+      "type": "array",
+      "maxItems": 50,
+      "uniqueItems": true,
+      "items": {"type": "string", "minLength": 1, "maxLength": 1000}
+    },
+    "symbolList": {
+      "type": "array",
+      "maxItems": 50,
+      "uniqueItems": true,
+      "items": {"type": "string", "pattern": "^[A-Z][A-Z0-9.-]{0,9}$"}
+    },
+    "failure": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["stage", "source", "error"],
+      "properties": {
+        "stage": {"type": "string", "minLength": 1, "maxLength": 1000},
+        "source": {"type": "string", "minLength": 1, "maxLength": 1000},
+        "error": {"type": "string", "minLength": 1, "maxLength": 1000}
+      }
+    },
+    "window": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["start", "end", "complete", "failures", "limitations"],
+      "properties": {
+        "start": {"$ref": "#/$defs/timestamp"},
+        "end": {"$ref": "#/$defs/timestamp"},
+        "complete": {"type": "boolean"},
+        "failures": {
+          "type": "array",
+          "maxItems": 50,
+          "items": {"$ref": "#/$defs/failure"}
+        },
+        "limitations": {"$ref": "#/$defs/stringList"}
+      }
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_id",
+        "source_type",
+        "tier",
+        "url",
+        "publisher",
+        "published_at",
+        "fetched_at",
+        "as_of",
+        "content_sha256",
+        "hash_status",
+        "locator",
+        "limitations"
+      ],
+      "properties": {
+        "source_id": {"$ref": "#/$defs/id"},
+        "source_type": {
+          "enum": [
+            "regulatory_filing",
+            "company_release",
+            "exchange_market_data",
+            "government",
+            "academic",
+            "source_code",
+            "reputable_secondary",
+            "other"
+          ]
+        },
+        "tier": {"type": "integer", "minimum": 1, "maximum": 3},
+        "url": {"type": "string", "format": "uri", "pattern": "^https://"},
+        "publisher": {"type": "string", "minLength": 1, "maxLength": 200},
+        "published_at": {
+          "oneOf": [{"$ref": "#/$defs/timestamp"}, {"type": "null"}]
+        },
+        "fetched_at": {"$ref": "#/$defs/timestamp"},
+        "as_of": {"$ref": "#/$defs/timestamp"},
+        "content_sha256": {
+          "oneOf": [
+            {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+            {"type": "null"}
+          ]
+        },
+        "hash_status": {"enum": ["captured", "not_captured"]},
+        "locator": {"type": "string", "minLength": 1, "maxLength": 500},
+        "limitations": {"$ref": "#/$defs/stringList"}
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "source_type": {
+                "enum": [
+                  "regulatory_filing",
+                  "company_release",
+                  "exchange_market_data",
+                  "government",
+                  "source_code"
+                ]
+              }
+            },
+            "required": ["source_type"]
+          },
+          "then": {"properties": {"tier": {"const": 1}}}
+        },
+        {
+          "if": {
+            "properties": {"source_type": {"const": "reputable_secondary"}},
+            "required": ["source_type"]
+          },
+          "then": {"properties": {"tier": {"minimum": 2}}}
+        },
+        {
+          "if": {
+            "properties": {"source_type": {"const": "other"}},
+            "required": ["source_type"]
+          },
+          "then": {"properties": {"tier": {"const": 3}}}
+        }
+      ]
+    },
+    "claim": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "claim_id",
+        "text",
+        "symbols",
+        "source_ids",
+        "as_of",
+        "stance",
+        "confidence",
+        "limitations"
+      ],
+      "properties": {
+        "claim_id": {"$ref": "#/$defs/id"},
+        "text": {"type": "string", "minLength": 15, "maxLength": 2000},
+        "symbols": {"$ref": "#/$defs/symbolList"},
+        "source_ids": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 20,
+          "uniqueItems": true,
+          "items": {"$ref": "#/$defs/id"}
+        },
+        "as_of": {"$ref": "#/$defs/timestamp"},
+        "stance": {"enum": ["supports", "opposes", "context"]},
+        "confidence": {"enum": ["low", "medium", "high"]},
+        "limitations": {"$ref": "#/$defs/stringList"}
+      }
+    },
+    "inference": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "inference_id",
+        "text",
+        "symbols",
+        "claim_ids",
+        "kind",
+        "horizon",
+        "confidence",
+        "falsifier",
+        "limitations"
+      ],
+      "properties": {
+        "inference_id": {"$ref": "#/$defs/id"},
+        "text": {"type": "string", "minLength": 20, "maxLength": 2000},
+        "symbols": {"$ref": "#/$defs/symbolList"},
+        "claim_ids": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 30,
+          "uniqueItems": true,
+          "items": {"$ref": "#/$defs/id"}
+        },
+        "kind": {
+          "enum": [
+            "macro",
+            "sector",
+            "company",
+            "valuation",
+            "risk",
+            "liquidity",
+            "technical",
+            "methodology"
+          ]
+        },
+        "horizon": {"enum": ["intraday", "days", "weeks", "months", "multi-year"]},
+        "confidence": {"enum": ["low", "medium", "high"]},
+        "falsifier": {"type": "string", "minLength": 10, "maxLength": 1000},
+        "limitations": {"$ref": "#/$defs/stringList"}
+      }
+    },
+    "decisionSupport": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "symbol",
+        "assessment",
+        "supporting_inference_ids",
+        "opposing_claim_ids",
+        "strongest_counterargument",
+        "critical_unknowns",
+        "thesis",
+        "invalidation",
+        "review_by",
+        "status"
+      ],
+      "properties": {
+        "symbol": {"type": "string", "pattern": "^[A-Z][A-Z0-9.-]{0,9}$"},
+        "assessment": {"enum": ["candidate", "hold", "avoid", "watch"]},
+        "supporting_inference_ids": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 20,
+          "uniqueItems": true,
+          "items": {"$ref": "#/$defs/id"}
+        },
+        "opposing_claim_ids": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 20,
+          "uniqueItems": true,
+          "items": {"$ref": "#/$defs/id"}
+        },
+        "strongest_counterargument": {
+          "type": "string",
+          "minLength": 15,
+          "maxLength": 4000
+        },
+        "critical_unknowns": {"$ref": "#/$defs/stringList"},
+        "thesis": {"type": "string", "minLength": 20, "maxLength": 2000},
+        "invalidation": {"type": "string", "minLength": 10, "maxLength": 1000},
+        "review_by": {"type": "string", "format": "date"},
+        "status": {"const": "research_only"}
+      }
+    }
+  }
+}

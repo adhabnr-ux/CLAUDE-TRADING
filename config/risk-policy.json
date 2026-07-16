@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "system": {
+    "paper_base_url": "https://paper-api.alpaca.markets",
+    "market_data_base_url": "https://data.alpaca.markets",
+    "market_data_feed": "iex",
+    "timezone": "America/New_York",
+    "minimum_stock_price": 5.0,
+    "maximum_quote_age_seconds": 120,
+    "research_candidate_max_age_minutes": 240,
+    "research_market_source_max_age_minutes": 120,
+    "maximum_limit_markup_pct": 0.3,
+    "fill_timeout_seconds": 75,
+    "maximum_entry_attempts": 2,
+    "maximum_exit_attempts": 2,
+    "require_current_day_plan": true,
+    "require_verified_earnings_date": true,
+    "earnings_blackout_trading_days": 2,
+    "maximum_earnings_verification_age_hours": 72,
+    "allowed_asset_class": "us_equity"
+  },
+  "agents": {
+    "bull": {
+      "max_position_pct": 20.0,
+      "max_single_order_pct": 15.0,
+      "min_cash_pct": 5.0,
+      "max_daily_new_buy_pct": 25.0,
+      "max_new_positions_per_week": 3,
+      "max_sector_pct": 60.0,
+      "trailing_stop_pct": 10.0,
+      "midday_loss_cut_pct": 7.0,
+      "intraday_shock_pct": 4.0,
+      "max_drawdown_pct": 10.0,
+      "max_risk_at_stop_pct": 1.5,
+      "max_spread_bps": 35.0
+    },
+    "aggro": {
+      "max_position_pct": 35.0,
+      "max_single_order_pct": 20.0,
+      "min_cash_pct": 2.0,
+      "max_daily_new_buy_pct": 60.0,
+      "max_new_positions_per_week": 8,
+      "max_sector_pct": 50.0,
+      "trailing_stop_pct": 18.0,
+      "midday_loss_cut_pct": 12.0,
+      "intraday_shock_pct": 6.0,
+      "max_drawdown_pct": 20.0,
+      "max_risk_at_stop_pct": 3.6,
+      "max_spread_bps": 60.0
+    }
+  }
+}

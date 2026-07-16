@@ -1,0 +1,95 @@
+name: Validate risk foundation
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: validate-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install schema validator
+        run: python -m pip install "jsonschema>=4,<5"
+
+      - name: Run unit tests
+        run: python -m unittest discover -s tests -p "test_*.py" -t . -v
+
+      - name: Verify reviewed upstream snapshots
+        run: python scripts/verify_upstream_snapshots.py
+
+      - name: Compile Python
+        run: >-
+          python -m compileall -q bulltrader runner.py scripts/trade.py
+          scripts/research.py scripts/persist_memory.py
+          scripts/verify_upstream_snapshots.py
+          .claude/hooks/validate_agent_tool.py
+
+      - name: Check shell syntax
+        run: bash -n scripts/*.sh
+
+      - name: Validate JSON and trade-plan example
+        run: |
+          python - <<'PY'
+          import json
+          import tempfile
+          from pathlib import Path
+
+          from jsonschema import Draft202012Validator, FormatChecker
+          from bulltrader.plan import latest_plan
+          from bulltrader.policy import load_policy
+
+          paths = sorted(Path("config").glob("*.json")) + sorted(Path("schemas").rglob("*.json"))
+          parsed = {}
+          for path in paths:
+              with path.open(encoding="utf-8") as handle:
+                  parsed[path] = json.load(handle)
+              print(f"valid JSON: {path}")
+
+          examples = {
+              Path("schemas/examples/trade-plan.json"): Path("schemas/trade-plan.schema.json"),
+              Path("schemas/examples/research-packet.json"): Path("schemas/research-packet.schema.json"),
+              Path("schemas/examples/strategy-experiment.json"): Path("schemas/strategy-experiment.schema.json"),
+          }
+          for example, schema_path in examples.items():
+              schema = parsed[schema_path]
+              Draft202012Validator.check_schema(schema)
+              Draft202012Validator(
+                  schema, format_checker=FormatChecker()
+              ).validate(parsed[example])
+              print(f"valid schema example: {example}")
+
+          policy = parsed[Path("config/risk-policy.json")]
+          instruments = parsed[Path("config/instruments.json")]
+          if policy.get("schema_version") != 1 or instruments.get("schema_version") != 1:
+              raise SystemExit("unsupported config schema_version")
+          if set(policy.get("agents", {})) != {"bull", "aggro"}:
+              raise SystemExit("risk policy must define exactly bull and aggro")
+          for agent in ("bull", "aggro"):
+              load_policy(agent)
+
+          example = parsed[Path("schemas/examples/trade-plan.json")]
+          with tempfile.TemporaryDirectory() as directory:
+              plan_path = Path(directory) / "research-log.md"
+              plan_path.write_text(f"```json\n{json.dumps(example)}\n```\n", encoding="utf-8")
+              _, intents = latest_plan(plan_path, load_policy(example["agent"]))
+          if len(intents) != len(example["trades"]):
+              raise SystemExit("runtime parser did not accept every schema-validated intent")
+          PY

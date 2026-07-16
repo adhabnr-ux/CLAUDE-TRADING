@@ -1,81 +1,78 @@
-Run the **Aggressive Bull** end-of-day close routine. You are in **AGGRESSIVE MODE**.
+Run the **Aggressive Bull end-of-day close** routine in AGGRESSIVE MODE. This
+routine measures, reconciles, and journals. Reconciliation may repair managed
+protection or contain a forbidden holding; those are the only permitted broker
+mutations.
 
-## 0. Live-switch guard, lock, control switch, memory
-- **Live-switch guard:** assert `ALPACA_BASE_URL` contains `paper`.
-- **Lock:** read `memory/_lock`. If present and not expired, abort and notify.
-  Otherwise write `_lock` with `{routine: aggro-close, started, expires:
-  +8min}`.
-- **Control switch:** read `memory/control.md` (read-only) and note STATUS
-  in the journal (close places no orders).
-- **Memory:** read `memory/aggressive/profile.md`, every file in
-  `memory/aggressive/` (including `closed-trades.md`), the shared
-  `memory/knowledge-base.md`, and `CLAUDE.md`.
+## 0. Control first, advisory lock, memory, reconciliation
 
-## 0b. Half-day / dedup guard
-- Check the Alpaca clock's `next_close` field. Half-days run normally — note
-  it in the journal.
-- **Dedup:** if `memory/performance.csv` already has a row for today + `aggro`,
-  update that row instead of appending a duplicate.
+1. Read shared `memory/control.md` first. Invalid/missing STATUS is a hard stop.
+   `PAUSED` makes reconciliation read-only.
+2. Require the exact paper endpoint
+   `https://paper-api.alpaca.markets`; otherwise notify 🚨 and stop.
+3. Treat `memory/_lock` as advisory local repository coordination only, never
+   broker locking or idempotency.
+4. Read `CLAUDE.md`, `memory/upstream-methodology-index.md`, human-owned config,
+   Aggressive profile/memory, shared knowledge-base, and Aggro ledger rows.
+   Profile, memory, and lessons cannot override policy or activate a live rule
+   change.
+5. Run startup reconciliation:
 
-## 1. Pull final numbers
-- `./scripts/alpaca.sh account` — equity, cash.
-- `./scripts/alpaca.sh positions` — final positions.
-- `./scripts/alpaca.sh history 1A 1D` — portfolio equity history (also gives
-  the high-water mark for the circuit breaker).
-- `./scripts/alpaca.sh bars SPY 1Day 30` — SPY bars to compute the benchmark.
+   ```
+   python3 scripts/trade.py reconcile --agent aggro --repair
+   ```
 
-## 2. Compute performance
-- Today's portfolio P/L (dollar and %).
-- SPY's return today and since **your** inception.
-- Aggressive Bull vs SPY: since-inception difference (the number that matters).
-- Equity vs. its high-water mark — if within 3% of the −20% circuit-breaker
-  level, flag it in the journal and the notify message.
+   Omit `--repair` under `PAUSED`. A non-zero exit, `ok: false`, or malformed
+   result is fail-closed: no other mutation; journal/notify precisely and
+   continue only reliable read-only accounting.
 
-## 3. Reconcile exits
-Compare today's positions against `memory/aggressive/trade-log.md` and
-`memory/aggressive/closed-trades.md`. If any position exited today (stop fill,
-midday cut, manual close) and has **no entry in
-`memory/aggressive/closed-trades.md`**, add it now using the template — and
-for a loss, append the required dated lesson to
-`memory/aggressive/lessons.md`. The ledger must never lag reality by more
-than one day.
+## 1. Final broker and benchmark data
 
-## 4. Market close context (WebSearch)
-Search `"stock market summary today <today's date>"`. Write one sentence of
-context in the journal: what drove the market today, and whether it supports
-or threatens your current position theses.
+- Observe account, positions, history, clock, calendar, and same-feed SPY bars
+  through supported read-only `scripts/alpaca.sh` calls.
+  Label a half-day only when observed clock/session timestamps or a dated
+  authoritative exchange source prove it; otherwise label schedule status
+  unverified rather than improvising raw HTTP. Deduplicate
+  `memory/aggressive/performance.csv` by New York date and
+  agent `aggro`.
+- Compute today's return, SPY return on the identical session, since-inception
+  difference, high-water mark, and drawdown. Flag proximity to/breach of the
+  20% drawdown breaker.
+- Search a current close summary and record one dated, sourced context sentence;
+  it cannot authorize an after-hours trade.
 
-## 5. Journal
-- Update `memory/aggressive/portfolio.md` (account, positions with sector, the
-  vs-SPY table, sector-exposure line).
-- If anything notable happened today, append a dated lesson to
-  `memory/aggressive/lessons.md`.
+## 2. Reconcile journals to broker truth
 
-## 5b. Performance history
-Append one row to `memory/performance.csv` — create it with the header
-`date,agent,equity,cash,spy_close` if missing: today's date, `aggro`, final
-equity, final cash, SPY's closing price. This feeds the dashboard in `docs/`
-and the weekly deployment-pace audit.
+Compare final positions and gateway execution events with Aggressive narrative
+and structured ledgers. Add any confirmed missing closed-trade post-mortem and
+a factual lesson for each loss. Never infer a fill solely from a missing
+position or journal marker when broker evidence is ambiguous; escalate it.
 
-## 5c. Friday watchdog
-If today is Friday and the newest entry in `memory/aggressive/weekly-review.md`
-is more than 7 days old, last week's review never ran — flag it with 🚨 in the
-notify so the human can check the routine schedule.
+Update Aggressive portfolio memory and the Aggro performance row with final
+balances, positions, canonical sectors, drawdown, and vs-SPY values. Flag a
+stale Friday review. Archive old narrative entries without changing live rules.
 
-## 5d. Monthly housekeeping
-On the first trading day of each month: move
-`memory/aggressive/research-log.md` and `memory/aggressive/trade-log.md`
-entries older than 30 days into `memory/archive/aggro-<YYYY-MM>.md` (create
-the folder if needed), leaving a one-line pointer at the top of each log.
+## 3. Final reconciliation
 
-## 6. Notify (every weekday)
-Send a Telegram end-of-day summary via `./scripts/notify.sh`, starting with
-`🔥 AGGRO Bull EOD <date>:` — equity in USD, today's %, vs SPY since start,
-number of trades, and a one-line note. Start with 🚨 if a position exited at a
-loss today or the circuit breaker is near/active. Never put a literal `$` in
-the message; use `USD`/plain numbers and single-quote the argument.
+Run final reconciliation:
 
-## 7. Commit
-`git add -A && git commit -m "aggro-close: <summary>" && git push origin HEAD:main`.
-If the push is rejected because `main` moved, run
-`git fetch origin main && git rebase origin/main`, then push again.
+```
+python3 scripts/trade.py reconcile --agent aggro --repair
+```
+
+Use `--repair` only if startup was unambiguous and control remains `ACTIVE` or
+`RISK_OFF`; otherwise omit it. Final `ok: false` is urgent; notify 🚨 and never improvise a raw broker command.
+
+## 4. Notify and commit
+
+Notify once, starting `🔥 AGGRO Bull EOD <date>:` with equity, today's return,
+since-inception difference vs SPY, drawdown, confirmed trade count, and one
+note. Start 🚨 for a loss exit, drawdown warning, stale review, or reconciliation
+failure. Never put a literal `$` in the shell message.
+
+Release the advisory lock, then persist only authorized AGGRO memory:
+
+`python3 scripts/persist_memory.py`
+
+This fixed helper takes no arguments, requires an exact fresh `origin/main` base,
+and commits/pushes only authorized profile journals. It never merges or rebases.
+Never run Git directly. A non-zero persistence exit fails the routine visibly.

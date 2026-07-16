@@ -174,13 +174,10 @@ Not applicable today (Wednesday). Last Monday (July 13) review: all 6 positions 
 
 ```json
 {
+  "schema_version": 1,
+  "agent": "aggro",
   "plan_date": "2026-07-15",
-  "trades": [
-    {"action": "buy", "symbol": "MU", "qty": 8,
-     "thesis": "AI-memory/HBM bellwether; the SK Hynix HBM4 demand scare that drove two prior deferrals has reversed (SK Hynix +27% Monday, MU +4.9% July 14, KeyBanc PT raised to USD 1,750); >USD 22B non-cancelable HBM contracts through 2027-2028 plus Anthropic supply deal intact; diversifies AI-infrastructure exposure into the memory layer distinct from the existing NVDA/AVGO GPU/ASIC book",
-     "invalidation": "MU closes below its 18% trailing stop, OR a major hyperscaler/AI-lab HBM contract is cancelled or materially renegotiated down, OR DRAM/NAND ASPs enter a QoQ price collapse signaling memory oversupply",
-     "review_by": "2026-07-27"}
-  ]
+  "trades": []
 }
 ```
 
@@ -4367,3 +4364,21 @@ No new position names today — SK Hynix's USD 29B mega-IPO listing (same capita
 }
 ```
 EXECUTED: 2026-07-10T13:49:41Z (VST pyramid add: bought 15 shares @ USD 158.539996 avg fill, marketable limit USD 158.82 used because the quote endpoint returned an anomalous odd-lot-flagged NBBO (ask USD 167.57 / bid USD 149.62) that diverged sharply from consistent 1-min-bar/latest-trade prints around USD 158.1-158.4 — limit computed from latest trade price x1.003 instead of the stale ask; VST breaking-news gate clear (WebSearch: no earnings miss/downgrade/halt/SEC action/PPA loss found); position now 67 shares, avg entry USD 153.052835 blended; old 52-share trailing stop `5b347be3` canceled and reissued as `e3a7985f` (18% trail, stop USD 129.8552) covering the full 67-share position; stop audit 6/6 ALL LIVE (AVGO `ffba9bd5`, NVDA `e15e7753`, ETN `abdc232b`, GOOGL `e52a43f1`, AMZN `b55bef05`, VST `e3a7985f`); shock check +0.145% vs last_equity (NOT a shock); no other trades)
+
+---
+
+## Risk-foundation merge guard — 2026-07-16
+
+The historical MU trim plan on `main` was executed before the strict gateway
+was introduced and remains unchanged as audit history. This branch is `PAUSED`;
+the empty version-2 plan below is the only parser-supported plan for this date
+and authorizes no action.
+
+```json
+{
+  "schema_version": 2,
+  "agent": "aggro",
+  "plan_date": "2026-07-16",
+  "trades": []
+}
+```

@@ -8,20 +8,35 @@ cron syntax exists, so the gate lives in the playbook).
 
 | Season | Cron |
 |--------|------|
-| Summer (EDT) | `0 21 * * 5` (5:00 PM ET) |
-| Winter (EST) | `0 22 * * 5` (5:00 PM ET) |
+| Summer (EDT) | `20 21 * * 5` (5:20 PM ET) |
+| Winter (EST) | `20 22 * * 5` (5:20 PM ET) |
 
-Runs 30 minutes after the weekly review so both never overlap (the
-`memory/_lock` file also guards this).
+Runs 30 minutes after the weekly review. `memory/_lock` is only an advisory
+local repository signal; it is not a distributed broker lock.
 
 ## Cowork routine prompt
 
 ```
 Run the Bull monthly deep review. Follow the playbook in
 .claude/commands/monthly-review.md exactly. You are Cautious Bull (default
-mode). The playbook self-gates: if today is not the first Friday of the
-month, exit quietly. Push your work with git push origin HEAD:main.
+mode). Read memory/control.md first. The playbook self-gates: if today is not
+the first Friday of the month, exit quietly. Human-owned config is
+authoritative; memory/lessons can only record inactive proposals. Every broker
+mutation must use python3 scripts/trade.py. On a proceeding run, reconcile at
+startup and end with `--agent bull` (`--repair` only for ACTIVE or RISK_OFF;
+read-only for PAUSED), and fail closed on any discrepancy. Never use a raw
+broker order, close, cancellation, or stop command. Required environment names
+are ALPACA_API_KEY_ID, ALPACA_API_SECRET_KEY, ALPACA_BASE_URL,
+ALPACA_EXPECTED_ACCOUNT_ID, TRADING_AGENT, TELEGRAM_BOT_TOKEN, and
+TELEGRAM_CHAT_ID; TRADING_AGENT must equal `bull`.
+The `/monthly-review` command owns the
+`memory/quant-research-playbook.md` validation, the mandatory
+`memory/upstream-methodology-index.md` rules, and full-family audit before any
+inactive draft proposal. Do not perform or repeat those steps separately in this
+outer routine.
+Then run exactly `python3 scripts/persist_memory.py` with no arguments. Never
+run Git directly.
 ```
 
 Type: Remote · repo: this repo · branch `main` · environment `trading` ·
-permissions: allow unrestricted branch pushes.
+permissions: fixed profile-scoped persistence helper only.

@@ -1,7 +1,6 @@
 name: Bull — Aggressive 🔥
 
-# AGGRO runs 10 minutes after Cautious to avoid git push collisions.
-# Schedule uses EDT (UTC-4, summer). In winter (EST, UTC-5) add 1 hour.
+# Manual backup runner. Primary Claude Code schedules are configured externally.
 on:
   workflow_dispatch:
     inputs:
@@ -19,16 +18,24 @@ on:
 permissions:
   contents: write
 
+# Shared with the Cautious workflow: queue all paper-trading runs so memory and
+# broker reconciliation cannot race one another.
+concurrency:
+  group: bull-paper-trading
+  cancel-in-progress: false
+
 jobs:
   run:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 30
 
     steps:
       - name: Checkout
         uses: actions/checkout@v4
         with:
+          ref: main
           fetch-depth: 0
+          persist-credentials: true
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -36,7 +43,7 @@ jobs:
           python-version: '3.11'
 
       - name: Install dependencies
-        run: pip install groq
+        run: python -m pip install -r requirements.txt
 
       - name: Make scripts executable
         run: chmod +x scripts/alpaca.sh scripts/notify.sh
@@ -45,29 +52,17 @@ jobs:
         run: |
           git config user.email "aggro-bull-bot@users.noreply.github.com"
           git config user.name "Aggro Bull Bot"
-          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
-
-      - name: Determine routine
-        id: routine
-        run: |
-          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
-            echo "name=${{ inputs.routine }}" >> "$GITHUB_OUTPUT"
-          else
-            case "${{ github.event.schedule }}" in
-              "10 12 * * 1-5") echo "name=aggro-premarket"    >> "$GITHUB_OUTPUT" ;;
-              "45 13 * * 1-5") echo "name=aggro-market-open"  >> "$GITHUB_OUTPUT" ;;
-              "40 16 * * 1-5") echo "name=aggro-midday"       >> "$GITHUB_OUTPUT" ;;
-              "0 20 * * 1-5")  echo "name=aggro-close"        >> "$GITHUB_OUTPUT" ;;
-              "40 20 * * 5")   echo "name=aggro-weekly-review" >> "$GITHUB_OUTPUT" ;;
-            esac
-          fi
 
       - name: Run AGGRO Bull routine
-        run: python runner.py ${{ steps.routine.outputs.name }}
+        run: python3 runner.py "${{ inputs.routine }}"
         env:
+          PYTHONUNBUFFERED:       '1'
           GROQ_API_KEY:          ${{ secrets.GROQ_API_KEY }}
+          GROQ_MODEL:            ${{ vars.GROQ_MODEL }}
           ALPACA_API_KEY_ID:     ${{ secrets.ALPACA_API_KEY_ID_AGGRO }}
           ALPACA_API_SECRET_KEY: ${{ secrets.ALPACA_API_SECRET_KEY_AGGRO }}
-          ALPACA_BASE_URL:       ${{ secrets.ALPACA_BASE_URL }}
+          ALPACA_EXPECTED_ACCOUNT_ID: ${{ secrets.ALPACA_EXPECTED_ACCOUNT_ID_AGGRO }}
+          ALPACA_BASE_URL:       https://paper-api.alpaca.markets
+          TRADING_AGENT:         aggro
           TELEGRAM_BOT_TOKEN:    ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID:      ${{ secrets.TELEGRAM_CHAT_ID }}

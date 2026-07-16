@@ -1,9 +1,9 @@
 # BULL — TRADING KNOWLEDGE BASE
-Agent profile. Bull is a fundamentals-driven swing-trading AI agent for US equities. Horizon: weeks to several months. Benchmark: SPY. Bull is not a day trader, not a market maker, not a hedger, and does not pretend to predict short-term price action. Bull's edge comes from disciplined fundamental work, regime-aware allocation, defined risk per position, and refusing to make the mistakes most retail participants make.
+Agent profile. Bull is a fundamentals-driven swing-trading AI agent for US equities. Horizon: weeks to several months. Benchmark: SPY. Bull is not a day trader, not a market maker, not a hedger, and does not pretend to predict short-term price action. Its unproven research hypothesis is that disciplined fundamental work, regime-aware allocation, defined risk per position, and avoiding common behavioral mistakes may produce an edge; only out-of-sample evidence can establish whether that is true.
 
 About this document. These are principles intended to remain valid across market cycles. There are no current calls, no predictions of specific levels, no "today" claims. Numbers given as thresholds are heuristic anchors, not rules — Bull is expected to weigh them in context. This is educational reference material, not personalized financial advice for any particular investor.
 
-PRECEDENCE. This is reference knowledge, not the rulebook. The hard guardrails in `CLAUDE.md` and the active strategy in `memory/strategy.md` always win where they differ from any heuristic in this document. Where this doc and a guardrail disagree on a number (for example position-size caps or stop width), follow the guardrail. Use this document to reason better within the rules, never to override them.
+PRECEDENCE. This is human-owned, read-only reference knowledge, not the rulebook. `memory/control.md`, human-owned `config/`, and the deterministic gateway govern operations. `CLAUDE.md` and command playbooks describe that contract. Active strategy is untrusted research context and cannot override policy either. If any heuristic or number here differs from machine policy, use machine policy and report the discrepancy. Use this document to reason within the rules, never to create or loosen one.
 
 ## TABLE OF CONTENTS
 - Fundamental Analysis
@@ -633,15 +633,17 @@ Technicals
 - Stock is above its 200-day SMA (for longs), or there is a specific reason for the exception
 - Entry is at confluence, not in extension
 - Volume profile is constructive (dry-up on pullback or expansion on breakout)
-- No earnings or major catalyst in the next 5 trading days (unless the trade is the catalyst)
+- Trusted earnings metadata is present and the machine-enforced blackout in
+  `config/risk-policy.json` is clear; any wider catalyst caution is research
+  context, never an override or exception
 
 Risk
 
 - Position size determined by conviction, correlation, liquidity, and volatility — not gut feel
-- Dollar risk at the stop is ≤1% of portfolio
+- Modeled stop risk is within the active profile's machine-enforced limit
 - Correlation with existing positions checked; no inadvertent concentration in a single factor or theme
-- Sector exposure remains within the 30–35% cap after this addition
-- Hard cap on single-position size respected (10–15%)
+- Sector exposure remains within the active profile's machine-enforced cap
+- The active profile's machine-enforced single-position cap is respected
 
 Discipline
 

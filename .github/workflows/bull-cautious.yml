@@ -1,7 +1,6 @@
 name: Bull — Cautious
 
-# Schedule uses EDT (UTC-4, summer). In winter (EST, UTC-5) add 1 hour to each cron.
-# GitHub Actions cron may run up to ~15 min late — fine for a swing trading bot.
+# Manual backup runner. Primary Claude Code schedules are configured externally.
 on:
   workflow_dispatch:
     inputs:
@@ -20,17 +19,24 @@ on:
 permissions:
   contents: write   # allows runner.py to push commits back to main
 
+# Both accounts write shared memory on main. Queue every run across both
+# workflows so two agents can never trade from conflicting repository state.
+concurrency:
+  group: bull-paper-trading
+  cancel-in-progress: false
+
 jobs:
   run:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 30
 
     steps:
       - name: Checkout
         uses: actions/checkout@v4
         with:
+          ref: main
           fetch-depth: 0
-          # persist-credentials is true by default — runner.py can push via GITHUB_TOKEN
+          persist-credentials: true
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -38,7 +44,7 @@ jobs:
           python-version: '3.11'
 
       - name: Install dependencies
-        run: pip install groq
+        run: python -m pip install -r requirements.txt
 
       - name: Make scripts executable
         run: chmod +x scripts/alpaca.sh scripts/notify.sh
@@ -47,30 +53,17 @@ jobs:
         run: |
           git config user.email "bull-bot@users.noreply.github.com"
           git config user.name "Bull Bot"
-          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
-
-      - name: Determine routine
-        id: routine
-        run: |
-          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
-            echo "name=${{ inputs.routine }}" >> "$GITHUB_OUTPUT"
-          else
-            case "${{ github.event.schedule }}" in
-              "0 12 * * 1-5")  echo "name=premarket"      >> "$GITHUB_OUTPUT" ;;
-              "35 13 * * 1-5") echo "name=market-open"    >> "$GITHUB_OUTPUT" ;;
-              "30 16 * * 1-5") echo "name=midday"         >> "$GITHUB_OUTPUT" ;;
-              "50 19 * * 1-5") echo "name=close"          >> "$GITHUB_OUTPUT" ;;
-              "30 20 * * 5")   echo "name=weekly-review"  >> "$GITHUB_OUTPUT" ;;
-              "0 21 * * 5")    echo "name=monthly-review" >> "$GITHUB_OUTPUT" ;;
-            esac
-          fi
 
       - name: Run Bull routine
-        run: python runner.py ${{ steps.routine.outputs.name }}
+        run: python3 runner.py "${{ inputs.routine }}"
         env:
+          PYTHONUNBUFFERED:       '1'
           GROQ_API_KEY:          ${{ secrets.GROQ_API_KEY }}
+          GROQ_MODEL:            ${{ vars.GROQ_MODEL }}
           ALPACA_API_KEY_ID:     ${{ secrets.ALPACA_API_KEY_ID }}
           ALPACA_API_SECRET_KEY: ${{ secrets.ALPACA_API_SECRET_KEY }}
-          ALPACA_BASE_URL:       ${{ secrets.ALPACA_BASE_URL }}
+          ALPACA_EXPECTED_ACCOUNT_ID: ${{ secrets.ALPACA_EXPECTED_ACCOUNT_ID }}
+          ALPACA_BASE_URL:       https://paper-api.alpaca.markets
+          TRADING_AGENT:         bull
           TELEGRAM_BOT_TOKEN:    ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID:      ${{ secrets.TELEGRAM_CHAT_ID }}
