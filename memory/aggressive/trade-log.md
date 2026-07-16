@@ -4243,3 +4243,51 @@ NVDA `e15e7753` (77sh), AVGO `ffba9bd5` (19sh), ETN `abdc232b` (34sh), GOOGL `e5
 
 ### Result
 One trade executed exactly as pre-market planned (contingent 25% MU trim), no deviation from the contingency bands. No new buys today. `trades.jsonl` updated (agent: aggro). `EXECUTED:` marker appended to research-log.md.
+
+---
+
+## 2026-07-16 — MIDDAY review (no trades)
+
+**Market open, no shock:** equity USD 91,352.21 vs last_equity USD 93,858.88 = -2.671% (threshold -6%, not triggered).
+
+### Pre-run checks
+| Check | Result |
+|---|---|
+| Live-switch guard | ALPACA_BASE_URL contains "paper" ✓ |
+| Lock | Clear (`{}`) at start; written for this run ✓ |
+| Control switch | STATUS: ACTIVE, no NOTE/QUERY ✓ |
+| Market open | true (`clock`: is_open true, next close 4:00 PM ET) ✓ |
+
+### Position review (buffers to -12% cut, 7 positions)
+| Symbol | Qty | Entry | Current | P/L % | Buffer | % of Portfolio |
+|---|---|---|---|---|---|---|
+| NVDA | 77 | USD 213.60 | USD 207.20 | -2.996% | 9.004pp | 17.466% |
+| AVGO | 19 | USD 406.23 | USD 380.59 | -6.312% | 5.688pp | 7.916% |
+| ETN | 34 | USD 419.54 | USD 391.26 | -6.740% | 5.260pp | 14.562% |
+| GOOGL | 16 | USD 370.22 | USD 371.36 | +0.308% | comfortable | 6.505% |
+| AMZN | 36 | USD 247.991111 | USD 255.64 | +3.084% | comfortable | 10.076% |
+| MU | 6 | USD 953.92125 | USD 852.48 | -10.635% | 1.365pp 🚨 CRITICAL | 5.599% |
+| VST | 67 | USD 153.052836 | USD 149.08 | -2.596% | 9.404pp | 10.934% |
+
+No position below the -12% cut threshold (MU closest, CRITICAL buffer 1.365pp, watch item only — the midday rule is a binary -12% cut, not a partial trim). No position above +25% (winner-protection not applicable — best is AMZN +3.084%). No new buys — midday never opens positions.
+
+### News scan (positions >5% down or >15% up) — AVGO, ETN, MU
+[search: WebSearch fallback — mcp__minimax__web_search not found via ToolSearch this session]
+
+- **AVGO (-6.312%):** Q2 2026 EPS USD 2.44 beat estimates of USD 2.32; new Standard Chartered banking-infrastructure partnership; a Samsung/Netlist patent-infringement matter drawing regulatory scrutiny (not an AVGO liability event); CLO disclosed a ~USD 10M share sale (routine-sized, not alarming). No thesis break — sentiment/sector pressure, hold.
+- **ETN (-6.740%):** Broadly positive backdrop — closed +3.24% on July 14, data-center/AI power-demand tailwind intact, USD 5.1B Mobility-division spinoff announced, FranklinWH partnership; Q2 earnings not until July 31 (outside today's window). No negative company-specific news found; today's pullback reads as sector rotation/profit-taking, not a thesis break. Hold.
+- **MU (-10.635%):** Same unconfirmed narrative flagged at pre-market and this morning's market-open trim — broader semiconductor-sector retreat on reports the US government may tighten HBM/advanced chip-equipment export restrictions, compounded by China's CXMT announcing an ~USD 8.5B IPO. No confirmed policy action, no lost contract, no earnings miss. Positive counterpoints: 7 new automotive chip contracts signed; a fund manager publicly named MU his top single-stock pick citing ~30% of market cap in cash flow over 18 months; consensus remains Buy, avg PT USD 1,548.86 (+82% upside from current price). Buffer is now CRITICAL (1.365pp) after this morning's 25% trim already de-risked the position once — no further action under the strict -12% cut rule, but this is the clear watch item for the next routine (close or pre-market): a further ~1.4pp move triggers the mechanical cut.
+
+### Act on rules (step 4)
+No cuts (no position beyond -12%). No winner-tightening (no position beyond +25%). No new buys per playbook.
+
+### Stop audit — 7/7 confirmed live ✓
+NVDA `e15e7753` (stop USD 175.3242), AVGO `ffba9bd5` (stop USD 334.1664), ETN `abdc232b` (stop USD 350.9026), GOOGL `e52a43f1` (stop USD 308.1314), AMZN `b55bef05` (stop USD 211.62765), VST `e3a7985f` (stop USD 137.9322), MU `5d6ca010` (stop USD 721.518, reissued this morning post-trim for the 6-share position) — all `status: "new"`, all matched 1:1 to the 7 open positions, quantities correct. No gaps, no recreation needed.
+
+### Sector exposure
+Semiconductors (NVDA+AVGO+MU) = 30.981%; Industrials (ETN) = 14.562%; Hyperscalers (GOOGL+AMZN) = 16.581%; Utilities (VST) = 10.934%; Cash = 26.937%. No sector near the 60% cap. Single-position cap (35% max): NVDA largest at 17.466% — well clear.
+
+**No exits this run** — nothing to post-mortem, no `trades.jsonl` entries.
+
+### Result
+No new trades this run — risk management only. All 7 positions within the -12%/+25% action thresholds. MU is the standing watch item: CRITICAL buffer (1.365pp) on a still-unconfirmed HBM-export-restriction/CXMT-IPO narrative, already trimmed 25% this morning; a further small move down triggers the mechanical -12% cut at the next check. AVGO and ETN both crossed the 5%-down news-scan trigger but show no thesis-breaking news — sector rotation/profit-taking, hold. Stop audit clean 7/7. Control: ACTIVE.

@@ -6,7 +6,43 @@ but always re-fetches live data before trading._
 
 ---
 
-## Last snapshot — 2026-07-16 MARKET OPEN (~9:48 AM ET)
+## Last snapshot — 2026-07-16 MIDDAY (~12:41 PM ET)
+
+| Field | Value |
+|---|---|
+| Equity | USD 91,352.21 |
+| Cash | USD 24,605.18 (26.937%) |
+| Long market value | USD 66,747.03 |
+| `last_equity` (July 15 close) | USD 93,858.88 |
+| Shock check | -2.671% — NOT triggered (threshold -6%) |
+| HWM | USD 101,144.73 (June 4-5 inception, unchanged) |
+| Drawdown from HWM | -9.573% — circuit breaker -20% NOT triggered |
+
+**Positions (7 open):**
+
+| Symbol | Qty | Avg Entry | Sector | Current | P/L% | Buffer to -12% | % of Portfolio |
+|---|---|---|---|---|---|---|---|
+| NVDA | 77 | USD 213.60 | Semiconductors | USD 207.20 | -2.996% | 9.004pp | 17.466% |
+| AVGO | 19 | USD 406.23 | Semiconductors | USD 380.59 | -6.312% | 5.688pp | 7.916% |
+| ETN | 34 | USD 419.54 | Industrials/power infra | USD 391.26 | -6.740% | 5.260pp | 14.562% |
+| GOOGL | 16 | USD 370.22 | Communication Services (hyperscaler) | USD 371.36 | +0.308% | comfortable | 6.505% |
+| AMZN | 36 | USD 247.991111 | Consumer Discretionary (hyperscaler) | USD 255.64 | +3.084% | comfortable | 10.076% |
+| MU | 6 | USD 953.92125 | Semiconductors (memory/HBM) | USD 852.48 | **-10.635%** | **1.365pp 🚨 CRITICAL** | 5.599% |
+| VST | 67 | USD 153.052836 (blended) | Utilities (nuclear power) | USD 149.08 | -2.596% | 9.404pp | 10.934% |
+
+**Sector exposure:** Semiconductors (NVDA+AVGO+MU) = 30.981%; Industrials (ETN) = 14.562%; Hyperscalers (GOOGL+AMZN) = 16.581%; Utilities (VST) = 10.934%; Cash = 26.937%. No sector near the 60% informal cap. Single-position cap (35% max): NVDA largest at 17.466% — well clear.
+
+**No trades this run.** No position crossed the -12% cut threshold (MU closest at -10.635%, buffer only 1.365pp — CRITICAL watch, carried to next pre-market/close, but the playbook's midday mandate is a binary -12% cut, not a partial trim, so no action taken). No position crossed +25% (best is AMZN +3.084% — winner-protection not applicable). News scan (AVGO, ETN, MU — all crossed the >5%-down trigger) found sector-wide/sentiment-driven pressure, not thesis breaks: AVGO earnings beat + Standard Chartered partnership, unrelated patent-scrutiny headline; ETN broadly positive (spinoff, data-center demand, no earnings until July 31) with today's dip reading as sector rotation, not company news; MU continues on the same unconfirmed HBM-export-restriction/CXMT-IPO narrative flagged at pre-market and market-open — no confirmed policy action, contract loss, or earnings miss, consensus still Buy (avg PT USD 1,548.86).
+
+**Stop audit — 7/7 confirmed live via `orders open` ✓:** NVDA `e15e7753`, AVGO `ffba9bd5`, ETN `abdc232b`, GOOGL `e52a43f1`, AMZN `b55bef05`, VST `e3a7985f`, MU `5d6ca010`. No gaps.
+
+**Result:** No trades. All 7 positions within the -12% cut / +25% tighten thresholds. MU remains CRITICAL (1.365pp buffer) — a genuine watch item for the next routine, not yet actionable under the -12% rule. Stop audit clean 7/7. No shock, no circuit breaker. Control: ACTIVE.
+
+Next actionable routine: July 16 close.
+
+---
+
+## 2026-07-16 MARKET OPEN (~9:48 AM ET)
 
 | Field | Value |
 |---|---|
