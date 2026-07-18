@@ -77,6 +77,16 @@ QuantMind/ATLAS vendoring in PR #15.
    tree ID.
 2. Export the tracked tree: `git archive <commit> | tar -x -C
    third_party/rd-agent/` and record `sha256sum` of the archive.
+   **Stage with `git add -f third_party/<name>/`, not plain `git add`.** An
+   upstream repo's own `.gitignore` (and `.gitattributes` `export-ignore`
+   rules, if present) gets copied in as part of the tracked tree, and a
+   nested `.gitignore` is honored by git during `add`, silently dropping
+   legitimately-tracked upstream files that match its patterns (e.g.
+   `.env*`, `env_tpl/`) even though `git archive` extracted them correctly.
+   After staging, verify file count and byte total against the recorded
+   `file_count`/`total_bytes` before committing — this is the second
+   tooling surprise this vendoring effort hit, after the nested-AGENTS.md
+   path_rewrites issue in PR #19.
 3. Apply the agent-instruction path rewrites if the tree contains any
    `CLAUDE.md`, `AGENTS.md`, `.claude/`, `.agents/`, or similar active
    instruction surfaces (rename with byte-identical content, as done for

@@ -179,6 +179,8 @@ UPSTREAM_REFERENCE_PATHS = {
     "third_party/atlas-gic/architecture/overview.md",
     "third_party/atlas-gic/architecture/layers.md",
     "third_party/atlas-gic/architecture/autoresearch.md",
+    "third_party/rd-agent/LICENSE",
+    "third_party/rd-agent/docs/project_framework_introduction.rst",
 }
 BULL_CROSS_READ_PATHS = {
     "memory/aggressive/portfolio.md",
