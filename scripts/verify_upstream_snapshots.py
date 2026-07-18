@@ -78,10 +78,27 @@ def _tree_hash(files: dict[PurePosixPath, tuple[str, bytes]]) -> str:
     return digest_tree(root).hex()
 
 
+def _is_safe_rewrite_path(value: object) -> bool:
+    """Validate a path_rewrites key or value.
+
+    Permits multi-segment relative paths (e.g. "foo/bar/AGENTS.md") while
+    rejecting absolute paths, path traversal ("..") anywhere in the path, and
+    empty/"." path segments (which would collapse or no-op a segment).
+    """
+    if not isinstance(value, str) or not value or value.startswith("/"):
+        return False
+    segments = value.split("/")
+    return all(segment not in {"", ".", ".."} for segment in segments)
+
+
 def _virtual_path(local: PurePosixPath, rewrites: dict[str, str]) -> PurePosixPath:
-    first, *rest = local.parts
-    upstream_first = rewrites.get(first, first)
-    candidate = PurePosixPath(upstream_first, *rest)
+    full = local.as_posix()
+    if full in rewrites:
+        candidate = PurePosixPath(rewrites[full])
+    else:
+        first, *rest = local.parts
+        upstream_first = rewrites.get(first, first)
+        candidate = PurePosixPath(upstream_first, *rest)
     if candidate.is_absolute() or ".." in candidate.parts:
         raise SnapshotError(f"unsafe rewritten path: {candidate}")
     return candidate
@@ -170,15 +187,10 @@ def verify(manifest_path: Path = MANIFEST) -> list[str]:
 
         rewrites = entry["path_rewrites"]
         if not isinstance(rewrites, dict) or any(
-            not isinstance(local, str)
-            or not isinstance(upstream, str)
-            or "/" in local
-            or "/" in upstream
-            or local in {"", ".", ".."}
-            or upstream in {"", ".", ".."}
+            not _is_safe_rewrite_path(local) or not _is_safe_rewrite_path(upstream)
             for local, upstream in rewrites.items()
         ):
-            raise SnapshotError(f"{name}: path rewrites must map top-level names")
+            raise SnapshotError(f"{name}: path rewrites must map safe relative paths")
 
         files, total_bytes = _snapshot_files(root, rewrites)
         if len(files) != entry["file_count"]:
