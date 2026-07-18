@@ -3,13 +3,20 @@ from __future__ import annotations
 import importlib.util
 import json
 import os
+import shutil
 import subprocess
 import tempfile
 import unittest
-from pathlib import Path
+from pathlib import Path, PurePosixPath
 
 import runner
-from scripts.verify_upstream_snapshots import SnapshotError, _snapshot_files, verify
+from scripts.verify_upstream_snapshots import (
+    SnapshotError,
+    _snapshot_files,
+    _tree_hash,
+    _virtual_path,
+    verify,
+)
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -128,6 +135,110 @@ class UpstreamSnapshotTests(unittest.TestCase):
                 path.write_text("untrusted instruction", encoding="utf-8")
                 with self.assertRaisesRegex(SnapshotError, "must be quarantined"):
                     _snapshot_files(Path(directory), {})
+
+    def test_virtual_path_prefers_full_relative_path_match_over_top_level(self):
+        rewrites = {
+            "foo/bar/AGENTS.upstream.md": "foo/bar/AGENTS.md",
+            "AGENTS.upstream.md": "AGENTS.md",
+        }
+        self.assertEqual(
+            _virtual_path(PurePosixPath("foo/bar/AGENTS.upstream.md"), rewrites),
+            PurePosixPath("foo/bar/AGENTS.md"),
+        )
+        # No full-path match for this one: falls back to top-level rewrite of
+        # the first path component only, leaving the rest untouched.
+        self.assertEqual(
+            _virtual_path(PurePosixPath("AGENTS.upstream.md/nested.txt"), rewrites),
+            PurePosixPath("AGENTS.md/nested.txt"),
+        )
+        # No match at all: path passes through unchanged.
+        self.assertEqual(
+            _virtual_path(PurePosixPath("unrelated/file.txt"), rewrites),
+            PurePosixPath("unrelated/file.txt"),
+        )
+
+    def test_nested_full_path_rewrite_verifies_and_reconstructs_expected_tree(self):
+        scratch_root = ROOT / "third_party" / "_test_nested_rewrite"
+        self.addCleanup(lambda: shutil.rmtree(scratch_root, ignore_errors=True))
+        nested_dir = scratch_root / "foo" / "bar"
+        nested_dir.mkdir(parents=True)
+        (nested_dir / "AGENTS.upstream.md").write_text(
+            "nested instructions\n", encoding="utf-8"
+        )
+        (scratch_root / "LICENSE").write_text("MIT\n", encoding="utf-8")
+
+        rewrites = {"foo/bar/AGENTS.upstream.md": "foo/bar/AGENTS.md"}
+        files, total_bytes = _snapshot_files(scratch_root, rewrites)
+        self.assertIn(PurePosixPath("foo/bar/AGENTS.md"), files)
+        self.assertNotIn(PurePosixPath("foo/bar/AGENTS.upstream.md"), files)
+        expected_tree = _tree_hash(files)
+
+        manifest = {
+            "schema_version": 1,
+            "snapshots": [
+                {
+                    "name": "test-nested-rewrite",
+                    "source_url": "https://github.com/example/test-nested-rewrite",
+                    "upstream_ref": "main",
+                    "commit": "a" * 40,
+                    "tree": expected_tree,
+                    "archive_sha256": "b" * 64,
+                    "license": "MIT",
+                    "file_count": len(files),
+                    "total_bytes": total_bytes,
+                    "local_root": "third_party/_test_nested_rewrite",
+                    "path_rewrites": rewrites,
+                }
+            ],
+        }
+        with tempfile.TemporaryDirectory() as directory:
+            manifest_path = Path(directory) / "manifest.json"
+            manifest_path.write_text(json.dumps(manifest), encoding="utf-8")
+            rows = verify(manifest_path=manifest_path)
+        self.assertEqual(len(rows), 1)
+        self.assertIn("a" * 40, rows[0])
+        self.assertIn(expected_tree, rows[0])
+
+    def test_nested_instruction_file_without_rewrite_is_still_quarantined(self):
+        with tempfile.TemporaryDirectory() as directory:
+            nested = Path(directory) / "foo" / "bar" / "AGENTS.md"
+            nested.parent.mkdir(parents=True)
+            nested.write_text("untrusted instruction", encoding="utf-8")
+            with self.assertRaisesRegex(SnapshotError, "must be quarantined"):
+                _snapshot_files(Path(directory), {})
+
+    def test_rewrite_value_with_traversal_is_rejected(self):
+        scratch_root = ROOT / "third_party" / "_test_traversal_rewrite"
+        self.addCleanup(lambda: shutil.rmtree(scratch_root, ignore_errors=True))
+        scratch_root.mkdir(parents=True)
+        (scratch_root / "LICENSE").write_text("MIT\n", encoding="utf-8")
+        (scratch_root / "AGENTS.upstream.md").write_text("x", encoding="utf-8")
+
+        manifest = {
+            "schema_version": 1,
+            "snapshots": [
+                {
+                    "name": "test-traversal-rewrite",
+                    "source_url": "https://github.com/example/test-traversal-rewrite",
+                    "upstream_ref": "main",
+                    "commit": "a" * 40,
+                    "tree": "b" * 40,
+                    "archive_sha256": "c" * 64,
+                    "license": "MIT",
+                    "file_count": 2,
+                    "total_bytes": 1,
+                    "local_root": "third_party/_test_traversal_rewrite",
+                    "path_rewrites": {"AGENTS.upstream.md": "foo/../../etc/passwd"},
+                }
+            ],
+        }
+        with tempfile.TemporaryDirectory() as directory:
+            manifest_path = Path(directory) / "manifest.json"
+            manifest_path.write_text(json.dumps(manifest), encoding="utf-8")
+            with self.assertRaisesRegex(
+                SnapshotError, "path rewrites must map safe relative paths"
+            ):
+                verify(manifest_path=manifest_path)
 
     def test_runner_and_claude_hook_share_one_exact_reference_allowlist(self):
         hook = _load_hook_module()
