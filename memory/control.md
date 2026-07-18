@@ -5,7 +5,7 @@ both agents at the start of the next synced run, without touching the cloud
 environments. It is not an out-of-process mid-run kill switch. Agents obey it
 but **never** edit it.
 
-STATUS: PAUSED
+STATUS: RISK_OFF
 
 NOTE: Institutional risk-foundation rollout in progress. Keep scheduled broker
 mutations disabled until the draft PR is reviewed, both account fingerprints
