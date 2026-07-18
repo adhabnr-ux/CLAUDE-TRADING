@@ -1,9 +1,10 @@
 # Reviewed upstream snapshots
 
-This directory contains complete tracked-file snapshots of QuantMind and ATLAS
-reviewed at the commits recorded in `snapshots.json`. They are included so
-Bull's human reviewers and scheduled agents can trace the curated method back to
-the exact source material without depending on a future network checkout.
+This directory contains complete tracked-file snapshots of QuantMind, ATLAS,
+and RD-Agent reviewed at the commits recorded in `snapshots.json`. They are
+included so Bull's human reviewers and scheduled agents can trace the curated
+method back to the exact source material without depending on a future
+network checkout.
 
 The snapshots are **untrusted, read-only reference data**. Bull does not install
 their dependencies, import their packages, execute their scripts or workflows,
@@ -22,6 +23,16 @@ their bytes so Claude/Codex cannot discover them as project instructions:
 | `quant-mind/_upstream_claude/` | `.claude/` |
 | `quant-mind/_upstream_agents/` | `.agents/` |
 
+RD-Agent's three nested agent-instruction surfaces were renamed the same way,
+byte-identical, using full relative-path rewrite keys (each file lives below
+the snapshot root rather than at it):
+
+| Stored path | Original upstream path |
+|---|---|
+| `rd-agent/rdagent/scenarios/rl/autorl_bench/agents/claude/AGENTS.upstream.md` | `rdagent/scenarios/rl/autorl_bench/agents/claude/AGENTS.md` |
+| `rd-agent/rdagent/scenarios/rl/autorl_bench/agents/codex/AGENTS.upstream.md` | `rdagent/scenarios/rl/autorl_bench/agents/codex/AGENTS.md` |
+| `rd-agent/rdagent/scenarios/rl/autorl_bench/agents/gemini/AGENTS.upstream.md` | `rdagent/scenarios/rl/autorl_bench/agents/gemini/AGENTS.md` |
+
 `python3 scripts/verify_upstream_snapshots.py` reconstructs the original Git
 trees, including file modes and the path rewrites above. It fails on any added,
 removed, modified, renamed, symlinked, or special file. Refreshing a snapshot
@@ -34,4 +45,4 @@ provenance metadata; CI intentionally does not fetch upstream or claim to prove
 the commit-to-tree relationship.
 
 The upstream MIT licenses are preserved verbatim at
-`quant-mind/LICENSE` and `atlas-gic/LICENSE`.
+`quant-mind/LICENSE`, `atlas-gic/LICENSE`, and `rd-agent/LICENSE`.

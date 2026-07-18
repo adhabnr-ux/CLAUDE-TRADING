@@ -17,5 +17,12 @@
   proprietary production prompts are not included.
 - License text: `atlas-gic/LICENSE`
 
+## RD-Agent
+
+- Source: <https://github.com/microsoft/RD-Agent>
+- Snapshot: `4f9ecb005881cddc08df0124a2e894c018007679`
+- License: MIT, Copyright (c) Microsoft Corporation
+- License text: `rd-agent/LICENSE`
+
 The snapshots retain their upstream notices and disclaimers. Inclusion does not
 endorse, validate, or operationalize any trading or performance claim.

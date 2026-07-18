@@ -43,6 +43,10 @@ EXPECTED_SNAPSHOTS = {
         "commit": "fcfc40dcf628f6af091c28cb2c33827f42cef8fd",
         "tree": "e526c1e212a15839121a3671787a601818b04d13",
     },
+    "rd-agent": {
+        "commit": "4f9ecb005881cddc08df0124a2e894c018007679",
+        "tree": "fe0e249710773cc22c86b30b142f35ffe6dc78bf",
+    },
 }
 
 

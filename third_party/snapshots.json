@@ -31,6 +31,23 @@
       "total_bytes": 248045,
       "local_root": "third_party/atlas-gic",
       "path_rewrites": {}
+    },
+    {
+      "name": "rd-agent",
+      "source_url": "https://github.com/microsoft/RD-Agent",
+      "upstream_ref": "main",
+      "commit": "4f9ecb005881cddc08df0124a2e894c018007679",
+      "tree": "fe0e249710773cc22c86b30b142f35ffe6dc78bf",
+      "archive_sha256": "841da764bf9536d3d224c8b1d9bb10f94ae3b017e6a487c6880344d6ee31abcc",
+      "license": "MIT",
+      "file_count": 907,
+      "total_bytes": 11848491,
+      "local_root": "third_party/rd-agent",
+      "path_rewrites": {
+        "rdagent/scenarios/rl/autorl_bench/agents/claude/AGENTS.upstream.md": "rdagent/scenarios/rl/autorl_bench/agents/claude/AGENTS.md",
+        "rdagent/scenarios/rl/autorl_bench/agents/codex/AGENTS.upstream.md": "rdagent/scenarios/rl/autorl_bench/agents/codex/AGENTS.md",
+        "rdagent/scenarios/rl/autorl_bench/agents/gemini/AGENTS.upstream.md": "rdagent/scenarios/rl/autorl_bench/agents/gemini/AGENTS.md"
+      }
     }
   ]
 }

@@ -60,7 +60,7 @@ class UpstreamSnapshotTests(unittest.TestCase):
 
     def test_pinned_snapshots_reconstruct_reviewed_git_trees(self):
         rows = verify()
-        self.assertEqual(len(rows), 2)
+        self.assertEqual(len(rows), 3)
         manifest = json.loads(
             (ROOT / "third_party/snapshots.json").read_text(encoding="utf-8")
         )
@@ -104,10 +104,22 @@ class UpstreamSnapshotTests(unittest.TestCase):
                     "file_count": 20,
                     "total_bytes": 248045,
                 },
+                "rd-agent": {
+                    "source_url": "https://github.com/microsoft/RD-Agent",
+                    "commit": "4f9ecb005881cddc08df0124a2e894c018007679",
+                    "tree": "fe0e249710773cc22c86b30b142f35ffe6dc78bf",
+                    "archive_sha256": (
+                        "841da764bf9536d3d224c8b1d9bb10f94ae3b017e6a487c6880344d6ee31abcc"
+                    ),
+                    "license": "MIT",
+                    "file_count": 907,
+                    "total_bytes": 11848491,
+                },
             },
         )
         self.assertIn(by_name["quant-mind"]["commit"], rows[0])
         self.assertIn(by_name["atlas-gic"]["commit"], rows[1])
+        self.assertIn(by_name["rd-agent"]["commit"], rows[2])
 
     def test_quantmind_instruction_surfaces_are_inert_but_bytes_are_present(self):
         root = ROOT / "third_party/quant-mind"

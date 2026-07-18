@@ -63,6 +63,8 @@ UPSTREAM_REFERENCE_READ = {
     "third_party/atlas-gic/architecture/overview.md",
     "third_party/atlas-gic/architecture/layers.md",
     "third_party/atlas-gic/architecture/autoresearch.md",
+    "third_party/rd-agent/LICENSE",
+    "third_party/rd-agent/docs/project_framework_introduction.rst",
 }
 RESEARCH_LEDGER = {
     "bull": "memory/research-evidence.jsonl",
